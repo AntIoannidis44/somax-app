@@ -2,7 +2,7 @@
 
 Handover document capturing everything decided and built so far, so any new session (or person) can pick this up cleanly.
 
-Last updated: 2026-09-16
+Last updated: 2026-09-17
 
 ---
 
@@ -59,15 +59,18 @@ Primitive geometry cannot close that gap. It needs real model files, real animat
 | Persistence (beta) | `localStorage` — no backend yet |
 
 ### Assets for the character upgrade
+
+**Update 2026-09-17: Ready Player Me is dead.** Netflix acquired RPM (announced Dec 2025) and shut down its entire public platform — Studio dashboard, avatar creator, developer APIs — on January 31, 2026. `studio.readyplayer.me` now returns NXDOMAIN. Researched replacements (MetaPerson/Avatar SDK, Avaturn) are alive but cost $800/month to embed a live per-user avatar creator in an app; only a single sandboxed avatar is free. Decision: skip live per-user avatar-generation APIs entirely.
+
 | Need | Choice | Cost |
 |---|---|---|
-| Customisable athlete model | **Ready Player Me** (GLB output, standard skeleton, Avatar API) | Free tier |
-| Animations | **Mixamo** (idle, run, flex) + RPM animation library | Free (Adobe ID) |
+| Customisable athlete model | **2-4 free/one-time-purchase rigged humanoid GLBs** (CC0, Mixamo-compatible skeleton) + our own wardrobe system in code (already built in `catalog.ts`/`characterBuilder.ts`) | Free / small one-time |
+| Animations | **Mixamo** (idle, run, flex) — still alive, some reported reliability flakiness, no shutdown | Free (Adobe ID) |
 | Lighting / environment | **Poly Haven** HDRIs (CC0) | Free |
 
-Beta cost: **$0**. Store publishing later: Apple Developer US$99/yr, Google Play US$25 once.
+Beta cost: **$0** (or a small one-time asset-pack purchase). Store publishing later: Apple Developer US$99/yr, Google Play US$25 once.
 
-Honest caveat recorded: Ready Player Me gives a polished, game-quality, customisable avatar — a large jump from the primitives — but **not** the photoreal athlete in the reference. That specific look needs a bespoke sculpted model (3D artist, roughly $300–1,500) and is a later upgrade if the beta proves out. Branded wardrobe items (a "Somax jersey" inside RPM's catalogue) are also not on the free tier; the workaround is accessories rendered on top of the model in our own code.
+Honest caveat: free/cheap base meshes plus our own wardrobe layer gets a real jump from the primitives, but not the photoreal athlete in the reference. That specific look still needs a bespoke sculpted model (3D artist, roughly $300–1,500) and is a later upgrade if the beta proves out.
 
 ### Planned backend (from the original brief, not yet built)
 Supabase (managed Postgres + auth). XP must be **server-authoritative** — the client never decides XP amounts.
@@ -87,6 +90,7 @@ somax-app/
 - Repo: https://github.com/AntIoannidis44/somax-app
 - Live URL (once Pages is enabled): https://antioannidis44.github.io/somax-app/
 - First commit `ace9481` — scaffold pushed and confirmed on `origin/main`.
+- Second commit `0c0f7d3` (2026-09-17) — full port of the `somax.html` prototype into React components (onboarding, home, train, play, community, profile, character studio, XP engine, store). Verified working end-to-end in a headless browser. Not yet pushed to origin.
 
 ### Local environment
 - Node v24.21.0, npm 11.19.0 — installed and verified
@@ -118,15 +122,15 @@ Full scope detail: `../SCOPE-3d-character-upgrade.md`
 ## 6. Open items
 
 **Blocking Phase 1:**
-- [ ] Ready Player Me application created at https://studio.readyplayer.me — need **subdomain** and **application ID**, Avatar API enabled
+- [ ] Source and approve 2-4 free/one-time-purchase rigged humanoid GLB base models (CC0, Mixamo-compatible skeleton) — replaces the dead Ready Player Me plan
 - [ ] Mixamo access (free Adobe ID) at https://www.mixamo.com
 
 **Should confirm:**
 - [ ] GitHub Pages source set to **GitHub Actions** (Settings → Pages) so the deploy workflow publishes
 - [ ] Claude Code extension installed in VS Code
 - [ ] `code` command added to PATH (VS Code → `Cmd+Shift+P` → "Shell Command: Install 'code' command in PATH")
-- [ ] Name confirmed as "Somax"
-- [ ] Free-asset path for the beta, or budget a bespoke model now
+- [x] Name confirmed as "Somax"
+- [x] Free-asset path chosen for the beta (free base models + in-house wardrobe, no recurring API cost)
 
 **Carried over from the original brief, unresolved:**
 - **XP fairness model is underspecified and it's the heart of the product.** Users on different quests need comparable League XP or the leaderboard is meaningless. Needs a concrete normalisation formula (percent of prescribed work completed, capped, per activity category) before leagues are coded.
