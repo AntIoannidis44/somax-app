@@ -1,0 +1,218 @@
+export type CharacterBase = 'female' | 'male';
+
+export interface CharacterConfig {
+  base: CharacterBase;
+  skin: number;
+  hair: string;
+  hairColor: string;
+  top: string;
+  bottom: string;
+  shoes: string;
+  extra: string;
+}
+
+export interface UnlockRule {
+  level?: number;
+  streak?: number;
+}
+
+export interface CatalogItem {
+  id: string;
+  name: string;
+  unlock?: UnlockRule;
+}
+
+export interface HairColorItem extends CatalogItem {
+  c: string;
+}
+
+export interface WardrobeItem extends CatalogItem {
+  c: string;
+  style: 'tee' | 'tank' | 'long' | 'shorts';
+}
+
+export interface ShoeItem extends CatalogItem {
+  c: string;
+}
+
+export type CatalogKey = 'hair' | 'hairColor' | 'top' | 'bottom' | 'shoes' | 'extra';
+
+export interface CharTier {
+  min: number;
+  name: string;
+  c1: string;
+  c2: string;
+}
+
+export type Goal = 'Build strength' | 'Lose fat' | 'General fitness' | 'Endurance' | 'Muscle gain' | string;
+export type Experience = 'Beginner' | 'Intermediate' | 'Advanced' | string;
+
+export interface OnboardingDraft {
+  name: string;
+  age: string;
+  height: string;
+  weight: string;
+  goal: string;
+  experience: string;
+  availability: string;
+  equipment: string[];
+  character: CharacterConfig | null;
+}
+
+export interface Profile {
+  name: string;
+  age: string;
+  height: string;
+  weight: string;
+  goal: string;
+  experience: string;
+  availability: string;
+  equipment: string[];
+  program: { name: string };
+}
+
+export interface Stats {
+  strength: number;
+  endurance: number;
+  agility: number;
+  vitality: number;
+  recovery: number;
+  discipline: number;
+}
+
+export interface Progress {
+  totalXP: number;
+  level: number;
+  currentStreak: number;
+  longestStreak: number;
+  stats: Stats;
+}
+
+export type GoalType = 'workout' | 'toggle';
+
+export interface TodayGoal {
+  id: string;
+  label: string;
+  meta: string;
+  xp: number;
+  type: GoalType;
+  done: boolean;
+}
+
+export interface TodayState {
+  forDay?: number;
+  goals: TodayGoal[];
+  dayHadCompletion: boolean;
+  xpEarnedToday: number;
+  _streakCounted?: number;
+}
+
+export interface ExerciseDef {
+  name: string;
+  meta: string;
+}
+
+export interface WorkoutDef {
+  name: string;
+  duration: string;
+  exercises: ExerciseDef[];
+}
+
+export type PlanDayType = 'train' | 'rest';
+
+export interface PlanDay {
+  type: PlanDayType;
+  key?: string;
+  label?: string;
+}
+
+export interface WorkoutSessionState {
+  exDone: Record<number, boolean>;
+  completed: boolean;
+}
+
+export type WorkoutState = Record<number, Record<string, WorkoutSessionState>>;
+
+export interface HistoryEntry {
+  type: 'xp' | 'system';
+  label: string;
+  xp: number;
+  day: number;
+}
+
+export interface ChallengeDef {
+  id: string;
+  name: string;
+  desc: string;
+  lengthDays: number;
+  target: number;
+  unit: string;
+  xpPerUnit: number;
+  bonusXp: number;
+  logStep?: number;
+}
+
+export interface ChallengeState {
+  id: string;
+  joined: boolean;
+  progress: number;
+  completed: boolean;
+  pushupLog: number;
+}
+
+export interface LeagueNpc {
+  name: string;
+  xp: number;
+}
+
+export interface AchievementDef {
+  id: string;
+  name: string;
+  desc: string;
+  icon: string;
+  test: (s: AppState) => boolean;
+}
+
+export interface FeedItem {
+  who: string;
+  text: string;
+  time: string;
+}
+
+export interface Settings {
+  notifWorkout: boolean;
+  notifStreak: boolean;
+  notifLeague: boolean;
+  notifChallenge: boolean;
+}
+
+export type Route = 'home' | 'train' | 'play' | 'community' | 'profile';
+export type DisplayMode = 'classic' | 'character';
+export type StudioCat = 'base' | 'skin' | 'hair' | 'hairColor' | 'top' | 'bottom' | 'shoes' | 'extra';
+export type PlayTab = 'challenges' | 'league' | 'achv';
+
+export interface AppState {
+  onboarded: boolean;
+  onbStep: number;
+  onbDraft: OnboardingDraft;
+  character: CharacterConfig | null;
+  route: Route;
+  mode: DisplayMode;
+  simDay: number;
+  profile: Profile | null;
+  progress: Progress;
+  stats_workoutsDone: number;
+  today: TodayState;
+  workoutState: WorkoutState;
+  history: HistoryEntry[];
+  challenges: ChallengeState[];
+  leagueXP: number;
+  coins: number;
+  achievements: Record<string, boolean>;
+  cheered: Record<number, boolean>;
+  settings: Settings;
+  viewingWorkout: string | null;
+  viewingCharacter: boolean;
+  studioCat: StudioCat;
+  playTab: PlayTab;
+}
