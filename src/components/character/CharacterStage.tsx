@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { addLights } from '../../lib/characterBuilder';
-import { CLIPS, cloneCharacter, loadAnimationClips, loadCharacterTemplate } from '../../lib/characterModels';
+import { CLIPS, composeCharacter, loadAnimationClips } from '../../lib/characterModels';
 import { Pedestal } from './Pedestal';
 import { useAppStore } from '../../store/useAppStore';
 import type { CharacterConfig } from '../../types';
@@ -62,9 +62,9 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
   useEffect(() => {
     let cancelled = false;
     setLoaded(null);
-    Promise.all([loadCharacterTemplate(cfg.base), loadAnimationClips()]).then(([template, clips]) => {
+    Promise.all([composeCharacter(cfg), loadAnimationClips()]).then(([composed, clips]) => {
       if (cancelled) return;
-      const scene = cloneCharacter(template);
+      const scene = composed.group;
       const mixer = new THREE.AnimationMixer(scene);
       const actions: Loaded['actions'] = {};
       (Object.keys(CLIPS) as (keyof typeof CLIPS)[]).forEach((key) => {
@@ -77,7 +77,8 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
     return () => {
       cancelled = true;
     };
-  }, [cfg.base]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.outfit]);
 
   useFrame((_, delta) => {
     const dt = Math.min(0.05, delta);

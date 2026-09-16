@@ -108,7 +108,7 @@ interface Actions {
   joinChallenge: (id: string) => void;
   logPushups: (id: string) => void;
 
-  updateCharacterField: (key: CatalogKey | 'base' | 'skin', value: string | number) => void;
+  updateCharacterField: (key: CatalogKey | 'base' | 'build' | 'skin', value: string | number) => void;
 
   cheerFeedItem: (index: number) => void;
   toggleSetting: (key: keyof Settings) => void;

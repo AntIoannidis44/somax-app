@@ -2,20 +2,17 @@ import { Icon } from '../Icon';
 import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
-import { CATALOG, HAIR_COLORS, SKIN_TONES } from '../../data/catalog';
+import { BODY_BUILDS, CATALOG, SKIN_TONES } from '../../data/catalog';
 import { isUnlocked, nextUnlock, tierFor, unlockLabel } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
-import type { CatalogItem, CatalogKey, StudioCat } from '../../types';
+import type { CatalogItem, CatalogKey, HairItem, StudioCat } from '../../types';
 
 const STUDIO_CATS: { id: StudioCat; label: string }[] = [
   { id: 'base', label: 'Base' },
+  { id: 'build', label: 'Build' },
   { id: 'skin', label: 'Skin' },
   { id: 'hair', label: 'Hair' },
-  { id: 'hairColor', label: 'Colour' },
-  { id: 'top', label: 'Top' },
-  { id: 'bottom', label: 'Bottom' },
-  { id: 'shoes', label: 'Shoes' },
-  { id: 'extra', label: 'Extras' },
+  { id: 'outfit', label: 'Outfit' },
 ];
 
 function Tile({
@@ -90,6 +87,22 @@ export function CharacterStudioScreen() {
         ))}
       </>
     );
+  } else if (studioCat === 'build') {
+    rail = (
+      <>
+        {BODY_BUILDS.map((b) => (
+          <Tile
+            key={b.id}
+            sel={character.build === b.id}
+            locked={false}
+            art={<CharacterThumbnail cfg={{ ...character, build: b.id }} mode="full" />}
+            name={b.name}
+            lockText=""
+            onClick={() => updateCharacterField('build', b.id)}
+          />
+        ))}
+      </>
+    );
   } else if (studioCat === 'skin') {
     rail = (
       <div className="swatch-row big">
@@ -104,41 +117,12 @@ export function CharacterStudioScreen() {
         ))}
       </div>
     );
-  } else if (studioCat === 'hairColor') {
-    rail = (
-      <>
-        <div className="swatch-row big">
-          {HAIR_COLORS.map((h) => {
-            const locked = !isUnlocked(h, ctx);
-            return (
-              <button
-                key={h.id}
-                className={`swatch${character.hairColor === h.id ? ' sel' : ''}${locked ? ' locked' : ''}`}
-                style={{ background: h.c }}
-                aria-label={h.name}
-                onClick={() => handleWardrobeClick('hairColor', h)}
-              >
-                {locked && <Icon name="lock" />}
-              </button>
-            );
-          })}
-        </div>
-        <div className="swatch-legend">
-          {HAIR_COLORS.map((h) =>
-            character.hairColor === h.id ? (
-              <b key={h.id}>{h.name}</b>
-            ) : h.unlock && !isUnlocked(h, ctx) ? (
-              <span className="muted" key={h.id}>
-                {h.name} · {unlockLabel(h)}
-              </span>
-            ) : null,
-          )}
-        </div>
-      </>
-    );
   } else {
-    const list = CATALOG[studioCat];
-    const mode = studioCat === 'hair' || studioCat === 'extra' ? 'portrait' : 'full';
+    const list =
+      studioCat === 'hair'
+        ? (CATALOG.hair as HairItem[]).filter((it) => !it.base || it.base === character.base)
+        : CATALOG[studioCat];
+    const mode = studioCat === 'hair' ? 'portrait' : 'full';
     rail = (
       <>
         {list.map((it) => {
@@ -191,7 +175,7 @@ export function CharacterStudioScreen() {
           </button>
         ))}
       </div>
-      <div className={`item-rail${studioCat === 'skin' || studioCat === 'hairColor' ? ' is-swatches' : ''}`}>{rail}</div>
+      <div className={`item-rail${studioCat === 'skin' ? ' is-swatches' : ''}`}>{rail}</div>
       {nu ? (
         <div className="unlock-strip">
           <div className="us-head">

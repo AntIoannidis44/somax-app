@@ -114,28 +114,23 @@ npm run preview  # preview the build
 
 ## 5. Phases
 
-- **Phase 0 — Scaffold + port.** Repo, build pipeline, Pages deploy *(scaffold done)*. Port the prototype's state, XP engine and all screens from `somax.html` into React components, keeping `localStorage` persistence. Result: the app as it exists today, hosted, with a real build pipeline.
-- **Phase 1 — Arena renderer.** The visible quality jump. Load a Ready Player Me athlete GLB, play Mixamo run/idle/flex clips, HDRI environment lighting, reflective floor, glowing platform, contact shadows, bloom + ACES tone mapping, gym backdrop, per-screen camera framing.
-- **Phase 2 — Customisation & unlocks.** Rebuild the studio on RPM's Avatar API with our own locker UI and the existing level/streak unlock gating. Persist avatar id; thumbnails via RPM's render API.
-- **Phase 3 — Character (cartoon) mode.** Stylised model on the same rig — Subway Surfers-style — with a toon shading pass. More modes later.
-- **Phase 4 — Mobile packaging.** Expo wrapper per the original brief; R3F runs on Expo via `expo-gl`.
+- **Phase 0 — Scaffold + port.** Done.
+- **Phase 1 — Arena renderer.** Real model + animation done; cinematic lighting (HDRI, bloom, backdrop) not started.
+- **Phase 2 — Customisation & unlocks.** Mostly done: body builds, skin tones, hair, 2 outfits (Trainer/Ranger) all real and wired up. More outfits/hairstyles are a same-pattern extension, not new architecture.
+- **Phase 3 — Character (cartoon) mode.** Not started.
+- **Phase 4 — Mobile packaging.** Not started.
 
-Full scope detail: `../SCOPE-3d-character-upgrade.md`
+RPM is no longer part of this plan (shut down Jan 2026) — see `../SCOPE-3d-character-upgrade.md` for the full, current, up-to-date scope and status. That file is the source of truth for phase detail; this section is a summary only.
 
 ---
 
 ## 6. Open items
 
-**Blocking Phase 1:**
-- [ ] Source and approve 2-4 free/one-time-purchase rigged humanoid GLB base models (CC0, Mixamo-compatible skeleton) — replaces the dead Ready Player Me plan
-- [ ] Mixamo access (free Adobe ID) at https://www.mixamo.com
-
 **Should confirm:**
-- [ ] Cloudflare account created and the repo connected as a Pages project
 - [ ] Claude Code extension installed in VS Code
 - [ ] `code` command added to PATH (VS Code → `Cmd+Shift+P` → "Shell Command: Install 'code' command in PATH")
 - [x] Name confirmed as "Somax"
-- [x] Free-asset path chosen for the beta (free base models + in-house wardrobe, no recurring API cost)
+- [x] Hosting live: https://somax-app.antioannidis.workers.dev
 
 **Carried over from the original brief, unresolved:**
 - **XP fairness model is underspecified and it's the heart of the product.** Users on different quests need comparable League XP or the leaderboard is meaningless. Needs a concrete normalisation formula (percent of prescribed work completed, capped, per activity category) before leagues are coded.

@@ -1,14 +1,12 @@
 export type CharacterBase = 'female' | 'male';
+export type BodyBuild = 'superhero' | 'regular' | 'teen';
 
 export interface CharacterConfig {
   base: CharacterBase;
+  build: BodyBuild;
   skin: number;
   hair: string;
-  hairColor: string;
-  top: string;
-  bottom: string;
-  shoes: string;
-  extra: string;
+  outfit: string;
 }
 
 export interface UnlockRule {
@@ -22,20 +20,14 @@ export interface CatalogItem {
   unlock?: UnlockRule;
 }
 
-export interface HairColorItem extends CatalogItem {
-  c: string;
+export interface HairItem extends CatalogItem {
+  // omitted = applies to both genders (e.g. "None")
+  base?: CharacterBase;
 }
 
-export interface WardrobeItem extends CatalogItem {
-  c: string;
-  style: 'tee' | 'tank' | 'long' | 'shorts';
-}
+export interface OutfitItem extends CatalogItem {}
 
-export interface ShoeItem extends CatalogItem {
-  c: string;
-}
-
-export type CatalogKey = 'hair' | 'hairColor' | 'top' | 'bottom' | 'shoes' | 'extra';
+export type CatalogKey = 'hair' | 'outfit';
 
 export interface CharTier {
   min: number;
@@ -188,7 +180,7 @@ export interface Settings {
 
 export type Route = 'home' | 'train' | 'play' | 'community' | 'profile';
 export type DisplayMode = 'classic' | 'character';
-export type StudioCat = 'base' | 'skin' | 'hair' | 'hairColor' | 'top' | 'bottom' | 'shoes' | 'extra';
+export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'outfit';
 export type PlayTab = 'challenges' | 'league' | 'achv';
 
 export interface AppState {

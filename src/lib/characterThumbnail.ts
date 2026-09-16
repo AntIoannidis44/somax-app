@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { addLights } from './characterBuilder';
-import { cloneCharacter, loadCharacterTemplate } from './characterModels';
+import { composeCharacter } from './characterModels';
 import type { CharacterConfig } from '../types';
 
 export type ThumbnailMode = 'full' | 'portrait';
@@ -13,16 +13,20 @@ let snapCam: THREE.PerspectiveCamera | null = null;
 const snapCache = new Map<string, string>();
 const pending = new Map<string, Promise<string>>();
 
+function cacheKey(cfg: CharacterConfig, mode: ThumbnailMode): string {
+  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.outfit}|${mode}`;
+}
+
 export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode): Promise<string> {
   if (!HAS_3D || !cfg) return Promise.resolve('');
-  const key = `${cfg.base}|${mode}`;
+  const key = cacheKey(cfg, mode);
   const cached = snapCache.get(key);
   if (cached) return Promise.resolve(cached);
   const inFlight = pending.get(key);
   if (inFlight) return inFlight;
 
-  const promise = loadCharacterTemplate(cfg.base)
-    .then((template) => {
+  const promise = composeCharacter(cfg)
+    .then(({ group }) => {
       if (!snapR) {
         snapR = new THREE.WebGLRenderer({ alpha: true, antialias: true, preserveDrawingBuffer: true });
         snapR.setPixelRatio(1);
@@ -41,12 +45,11 @@ export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode):
         snapCam!.position.set(0, 1.0, 5.0);
         snapCam!.lookAt(0, 1.0, 0);
       }
-      const g = cloneCharacter(template);
-      g.rotation.y = mode === 'portrait' ? -0.25 : -0.35;
-      snapScene!.add(g);
+      group.rotation.y = mode === 'portrait' ? -0.25 : -0.35;
+      snapScene!.add(group);
       snapR.render(snapScene!, snapCam!);
       const url = snapR.domElement.toDataURL('image/png');
-      snapScene!.remove(g);
+      snapScene!.remove(group);
       snapCache.set(key, url);
       pending.delete(key);
       return url;

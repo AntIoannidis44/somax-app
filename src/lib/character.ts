@@ -16,13 +16,10 @@ export function findItem<T extends CatalogItem>(list: T[], id: string): T {
 export function defaultCharacter(base?: CharacterBase): CharacterConfig {
   return {
     base: base || 'female',
-    skin: 2,
-    hair: base === 'male' ? 'short' : 'ponytail',
-    hairColor: 'brown',
-    top: 'tee-black',
-    bottom: 'shorts-black',
-    shoes: 'white',
-    extra: 'none',
+    build: 'superhero',
+    skin: 1,
+    hair: 'none',
+    outfit: 'none',
   };
 }
 
@@ -45,7 +42,7 @@ export function unlockLabel(item: CatalogItem): string {
   return item.unlock.streak + '-day streak';
 }
 
-const WARDROBE_KEYS: CatalogKey[] = ['hair', 'hairColor', 'top', 'bottom', 'shoes', 'extra'];
+const WARDROBE_KEYS: CatalogKey[] = ['hair', 'outfit'];
 
 export function allWardrobe(): { key: CatalogKey; item: CatalogItem }[] {
   const out: { key: CatalogKey; item: CatalogItem }[] = [];
