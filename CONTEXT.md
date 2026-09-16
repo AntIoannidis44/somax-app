@@ -55,7 +55,7 @@ Primitive geometry cannot close that gap. It needs real model files, real animat
 |---|---|
 | Build | Vite + React + TypeScript |
 | 3D | three.js + React Three Fiber (`@react-three/fiber`, `@react-three/drei`, `@react-three/postprocessing`) |
-| Hosting | GitHub Pages via GitHub Actions |
+| Hosting | Cloudflare Pages (unlimited free bandwidth for static assets) |
 | Persistence (beta) | `localStorage` — no backend yet |
 
 ### Assets for the character upgrade
@@ -81,16 +81,19 @@ Supabase (managed Postgres + auth). XP must be **server-authoritative** — the 
 
 ```
 somax-app/
-├── .github/workflows/deploy.yml   GitHub Pages deploy on push to main
-├── src/                            (still Vite starter — port pending)
-├── vite.config.ts                  base: '/somax-app/'
-└── CONTEXT.md                      this file
+├── public/models/          Quaternius base characters + animation library (CC0)
+├── src/                     ported React app
+├── vite.config.ts           no base path — served from domain root
+└── CONTEXT.md               this file
 ```
 
 - Repo: https://github.com/AntIoannidis44/somax-app
-- Live URL (once Pages is enabled): https://antioannidis44.github.io/somax-app/
+- Hosting: **Cloudflare Pages** (switched from GitHub Pages 2026-09-17 — Cloudflare doesn't meter bandwidth on its free tier, which matters given the multi-MB 3D assets this app serves repeatedly; GitHub Pages workflow and the `/somax-app/` base path were removed accordingly). Live URL: TBD once the Cloudflare project is connected.
 - First commit `ace9481` — scaffold pushed and confirmed on `origin/main`.
-- Second commit `0c0f7d3` (2026-09-17) — full port of the `somax.html` prototype into React components (onboarding, home, train, play, community, profile, character studio, XP engine, store). Verified working end-to-end in a headless browser. Not yet pushed to origin.
+- Second commit `0c0f7d3` (2026-09-17) — full port of the `somax.html` prototype into React components (onboarding, home, train, play, community, profile, character studio, XP engine, store). Verified working end-to-end in a headless browser.
+- Commits `bfacba4`, `1f3cc54` (2026-09-17) — Quaternius base character models and animation library (CC0), replacing the dead Ready Player Me plan.
+- Commit `fa1de87` (2026-09-17) — hosting switched to Cloudflare Pages.
+- None of the above pushed to `origin` yet.
 
 ### Local environment
 - Node v24.21.0, npm 11.19.0 — installed and verified
@@ -126,7 +129,7 @@ Full scope detail: `../SCOPE-3d-character-upgrade.md`
 - [ ] Mixamo access (free Adobe ID) at https://www.mixamo.com
 
 **Should confirm:**
-- [ ] GitHub Pages source set to **GitHub Actions** (Settings → Pages) so the deploy workflow publishes
+- [ ] Cloudflare account created and the repo connected as a Pages project
 - [ ] Claude Code extension installed in VS Code
 - [ ] `code` command added to PATH (VS Code → `Cmd+Shift+P` → "Shell Command: Install 'code' command in PATH")
 - [x] Name confirmed as "Somax"
