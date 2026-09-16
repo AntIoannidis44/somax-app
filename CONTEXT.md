@@ -88,7 +88,9 @@ somax-app/
 ```
 
 - Repo: https://github.com/AntIoannidis44/somax-app
-- Hosting: **Cloudflare Pages** (switched from GitHub Pages 2026-09-17 — Cloudflare doesn't meter bandwidth on its free tier, which matters given the multi-MB 3D assets this app serves repeatedly; GitHub Pages workflow and the `/somax-app/` base path were removed accordingly). Live URL: TBD once the Cloudflare project is connected.
+- Hosting: **Cloudflare Workers (static assets)** — Cloudflare's current recommended path, superseding classic Pages; same unmetered free bandwidth (switched from GitHub Pages 2026-09-17, relevant given the multi-MB 3D assets this app serves repeatedly). Configured via `wrangler.jsonc` (`assets.directory: ./dist`). GitHub Pages workflow and the `/somax-app/` base path were removed accordingly.
+- **Live URL: https://somax-app.antioannidis.workers.dev** — connected via Cloudflare's Git integration (Workers Builds), auto-deploys on every push to `main`. Verified working end-to-end in a headless browser, zero console errors.
+- A Cloudflare API token (Account → Workers Scripts → Edit, scoped to this account) is in `.env` as `CLOUDFLARE_API_TOKEN`, enabling direct `wrangler deploy`/API access alongside the auto-deploy-on-push.
 - First commit `ace9481` — scaffold pushed and confirmed on `origin/main`.
 - Second commit `0c0f7d3` (2026-09-17) — full port of the `somax.html` prototype into React components (onboarding, home, train, play, community, profile, character studio, XP engine, store). Verified working end-to-end in a headless browser.
 - Commits `bfacba4`, `1f3cc54` (2026-09-17) — Quaternius base character models and animation library (CC0), replacing the dead Ready Player Me plan.
