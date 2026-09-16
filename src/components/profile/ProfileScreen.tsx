@@ -61,8 +61,8 @@ export function ProfileScreen() {
         <button className={mode === 'classic' ? 'active' : ''} onClick={() => setMode('classic')}>
           Classic
         </button>
-        <button className={mode === 'character' ? 'active' : ''} onClick={() => setMode('character')}>
-          Character
+        <button className="disabled" disabled title="Coming soon">
+          Character (coming soon)
         </button>
       </div>
 

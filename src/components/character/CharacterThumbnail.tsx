@@ -1,6 +1,5 @@
-import { useMemo } from 'react';
-import { useAppStore } from '../../store/useAppStore';
-import { currentStyle, getCharacterSnapshot, type ThumbnailMode } from '../../lib/characterThumbnail';
+import { useEffect, useState } from 'react';
+import { getCharacterSnapshot, type ThumbnailMode } from '../../lib/characterThumbnail';
 import type { CharacterConfig } from '../../types';
 
 interface CharacterThumbnailProps {
@@ -10,9 +9,18 @@ interface CharacterThumbnailProps {
 }
 
 export function CharacterThumbnail({ cfg, mode, className }: CharacterThumbnailProps) {
-  const displayMode = useAppStore((s) => s.mode);
-  const style = currentStyle(displayMode);
-  const src = useMemo(() => getCharacterSnapshot(cfg, mode, style), [JSON.stringify(cfg), mode, style]);
+  const [src, setSrc] = useState('');
+
+  useEffect(() => {
+    let cancelled = false;
+    setSrc('');
+    getCharacterSnapshot(cfg, mode).then((url) => {
+      if (!cancelled) setSrc(url);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [cfg.base, mode]);
 
   if (!src) return null;
   return <img className={className || 'fit-img'} src={src} alt="Your character" draggable={false} />;

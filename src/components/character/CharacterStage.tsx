@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import type * as THREE from 'three';
-import { addLights, buildCharacter, disposeGroup, type CharacterStyle } from '../../lib/characterBuilder';
+import * as THREE from 'three';
+import { addLights } from '../../lib/characterBuilder';
+import { CLIPS, cloneCharacter, loadAnimationClips, loadCharacterTemplate } from '../../lib/characterModels';
 import { Pedestal } from './Pedestal';
 import { useAppStore } from '../../store/useAppStore';
-import { currentStyle } from '../../lib/characterThumbnail';
 import type { CharacterConfig } from '../../types';
 
 export type StageView = 'arena' | 'studio';
@@ -37,28 +37,53 @@ function CameraRig({ view }: { view: StageView }) {
   return null;
 }
 
+interface Loaded {
+  scene: THREE.Group;
+  mixer: THREE.AnimationMixer;
+  actions: Partial<Record<keyof typeof CLIPS, THREE.AnimationAction>>;
+}
+
 interface CharacterRigProps {
   cfg: CharacterConfig;
-  style: CharacterStyle;
   view: StageView;
   anim: StageAnim;
   rotRef: React.MutableRefObject<number>;
   velRef: React.MutableRefObject<number>;
   draggingRef: React.MutableRefObject<boolean>;
   idleTRef: React.MutableRefObject<number>;
-  jumpTRef: React.MutableRefObject<number>;
+  flexUntilRef: React.MutableRefObject<number>;
 }
 
-function CharacterRig({ cfg, style, view, anim, rotRef, velRef, draggingRef, idleTRef, jumpTRef }: CharacterRigProps) {
-  const key = `${style}|${JSON.stringify(cfg)}`;
-  const group = useMemo(() => buildCharacter(cfg, style), [key]);
-  useEffect(() => () => disposeGroup(group), [group]);
+function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, flexUntilRef }: CharacterRigProps) {
+  const [loaded, setLoaded] = useState<Loaded | null>(null);
   const timeRef = useRef(0);
+  const activeClipRef = useRef<keyof typeof CLIPS | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoaded(null);
+    Promise.all([loadCharacterTemplate(cfg.base), loadAnimationClips()]).then(([template, clips]) => {
+      if (cancelled) return;
+      const scene = cloneCharacter(template);
+      const mixer = new THREE.AnimationMixer(scene);
+      const actions: Loaded['actions'] = {};
+      (Object.keys(CLIPS) as (keyof typeof CLIPS)[]).forEach((key) => {
+        const clip = clips.find((c) => c.name === CLIPS[key]);
+        if (clip) actions[key] = mixer.clipAction(clip);
+      });
+      activeClipRef.current = null;
+      setLoaded({ scene, mixer, actions });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [cfg.base]);
 
   useFrame((_, delta) => {
     const dt = Math.min(0.05, delta);
     timeRef.current += dt;
-    const g = group;
+    if (!loaded) return;
+    const { scene, mixer, actions } = loaded;
 
     if (!draggingRef.current) {
       rotRef.current += velRef.current;
@@ -70,77 +95,27 @@ function CharacterRig({ cfg, style, view, anim, rotRef, velRef, draggingRef, idl
         if (idleTRef.current > 2.2) rotRef.current += dt * 0.28;
       }
     }
-    g.rotation.y = rotRef.current;
+    scene.rotation.y = rotRef.current;
 
-    let jy = 0;
-    let sy = 1;
-    if (jumpTRef.current >= 0) {
-      jumpTRef.current += dt;
-      const p = jumpTRef.current / 0.62;
-      if (p >= 1) {
-        jumpTRef.current = -1;
-      } else {
-        jy = Math.sin(p * Math.PI) * 0.42;
-        sy = 1 + Math.sin(p * Math.PI) * 0.05;
-      }
+    const flexing = flexUntilRef.current > performance.now() / 1000;
+    const wantClip: keyof typeof CLIPS = flexing ? 'flex' : anim;
+    if (activeClipRef.current !== wantClip) {
+      const prev = activeClipRef.current ? actions[activeClipRef.current] : undefined;
+      const next = actions[wantClip] ?? actions.idle;
+      prev?.fadeOut(0.25);
+      next?.reset().fadeIn(0.25).play();
+      activeClipRef.current = wantClip;
     }
-
-    const ud = g.userData as Record<string, THREE.Object3D | undefined>;
-    if (anim === 'run') {
-      const ph = timeRef.current * 7.2;
-      const sw = Math.sin(ph) * 0.78;
-      if (ud.legL && ud.legR) {
-        ud.legL.rotation.x = sw;
-        ud.legR.rotation.x = -sw;
-      }
-      if (ud.armL && ud.armR) {
-        ud.armL.rotation.x = -sw * 0.85;
-        ud.armR.rotation.x = sw * 0.85;
-        ud.armL.rotation.z = -0.3;
-        ud.armR.rotation.z = 0.3;
-      }
-      g.position.y = Math.abs(Math.cos(ph)) * 0.07 + jy;
-      g.rotation.x = 0.07;
-      if (ud.head) {
-        ud.head.rotation.y = Math.sin(timeRef.current * 0.9) * 0.05;
-        ud.head.rotation.x = -0.05;
-      }
-    } else {
-      if (ud.legL && ud.legR) {
-        ud.legL.rotation.x = 0;
-        ud.legR.rotation.x = 0;
-      }
-      g.position.y = Math.sin(timeRef.current * 2.1) * 0.012 + jy;
-      g.rotation.x = 0;
-      const sway = Math.sin(timeRef.current * 2.1) * 0.03;
-      if (ud.armL && ud.armR) {
-        ud.armL.rotation.x = 0;
-        ud.armR.rotation.x = 0;
-        ud.armL.rotation.z = -0.22 - sway - jy * 0.9;
-        ud.armR.rotation.z = 0.22 + sway + jy * 0.9;
-      }
-      if (ud.head) {
-        ud.head.rotation.y = Math.sin(timeRef.current * 0.9) * 0.08;
-        ud.head.rotation.x = 0;
-      }
-    }
-    g.scale.set(1 / Math.sqrt(sy), sy, 1 / Math.sqrt(sy));
-    if (ud.aura) {
-      ud.aura.rotation.y = -timeRef.current * 0.7;
-      ud.aura.children.forEach((p) => {
-        p.position.y = 1.15 + Math.sin(timeRef.current * 2.4 + (p.userData.phase as number) * 2) * 0.22;
-      });
-    }
+    mixer.update(dt);
   });
 
-  return <primitive object={group} />;
+  if (!loaded) return null;
+  return <primitive object={loaded.scene} />;
 }
 
 export function CharacterStage({ view, anim }: CharacterStageProps) {
   const character = useAppStore((s) => s.character);
-  const displayMode = useAppStore((s) => s.mode);
   const level = useAppStore((s) => s.progress.level);
-  const style = currentStyle(displayMode);
 
   const rotRef = useRef(view === 'arena' ? -0.22 : -0.3);
   const velRef = useRef(0);
@@ -148,7 +123,7 @@ export function CharacterStage({ view, anim }: CharacterStageProps) {
   const movedRef = useRef(0);
   const lastXRef = useRef(0);
   const idleTRef = useRef(0);
-  const jumpTRef = useRef(-1);
+  const flexUntilRef = useRef(-1);
 
   if (!character) return null;
 
@@ -175,7 +150,7 @@ export function CharacterStage({ view, anim }: CharacterStageProps) {
       onPointerUp={() => {
         if (!draggingRef.current) return;
         draggingRef.current = false;
-        if (movedRef.current < 5) jumpTRef.current = 0;
+        if (movedRef.current < 5) flexUntilRef.current = performance.now() / 1000 + 2.4;
       }}
       onPointerCancel={() => {
         draggingRef.current = false;
@@ -191,14 +166,13 @@ export function CharacterStage({ view, anim }: CharacterStageProps) {
         <CameraRig view={view} />
         <CharacterRig
           cfg={character}
-          style={style}
           view={view}
           anim={anim}
           rotRef={rotRef}
           velRef={velRef}
           draggingRef={draggingRef}
           idleTRef={idleTRef}
-          jumpTRef={jumpTRef}
+          flexUntilRef={flexUntilRef}
         />
         <Pedestal level={level} />
       </Canvas>

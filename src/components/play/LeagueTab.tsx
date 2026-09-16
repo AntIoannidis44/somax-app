@@ -1,20 +1,29 @@
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { Icon } from '../Icon';
 import { LEAGUE_NPCS } from '../../data/league';
 import { useAppStore } from '../../store/useAppStore';
-import { currentStyle, getCharacterSnapshot } from '../../lib/characterThumbnail';
+import { getCharacterSnapshot } from '../../lib/characterThumbnail';
 import { initials } from '../../lib/format';
 
 export function LeagueTab() {
   const profile = useAppStore((s) => s.profile);
   const leagueXP = useAppStore((s) => s.leagueXP);
   const character = useAppStore((s) => s.character);
-  const displayMode = useAppStore((s) => s.mode);
 
-  const youAvatarSrc = useMemo(() => {
-    if (!character) return '';
-    return getCharacterSnapshot(character, 'portrait', currentStyle(displayMode));
-  }, [character, displayMode]);
+  const [youAvatarSrc, setYouAvatarSrc] = useState('');
+  useEffect(() => {
+    if (!character) {
+      setYouAvatarSrc('');
+      return;
+    }
+    let cancelled = false;
+    getCharacterSnapshot(character, 'portrait').then((url) => {
+      if (!cancelled) setYouAvatarSrc(url);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [character]);
 
   const rows = LEAGUE_NPCS.map((n) => ({ name: n.name, xp: n.xp, you: false }));
   rows.push({ name: profile?.name || 'You', xp: leagueXP, you: true });

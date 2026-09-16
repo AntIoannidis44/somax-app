@@ -546,6 +546,7 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
     transition: background var(--dur-med) var(--ease-out), color var(--dur-med) var(--ease-out), box-shadow var(--dur-med) var(--ease-out);
 }
 .mode-toggle button.active{ background: var(--surface); color: var(--accent); box-shadow: var(--sh-2); }
+.mode-toggle button.disabled{ color: var(--text-faint); cursor: not-allowed; opacity: 0.55; }
 
 .stat-list{ display:flex; flex-direction:column; gap:14px; }
 .stat-row{ display:flex; align-items:center; gap:11px; }
