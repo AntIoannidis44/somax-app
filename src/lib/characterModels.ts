@@ -84,6 +84,20 @@ const OUTFIT_URLS: Record<string, Record<CharacterBase, OutfitParts>> = {
   },
 };
 
+// Outfits were modeled to fit the Teen build. Corrective uniform scale
+// [x, y, z] to approximate a fit on the other builds - tuned empirically
+// against screenshots, not exact. Teen itself needs none (omitted = 1,1,1).
+const OUTFIT_FIT_SCALE: Partial<Record<BodyBuild, Partial<Record<CharacterBase, THREE.Vector3Tuple>>>> = {
+  superhero: {
+    male: [1.18, 1.08, 1.18],
+    female: [1.16, 1.16, 1.16],
+  },
+  regular: {
+    male: [1.06, 1.03, 1.06],
+    female: [1.1, 1.06, 1.1],
+  },
+};
+
 const loader = new GLTFLoader();
 const gltfCache = new Map<string, Promise<GLTF>>();
 function loadGLTF(url: string): Promise<GLTF> {
@@ -174,19 +188,25 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     }
   });
 
-  const attachPartsFrom = async (urls: string[]) => {
+  const attachPartsFrom = async (urls: string[], scale?: THREE.Vector3Tuple) => {
     const gltfs = await Promise.all(urls.map((u) => loadGLTF(u)));
     gltfs.forEach((g) => {
       findSkinnedMeshes(g.scene).forEach((m) => {
         const attached = attachToSkeleton(m, boneByName);
-        if (attached) group.add(attached);
+        if (!attached) return;
+        if (scale) attached.scale.set(...scale);
+        group.add(attached);
       });
     });
   };
 
   if (cfg.outfit !== 'none' && OUTFIT_URLS[cfg.outfit]) {
     const parts = OUTFIT_URLS[cfg.outfit][cfg.base];
-    await attachPartsFrom(Object.values(parts).filter(Boolean) as string[]);
+    // The outfit was modeled to fit the Teen build. Approximate a fit on
+    // the other builds with a corrective uniform scale - imperfect (no
+    // per-region control), but meaningfully reduces clipping.
+    const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base];
+    await attachPartsFrom(Object.values(parts).filter(Boolean) as string[], scale);
   }
 
   if (cfg.hair !== 'none' && HAIR_URLS[cfg.hair]) {

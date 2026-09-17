@@ -54,17 +54,13 @@ export function CharacterStudioScreen() {
   const setStudioCat = useAppStore((s) => s.setStudioCat);
   const updateCharacterField = useAppStore((s) => s.updateCharacterField);
   const showToast = useAppStore((s) => s.showToast);
-  const [stageCollapsed, setStageCollapsed] = useState(false);
+  const [stageMode, setStageMode] = useState<'collapsed' | 'normal' | 'full'>('normal');
 
   const lvl = progress.level;
   const t = tierFor(lvl);
   const ctx = { level: progress.level, longestStreak: progress.longestStreak };
 
   function handleWardrobeClick(key: CatalogKey, item: CatalogItem) {
-    if (key === 'outfit' && item.id !== 'none' && character.build !== 'teen') {
-      showToast('This outfit needs the Teen build to fit properly');
-      return;
-    }
     if (!isUnlocked(item, ctx)) {
       showToast(
         item.unlock?.level
@@ -100,11 +96,11 @@ export function CharacterStudioScreen() {
           <Tile
             key={b.id}
             sel={character.build === b.id}
-            locked={false}
+            locked={!isUnlocked(b, ctx)}
             art={<CharacterThumbnail cfg={{ ...character, build: b.id }} mode="full" />}
             name={b.name}
-            lockText=""
-            onClick={() => updateCharacterField('build', b.id)}
+            lockText={unlockLabel(b)}
+            onClick={() => handleWardrobeClick('build', b)}
           />
         ))}
       </>
@@ -136,14 +132,8 @@ export function CharacterStudioScreen() {
           // recomposite whatever hair/outfit happens to be equipped, which
           // would multiply texture loads across every tile in the list.
           const isolated = studioCat === 'hair' ? { ...character, outfit: 'none' } : { ...character, hair: 'none' };
-          // Outfits are only cleanly fitted on the Teen build - Superhero
-          // clips badly everywhere, and Regular has a visible gap/clipping
-          // issue at least on the female mesh. Preview on Teen so the
-          // thumbnail isn't showing a broken fit, and gate selection.
-          const buildLocked = studioCat === 'outfit' && it.id !== 'none' && character.build !== 'teen';
-          const previewBuild = buildLocked ? 'teen' : isolated.build;
-          const cfg = { ...isolated, build: previewBuild, [studioCat]: it.id };
-          const locked = buildLocked || !isUnlocked(it, ctx);
+          const cfg = { ...isolated, [studioCat]: it.id };
+          const locked = !isUnlocked(it, ctx);
           return (
             <Tile
               key={it.id}
@@ -151,7 +141,7 @@ export function CharacterStudioScreen() {
               locked={locked}
               art={<CharacterThumbnail cfg={cfg} mode={mode} />}
               name={it.name}
-              lockText={buildLocked ? 'Needs Teen' : unlockLabel(it)}
+              lockText={unlockLabel(it)}
               onClick={() => handleWardrobeClick(studioCat, it)}
             />
           );
@@ -166,7 +156,7 @@ export function CharacterStudioScreen() {
   const pct = Math.min(1, (progress.totalXP - floor) / (ceil - floor));
 
   return (
-    <div className={`studio${stageCollapsed ? ' stage-collapsed' : ''}`}>
+    <div className={`studio${stageMode !== 'normal' ? ` stage-${stageMode}` : ''}`}>
       <div className="stage3d" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
         <div className="stage-hud">
           <div className="hud-chip">
@@ -182,9 +172,16 @@ export function CharacterStudioScreen() {
       </div>
       <div className="cat-rail">
         <button
-          className="stage-toggle-btn"
-          aria-label={stageCollapsed ? 'Expand character view' : 'Collapse character view'}
-          onClick={() => setStageCollapsed((v) => !v)}
+          className="stage-toggle-btn collapse"
+          aria-label={stageMode === 'collapsed' ? 'Restore character view' : 'Collapse character view to browse'}
+          onClick={() => setStageMode((m) => (m === 'collapsed' ? 'normal' : 'collapsed'))}
+        >
+          <Icon name="chevron" />
+        </button>
+        <button
+          className="stage-toggle-btn expand"
+          aria-label={stageMode === 'full' ? 'Restore character view' : 'Expand character view to almost full screen'}
+          onClick={() => setStageMode((m) => (m === 'full' ? 'normal' : 'full'))}
         >
           <Icon name="chevron" />
         </button>

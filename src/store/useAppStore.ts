@@ -270,15 +270,8 @@ export const useAppStore = create<Store>()(
           set(produce((st) => { st.character!.base = value as 'female' | 'male'; }));
           return;
         }
-        if (key === 'outfit' && value !== 'none' && s.character.build !== 'teen') {
-          get().showToast('This outfit needs the Teen build to fit properly');
-          return;
-        }
         if (key === 'build') {
-          set(produce((st) => {
-            st.character!.build = value as CharacterConfig['build'];
-            if (value !== 'teen') st.character!.outfit = 'none';
-          }));
+          set(produce((st) => { st.character!.build = value as CharacterConfig['build']; }));
           return;
         }
         set(produce((st) => { (st.character as any)[key] = value; }));

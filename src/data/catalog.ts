@@ -12,9 +12,9 @@ export const CHAR_TIERS: CharTier[] = [
 export const SKIN_TONES: string[] = ['#e8bd98', '#b57c50', '#6b4429'];
 
 export const BODY_BUILDS: (CatalogItem & { id: BodyBuild })[] = [
-  { id: 'superhero', name: 'Athletic' },
   { id: 'regular', name: 'Regular' },
   { id: 'teen', name: 'Teen' },
+  { id: 'superhero', name: 'Athletic', unlock: { level: 8 } },
 ];
 
 export const HAIR_STYLES: HairItem[] = [
@@ -42,4 +42,5 @@ export const OUTFITS: OutfitItem[] = [
 export const CATALOG: Record<CatalogKey, CatalogItem[]> = {
   hair: HAIR_STYLES,
   outfit: OUTFITS,
+  build: BODY_BUILDS,
 };

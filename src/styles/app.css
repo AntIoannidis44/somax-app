@@ -694,6 +694,7 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .studio.stage-collapsed{ --stage-h: 56px; }
 .studio.stage-collapsed .stage-hint,
 .studio.stage-collapsed .stage-hud{ opacity:0; pointer-events:none; }
+.studio.stage-full{ --stage-h: clamp(480px, 78vh, 720px); }
 .stage3d::before{
     content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
     background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
@@ -736,17 +737,23 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .cat-chip.active{ background: var(--text); color: var(--bg); }
 
 .stage-toggle-btn{
-    flex-shrink:0; width:32px; height:32px; border-radius:50%; border:none; margin-right:2px;
+    flex-shrink:0; width:32px; height:32px; border-radius:50%; border:none;
     background: var(--surface-2); color: var(--text-dim); cursor:pointer; display:flex; align-items:center; justify-content:center;
-    transition: transform var(--dur-fast, 160ms) var(--ease-out, ease), background var(--dur-fast, 160ms) var(--ease-out, ease);
+    transition: transform var(--dur-fast, 160ms) var(--ease-out, ease), background var(--dur-fast, 160ms) var(--ease-out, ease), color var(--dur-fast, 160ms) var(--ease-out, ease);
 }
 .stage-toggle-btn:active{ transform: scale(.9); }
-.stage-toggle-btn svg{ width:15px; height:15px; rotate:-90deg; transition: rotate var(--dur-med, 240ms) var(--ease-out, ease); }
-.studio.stage-collapsed .stage-toggle-btn svg{ rotate: 90deg; }
+.stage-toggle-btn svg{ width:15px; height:15px; transition: rotate var(--dur-med, 240ms) var(--ease-out, ease); }
+.stage-toggle-btn.collapse svg{ rotate:-90deg; }
+.stage-toggle-btn.expand svg{ rotate:90deg; }
+.studio.stage-collapsed .stage-toggle-btn.collapse{ background: var(--text); color: var(--bg); }
+.studio.stage-full .stage-toggle-btn.expand{ background: var(--text); color: var(--bg); }
 
 .item-rail{ display:flex; gap:10px; overflow-x:auto; padding: 12px 22px 6px; scrollbar-width:none; scroll-snap-type:x proximity; }
 .item-rail::-webkit-scrollbar{ display:none; }
 .item-rail.is-swatches{ flex-direction:column; gap:6px; overflow:visible; }
+/* When the stage is collapsed for browsing, use the freed vertical space:
+   wrap items into a grid instead of a single horizontally-scrolling row. */
+.studio.stage-collapsed .item-rail:not(.is-swatches){ flex-wrap:wrap; overflow-x:visible; scroll-snap-type:none; }
 .item-tile{
     flex:0 0 104px; scroll-snap-align:start; border-radius:18px; border:1.5px solid var(--line); background: var(--surface-2); padding:6px 6px 9px; text-align:center; cursor:pointer;
     transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-med) var(--ease-out);

@@ -27,7 +27,7 @@ export interface HairItem extends CatalogItem {
 
 export interface OutfitItem extends CatalogItem {}
 
-export type CatalogKey = 'hair' | 'outfit';
+export type CatalogKey = 'hair' | 'outfit' | 'build';
 
 export interface CharTier {
   min: number;
