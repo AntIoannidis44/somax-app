@@ -691,10 +691,16 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
       radial-gradient(70% 55% at 50% 22%, color-mix(in srgb, var(--t1) 55%, transparent), transparent 70%),
       linear-gradient(180deg, #0b1a45 0%, #070f2a 100%);
 }
-.studio.stage-collapsed{ --stage-h: 56px; }
+.studio.stage-collapsed{ --stage-h: 0px; }
 .studio.stage-collapsed .stage-hint,
 .studio.stage-collapsed .stage-hud{ opacity:0; pointer-events:none; }
 .studio.stage-full{ --stage-h: clamp(480px, 78vh, 720px); }
+
+.stage-controls-bar{
+    position:sticky; top:0; z-index:6; flex-shrink:0; display:flex; align-items:center; justify-content:space-between;
+    gap:10px; padding:10px 14px; background: var(--surface); border-bottom:1px solid var(--line-soft);
+}
+.stage-controls-label{ font-size:12px; font-weight:700; color: var(--text-faint); letter-spacing:.02em; }
 .stage3d::before{
     content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
     background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
@@ -723,8 +729,8 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .stage-fallback{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color: rgba(255,255,255,.7); font-size:13px; text-align:center; padding:20px; }
 
 .cat-rail{
-    display:flex; align-items:center; gap:6px; overflow-x:auto; padding: 14px 22px 4px; scrollbar-width:none;
-    background: var(--surface); position:sticky; top: var(--stage-h); z-index:3;
+    display:flex; align-items:center; gap:6px; overflow-x:auto; padding: 16px 22px; scrollbar-width:none;
+    background: var(--surface); position:sticky; top: var(--stage-h); z-index:3; border-bottom:1px solid var(--line-soft);
     transition: top var(--dur-med, 240ms) var(--ease-out, ease);
 }
 .cat-rail::-webkit-scrollbar{ display:none; }
@@ -748,12 +754,15 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .studio.stage-collapsed .stage-toggle-btn.collapse{ background: var(--text); color: var(--bg); }
 .studio.stage-full .stage-toggle-btn.expand{ background: var(--text); color: var(--bg); }
 
-.item-rail{ display:flex; gap:10px; overflow-x:auto; padding: 12px 22px 6px; scrollbar-width:none; scroll-snap-type:x proximity; }
+.item-rail{ display:flex; gap:10px; overflow-x:auto; padding: 18px 22px 10px; scrollbar-width:none; scroll-snap-type:x proximity; }
 .item-rail::-webkit-scrollbar{ display:none; }
 .item-rail.is-swatches{ flex-direction:column; gap:6px; overflow:visible; }
 /* When the stage is collapsed for browsing, use the freed vertical space:
-   wrap items into a grid instead of a single horizontally-scrolling row. */
-.studio.stage-collapsed .item-rail:not(.is-swatches){ flex-wrap:wrap; overflow-x:visible; scroll-snap-type:none; }
+   lay items out in an even grid instead of a single horizontally-scrolling row. */
+.studio.stage-collapsed .item-rail:not(.is-swatches){
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap:14px;
+    overflow-x:visible; scroll-snap-type:none; padding: 22px;
+}
 .item-tile{
     flex:0 0 104px; scroll-snap-align:start; border-radius:18px; border:1.5px solid var(--line); background: var(--surface-2); padding:6px 6px 9px; text-align:center; cursor:pointer;
     transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-med) var(--ease-out);

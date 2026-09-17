@@ -11,7 +11,7 @@ import type { CatalogItem, CatalogKey, HairItem, StudioCat } from '../../types';
 const STUDIO_CATS: { id: StudioCat; label: string }[] = [
   { id: 'base', label: 'Base' },
   { id: 'build', label: 'Build' },
-  { id: 'skin', label: 'Skin' },
+  { id: 'skin', label: 'Complexion' },
   { id: 'hair', label: 'Hair' },
   { id: 'outfit', label: 'Outfit' },
 ];
@@ -113,7 +113,7 @@ export function CharacterStudioScreen() {
             key={col}
             className={`swatch${character.skin === i ? ' sel' : ''}`}
             style={{ background: col }}
-            aria-label={`Skin tone ${i + 1}`}
+            aria-label={`Complexion ${i + 1}`}
             onClick={() => updateCharacterField('skin', i)}
           />
         ))}
@@ -157,6 +157,25 @@ export function CharacterStudioScreen() {
 
   return (
     <div className={`studio${stageMode !== 'normal' ? ` stage-${stageMode}` : ''}`}>
+      <div className="stage-controls-bar">
+        <button
+          className="stage-toggle-btn collapse"
+          aria-label={stageMode === 'collapsed' ? 'Restore character view' : 'Collapse character view to browse'}
+          onClick={() => setStageMode((m) => (m === 'collapsed' ? 'normal' : 'collapsed'))}
+        >
+          <Icon name="chevron" />
+        </button>
+        <span className="stage-controls-label">
+          {stageMode === 'collapsed' ? 'Customising' : stageMode === 'full' ? 'Viewing' : 'Character'}
+        </span>
+        <button
+          className="stage-toggle-btn expand"
+          aria-label={stageMode === 'full' ? 'Restore character view' : 'Expand character view to almost full screen'}
+          onClick={() => setStageMode((m) => (m === 'full' ? 'normal' : 'full'))}
+        >
+          <Icon name="chevron" />
+        </button>
+      </div>
       <div className="stage3d" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
         <div className="stage-hud">
           <div className="hud-chip">
@@ -171,20 +190,6 @@ export function CharacterStudioScreen() {
         </div>
       </div>
       <div className="cat-rail">
-        <button
-          className="stage-toggle-btn collapse"
-          aria-label={stageMode === 'collapsed' ? 'Restore character view' : 'Collapse character view to browse'}
-          onClick={() => setStageMode((m) => (m === 'collapsed' ? 'normal' : 'collapsed'))}
-        >
-          <Icon name="chevron" />
-        </button>
-        <button
-          className="stage-toggle-btn expand"
-          aria-label={stageMode === 'full' ? 'Restore character view' : 'Expand character view to almost full screen'}
-          onClick={() => setStageMode((m) => (m === 'full' ? 'normal' : 'full'))}
-        >
-          <Icon name="chevron" />
-        </button>
         {STUDIO_CATS.map((k) => (
           <button
             key={k.id}

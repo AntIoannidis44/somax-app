@@ -37,14 +37,14 @@ export function CharacterStep() {
         </div>
       </div>
       <div className="field" style={{ marginTop: 20 }}>
-        <label>Skin tone</label>
+        <label>Complexion</label>
         <div className="swatch-row">
           {SKIN_TONES.map((c, i) => (
             <button
               key={c}
               className={`swatch${dc.skin === i ? ' sel' : ''}`}
               style={{ background: c }}
-              aria-label={`Skin tone ${i + 1}`}
+              aria-label={`Complexion ${i + 1}`}
               onClick={() => setOnbCharacterSkin(i)}
             />
           ))}

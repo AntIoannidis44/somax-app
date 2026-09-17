@@ -18,12 +18,18 @@ const BODY_URLS: Record<BodyBuild, Record<CharacterBase, string>> = {
   },
 };
 
-// index 0/1/2 -> Light/Medium/Dark, the only real baked skin variants that exist.
+// index 0/1/2 -> Light/Medium/Dark complexion. These are pre-composited
+// (see public/models/characters/*_Complexion_*.png) from the pack's raw
+// Light/Dark textures: a saturation-threshold mask separates the actual
+// skin pixels (warm, saturated) from the baked-in default garment (a
+// near-neutral grey/black in every variant), so only real skin changes
+// tone - the garment always renders in its one fixed dark look, instead
+// of shifting color along with the chosen complexion.
 function skinTextureName(build: BodyBuild, base: CharacterBase, skin: number): string {
   const buildName = build[0].toUpperCase() + build.slice(1);
   const baseName = base[0].toUpperCase() + base.slice(1);
   const tone = ['Light', 'Medium', 'Dark'][Math.max(0, Math.min(2, skin))];
-  return `/models/characters/T_${buildName}_${baseName}_${tone}_BaseColor.png`;
+  return `/models/characters/T_${buildName}_${baseName}_Complexion_${tone}.png`;
 }
 
 const ANIMATIONS_URL = '/models/animations/UAL1_Standard.glb';
@@ -90,7 +96,7 @@ const OUTFIT_URLS: Record<string, Record<CharacterBase, OutfitParts>> = {
 const OUTFIT_FIT_SCALE: Partial<Record<BodyBuild, Partial<Record<CharacterBase, THREE.Vector3Tuple>>>> = {
   superhero: {
     male: [1.18, 1.08, 1.18],
-    female: [1.16, 1.16, 1.16],
+    female: [1.2, 1.28, 1.2],
   },
   regular: {
     male: [1.06, 1.03, 1.06],
