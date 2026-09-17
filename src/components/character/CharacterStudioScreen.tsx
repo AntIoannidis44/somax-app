@@ -126,7 +126,11 @@ export function CharacterStudioScreen() {
     rail = (
       <>
         {list.map((it) => {
-          const cfg = { ...character, [studioCat]: it.id };
+          // Isolate the preview to the dimension being browsed - don't also
+          // recomposite whatever hair/outfit happens to be equipped, which
+          // would multiply texture loads across every tile in the list.
+          const isolated = studioCat === 'hair' ? { ...character, outfit: 'none' } : { ...character, hair: 'none' };
+          const cfg = { ...isolated, [studioCat]: it.id };
           const locked = !isUnlocked(it, ctx);
           return (
             <Tile
