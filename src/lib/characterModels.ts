@@ -268,11 +268,18 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
   // Outfit pieces can *also* carry a small patch of baked-in exposed skin
   // (e.g. the trainer kit's short sleeves leave the forearm/hand modeled
   // as part of the "Arms" mesh, not the body) - textured from the same
-  // pack's own fixed reference copy of the base skin, under the exact
-  // same material name as the body's. Left alone, that patch stays one
-  // fixed tone regardless of the complexion picked, visibly mismatched
-  // against the face - so retarget it too wherever it turns up.
-  const skinMaterialName = `MI_${cfg.build[0].toUpperCase()}${cfg.build.slice(1)}_${cfg.base[0].toUpperCase()}${cfg.base.slice(1)}`;
+  // pack's own fixed reference copy of the base skin, under the same
+  // MI_{Build}_{Base} naming as the body's own material. Left alone, that
+  // patch stays one fixed tone regardless of the complexion picked,
+  // visibly mismatched against the face - so retarget it too wherever it
+  // turns up. Match by pattern, not by the current build/base: these
+  // outfit files are shared across all three body builds, but the name
+  // baked into the file is always the one build it was originally
+  // authored against (e.g. every "Arms" piece says MI_Regular_Male even
+  // when attached to a Teen or Superhero character) - an exact match
+  // against cfg.build only worked for Regular and silently missed the
+  // identical bug on Teen/Superhero.
+  const SKIN_MATERIAL_RE = /^MI_(Superhero|Regular|Teen)_(Male|Female)$/;
   const skinTex = await loadSkinTexture(skinTextureName(cfg.build, cfg.base, cfg.skin));
   bodySkinned.forEach((m) => {
     const mat = m.material as THREE.MeshStandardMaterial;
@@ -289,10 +296,22 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     const gltfs = await Promise.all(urls.map((u) => loadGLTF(u)));
     gltfs.forEach((g) => {
       findSkinnedMeshes(g.scene).forEach((m) => {
-        const attached = attachToSkeleton(m, boneByName, scale);
+        const isSkinPatch = !!(m.material as THREE.MeshStandardMaterial)?.name?.match(SKIN_MATERIAL_RE);
+        // The uniform scale+normal-inflate correction is tuned for garment
+        // fabric (legs, torso) being stretched onto a bulkier body - applied
+        // to this tiny anatomical hand/wrist patch instead, the same fixed
+        // inflate distance is large relative to finger geometry and mangles
+        // its normals, making it render washed-out/pale under the stage
+        // lighting regardless of its (correctly assigned, correctly dark)
+        // texture. Confirmed by direct pixel sampling: the texture data at
+        // this mesh's own UV coordinates was already correctly dark even
+        // while the rendered screenshot showed it pale - a lighting/normal
+        // artifact, not a texture or material bug. Skip the correction for
+        // this one piece; it doesn't need to stretch to begin with.
+        const attached = attachToSkeleton(m, boneByName, isSkinPatch ? undefined : scale);
         if (!attached) return;
         const mat = attached.material as THREE.MeshStandardMaterial;
-        if (mat?.name === skinMaterialName && mat.map) {
+        if (mat?.name && SKIN_MATERIAL_RE.test(mat.name) && mat.map) {
           const cloned = mat.clone();
           cloned.map = skinTex;
           attached.material = cloned;
