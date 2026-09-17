@@ -129,8 +129,11 @@ function attachToSkeleton(mesh: THREE.SkinnedMesh, boneByName: Map<string, THREE
   const bones = srcSkeleton.bones.map((b) => boneByName.get(b.name));
   if (bones.some((b) => !b)) return null;
   const attached = new THREE.SkinnedMesh(mesh.geometry, mesh.material);
-  attached.castShadow = true;
-  attached.receiveShadow = true;
+  // Skip shadow casting on hair/outfit overlays - the body underneath
+  // already casts a similar silhouette, so this saves real shadow-pass
+  // draw calls (a known mobile GPU cost) for little visible difference.
+  attached.castShadow = false;
+  attached.receiveShadow = false;
   const skeleton = new THREE.Skeleton(bones as THREE.Bone[], srcSkeleton.boneInverses);
   attached.bind(skeleton, mesh.bindMatrix);
   return attached;

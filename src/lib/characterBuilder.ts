@@ -41,7 +41,7 @@ export function addLights(scene: THREE.Scene, shadows: boolean): void {
   key.position.set(2.6, 5, 3.4);
   if (shadows) {
     key.castShadow = true;
-    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.mapSize.set(512, 512);
     key.shadow.camera.left = -2;
     key.shadow.camera.right = 2;
     key.shadow.camera.top = 3.5;

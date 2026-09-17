@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Icon } from '../Icon';
 import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
@@ -53,12 +54,17 @@ export function CharacterStudioScreen() {
   const setStudioCat = useAppStore((s) => s.setStudioCat);
   const updateCharacterField = useAppStore((s) => s.updateCharacterField);
   const showToast = useAppStore((s) => s.showToast);
+  const [stageCollapsed, setStageCollapsed] = useState(false);
 
   const lvl = progress.level;
   const t = tierFor(lvl);
   const ctx = { level: progress.level, longestStreak: progress.longestStreak };
 
   function handleWardrobeClick(key: CatalogKey, item: CatalogItem) {
+    if (key === 'outfit' && item.id !== 'none' && character.build !== 'teen') {
+      showToast('This outfit needs the Teen build to fit properly');
+      return;
+    }
     if (!isUnlocked(item, ctx)) {
       showToast(
         item.unlock?.level
@@ -130,8 +136,14 @@ export function CharacterStudioScreen() {
           // recomposite whatever hair/outfit happens to be equipped, which
           // would multiply texture loads across every tile in the list.
           const isolated = studioCat === 'hair' ? { ...character, outfit: 'none' } : { ...character, hair: 'none' };
-          const cfg = { ...isolated, [studioCat]: it.id };
-          const locked = !isUnlocked(it, ctx);
+          // Outfits are only cleanly fitted on the Teen build - Superhero
+          // clips badly everywhere, and Regular has a visible gap/clipping
+          // issue at least on the female mesh. Preview on Teen so the
+          // thumbnail isn't showing a broken fit, and gate selection.
+          const buildLocked = studioCat === 'outfit' && it.id !== 'none' && character.build !== 'teen';
+          const previewBuild = buildLocked ? 'teen' : isolated.build;
+          const cfg = { ...isolated, build: previewBuild, [studioCat]: it.id };
+          const locked = buildLocked || !isUnlocked(it, ctx);
           return (
             <Tile
               key={it.id}
@@ -139,7 +151,7 @@ export function CharacterStudioScreen() {
               locked={locked}
               art={<CharacterThumbnail cfg={cfg} mode={mode} />}
               name={it.name}
-              lockText={unlockLabel(it)}
+              lockText={buildLocked ? 'Needs Teen' : unlockLabel(it)}
               onClick={() => handleWardrobeClick(studioCat, it)}
             />
           );
@@ -154,7 +166,7 @@ export function CharacterStudioScreen() {
   const pct = Math.min(1, (progress.totalXP - floor) / (ceil - floor));
 
   return (
-    <div className="studio">
+    <div className={`studio${stageCollapsed ? ' stage-collapsed' : ''}`}>
       <div className="stage3d" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
         <div className="stage-hud">
           <div className="hud-chip">
@@ -169,6 +181,13 @@ export function CharacterStudioScreen() {
         </div>
       </div>
       <div className="cat-rail">
+        <button
+          className="stage-toggle-btn"
+          aria-label={stageCollapsed ? 'Expand character view' : 'Collapse character view'}
+          onClick={() => setStageCollapsed((v) => !v)}
+        >
+          <Icon name="chevron" />
+        </button>
         {STUDIO_CATS.map((k) => (
           <button
             key={k.id}
