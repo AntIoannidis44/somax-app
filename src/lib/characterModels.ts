@@ -19,18 +19,27 @@ const BODY_URLS: Record<BodyBuild, Record<CharacterBase, string>> = {
   },
 };
 
-// index 0/1/2 -> Light/Medium/Dark complexion. These are pre-composited
-// (see public/models/characters/*_Complexion_*.png) from the pack's raw
-// Light/Dark textures: a saturation-threshold mask separates the actual
-// skin pixels (warm, saturated) from the baked-in default garment (a
-// near-neutral grey/black in every variant), so only real skin changes
-// tone - the garment always renders in its one fixed dark look, instead
-// of shifting color along with the chosen complexion.
+// index 0/1/2 -> Light/Medium/Dark complexion. Pre-composited by
+// scripts/generate_complexion_textures.py (see public/models/characters/
+// *_Complexion_*.png) from the pack's single base texture per build: a
+// saturation-threshold mask separates real skin pixels (warm, saturated)
+// from the baked-in default garment (near-neutral grey/black), then only
+// the skin pixels get tinted toward the target tone via a color ratio -
+// the garment stays fixed regardless of the chosen complexion.
+//
+// TEXTURE_VERSION cache-busts these filenames: they're served with a 24h
+// Cache-Control (see public/_headers) since they're not content-hashed
+// like the JS bundle, so both the CDN edge and every visited browser can
+// keep serving pre-fix bytes for up to a day after a real deploy unless
+// the URL itself changes. Bump this whenever generate_complexion_textures
+// output changes.
+const TEXTURE_VERSION = 2;
+
 function skinTextureName(build: BodyBuild, base: CharacterBase, skin: number): string {
   const buildName = build[0].toUpperCase() + build.slice(1);
   const baseName = base[0].toUpperCase() + base.slice(1);
   const tone = ['Light', 'Medium', 'Dark'][Math.max(0, Math.min(2, skin))];
-  return `/models/characters/T_${buildName}_${baseName}_Complexion_${tone}.png`;
+  return `/models/characters/T_${buildName}_${baseName}_Complexion_${tone}.png?v=${TEXTURE_VERSION}`;
 }
 
 const ANIMATIONS_URL = '/models/animations/UAL1_Standard.glb';

@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { addLights } from './characterBuilder';
-import { composeCharacter } from './characterModels';
+import { CLIPS, composeCharacter, loadAnimationClips } from './characterModels';
 import type { CharacterConfig } from '../types';
 
 export type ThumbnailMode = 'full' | 'portrait';
@@ -25,8 +25,25 @@ export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode):
   const inFlight = pending.get(key);
   if (inFlight) return inFlight;
 
-  const promise = composeCharacter(cfg)
-    .then(({ group }) => {
+  const promise = Promise.all([composeCharacter(cfg), loadAnimationClips()])
+    .then(([{ group }, clips]) => {
+      // Straight out of composeCharacter, the skeleton sits in its raw
+      // bind pose (T-pose: arms out to the sides) - CharacterStage only
+      // looks like a natural standing character because it separately
+      // drives an AnimationMixer every frame. A thumbnail is a single
+      // still render with no mixer, so without this it freezes on the
+      // T-pose - wider than a standing pose, which is why it also reads
+      // as smaller/lower within a frame sized for a normal stance.
+      const idleClip = clips.find((c) => c.name === CLIPS.idle);
+      if (idleClip) {
+        const mixer = new THREE.AnimationMixer(group);
+        mixer.clipAction(idleClip).play();
+        // Frame 0 of this clip is a static T-pose reference frame, not the
+        // actual idle stance (CharacterStage never shows a T-pose because
+        // it always advances by a real, non-zero delta before any frame
+        // is ever seen) - step past it into the real loop content.
+        mixer.update(0.3);
+      }
       if (!snapR) {
         snapR = new THREE.WebGLRenderer({ alpha: true, antialias: true, preserveDrawingBuffer: true });
         snapR.setPixelRatio(1);
