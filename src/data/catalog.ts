@@ -11,6 +11,18 @@ export const CHAR_TIERS: CharTier[] = [
 // real variants that exist for these models.
 export const SKIN_TONES: string[] = ['#e8bd98', '#b57c50', '#6b4429'];
 
+// Hair meshes ship with a near-neutral grey base texture (mean ~ (143,144,141),
+// no baked-in color) made for tinting - applied as a material color multiply,
+// not a separate texture per color like Complexion needed.
+export const HAIR_COLORS: { name: string; hex: string }[] = [
+  { name: 'Black', hex: '#1b1712' },
+  { name: 'Dark Brown', hex: '#3d2a1c' },
+  { name: 'Brown', hex: '#6f4a2f' },
+  { name: 'Auburn', hex: '#8a3f28' },
+  { name: 'Blonde', hex: '#cfa15e' },
+  { name: 'Grey', hex: '#9b978f' },
+];
+
 export const BODY_BUILDS: (CatalogItem & { id: BodyBuild })[] = [
   { id: 'regular', name: 'Regular' },
   { id: 'teen', name: 'Teen' },

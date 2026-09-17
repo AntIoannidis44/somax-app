@@ -21,7 +21,7 @@ export function CharacterThumbnail({ cfg, mode, className }: CharacterThumbnailP
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.outfit, mode]);
+  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.hairColor, cfg.outfit, mode]);
 
   if (!src) return null;
   return <img className={className || 'fit-img'} src={src} alt="Your character" draggable={false} />;

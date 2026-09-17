@@ -19,6 +19,7 @@ export function defaultCharacter(base?: CharacterBase): CharacterConfig {
     build: 'regular',
     skin: 1,
     hair: 'none',
+    hairColor: 0,
     outfit: 'none',
   };
 }

@@ -6,6 +6,7 @@ export interface CharacterConfig {
   build: BodyBuild;
   skin: number;
   hair: string;
+  hairColor: number;
   outfit: string;
 }
 
@@ -180,7 +181,7 @@ export interface Settings {
 
 export type Route = 'home' | 'train' | 'play' | 'community' | 'profile';
 export type DisplayMode = 'classic' | 'character';
-export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'outfit';
+export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'hairColor' | 'outfit';
 export type PlayTab = 'challenges' | 'league' | 'achv';
 
 export interface AppState {

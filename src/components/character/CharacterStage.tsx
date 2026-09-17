@@ -78,7 +78,7 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.outfit]);
+  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.hairColor, cfg.outfit]);
 
   useFrame((_, delta) => {
     const dt = Math.min(0.05, delta);

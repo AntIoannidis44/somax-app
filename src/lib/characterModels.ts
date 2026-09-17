@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader, type GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { clone as skeletonClone } from 'three/examples/jsm/utils/SkeletonUtils.js';
 import type { BodyBuild, CharacterBase, CharacterConfig } from '../types';
+import { HAIR_COLORS } from '../data/catalog';
 
 const BODY_URLS: Record<BodyBuild, Record<CharacterBase, string>> = {
   superhero: {
@@ -160,13 +161,26 @@ function findSkinnedMeshes(root: THREE.Object3D): THREE.SkinnedMesh[] {
 // and hair share the exact same rig family/bind pose as the base bodies
 // (verified: identical joint names and counts across all these packs).
 //
-// `scale`, if given, is baked into the cloned geometry's vertex positions
-// directly (geometry.scale()) rather than applied as the SkinnedMesh's own
-// transform. The latter looked identical for uniformly-weighted regions but
-// produced real geometric tearing wherever multiple bones blend (thighs,
-// hips) - confirmed by a plain-color material test showing the artifact was
-// geometric, not textural, and that it only appeared on builds with a scale
-// correction applied (Teen, with none, was always clean).
+// The outfit pack ships exactly one mesh per piece per gender, sculpted to
+// fit the Teen build's proportions (Teen uses it with zero correction and
+// is clean from every angle). Regular/Superhero are bulkier body variants
+// this project added beyond what the pack's outfits were made for, so
+// their surface pokes through the unmodified outfit mesh in places.
+//
+// `scale`, if given, first applies a uniform bounding-box-centered scale
+// (baked into vertex positions, not the SkinnedMesh transform, since
+// scaling the transform directly conflicts with skinning). But a uniform
+// scale only approximates the real body's silhouette - wherever the actual
+// (non-uniformly bulkier) body surface still pokes past the uniformly
+// scaled cloth, the two nearly-coincident surfaces z-fight into a visible
+// dashed/zigzag pattern (confirmed: absent on Teen with no scale, present
+// at the hip/thigh/calf on scaled builds regardless of bone-weight
+// blending, ruling out a skinning-blend cause). Fixed by additionally
+// inflating every vertex outward along its own original surface normal by
+// a fixed clearance - this guarantees separation from the body regardless
+// of local shape mismatches, unlike a linear scale.
+const OUTFIT_INFLATE = 0.018;
+
 function attachToSkeleton(
   mesh: THREE.SkinnedMesh,
   boneByName: Map<string, THREE.Bone>,
@@ -178,6 +192,7 @@ function attachToSkeleton(
   let geometry = mesh.geometry;
   if (scale) {
     geometry = geometry.clone();
+    geometry.computeVertexNormals();
     // geometry.scale() scales around the geometry's local origin, which
     // for these pieces isn't centered on the piece itself (e.g. the body
     // piece's origin sits near the collar, not its visual center) -
@@ -187,9 +202,24 @@ function attachToSkeleton(
     geometry.computeBoundingBox();
     const center = new THREE.Vector3();
     geometry.boundingBox!.getCenter(center);
-    geometry.translate(-center.x, -center.y, -center.z);
-    geometry.scale(...scale);
-    geometry.translate(center.x, center.y, center.z);
+
+    const pos = geometry.attributes.position as THREE.BufferAttribute;
+    const normal = geometry.attributes.normal as THREE.BufferAttribute;
+    const v = new THREE.Vector3();
+    const n = new THREE.Vector3();
+    for (let i = 0; i < pos.count; i++) {
+      v.fromBufferAttribute(pos, i);
+      n.fromBufferAttribute(normal, i);
+      v.sub(center);
+      v.x *= scale[0];
+      v.y *= scale[1];
+      v.z *= scale[2];
+      v.add(center);
+      v.addScaledVector(n, OUTFIT_INFLATE);
+      pos.setXYZ(i, v.x, v.y, v.z);
+    }
+    pos.needsUpdate = true;
+    geometry.computeVertexNormals();
   }
   const attached = new THREE.SkinnedMesh(geometry, mesh.material);
   // Skip shadow casting on hair/outfit overlays - the body underneath
@@ -237,12 +267,22 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     }
   });
 
-  const attachPartsFrom = async (urls: string[], scale?: THREE.Vector3Tuple) => {
+  const attachPartsFrom = async (urls: string[], scale?: THREE.Vector3Tuple, tint?: string) => {
     const gltfs = await Promise.all(urls.map((u) => loadGLTF(u)));
     gltfs.forEach((g) => {
       findSkinnedMeshes(g.scene).forEach((m) => {
         const attached = attachToSkeleton(m, boneByName, scale);
-        if (attached) group.add(attached);
+        if (!attached) return;
+        if (tint) {
+          // The hair mesh's base texture is a near-neutral grey with no
+          // baked-in color (made for tinting), so a material color
+          // multiply is enough - no separate texture per color needed,
+          // unlike skin tone which had a baked-in garment to protect.
+          const cloned = (attached.material as THREE.MeshStandardMaterial).clone();
+          cloned.color.set(tint);
+          attached.material = cloned;
+        }
+        group.add(attached);
       });
     });
   };
@@ -257,7 +297,9 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
   }
 
   if (cfg.hair !== 'none' && HAIR_URLS[cfg.hair]) {
-    await attachPartsFrom([HAIR_URLS[cfg.hair]]);
+    const idx = Math.max(0, Math.min(HAIR_COLORS.length - 1, cfg.hairColor ?? 0));
+    const tint = HAIR_COLORS[idx].hex;
+    await attachPartsFrom([HAIR_URLS[cfg.hair]], undefined, tint);
   }
 
   return { group };

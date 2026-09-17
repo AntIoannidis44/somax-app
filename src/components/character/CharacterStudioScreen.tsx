@@ -3,7 +3,7 @@ import { Icon } from '../Icon';
 import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
-import { BODY_BUILDS, CATALOG, SKIN_TONES } from '../../data/catalog';
+import { BODY_BUILDS, CATALOG, HAIR_COLORS, SKIN_TONES } from '../../data/catalog';
 import { isUnlocked, nextUnlock, tierFor, unlockLabel } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
 import type { CatalogItem, CatalogKey, HairItem, StudioCat } from '../../types';
@@ -13,6 +13,7 @@ const STUDIO_CATS: { id: StudioCat; label: string }[] = [
   { id: 'build', label: 'Build' },
   { id: 'skin', label: 'Complexion' },
   { id: 'hair', label: 'Hair' },
+  { id: 'hairColor', label: 'Hair Color' },
   { id: 'outfit', label: 'Outfit' },
 ];
 
@@ -117,6 +118,25 @@ export function CharacterStudioScreen() {
             name={['Light', 'Medium', 'Dark'][i]}
             lockText=""
             onClick={() => updateCharacterField('skin', i)}
+          />
+        ))}
+      </>
+    );
+  } else if (studioCat === 'hairColor') {
+    // Color has nothing to show without a hair style equipped - preview
+    // against a sensible default for the current base rather than 'None'.
+    const previewHair = character.hair !== 'none' ? character.hair : character.base === 'male' ? 'buzzed' : 'buzzedFemale';
+    rail = (
+      <>
+        {HAIR_COLORS.map((c, i) => (
+          <Tile
+            key={c.name}
+            sel={character.hairColor === i}
+            locked={false}
+            art={<CharacterThumbnail cfg={{ ...character, hair: previewHair, hairColor: i }} mode="portrait" />}
+            name={c.name}
+            lockText=""
+            onClick={() => updateCharacterField('hairColor', i)}
           />
         ))}
       </>

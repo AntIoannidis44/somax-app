@@ -14,7 +14,7 @@ const snapCache = new Map<string, string>();
 const pending = new Map<string, Promise<string>>();
 
 function cacheKey(cfg: CharacterConfig, mode: ThumbnailMode): string {
-  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.outfit}|${mode}`;
+  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.hairColor}|${cfg.outfit}|${mode}`;
 }
 
 export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode): Promise<string> {
