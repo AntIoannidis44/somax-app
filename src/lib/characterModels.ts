@@ -100,7 +100,7 @@ const OUTFIT_FIT_SCALE: Partial<Record<BodyBuild, Partial<Record<CharacterBase, 
   },
   regular: {
     male: [1.06, 1.03, 1.06],
-    female: [1.1, 1.06, 1.1],
+    female: [1.16, 1.14, 1.16],
   },
 };
 
@@ -116,16 +116,31 @@ function loadGLTF(url: string): Promise<GLTF> {
 }
 
 const textureLoader = new THREE.TextureLoader();
-const textureCache = new Map<string, THREE.Texture>();
-function loadSkinTexture(url: string): THREE.Texture {
-  let tex = textureCache.get(url);
-  if (!tex) {
-    tex = textureLoader.load(url);
-    tex.colorSpace = THREE.SRGBColorSpace;
-    tex.flipY = false;
-    textureCache.set(url, tex);
+const textureCache = new Map<string, Promise<THREE.Texture>>();
+// Returns a Promise, not a bare Texture: TextureLoader.load() returns
+// immediately with the image still loading in the background, which is
+// fine for the live animated view (a later frame just picks up the
+// loaded texture) but broke the one-shot thumbnail snapshot render -
+// it rendered (and permanently cached) a frame captured before the
+// texture arrived, showing a flat black silhouette forever.
+function loadSkinTexture(url: string): Promise<THREE.Texture> {
+  let p = textureCache.get(url);
+  if (!p) {
+    p = new Promise((resolve, reject) => {
+      textureLoader.load(
+        url,
+        (tex) => {
+          tex.colorSpace = THREE.SRGBColorSpace;
+          tex.flipY = false;
+          resolve(tex);
+        },
+        undefined,
+        reject,
+      );
+    });
+    textureCache.set(url, p);
   }
-  return tex;
+  return p;
 }
 
 export function loadAnimationClips(): Promise<THREE.AnimationClip[]> {
@@ -144,11 +159,39 @@ function findSkinnedMeshes(root: THREE.Object3D): THREE.SkinnedMesh[] {
 // it deforms in lockstep with the body's animation. Works because outfits
 // and hair share the exact same rig family/bind pose as the base bodies
 // (verified: identical joint names and counts across all these packs).
-function attachToSkeleton(mesh: THREE.SkinnedMesh, boneByName: Map<string, THREE.Bone>): THREE.SkinnedMesh | null {
+//
+// `scale`, if given, is baked into the cloned geometry's vertex positions
+// directly (geometry.scale()) rather than applied as the SkinnedMesh's own
+// transform. The latter looked identical for uniformly-weighted regions but
+// produced real geometric tearing wherever multiple bones blend (thighs,
+// hips) - confirmed by a plain-color material test showing the artifact was
+// geometric, not textural, and that it only appeared on builds with a scale
+// correction applied (Teen, with none, was always clean).
+function attachToSkeleton(
+  mesh: THREE.SkinnedMesh,
+  boneByName: Map<string, THREE.Bone>,
+  scale?: THREE.Vector3Tuple,
+): THREE.SkinnedMesh | null {
   const srcSkeleton = mesh.skeleton;
   const bones = srcSkeleton.bones.map((b) => boneByName.get(b.name));
   if (bones.some((b) => !b)) return null;
-  const attached = new THREE.SkinnedMesh(mesh.geometry, mesh.material);
+  let geometry = mesh.geometry;
+  if (scale) {
+    geometry = geometry.clone();
+    // geometry.scale() scales around the geometry's local origin, which
+    // for these pieces isn't centered on the piece itself (e.g. the body
+    // piece's origin sits near the collar, not its visual center) -
+    // scaling around it directly ballooned/skewed pieces outward from
+    // that one corner instead of growing evenly. Scale around the
+    // piece's own bounding-box center instead, then restore position.
+    geometry.computeBoundingBox();
+    const center = new THREE.Vector3();
+    geometry.boundingBox!.getCenter(center);
+    geometry.translate(-center.x, -center.y, -center.z);
+    geometry.scale(...scale);
+    geometry.translate(center.x, center.y, center.z);
+  }
+  const attached = new THREE.SkinnedMesh(geometry, mesh.material);
   // Skip shadow casting on hair/outfit overlays - the body underneath
   // already casts a similar silhouette, so this saves real shadow-pass
   // draw calls (a known mobile GPU cost) for little visible difference.
@@ -182,7 +225,7 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
   // Skin tone: retarget only the body's own skin material, identified by
   // material name (MI_{Build}_{Base}) - not mesh name, which isn't
   // consistent across builds. Skips MI_Eyes/MI_Hair_* (eyebrows, eyes).
-  const skinTex = loadSkinTexture(skinTextureName(cfg.build, cfg.base, cfg.skin));
+  const skinTex = await loadSkinTexture(skinTextureName(cfg.build, cfg.base, cfg.skin));
   bodySkinned.forEach((m) => {
     const mat = m.material as THREE.MeshStandardMaterial;
     const name = mat?.name || '';
@@ -198,10 +241,8 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     const gltfs = await Promise.all(urls.map((u) => loadGLTF(u)));
     gltfs.forEach((g) => {
       findSkinnedMeshes(g.scene).forEach((m) => {
-        const attached = attachToSkeleton(m, boneByName);
-        if (!attached) return;
-        if (scale) attached.scale.set(...scale);
-        group.add(attached);
+        const attached = attachToSkeleton(m, boneByName, scale);
+        if (attached) group.add(attached);
       });
     });
   };

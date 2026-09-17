@@ -107,17 +107,19 @@ export function CharacterStudioScreen() {
     );
   } else if (studioCat === 'skin') {
     rail = (
-      <div className="swatch-row big">
-        {SKIN_TONES.map((col, i) => (
-          <button
-            key={col}
-            className={`swatch${character.skin === i ? ' sel' : ''}`}
-            style={{ background: col }}
-            aria-label={`Complexion ${i + 1}`}
+      <>
+        {SKIN_TONES.map((_, i) => (
+          <Tile
+            key={i}
+            sel={character.skin === i}
+            locked={false}
+            art={<CharacterThumbnail cfg={{ ...character, outfit: 'none', skin: i }} mode="full" />}
+            name={['Light', 'Medium', 'Dark'][i]}
+            lockText=""
             onClick={() => updateCharacterField('skin', i)}
           />
         ))}
-      </div>
+      </>
     );
   } else {
     const list =
@@ -200,7 +202,7 @@ export function CharacterStudioScreen() {
           </button>
         ))}
       </div>
-      <div className={`item-rail${studioCat === 'skin' ? ' is-swatches' : ''}`}>{rail}</div>
+      <div className="item-rail">{rail}</div>
       {nu ? (
         <div className="unlock-strip">
           <div className="us-head">
