@@ -261,9 +261,18 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
   const group = new THREE.Group();
   group.add(bodyScene);
 
-  // Skin tone: retarget only the body's own skin material, identified by
+  // Skin tone: retarget the body's own skin material, identified by
   // material name (MI_{Build}_{Base}) - not mesh name, which isn't
   // consistent across builds. Skips MI_Eyes/MI_Hair_* (eyebrows, eyes).
+  //
+  // Outfit pieces can *also* carry a small patch of baked-in exposed skin
+  // (e.g. the trainer kit's short sleeves leave the forearm/hand modeled
+  // as part of the "Arms" mesh, not the body) - textured from the same
+  // pack's own fixed reference copy of the base skin, under the exact
+  // same material name as the body's. Left alone, that patch stays one
+  // fixed tone regardless of the complexion picked, visibly mismatched
+  // against the face - so retarget it too wherever it turns up.
+  const skinMaterialName = `MI_${cfg.build[0].toUpperCase()}${cfg.build.slice(1)}_${cfg.base[0].toUpperCase()}${cfg.base.slice(1)}`;
   const skinTex = await loadSkinTexture(skinTextureName(cfg.build, cfg.base, cfg.skin));
   bodySkinned.forEach((m) => {
     const mat = m.material as THREE.MeshStandardMaterial;
@@ -282,7 +291,12 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
       findSkinnedMeshes(g.scene).forEach((m) => {
         const attached = attachToSkeleton(m, boneByName, scale);
         if (!attached) return;
-        if (tint) {
+        const mat = attached.material as THREE.MeshStandardMaterial;
+        if (mat?.name === skinMaterialName && mat.map) {
+          const cloned = mat.clone();
+          cloned.map = skinTex;
+          attached.material = cloned;
+        } else if (tint) {
           // The hair mesh's base texture is a near-neutral grey with no
           // baked-in color (made for tinting), so a material color
           // multiply is enough - no separate texture per color needed,
