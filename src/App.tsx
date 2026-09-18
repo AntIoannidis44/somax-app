@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="page">
       <Sitebar onAboutClick={() => setAboutOpen(true)} />
-      <DeviceShell isHomeHero={session && isHomeHero}>
+      <DeviceShell isHomeHero={!!session && isHomeHero}>
         {!ready ? null : !session ? <AuthScreen /> : <CurrentScreen />}
       </DeviceShell>
       <div className="sitefoot">

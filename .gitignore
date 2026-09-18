@@ -13,6 +13,11 @@ dist-ssr
 *.local
 .env
 .env.*
+# Cloudflare's build (separate from local dev) needs these two Vite vars
+# baked in at build time, and both are meant to be public anyway - the
+# anon/publishable key has no privileges beyond what Row Level Security
+# grants, unlike the other secrets in .env (API tokens, service_role key).
+!.env.production
 
 # Editor directories and files
 .vscode/*
