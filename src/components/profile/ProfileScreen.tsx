@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Icon } from '../Icon';
 import { ChipGroup } from '../onboarding/ChipGroup';
 import { GOALS } from '../onboarding/steps/Goal';
@@ -22,6 +23,25 @@ export function ProfileScreen() {
   const resetDemo = useAppStore((s) => s.resetDemo);
   const toggleProfileGoal = useAppStore((s) => s.toggleProfileGoal);
   const setProfileAvailability = useAppStore((s) => s.setProfileAvailability);
+  const reviseWeekPlan = useAppStore((s) => s.reviseWeekPlan);
+
+  const [prefsOpen, setPrefsOpen] = useState(false);
+  const [prefsSnapshot, setPrefsSnapshot] = useState<{ goal: string[]; availability: string } | null>(null);
+
+  function togglePrefs() {
+    if (!prefsOpen) setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability });
+    setPrefsOpen((v) => !v);
+  }
+  const prefsChanged =
+    !!prefsSnapshot &&
+    (profile.availability !== prefsSnapshot.availability ||
+      profile.goal.length !== prefsSnapshot.goal.length ||
+      profile.goal.some((g) => !prefsSnapshot.goal.includes(g)));
+
+  function handleRevise() {
+    reviseWeekPlan();
+    setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability });
+  }
 
   const ctx = { level: progress.level, longestStreak: progress.longestStreak };
   const nu = nextUnlock(ctx);
@@ -63,14 +83,47 @@ export function ProfileScreen() {
 
       <div className="section-label">Training preferences</div>
       <div className="card">
-        <div className="setting-title" style={{ marginBottom: 10 }}>
-          Goals
-        </div>
-        <ChipGroup options={GOALS} value={profile.goal} onSelect={toggleProfileGoal} />
-        <div className="setting-title" style={{ margin: '18px 0 10px' }}>
-          Days per week
-        </div>
-        <ChipGroup options={DAYS} value={profile.availability} onSelect={setProfileAvailability} />
+        <button
+          onClick={togglePrefs}
+          style={{
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            font: 'inherit',
+            color: 'inherit',
+            cursor: 'pointer',
+            textAlign: 'left',
+          }}
+        >
+          <div>
+            <div className="setting-title">Goals &amp; schedule</div>
+            <div className="setting-sub">
+              {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {profile.availability || '—'} days/week
+            </div>
+          </div>
+          <Icon name="chevron" style={{ transform: prefsOpen ? 'rotate(-90deg)' : 'rotate(90deg)', transition: 'transform 200ms ease', flexShrink: 0 }} />
+        </button>
+        {prefsOpen && (
+          <div style={{ marginTop: 18 }}>
+            <div className="setting-title" style={{ marginBottom: 10 }}>
+              Goals
+            </div>
+            <ChipGroup options={GOALS} value={profile.goal} onSelect={toggleProfileGoal} />
+            <div className="setting-title" style={{ margin: '18px 0 10px' }}>
+              Days per week
+            </div>
+            <ChipGroup options={DAYS} value={profile.availability} onSelect={setProfileAvailability} />
+            {prefsChanged && (
+              <button className="btn btn-primary" style={{ marginTop: 18, width: '100%' }} onClick={handleRevise}>
+                Revise this week's program
+              </button>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="section-label">Display mode</div>

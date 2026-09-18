@@ -1,14 +1,4 @@
-import type { PlanDay, WorkoutDef } from '../types';
-
-export const WEEK_PLAN: PlanDay[] = [
-  { type: 'train', key: 'push', label: 'Push Day' },
-  { type: 'rest' },
-  { type: 'train', key: 'pull', label: 'Pull Day' },
-  { type: 'rest' },
-  { type: 'train', key: 'legs', label: 'Leg Day' },
-  { type: 'train', key: 'cond', label: 'Conditioning' },
-  { type: 'rest' },
-];
+import type { WorkoutDef } from '../types';
 
 export const WORKOUTS: Record<string, WorkoutDef> = {
   push: {

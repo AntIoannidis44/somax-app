@@ -683,7 +683,12 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .swatch-legend b{ color: var(--text); font-weight:700; margin-right:8px; }
 
 /* ---------- character studio ---------- */
-.studio{ display:flex; flex-direction:column; margin: -14px -22px 0; --stage-h: clamp(230px, 42vh, 340px); }
+/* --stage-h is a live px value the user drags to anywhere between 0 and
+   whatever the screen has room for (see CharacterStudioScreen's computeMaxH)
+   - the clamp() here is only the very first render's starting point, before
+   any inline --stage-h override lands. --controls-h is the handle bar's
+   fixed height, used to offset the cat-rail below both it and the stage. */
+.studio{ display:flex; flex-direction:column; margin: -14px -22px 0; --stage-h: clamp(230px, 42vh, 340px); --controls-h: 52px; }
 .stage3d{
     position:sticky; top:0; z-index:5; height: var(--stage-h); overflow:hidden; touch-action: pan-y; flex-shrink:0;
     transition: height var(--dur-med, 240ms) var(--ease-out, ease);
@@ -691,23 +696,18 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
       radial-gradient(70% 55% at 50% 22%, color-mix(in srgb, var(--t1) 55%, transparent), transparent 70%),
       linear-gradient(180deg, #0b1a45 0%, #070f2a 100%);
 }
-.studio.stage-collapsed{ --stage-h: 0px; }
 .studio.stage-collapsed .stage-hint,
 .studio.stage-collapsed .stage-hud{ opacity:0; pointer-events:none; }
-/* 78vh ignored the fixed chrome around the stage (header, controls bar,
-   tab bar) and overflowed under the tab bar - subtract it explicitly via
-   dvh (accounts for mobile browser chrome) instead of a raw vh percentage. */
-.studio.stage-full{ --stage-h: clamp(420px, calc(100dvh - 230px), 660px); }
 
 .stage-controls-bar{
-    position:sticky; top:0; z-index:6; flex-shrink:0; display:flex; align-items:center; justify-content:space-between;
-    gap:10px; padding:10px 14px; background: var(--surface); border-bottom:1px solid var(--line-soft);
+    position:sticky; top: var(--stage-h); z-index:6; height: var(--controls-h); flex-shrink:0; display:flex; align-items:center; justify-content:space-between;
+    gap:10px; padding:0 14px; background: var(--surface); border-bottom:1px solid var(--line-soft);
     touch-action:none; cursor:grab;
 }
 .stage-controls-bar:active{ cursor:grabbing; }
 .stage-controls-label{ font-size:12px; font-weight:700; color: var(--text-faint); letter-spacing:.02em; }
 .stage-handle-grip{
-    position:absolute; left:50%; top:3px; translate:-50% 0; width:34px; height:4px; border-radius:999px;
+    position:absolute; left:50%; top:6px; translate:-50% 0; width:34px; height:4px; border-radius:999px;
     background: var(--line); pointer-events:none;
 }
 .stage3d::before{
@@ -739,7 +739,7 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 
 .cat-rail{
     display:flex; align-items:center; gap:6px; overflow-x:auto; padding: 16px 22px; scrollbar-width:none;
-    background: var(--surface); position:sticky; top: var(--stage-h); z-index:3; border-bottom:1px solid var(--line-soft);
+    background: var(--surface); position:sticky; top: calc(var(--stage-h) + var(--controls-h)); z-index:3; border-bottom:1px solid var(--line-soft);
     transition: top var(--dur-med, 240ms) var(--ease-out, ease);
 }
 .cat-rail::-webkit-scrollbar{ display:none; }
@@ -757,10 +757,7 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
     transition: transform var(--dur-fast, 160ms) var(--ease-out, ease), background var(--dur-fast, 160ms) var(--ease-out, ease), color var(--dur-fast, 160ms) var(--ease-out, ease);
 }
 .stage-toggle-btn:active{ transform: scale(.9); }
-.stage-toggle-btn svg{ width:15px; height:15px; transition: rotate var(--dur-med, 240ms) var(--ease-out, ease); }
-.stage-toggle-btn.collapse svg{ rotate:-90deg; }
-.stage-toggle-btn.expand svg{ rotate:90deg; }
-.studio.stage-collapsed .stage-toggle-btn.collapse{ background: var(--text); color: var(--bg); }
+.stage-toggle-btn svg{ width:15px; height:15px; }
 .studio.stage-full .stage-toggle-btn.expand{ background: var(--text); color: var(--bg); }
 
 .item-rail{ display:flex; gap:10px; overflow-x:auto; padding: 18px 22px 10px; scrollbar-width:none; scroll-snap-type:x proximity; }

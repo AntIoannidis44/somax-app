@@ -196,6 +196,7 @@ export interface AppState {
   progress: Progress;
   stats_workoutsDone: number;
   today: TodayState;
+  weekPlan: PlanDay[];
   workoutState: WorkoutState;
   history: HistoryEntry[];
   challenges: ChallengeState[];

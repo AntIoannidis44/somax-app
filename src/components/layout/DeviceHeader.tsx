@@ -4,10 +4,13 @@ import { WORKOUTS } from '../../data/workouts';
 import { countUnlocked } from '../../lib/character';
 import { dayLabel } from '../../lib/schedule';
 import { first } from '../../lib/format';
-import type { Route } from '../../types';
+import type { PlanDay, Route } from '../../types';
 
-const ROUTE_META: Record<Route, { title: (name: string) => string; sub: (ctx: { simDay: number; programName: string }) => string }> = {
-  home: { title: (name) => `Hey, ${name}`, sub: (ctx) => dayLabel(ctx.simDay) },
+const ROUTE_META: Record<
+  Route,
+  { title: (name: string) => string; sub: (ctx: { simDay: number; programName: string; weekPlan: PlanDay[] }) => string }
+> = {
+  home: { title: (name) => `Hey, ${name}`, sub: (ctx) => dayLabel(ctx.simDay, ctx.weekPlan) },
   train: { title: () => 'Training', sub: (ctx) => ctx.programName },
   play: { title: () => 'Play', sub: () => 'Challenges & league' },
   community: { title: () => 'Community', sub: () => 'Bronze League activity' },
@@ -26,6 +29,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const profile = useAppStore((s) => s.profile);
   const progress = useAppStore((s) => s.progress);
   const simDay = useAppStore((s) => s.simDay);
+  const weekPlan = useAppStore((s) => s.weekPlan);
   const go = useAppStore((s) => s.go);
   const closeWorkout = useAppStore((s) => s.closeWorkout);
   const closeCharacterStudio = useAppStore((s) => s.closeCharacterStudio);
@@ -80,7 +84,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
     <div className={classes.join(' ')}>
       <div>
         <div className="dh-title">{meta.title(first(profile?.name))}</div>
-        <div className="dh-sub">{meta.sub({ simDay, programName: profile?.program.name || '' })}</div>
+        <div className="dh-sub">{meta.sub({ simDay, programName: profile?.program.name || '', weekPlan })}</div>
       </div>
       <button className="level-chip" onClick={() => go('profile')}>
         <span className="lvl-badge">{progress.level}</span>

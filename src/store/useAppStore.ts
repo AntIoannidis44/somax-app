@@ -6,7 +6,7 @@ import { CHALLENGE_DEFS } from '../data/challenges';
 import { WORKOUTS } from '../data/workouts';
 import { statBumpFor } from '../data/workouts';
 import { defaultCharacter } from '../lib/character';
-import { buildTodayGoals, isWorkoutDone, todayPlan } from '../lib/schedule';
+import { buildTodayGoals, generateWeekPlan, isWorkoutDone, todayPlan } from '../lib/schedule';
 import { DAILY_CAP, levelFromXP } from '../lib/xp';
 import type {
   AppState,
@@ -41,6 +41,7 @@ function defaultChallengeStates(): ChallengeState[] {
 
 function defaultAppState(): AppState {
   const simDay = 0;
+  const weekPlan = generateWeekPlan('4', []);
   return {
     onboarded: false,
     onbStep: 0,
@@ -58,7 +59,8 @@ function defaultAppState(): AppState {
       stats: { strength: 8, endurance: 8, agility: 8, vitality: 10, recovery: 9, discipline: 8 },
     },
     stats_workoutsDone: 0,
-    today: { forDay: simDay, goals: buildTodayGoals(simDay), dayHadCompletion: false, xpEarnedToday: 0 },
+    today: { forDay: simDay, goals: buildTodayGoals(simDay, weekPlan), dayHadCompletion: false, xpEarnedToday: 0 },
+    weekPlan,
     workoutState: { [simDay]: {} },
     history: [],
     challenges: defaultChallengeStates(),
@@ -103,6 +105,7 @@ interface Actions {
 
   toggleProfileGoal: (goal: string) => void;
   setProfileAvailability: (days: string) => void;
+  reviseWeekPlan: () => void;
 
   toggleGoal: (goalId: string) => void;
   toggleExercise: (exIndex: number) => void;
@@ -178,6 +181,7 @@ export const useAppStore = create<Store>()(
       finishOnboarding: () => {
         const d = get().onbDraft;
         const difficulty = d.experience === 'Beginner' ? 'Foundations' : d.experience === 'Advanced' ? 'Performance' : 'Progression';
+        const weekPlan = generateWeekPlan(d.availability, d.goal);
         set(
           produce((s) => {
             s.profile = {
@@ -192,6 +196,8 @@ export const useAppStore = create<Store>()(
               program: { name: `${difficulty} Block · Week 1` },
             };
             s.character = d.character || defaultCharacter('female');
+            s.weekPlan = weekPlan;
+            s.today = { forDay: s.simDay, goals: buildTodayGoals(s.simDay, weekPlan), dayHadCompletion: false, xpEarnedToday: 0 };
             s.onboarded = true;
             s.history.unshift({ type: 'system', label: 'Profile created', xp: 0, day: s.simDay });
           }),
@@ -215,6 +221,26 @@ export const useAppStore = create<Store>()(
             s.profile.availability = days;
           }),
         ),
+      reviseWeekPlan: () => {
+        const s = get();
+        if (!s.profile) return;
+        const weekPlan = generateWeekPlan(s.profile.availability, s.profile.goal);
+        set(
+          produce((st) => {
+            st.weekPlan = weekPlan;
+            // Rebuild today's goals against the revised plan (today's
+            // workout type may have changed), but keep anything already
+            // completed marked done - revising the plan shouldn't erase
+            // progress already logged today.
+            const oldGoals = st.today.goals;
+            st.today.goals = buildTodayGoals(st.simDay, weekPlan).map((g: (typeof oldGoals)[number]) => {
+              const prev = oldGoals.find((og: (typeof oldGoals)[number]) => og.id === g.id);
+              return prev ? { ...g, done: prev.done } : g;
+            });
+          }),
+        );
+        get().showToast("This week's program has been revised");
+      },
 
       toggleGoal: (goalId) => {
         const s = get();
@@ -320,7 +346,7 @@ export const useAppStore = create<Store>()(
         set(
           produce((st) => {
             st.simDay += 1;
-            st.today = { forDay: st.simDay, goals: buildTodayGoals(st.simDay), dayHadCompletion: false, xpEarnedToday: 0 };
+            st.today = { forDay: st.simDay, goals: buildTodayGoals(st.simDay, st.weekPlan), dayHadCompletion: false, xpEarnedToday: 0 };
             st.workoutState[st.simDay] = st.workoutState[st.simDay] || {};
           }),
         );
@@ -349,6 +375,12 @@ export const useAppStore = create<Store>()(
         const toGoalArray = (g: unknown) => (Array.isArray(g) ? g : typeof g === 'string' && g ? [g] : []);
         if (s?.profile) s.profile.goal = toGoalArray(s.profile.goal);
         if (s?.onbDraft) s.onbDraft.goal = toGoalArray(s.onbDraft.goal);
+        // `weekPlan` is new - existing saved states predate it entirely.
+        // Derive it from the saved profile so returning users keep the
+        // same fixed rotation they've been on rather than a re-roll.
+        if (!Array.isArray(s?.weekPlan)) {
+          s.weekPlan = s?.profile ? generateWeekPlan(s.profile.availability, s.profile.goal) : generateWeekPlan('4', []);
+        }
         return s;
       },
     },

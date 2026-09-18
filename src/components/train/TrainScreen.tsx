@@ -1,15 +1,16 @@
 import { Icon } from '../Icon';
 import { WeekStrip } from './WeekStrip';
-import { WEEK_PLAN, WORKOUTS } from '../../data/workouts';
+import { WORKOUTS } from '../../data/workouts';
 import { useAppStore } from '../../store/useAppStore';
 import { isWorkoutDone, todayPlan, todayPlanIndex } from '../../lib/schedule';
 
 export function TrainScreen() {
   const simDay = useAppStore((s) => s.simDay);
+  const weekPlan = useAppStore((s) => s.weekPlan);
   const workoutState = useAppStore((s) => s.workoutState);
   const openWorkout = useAppStore((s) => s.openWorkout);
 
-  const plan = todayPlan(simDay);
+  const plan = todayPlan(simDay, weekPlan);
   const todayIdx = todayPlanIndex(simDay);
 
   return (
@@ -44,7 +45,7 @@ export function TrainScreen() {
 
       <div className="section-label">This week</div>
       <div className="card">
-        {WEEK_PLAN.map((p, i) => {
+        {weekPlan.map((p, i) => {
           const label = p.type === 'train' ? WORKOUTS[p.key!].name : 'Recovery Day';
           const isToday = i === todayIdx;
           return (

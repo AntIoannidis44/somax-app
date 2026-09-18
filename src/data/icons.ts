@@ -26,6 +26,7 @@ export const ICON_PATHS: Record<string, string> = {
     '<path d="M8 20a3 3 0 0 1-3-3v-3a3 3 0 0 1 6 0v3a3 3 0 0 1-3 3Z"/><path d="M16 12a3 3 0 0 1-3-3V6a3 3 0 0 1 6 0v3a3 3 0 0 1-3 3Z"/><path d="M5 20h6M13 12h6"/>',
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   coin: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>',
+  expand: '<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"/>',
 };
 
 export type IconName = keyof typeof ICON_PATHS;

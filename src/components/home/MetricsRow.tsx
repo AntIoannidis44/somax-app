@@ -43,10 +43,11 @@ function RingTile({
 
 export function MetricsRow() {
   const simDay = useAppStore((s) => s.simDay);
+  const weekPlan = useAppStore((s) => s.weekPlan);
   const goals = useAppStore((s) => s.today.goals);
   const workoutState = useAppStore((s) => s.workoutState);
 
-  const plan = todayPlan(simDay);
+  const plan = todayPlan(simDay, weekPlan);
   const workoutDone = plan.type === 'train' && !!plan.key && isWorkoutDone(workoutState, simDay, plan.key);
   const goalsDone = goals.filter((g) => g.done).length;
   const m = todayMetrics(simDay, goalsDone, workoutDone);

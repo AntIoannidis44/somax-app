@@ -5,10 +5,11 @@ import { isWorkoutDone, todayPlan } from '../../lib/schedule';
 
 export function WorkoutCTA() {
   const simDay = useAppStore((s) => s.simDay);
+  const weekPlan = useAppStore((s) => s.weekPlan);
   const workoutState = useAppStore((s) => s.workoutState);
   const openWorkout = useAppStore((s) => s.openWorkout);
 
-  const plan = todayPlan(simDay);
+  const plan = todayPlan(simDay, weekPlan);
 
   if (plan.type !== 'train' || !plan.key) {
     return (

@@ -55,34 +55,63 @@ export function CharacterStudioScreen() {
   const setStudioCat = useAppStore((s) => s.setStudioCat);
   const updateCharacterField = useAppStore((s) => s.updateCharacterField);
   const showToast = useAppStore((s) => s.showToast);
-  const [stageMode, setStageMode] = useState<'collapsed' | 'normal' | 'full'>('normal');
+  // Stage height is a free-running px value the user can drag to any point
+  // between fully collapsed (0) and the max the screen has room for - not
+  // just three fixed stops. NORMAL_H is only the starting point.
+  const NORMAL_H = 320;
+  const NEAR_EDGE = 16;
+  const stageRef = useRef<HTMLDivElement>(null);
+  const [stageH, setStageH] = useState(NORMAL_H);
+  const [dragging, setDragging] = useState(false);
+  const maxHRef = useRef(640);
+  // A small deadzone before a pointerdown on the bar counts as a drag,
+  // so a finger that jitters a couple px while resting on the bar (or a
+  // tap that's about to be handled by the separate full-screen button,
+  // see below) never produces a phantom resize.
+  const DEADZONE = 6;
   const dragStartY = useRef<number | null>(null);
-  const dragDist = useRef(0);
+  const dragStartH = useRef(0);
+  const dragActive = useRef(false);
 
-  // Swiping the handle bar steps through collapsed/normal/full same as the
-  // arrow buttons - swipe up to shrink the stage and reveal more of the
-  // customisation panel, swipe down to bring the stage back.
+  // The stage may only grow until the handle bar (fixed height, see
+  // --controls-h) would be pushed under the tab bar - measured live so it
+  // adapts to any viewport instead of a hardcoded guess.
+  function computeMaxH(): number {
+    const tabbar = document.querySelector('.tabbar');
+    const stageTop = stageRef.current?.getBoundingClientRect().top;
+    if (!tabbar || stageTop === undefined) return maxHRef.current;
+    const CONTROLS_H = 52;
+    return Math.max(160, tabbar.getBoundingClientRect().top - stageTop - CONTROLS_H - 8);
+  }
+
   function handleDragStart(e: React.PointerEvent) {
     dragStartY.current = e.clientY;
-    dragDist.current = 0;
-    e.currentTarget.setPointerCapture(e.pointerId);
+    dragStartH.current = stageH;
+    dragActive.current = false;
   }
   function handleDragMove(e: React.PointerEvent) {
     if (dragStartY.current === null) return;
-    dragDist.current = e.clientY - dragStartY.current;
+    const dy = e.clientY - dragStartY.current;
+    if (!dragActive.current) {
+      if (Math.abs(dy) < DEADZONE) return;
+      dragActive.current = true;
+      maxHRef.current = computeMaxH();
+      setDragging(true);
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+    setStageH(Math.max(0, Math.min(maxHRef.current, dragStartH.current + dy)));
   }
   function handleDragEnd() {
-    if (dragStartY.current === null) return;
-    const dy = dragDist.current;
-    const SWIPE_THRESHOLD = 28;
-    if (dy < -SWIPE_THRESHOLD) {
-      setStageMode((m) => (m === 'full' ? 'normal' : 'collapsed'));
-    } else if (dy > SWIPE_THRESHOLD) {
-      setStageMode((m) => (m === 'collapsed' ? 'normal' : 'full'));
-    }
     dragStartY.current = null;
-    dragDist.current = 0;
+    dragActive.current = false;
+    setDragging(false);
   }
+  function jumpToFullScreen() {
+    maxHRef.current = computeMaxH();
+    setStageH((h) => (h >= maxHRef.current - NEAR_EDGE ? NORMAL_H : maxHRef.current));
+  }
+  const isCollapsed = stageH <= NEAR_EDGE;
+  const isFull = stageH >= maxHRef.current - NEAR_EDGE;
 
   const lvl = progress.level;
   const t = tierFor(lvl);
@@ -205,34 +234,15 @@ export function CharacterStudioScreen() {
   const pct = Math.min(1, (progress.totalXP - floor) / (ceil - floor));
 
   return (
-    <div className={`studio${stageMode !== 'normal' ? ` stage-${stageMode}` : ''}`}>
+    <div
+      className={`studio${isCollapsed ? ' stage-collapsed' : ''}${isFull ? ' stage-full' : ''}`}
+      style={{ ['--stage-h' as string]: `${stageH}px` }}
+    >
       <div
-        className="stage-controls-bar"
-        onPointerDown={handleDragStart}
-        onPointerMove={handleDragMove}
-        onPointerUp={handleDragEnd}
-        onPointerCancel={handleDragEnd}
+        ref={stageRef}
+        className="stage3d"
+        style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2, transition: dragging ? 'none' : undefined }}
       >
-        <button
-          className="stage-toggle-btn collapse"
-          aria-label={stageMode === 'collapsed' ? 'Restore character view' : 'Collapse character view to browse'}
-          onClick={() => setStageMode((m) => (m === 'collapsed' ? 'normal' : 'collapsed'))}
-        >
-          <Icon name="chevron" />
-        </button>
-        <span className="stage-controls-label">
-          {stageMode === 'collapsed' ? 'Customising' : stageMode === 'full' ? 'Viewing' : 'Character'}
-        </span>
-        <button
-          className="stage-toggle-btn expand"
-          aria-label={stageMode === 'full' ? 'Restore character view' : 'Expand character view to almost full screen'}
-          onClick={() => setStageMode((m) => (m === 'full' ? 'normal' : 'full'))}
-        >
-          <Icon name="chevron" />
-        </button>
-        <div className="stage-handle-grip" aria-hidden="true" />
-      </div>
-      <div className="stage3d" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
         <div className="stage-hud">
           <div className="hud-chip">
             <span className="hud-lvl">{lvl}</span>
@@ -244,6 +254,29 @@ export function CharacterStudioScreen() {
         <div className="stage-hint">
           <Icon name="rotate" /> Drag to spin · tap to flex
         </div>
+      </div>
+      <div
+        className="stage-controls-bar"
+        onPointerDown={handleDragStart}
+        onPointerMove={handleDragMove}
+        onPointerUp={handleDragEnd}
+        onPointerCancel={handleDragEnd}
+      >
+        <div className="stage-handle-grip" aria-hidden="true" />
+        <span className="stage-controls-label">{isCollapsed ? 'Drag down to view' : 'Drag up to customize'}</span>
+        <button
+          className="stage-toggle-btn expand"
+          aria-label={isFull ? 'Restore character view' : 'View full screen'}
+          title={isFull ? 'Restore character view' : 'View full screen'}
+          // Stops the pointerdown from ever reaching the drag handlers above -
+          // a plain tap can then never race with the drag logic, however it
+          // lands, instead of relying on the drag side alone to tell tap and
+          // drag apart.
+          onPointerDown={(e) => e.stopPropagation()}
+          onClick={jumpToFullScreen}
+        >
+          <Icon name="expand" />
+        </button>
       </div>
       <div className="cat-rail">
         {STUDIO_CATS.map((k) => (

@@ -1,14 +1,14 @@
-import { WEEK_PLAN } from '../../data/workouts';
 import { useAppStore } from '../../store/useAppStore';
 import { todayPlanIndex } from '../../lib/schedule';
 
 export function WeekStrip() {
   const simDay = useAppStore((s) => s.simDay);
+  const weekPlan = useAppStore((s) => s.weekPlan);
   const todayIdx = todayPlanIndex(simDay);
 
   return (
     <div className="week-strip">
-      {WEEK_PLAN.map((_, i) => {
+      {weekPlan.map((_, i) => {
         const isToday = i === todayIdx;
         const complete = i < todayIdx;
         return (
