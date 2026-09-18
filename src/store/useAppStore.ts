@@ -6,7 +6,7 @@ import { CHALLENGE_DEFS } from '../data/challenges';
 import { WORKOUTS } from '../data/workouts';
 import { statBumpFor } from '../data/workouts';
 import { defaultCharacter } from '../lib/character';
-import { buildTodayGoals, generateWeekPlan, isWorkoutDone, todayPlan } from '../lib/schedule';
+import { buildTodayGoals, generateWeekPlan, isWorkoutDone, reviseWeekPlanFrom, todayPlan, todayPlanIndex } from '../lib/schedule';
 import { DAILY_CAP, levelFromXP } from '../lib/xp';
 import type {
   AppState,
@@ -224,7 +224,11 @@ export const useAppStore = create<Store>()(
       reviseWeekPlan: () => {
         const s = get();
         if (!s.profile) return;
-        const weekPlan = generateWeekPlan(s.profile.availability, s.profile.goal);
+        // Only redistribute training days from today onward - days
+        // earlier in this 7-day cycle already happened and shouldn't be
+        // rewritten by a preference change made mid-week.
+        const fromIdx = todayPlanIndex(s.simDay);
+        const weekPlan = reviseWeekPlanFrom(s.weekPlan, fromIdx, s.profile.availability, s.profile.goal);
         set(
           produce((st) => {
             st.weekPlan = weekPlan;

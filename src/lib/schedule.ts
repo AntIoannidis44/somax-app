@@ -51,6 +51,36 @@ export function generateWeekPlan(availability: string, goals: string[]): PlanDay
   return plan;
 }
 
+// Used by "Revise this week's program": regenerating the whole 7-day
+// array from scratch would silently rewrite days that have already
+// happened this cycle, which makes no sense - you can't revise the past.
+// Keeps indices before `fromIdx` exactly as they were, and only
+// redistributes training days across `fromIdx..6`, using however many
+// of the target weekly total haven't already happened.
+export function reviseWeekPlanFrom(oldPlan: PlanDay[], fromIdx: number, availability: string, goals: string[]): PlanDay[] {
+  const targetDays = Math.max(2, Math.min(6, parseInt(availability, 10) || 4));
+  const already = oldPlan.slice(0, fromIdx).filter((p) => p.type === 'train').length;
+  const remainingSlotCount = 7 - fromIdx;
+  const remainingTrainDays = Math.max(0, Math.min(remainingSlotCount, targetDays - already));
+  const order = workoutOrderFor(goals);
+
+  const rest: PlanDay[] = new Array(remainingSlotCount).fill(null).map(() => ({ type: 'rest' as const }));
+  const used = new Set<number>();
+  const slots = Array.from({ length: remainingTrainDays }, (_, i) => Math.round((i * remainingSlotCount) / Math.max(1, remainingTrainDays)))
+    .map((slot) => {
+      let s = slot;
+      while (used.has(s)) s = (s + 1) % remainingSlotCount;
+      used.add(s);
+      return s;
+    })
+    .sort((a, b) => a - b);
+  slots.forEach((slot, i) => {
+    const key = order[i % order.length];
+    rest[slot] = { type: 'train', key, label: WORKOUTS[key].name };
+  });
+  return [...oldPlan.slice(0, fromIdx), ...rest];
+}
+
 export function buildTodayGoals(simDay: number, weekPlan: PlanDay[]): TodayGoal[] {
   const plan = todayPlan(simDay, weekPlan);
   const goals: TodayGoal[] = [];
