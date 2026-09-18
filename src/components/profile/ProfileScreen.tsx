@@ -1,4 +1,7 @@
 import { Icon } from '../Icon';
+import { ChipGroup } from '../onboarding/ChipGroup';
+import { GOALS } from '../onboarding/steps/Goal';
+import { DAYS } from '../onboarding/steps/Experience';
 import { StatBars } from './StatBars';
 import { SettingsCard } from './SettingsCard';
 import { FeatureFlags } from './FeatureFlags';
@@ -17,6 +20,8 @@ export function ProfileScreen() {
   const history = useAppStore((s) => s.history);
   const openCharacterStudio = useAppStore((s) => s.openCharacterStudio);
   const resetDemo = useAppStore((s) => s.resetDemo);
+  const toggleProfileGoal = useAppStore((s) => s.toggleProfileGoal);
+  const setProfileAvailability = useAppStore((s) => s.setProfileAvailability);
 
   const ctx = { level: progress.level, longestStreak: progress.longestStreak };
   const nu = nextUnlock(ctx);
@@ -32,7 +37,7 @@ export function ProfileScreen() {
         <div>
           <div className="profile-name">{profile.name}</div>
           <div className="profile-sub">
-            {profile.goal} · {profile.experience} · Level {progress.level}
+            {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {profile.experience} · Level {progress.level}
           </div>
         </div>
       </div>
@@ -54,6 +59,18 @@ export function ProfileScreen() {
             Open studio <Icon name="chevron" style={{ width: 13, height: 13 }} />
           </div>
         </div>
+      </div>
+
+      <div className="section-label">Training preferences</div>
+      <div className="card">
+        <div className="setting-title" style={{ marginBottom: 10 }}>
+          Goals
+        </div>
+        <ChipGroup options={GOALS} value={profile.goal} onSelect={toggleProfileGoal} />
+        <div className="setting-title" style={{ margin: '18px 0 10px' }}>
+          Days per week
+        </div>
+        <ChipGroup options={DAYS} value={profile.availability} onSelect={setProfileAvailability} />
       </div>
 
       <div className="section-label">Display mode</div>

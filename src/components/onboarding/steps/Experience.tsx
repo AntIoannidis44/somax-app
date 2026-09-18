@@ -2,7 +2,7 @@ import { ChipGroup } from '../ChipGroup';
 import { useAppStore } from '../../../store/useAppStore';
 
 const EXPERIENCE = ['Beginner', 'Intermediate', 'Advanced'];
-const DAYS = ['2', '3', '4', '5', '6'];
+export const DAYS = ['2', '3', '4', '5', '6'];
 
 export function Experience() {
   const draft = useAppStore((s) => s.onbDraft);

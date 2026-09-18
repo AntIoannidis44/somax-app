@@ -27,7 +27,7 @@ function defaultOnbDraft(): OnboardingDraft {
     age: '',
     height: '',
     weight: '',
-    goal: '',
+    goal: [],
     experience: '',
     availability: '',
     equipment: [],
@@ -62,7 +62,6 @@ function defaultAppState(): AppState {
     workoutState: { [simDay]: {} },
     history: [],
     challenges: defaultChallengeStates(),
-    leagueXP: 0,
     coins: 0,
     achievements: {},
     cheered: {},
@@ -95,12 +94,15 @@ interface Actions {
   setPlayTab: (tab: PlayTab) => void;
 
   setOnbField: (field: keyof OnboardingDraft, value: string) => void;
-  toggleOnbMulti: (field: 'equipment', value: string) => void;
+  toggleOnbMulti: (field: 'equipment' | 'goal', value: string) => void;
   setOnbCharacterBase: (base: 'female' | 'male') => void;
   setOnbCharacterSkin: (skin: number) => void;
   onbNext: () => void;
   onbBack: () => void;
   finishOnboarding: () => void;
+
+  toggleProfileGoal: (goal: string) => void;
+  setProfileAvailability: (days: string) => void;
 
   toggleGoal: (goalId: string) => void;
   toggleExercise: (exIndex: number) => void;
@@ -196,6 +198,23 @@ export const useAppStore = create<Store>()(
         );
         get().showToast(`Welcome to Somax, ${d.name.trim().split(' ')[0] || 'Athlete'}!`);
       },
+
+      toggleProfileGoal: (goal) =>
+        set(
+          produce((s) => {
+            if (!s.profile) return;
+            const idx = s.profile.goal.indexOf(goal);
+            if (idx > -1) s.profile.goal.splice(idx, 1);
+            else s.profile.goal.push(goal);
+          }),
+        ),
+      setProfileAvailability: (days) =>
+        set(
+          produce((s) => {
+            if (!s.profile) return;
+            s.profile.availability = days;
+          }),
+        ),
 
       toggleGoal: (goalId) => {
         const s = get();
@@ -316,7 +335,23 @@ export const useAppStore = create<Store>()(
       clearToast: () => set({ toast: null }),
       clearLevelUp: () => set({ levelUp: null }),
     }),
-    { name: 'somax_state_v1', partialize: ({ toast: _toast, levelUp: _levelUp, ...rest }) => rest },
+    {
+      name: 'somax_state_v1',
+      partialize: ({ toast: _toast, levelUp: _levelUp, ...rest }) => rest,
+      // v1 -> v2: `goal` changed from a single string to a multi-select
+      // string[] (onboarding + profile). Existing saved profiles still
+      // have the old string shape, which crashes anything calling
+      // .join()/.includes() on it - coerce on load instead of requiring
+      // everyone to reset their demo data.
+      version: 2,
+      migrate: (persisted) => {
+        const s = persisted as any;
+        const toGoalArray = (g: unknown) => (Array.isArray(g) ? g : typeof g === 'string' && g ? [g] : []);
+        if (s?.profile) s.profile.goal = toGoalArray(s.profile.goal);
+        if (s?.onbDraft) s.onbDraft.goal = toGoalArray(s.onbDraft.goal);
+        return s;
+      },
+    },
   ),
 );
 
@@ -379,7 +414,6 @@ function bumpChallengeProgress(id: string, amount: number) {
   );
   const xpGain = Math.round(amount * def.xpPerUnit);
   if (xpGain > 0) {
-    useAppStore.setState(produce((st) => { st.leagueXP += xpGain; }));
     awardXP(xpGain, `${def.name} progress`, { ignoreCap: true });
   }
   const updated = useAppStore.getState().challenges.find((x) => x.id === id)!;
@@ -388,7 +422,6 @@ function bumpChallengeProgress(id: string, amount: number) {
       produce((st) => {
         const cc = st.challenges.find((x: { id: string }) => x.id === id)!;
         cc.completed = true;
-        st.leagueXP += def.bonusXp;
       }),
     );
     awardXP(def.bonusXp, `${def.name} complete`, { ignoreCap: true });

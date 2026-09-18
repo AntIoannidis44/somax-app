@@ -694,13 +694,22 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .studio.stage-collapsed{ --stage-h: 0px; }
 .studio.stage-collapsed .stage-hint,
 .studio.stage-collapsed .stage-hud{ opacity:0; pointer-events:none; }
-.studio.stage-full{ --stage-h: clamp(480px, 78vh, 720px); }
+/* 78vh ignored the fixed chrome around the stage (header, controls bar,
+   tab bar) and overflowed under the tab bar - subtract it explicitly via
+   dvh (accounts for mobile browser chrome) instead of a raw vh percentage. */
+.studio.stage-full{ --stage-h: clamp(420px, calc(100dvh - 230px), 660px); }
 
 .stage-controls-bar{
     position:sticky; top:0; z-index:6; flex-shrink:0; display:flex; align-items:center; justify-content:space-between;
     gap:10px; padding:10px 14px; background: var(--surface); border-bottom:1px solid var(--line-soft);
+    touch-action:none; cursor:grab;
 }
+.stage-controls-bar:active{ cursor:grabbing; }
 .stage-controls-label{ font-size:12px; font-weight:700; color: var(--text-faint); letter-spacing:.02em; }
+.stage-handle-grip{
+    position:absolute; left:50%; top:3px; translate:-50% 0; width:34px; height:4px; border-radius:999px;
+    background: var(--line); pointer-events:none;
+}
 .stage3d::before{
     content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
     background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);

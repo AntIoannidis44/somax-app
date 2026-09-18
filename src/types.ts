@@ -45,7 +45,7 @@ export interface OnboardingDraft {
   age: string;
   height: string;
   weight: string;
-  goal: string;
+  goal: string[];
   experience: string;
   availability: string;
   equipment: string[];
@@ -57,7 +57,7 @@ export interface Profile {
   age: string;
   height: string;
   weight: string;
-  goal: string;
+  goal: string[];
   experience: string;
   availability: string;
   equipment: string[];
@@ -199,7 +199,6 @@ export interface AppState {
   workoutState: WorkoutState;
   history: HistoryEntry[];
   challenges: ChallengeState[];
-  leagueXP: number;
   coins: number;
   achievements: Record<string, boolean>;
   cheered: Record<number, boolean>;

@@ -27,8 +27,8 @@ function CameraRig({ view }: { view: StageView }) {
   const { camera } = useThree();
   useEffect(() => {
     if (view === 'arena') {
-      camera.position.set(0, 1.75, 8.5);
-      camera.lookAt(0, 1.4, 0);
+      camera.position.set(0, 1.55, 8.5);
+      camera.lookAt(0, 1.15, 0);
     } else {
       camera.position.set(0, 1.45, 6.1);
       camera.lookAt(0, 1.02, 0);

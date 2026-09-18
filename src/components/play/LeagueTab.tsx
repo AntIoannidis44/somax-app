@@ -7,7 +7,7 @@ import { initials } from '../../lib/format';
 
 export function LeagueTab() {
   const profile = useAppStore((s) => s.profile);
-  const leagueXP = useAppStore((s) => s.leagueXP);
+  const totalXP = useAppStore((s) => s.progress.totalXP);
   const character = useAppStore((s) => s.character);
 
   const [youAvatarSrc, setYouAvatarSrc] = useState('');
@@ -26,7 +26,7 @@ export function LeagueTab() {
   }, [character]);
 
   const rows = LEAGUE_NPCS.map((n) => ({ name: n.name, xp: n.xp, you: false }));
-  rows.push({ name: profile?.name || 'You', xp: leagueXP, you: true });
+  rows.push({ name: profile?.name || 'You', xp: totalXP, you: true });
   rows.sort((a, b) => b.xp - a.xp);
 
   return (
@@ -34,7 +34,7 @@ export function LeagueTab() {
       <div className="banner">
         <Icon name="info" />
         <span>
-          Bronze League · season ends Day 28. League XP comes from challenge progress — join one to start climbing.
+          Bronze League · season ends Day 28. Your rank tracks your character's total XP.
         </span>
       </div>
       <div className="card">

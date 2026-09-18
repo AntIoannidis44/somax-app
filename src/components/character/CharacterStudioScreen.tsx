@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
@@ -56,6 +56,33 @@ export function CharacterStudioScreen() {
   const updateCharacterField = useAppStore((s) => s.updateCharacterField);
   const showToast = useAppStore((s) => s.showToast);
   const [stageMode, setStageMode] = useState<'collapsed' | 'normal' | 'full'>('normal');
+  const dragStartY = useRef<number | null>(null);
+  const dragDist = useRef(0);
+
+  // Swiping the handle bar steps through collapsed/normal/full same as the
+  // arrow buttons - swipe up to shrink the stage and reveal more of the
+  // customisation panel, swipe down to bring the stage back.
+  function handleDragStart(e: React.PointerEvent) {
+    dragStartY.current = e.clientY;
+    dragDist.current = 0;
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }
+  function handleDragMove(e: React.PointerEvent) {
+    if (dragStartY.current === null) return;
+    dragDist.current = e.clientY - dragStartY.current;
+  }
+  function handleDragEnd() {
+    if (dragStartY.current === null) return;
+    const dy = dragDist.current;
+    const SWIPE_THRESHOLD = 28;
+    if (dy < -SWIPE_THRESHOLD) {
+      setStageMode((m) => (m === 'full' ? 'normal' : 'collapsed'));
+    } else if (dy > SWIPE_THRESHOLD) {
+      setStageMode((m) => (m === 'collapsed' ? 'normal' : 'full'));
+    }
+    dragStartY.current = null;
+    dragDist.current = 0;
+  }
 
   const lvl = progress.level;
   const t = tierFor(lvl);
@@ -179,7 +206,13 @@ export function CharacterStudioScreen() {
 
   return (
     <div className={`studio${stageMode !== 'normal' ? ` stage-${stageMode}` : ''}`}>
-      <div className="stage-controls-bar">
+      <div
+        className="stage-controls-bar"
+        onPointerDown={handleDragStart}
+        onPointerMove={handleDragMove}
+        onPointerUp={handleDragEnd}
+        onPointerCancel={handleDragEnd}
+      >
         <button
           className="stage-toggle-btn collapse"
           aria-label={stageMode === 'collapsed' ? 'Restore character view' : 'Collapse character view to browse'}
@@ -197,6 +230,7 @@ export function CharacterStudioScreen() {
         >
           <Icon name="chevron" />
         </button>
+        <div className="stage-handle-grip" aria-hidden="true" />
       </div>
       <div className="stage3d" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
         <div className="stage-hud">

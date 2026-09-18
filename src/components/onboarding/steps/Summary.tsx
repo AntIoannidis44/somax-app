@@ -27,7 +27,7 @@ export function Summary() {
       <p className="lead">Here’s the profile we’ll build your first program from.</p>
       <div className="card" style={{ marginBottom: 10 }}>
         <SummaryRow k="Athlete" v={draft.character ? (draft.character.base === 'male' ? 'Male base' : 'Female base') : '—'} />
-        <SummaryRow k="Goal" v={draft.goal || '—'} />
+        <SummaryRow k="Goal" v={draft.goal.length ? draft.goal.join(', ') : '—'} />
         <SummaryRow k="Experience" v={draft.experience || '—'} />
         <SummaryRow k="Availability" v={`${draft.availability || '—'} days / week`} />
         <SummaryRow k="Equipment" v={draft.equipment.length ? draft.equipment.join(', ') : '—'} />

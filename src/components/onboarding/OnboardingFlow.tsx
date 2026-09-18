@@ -14,7 +14,7 @@ const ONB_STEPS = ['welcome', 'identity', 'body', 'goal', 'experience', 'equipme
 function stepValid(step: string, d: OnboardingDraft): boolean {
   if (step === 'identity') return d.name.trim().length > 1 && !!d.age;
   if (step === 'body') return !!d.height && !!d.weight;
-  if (step === 'goal') return !!d.goal;
+  if (step === 'goal') return d.goal.length > 0;
   if (step === 'experience') return !!d.experience && !!d.availability;
   if (step === 'equipment') return d.equipment.length > 0;
   if (step === 'character') return !!d.character;
