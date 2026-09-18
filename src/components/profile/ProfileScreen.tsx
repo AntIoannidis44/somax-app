@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Icon } from '../Icon';
 import { ChipGroup } from '../onboarding/ChipGroup';
 import { GOALS } from '../onboarding/steps/Goal';
+import { FOCUS_OPTIONS } from '../onboarding/steps/Focus';
 import { DAYS } from '../onboarding/steps/Experience';
 import { StatBars } from './StatBars';
 import { SettingsCard } from './SettingsCard';
@@ -23,24 +24,26 @@ export function ProfileScreen() {
   const resetDemo = useAppStore((s) => s.resetDemo);
   const toggleProfileGoal = useAppStore((s) => s.toggleProfileGoal);
   const setProfileAvailability = useAppStore((s) => s.setProfileAvailability);
+  const setProfileFocus = useAppStore((s) => s.setProfileFocus);
   const reviseWeekPlan = useAppStore((s) => s.reviseWeekPlan);
 
   const [prefsOpen, setPrefsOpen] = useState(false);
-  const [prefsSnapshot, setPrefsSnapshot] = useState<{ goal: string[]; availability: string } | null>(null);
+  const [prefsSnapshot, setPrefsSnapshot] = useState<{ goal: string[]; availability: string; focus: string } | null>(null);
 
   function togglePrefs() {
-    if (!prefsOpen) setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability });
+    if (!prefsOpen) setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability, focus: profile.focus });
     setPrefsOpen((v) => !v);
   }
   const prefsChanged =
     !!prefsSnapshot &&
     (profile.availability !== prefsSnapshot.availability ||
+      profile.focus !== prefsSnapshot.focus ||
       profile.goal.length !== prefsSnapshot.goal.length ||
       profile.goal.some((g) => !prefsSnapshot.goal.includes(g)));
 
   function handleRevise() {
     reviseWeekPlan();
-    setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability });
+    setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability, focus: profile.focus });
   }
 
   const ctx = { level: progress.level, longestStreak: progress.longestStreak };
@@ -102,7 +105,8 @@ export function ProfileScreen() {
           <div>
             <div className="setting-title">Goals &amp; schedule</div>
             <div className="setting-sub">
-              {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {profile.availability || '—'} days/week
+              {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {FOCUS_OPTIONS.find((f) => f.id === profile.focus)?.name} ·{' '}
+              {profile.availability || '—'} days/week
             </div>
           </div>
           <Icon name="chevron" style={{ transform: prefsOpen ? 'rotate(-90deg)' : 'rotate(90deg)', transition: 'transform 200ms ease', flexShrink: 0 }} />
@@ -113,6 +117,14 @@ export function ProfileScreen() {
               Goals
             </div>
             <ChipGroup options={GOALS} value={profile.goal} onSelect={toggleProfileGoal} />
+            <div className="setting-title" style={{ margin: '18px 0 10px' }}>
+              Focus
+            </div>
+            <ChipGroup
+              options={FOCUS_OPTIONS.map((f) => f.name)}
+              value={FOCUS_OPTIONS.find((f) => f.id === profile.focus)?.name || ''}
+              onSelect={(name) => setProfileFocus(FOCUS_OPTIONS.find((f) => f.name === name)!.id)}
+            />
             <div className="setting-title" style={{ margin: '18px 0 10px' }}>
               Days per week
             </div>

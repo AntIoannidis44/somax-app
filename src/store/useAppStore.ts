@@ -19,6 +19,7 @@ import type {
   Route,
   Settings,
   StudioCat,
+  TrainingFocus,
 } from '../types';
 
 function defaultOnbDraft(): OnboardingDraft {
@@ -28,6 +29,7 @@ function defaultOnbDraft(): OnboardingDraft {
     height: '',
     weight: '',
     goal: [],
+    focus: '',
     experience: '',
     availability: '',
     equipment: [],
@@ -105,6 +107,7 @@ interface Actions {
 
   toggleProfileGoal: (goal: string) => void;
   setProfileAvailability: (days: string) => void;
+  setProfileFocus: (focus: TrainingFocus) => void;
   reviseWeekPlan: () => void;
 
   toggleGoal: (goalId: string) => void;
@@ -181,7 +184,8 @@ export const useAppStore = create<Store>()(
       finishOnboarding: () => {
         const d = get().onbDraft;
         const difficulty = d.experience === 'Beginner' ? 'Foundations' : d.experience === 'Advanced' ? 'Performance' : 'Progression';
-        const weekPlan = generateWeekPlan(d.availability, d.goal);
+        const focus = d.focus || 'gym';
+        const weekPlan = generateWeekPlan(d.availability, d.goal, focus);
         set(
           produce((s) => {
             s.profile = {
@@ -190,6 +194,7 @@ export const useAppStore = create<Store>()(
               height: d.height,
               weight: d.weight,
               goal: d.goal,
+              focus,
               experience: d.experience,
               availability: d.availability,
               equipment: d.equipment,
@@ -221,6 +226,13 @@ export const useAppStore = create<Store>()(
             s.profile.availability = days;
           }),
         ),
+      setProfileFocus: (focus) =>
+        set(
+          produce((s) => {
+            if (!s.profile) return;
+            s.profile.focus = focus;
+          }),
+        ),
       reviseWeekPlan: () => {
         const s = get();
         if (!s.profile) return;
@@ -228,7 +240,7 @@ export const useAppStore = create<Store>()(
         // earlier in this 7-day cycle already happened and shouldn't be
         // rewritten by a preference change made mid-week.
         const fromIdx = todayPlanIndex(s.simDay);
-        const weekPlan = reviseWeekPlanFrom(s.weekPlan, fromIdx, s.profile.availability, s.profile.goal);
+        const weekPlan = reviseWeekPlanFrom(s.weekPlan, fromIdx, s.profile.availability, s.profile.goal, s.profile.focus);
         set(
           produce((st) => {
             st.weekPlan = weekPlan;
@@ -373,17 +385,21 @@ export const useAppStore = create<Store>()(
       // have the old string shape, which crashes anything calling
       // .join()/.includes() on it - coerce on load instead of requiring
       // everyone to reset their demo data.
-      version: 2,
+      version: 3,
       migrate: (persisted) => {
         const s = persisted as any;
         const toGoalArray = (g: unknown) => (Array.isArray(g) ? g : typeof g === 'string' && g ? [g] : []);
         if (s?.profile) s.profile.goal = toGoalArray(s.profile.goal);
         if (s?.onbDraft) s.onbDraft.goal = toGoalArray(s.onbDraft.goal);
+        // `focus` (gym/running/hybrid) is new - default existing profiles
+        // to 'gym', matching the only modality that existed before this.
+        if (s?.profile && !s.profile.focus) s.profile.focus = 'gym';
+        if (s?.onbDraft && !s.onbDraft.focus) s.onbDraft.focus = '';
         // `weekPlan` is new - existing saved states predate it entirely.
         // Derive it from the saved profile so returning users keep the
         // same fixed rotation they've been on rather than a re-roll.
         if (!Array.isArray(s?.weekPlan)) {
-          s.weekPlan = s?.profile ? generateWeekPlan(s.profile.availability, s.profile.goal) : generateWeekPlan('4', []);
+          s.weekPlan = s?.profile ? generateWeekPlan(s.profile.availability, s.profile.goal, s.profile.focus) : generateWeekPlan('4', []);
         }
         return s;
       },

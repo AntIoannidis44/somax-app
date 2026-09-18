@@ -4,17 +4,19 @@ import { Welcome } from './steps/Welcome';
 import { Identity } from './steps/Identity';
 import { Body } from './steps/Body';
 import { Goal } from './steps/Goal';
+import { Focus } from './steps/Focus';
 import { Experience } from './steps/Experience';
 import { Equipment } from './steps/Equipment';
 import { CharacterStep } from './steps/CharacterStep';
 import { Summary } from './steps/Summary';
 
-const ONB_STEPS = ['welcome', 'identity', 'body', 'goal', 'experience', 'equipment', 'character', 'summary'] as const;
+const ONB_STEPS = ['welcome', 'identity', 'body', 'goal', 'focus', 'experience', 'equipment', 'character', 'summary'] as const;
 
 function stepValid(step: string, d: OnboardingDraft): boolean {
   if (step === 'identity') return d.name.trim().length > 1 && !!d.age;
   if (step === 'body') return !!d.height && !!d.weight;
   if (step === 'goal') return d.goal.length > 0;
+  if (step === 'focus') return !!d.focus;
   if (step === 'experience') return !!d.experience && !!d.availability;
   if (step === 'equipment') return d.equipment.length > 0;
   if (step === 'character') return !!d.character;
@@ -51,6 +53,7 @@ export function OnboardingFlow() {
         {step === 'identity' && <Identity />}
         {step === 'body' && <Body />}
         {step === 'goal' && <Goal />}
+        {step === 'focus' && <Focus />}
         {step === 'experience' && <Experience />}
         {step === 'equipment' && <Equipment />}
         {step === 'character' && <CharacterStep />}

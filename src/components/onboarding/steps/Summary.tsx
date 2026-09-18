@@ -1,5 +1,6 @@
 import { useAppStore } from '../../../store/useAppStore';
 import { first } from '../../../lib/format';
+import { FOCUS_OPTIONS } from './Focus';
 
 function SummaryRow({ k, v }: { k: string; v: string }) {
   return (
@@ -28,6 +29,7 @@ export function Summary() {
       <div className="card" style={{ marginBottom: 10 }}>
         <SummaryRow k="Athlete" v={draft.character ? (draft.character.base === 'male' ? 'Male base' : 'Female base') : '—'} />
         <SummaryRow k="Goal" v={draft.goal.length ? draft.goal.join(', ') : '—'} />
+        <SummaryRow k="Focus" v={FOCUS_OPTIONS.find((f) => f.id === draft.focus)?.name || '—'} />
         <SummaryRow k="Experience" v={draft.experience || '—'} />
         <SummaryRow k="Availability" v={`${draft.availability || '—'} days / week`} />
         <SummaryRow k="Equipment" v={draft.equipment.length ? draft.equipment.join(', ') : '—'} />

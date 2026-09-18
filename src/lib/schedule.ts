@@ -1,5 +1,5 @@
 import { WORKOUTS } from '../data/workouts';
-import type { PlanDay, TodayGoal, WorkoutState } from '../types';
+import type { PlanDay, TodayGoal, TrainingFocus, WorkoutState } from '../types';
 
 export function todayPlanIndex(simDay: number): number {
   return simDay % 7;
@@ -15,14 +15,26 @@ export function dayLabel(simDay: number, weekPlan: PlanDay[]): string {
   return `Day ${simDay + 1} · ${name}`;
 }
 
-// Chooses which of the 4 workout types to favor and in what order, based on
-// the goals picked in Training preferences. Not a real periodization model -
-// a simple, defensible heuristic: strength-leaning goals get the classic
-// push/pull/legs rotation, cardio-leaning goals interleave conditioning
-// days in place of some of them, and picking both blends the two.
-function workoutOrderFor(goals: string[]): string[] {
+// Chooses which workout types to favor and in what order, based on the
+// goals and training focus picked in Training preferences. Not a real
+// periodization model - a simple, defensible heuristic: focus decides the
+// modality (gym vs. run/walk vs. a blend of both), and within that, goals
+// tilt the balance further (strength-leaning goals get the classic
+// push/pull/legs rotation, cardio-leaning goals lean on conditioning or
+// running more).
+function workoutOrderFor(goals: string[], focus: TrainingFocus): string[] {
   const wantsStrength = goals.includes('Build strength') || goals.includes('Muscle gain');
-  const wantsCardio = goals.includes('Lose fat') || goals.includes('Endurance');
+  const wantsCardio = goals.includes('Lose fat') || goals.includes('Endurance') || goals.includes('Aerobic fitness');
+
+  if (focus === 'running') {
+    if (wantsStrength) return ['run', 'push', 'run', 'walk', 'run', 'legs'];
+    return ['run', 'walk', 'run', 'run', 'walk'];
+  }
+  if (focus === 'hybrid') {
+    if (wantsCardio && !wantsStrength) return ['run', 'push', 'walk', 'pull', 'run', 'legs'];
+    return ['push', 'run', 'pull', 'legs', 'walk', 'cond'];
+  }
+  // gym
   if (wantsCardio && !wantsStrength) return ['cond', 'push', 'cond', 'pull', 'cond', 'legs'];
   if (wantsCardio) return ['push', 'cond', 'pull', 'legs', 'cond'];
   return ['push', 'pull', 'legs', 'cond'];
@@ -31,9 +43,9 @@ function workoutOrderFor(goals: string[]): string[] {
 // Spreads `availability` training days as evenly as possible across the
 // 7-day week (e.g. 3 days -> roughly every other day, 5 days -> only 2
 // rest days), then assigns workout types from `workoutOrderFor` in order.
-export function generateWeekPlan(availability: string, goals: string[]): PlanDay[] {
+export function generateWeekPlan(availability: string, goals: string[], focus: TrainingFocus = 'gym'): PlanDay[] {
   const days = Math.max(2, Math.min(6, parseInt(availability, 10) || 4));
-  const order = workoutOrderFor(goals);
+  const order = workoutOrderFor(goals, focus);
   const plan: PlanDay[] = new Array(7).fill(null).map(() => ({ type: 'rest' as const }));
   const used = new Set<number>();
   const slots = Array.from({ length: days }, (_, i) => Math.round((i * 7) / days))
@@ -57,12 +69,18 @@ export function generateWeekPlan(availability: string, goals: string[]): PlanDay
 // Keeps indices before `fromIdx` exactly as they were, and only
 // redistributes training days across `fromIdx..6`, using however many
 // of the target weekly total haven't already happened.
-export function reviseWeekPlanFrom(oldPlan: PlanDay[], fromIdx: number, availability: string, goals: string[]): PlanDay[] {
+export function reviseWeekPlanFrom(
+  oldPlan: PlanDay[],
+  fromIdx: number,
+  availability: string,
+  goals: string[],
+  focus: TrainingFocus = 'gym',
+): PlanDay[] {
   const targetDays = Math.max(2, Math.min(6, parseInt(availability, 10) || 4));
   const already = oldPlan.slice(0, fromIdx).filter((p) => p.type === 'train').length;
   const remainingSlotCount = 7 - fromIdx;
   const remainingTrainDays = Math.max(0, Math.min(remainingSlotCount, targetDays - already));
-  const order = workoutOrderFor(goals);
+  const order = workoutOrderFor(goals, focus);
 
   const rest: PlanDay[] = new Array(remainingSlotCount).fill(null).map(() => ({ type: 'rest' as const }));
   const used = new Set<number>();

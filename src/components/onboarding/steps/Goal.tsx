@@ -1,7 +1,7 @@
 import { ChipGroup } from '../ChipGroup';
 import { useAppStore } from '../../../store/useAppStore';
 
-export const GOALS = ['Build strength', 'Lose fat', 'General fitness', 'Endurance', 'Muscle gain'];
+export const GOALS = ['Build strength', 'Lose fat', 'General fitness', 'Endurance', 'Muscle gain', 'Aerobic fitness'];
 
 export function Goal() {
   const draft = useAppStore((s) => s.onbDraft);

@@ -44,6 +44,23 @@ export const WORKOUTS: Record<string, WorkoutDef> = {
       { name: 'Plank Hold', meta: '3 x 45s' },
     ],
   },
+  run: {
+    name: 'Run',
+    duration: '30 min',
+    exercises: [
+      { name: 'Warm-up jog', meta: '5 min' },
+      { name: 'Steady-state run', meta: '20 min' },
+      { name: 'Cool-down walk', meta: '5 min' },
+    ],
+  },
+  walk: {
+    name: 'Walk',
+    duration: '35 min',
+    exercises: [
+      { name: 'Brisk walk', meta: '30 min' },
+      { name: 'Stretch', meta: '5 min' },
+    ],
+  },
 };
 
 export function statBumpFor(wid: string): Partial<Record<string, number>> {
@@ -52,6 +69,8 @@ export function statBumpFor(wid: string): Partial<Record<string, number>> {
     pull: { strength: 1, discipline: 0.4 },
     legs: { strength: 1.2, endurance: 0.6 },
     cond: { endurance: 1.4, agility: 0.6, vitality: 0.4 },
+    run: { endurance: 1.4, agility: 0.4, vitality: 0.3 },
+    walk: { endurance: 0.6, recovery: 0.5, vitality: 0.3 },
   };
   return map[wid] || {};
 }

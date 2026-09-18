@@ -40,12 +40,15 @@ export interface CharTier {
 export type Goal = 'Build strength' | 'Lose fat' | 'General fitness' | 'Endurance' | 'Muscle gain' | string;
 export type Experience = 'Beginner' | 'Intermediate' | 'Advanced' | string;
 
+export type TrainingFocus = 'gym' | 'running' | 'hybrid';
+
 export interface OnboardingDraft {
   name: string;
   age: string;
   height: string;
   weight: string;
   goal: string[];
+  focus: TrainingFocus | '';
   experience: string;
   availability: string;
   equipment: string[];
@@ -58,6 +61,7 @@ export interface Profile {
   height: string;
   weight: string;
   goal: string[];
+  focus: TrainingFocus;
   experience: string;
   availability: string;
   equipment: string[];
