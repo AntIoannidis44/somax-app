@@ -77,6 +77,8 @@ function defaultAppState(): AppState {
     viewingWorkout: null,
     viewingCharacter: false,
     viewingDM: null,
+    viewingWorkoutEditor: null,
+    viewingSharedProgram: null,
     studioCat: 'base',
     playTab: 'challenges',
   };
@@ -100,6 +102,10 @@ interface Actions {
   closeCharacterStudio: () => void;
   openDM: (userId: string, name: string) => void;
   closeDM: () => void;
+  openWorkoutEditor: (sourceKey: string | 'new') => void;
+  closeWorkoutEditor: () => void;
+  openSharedProgram: (id: string) => void;
+  closeSharedProgram: () => void;
   setMode: (mode: DisplayMode) => void;
   setStudioCat: (cat: StudioCat) => void;
   setPlayTab: (tab: PlayTab) => void;
@@ -116,6 +122,7 @@ interface Actions {
   setProfileAvailability: (days: string) => void;
   setProfileFocus: (focus: TrainingFocus) => void;
   reviseWeekPlan: () => void;
+  setDayWorkout: (dayIndex: number, key: string | null) => void;
 
   toggleGoal: (goalId: string) => void;
   toggleExercise: (exIndex: number) => void;
@@ -149,7 +156,15 @@ export const useAppStore = create<Store>()(
       toast: null,
       levelUp: null,
 
-      go: (route) => set({ route, viewingWorkout: null, viewingCharacter: false, viewingDM: null }),
+      go: (route) =>
+        set({
+          route,
+          viewingWorkout: null,
+          viewingCharacter: false,
+          viewingDM: null,
+          viewingWorkoutEditor: null,
+          viewingSharedProgram: null,
+        }),
       openWorkout: (wid) =>
         set(
           produce((s) => {
@@ -163,6 +178,14 @@ export const useAppStore = create<Store>()(
       closeCharacterStudio: () => set({ viewingCharacter: false }),
       openDM: (userId, name) => set({ viewingDM: { userId, name } }),
       closeDM: () => set({ viewingDM: null }),
+      // Opening the editor replaces whatever workout view launched it
+      // (WorkoutScreen's Edit button, or Train's own program list) rather
+      // than stacking on top of it - closing lands back on the route
+      // underneath instead of an intermediate workout view.
+      openWorkoutEditor: (sourceKey) => set({ viewingWorkoutEditor: sourceKey, viewingWorkout: null }),
+      closeWorkoutEditor: () => set({ viewingWorkoutEditor: null, viewingWorkout: null }),
+      openSharedProgram: (id) => set({ viewingSharedProgram: id }),
+      closeSharedProgram: () => set({ viewingSharedProgram: null }),
       setMode: (mode) => set({ mode }),
       setStudioCat: (studioCat) => set({ studioCat }),
       setPlayTab: (playTab) => set({ playTab }),
@@ -265,6 +288,24 @@ export const useAppStore = create<Store>()(
           }),
         );
         get().showToast("This week's program has been revised");
+      },
+
+      // Manually assigns (or clears) a specific day in the week, from the
+      // program picker - independent of the goal/focus-driven generator,
+      // since the user is choosing exactly what they want for that slot.
+      setDayWorkout: (dayIndex, key) => {
+        set(
+          produce((st) => {
+            st.weekPlan[dayIndex] = key ? { type: 'train', key } : { type: 'rest' };
+            if (todayPlanIndex(st.simDay) === dayIndex) {
+              const oldGoals = st.today.goals;
+              st.today.goals = buildTodayGoals(st.simDay, st.weekPlan).map((g: (typeof oldGoals)[number]) => {
+                const prev = oldGoals.find((og: (typeof oldGoals)[number]) => og.id === g.id);
+                return prev ? { ...g, done: prev.done } : g;
+              });
+            }
+          }),
+        );
       },
 
       toggleGoal: (goalId) => {

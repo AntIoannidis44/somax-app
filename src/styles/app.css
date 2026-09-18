@@ -912,6 +912,35 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 
 .sitefoot{ max-width:620px; text-align:center; padding:2px 24px 30px; font-size:11.5px; color: var(--text-faint); line-height:1.65; }
 
+/* ---------- workout editor / programs list ---------- */
+.ex-edit-row{ display:flex; align-items:center; gap:8px; padding:10px 0; border-bottom:1px solid var(--line-soft); }
+.ex-edit-row:last-child{ border-bottom:none; }
+.ex-edit-row input{
+    background: var(--surface-2); border:1.5px solid var(--line); border-radius:10px; padding:9px 10px;
+    font-size:13px; font-weight:600; color:var(--text); font-family:inherit; min-width:0;
+}
+.ex-edit-row input:focus{ outline:none; border-color: var(--accent); }
+.ex-edit-name{ flex:1.6; min-width:0; }
+.ex-edit-num{ flex:1; min-width:0; text-align:center; }
+.ex-edit-remove{ background:none; border:none; color:var(--text-faint); cursor:pointer; display:flex; padding:6px; flex-shrink:0; }
+.ex-edit-remove:hover{ color: var(--danger); }
+.program-row{ display:flex; align-items:center; gap:12px; padding:14px 2px; border-bottom:1px solid var(--line-soft); }
+.program-row:last-child{ border-bottom:none; }
+.program-row .goal-main{ flex:1; min-width:0; cursor:pointer; }
+.program-actions{ display:flex; gap:6px; flex-shrink:0; }
+.icon-btn{
+    background: var(--surface-2); border:1px solid var(--line); border-radius:10px; width:34px; height:34px;
+    display:flex; align-items:center; justify-content:center; color:var(--text-dim); cursor:pointer; flex-shrink:0;
+}
+.icon-btn svg{ width:15px; height:15px; }
+.icon-btn:hover{ color:var(--text); }
+.day-picker{ margin-top:8px; background: var(--surface-2); border:1px solid var(--line); border-radius: var(--r-md); overflow:hidden; }
+.day-picker-opt{ padding:11px 14px; font-size:13px; font-weight:600; cursor:pointer; border-bottom:1px solid var(--line-soft); }
+.day-picker-opt:last-child{ border-bottom:none; }
+.day-picker-opt:hover{ background: var(--surface-3); }
+.day-picker-opt.current{ color: var(--accent); }
+.empty-hint{ color: var(--text-faint); font-size:12.5px; padding:10px 2px; }
+
 /* ---------- mobile: full-bleed ---------- */
 @media (max-width: 680px){
     .sitebar{ display:none; }

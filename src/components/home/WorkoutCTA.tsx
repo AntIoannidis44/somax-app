@@ -1,5 +1,5 @@
 import { Icon } from '../Icon';
-import { WORKOUTS } from '../../data/workouts';
+import { getWorkout } from '../../lib/customWorkouts';
 import { useAppStore } from '../../store/useAppStore';
 import { isWorkoutDone, todayPlan } from '../../lib/schedule';
 
@@ -26,8 +26,9 @@ export function WorkoutCTA() {
   }
 
   const wid = plan.key;
-  const w = WORKOUTS[wid];
+  const w = getWorkout(wid);
   const done = isWorkoutDone(workoutState, simDay, wid);
+  if (!w) return null;
 
   return (
     <div className="workout-cta" onClick={() => openWorkout(wid)}>

@@ -1,6 +1,6 @@
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
-import { WORKOUTS } from '../../data/workouts';
+import { getWorkout } from '../../lib/customWorkouts';
 import { countUnlocked } from '../../lib/character';
 import { dayLabel } from '../../lib/schedule';
 import { first } from '../../lib/format';
@@ -26,6 +26,8 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const viewingWorkout = useAppStore((s) => s.viewingWorkout);
   const viewingCharacter = useAppStore((s) => s.viewingCharacter);
   const viewingDM = useAppStore((s) => s.viewingDM);
+  const viewingWorkoutEditor = useAppStore((s) => s.viewingWorkoutEditor);
+  const viewingSharedProgram = useAppStore((s) => s.viewingSharedProgram);
   const route = useAppStore((s) => s.route);
   const profile = useAppStore((s) => s.profile);
   const progress = useAppStore((s) => s.progress);
@@ -35,11 +37,13 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const closeWorkout = useAppStore((s) => s.closeWorkout);
   const closeCharacterStudio = useAppStore((s) => s.closeCharacterStudio);
   const closeDM = useAppStore((s) => s.closeDM);
+  const closeWorkoutEditor = useAppStore((s) => s.closeWorkoutEditor);
+  const closeSharedProgram = useAppStore((s) => s.closeSharedProgram);
 
   if (!onboarded) return <div className="device-header" />;
 
   if (viewingWorkout) {
-    const w = WORKOUTS[viewingWorkout];
+    const w = getWorkout(viewingWorkout);
     return (
       <div className="device-header">
         <button className="level-chip" style={{ padding: 8 }} onClick={closeWorkout}>
@@ -48,8 +52,8 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
           </span>
         </button>
         <div style={{ textAlign: 'center', flex: 1 }}>
-          <div className="dh-title">{w.name}</div>
-          <div className="dh-sub">{w.duration}</div>
+          <div className="dh-title">{w?.name}</div>
+          <div className="dh-sub">{w?.duration}</div>
         </div>
         <div style={{ width: 38 }} />
       </div>
@@ -86,6 +90,38 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
         </button>
         <div style={{ textAlign: 'center', flex: 1 }}>
           <div className="dh-title">{viewingDM.name}</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
+  if (viewingWorkoutEditor) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeWorkoutEditor}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">{viewingWorkoutEditor === 'new' ? 'New program' : 'Edit program'}</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
+  if (viewingSharedProgram) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeSharedProgram}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">Shared program</div>
         </div>
         <div style={{ width: 38 }} />
       </div>

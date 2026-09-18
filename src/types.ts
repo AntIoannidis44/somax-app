@@ -106,7 +106,12 @@ export interface TodayState {
 
 export interface ExerciseDef {
   name: string;
-  meta: string;
+  sets: number;
+  // Freeform so it covers both weight-training ("8", "12/leg") and
+  // cardio/interval work ("250m", "45s", "20 min") with one field
+  // rather than a separate exercise "type" per kind of training.
+  reps: string;
+  weight?: string;
 }
 
 export interface WorkoutDef {
@@ -205,6 +210,13 @@ export interface AppState {
   viewingWorkout: string | null;
   viewingCharacter: boolean;
   viewingDM: { userId: string; name: string } | null;
+  // 'new' = blank create mode; a string = fork/edit starting from this
+  // workout (a built-in preset key or one of the user's own custom
+  // workout ids) - see WorkoutEditorScreen.
+  viewingWorkoutEditor: string | 'new' | null;
+  // A shared workout id read from a `?program=` link on launch, shown as
+  // an import preview before it's copied into the viewer's own programs.
+  viewingSharedProgram: string | null;
   studioCat: StudioCat;
   playTab: PlayTab;
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { supabase } from './supabase';
 import { hydrateFromCloud, startCloudSync, stopCloudSync } from './cloudSync';
+import { loadMyWorkouts } from './customWorkouts';
 
 // A lighter version of useSession for components that just need to know
 // "who am I" (e.g. to mark which league row/post is mine) without also
@@ -30,6 +31,7 @@ export function useSession() {
       lastUserId = userId;
       if (userId) {
         await hydrateFromCloud(userId);
+        await loadMyWorkouts(userId);
         startCloudSync(userId);
       } else {
         stopCloudSync();

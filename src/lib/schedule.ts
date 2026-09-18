@@ -1,4 +1,5 @@
 import { WORKOUTS } from '../data/workouts';
+import { getWorkout } from './customWorkouts';
 import type { PlanDay, TodayGoal, TrainingFocus, WorkoutState } from '../types';
 
 export function todayPlanIndex(simDay: number): number {
@@ -11,7 +12,7 @@ export function todayPlan(simDay: number, weekPlan: PlanDay[]): PlanDay {
 
 export function dayLabel(simDay: number, weekPlan: PlanDay[]): string {
   const plan = todayPlan(simDay, weekPlan);
-  const name = plan.type === 'train' && plan.key ? WORKOUTS[plan.key].name : 'Recovery Day';
+  const name = plan.type === 'train' && plan.key ? getWorkout(plan.key)?.name || 'Workout' : 'Recovery Day';
   return `Day ${simDay + 1} · ${name}`;
 }
 
@@ -103,8 +104,8 @@ export function buildTodayGoals(simDay: number, weekPlan: PlanDay[]): TodayGoal[
   const plan = todayPlan(simDay, weekPlan);
   const goals: TodayGoal[] = [];
   if (plan.type === 'train' && plan.key) {
-    const w = WORKOUTS[plan.key];
-    goals.push({ id: 'workout', label: `Complete ${w.name}`, meta: w.duration, xp: 40, type: 'workout', done: false });
+    const w = getWorkout(plan.key);
+    goals.push({ id: 'workout', label: `Complete ${w?.name || 'workout'}`, meta: w?.duration || '', xp: 40, type: 'workout', done: false });
   } else {
     goals.push({ id: 'mobility_rest', label: 'Mobility & stretch (10 min)', meta: 'Recovery day', xp: 15, type: 'toggle', done: false });
   }

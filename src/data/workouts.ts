@@ -1,67 +1,72 @@
-import type { WorkoutDef } from '../types';
+import type { ExerciseDef, WorkoutDef } from '../types';
 
 export const WORKOUTS: Record<string, WorkoutDef> = {
   push: {
     name: 'Push Day',
     duration: '50 min',
     exercises: [
-      { name: 'Barbell Bench Press', meta: '4 x 8' },
-      { name: 'Overhead Press', meta: '3 x 10' },
-      { name: 'Incline Dumbbell Press', meta: '3 x 10' },
-      { name: 'Triceps Pushdown', meta: '3 x 12' },
-      { name: 'Lateral Raise', meta: '3 x 15' },
+      { name: 'Barbell Bench Press', sets: 4, reps: '8' },
+      { name: 'Overhead Press', sets: 3, reps: '10' },
+      { name: 'Incline Dumbbell Press', sets: 3, reps: '10' },
+      { name: 'Triceps Pushdown', sets: 3, reps: '12' },
+      { name: 'Lateral Raise', sets: 3, reps: '15' },
     ],
   },
   pull: {
     name: 'Pull Day',
     duration: '48 min',
     exercises: [
-      { name: 'Deadlift', meta: '3 x 5' },
-      { name: 'Lat Pulldown', meta: '4 x 10' },
-      { name: 'Barbell Row', meta: '3 x 10' },
-      { name: 'Face Pull', meta: '3 x 15' },
-      { name: 'Bicep Curl', meta: '3 x 12' },
+      { name: 'Deadlift', sets: 3, reps: '5' },
+      { name: 'Lat Pulldown', sets: 4, reps: '10' },
+      { name: 'Barbell Row', sets: 3, reps: '10' },
+      { name: 'Face Pull', sets: 3, reps: '15' },
+      { name: 'Bicep Curl', sets: 3, reps: '12' },
     ],
   },
   legs: {
     name: 'Leg Day',
     duration: '55 min',
     exercises: [
-      { name: 'Back Squat', meta: '4 x 8' },
-      { name: 'Romanian Deadlift', meta: '3 x 10' },
-      { name: 'Walking Lunge', meta: '3 x 12/leg' },
-      { name: 'Leg Curl', meta: '3 x 12' },
-      { name: 'Calf Raise', meta: '4 x 15' },
+      { name: 'Back Squat', sets: 4, reps: '8' },
+      { name: 'Romanian Deadlift', sets: 3, reps: '10' },
+      { name: 'Walking Lunge', sets: 3, reps: '12/leg' },
+      { name: 'Leg Curl', sets: 3, reps: '12' },
+      { name: 'Calf Raise', sets: 4, reps: '15' },
     ],
   },
   cond: {
     name: 'Conditioning',
     duration: '32 min',
     exercises: [
-      { name: 'Rowing Intervals', meta: '8 x 250m' },
-      { name: 'Kettlebell Swings', meta: '4 x 15' },
-      { name: 'Battle Ropes', meta: '4 x 30s' },
-      { name: 'Plank Hold', meta: '3 x 45s' },
+      { name: 'Rowing Intervals', sets: 8, reps: '250m' },
+      { name: 'Kettlebell Swings', sets: 4, reps: '15' },
+      { name: 'Battle Ropes', sets: 4, reps: '30s' },
+      { name: 'Plank Hold', sets: 3, reps: '45s' },
     ],
   },
   run: {
     name: 'Run',
     duration: '30 min',
     exercises: [
-      { name: 'Warm-up jog', meta: '5 min' },
-      { name: 'Steady-state run', meta: '20 min' },
-      { name: 'Cool-down walk', meta: '5 min' },
+      { name: 'Warm-up jog', sets: 1, reps: '5 min' },
+      { name: 'Steady-state run', sets: 1, reps: '20 min' },
+      { name: 'Cool-down walk', sets: 1, reps: '5 min' },
     ],
   },
   walk: {
     name: 'Walk',
     duration: '35 min',
     exercises: [
-      { name: 'Brisk walk', meta: '30 min' },
-      { name: 'Stretch', meta: '5 min' },
+      { name: 'Brisk walk', sets: 1, reps: '30 min' },
+      { name: 'Stretch', sets: 1, reps: '5 min' },
     ],
   },
 };
+
+export function exerciseMeta(ex: ExerciseDef): string {
+  const base = `${ex.sets} x ${ex.reps}`;
+  return ex.weight ? `${base} @ ${ex.weight}` : base;
+}
 
 export function statBumpFor(wid: string): Partial<Record<string, number>> {
   const map: Record<string, Partial<Record<string, number>>> = {
@@ -72,5 +77,7 @@ export function statBumpFor(wid: string): Partial<Record<string, number>> {
     run: { endurance: 1.4, agility: 0.4, vitality: 0.3 },
     walk: { endurance: 0.6, recovery: 0.5, vitality: 0.3 },
   };
-  return map[wid] || {};
+  // Custom/imported workouts (UUID keys) aren't in this map - give them a
+  // small generic, evenly-spread bump rather than nothing at all.
+  return map[wid] || { strength: 0.5, endurance: 0.5 };
 }
