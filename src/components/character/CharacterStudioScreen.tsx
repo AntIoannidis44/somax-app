@@ -278,7 +278,7 @@ export function CharacterStudioScreen() {
           <Icon name="expand" />
         </button>
       </div>
-      <div className="cat-rail">
+      <div className="cat-rail" style={{ transition: dragging ? 'none' : undefined }}>
         {STUDIO_CATS.map((k) => (
           <button
             key={k.id}
