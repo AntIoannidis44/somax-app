@@ -10,6 +10,7 @@ import { FeatureFlags } from './FeatureFlags';
 import { BetaTools } from './BetaTools';
 import { CharacterThumbnail } from '../character/CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
+import { supabase } from '../../lib/supabase';
 import { countUnlocked, nextUnlock, tierFor } from '../../lib/character';
 import { first, initials } from '../../lib/format';
 
@@ -187,7 +188,20 @@ export function ProfileScreen() {
       <div className="section-label">Beta tools</div>
       <BetaTools />
 
-      <div style={{ height: 10 }} />
+      <div className="section-label">Account</div>
+      <button
+        className="btn btn-ghost"
+        style={{ width: '100%', marginBottom: 10 }}
+        onClick={async () => {
+          // Clear local state on sign-out too - otherwise a different
+          // account signing in on this device, before its own cloud row
+          // exists, would seed the cloud with whatever's left over here.
+          await supabase.auth.signOut();
+          resetDemo();
+        }}
+      >
+        Sign out
+      </button>
       <button
         className="btn btn-danger-ghost"
         onClick={() => {
