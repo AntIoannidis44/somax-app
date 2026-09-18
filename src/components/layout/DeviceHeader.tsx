@@ -25,6 +25,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const onboarded = useAppStore((s) => s.onboarded);
   const viewingWorkout = useAppStore((s) => s.viewingWorkout);
   const viewingCharacter = useAppStore((s) => s.viewingCharacter);
+  const viewingDM = useAppStore((s) => s.viewingDM);
   const route = useAppStore((s) => s.route);
   const profile = useAppStore((s) => s.profile);
   const progress = useAppStore((s) => s.progress);
@@ -33,6 +34,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const go = useAppStore((s) => s.go);
   const closeWorkout = useAppStore((s) => s.closeWorkout);
   const closeCharacterStudio = useAppStore((s) => s.closeCharacterStudio);
+  const closeDM = useAppStore((s) => s.closeDM);
 
   if (!onboarded) return <div className="device-header" />;
 
@@ -68,6 +70,22 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
           <div className="dh-sub">
             {cu.done} of {cu.total} items unlocked
           </div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
+  if (viewingDM) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeDM}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">{viewingDM.name}</div>
         </div>
         <div style={{ width: 38 }} />
       </div>

@@ -513,14 +513,28 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .feed-text{ font-size:13.5px; line-height:1.45; color: var(--text-dim); }
 .feed-text b{ font-weight:700; color: var(--text); }
 .feed-time{ font-size:10.5px; color: var(--text-faint); margin-top:4px; font-family: var(--font-mono); }
-.cheer-btn{
-    display:flex; align-items:center; gap:6px; background:none; border:none; color: var(--text-faint);
-    font-size:12px; font-weight:700; cursor:pointer; margin-top:8px; padding:0;
-    transition: color var(--dur-fast) var(--ease-out);
+
+.composer{ display:flex; gap:8px; margin-bottom:18px; align-items:flex-end; }
+.composer textarea{
+    flex:1; resize:none; border-radius:16px; border:1px solid var(--line); padding:10px 14px;
+    font:inherit; font-size:13.5px; background: var(--surface-2); min-height:22px; color: var(--text);
 }
-.cheer-btn svg{ width:14px; height:14px; transition: transform var(--dur-med) var(--ease-spring); }
-.cheer-btn.cheered{ color: var(--accent); }
-.cheer-btn.cheered svg{ transform: scale(1.18); fill: currentColor; }
+.composer textarea:focus{ outline:none; border-color: var(--accent); }
+
+.friend-row{ display:flex; align-items:center; gap:12px; padding:12px 4px; border-bottom:1px solid var(--line-soft); }
+.friend-row:last-child{ border-bottom:none; }
+.friend-actions{ display:flex; gap:6px; flex-shrink:0; }
+
+.dm-panel{ display:flex; flex-direction:column; height:100%; }
+.dm-messages{ flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:8px; padding:16px 22px; scrollbar-width:none; }
+.dm-messages::-webkit-scrollbar{ display:none; }
+.dm-bubble{ max-width:75%; padding:9px 14px; border-radius:17px; font-size:13.5px; line-height:1.4; word-break: break-word; }
+.dm-bubble.mine{ align-self:flex-end; background: var(--accent); color:#fff; border-bottom-right-radius:5px; }
+.dm-bubble.theirs{ align-self:flex-start; background: var(--surface-2); color: var(--text); border-bottom-left-radius:5px; }
+.dm-input-row{ display:flex; gap:8px; padding:14px 22px; border-top:1px solid var(--line-soft); background: var(--surface); }
+.dm-input-row input{ flex:1; }
+.dm-input-row .btn{ flex-shrink:0; padding:0 16px; }
+.dm-input-row .btn svg{ rotate:90deg; width:16px; height:16px; }
 
 .banner{
     display:flex; gap:11px; padding:15px 16px; border-radius:18px; background: var(--accent-soft);

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Sitebar } from './components/layout/Sitebar';
 import { AboutModal } from './components/layout/AboutModal';
 import { DeviceShell } from './components/layout/DeviceShell';
@@ -11,6 +11,7 @@ import { PlayScreen } from './components/play/PlayScreen';
 import { CommunityScreen } from './components/community/CommunityScreen';
 import { ProfileScreen } from './components/profile/ProfileScreen';
 import { CharacterStudioScreen } from './components/character/CharacterStudioScreen';
+import { DMScreen } from './components/community/DMScreen';
 import { useAppStore } from './store/useAppStore';
 import { useSession } from './lib/useSession';
 
@@ -18,11 +19,13 @@ function CurrentScreen() {
   const onboarded = useAppStore((s) => s.onboarded);
   const viewingWorkout = useAppStore((s) => s.viewingWorkout);
   const viewingCharacter = useAppStore((s) => s.viewingCharacter);
+  const viewingDM = useAppStore((s) => s.viewingDM);
   const route = useAppStore((s) => s.route);
 
   if (!onboarded) return <OnboardingFlow />;
   if (viewingWorkout) return <WorkoutScreen />;
   if (viewingCharacter) return <CharacterStudioScreen />;
+  if (viewingDM) return <DMScreen />;
 
   switch (route) {
     case 'home':
@@ -45,10 +48,17 @@ function App() {
   const onboarded = useAppStore((s) => s.onboarded);
   const viewingWorkout = useAppStore((s) => s.viewingWorkout);
   const viewingCharacter = useAppStore((s) => s.viewingCharacter);
+  const viewingDM = useAppStore((s) => s.viewingDM);
   const route = useAppStore((s) => s.route);
   const { session, ready } = useSession();
+  const checkForNewDay = useAppStore((s) => s.checkForNewDay);
 
-  const isHomeHero = onboarded && !viewingWorkout && !viewingCharacter && route === 'home';
+  useEffect(() => {
+    if (session) checkForNewDay();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session]);
+
+  const isHomeHero = onboarded && !viewingWorkout && !viewingCharacter && !viewingDM && route === 'home';
 
   return (
     <div className="page">

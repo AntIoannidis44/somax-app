@@ -157,23 +157,12 @@ export interface ChallengeState {
   pushupLog: number;
 }
 
-export interface LeagueNpc {
-  name: string;
-  xp: number;
-}
-
 export interface AchievementDef {
   id: string;
   name: string;
   desc: string;
   icon: string;
   test: (s: AppState) => boolean;
-}
-
-export interface FeedItem {
-  who: string;
-  text: string;
-  time: string;
 }
 
 export interface Settings {
@@ -196,6 +185,12 @@ export interface AppState {
   route: Route;
   mode: DisplayMode;
   simDay: number;
+  // Real calendar date (YYYY-MM-DD) `simDay` was last advanced for - lets
+  // the app detect a new real day has started and auto-advance, now that
+  // there's no manual "simulate next day" button for real testers to
+  // click. Not used to pick which day-of-week the plan shows (that's
+  // still simDay % 7, deliberately independent of the real calendar).
+  lastActiveDate: string;
   profile: Profile | null;
   progress: Progress;
   stats_workoutsDone: number;
@@ -206,10 +201,10 @@ export interface AppState {
   challenges: ChallengeState[];
   coins: number;
   achievements: Record<string, boolean>;
-  cheered: Record<number, boolean>;
   settings: Settings;
   viewingWorkout: string | null;
   viewingCharacter: boolean;
+  viewingDM: { userId: string; name: string } | null;
   studioCat: StudioCat;
   playTab: PlayTab;
 }

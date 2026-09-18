@@ -41,6 +41,10 @@ function defaultChallengeStates(): ChallengeState[] {
   return CHALLENGE_DEFS.map((c) => ({ id: c.id, joined: false, progress: 0, completed: false, pushupLog: 0 }));
 }
 
+function todayISO(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
 function defaultAppState(): AppState {
   const simDay = 0;
   const weekPlan = generateWeekPlan('4', []);
@@ -52,6 +56,7 @@ function defaultAppState(): AppState {
     route: 'home',
     mode: 'classic',
     simDay,
+    lastActiveDate: todayISO(),
     profile: null,
     progress: {
       totalXP: 0,
@@ -68,10 +73,10 @@ function defaultAppState(): AppState {
     challenges: defaultChallengeStates(),
     coins: 0,
     achievements: {},
-    cheered: {},
     settings: { notifWorkout: true, notifStreak: true, notifLeague: false, notifChallenge: true },
     viewingWorkout: null,
     viewingCharacter: false,
+    viewingDM: null,
     studioCat: 'base',
     playTab: 'challenges',
   };
@@ -93,6 +98,8 @@ interface Actions {
   closeWorkout: () => void;
   openCharacterStudio: () => void;
   closeCharacterStudio: () => void;
+  openDM: (userId: string, name: string) => void;
+  closeDM: () => void;
   setMode: (mode: DisplayMode) => void;
   setStudioCat: (cat: StudioCat) => void;
   setPlayTab: (tab: PlayTab) => void;
@@ -119,10 +126,10 @@ interface Actions {
 
   updateCharacterField: (key: CatalogKey | 'base' | 'build' | 'skin' | 'hairColor', value: string | number) => void;
 
-  cheerFeedItem: (index: number) => void;
   toggleSetting: (key: keyof Settings) => void;
 
   advanceDay: () => void;
+  checkForNewDay: () => void;
   resetDemo: () => void;
 
   showToast: (message: string) => void;
@@ -142,7 +149,7 @@ export const useAppStore = create<Store>()(
       toast: null,
       levelUp: null,
 
-      go: (route) => set({ route, viewingWorkout: null, viewingCharacter: false }),
+      go: (route) => set({ route, viewingWorkout: null, viewingCharacter: false, viewingDM: null }),
       openWorkout: (wid) =>
         set(
           produce((s) => {
@@ -154,6 +161,8 @@ export const useAppStore = create<Store>()(
       closeWorkout: () => set({ viewingWorkout: null }),
       openCharacterStudio: () => set({ viewingCharacter: true, route: 'profile' }),
       closeCharacterStudio: () => set({ viewingCharacter: false }),
+      openDM: (userId, name) => set({ viewingDM: { userId, name } }),
+      closeDM: () => set({ viewingDM: null }),
       setMode: (mode) => set({ mode }),
       setStudioCat: (studioCat) => set({ studioCat }),
       setPlayTab: (playTab) => set({ playTab }),
@@ -338,12 +347,6 @@ export const useAppStore = create<Store>()(
         set(produce((st) => { (st.character as any)[key] = value; }));
       },
 
-      cheerFeedItem: (index) =>
-        set(
-          produce((s) => {
-            s.cheered[index] = !s.cheered[index];
-          }),
-        ),
       toggleSetting: (key) =>
         set(
           produce((s) => {
@@ -367,6 +370,21 @@ export const useAppStore = create<Store>()(
           }),
         );
       },
+      // Real testers have no "simulate next day" button anymore - this is
+      // what actually moves the program/streak forward now, driven by the
+      // device's real calendar date rather than a manual click.
+      checkForNewDay: () => {
+        const s = get();
+        if (!s.onboarded) return;
+        const today = todayISO();
+        if (today === s.lastActiveDate) return;
+        const elapsed = Math.max(
+          1,
+          Math.round((new Date(today).getTime() - new Date(s.lastActiveDate).getTime()) / 86_400_000),
+        );
+        for (let i = 0; i < elapsed; i++) get().advanceDay();
+        set(produce((st) => { st.lastActiveDate = today; }));
+      },
       resetDemo: () => set({ ...defaultAppState(), toast: null, levelUp: null }),
 
       showToast: (message) => {
@@ -385,7 +403,7 @@ export const useAppStore = create<Store>()(
       // have the old string shape, which crashes anything calling
       // .join()/.includes() on it - coerce on load instead of requiring
       // everyone to reset their demo data.
-      version: 3,
+      version: 4,
       migrate: (persisted) => {
         const s = persisted as any;
         const toGoalArray = (g: unknown) => (Array.isArray(g) ? g : typeof g === 'string' && g ? [g] : []);
@@ -401,6 +419,10 @@ export const useAppStore = create<Store>()(
         if (!Array.isArray(s?.weekPlan)) {
           s.weekPlan = s?.profile ? generateWeekPlan(s.profile.availability, s.profile.goal, s.profile.focus) : generateWeekPlan('4', []);
         }
+        // `lastActiveDate` is new (replaces the manual "simulate next day"
+        // button for real testers) - assume "seen just now" rather than
+        // triggering a burst of catch-up day-advances for existing users.
+        if (!s?.lastActiveDate) s.lastActiveDate = todayISO();
         return s;
       },
     },

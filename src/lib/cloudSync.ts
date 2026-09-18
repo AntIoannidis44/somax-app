@@ -12,10 +12,26 @@ function stateForCloud() {
 }
 
 async function pushToCloud(userId: string) {
-  const { error } = await supabase
-    .from('app_state')
-    .upsert({ user_id: userId, state: stateForCloud(), updated_at: new Date().toISOString() });
+  const state = stateForCloud();
+  const { error } = await supabase.from('app_state').upsert({ user_id: userId, state, updated_at: new Date().toISOString() });
   if (error) console.error('[cloudSync] failed to save:', error.message);
+
+  // A slice of the same state is mirrored into public_profiles - just
+  // enough for the league and community to show a real name/level/XP/
+  // avatar for every tester, without exposing the rest of their state
+  // (workout history, settings, etc.) to other signed-in users.
+  if (state.profile) {
+    const { error: pubError } = await supabase.from('public_profiles').upsert({
+      user_id: userId,
+      name: state.profile.name,
+      level: state.progress.level,
+      total_xp: state.progress.totalXP,
+      current_streak: state.progress.currentStreak,
+      character: state.character,
+      updated_at: new Date().toISOString(),
+    });
+    if (pubError) console.error('[cloudSync] failed to save public profile:', pubError.message);
+  }
 }
 
 // Runs once right after sign-in: an existing account's saved state wins over

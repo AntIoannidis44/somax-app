@@ -7,7 +7,6 @@ import { DAYS } from '../onboarding/steps/Experience';
 import { StatBars } from './StatBars';
 import { SettingsCard } from './SettingsCard';
 import { FeatureFlags } from './FeatureFlags';
-import { BetaTools } from './BetaTools';
 import { CharacterThumbnail } from '../character/CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
 import { supabase } from '../../lib/supabase';
@@ -184,9 +183,6 @@ export function ProfileScreen() {
         <span style={{ fontWeight: 600, color: 'var(--text-faint)', textTransform: 'none', letterSpacing: 0 }}>beta rollout</span>
       </div>
       <FeatureFlags />
-
-      <div className="section-label">Beta tools</div>
-      <BetaTools />
 
       <div className="section-label">Account</div>
       <button
