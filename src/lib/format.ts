@@ -12,6 +12,10 @@ export function initials(name: string): string {
     .toUpperCase();
 }
 
+export function formatTime(isoDate: string): string {
+  return new Date(isoDate).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+}
+
 export function timeAgo(isoDate: string): string {
   const diffMs = Date.now() - new Date(isoDate).getTime();
   const mins = Math.round(diffMs / 60_000);

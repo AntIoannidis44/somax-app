@@ -31,6 +31,15 @@ TARGETS = {
     'Light': np.array([230.0, 189.0, 154.0]),
     'Medium': np.array([177.0, 128.0, 90.0]),
     'Dark': np.array([101.0, 67.0, 46.0]),
+    # Fantasy tones, high-level unlocks - same mask/ratio-tint mechanism as
+    # the realistic tones above, just a different target color. The mask
+    # only depends on the *source* texture's own saturation, not the
+    # target, so nothing else about the technique needs to change for
+    # non-realistic targets.
+    'Blue': np.array([70.0, 110.0, 216.0]),
+    'Gold': np.array([212.0, 175.0, 87.0]),
+    'Emerald': np.array([46.0, 158.0, 110.0]),
+    'Crimson': np.array([178.0, 48.0, 62.0]),
 }
 
 BUILDS = ['Regular', 'Superhero', 'Teen']

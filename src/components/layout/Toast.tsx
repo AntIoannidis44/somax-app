@@ -11,8 +11,8 @@ export function Toast() {
     if (!toast) return;
     setMessage(toast.message);
     setVisible(true);
-    const hideTimer = setTimeout(() => setVisible(false), 2200);
-    const clearTimer = setTimeout(() => clearToast(), 2500);
+    const hideTimer = setTimeout(() => setVisible(false), 4000);
+    const clearTimer = setTimeout(() => clearToast(), 4300);
     return () => {
       clearTimeout(hideTimer);
       clearTimeout(clearTimer);

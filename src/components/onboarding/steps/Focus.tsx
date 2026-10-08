@@ -1,9 +1,11 @@
 import { ChipGroup } from '../ChipGroup';
 import { useAppStore } from '../../../store/useAppStore';
 
-export const FOCUS_OPTIONS: { id: 'gym' | 'running' | 'hybrid'; name: string }[] = [
+export const FOCUS_OPTIONS: { id: 'gym' | 'running' | 'swim' | 'ride' | 'hybrid'; name: string }[] = [
   { id: 'gym', name: 'Gym & weights' },
   { id: 'running', name: 'Running & walking' },
+  { id: 'swim', name: 'Swimming' },
+  { id: 'ride', name: 'Cycling' },
   { id: 'hybrid', name: 'Hybrid' },
 ];
 
@@ -14,7 +16,7 @@ export function Focus() {
   return (
     <>
       <h2>What are you focused on?</h2>
-      <p className="lead">Gym and weights, running and walking, or a mix of both.</p>
+      <p className="lead">Gym, running, swimming, cycling, or a mix of it all.</p>
       <ChipGroup
         options={FOCUS_OPTIONS.map((f) => f.name)}
         value={FOCUS_OPTIONS.find((f) => f.id === draft.focus)?.name || ''}

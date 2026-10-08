@@ -3,34 +3,35 @@ import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
 import { exerciseMeta } from '../../data/workouts';
-import { fetchWorkoutById, importWorkout, type CustomWorkout } from '../../lib/customWorkouts';
+import { saveWorkout } from '../../lib/customWorkouts';
+import { fetchSharedProgramByCode, type ShareableProgram } from '../../lib/shareLinks';
 
 export function SharedProgramScreen() {
-  const id = useAppStore((s) => s.viewingSharedProgram)!;
+  const code = useAppStore((s) => s.viewingSharedProgram)!;
   const closeSharedProgram = useAppStore((s) => s.closeSharedProgram);
   const showToast = useAppStore((s) => s.showToast);
   const userId = useUserId();
 
   const [status, setStatus] = useState<'loading' | 'found' | 'missing'>('loading');
-  const [program, setProgram] = useState<CustomWorkout | null>(null);
+  const [program, setProgram] = useState<ShareableProgram | null>(null);
   const [importing, setImporting] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
-    fetchWorkoutById(id).then((w) => {
+    fetchSharedProgramByCode(code).then((p) => {
       if (cancelled) return;
-      setProgram(w);
-      setStatus(w ? 'found' : 'missing');
+      setProgram(p);
+      setStatus(p ? 'found' : 'missing');
     });
     return () => {
       cancelled = true;
     };
-  }, [id]);
+  }, [code]);
 
   async function handleImport() {
     if (!userId || !program) return;
     setImporting(true);
-    const newId = await importWorkout(userId, program);
+    const newId = await saveWorkout(userId, { name: program.name, duration: program.duration, exercises: program.exercises, category: program.category });
     setImporting(false);
     if (newId) {
       showToast('Added to your programs');

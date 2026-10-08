@@ -15,7 +15,7 @@ export function LevelPath() {
     const ceil = levelCeil(L);
     const t = tierFor(L);
     const stateCls = L < lvl ? 'done' : L === lvl ? 'current' : 'locked';
-    const isTierStart = L === CHAR_TIERS[1].min || L === CHAR_TIERS[2].min || L === CHAR_TIERS[3].min;
+    const isTierStart = CHAR_TIERS.slice(1).some((t) => t.min === L);
     const sub =
       L === lvl
         ? `${xp - floor} / ${ceil - floor} XP`

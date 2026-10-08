@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { ChipGroup } from '../onboarding/ChipGroup';
 import { GOALS } from '../onboarding/steps/Goal';
-import { FOCUS_OPTIONS } from '../onboarding/steps/Focus';
 import { DAYS } from '../onboarding/steps/Experience';
 import { StatBars } from './StatBars';
 import { SettingsCard } from './SettingsCard';
@@ -10,6 +9,8 @@ import { FeatureFlags } from './FeatureFlags';
 import { CharacterThumbnail } from '../character/CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
 import { supabase } from '../../lib/supabase';
+import { useUserId } from '../../lib/useSession';
+import { uploadProfilePhoto, removeProfilePhoto } from '../../lib/profilePhoto';
 import { countUnlocked, nextUnlock, tierFor } from '../../lib/character';
 import { first, initials } from '../../lib/format';
 
@@ -17,15 +18,58 @@ export function ProfileScreen() {
   const profile = useAppStore((s) => s.profile)!;
   const progress = useAppStore((s) => s.progress);
   const character = useAppStore((s) => s.character);
-  const mode = useAppStore((s) => s.mode);
-  const setMode = useAppStore((s) => s.setMode);
   const history = useAppStore((s) => s.history);
   const openCharacterStudio = useAppStore((s) => s.openCharacterStudio);
+  const openGoals = useAppStore((s) => s.openGoals);
   const resetDemo = useAppStore((s) => s.resetDemo);
+  const prestige = useAppStore((s) => s.prestige);
   const toggleProfileGoal = useAppStore((s) => s.toggleProfileGoal);
   const setProfileAvailability = useAppStore((s) => s.setProfileAvailability);
-  const setProfileFocus = useAppStore((s) => s.setProfileFocus);
+  const setProfilePhoto = useAppStore((s) => s.setProfilePhoto);
   const reviseWeekPlan = useAppStore((s) => s.reviseWeekPlan);
+  const settings = useAppStore((s) => s.settings);
+  const toggleSetting = useAppStore((s) => s.toggleSetting);
+  const showToast = useAppStore((s) => s.showToast);
+  const userId = useUserId();
+
+  const photoInputRef = useRef<HTMLInputElement>(null);
+  const [photoBusy, setPhotoBusy] = useState(false);
+
+  async function handlePhotoChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file || !userId) return;
+    setPhotoBusy(true);
+    try {
+      const result = await uploadProfilePhoto(userId, file);
+      if (result.ok) {
+        setProfilePhoto(result.url);
+        showToast('Profile photo updated');
+      } else if (result.reason === 'not-a-person') {
+        showToast("Couldn't verify that's a photo of you - try a clear, front-facing shot");
+      } else {
+        showToast('Could not upload that photo');
+      }
+    } catch (err) {
+      // A throw anywhere in the chain (resize, base64 read, network) must
+      // never leave this hanging silently with no toast and no way to
+      // retry - that's exactly what the stuck-on-the-old-avatar report was.
+      // Showing the real message (not a generic one) since this has failed
+      // silently twice already with no way to see why.
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error('[ProfileScreen] photo upload threw:', err);
+      showToast(`Upload error: ${msg}`);
+    } finally {
+      setPhotoBusy(false);
+    }
+  }
+
+  async function handleRemovePhoto() {
+    if (!userId) return;
+    await removeProfilePhoto(userId);
+    setProfilePhoto(null);
+    showToast('Profile photo removed');
+  }
 
   const [prefsOpen, setPrefsOpen] = useState(false);
   const [prefsSnapshot, setPrefsSnapshot] = useState<{ goal: string[]; availability: string; focus: string } | null>(null);
@@ -46,7 +90,7 @@ export function ProfileScreen() {
     setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability, focus: profile.focus });
   }
 
-  const ctx = { level: progress.level, longestStreak: progress.longestStreak };
+  const ctx = { level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige };
   const nu = nextUnlock(ctx);
   const cu = countUnlocked(ctx);
   const nuText = nu ? `Next unlock: ${nu.item.name} at Level ${nu.level}` : 'Every item unlocked';
@@ -54,15 +98,105 @@ export function ProfileScreen() {
   return (
     <>
       <div className="profile-head">
-        <div className="avatar-circle" style={{ padding: 0, overflow: 'hidden' }}>
-          {character ? <CharacterThumbnail cfg={character} mode="portrait" /> : initials(profile.name)}
+        <div style={{ position: 'relative', flexShrink: 0 }}>
+          <div className="avatar-circle" style={{ padding: 0, overflow: 'hidden' }}>
+            {profile.photoUrl ? (
+              <img src={profile.photoUrl} alt={profile.name} className="fit-img" draggable={false} />
+            ) : character ? (
+              <CharacterThumbnail cfg={character} mode="portrait" />
+            ) : (
+              initials(profile.name)
+            )}
+          </div>
+          <button
+            className="avatar-photo-badge"
+            disabled={photoBusy}
+            onClick={() => photoInputRef.current?.click()}
+            title="Change profile photo"
+          >
+            <Icon name="camera" style={{ width: 13, height: 13 }} />
+          </button>
+          <input ref={photoInputRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handlePhotoChange} />
         </div>
         <div>
           <div className="profile-name">{profile.name}</div>
           <div className="profile-sub">
             {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {profile.experience} · Level {progress.level}
           </div>
+          {profile.photoUrl && (
+            <button className="link-btn" style={{ marginTop: 4 }} onClick={handleRemovePhoto}>
+              Remove photo
+            </button>
+          )}
         </div>
+      </div>
+
+      <div className="pv-achievements" style={{ marginTop: 18 }}>
+        <div className="pv-achievement">
+          <div className="pv-achievement-icon">
+            <Icon name="coin" style={{ width: 21, height: 21 }} />
+          </div>
+          <div className="pv-achievement-num">{progress.totalXP.toLocaleString()}</div>
+          <div className="pv-achievement-label">Total XP</div>
+        </div>
+        <div className="pv-achievement">
+          <div className="pv-achievement-icon">
+            <Icon name="trophy" style={{ width: 21, height: 21 }} />
+          </div>
+          <div className="pv-achievement-num">{progress.monthlyXP.toLocaleString()}</div>
+          <div className="pv-achievement-label">XP this month</div>
+        </div>
+        <div className="pv-achievement">
+          <div className="pv-achievement-icon">
+            <Icon name="flame" style={{ width: 21, height: 21 }} />
+          </div>
+          <div className="pv-achievement-num">{progress.currentStreak}</div>
+          <div className="pv-achievement-label">Day streak</div>
+        </div>
+      </div>
+
+      <div className="section-label">Goals</div>
+      <div className="card">
+        <button
+          onClick={openGoals}
+          style={{
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: 12,
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            font: 'inherit',
+            color: 'inherit',
+            cursor: 'pointer',
+            textAlign: 'left',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div
+              style={{
+                width: 34,
+                height: 34,
+                borderRadius: 11,
+                flexShrink: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                background: 'linear-gradient(152deg, var(--hero-1), var(--hero-2))',
+              }}
+            >
+              <Icon name="zap" style={{ width: 16, height: 16 }} />
+            </div>
+            <div>
+              <div className="setting-title">Weight &amp; performance</div>
+              <div className="setting-sub">A target weight, a 5K time, total distance, training frequency - verified automatically</div>
+            </div>
+          </div>
+          <Icon name="chevron" style={{ flexShrink: 0 }} />
+        </button>
       </div>
 
       <div className="section-label">Character</div>
@@ -105,8 +239,7 @@ export function ProfileScreen() {
           <div>
             <div className="setting-title">Goals &amp; schedule</div>
             <div className="setting-sub">
-              {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {FOCUS_OPTIONS.find((f) => f.id === profile.focus)?.name} ·{' '}
-              {profile.availability || '—'} days/week
+              {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {profile.availability || '—'} days/week
             </div>
           </div>
           <Icon name="chevron" style={{ transform: prefsOpen ? 'rotate(-90deg)' : 'rotate(90deg)', transition: 'transform 200ms ease', flexShrink: 0 }} />
@@ -118,14 +251,6 @@ export function ProfileScreen() {
             </div>
             <ChipGroup options={GOALS} value={profile.goal} onSelect={toggleProfileGoal} />
             <div className="setting-title" style={{ margin: '18px 0 10px' }}>
-              Focus
-            </div>
-            <ChipGroup
-              options={FOCUS_OPTIONS.map((f) => f.name)}
-              value={FOCUS_OPTIONS.find((f) => f.id === profile.focus)?.name || ''}
-              onSelect={(name) => setProfileFocus(FOCUS_OPTIONS.find((f) => f.name === name)!.id)}
-            />
-            <div className="setting-title" style={{ margin: '18px 0 10px' }}>
               Days per week
             </div>
             <ChipGroup options={DAYS} value={profile.availability} onSelect={setProfileAvailability} />
@@ -136,16 +261,6 @@ export function ProfileScreen() {
             )}
           </div>
         )}
-      </div>
-
-      <div className="section-label">Display mode</div>
-      <div className="mode-toggle">
-        <button className={mode === 'classic' ? 'active' : ''} onClick={() => setMode('classic')}>
-          Classic
-        </button>
-        <button className="disabled" disabled title="Coming soon">
-          Character (coming soon)
-        </button>
       </div>
 
       <div className="section-label">Attributes</div>
@@ -175,8 +290,50 @@ export function ProfileScreen() {
         )}
       </div>
 
-      <div className="section-label">Notifications</div>
       <SettingsCard />
+
+      <div className="section-label">Privacy</div>
+      <div className="card" style={{ marginBottom: 18 }}>
+        <div className="setting-row">
+          <div>
+            <div className="setting-title">Private profile</div>
+            <div className="setting-sub">
+              {settings.privateProfile
+                ? 'Only accepted friends can open your full profile. Everyone still sees your name in the feed and league.'
+                : 'Anyone on SOMAXX can open your full profile.'}
+            </div>
+          </div>
+          <button
+            className={`switch${settings.privateProfile ? ' on' : ''}`}
+            onClick={() => toggleSetting('privateProfile')}
+          />
+        </div>
+      </div>
+
+      <div className="section-label">Evolve</div>
+      <div className="card" style={{ marginBottom: 18 }}>
+        <div className="setting-row">
+          <div>
+            <div className="setting-title">
+              {progress.prestige ? `Evolved ${progress.prestige}x` : 'Not evolved yet'}
+            </div>
+            <div className="setting-sub">
+              {progress.level >= 55
+                ? 'You have reached the level cap. Evolve to reset your level and unlock premium skins and colours.'
+                : `Reach level 55 to evolve (you are on level ${progress.level}).`}
+            </div>
+          </div>
+          <button
+            className="btn btn-sm btn-primary"
+            disabled={progress.level < 55}
+            onClick={() => {
+              if (window.confirm('Evolve now? Your level and XP reset to 1. Your unlocks, achievements and skins stay.')) prestige();
+            }}
+          >
+            Evolve
+          </button>
+        </div>
+      </div>
 
       <div className="section-label">
         Feature flags
@@ -197,16 +354,6 @@ export function ProfileScreen() {
         }}
       >
         Sign out
-      </button>
-      <button
-        className="btn btn-danger-ghost"
-        onClick={() => {
-          if (window.confirm('Reset all demo progress on this device? This cannot be undone.')) {
-            resetDemo();
-          }
-        }}
-      >
-        Reset demo data
       </button>
       <div style={{ height: 20 }} />
     </>

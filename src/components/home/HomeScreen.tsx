@@ -3,6 +3,8 @@ import { MetricsRow } from './MetricsRow';
 import { QuestCard } from './QuestCard';
 import { WorkoutCTA } from './WorkoutCTA';
 import { GoalsList } from './GoalsList';
+import { GoalsKPI } from './GoalsKPI';
+import { StepChallengeCard } from './StepChallengeCard';
 import { LevelPath } from './LevelPath';
 import { useAppStore } from '../../store/useAppStore';
 import { DAILY_CAP } from '../../lib/xp';
@@ -20,7 +22,7 @@ export function HomeScreen() {
       <div className="section-label">Today</div>
       <WorkoutCTA />
       <div className="section-label">
-        Daily goals
+        Today's checklist
         <span className="mono" style={{ fontWeight: 600, color: 'var(--text-faint)', textTransform: 'none', letterSpacing: 0 }}>
           {xpEarnedToday} / {DAILY_CAP} XP
         </span>
@@ -31,8 +33,11 @@ export function HomeScreen() {
         </div>
       </div>
       <div className="card" style={{ paddingTop: 2, paddingBottom: 2 }}>
+        <StepChallengeCard />
         <GoalsList />
       </div>
+      <div className="section-label">Goals</div>
+      <GoalsKPI />
       <div className="section-label">Level path</div>
       <LevelPath />
       <div style={{ height: 8 }} />

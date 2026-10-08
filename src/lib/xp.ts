@@ -10,13 +10,15 @@ export const LEVEL_TABLE: number[] = (() => {
   return t;
 })();
 
+export const MAX_LEVEL = 55;
+
 export function levelFromXP(xp: number): number {
   let lvl = 1;
   for (let i = 1; i < LEVEL_TABLE.length; i++) {
     if (xp >= LEVEL_TABLE[i]) lvl = i + 1;
     else break;
   }
-  return Math.min(lvl, LEVEL_TABLE.length);
+  return Math.min(lvl, MAX_LEVEL);
 }
 
 export function levelFloor(lvl: number): number {

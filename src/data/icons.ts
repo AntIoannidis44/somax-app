@@ -15,6 +15,7 @@ export const ICON_PATHS: Record<string, string> = {
     '<path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a3 3 0 0 0 3 5M16 5h3a3 3 0 0 1-3 5"/><path d="M10 15v2h4v-2M9 21h6M12 17v4"/>',
   zap: '<polygon points="12 2 4 14 11 14 10 22 20 9 13 9 12 2"/>',
   moon: '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/>',
+  sun: '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',
   coffee:
     '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M7 3.5c-.6.6-.6 1.4 0 2M11 3.5c-.6.6-.6 1.4 0 2"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 8v.01"/>',
@@ -32,6 +33,21 @@ export const ICON_PATHS: Record<string, string> = {
   plus: '<path d="M12 5v14M5 12h14"/>',
   link: '<path d="M9 15l6-6"/><path d="M13 5.5 15 3.5a3.5 3.5 0 0 1 5 5L18 10.5"/><path d="M11 18.5 9 20.5a3.5 3.5 0 0 1-5-5L6 13.5"/>',
   x: '<path d="M6 6l12 12M18 6 6 18"/>',
+  watch:
+    '<rect x="7" y="7" width="10" height="10" rx="3"/><path d="M9 7V4h6v3M9 20v-3h6v3"/><path d="M12 10v2.5l1.5 1"/>',
+  camera:
+    '<path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/>',
+  comment:
+    '<path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-4.5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>',
+  // Workout types (feed tagging, league, icons list).
+  run: '<circle cx="14.5" cy="4.5" r="1.7"/><path d="M11.5 8.5 9 11l2.5 2-1 5"/><path d="M8.5 11.5 5 13.5"/><path d="M11.5 8.5l3 2 3-1"/><path d="M14.5 10.5l1.5 4.5-3 3.5"/>',
+  walk: '<circle cx="13" cy="4.5" r="1.7"/><path d="M12.5 7.5v5l-3 3.5"/><path d="M12.5 11.5l3.5 2"/><path d="M9 16.5 7 20.5"/><path d="M16 13.5l1 7"/>',
+  ride: '<circle cx="6" cy="17" r="3.2"/><circle cx="18" cy="17" r="3.2"/><path d="M6 17 9.5 9h4l3 8"/><path d="M9.5 9h3.2"/><path d="M12.7 9 15 13h3"/>',
+  swim: '<circle cx="8.5" cy="6.5" r="1.7"/><path d="M6 10.5l2-2 3 1 2.5-2"/><path d="M11 9.5l3 2.5"/><path d="M2.5 16c1.6 1.6 3.2 1.6 4.8 0s3.2-1.6 4.8 0 3.2 1.6 4.8 0 3.2-1.6 4.8 0"/><path d="M2.5 20c1.6 1.6 3.2 1.6 4.8 0s3.2-1.6 4.8 0 3.2 1.6 4.8 0 3.2-1.6 4.8 0"/>',
+  fitness: '<path d="M2.5 13h3.5l2-6 4 11 2-7 1.5 2H21.5"/>',
+  other: '<circle cx="5.5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18.5" cy="12" r="1.8"/>',
+  pin: '<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/>',
+  music: '<circle cx="6.5" cy="18" r="2.3"/><circle cx="17" cy="16" r="2.3"/><path d="M8.8 18V5.5L19.3 3v13"/><path d="M8.8 9.5 19.3 7"/>',
 };
 
 export type IconName = keyof typeof ICON_PATHS;

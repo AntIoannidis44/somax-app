@@ -30,8 +30,26 @@ export function useSession() {
       if (userId === lastUserId) return;
       lastUserId = userId;
       if (userId) {
-        await hydrateFromCloud(userId);
+        // Retry a few times (short, fixed backoff - a cold-launch network
+        // hiccup is the realistic failure mode here, not a persistent
+        // outage) rather than give up after one attempt. Only arm cloud
+        // sync once hydration has actually succeeded - starting it
+        // unconditionally was the likely mechanism behind a real data-
+        // loss incident: a failed hydrate left local storage on
+        // whatever stale snapshot it had, and the very next local state
+        // change (e.g. checkForNewDay() on the same mount) then pushed
+        // that stale snapshot up, overwriting real cloud progress.
+        let hydrated = await hydrateFromCloud(userId);
+        for (let attempt = 0; !hydrated && attempt < 3; attempt++) {
+          await new Promise((r) => setTimeout(r, 800));
+          if (cancelled || userId !== lastUserId) return;
+          hydrated = await hydrateFromCloud(userId);
+        }
         await loadMyWorkouts(userId);
+        if (!hydrated) {
+          console.error(`[useSession] giving up on cloud hydration for ${userId} after retries - staying local-only this session, not pushing`);
+          return;
+        }
         startCloudSync(userId);
       } else {
         stopCloudSync();

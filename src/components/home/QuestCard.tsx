@@ -1,9 +1,9 @@
 import { Icon } from '../Icon';
-import { CHALLENGE_DEFS } from '../../data/challenges';
+import { CHALLENGE_DEFS, withAllChallenges } from '../../data/challenges';
 import { useAppStore } from '../../store/useAppStore';
 
 export function QuestCard() {
-  const challenges = useAppStore((s) => s.challenges);
+  const challenges = withAllChallenges(useAppStore((s) => s.challenges));
   const joinChallenge = useAppStore((s) => s.joinChallenge);
 
   function findQuest() {

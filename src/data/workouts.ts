@@ -1,7 +1,9 @@
 import type { ExerciseDef, WorkoutDef } from '../types';
+import { expandSets } from '../lib/workoutSets';
 
 export const WORKOUTS: Record<string, WorkoutDef> = {
   push: {
+    category: 'gym',
     name: 'Push Day',
     duration: '50 min',
     exercises: [
@@ -13,6 +15,7 @@ export const WORKOUTS: Record<string, WorkoutDef> = {
     ],
   },
   pull: {
+    category: 'gym',
     name: 'Pull Day',
     duration: '48 min',
     exercises: [
@@ -24,6 +27,7 @@ export const WORKOUTS: Record<string, WorkoutDef> = {
     ],
   },
   legs: {
+    category: 'gym',
     name: 'Leg Day',
     duration: '55 min',
     exercises: [
@@ -35,6 +39,7 @@ export const WORKOUTS: Record<string, WorkoutDef> = {
     ],
   },
   cond: {
+    category: 'fitness',
     name: 'Conditioning',
     duration: '32 min',
     exercises: [
@@ -45,6 +50,7 @@ export const WORKOUTS: Record<string, WorkoutDef> = {
     ],
   },
   run: {
+    category: 'run',
     name: 'Run',
     duration: '30 min',
     exercises: [
@@ -54,6 +60,7 @@ export const WORKOUTS: Record<string, WorkoutDef> = {
     ],
   },
   walk: {
+    category: 'walk',
     name: 'Walk',
     duration: '35 min',
     exercises: [
@@ -61,11 +68,32 @@ export const WORKOUTS: Record<string, WorkoutDef> = {
       { name: 'Stretch', sets: 1, reps: '5 min' },
     ],
   },
+  swim: {
+    category: 'swim',
+    name: 'Swim',
+    duration: '40 min',
+    exercises: [
+      { name: 'Warm-up swim', sets: 1, reps: '5 min', distance: '200m' },
+      { name: 'Main set intervals', sets: 6, reps: '', distance: '100m' },
+      { name: 'Cool-down swim', sets: 1, reps: '5 min', distance: '150m' },
+    ],
+  },
+  ride: {
+    category: 'ride',
+    name: 'Ride',
+    duration: '45 min',
+    exercises: [
+      { name: 'Warm-up spin', sets: 1, reps: '5 min' },
+      { name: 'Steady-state ride', sets: 1, reps: '30 min', distance: '15km' },
+      { name: 'Cool-down spin', sets: 1, reps: '10 min' },
+    ],
+  },
 };
 
 export function exerciseMeta(ex: ExerciseDef): string {
-  const base = `${ex.sets} x ${ex.reps}`;
-  return ex.weight ? `${base} @ ${ex.weight}` : base;
+  const sets = expandSets(ex);
+  if (ex.distance && !ex.setList) return `${sets.length} x ${ex.reps || ex.distance}${ex.reps ? ` · ${ex.distance}` : ''}`;
+  return `${sets.length} ${sets.length === 1 ? 'set' : 'sets'}`;
 }
 
 export function statBumpFor(wid: string): Partial<Record<string, number>> {
@@ -76,6 +104,8 @@ export function statBumpFor(wid: string): Partial<Record<string, number>> {
     cond: { endurance: 1.4, agility: 0.6, vitality: 0.4 },
     run: { endurance: 1.4, agility: 0.4, vitality: 0.3 },
     walk: { endurance: 0.6, recovery: 0.5, vitality: 0.3 },
+    swim: { endurance: 1.3, agility: 0.5, recovery: 0.4 },
+    ride: { endurance: 1.5, vitality: 0.4, agility: 0.2 },
   };
   // Custom/imported workouts (UUID keys) aren't in this map - give them a
   // small generic, evenly-spread bump rather than nothing at all.

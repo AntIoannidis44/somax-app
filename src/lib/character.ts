@@ -21,12 +21,14 @@ export function defaultCharacter(base?: CharacterBase): CharacterConfig {
     hair: 'none',
     hairColor: 0,
     outfit: 'none',
+    outfitColor: 0,
   };
 }
 
 interface UnlockContext {
   level: number;
   longestStreak: number;
+  prestige?: number;
 }
 
 export function isUnlocked(item: CatalogItem | undefined | null, ctx: UnlockContext): boolean {
@@ -34,16 +36,25 @@ export function isUnlocked(item: CatalogItem | undefined | null, ctx: UnlockCont
   const u = item.unlock;
   if (u.level && ctx.level < u.level) return false;
   if (u.streak && ctx.longestStreak < u.streak) return false;
+  if (u.prestige && (ctx.prestige ?? 0) < u.prestige) return false;
   return true;
 }
 
 export function unlockLabel(item: CatalogItem): string {
   if (!item.unlock) return '';
+  if (item.unlock.prestige) return 'Evolve ' + item.unlock.prestige;
   if (item.unlock.level) return 'Lv ' + item.unlock.level;
   return item.unlock.streak + '-day streak';
 }
 
-const WARDROBE_KEYS: CatalogKey[] = ['hair', 'outfit', 'build'];
+export function lockHint(item: CatalogItem): string {
+  const u = item.unlock;
+  if (u?.prestige) return `Evolve ${u.prestige} unlocks ${item.name}`;
+  if (u?.level) return `Reach Level ${u.level} to unlock ${item.name}`;
+  return `Hit a ${u?.streak}-day streak to unlock ${item.name}`;
+}
+
+const WARDROBE_KEYS: CatalogKey[] = ['hair', 'outfit', 'build', 'hairColor', 'outfitColor', 'skin'];
 
 export function allWardrobe(): { key: CatalogKey; item: CatalogItem }[] {
   const out: { key: CatalogKey; item: CatalogItem }[] = [];

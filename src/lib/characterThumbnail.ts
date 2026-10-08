@@ -3,7 +3,7 @@ import { addLights } from './characterBuilder';
 import { CLIPS, composeCharacter, loadAnimationClips } from './characterModels';
 import type { CharacterConfig } from '../types';
 
-export type ThumbnailMode = 'full' | 'portrait';
+export type ThumbnailMode = 'full' | 'portrait' | 'head';
 
 const HAS_3D = typeof window !== 'undefined' && !!window.WebGLRenderingContext;
 
@@ -14,7 +14,7 @@ const snapCache = new Map<string, string>();
 const pending = new Map<string, Promise<string>>();
 
 function cacheKey(cfg: CharacterConfig, mode: ThumbnailMode): string {
-  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.hairColor}|${cfg.outfit}|${mode}`;
+  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.hairColor}|${cfg.outfit}|${cfg.outfitColor}|${mode}`;
 }
 
 export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode): Promise<string> {
@@ -54,15 +54,22 @@ export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode):
         addLights(snapScene, false);
         snapCam = new THREE.PerspectiveCamera(26, 1, 0.1, 50);
       }
-      const headY = 1.72;
-      if (mode === 'portrait') {
-        snapCam!.position.set(0, headY, 1.9);
-        snapCam!.lookAt(0, headY - 0.03, 0);
+      // Portrait is a front-on shoulders-up shot: the camera sits level with
+      // the head and aims at the upper chest so head and shoulders fill the frame.
+      // Head: tight close-up for the hair pickers - just the head and hair, no torso.
+      if (mode === 'head') {
+        snapCam!.position.set(0, 1.64, 1.1);
+        snapCam!.lookAt(0, 1.64, 0);
+      } else if (mode === 'portrait') {
+        snapCam!.position.set(0, 1.4, 1.85);
+        snapCam!.lookAt(0, 1.4, 0);
       } else {
-        snapCam!.position.set(0, 1.0, 5.0);
-        snapCam!.lookAt(0, 1.0, 0);
+        // Full body: centre the frame on the whole figure (feet at y=0, top of
+        // head ~1.85) so nothing is cropped and no empty space sits above it.
+        snapCam!.position.set(0, 0.9, 4.5);
+        snapCam!.lookAt(0, 0.9, 0);
       }
-      group.rotation.y = mode === 'portrait' ? -0.25 : -0.35;
+      group.rotation.y = mode === 'full' ? -0.35 : 0;
       snapScene!.add(group);
       snapR.render(snapScene!, snapCam!);
       const url = snapR.domElement.toDataURL('image/png');

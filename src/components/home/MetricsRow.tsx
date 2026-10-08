@@ -2,6 +2,7 @@ import { Icon } from '../Icon';
 import type { IconName } from '../../data/icons';
 import { useAppStore } from '../../store/useAppStore';
 import { isWorkoutDone, todayMetrics, todayPlan } from '../../lib/schedule';
+import { healthAvailableOnPlatform } from '../../lib/health';
 
 function RingTile({
   iconName,
@@ -41,17 +42,53 @@ function RingTile({
   );
 }
 
+// Mirrors the ring goals baked into todayMetrics()'s fake demo data, so
+// real Health numbers fill the same rings consistently.
+const STEPS_GOAL = 8000;
+const KCAL_GOAL = 1600;
+const MINS_GOAL = 60;
+
 export function MetricsRow() {
   const simDay = useAppStore((s) => s.simDay);
   const weekPlan = useAppStore((s) => s.weekPlan);
   const goals = useAppStore((s) => s.today.goals);
   const workoutState = useAppStore((s) => s.workoutState);
+  const health = useAppStore((s) => s.today.health);
 
-  const plan = todayPlan(simDay, weekPlan);
+  const plan = todayPlan(weekPlan);
   const workoutDone = plan.type === 'train' && !!plan.key && isWorkoutDone(workoutState, simDay, plan.key);
   const goalsDone = goals.filter((g) => g.done).length;
-  const m = todayMetrics(simDay, goalsDone, workoutDone);
 
+  // On native iOS, never show fabricated numbers - either real Health
+  // data (once connected) or an explicit connect prompt, never a stand-in.
+  if (healthAvailableOnPlatform() && !health) {
+    return (
+      <div className="banner" style={{ marginBottom: 18 }}>
+        <Icon name="heart" />
+        <span>Connect Apple Health in Profile to see today's real steps, active time and heart rate here.</span>
+      </div>
+    );
+  }
+
+  if (health) {
+    return (
+      <div className="metrics">
+        <RingTile iconName="steps" color="#3b82f6" val={health.steps.toLocaleString()} label="Steps" pct={health.steps / STEPS_GOAL} />
+        <RingTile iconName="flame" color="#f97316" val={Math.round(health.kcal).toLocaleString()} label="Calories" pct={health.kcal / KCAL_GOAL} />
+        <RingTile iconName="clock" color="#10b981" val={Math.round(health.activeMinutes)} unit="min" label="Active" pct={health.activeMinutes / MINS_GOAL} />
+        <RingTile
+          iconName="heart"
+          color="#ec4899"
+          val={health.hr ? Math.round(health.hr) : 'Pair watch'}
+          unit={health.hr ? 'bpm' : undefined}
+          label="Heart rate"
+          pct={health.hr ? 0.62 : 0}
+        />
+      </div>
+    );
+  }
+
+  const m = todayMetrics(simDay, goalsDone, workoutDone);
   return (
     <div className="metrics">
       <RingTile iconName="steps" color="#3b82f6" val={m.steps.toLocaleString()} label="Steps" pct={m.steps / m.stepsGoal} />

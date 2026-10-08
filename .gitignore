@@ -29,3 +29,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# iOS (Capacitor) - the ios/ native project itself is committed, but not
+# the CocoaPods checkout or per-machine Xcode user state
+ios/App/Pods
+ios/App/build
+ios/App/App/public
+ios/**/xcuserdata
+ios/**/*.xcuserstate
+ios/DerivedData

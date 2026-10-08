@@ -22,7 +22,10 @@ export function StatBars() {
           <div className="stat-track">
             <div className="stat-fill" style={{ width: `${stats[d.k]}%`, background: d.c }} />
           </div>
-          <span className="stat-val">{stats[d.k]}</span>
+          {/* Repeated small fractional bumps (0.4, 0.8, ...) accumulate
+              floating-point noise (e.g. 10.399999999999999) - round to 1
+              decimal for display, stripping a trailing .0 for whole numbers. */}
+          <span className="stat-val">{Number(stats[d.k].toFixed(1))}</span>
         </div>
       ))}
     </div>

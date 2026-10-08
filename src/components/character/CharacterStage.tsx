@@ -13,6 +13,16 @@ export type StageAnim = 'idle' | 'run';
 interface CharacterStageProps {
   view: StageView;
   anim: StageAnim;
+  // Defaults to the signed-in user's own character/level (Home, Studio) -
+  // pass these explicitly to show someone else's live, spinnable character
+  // instead, e.g. a friend's profile.
+  cfg?: CharacterConfig;
+  level?: number;
+  // Home and Character Studio want the level pedestal under the character;
+  // a friend's profile card is too short/cropped a box for it to read well
+  // (it was clipping at the bottom there no matter how the camera/shift was
+  // tuned) - that view just omits it rather than fighting the framing.
+  showPedestal?: boolean;
 }
 
 function Lights() {
@@ -27,8 +37,8 @@ function CameraRig({ view }: { view: StageView }) {
   const { camera } = useThree();
   useEffect(() => {
     if (view === 'arena') {
-      camera.position.set(0, 1.55, 8.5);
-      camera.lookAt(0, 1.15, 0);
+      camera.position.set(0, 1.45, 8.5);
+      camera.lookAt(0, 0.75, 0);
     } else {
       camera.position.set(0, 1.45, 6.1);
       camera.lookAt(0, 1.02, 0);
@@ -78,7 +88,7 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.hairColor, cfg.outfit]);
+  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.hairColor, cfg.outfit, cfg.outfitColor]);
 
   useFrame((_, delta) => {
     const dt = Math.min(0.05, delta);
@@ -103,9 +113,17 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
     if (activeClipRef.current !== wantClip) {
       const prev = activeClipRef.current ? actions[activeClipRef.current] : undefined;
       const next = actions[wantClip] ?? actions.idle;
-      prev?.fadeOut(0.25);
-      next?.reset().fadeIn(0.25).play();
-      activeClipRef.current = wantClip;
+      // Only mark this clip as "applied" once an action actually existed to
+      // play - if both wantClip and the idle fallback were somehow still
+      // missing, leave activeClipRef alone so the next frame retries
+      // instead of silently giving up on ever playing an animation this
+      // mount (the character would otherwise stay frozen in its raw bind
+      // pose - visually identical to a T-pose - for good).
+      if (next) {
+        prev?.fadeOut(0.25);
+        next.reset().fadeIn(0.25).play();
+        activeClipRef.current = wantClip;
+      }
     }
     mixer.update(dt);
   });
@@ -114,9 +132,11 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
   return <primitive object={loaded.scene} />;
 }
 
-export function CharacterStage({ view, anim }: CharacterStageProps) {
-  const character = useAppStore((s) => s.character);
-  const level = useAppStore((s) => s.progress.level);
+export function CharacterStage({ view, anim, cfg, level: levelProp, showPedestal = true }: CharacterStageProps) {
+  const myCharacter = useAppStore((s) => s.character);
+  const myLevel = useAppStore((s) => s.progress.level);
+  const character = cfg ?? myCharacter;
+  const level = levelProp ?? myLevel;
 
   const rotRef = useRef(view === 'arena' ? -0.22 : -0.3);
   const velRef = useRef(0);
@@ -175,7 +195,7 @@ export function CharacterStage({ view, anim }: CharacterStageProps) {
           idleTRef={idleTRef}
           flexUntilRef={flexUntilRef}
         />
-        <Pedestal level={level} />
+        {showPedestal && <Pedestal level={level} />}
       </Canvas>
     </div>
   );

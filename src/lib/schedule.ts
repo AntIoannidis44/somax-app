@@ -2,27 +2,47 @@ import { WORKOUTS } from '../data/workouts';
 import { getWorkout } from './customWorkouts';
 import type { PlanDay, TodayGoal, TrainingFocus, WorkoutState } from '../types';
 
-export function todayPlanIndex(simDay: number): number {
-  return simDay % 7;
+// weekPlan is a fixed Sun-Sat template that repeats every real calendar
+// week - "today's" slot is always the real weekday, independent of
+// simDay (which just counts days since onboarding, for streaks/history).
+export const WEEKDAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+// Matches MetricsRow's step ring target - hitting it awards a one-off
+// bonus for the day, same as any other goal, but driven by real Health
+// data rather than a tap (see StepChallengeCard + syncHealthMetrics).
+export const STEP_GOAL = 8000;
+export const STEP_GOAL_XP = 20;
+
+// Matches the hydration goal's "2L" meta text in buildTodayGoals below -
+// see HydrationBar for the draggable UI that tracks toward this.
+export const HYDRATION_TARGET_ML = 2000;
+
+export function todayPlanIndex(): number {
+  return new Date().getDay();
 }
 
-export function todayPlan(simDay: number, weekPlan: PlanDay[]): PlanDay {
-  return weekPlan[todayPlanIndex(simDay)];
+export function todayPlan(weekPlan: PlanDay[]): PlanDay {
+  return weekPlan[todayPlanIndex()];
 }
 
-export function dayLabel(simDay: number, weekPlan: PlanDay[]): string {
-  const plan = todayPlan(simDay, weekPlan);
-  const name = plan.type === 'train' && plan.key ? getWorkout(plan.key)?.name || 'Workout' : 'Recovery Day';
-  return `Day ${simDay + 1} · ${name}`;
+export function dayLabel(weekPlan: PlanDay[]): string {
+  const plan = todayPlan(weekPlan);
+  const name =
+    plan.type === 'train' && plan.key
+      ? getWorkout(plan.key)?.name || 'Workout'
+      : plan.type === 'watch'
+        ? 'Synced from Watch'
+        : 'Recovery Day';
+  return `${WEEKDAY_LABELS[todayPlanIndex()]} · ${name}`;
 }
 
 // Chooses which workout types to favor and in what order, based on the
 // goals and training focus picked in Training preferences. Not a real
 // periodization model - a simple, defensible heuristic: focus decides the
-// modality (gym vs. run/walk vs. a blend of both), and within that, goals
-// tilt the balance further (strength-leaning goals get the classic
-// push/pull/legs rotation, cardio-leaning goals lean on conditioning or
-// running more).
+// modality (gym vs. run/walk vs. swim vs. ride vs. a blend of all of
+// them), and within that, goals tilt the balance further (strength-
+// leaning goals get the classic push/pull/legs rotation, cardio-leaning
+// goals lean on conditioning or the focus's own cardio modality more).
 function workoutOrderFor(goals: string[], focus: TrainingFocus): string[] {
   const wantsStrength = goals.includes('Build strength') || goals.includes('Muscle gain');
   const wantsCardio = goals.includes('Lose fat') || goals.includes('Endurance') || goals.includes('Aerobic fitness');
@@ -30,6 +50,14 @@ function workoutOrderFor(goals: string[], focus: TrainingFocus): string[] {
   if (focus === 'running') {
     if (wantsStrength) return ['run', 'push', 'run', 'walk', 'run', 'legs'];
     return ['run', 'walk', 'run', 'run', 'walk'];
+  }
+  if (focus === 'swim') {
+    if (wantsStrength) return ['swim', 'push', 'swim', 'pull', 'swim', 'legs'];
+    return ['swim', 'cond', 'swim', 'swim', 'cond'];
+  }
+  if (focus === 'ride') {
+    if (wantsStrength) return ['ride', 'push', 'ride', 'legs', 'ride', 'pull'];
+    return ['ride', 'cond', 'ride', 'ride', 'cond'];
   }
   if (focus === 'hybrid') {
     if (wantsCardio && !wantsStrength) return ['run', 'push', 'walk', 'pull', 'run', 'legs'];
@@ -100,17 +128,26 @@ export function reviseWeekPlanFrom(
   return [...oldPlan.slice(0, fromIdx), ...rest];
 }
 
-export function buildTodayGoals(simDay: number, weekPlan: PlanDay[]): TodayGoal[] {
-  const plan = todayPlan(simDay, weekPlan);
+export function buildTodayGoals(weekPlan: PlanDay[]): TodayGoal[] {
+  const plan = todayPlan(weekPlan);
   const goals: TodayGoal[] = [];
   if (plan.type === 'train' && plan.key) {
     const w = getWorkout(plan.key);
     goals.push({ id: 'workout', label: `Complete ${w?.name || 'workout'}`, meta: w?.duration || '', xp: 40, type: 'workout', done: false });
+  } else if (plan.type === 'watch') {
+    goals.push({
+      id: 'watch_workout',
+      label: 'Log a workout on Apple Fitness',
+      meta: 'Syncs automatically once detected',
+      xp: 40,
+      type: 'watch',
+      done: false,
+    });
   } else {
     goals.push({ id: 'mobility_rest', label: 'Mobility & stretch (10 min)', meta: 'Recovery day', xp: 15, type: 'toggle', done: false });
   }
   goals.push({ id: 'warmup', label: 'Warm-up & mobility (5 min)', meta: 'Habit', xp: 10, type: 'toggle', done: false });
-  goals.push({ id: 'hydration', label: 'Hit hydration target', meta: '2.5L', xp: 10, type: 'toggle', done: false });
+  goals.push({ id: 'hydration', label: 'Hit hydration target', meta: '2L', xp: 10, type: 'toggle', done: false });
   goals.push({ id: 'logfeel', label: 'Log how you felt', meta: '30 sec', xp: 10, type: 'toggle', done: false });
   return goals;
 }
@@ -134,7 +171,7 @@ export function todayMetrics(simDay: number, goalsDone: number, workoutDone: boo
   const seed = (simDay * 7919 + 311) % 997;
   return {
     steps: 2400 + seed * 3 + goalsDone * 850 + (workoutDone ? 4200 : 0),
-    stepsGoal: 10000,
+    stepsGoal: 8000,
     kcal: 380 + Math.round(seed * 0.6) + goalsDone * 95 + (workoutDone ? 420 : 0),
     kcalGoal: 1600,
     mins: 8 + goalsDone * 6 + (workoutDone ? 48 : 0),

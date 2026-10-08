@@ -1,17 +1,25 @@
-import { CHALLENGE_DEFS } from '../../data/challenges';
+import { CHALLENGE_DEFS, MAX_ACTIVE_CHALLENGES, activeChallengeCount, withAllChallenges } from '../../data/challenges';
 import { useAppStore } from '../../store/useAppStore';
 
 export function ChallengesTab() {
-  const challenges = useAppStore((s) => s.challenges);
+  const challenges = withAllChallenges(useAppStore((s) => s.challenges));
   const joinChallenge = useAppStore((s) => s.joinChallenge);
-  const logPushups = useAppStore((s) => s.logPushups);
+  const leaveChallenge = useAppStore((s) => s.leaveChallenge);
+  const logChallenge = useAppStore((s) => s.logChallenge);
+  const active = activeChallengeCount(challenges);
+  const atCap = active >= MAX_ACTIVE_CHALLENGES;
 
   return (
     <>
+      <div className="banner">
+        <span>
+          {active} of {MAX_ACTIVE_CHALLENGES} challenge slots in use
+          {atCap ? ' - leave or finish one to join another' : ''}
+        </span>
+      </div>
       {CHALLENGE_DEFS.map((def) => {
         const c = challenges.find((x) => x.id === def.id)!;
         const pct = Math.min(100, Math.round((c.progress / def.target) * 100));
-        const isPushups = def.id === 'pushups';
         return (
           <div className="challenge-card card" key={def.id}>
             <div className="ch-head">
@@ -33,19 +41,31 @@ export function ChallengesTab() {
                     {c.progress} / {def.target} {def.unit}
                     {def.target > 1 ? 's' : ''}
                   </span>
-                  {isPushups && !c.completed ? (
-                    <button className="btn btn-sm btn-ghost" onClick={() => logPushups(def.id)}>
-                      Log {def.logStep}
-                    </button>
-                  ) : (
-                    <span className="ch-days">{def.lengthDays} days</span>
-                  )}
+                  <span style={{ display: 'flex', gap: 6 }}>
+                    {def.logStep && !c.completed && (
+                      <button className="btn btn-sm btn-ghost" onClick={() => logChallenge(def.id)}>
+                        Log {def.logStep}
+                      </button>
+                    )}
+                    {!c.completed && (
+                      <button className="btn btn-sm btn-ghost" onClick={() => leaveChallenge(def.id)}>
+                        Leave
+                      </button>
+                    )}
+                  </span>
                 </div>
               </>
             ) : (
-              <button className="btn btn-sm btn-primary" style={{ marginTop: 4 }} onClick={() => joinChallenge(def.id)}>
-                Join challenge
-              </button>
+              <>
+                <div className="ch-days" style={{ marginBottom: 8 }}>{def.lengthDays} days</div>
+                <button
+                  className="btn btn-sm btn-primary"
+                  disabled={atCap}
+                  onClick={() => joinChallenge(def.id)}
+                >
+                  {atCap ? 'Slots full' : 'Join challenge'}
+                </button>
+              </>
             )}
           </div>
         );

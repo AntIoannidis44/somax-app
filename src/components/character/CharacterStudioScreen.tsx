@@ -3,18 +3,34 @@ import { Icon } from '../Icon';
 import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
-import { BODY_BUILDS, CATALOG, HAIR_COLORS, SKIN_TONES } from '../../data/catalog';
-import { isUnlocked, nextUnlock, tierFor, unlockLabel } from '../../lib/character';
+import { BODY_BUILDS, CATALOG, HAIR_COLORS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
+import { isUnlocked, lockHint, nextUnlock, tierFor, unlockLabel } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
 import type { CatalogItem, CatalogKey, HairItem, StudioCat } from '../../types';
 
-const STUDIO_CATS: { id: StudioCat; label: string }[] = [
+// Top-level tabs; a group with `subs` shows a second row underneath once
+// it's the active one (e.g. Hair -> Style/Color), so color is reached as a
+// sub-tab of its item rather than sitting alongside it as its own top tab.
+const STUDIO_CATS: { id: StudioCat; label: string; subs?: { id: StudioCat; label: string }[] }[] = [
   { id: 'base', label: 'Base' },
   { id: 'build', label: 'Build' },
   { id: 'skin', label: 'Complexion' },
-  { id: 'hair', label: 'Hair' },
-  { id: 'hairColor', label: 'Hair Color' },
-  { id: 'outfit', label: 'Outfit' },
+  {
+    id: 'hair',
+    label: 'Hair',
+    subs: [
+      { id: 'hair', label: 'Style' },
+      { id: 'hairColor', label: 'Color' },
+    ],
+  },
+  {
+    id: 'outfit',
+    label: 'Outfit',
+    subs: [
+      { id: 'outfit', label: 'Style' },
+      { id: 'outfitColor', label: 'Color' },
+    ],
+  },
 ];
 
 function Tile({
@@ -51,7 +67,13 @@ function Tile({
 export function CharacterStudioScreen() {
   const character = useAppStore((s) => s.character)!;
   const progress = useAppStore((s) => s.progress);
-  const studioCat = useAppStore((s) => s.studioCat);
+  // A saved tab that no longer exists (e.g. from an older build) falls back to Base,
+  // so the Studio still opens. Checks sub-tabs too, since hairColor/outfitColor
+  // only appear nested under their parent group now, not as their own top id.
+  const savedCat = useAppStore((s) => s.studioCat);
+  const isValidCat = STUDIO_CATS.some((c) => c.id === savedCat || c.subs?.some((sub) => sub.id === savedCat));
+  const studioCat = isValidCat ? savedCat : 'base';
+  const activeGroup = STUDIO_CATS.find((c) => c.id === studioCat || c.subs?.some((sub) => sub.id === studioCat))!;
   const setStudioCat = useAppStore((s) => s.setStudioCat);
   const updateCharacterField = useAppStore((s) => s.updateCharacterField);
   const showToast = useAppStore((s) => s.showToast);
@@ -115,15 +137,11 @@ export function CharacterStudioScreen() {
 
   const lvl = progress.level;
   const t = tierFor(lvl);
-  const ctx = { level: progress.level, longestStreak: progress.longestStreak };
+  const ctx = { level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige };
 
   function handleWardrobeClick(key: CatalogKey, item: CatalogItem) {
     if (!isUnlocked(item, ctx)) {
-      showToast(
-        item.unlock?.level
-          ? `Reach Level ${item.unlock.level} to unlock ${item.name}`
-          : `Hit a ${item.unlock?.streak}-day streak to unlock ${item.name}`,
-      );
+      showToast(lockHint(item));
       return;
     }
     updateCharacterField(key, item.id);
@@ -165,17 +183,26 @@ export function CharacterStudioScreen() {
   } else if (studioCat === 'skin') {
     rail = (
       <>
-        {SKIN_TONES.map((_, i) => (
-          <Tile
-            key={i}
-            sel={character.skin === i}
-            locked={false}
-            art={<CharacterThumbnail cfg={{ ...character, outfit: 'none', skin: i }} mode="full" />}
-            name={['Light', 'Medium', 'Dark'][i]}
-            lockText=""
-            onClick={() => updateCharacterField('skin', i)}
-          />
-        ))}
+        {SKIN_TONES.map((t, i) => {
+          const locked = !isUnlocked(t, ctx);
+          return (
+            <Tile
+              key={t.name}
+              sel={character.skin === i}
+              locked={locked}
+              art={<CharacterThumbnail cfg={{ ...character, outfit: 'none', skin: i }} mode="full" />}
+              name={t.name}
+              lockText={unlockLabel(t)}
+              onClick={() => {
+                if (locked) {
+                  showToast(lockHint(t));
+                  return;
+                }
+                updateCharacterField('skin', i);
+              }}
+            />
+          );
+        })}
       </>
     );
   } else if (studioCat === 'hairColor') {
@@ -184,17 +211,54 @@ export function CharacterStudioScreen() {
     const previewHair = character.hair !== 'none' ? character.hair : character.base === 'male' ? 'buzzed' : 'buzzedFemale';
     rail = (
       <>
-        {HAIR_COLORS.map((c, i) => (
-          <Tile
-            key={c.name}
-            sel={character.hairColor === i}
-            locked={false}
-            art={<CharacterThumbnail cfg={{ ...character, hair: previewHair, hairColor: i }} mode="portrait" />}
-            name={c.name}
-            lockText=""
-            onClick={() => updateCharacterField('hairColor', i)}
-          />
-        ))}
+        {HAIR_COLORS.map((c, i) => {
+          const locked = !isUnlocked(c, ctx);
+          return (
+            <Tile
+              key={c.name}
+              sel={character.hairColor === i}
+              locked={locked}
+              art={<CharacterThumbnail cfg={{ ...character, hair: previewHair, hairColor: i }} mode="head" />}
+              name={c.name}
+              lockText={unlockLabel(c)}
+              onClick={() => {
+                if (locked) {
+                  showToast(lockHint(c));
+                  return;
+                }
+                updateCharacterField('hairColor', i);
+              }}
+            />
+          );
+        })}
+      </>
+    );
+  } else if (studioCat === 'outfitColor') {
+    // Nothing to tint with no outfit equipped - preview against Trainer
+    // kit rather than 'none', same reasoning as the hair color fallback.
+    const previewOutfit = character.outfit !== 'none' ? character.outfit : 'trainer';
+    rail = (
+      <>
+        {OUTFIT_COLORS.map((c, i) => {
+          const locked = !isUnlocked(c, ctx);
+          return (
+            <Tile
+              key={c.name}
+              sel={(character.outfitColor ?? 0) === i}
+              locked={locked}
+              art={<CharacterThumbnail cfg={{ ...character, outfit: previewOutfit, outfitColor: i }} mode="full" />}
+              name={c.name}
+              lockText={unlockLabel(c)}
+              onClick={() => {
+                if (locked) {
+                  showToast(lockHint(c));
+                  return;
+                }
+                updateCharacterField('outfitColor', i);
+              }}
+            />
+          );
+        })}
       </>
     );
   } else {
@@ -202,7 +266,7 @@ export function CharacterStudioScreen() {
       studioCat === 'hair'
         ? (CATALOG.hair as HairItem[]).filter((it) => !it.base || it.base === character.base)
         : CATALOG[studioCat];
-    const mode = studioCat === 'hair' ? 'portrait' : 'full';
+    const mode = studioCat === 'hair' ? 'head' : 'full';
     rail = (
       <>
         {list.map((it) => {
@@ -278,16 +342,30 @@ export function CharacterStudioScreen() {
           <Icon name="expand" />
         </button>
       </div>
-      <div className="cat-rail" style={{ transition: dragging ? 'none' : undefined }}>
-        {STUDIO_CATS.map((k) => (
-          <button
-            key={k.id}
-            className={`cat-chip${studioCat === k.id ? ' active' : ''}`}
-            onClick={() => setStudioCat(k.id)}
-          >
-            {k.label}
-          </button>
-        ))}
+      <div className="studio-tabs" style={{ transition: dragging ? 'none' : undefined }}>
+        <div className="cat-rail">
+          {STUDIO_CATS.map((k) => {
+            const active = k.id === activeGroup.id;
+            return (
+              <button key={k.id} className={`cat-chip${active ? ' active' : ''}`} onClick={() => setStudioCat(k.id)}>
+                {k.label}
+              </button>
+            );
+          })}
+        </div>
+        {activeGroup.subs && (
+          <div className="sub-cat-rail">
+            {activeGroup.subs.map((sub) => (
+              <button
+                key={sub.id}
+                className={`sub-cat-chip${studioCat === sub.id ? ' active' : ''}`}
+                onClick={() => setStudioCat(sub.id)}
+              >
+                {sub.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
       <div className="item-rail">{rail}</div>
       {nu ? (

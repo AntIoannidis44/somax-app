@@ -8,9 +8,9 @@ import type { PlanDay, Route } from '../../types';
 
 const ROUTE_META: Record<
   Route,
-  { title: (name: string) => string; sub: (ctx: { simDay: number; programName: string; weekPlan: PlanDay[] }) => string }
+  { title: (name: string) => string; sub: (ctx: { programName: string; weekPlan: PlanDay[] }) => string }
 > = {
-  home: { title: (name) => `Hey, ${name}`, sub: (ctx) => dayLabel(ctx.simDay, ctx.weekPlan) },
+  home: { title: (name) => `Hey, ${name}`, sub: (ctx) => dayLabel(ctx.weekPlan) },
   train: { title: () => 'Training', sub: (ctx) => ctx.programName },
   play: { title: () => 'Play', sub: () => 'Challenges & league' },
   community: { title: () => 'Community', sub: () => 'Bronze League activity' },
@@ -25,20 +25,29 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const onboarded = useAppStore((s) => s.onboarded);
   const viewingWorkout = useAppStore((s) => s.viewingWorkout);
   const viewingCharacter = useAppStore((s) => s.viewingCharacter);
+  const viewingGoals = useAppStore((s) => s.viewingGoals);
   const viewingDM = useAppStore((s) => s.viewingDM);
+  const viewingGroup = useAppStore((s) => s.viewingGroup);
+  const viewingProfile = useAppStore((s) => s.viewingProfile);
   const viewingWorkoutEditor = useAppStore((s) => s.viewingWorkoutEditor);
   const viewingSharedProgram = useAppStore((s) => s.viewingSharedProgram);
+  const viewingComposer = useAppStore((s) => s.viewingComposer);
+  const viewingSessionDetail = useAppStore((s) => s.viewingSessionDetail);
   const route = useAppStore((s) => s.route);
   const profile = useAppStore((s) => s.profile);
   const progress = useAppStore((s) => s.progress);
-  const simDay = useAppStore((s) => s.simDay);
   const weekPlan = useAppStore((s) => s.weekPlan);
   const go = useAppStore((s) => s.go);
   const closeWorkout = useAppStore((s) => s.closeWorkout);
   const closeCharacterStudio = useAppStore((s) => s.closeCharacterStudio);
+  const closeGoals = useAppStore((s) => s.closeGoals);
   const closeDM = useAppStore((s) => s.closeDM);
+  const closeGroup = useAppStore((s) => s.closeGroup);
+  const closeProfile = useAppStore((s) => s.closeProfile);
   const closeWorkoutEditor = useAppStore((s) => s.closeWorkoutEditor);
   const closeSharedProgram = useAppStore((s) => s.closeSharedProgram);
+  const closeComposer = useAppStore((s) => s.closeComposer);
+  const closeSessionDetail = useAppStore((s) => s.closeSessionDetail);
 
   if (!onboarded) return <div className="device-header" />;
 
@@ -61,7 +70,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   }
 
   if (viewingCharacter) {
-    const cu = countUnlocked({ level: progress.level, longestStreak: progress.longestStreak });
+    const cu = countUnlocked({ level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige });
     return (
       <div className="device-header">
         <button className="level-chip" style={{ padding: 8 }} onClick={closeCharacterStudio}>
@@ -80,6 +89,22 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
     );
   }
 
+  if (viewingGoals) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeGoals}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">Goals</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
   if (viewingDM) {
     return (
       <div className="device-header">
@@ -90,6 +115,38 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
         </button>
         <div style={{ textAlign: 'center', flex: 1 }}>
           <div className="dh-title">{viewingDM.name}</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
+  if (viewingGroup) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeGroup}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">{viewingGroup.name}</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
+  if (viewingProfile) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeProfile}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">Profile</div>
         </div>
         <div style={{ width: 38 }} />
       </div>
@@ -128,6 +185,38 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
     );
   }
 
+  if (viewingComposer) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeComposer}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="x" />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">New post</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
+  if (viewingSessionDetail) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeSessionDetail}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">{viewingSessionDetail.name}</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
   const meta = ROUTE_META[route];
   const isOverlay = route === 'home';
   const classes = ['device-header'];
@@ -138,7 +227,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
     <div className={classes.join(' ')}>
       <div>
         <div className="dh-title">{meta.title(first(profile?.name))}</div>
-        <div className="dh-sub">{meta.sub({ simDay, programName: profile?.program.name || '', weekPlan })}</div>
+        <div className="dh-sub">{meta.sub({ programName: profile?.program.name || '', weekPlan })}</div>
       </div>
       <button className="level-chip" onClick={() => go('profile')}>
         <span className="lvl-badge">{progress.level}</span>

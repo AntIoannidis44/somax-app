@@ -2,7 +2,13 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "somax-app",
   "compatibility_date": "2026-09-17",
+  "main": "worker/index.ts",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "SUPABASE_URL": "https://kxdvkousknbsvtecndjd.supabase.co",
+    "SUPABASE_ANON_KEY": "sb_publishable_TbLPNrKjMYHyVFbBeUdd_Q_PXpRBMIv"
   }
 }

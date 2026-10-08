@@ -9,6 +9,10 @@ export interface CustomWorkout {
   name: string;
   duration: string;
   exercises: ExerciseDef[];
+  // One of WORKOUT_TYPES' ids (src/data/workoutTypes.ts) - shown as an icon
+  // in My Programs, and carried through to a feed post made from finishing
+  // this workout, so it lands in the matching filter tab.
+  category: string;
   created_at: string;
   updated_at: string;
 }
@@ -56,19 +60,10 @@ export function useMyWorkouts(): CustomWorkout[] {
 
 // Built-ins first, then whatever's in the current user's own cache - a
 // weekPlan slot's `key` is always either a fixed preset id (push/pull/...)
-// or one of the user's own custom_workouts rows (imports create a real
-// copy in that table, see importWorkout below), never a stranger's id.
+// or one of the user's own custom_workouts rows (shared-link imports create
+// a real copy via saveWorkout, see shareLinks.ts), never a stranger's id.
 export function getWorkout(key: string): WorkoutDef | undefined {
   return WORKOUTS[key] || myWorkoutsCache.find((w) => w.id === key);
-}
-
-export async function fetchWorkoutById(id: string): Promise<CustomWorkout | null> {
-  const { data, error } = await supabase.from('custom_workouts').select('*').eq('id', id).maybeSingle();
-  if (error) {
-    console.error('[customWorkouts] fetchWorkoutById:', error.message);
-    return null;
-  }
-  return data as CustomWorkout | null;
 }
 
 export interface WorkoutDraft {
@@ -76,6 +71,7 @@ export interface WorkoutDraft {
   name: string;
   duration: string;
   exercises: ExerciseDef[];
+  category: string;
 }
 
 // Insert (no id) or update (id present, must be owned by this user - RLS
@@ -86,6 +82,7 @@ export async function saveWorkout(userId: string, draft: WorkoutDraft): Promise<
     name: draft.name,
     duration: draft.duration,
     exercises: draft.exercises,
+    category: draft.category,
     updated_at: new Date().toISOString(),
   };
   const { data, error } = draft.id
@@ -103,16 +100,4 @@ export async function deleteWorkout(userId: string, id: string): Promise<void> {
   const { error } = await supabase.from('custom_workouts').delete().eq('id', id);
   if (error) console.error('[customWorkouts] deleteWorkout:', error.message);
   await loadMyWorkouts(userId);
-}
-
-// Sharing: a link just carries the source workout's id. Anyone signed in
-// can read any row (see the table's RLS policy), so opening the link
-// shows a live preview; "Add to my programs" copies it into a brand-new
-// row owned by the importing user rather than referencing the original.
-export async function importWorkout(userId: string, source: CustomWorkout): Promise<string | null> {
-  return saveWorkout(userId, { name: source.name, duration: source.duration, exercises: source.exercises });
-}
-
-export function shareLinkFor(id: string): string {
-  return `${window.location.origin}${window.location.pathname}?program=${id}`;
 }

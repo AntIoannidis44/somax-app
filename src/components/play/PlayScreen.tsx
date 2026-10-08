@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { ChallengesTab } from './ChallengesTab';
 import { LeagueTab } from './LeagueTab';
 import { AchievementsTab } from './AchievementsTab';
@@ -13,28 +12,19 @@ const SEGMENTS = [
 export function PlayScreen() {
   const playTab = useAppStore((s) => s.playTab);
   const setPlayTab = useAppStore((s) => s.setPlayTab);
-  const thumbRef = useRef<HTMLDivElement>(null);
-  const btnRefs = useRef<Record<string, HTMLButtonElement | null>>({});
-  const [thumbStyle, setThumbStyle] = useState<{ width: number; left: number }>({ width: 0, left: 0 });
-
-  useEffect(() => {
-    const btn = btnRefs.current[playTab];
-    if (btn) setThumbStyle({ width: btn.offsetWidth, left: btn.offsetLeft });
-  }, [playTab]);
+  // Equal-width (flex:1) buttons mean the pill's position is index/count -
+  // derived, not measured, so it's correct from the first paint.
+  const activeIndex = SEGMENTS.findIndex((seg) => seg.id === playTab);
 
   return (
     <>
       <div className="seg">
-        <div className="seg-thumb" ref={thumbRef} style={{ width: thumbStyle.width, left: thumbStyle.left }} />
+        <div
+          className="seg-thumb"
+          style={{ width: `calc((100% - 8px) / ${SEGMENTS.length})`, transform: `translateX(${activeIndex * 100}%)` }}
+        />
         {SEGMENTS.map((seg) => (
-          <button
-            key={seg.id}
-            ref={(el) => {
-              btnRefs.current[seg.id] = el;
-            }}
-            className={playTab === seg.id ? 'active' : ''}
-            onClick={() => setPlayTab(seg.id)}
-          >
+          <button key={seg.id} className={playTab === seg.id ? 'active' : ''} onClick={() => setPlayTab(seg.id)}>
             {seg.label}
           </button>
         ))}

@@ -39,15 +39,21 @@ export function CharacterStep() {
       <div className="field" style={{ marginTop: 20 }}>
         <label>Complexion</label>
         <div className="swatch-row">
-          {SKIN_TONES.map((c, i) => (
-            <button
-              key={c}
-              className={`swatch${dc.skin === i ? ' sel' : ''}`}
-              style={{ background: c }}
-              aria-label={`Complexion ${i + 1}`}
-              onClick={() => setOnbCharacterSkin(i)}
-            />
-          ))}
+          {SKIN_TONES.map(
+            (t, i) =>
+              // Onboarding only offers what's unconditionally available -
+              // the high-level fantasy tones live in the Character studio
+              // once actually unlocked, not here.
+              !t.unlock && (
+                <button
+                  key={t.id}
+                  className={`swatch${dc.skin === i ? ' sel' : ''}`}
+                  style={{ background: t.hex }}
+                  aria-label={t.name}
+                  onClick={() => setOnbCharacterSkin(i)}
+                />
+              ),
+          )}
         </div>
       </div>
     </>

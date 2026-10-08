@@ -5,6 +5,7 @@ import { useAppStore } from '../../store/useAppStore';
 
 export function AchievementsTab() {
   const achievements = useAppStore((s) => s.achievements);
+  const state = useAppStore((s) => s);
 
   return (
     <div className="achv-grid">
@@ -17,6 +18,20 @@ export function AchievementsTab() {
             </div>
             <div className="achv-name">{a.name}</div>
             <div className="achv-desc">{a.desc}</div>
+            {a.progress && (() => {
+              const value = Math.min(a.progress.value(state), a.progress.target);
+              const pct = Math.round((value / a.progress.target) * 100);
+              return (
+                <>
+                  <div className="progress-track" style={{ marginTop: 8, height: 6 }}>
+                    <div className={`progress-fill${unlocked ? ' success' : ''}`} style={{ width: `${pct}%` }} />
+                  </div>
+                  <div className="achv-desc" style={{ marginTop: 4 }}>
+                    {value} / {a.progress.target}
+                  </div>
+                </>
+              );
+            })()}
           </div>
         );
       })}
