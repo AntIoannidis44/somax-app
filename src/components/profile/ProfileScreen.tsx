@@ -18,7 +18,6 @@ export function ProfileScreen() {
   const profile = useAppStore((s) => s.profile)!;
   const progress = useAppStore((s) => s.progress);
   const character = useAppStore((s) => s.character);
-  const history = useAppStore((s) => s.history);
   const openCharacterStudio = useAppStore((s) => s.openCharacterStudio);
   const openGoals = useAppStore((s) => s.openGoals);
   const resetDemo = useAppStore((s) => s.resetDemo);
@@ -284,28 +283,6 @@ export function ProfileScreen() {
           </div>
         </>
       )}
-
-      <div className="section-label">Recent activity</div>
-      <div className="card" style={{ paddingTop: 2, paddingBottom: 2 }}>
-        {history.length === 0 ? (
-          <div style={{ padding: '16px 4px', color: 'var(--text-faint)', fontSize: 13 }}>
-            No activity yet — complete a goal on Home to get started.
-          </div>
-        ) : (
-          history.slice(0, 10).map((h, i) => (
-            <div className="history-row" key={i}>
-              <div className="history-icon">
-                <Icon name="zap" />
-              </div>
-              <div className="history-main">
-                <div className="history-title">{h.label}</div>
-                <div className="history-time">Day {h.day + 1}</div>
-              </div>
-              <div className="history-xp">+{h.xp}</div>
-            </div>
-          ))
-        )}
-      </div>
 
       <SettingsCard />
 
