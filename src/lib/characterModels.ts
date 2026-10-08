@@ -266,18 +266,25 @@ function findSkinnedMeshes(root: THREE.Object3D): THREE.SkinnedMesh[] {
 // a fixed clearance - this guarantees separation from the body regardless
 // of local shape mismatches, unlike a linear scale.
 const OUTFIT_INFLATE = 0.018;
+// Limbs (arms/feet/hood) use no manual scale, only inflate - see the
+// outfit-attach call site for why. The default OUTFIT_INFLATE was tuned
+// for garment-sized surfaces (torso, legs); fine extremity geometry
+// (fingers, toes) needs more outward push than that to fully clear the
+// body underneath, confirmed by direct close-up render comparison.
+const LIMB_INFLATE = 0.05;
 
 function attachToSkeleton(
   mesh: THREE.SkinnedMesh,
   boneByName: Map<string, THREE.Bone>,
   scale?: THREE.Vector3Tuple,
   sharedCenter?: THREE.Vector3,
+  inflate: number = OUTFIT_INFLATE,
 ): THREE.SkinnedMesh | null {
   const srcSkeleton = mesh.skeleton;
   const bones = srcSkeleton.bones.map((b) => boneByName.get(b.name));
   if (bones.some((b) => !b)) return null;
   let geometry = mesh.geometry;
-  if (scale) {
+  if (scale || inflate) {
     geometry = geometry.clone();
     geometry.computeVertexNormals();
     // geometry.scale() scales around the geometry's local origin, which
@@ -313,12 +320,14 @@ function attachToSkeleton(
     for (let i = 0; i < pos.count; i++) {
       v.fromBufferAttribute(pos, i);
       n.fromBufferAttribute(normal, i);
-      v.sub(center);
-      v.x *= scale[0];
-      v.y *= scale[1];
-      v.z *= scale[2];
-      v.add(center);
-      v.addScaledVector(n, OUTFIT_INFLATE);
+      if (scale) {
+        v.sub(center);
+        v.x *= scale[0];
+        v.y *= scale[1];
+        v.z *= scale[2];
+        v.add(center);
+      }
+      if (inflate) v.addScaledVector(n, inflate);
       pos.setXYZ(i, v.x, v.y, v.z);
     }
     pos.needsUpdate = true;
@@ -386,15 +395,25 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     }
   });
 
-  const attachPartsFrom = async (urls: string[], scale?: THREE.Vector3Tuple, tint?: string, colorTex?: THREE.Texture) => {
+  const attachPartsFrom = async (
+    urls: string[],
+    scale?: THREE.Vector3Tuple | ((url: string) => THREE.Vector3Tuple | undefined),
+    tint?: string,
+    colorTex?: THREE.Texture,
+    inflate: number = OUTFIT_INFLATE,
+  ) => {
     const gltfs = await Promise.all(urls.map((u) => loadGLTF(u)));
-    // One shared scale pivot for every piece in this batch (e.g. the whole
-    // outfit's body+legs+arms+feet together), not each piece's own
-    // bounding-box center - see attachToSkeleton's comment for why that
-    // matters: pieces that touch at scale=1 only stay touching if they're
-    // all scaled from the same point.
+    const scaleFor = (url: string) => (typeof scale === 'function' ? scale(url) : scale);
+    // One shared scale pivot for every piece in this batch (e.g. body+legs
+    // together) - see attachToSkeleton's comment for why that matters:
+    // pieces that touch at scale=1 only stay touching if they're all
+    // scaled from the same point. Per-URL scale (scaleFor) can still
+    // differ in magnitude between pieces sharing this same pivot - at the
+    // pivot itself a magnitude difference has zero effect, so the seam
+    // stays aligned regardless; only each piece's own extremities (far
+    // from the pivot) end up sized by their own scale.
     let sharedCenter: THREE.Vector3 | undefined;
-    if (scale) {
+    if (urls.some((u) => scaleFor(u))) {
       const unionBox = new THREE.Box3();
       gltfs.forEach((g) => {
         findSkinnedMeshes(g.scene).forEach((m) => {
@@ -408,7 +427,8 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
         unionBox.getCenter(sharedCenter);
       }
     }
-    gltfs.forEach((g) => {
+    gltfs.forEach((g, gi) => {
+      const scale = scaleFor(urls[gi]);
       findSkinnedMeshes(g.scene).forEach((m) => {
         const isSkinPatch = !!(m.material as THREE.MeshStandardMaterial)?.name?.match(SKIN_MATERIAL_RE);
         // The uniform scale+normal-inflate correction is tuned for garment
@@ -422,7 +442,7 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
         // while the rendered screenshot showed it pale - a lighting/normal
         // artifact, not a texture or material bug. Skip the correction for
         // this one piece; it doesn't need to stretch to begin with.
-        const attached = attachToSkeleton(m, boneByName, isSkinPatch ? undefined : scale, sharedCenter);
+        const attached = attachToSkeleton(m, boneByName, isSkinPatch ? undefined : scale, sharedCenter, isSkinPatch ? 0 : inflate);
         if (!attached) return;
         const mat = attached.material as THREE.MeshStandardMaterial;
         if (mat?.name && SKIN_MATERIAL_RE.test(mat.name) && mat.map) {
@@ -467,16 +487,38 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     const outfitColorTex = outfitColorUrl ? await loadSkinTexture(outfitColorUrl) : undefined;
     const { body, legs, ...limbs } = parts;
     const torso = [body, legs].filter(Boolean) as string[];
-    if (torso.length) await attachPartsFrom(torso, scale, undefined, outfitColorTex);
+    if (torso.length) {
+      // Body and legs share one scale pivot (the waist seam they actually
+      // touch at), but NOT the same scale magnitude. Legs get the build's
+      // full Y-scale (they need to reach the real, longer leg bones down
+      // to the boots). Body does not: its own Y extent runs all the way up
+      // to the shoulder/collar, the single point in this whole outfit
+      // furthest from a torso-ish pivot along Y - scaling it by the same
+      // factor as legs overshot the real shoulder position by several cm
+      // (measured directly), reading as a collar floating above the actual
+      // shoulder. The waist seam itself sits very close to the shared
+      // pivot, where a magnitude difference between the two pieces has
+      // almost no effect - so this keeps the seam closed without dragging
+      // the collar up with it.
+      const bodyScale: THREE.Vector3Tuple = [scale[0], 1, scale[2]];
+      await attachPartsFrom(torso, (url) => (url === body ? bodyScale : scale), undefined, outfitColorTex);
+    }
+    // Limbs (arms/feet/hood) get no manual scale at all - skinning alone
+    // already carries them correctly onto the real, longer bones. A manual
+    // scale here (even from each piece's own center) displaces fine
+    // extremity geometry - fingers, toes - in ways a torso-scale shape
+    // doesn't suffer from, which showed up as bare hand/toe skin clipping
+    // through the glove/boot. A larger-than-usual inflate (pure outward
+    // push, no position change) closes that gap instead.
     for (const url of Object.values(limbs).filter(Boolean) as string[]) {
-      await attachPartsFrom([url], scale, undefined, outfitColorTex);
+      await attachPartsFrom([url], undefined, undefined, outfitColorTex, LIMB_INFLATE);
     }
   }
 
   if (cfg.hair !== 'none' && HAIR_URLS[cfg.hair]) {
     const idx = Math.max(0, Math.min(HAIR_COLORS.length - 1, cfg.hairColor ?? 0));
     const tint = HAIR_COLORS[idx].hex;
-    await attachPartsFrom([HAIR_URLS[cfg.hair]], undefined, tint);
+    await attachPartsFrom([HAIR_URLS[cfg.hair]], undefined, tint, undefined, 0);
   }
 
   return { group };
