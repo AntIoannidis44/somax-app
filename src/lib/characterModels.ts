@@ -330,7 +330,19 @@ function attachToSkeleton(
   // draw calls (a known mobile GPU cost) for little visible difference.
   attached.castShadow = false;
   attached.receiveShadow = false;
-  const skeleton = new THREE.Skeleton(bones as THREE.Bone[], srcSkeleton.boneInverses);
+  // Deliberately NOT srcSkeleton.boneInverses: those were computed against
+  // the outfit's *authoring* rig (Teen's rest pose). Regular/Superhero's
+  // bones sit at genuinely different rest-pose positions (their arms alone
+  // are ~16-23% longer - measured directly), so reusing Teen's inverses
+  // with these bones re-introduces exactly that offset on every vertex,
+  // worst at the extremities furthest from the root (confirmed: this is
+  // what was actually opening the forearm/wrist gap, not the fabric-vs-
+  // body silhouette mismatch the scale+inflate correction above targets -
+  // that part was a real, separate, already-fixed bug). Omitting the
+  // second arg makes Skeleton compute fresh inverses from these bones' own
+  // current matrixWorld (see composeCharacter's updateMatrixWorld call),
+  // i.e. each build's *actual* rest pose - the correct bind reference.
+  const skeleton = new THREE.Skeleton(bones as THREE.Bone[]);
   attached.bind(skeleton, mesh.bindMatrix);
   return attached;
 }
@@ -348,6 +360,13 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     m.castShadow = true;
     m.receiveShadow = true;
   });
+
+  // Bones come straight from the loader with only their local transforms
+  // set - matrixWorld is still each Bone's default (identity-derived) until
+  // something actually traverses and updates it. attachToSkeleton (below)
+  // needs every bone's real matrixWorld *now*, synchronously, not whenever
+  // the next render tick happens to get around to it - see its own comment.
+  bodyScene.updateMatrixWorld(true);
 
   const boneByName = new Map<string, THREE.Bone>();
   bodySkinned[0]?.skeleton.bones.forEach((b) => boneByName.set(b.name, b));
@@ -465,7 +484,25 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base] ?? ([1, 1, 1] as THREE.Vector3Tuple);
     const outfitColorUrl = outfitColorTextureName(cfg.outfit, cfg.outfitColor ?? 0);
     const outfitColorTex = outfitColorUrl ? await loadSkinTexture(outfitColorUrl) : undefined;
-    await attachPartsFrom(Object.values(parts).filter(Boolean) as string[], scale, undefined, outfitColorTex);
+    // Only body+legs need a *shared* scale pivot - they're the pair that
+    // actually touches (the waist/hip seam the shared-center fix above was
+    // for). Arms and feet don't touch anything at a hard seam like that;
+    // they're independent limbs attached purely via skinning to their own
+    // shoulder/ankle bones. Scaling them from that SAME far-away torso-ish
+    // center was a real bug, not a refinement: a limb mesh sitting well
+    // above or below the shared center gets shifted bodily toward/away
+    // from it by the scale (confirmed: ~9cm for the arms on Regular/
+    // Superhero, measured directly) on top of any intended size increase -
+    // rendering as a sleeve visibly detached from its own arm. Each limb
+    // piece scales around its own local center instead, same as before the
+    // shared-center fix existed (that behavior was never the bug for
+    // these pieces - only body-vs-legs needed the shared pivot).
+    const { body, legs, ...limbs } = parts;
+    const torso = [body, legs].filter(Boolean) as string[];
+    if (torso.length) await attachPartsFrom(torso, scale, undefined, outfitColorTex);
+    for (const url of Object.values(limbs).filter(Boolean) as string[]) {
+      await attachPartsFrom([url], scale, undefined, outfitColorTex);
+    }
   }
 
   if (cfg.hair !== 'none' && HAIR_URLS[cfg.hair]) {
