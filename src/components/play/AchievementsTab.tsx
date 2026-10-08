@@ -14,7 +14,7 @@ export function AchievementsTab() {
         return (
           <div className={`achv${unlocked ? ' unlocked' : ''}`} key={a.id}>
             <div className="achv-icon">
-              <Icon name={a.icon as IconName} style={{ width: 18, height: 18 }} />
+              <Icon name={unlocked ? (a.icon as IconName) : 'lock'} style={{ width: 20, height: 20 }} />
             </div>
             <div className="achv-name">{a.name}</div>
             <div className="achv-desc">{a.desc}</div>

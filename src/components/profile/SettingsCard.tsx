@@ -4,6 +4,7 @@ import { requestLocalNotifPermission } from '../../lib/notifications';
 import { registerForPush, unregisterPushToken } from '../../lib/push';
 import { Icon } from '../Icon';
 import type { Settings } from '../../types';
+import type { IconName } from '../../data/icons';
 
 const THEMES: { id: Settings['theme']; label: string; icon: 'sun' | 'moon' | 'rotate' }[] = [
   { id: 'light', label: 'Light', icon: 'sun' },
@@ -11,12 +12,12 @@ const THEMES: { id: Settings['theme']; label: string; icon: 'sun' | 'moon' | 'ro
   { id: 'system', label: 'System', icon: 'rotate' },
 ];
 
-const SWITCHES: { key: keyof Settings; title: string; sub: string; kind: 'local' | 'push' }[] = [
-  { key: 'notifWorkout', title: 'Workout reminders', sub: 'Daily nudge for today’s session', kind: 'local' },
-  { key: 'notifStreak', title: 'Streak alerts', sub: 'Warn before a streak lapses', kind: 'local' },
-  { key: 'notifChallenge', title: 'Challenge updates', sub: 'Progress on joined challenges', kind: 'local' },
-  { key: 'notifLeague', title: 'League updates', sub: 'When a friend gains XP', kind: 'push' },
-  { key: 'notifMessages', title: 'Messages', sub: 'Push when a friend messages you', kind: 'push' },
+const SWITCHES: { key: keyof Settings; title: string; sub: string; kind: 'local' | 'push'; icon: IconName }[] = [
+  { key: 'notifWorkout', title: 'Workout reminders', sub: 'Daily nudge for today’s session', kind: 'local', icon: 'bell' },
+  { key: 'notifStreak', title: 'Streak alerts', sub: 'Warn before a streak lapses', kind: 'local', icon: 'flame' },
+  { key: 'notifChallenge', title: 'Challenge updates', sub: 'Progress on joined challenges', kind: 'local', icon: 'trophy' },
+  { key: 'notifLeague', title: 'League updates', sub: 'When a friend gains XP', kind: 'push', icon: 'community' },
+  { key: 'notifMessages', title: 'Messages', sub: 'Push when a friend messages you', kind: 'push', icon: 'comment' },
 ];
 
 export function SettingsCard() {
@@ -46,26 +47,38 @@ export function SettingsCard() {
 
   return (
     <>
-      <div className="section-label">Appearance</div>
-      <div className="composer-visibility" style={{ marginBottom: 16 }}>
-        {THEMES.map((t) => (
-          <button key={t.id} className={`composer-visibility-opt${settings.theme === t.id ? ' active' : ''}`} onClick={() => setTheme(t.id)}>
-            <Icon name={t.icon} style={{ width: 14, height: 14 }} />
-            {t.label}
-          </button>
-        ))}
+      <div className="section-label">Settings</div>
+      <div className="card" style={{ marginBottom: 0 }}>
+        <div className="setting-row">
+          <span className="set-ic">
+            <Icon name="sun" />
+          </span>
+          <div>
+            <div className="setting-title">Appearance</div>
+          </div>
+          <div className="mini-seg">
+            {THEMES.map((t) => (
+              <button key={t.id} className={settings.theme === t.id ? 'on' : ''} onClick={() => setTheme(t.id)}>
+                {t.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="section-label">Notifications</div>
       <div className="card">
-      {SWITCHES.map((s) => (
-        <div className="setting-row" key={s.key}>
-          <div>
-            <div className="setting-title">{s.title}</div>
-            <div className="setting-sub">{s.sub}</div>
+        {SWITCHES.map((s) => (
+          <div className="setting-row" key={s.key}>
+            <span className="set-ic">
+              <Icon name={s.icon} />
+            </span>
+            <div>
+              <div className="setting-title">{s.title}</div>
+              <div className="setting-sub">{s.sub}</div>
+            </div>
+            <button className={`switch${settings[s.key] ? ' on' : ''}`} onClick={() => handleToggle(s.key, s.kind)} aria-label={s.title} />
           </div>
-          <button className={`switch${settings[s.key] ? ' on' : ''}`} onClick={() => handleToggle(s.key, s.kind)} />
-        </div>
-      ))}
+        ))}
       </div>
     </>
   );

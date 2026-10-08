@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Clipboard } from '@capacitor/clipboard';
 import { Icon } from '../Icon';
 import { getWorkout } from '../../lib/customWorkouts';
 import { buildBlocks, expandSets, setKey, type BlockItem, type WorkoutBlock } from '../../lib/workoutSets';
@@ -7,7 +6,7 @@ import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
 import { workoutTypeById } from '../../data/workoutTypes';
 import { ShareSessionButton } from './ShareSessionButton';
-import { createShareLink } from '../../lib/shareLinks';
+import { ShareProgramSheet } from './ShareProgramSheet';
 import { recordActivityForGoals } from '../../lib/fitnessGoals';
 
 function repsLabel(reps: string): string {
@@ -27,6 +26,7 @@ export function WorkoutScreen() {
   const showToast = useAppStore((s) => s.showToast);
   const userId = useUserId();
   const [tracking, setTracking] = useState(false);
+  const [sharing, setSharing] = useState(false);
 
   const w = getWorkout(wid);
   if (!ws || !w) return null;
@@ -116,21 +116,6 @@ export function WorkoutScreen() {
     );
   }
 
-  async function handleShareLink() {
-    if (!userId) return;
-    const url = await createShareLink(userId, { name: w!.name, duration: w!.duration, exercises: w!.exercises, category: w!.category });
-    if (!url) {
-      showToast('Could not create the link');
-      return;
-    }
-    try {
-      await Clipboard.write({ string: url });
-      showToast('Link copied');
-    } catch {
-      showToast(url);
-    }
-  }
-
   function renderBlock(block: WorkoutBlock) {
     const title = block.superset ? `${block.number} · Superset · do back to back` : null;
     return (
@@ -155,8 +140,8 @@ export function WorkoutScreen() {
           )}
         </span>
         <div style={{ display: 'flex', gap: 6 }}>
-          <button className="btn btn-ghost" style={{ padding: '4px 10px', fontSize: 12, gap: 5 }} onClick={handleShareLink}>
-            <Icon name="link" style={{ width: 13, height: 13 }} /> Share link
+          <button className="btn btn-ghost" style={{ padding: '4px 10px', fontSize: 12, gap: 5 }} onClick={() => setSharing(true)}>
+            <Icon name="send" style={{ width: 13, height: 13 }} /> Share
           </button>
           {!tracking && !ws.completed && (
             <button className="btn btn-ghost" style={{ padding: '4px 10px', fontSize: 12, gap: 5 }} onClick={() => openWorkoutEditor(wid)}>
@@ -219,6 +204,12 @@ export function WorkoutScreen() {
             Post to {workoutTypeById(w.category)?.label ?? 'the'} feed
           </button>
         </>
+      )}
+      {sharing && w && (
+        <ShareProgramSheet
+          program={{ name: w.name, duration: w.duration, exercises: w.exercises, category: w.category }}
+          onClose={() => setSharing(false)}
+        />
       )}
     </>
   );

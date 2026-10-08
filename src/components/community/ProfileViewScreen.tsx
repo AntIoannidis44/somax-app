@@ -9,10 +9,12 @@ import { useMyWorkouts } from '../../lib/customWorkouts';
 import { useFeedEngagement } from '../../lib/useFeedEngagement';
 import { encodeProgramMessage } from '../../lib/programShare';
 import { tierFor } from '../../lib/character';
-import { timeAgo } from '../../lib/format';
-import { workoutTypeById } from '../../data/workoutTypes';
+import { initials, timeAgo } from '../../lib/format';
+import { categoryForActivityName, workoutTypeById } from '../../data/workoutTypes';
+import { TypeIconBadge } from '../TypeIconBadge';
+import { Modal } from '../layout/Modal';
+import { ShareProgramSheet } from '../train/ShareProgramSheet';
 import {
-  createPost,
   deletePost,
   fetchFriendships,
   fetchPostsByUser,
@@ -28,9 +30,17 @@ import {
   type PublicProfile,
 } from '../../lib/social';
 
+// Recent-activity labels are free text ("Push Day", "Outdoor Run synced from
+// Apple Fitness") - map them to a workout type for the badge.
+function activityCategory(label: string): string {
+  const fromHealth = categoryForActivityName(label);
+  if (fromHealth !== 'other') return fromHealth;
+  return /day|push|pull|leg|upper|lower|body|strength|lift/i.test(label) ? 'gym' : 'other';
+}
+
 const TABS = [
   { id: 'activity', label: 'Activity' },
-  { id: 'feed', label: 'Feed' },
+  { id: 'feed', label: 'Posts' },
   { id: 'character', label: 'Character' },
 ] as const;
 type Tab = (typeof TABS)[number]['id'];
@@ -47,6 +57,7 @@ export function ProfileViewScreen() {
   const [profile, setProfile] = useState<PublicProfile | null | undefined>(undefined);
   const [friendship, setFriendship] = useState<Friendship | null>(null);
   const [sharePickerOpen, setSharePickerOpen] = useState(false);
+  const [postingProgram, setPostingProgram] = useState<(typeof myWorkouts)[number] | null>(null);
   const [tab, setTab] = useState<Tab>('activity');
   const [posts, setPosts] = useState<CommunityPost[]>([]);
   const engagement = useFeedEngagement(posts.map((p) => p.id), myId ?? '');
@@ -130,31 +141,16 @@ export function ProfileViewScreen() {
     showToast(`Shared with ${profile!.name}`);
   }
 
-  // Posting a program publicly (vs. DMing it privately, above) - this is
-  // what makes it show up as a normal feed post with the workout attached,
-  // not just a private share between two people.
-  async function handleSharePost(workoutId: string) {
-    if (!myId || !myProfile) return;
-    const program = myWorkouts.find((w) => w.id === workoutId);
-    if (!program) return;
-    await createPost(myId, myProfile.name, `Sharing my ${program.name} program`, program.category, null, {
-      name: program.name,
-      duration: program.duration,
-      category: program.category,
-      exercises: program.exercises,
-    });
-    setSharePickerOpen(false);
-    showToast('Posted to the feed');
-  }
-
   return (
     <>
       <div className="pv-header">
         <div className="pv-avatar">
           {profile.photo_url ? (
             <img src={profile.photo_url} alt={profile.name} className="fit-img" draggable={false} />
+          ) : profile.character ? (
+            <CharacterThumbnail cfg={profile.character} mode="full" />
           ) : (
-            <CharacterThumbnail cfg={profile.character ?? { base: 'female', build: 'regular', skin: 1, hair: 'none', hairColor: 0, outfit: 'none', outfitColor: 0 }} mode="full" />
+            <span className="pv-initials">{initials(profile.name)}</span>
           )}
         </div>
         <div className="pv-stats">
@@ -167,65 +163,80 @@ export function ProfileViewScreen() {
             <div className="pv-stat-label">Level</div>
           </div>
           <div className="pv-stat">
-            <div className="pv-stat-num">{profile.current_streak}</div>
+            <div className="pv-stat-num">{profile.current_streak}d</div>
             <div className="pv-stat-label">Streak</div>
           </div>
         </div>
       </div>
 
-      <div className="pv-name">{profile.name}</div>
-      <div className="pv-tier">{t.name} tier</div>
+      <div className="pv-name">
+        {profile.name}
+        <span className="tierpill" style={{ ['--c1' as string]: t.c1, ['--c2' as string]: t.c2 }}>
+          LV {profile.level} · {t.name.toUpperCase()}
+        </span>
+      </div>
 
       {!isSelf && (
         <div className="pv-actions">
           {isFriend ? (
             <>
-              <button className="btn btn-sm btn-primary" style={{ flex: 1 }} onClick={() => openDM(profile!.user_id, profile!.name)}>
+              <button className="btn btn-ghost" style={{ flex: 1 }} disabled>
+                <Icon name="check" style={{ width: 15, height: 15 }} /> Friends
+              </button>
+              <button className="btn btn-ghost" style={{ flex: 1 }} onClick={() => openDM(profile!.user_id, profile!.name)}>
                 Message
               </button>
-              <button className="btn btn-sm btn-ghost" style={{ flex: 1 }} onClick={() => setSharePickerOpen((v) => !v)}>
-                Share a workout
+              <button className="btn btn-ghost pv-share" onClick={() => setSharePickerOpen(true)} aria-label={`Share a workout with ${profile.name}`}>
+                <Icon name="dumbbell" style={{ width: 17, height: 17 }} />
               </button>
             </>
           ) : isIncoming ? (
             <>
-              <button className="btn btn-sm btn-primary" style={{ flex: 1 }} onClick={() => friendship && respondToFriendRequest(friendship.id, true)}>
+              <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => friendship && respondToFriendRequest(friendship.id, true)}>
                 Accept request
               </button>
-              <button className="btn btn-sm btn-ghost" style={{ flex: 1 }} onClick={() => friendship && respondToFriendRequest(friendship.id, false)}>
+              <button className="btn btn-ghost" style={{ flex: 1 }} onClick={() => friendship && respondToFriendRequest(friendship.id, false)}>
                 Decline
               </button>
             </>
           ) : isOutgoing ? (
-            <span style={{ fontSize: 12, color: 'var(--text-faint)', fontWeight: 700, alignSelf: 'center', margin: '0 auto' }}>Request sent</span>
+            <button className="btn btn-ghost" style={{ flex: 1 }} disabled>
+              Request sent
+            </button>
           ) : (
-            <button className="btn btn-sm btn-primary" style={{ flex: 1 }} onClick={() => sendFriendRequest(myId, profile!.user_id)}>
-              Add friend
+            <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => sendFriendRequest(myId, profile!.user_id)}>
+              <Icon name="plus" style={{ width: 15, height: 15 }} /> Add friend
             </button>
           )}
         </div>
       )}
 
       {sharePickerOpen && (
-        <div className="card" style={{ marginBottom: 18 }}>
+        <Modal open onClose={() => setSharePickerOpen(false)} title={`Share with ${profile.name.split(' ')[0]}`}>
           {myWorkouts.length === 0 ? (
             <div className="empty-hint">Create a custom program in Train first.</div>
           ) : (
             myWorkouts.map((w) => (
-              <div key={w.id} className="share-workout-row">
-                <span>{w.name}</span>
+              <div key={w.id} className="sheet-opt" style={{ cursor: 'default' }}>
+                <TypeIconBadge category={w.category} />
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div className="t">{w.name}</div>
+                  <div className="s">
+                    {w.exercises.length} exercise{w.exercises.length === 1 ? '' : 's'} · {w.duration}
+                  </div>
+                </div>
                 <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
-                  <button className="btn btn-ghost btn-sm" onClick={() => handleShareDM(w.id)}>
-                    Message
+                  <button className="btn btn-sm btn-primary" onClick={() => handleShareDM(w.id)}>
+                    Send
                   </button>
-                  <button className="btn btn-ghost btn-sm" onClick={() => handleSharePost(w.id)}>
+                  <button className="btn btn-sm btn-ghost" onClick={() => { setSharePickerOpen(false); setPostingProgram(w); }}>
                     Post
                   </button>
                 </div>
               </div>
             ))
           )}
-        </div>
+        </Modal>
       )}
 
       {!isLocked && (
@@ -257,21 +268,19 @@ export function ProfileViewScreen() {
 
           {favoriteTypes.length > 0 && (
             <>
-              <div className="section-label">Favorite workouts</div>
-              <div className="pv-favorites">
+              <div className="section-label">Favourite workouts</div>
+              <div className="fav-chips">
                 {favoriteTypes.map(([typeId, count]) => {
                   const wt = workoutTypeById(typeId);
                   if (!wt) return null;
                   return (
-                    <div className="pv-favorite" key={typeId}>
-                      <div className="pv-favorite-icon">
-                        <Icon name={wt.icon} style={{ width: 18, height: 18 }} />
-                      </div>
-                      <div className="pv-favorite-label">{wt.label}</div>
-                      <div className="pv-favorite-count">
-                        {count} post{count === 1 ? '' : 's'}
-                      </div>
-                    </div>
+                    <span key={typeId}>
+                      <i style={{ background: `var(${wt.colorVar})` }}>
+                        <Icon name={wt.icon} style={{ width: 15, height: 15 }} />
+                      </i>
+                      {wt.label}
+                      <small>×{count}</small>
+                    </span>
                   );
                 })}
               </div>
@@ -290,17 +299,18 @@ export function ProfileViewScreen() {
       </div>
 
       {tab === 'character' ? (
-        <div className="pv-character-view">
-          <div className="pv-character-shift">
-            <CharacterStage
-              view="studio"
-              anim="idle"
-              cfg={profile.character ?? { base: 'female', build: 'regular', skin: 1, hair: 'none', hairColor: 0, outfit: 'none', outfitColor: 0 }}
-              level={profile.level}
-              showPedestal={false}
-            />
+        profile.character ? (
+          <div className="pv-character-view pv-stage" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
+            <div className="pv-character-shift">
+              <CharacterStage view="studio" anim="idle" cfg={profile.character} level={profile.level} showPedestal={false} />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="pv-stage pv-nochar" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
+            <Icon name="profile" style={{ width: 34, height: 34 }} />
+            <b>{profile.name.split(' ')[0]} hasn't made a character yet</b>
+          </div>
+        )
       ) : isLocked ? (
         <div className="card" style={{ padding: '18px 16px', textAlign: 'center' }}>
           <Icon name="lock" style={{ width: 20, height: 20, margin: '0 auto 8px', display: 'block', color: 'var(--text-faint)' }} />
@@ -314,11 +324,12 @@ export function ProfileViewScreen() {
           ) : (
             profile.recent_activity.map((a, i) => (
               <div className="goal-row" key={i}>
+                <TypeIconBadge category={activityCategory(a.label)} fallbackIcon="zap" size={38} />
                 <div className="goal-main">
                   <div className="goal-title">{a.label}</div>
                   <div className="goal-meta">{timeAgo(a.at)}</div>
                 </div>
-                <div className="goal-xp">+{a.xp} XP</div>
+                <span className="gc-xp">+{a.xp} XP</span>
               </div>
             ))
           )}
@@ -349,6 +360,13 @@ export function ProfileViewScreen() {
             onDeletePost={() => deletePost(p.id)}
           />
         ))
+      )}
+      {postingProgram && (
+        <ShareProgramSheet
+          initialStep="post"
+          program={{ name: postingProgram.name, duration: postingProgram.duration, exercises: postingProgram.exercises, category: postingProgram.category }}
+          onClose={() => setPostingProgram(null)}
+        />
       )}
     </>
   );

@@ -45,6 +45,9 @@ export interface PostWorkout {
   // return a workout with no distance (e.g. logged indoors, or a source
   // that never wrote it) and that activity should still be viewable.
   isActivity?: boolean;
+  // True when the post shares a program for others to add (Share → Post to
+  // feed). A finished-workout or Watch post is a social post, not a program.
+  isProgram?: boolean;
   distanceMeters?: number;
   route?: { lat: number; lng: number; t: string }[];
 }

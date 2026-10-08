@@ -1,6 +1,6 @@
 import type { RoutePoint } from './health';
 
-function haversineMeters(a: RoutePoint, b: RoutePoint): number {
+export function haversineMeters(a: RoutePoint, b: RoutePoint): number {
   const R = 6371000;
   const toRad = (d: number) => (d * Math.PI) / 180;
   const dLat = toRad(b.lat - a.lat);

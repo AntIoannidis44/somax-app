@@ -24,7 +24,7 @@ export function LevelPath() {
           : `${floor.toLocaleString()} XP · ${t.name}`;
     rows.push(
       <div className={`rung ${stateCls}`} key={L}>
-        <div className="rung-num">{L}</div>
+        <div className="rung-num">{L < lvl ? <Icon name="check" style={{ width: 16, height: 16 }} /> : L}</div>
         <div className="rung-main">
           <div className="rung-title">
             Level {L}

@@ -61,6 +61,10 @@ export function useFeedEngagement(postIds: string[], userId: string) {
   function likeCountFor(postId: string): number {
     return likesByPost.get(postId)?.size ?? 0;
   }
+  // Who liked a post (user ids), for the "Liked by ..." line.
+  function likersFor(postId: string): string[] {
+    return [...(likesByPost.get(postId) ?? [])];
+  }
   function commentsFor(postId: string): PostComment[] {
     return commentsByPost.get(postId) ?? [];
   }
@@ -98,6 +102,7 @@ export function useFeedEngagement(postIds: string[], userId: string) {
   return {
     isLikedByMe,
     likeCountFor,
+    likersFor,
     commentsFor,
     commentsOpenFor,
     draftFor,

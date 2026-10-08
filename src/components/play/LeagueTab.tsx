@@ -87,7 +87,6 @@ export function LeagueTab() {
   const [board, setBoard] = useState<Board>('xp');
   // Equal-width (flex:1) buttons mean the pill's position is index/count -
   // derived, not measured, so it's correct from the first paint.
-  const activeIndex = BOARDS.findIndex((b) => b.id === board);
 
   useEffect(() => {
     let cancelled = false;
@@ -109,24 +108,23 @@ export function LeagueTab() {
   // second query, since these are two views onto one leaderboard.
   const sorted = board === 'xp' ? rows : [...rows].sort((a, b) => (b.monthly_steps || 0) - (a.monthly_steps || 0));
   const rest = sorted.slice(3);
+  const meRank = sorted.findIndex((r) => r.user_id === userId) + 1;
+  const me = meRank > 0 ? sorted[meRank - 1] : null;
 
   return (
     <>
-      <div className="banner">
-        <Icon name="info" />
-        <span>Bronze League · this month's {board === 'xp' ? 'XP' : 'steps'}, resets on the 1st.</span>
-      </div>
+      <SeasonBanner board={board} />
 
-      <div className="seg" style={{ marginBottom: 16 }}>
-        <div
-          className="seg-thumb"
-          style={{ width: `calc((100% - 8px) / ${BOARDS.length})`, transform: `translateX(${activeIndex * 100}%)` }}
-        />
-        {BOARDS.map((b) => (
-          <button key={b.id} className={board === b.id ? 'active' : ''} onClick={() => setBoard(b.id)}>
-            {b.label}
-          </button>
-        ))}
+      <div className="board-row">
+        <div className="scope">
+          {BOARDS.map((b) => (
+            <button key={b.id} className={board === b.id ? 'on' : ''} onClick={() => setBoard(b.id)}>
+              <Icon name={b.id === 'xp' ? 'zap' : 'steps'} />
+              {b.label}
+            </button>
+          ))}
+        </div>
+        <span>{sorted.length} in your league</span>
       </div>
 
       {sorted.length === 0 ? (
@@ -160,8 +158,54 @@ export function LeagueTab() {
               ))}
             </div>
           )}
+          {meRank > 3 && me && (
+            <div className="mebar">
+              <span className="rk">#{meRank}</span>
+              <AvatarCell profile={me} />
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div className="t">You · {board === 'xp' ? `${me.monthly_xp.toLocaleString()} XP` : `${(me.monthly_steps || 0).toLocaleString()} steps`}</div>
+                <div className="s">
+                  Ahead of {Math.round(((sorted.length - meRank) / Math.max(1, sorted.length - 1)) * 100)}% of the league ·{' '}
+                  {board === 'xp'
+                    ? `${Math.max(0, sorted[2].monthly_xp - me.monthly_xp + 1).toLocaleString()} XP to top 3`
+                    : `${Math.max(0, (sorted[2].monthly_steps || 0) - (me.monthly_steps || 0) + 1).toLocaleString()} steps to top 3`}
+                </div>
+              </div>
+            </div>
+          )}
         </>
       )}
     </>
+  );
+}
+
+// Monthly league: counts down to the reset on the 1st.
+function SeasonBanner({ board }: { board: Board }) {
+  const now = new Date();
+  const reset = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+  const ms = Math.max(0, reset.getTime() - now.getTime());
+  const days = Math.floor(ms / 86400000);
+  const hours = Math.floor((ms % 86400000) / 3600000);
+  const mins = Math.floor((ms % 3600000) / 60000);
+  const pad = (n: number) => n.toString().padStart(2, '0');
+  return (
+    <div className="season">
+      <div style={{ position: 'relative', zIndex: 1, minWidth: 0 }}>
+        <div className="k">{now.toLocaleString('en', { month: 'long' })} · resets in</div>
+        <h3>Bronze League</h3>
+        <div className="rule">Ranked by this month's {board === 'xp' ? 'XP' : 'steps'}</div>
+      </div>
+      <div className="cd">
+        <div>
+          <b>{pad(days)}</b>d
+        </div>
+        <div>
+          <b>{pad(hours)}</b>h
+        </div>
+        <div>
+          <b>{pad(mins)}</b>m
+        </div>
+      </div>
+    </div>
   );
 }

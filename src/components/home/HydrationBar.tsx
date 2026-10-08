@@ -1,4 +1,3 @@
-import { useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
 import { HYDRATION_TARGET_ML } from '../../lib/schedule';
@@ -9,38 +8,23 @@ function formatLiters(ml: number): string {
   return (ml / 1000).toFixed(2).replace(/0$/, '').replace(/\.$/, '');
 }
 
+// Water as tappable 250 ml glasses. Tapping the last filled glass empties
+// it, so a mis-tap is easy to undo. It self-awards once the target is
+// reached, then locks.
 export function HydrationBar() {
   const hydrationMl = useAppStore((s) => s.today.hydrationMl ?? 0);
   const goal = useAppStore((s) => s.today.goals.find((g) => g.id === 'hydration'));
   const setHydration = useAppStore((s) => s.setHydration);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [dragging, setDragging] = useState(false);
 
   if (!goal) return null;
   const done = goal.done;
+  const glasses = Math.round(HYDRATION_TARGET_ML / STEP_ML);
+  const filled = Math.min(glasses, Math.round(hydrationMl / STEP_ML));
 
-  const pct = Math.max(0, Math.min(1, hydrationMl / HYDRATION_TARGET_ML));
-
-  function valueFromPointer(clientX: number): number {
-    const track = trackRef.current;
-    if (!track) return hydrationMl;
-    const rect = track.getBoundingClientRect();
-    const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-    return Math.round((ratio * HYDRATION_TARGET_ML) / STEP_ML) * STEP_ML;
-  }
-
-  function handlePointerDown(e: React.PointerEvent<HTMLDivElement>) {
+  function tap(i: number) {
     if (done) return;
-    setDragging(true);
-    e.currentTarget.setPointerCapture(e.pointerId);
-    setHydration(valueFromPointer(e.clientX));
-  }
-  function handlePointerMove(e: React.PointerEvent<HTMLDivElement>) {
-    if (!dragging) return;
-    setHydration(valueFromPointer(e.clientX));
-  }
-  function handlePointerUp() {
-    setDragging(false);
+    const next = i + 1 === filled ? i : i + 1;
+    setHydration(next * STEP_ML);
   }
 
   return (
@@ -50,21 +34,13 @@ export function HydrationBar() {
       </div>
       <div className="goal-main">
         <div className={`goal-title${done ? ' done' : ''}`}>{goal.label}</div>
-        <div
-          ref={trackRef}
-          className={`hydration-track${done ? ' locked' : ''}`}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
-        >
-          <div className="hydration-fill" style={{ width: `${pct * 100}%` }}>
-            <div className="hydration-wave" />
-          </div>
-          {!done && <div className="hydration-handle" style={{ left: `${pct * 100}%` }} />}
-        </div>
         <div className="goal-meta">
-          {formatLiters(hydrationMl)}L / {formatLiters(HYDRATION_TARGET_ML)}L
+          {formatLiters(hydrationMl)} L of {formatLiters(HYDRATION_TARGET_ML)} L{done ? '' : ' · tap a glass'}
+        </div>
+        <div className={`water-cells${done ? ' locked' : ''}`}>
+          {Array.from({ length: glasses }, (_, i) => (
+            <button key={i} className={i < filled ? 'on' : ''} onClick={() => tap(i)} aria-label={`${(i + 1) * STEP_ML} ml`} />
+          ))}
         </div>
       </div>
       <div className="goal-xp">+{goal.xp} XP</div>

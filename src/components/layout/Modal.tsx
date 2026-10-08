@@ -1,4 +1,5 @@
-import { type ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 interface ModalProps {
   open: boolean;
@@ -27,7 +28,45 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
     return () => vv.removeEventListener('resize', update);
   }, []);
 
-  return (
+  // Bottom-sheet drag: pull the handle (or title row) up to expand to
+  // near full height, down to shrink back or close.
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ y: number; h: number; dy: number } | null>(null);
+  const [expanded, setExpanded] = useState(false);
+  const [dragStyle, setDragStyle] = useState<React.CSSProperties | undefined>(undefined);
+
+  useEffect(() => {
+    if (!open) setExpanded(false);
+  }, [open]);
+
+  function onDown(e: React.PointerEvent) {
+    if ((e.target as HTMLElement).closest('button')) return;
+    drag.current = { y: e.clientY, h: sheetRef.current?.getBoundingClientRect().height ?? 0, dy: 0 };
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  }
+  function onMove(e: React.PointerEvent) {
+    const d = drag.current;
+    if (!d) return;
+    d.dy = e.clientY - d.y;
+    const maxH = (sheetRef.current?.parentElement?.getBoundingClientRect().height ?? window.innerHeight) * 0.92;
+    if (d.dy < 0) setDragStyle({ height: Math.min(maxH, d.h - d.dy), maxHeight: maxH, transition: 'none', animation: 'none' });
+    else setDragStyle({ height: d.h, transform: `translateY(${d.dy}px)`, transition: 'none', animation: 'none' });
+  }
+  function onUp() {
+    const d = drag.current;
+    drag.current = null;
+    setDragStyle(undefined);
+    if (!d) return;
+    if (d.dy < -40) setExpanded(true);
+    else if (d.dy > 90) {
+      if (expanded && d.dy < 220) setExpanded(false);
+      else onClose();
+    }
+  }
+
+  // Portalled to <body>: inside the scrolling screen, iOS let the tab bar
+  // paint over the sheet and clipped its last rows.
+  return createPortal(
     <div
       className={`modal-overlay${open ? ' show' : ''}`}
       style={vvHeight ? { height: vvHeight } : undefined}
@@ -35,8 +74,11 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="modal-sheet">
-        <div className="modal-head">
+      <div ref={sheetRef} className={`modal-sheet${expanded ? ' expanded' : ''}`} style={dragStyle}>
+        <div className="modal-grab" onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}>
+          <span />
+        </div>
+        <div className="modal-head" onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}>
           <h3>{title}</h3>
           <button className="modal-close" onClick={onClose}>
             ✕
@@ -44,6 +86,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
         </div>
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

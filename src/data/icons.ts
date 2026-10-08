@@ -48,6 +48,12 @@ export const ICON_PATHS: Record<string, string> = {
   other: '<circle cx="5.5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18.5" cy="12" r="1.8"/>',
   pin: '<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/>',
   music: '<circle cx="6.5" cy="18" r="2.3"/><circle cx="17" cy="16" r="2.3"/><path d="M8.8 18V5.5L19.3 3v13"/><path d="M8.8 9.5 19.3 7"/>',
+  scale: '<rect x="4" y="4" width="16" height="16" rx="4.5"/><path d="M8.3 10.5a5 5 0 0 1 7.4 0"/><path d="m12 10.5 1.6-2.2"/>',
+  calendar: '<rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/>',
+  shield: '<path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>',
+  more: '<circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/>',
+  go: '<path d="M8 5.5v13l10.5-6.5L8 5.5Z"/>',
+  search: '<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>',
 };
 
 export type IconName = keyof typeof ICON_PATHS;

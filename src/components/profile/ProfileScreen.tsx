@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Icon } from '../Icon';
-import { ChipGroup } from '../onboarding/ChipGroup';
-import { GOALS } from '../onboarding/steps/Goal';
-import { DAYS } from '../onboarding/steps/Experience';
 import { StatBars } from './StatBars';
 import { SettingsCard } from './SettingsCard';
 import { FeatureFlags } from './FeatureFlags';
+import { GoalsSummary } from '../goals/GoalsSummary';
+import { fetchPostsByUser, type CommunityPost } from '../../lib/social';
+import { workoutTypeById } from '../../data/workoutTypes';
 import { CharacterThumbnail } from '../character/CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
 import { supabase } from '../../lib/supabase';
@@ -23,14 +23,21 @@ export function ProfileScreen() {
   const openGoals = useAppStore((s) => s.openGoals);
   const resetDemo = useAppStore((s) => s.resetDemo);
   const prestige = useAppStore((s) => s.prestige);
-  const toggleProfileGoal = useAppStore((s) => s.toggleProfileGoal);
-  const setProfileAvailability = useAppStore((s) => s.setProfileAvailability);
   const setProfilePhoto = useAppStore((s) => s.setProfilePhoto);
-  const reviseWeekPlan = useAppStore((s) => s.reviseWeekPlan);
   const settings = useAppStore((s) => s.settings);
   const toggleSetting = useAppStore((s) => s.toggleSetting);
   const showToast = useAppStore((s) => s.showToast);
   const userId = useUserId();
+  const friendCount = useAppStore((s) => s.progress.friendCount);
+  const [myPosts, setMyPosts] = useState<CommunityPost[]>([]);
+  useEffect(() => {
+    if (userId) fetchPostsByUser(userId).then(setMyPosts);
+  }, [userId]);
+  // Most-tagged workout types across your own posts (same signal a
+  // friend's profile uses for "Favourite workouts").
+  const typeCounts = new Map<string, number>();
+  for (const p of myPosts) if (p.workout_type && workoutTypeById(p.workout_type)) typeCounts.set(p.workout_type, (typeCounts.get(p.workout_type) ?? 0) + 1);
+  const favourites = [...typeCounts.entries()].sort((x, y) => y[1] - x[1]).slice(0, 4);
 
   const photoInputRef = useRef<HTMLInputElement>(null);
   const [photoBusy, setPhotoBusy] = useState(false);
@@ -71,29 +78,78 @@ export function ProfileScreen() {
     showToast('Profile photo removed');
   }
 
-  const [prefsOpen, setPrefsOpen] = useState(false);
-  const [prefsSnapshot, setPrefsSnapshot] = useState<{ goal: string[]; availability: string; focus: string } | null>(null);
-
-  function togglePrefs() {
-    if (!prefsOpen) setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability, focus: profile.focus });
-    setPrefsOpen((v) => !v);
-  }
-  const prefsChanged =
-    !!prefsSnapshot &&
-    (profile.availability !== prefsSnapshot.availability ||
-      profile.focus !== prefsSnapshot.focus ||
-      profile.goal.length !== prefsSnapshot.goal.length ||
-      profile.goal.some((g) => !prefsSnapshot.goal.includes(g)));
-
-  function handleRevise() {
-    reviseWeekPlan();
-    setPrefsSnapshot({ goal: [...profile.goal], availability: profile.availability, focus: profile.focus });
+  const [editing, setEditing] = useState(false);
+  function closeEdit() {
+    setEditing(false);
   }
 
   const ctx = { level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige };
   const nu = nextUnlock(ctx);
   const cu = countUnlocked(ctx);
+  const tier = tierFor(progress.level);
   const nuText = nu ? `Next unlock: ${nu.item.name} at Level ${nu.level}` : 'Every item unlocked';
+
+  if (editing) {
+    return (
+      <>
+        <div className="edit-head">
+          <button className="level-chip" onClick={closeEdit} aria-label="Back">
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </button>
+          <h2>Edit profile</h2>
+          <button className="link-btn" style={{ fontSize: 15 }} onClick={closeEdit}>
+            Done
+          </button>
+        </div>
+        <div className="edit-photo">
+          <div className="avatar-circle" style={{ padding: 0, overflow: 'hidden' }}>
+            {profile.photoUrl ? (
+              <img src={profile.photoUrl} alt={profile.name} className="fit-img" draggable={false} />
+            ) : character ? (
+              <CharacterThumbnail cfg={character} mode="portrait" />
+            ) : (
+              initials(profile.name)
+            )}
+          </div>
+          <div style={{ display: 'flex', gap: 16 }}>
+            <button className="link-btn" style={{ fontSize: 14 }} disabled={photoBusy} onClick={() => photoInputRef.current?.click()}>
+              Change photo
+            </button>
+            {profile.photoUrl && (
+              <button className="link-btn" style={{ fontSize: 14, color: 'var(--danger)' }} onClick={handleRemovePhoto}>
+                Remove
+              </button>
+            )}
+          </div>
+          <input ref={photoInputRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handlePhotoChange} />
+        </div>
+
+        <div className="section-label">Training</div>
+        <div className="card">
+          <button
+            className="prefrow"
+            onClick={() => {
+              closeEdit();
+              openGoals();
+            }}
+          >
+            <span className="set-ic">
+              <Icon name="zap" />
+            </span>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div className="setting-title" style={{ fontWeight: 700, fontSize: 14.5 }}>
+                Goals &amp; schedule
+              </div>
+              <div className="setting-sub" style={{ fontSize: 12.5 }}>
+                Your goals and {profile.availability || '—'} training days a week
+              </div>
+            </div>
+            <Icon name="chevron" style={{ width: 16, height: 16, color: 'var(--text-faint)' }} />
+          </button>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -118,20 +174,68 @@ export function ProfileScreen() {
           </button>
           <input ref={photoInputRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={handlePhotoChange} />
         </div>
-        <div>
-          <div className="profile-name">{profile.name}</div>
-          <div className="profile-sub">
-            {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {profile.experience} · Level {progress.level}
+        <div className="pf-stats">
+          <div>
+            <b>{myPosts.length}</b>
+            <span>Posts</span>
           </div>
-          {profile.photoUrl && (
-            <button className="link-btn" style={{ marginTop: 4 }} onClick={handleRemovePhoto}>
-              Remove photo
-            </button>
-          )}
+          <div>
+            <b>{friendCount ?? 0}</b>
+            <span>Friends</span>
+          </div>
+          <div>
+            <b>{progress.currentStreak}d</b>
+            <span>Streak</span>
+          </div>
+        </div>
+      </div>
+      <div className="profile-name" style={{ marginTop: 14 }}>
+        {profile.name}
+        <span className="tierpill" style={{ ['--c1' as string]: tier.c1, ['--c2' as string]: tier.c2 }}>
+          LV {progress.level} · {tier.name.toUpperCase()}
+        </span>
+      </div>
+      <div className="profile-sub">
+        {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {profile.experience}
+      </div>
+      <div className="pf-btns">
+        <button className="btn btn-ghost" onClick={() => setEditing(true)}>
+          Edit profile
+        </button>
+        <button className="btn btn-ghost" onClick={openCharacterStudio}>
+          Character studio
+        </button>
+      </div>
+
+      <div className="section-label">Character</div>
+      <div className="char-card" style={{ ['--t1' as string]: tier.c1, ['--t2' as string]: tier.c2 }} onClick={openCharacterStudio}>
+        <div className="char-card-figure">{character && <CharacterThumbnail cfg={character} mode="full" />}</div>
+        <div className="char-card-body">
+          <div className="char-tier">
+            {tierFor(progress.level).name} tier · Lv {progress.level}
+          </div>
+          <div className="char-title">{first(profile.name)}</div>
+          <div className="char-unlocks">
+            {cu.done} of {cu.total} wardrobe items unlocked
+            <br />
+            {nuText}
+          </div>
+          <div className="char-card-cta">
+            Open studio <Icon name="chevron" style={{ width: 13, height: 13 }} />
+          </div>
         </div>
       </div>
 
-      <div className="pv-achievements" style={{ marginTop: 18 }}>
+      <div className="section-label">
+        Goals &amp; schedule
+        <button className="link-btn" onClick={openGoals}>
+          Open
+        </button>
+      </div>
+      <GoalsSummary />
+
+      <div className="section-label">Highlights</div>
+      <div className="pv-achievements">
         <div className="pv-achievement">
           <div className="pv-achievement-icon">
             <Icon name="coin" style={{ width: 21, height: 21 }} />
@@ -155,118 +259,31 @@ export function ProfileScreen() {
         </div>
       </div>
 
-      <div className="section-label">Goals</div>
-      <div className="card">
-        <button
-          onClick={openGoals}
-          style={{
-            display: 'flex',
-            width: '100%',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: 12,
-            background: 'none',
-            border: 'none',
-            padding: 0,
-            font: 'inherit',
-            color: 'inherit',
-            cursor: 'pointer',
-            textAlign: 'left',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div
-              style={{
-                width: 34,
-                height: 34,
-                borderRadius: 11,
-                flexShrink: 0,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#fff',
-                background: 'linear-gradient(152deg, var(--hero-1), var(--hero-2))',
-              }}
-            >
-              <Icon name="zap" style={{ width: 16, height: 16 }} />
-            </div>
-            <div>
-              <div className="setting-title">Weight &amp; performance</div>
-              <div className="setting-sub">A target weight, a 5K time, total distance, training frequency - verified automatically</div>
-            </div>
-          </div>
-          <Icon name="chevron" style={{ flexShrink: 0 }} />
-        </button>
-      </div>
-
-      <div className="section-label">Character</div>
-      <div className="char-card" onClick={openCharacterStudio}>
-        <div className="char-card-figure">{character && <CharacterThumbnail cfg={character} mode="full" />}</div>
-        <div className="char-card-body">
-          <div className="char-tier">
-            {tierFor(progress.level).name} tier · Lv {progress.level}
-          </div>
-          <div className="char-title">{first(profile.name)}</div>
-          <div className="char-unlocks">
-            {cu.done} of {cu.total} wardrobe items unlocked
-            <br />
-            {nuText}
-          </div>
-          <div className="char-card-cta">
-            Open studio <Icon name="chevron" style={{ width: 13, height: 13 }} />
-          </div>
-        </div>
-      </div>
-
-      <div className="section-label">Training preferences</div>
-      <div className="card">
-        <button
-          onClick={togglePrefs}
-          style={{
-            display: 'flex',
-            width: '100%',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            background: 'none',
-            border: 'none',
-            padding: 0,
-            font: 'inherit',
-            color: 'inherit',
-            cursor: 'pointer',
-            textAlign: 'left',
-          }}
-        >
-          <div>
-            <div className="setting-title">Goals &amp; schedule</div>
-            <div className="setting-sub">
-              {profile.goal.length ? profile.goal.join(', ') : 'No goal set'} · {profile.availability || '—'} days/week
-            </div>
-          </div>
-          <Icon name="chevron" style={{ transform: prefsOpen ? 'rotate(-90deg)' : 'rotate(90deg)', transition: 'transform 200ms ease', flexShrink: 0 }} />
-        </button>
-        {prefsOpen && (
-          <div style={{ marginTop: 18 }}>
-            <div className="setting-title" style={{ marginBottom: 10 }}>
-              Goals
-            </div>
-            <ChipGroup options={GOALS} value={profile.goal} onSelect={toggleProfileGoal} />
-            <div className="setting-title" style={{ margin: '18px 0 10px' }}>
-              Days per week
-            </div>
-            <ChipGroup options={DAYS} value={profile.availability} onSelect={setProfileAvailability} />
-            {prefsChanged && (
-              <button className="btn btn-primary" style={{ marginTop: 18, width: '100%' }} onClick={handleRevise}>
-                Revise this week's program
-              </button>
-            )}
-          </div>
-        )}
-      </div>
 
       <div className="section-label">Attributes</div>
       <div className="card">
         <StatBars />
       </div>
+
+      {favourites.length > 0 && (
+        <>
+          <div className="section-label">Favourite workouts</div>
+          <div className="fav-chips">
+            {favourites.map(([typeId, count]) => {
+              const wt = workoutTypeById(typeId)!;
+              return (
+                <span key={typeId}>
+                  <i style={{ background: `var(${wt.colorVar})` }}>
+                    <Icon name={wt.icon} style={{ width: 15, height: 15 }} />
+                  </i>
+                  {wt.label}
+                  <small>×{count}</small>
+                </span>
+              );
+            })}
+          </div>
+        </>
+      )}
 
       <div className="section-label">Recent activity</div>
       <div className="card" style={{ paddingTop: 2, paddingBottom: 2 }}>
@@ -295,6 +312,9 @@ export function ProfileScreen() {
       <div className="section-label">Privacy</div>
       <div className="card" style={{ marginBottom: 18 }}>
         <div className="setting-row">
+          <span className="set-ic">
+            <Icon name="lock" />
+          </span>
           <div>
             <div className="setting-title">Private profile</div>
             <div className="setting-sub">
@@ -313,6 +333,9 @@ export function ProfileScreen() {
       <div className="section-label">Evolve</div>
       <div className="card" style={{ marginBottom: 18 }}>
         <div className="setting-row">
+          <span className="set-ic">
+            <Icon name="trophy" />
+          </span>
           <div>
             <div className="setting-title">
               {progress.prestige ? `Evolved ${progress.prestige}x` : 'Not evolved yet'}
@@ -337,13 +360,13 @@ export function ProfileScreen() {
 
       <div className="section-label">
         Feature flags
-        <span style={{ fontWeight: 600, color: 'var(--text-faint)', textTransform: 'none', letterSpacing: 0 }}>beta rollout</span>
+        <span className="sl-note">Beta rollout</span>
       </div>
       <FeatureFlags />
 
       <div className="section-label">Account</div>
       <button
-        className="btn btn-ghost"
+        className="btn btn-ghost signout"
         style={{ width: '100%', marginBottom: 10 }}
         onClick={async () => {
           // Clear local state on sign-out too - otherwise a different

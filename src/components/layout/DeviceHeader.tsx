@@ -4,7 +4,19 @@ import { getWorkout } from '../../lib/customWorkouts';
 import { countUnlocked } from '../../lib/character';
 import { dayLabel } from '../../lib/schedule';
 import { first } from '../../lib/format';
+import { todayPlan } from '../../lib/schedule';
+import { workoutTypeById } from '../../data/workoutTypes';
+import { LevelBadge } from './LevelBadge';
+import type { IconName } from '../../data/icons';
 import type { PlanDay, Route } from '../../types';
+
+// Icon for today's plan, shown beside the line under "Hey, <name>".
+function todayIcon(weekPlan: PlanDay[]): IconName {
+  const plan = todayPlan(weekPlan);
+  if (plan.type === 'watch') return 'watch';
+  if (plan.type !== 'train' || !plan.key) return 'moon';
+  return workoutTypeById(getWorkout(plan.key)?.category)?.icon ?? 'dumbbell';
+}
 
 const ROUTE_META: Record<
   Route,
@@ -37,7 +49,6 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const profile = useAppStore((s) => s.profile);
   const progress = useAppStore((s) => s.progress);
   const weekPlan = useAppStore((s) => s.weekPlan);
-  const go = useAppStore((s) => s.go);
   const closeWorkout = useAppStore((s) => s.closeWorkout);
   const closeCharacterStudio = useAppStore((s) => s.closeCharacterStudio);
   const closeGoals = useAppStore((s) => s.closeGoals);
@@ -98,7 +109,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
           </span>
         </button>
         <div style={{ textAlign: 'center', flex: 1 }}>
-          <div className="dh-title">Goals</div>
+          <div className="dh-title">Goals &amp; schedule</div>
         </div>
         <div style={{ width: 38 }} />
       </div>
@@ -225,14 +236,14 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
 
   return (
     <div className={classes.join(' ')}>
-      <div>
+      <div style={{ minWidth: 0 }}>
         <div className="dh-title">{meta.title(first(profile?.name))}</div>
-        <div className="dh-sub">{meta.sub({ programName: profile?.program.name || '', weekPlan })}</div>
+        <div className="dh-sub">
+          {route === 'home' && <Icon name={todayIcon(weekPlan)} />}
+          {meta.sub({ programName: profile?.program.name || '', weekPlan })}
+        </div>
       </div>
-      <button className="level-chip" onClick={() => go('profile')}>
-        <span className="lvl-badge">{progress.level}</span>
-        <span className="lvl-text">Lv {progress.level}</span>
-      </button>
+      <LevelBadge />
     </div>
   );
 }
