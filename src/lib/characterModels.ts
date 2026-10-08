@@ -465,7 +465,12 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base] ?? ([1, 1, 1] as THREE.Vector3Tuple);
     const outfitColorUrl = outfitColorTextureName(cfg.outfit, cfg.outfitColor ?? 0);
     const outfitColorTex = outfitColorUrl ? await loadSkinTexture(outfitColorUrl) : undefined;
-    await attachPartsFrom(Object.values(parts).filter(Boolean) as string[], scale, undefined, outfitColorTex);
+    const { body, legs, ...limbs } = parts;
+    const torso = [body, legs].filter(Boolean) as string[];
+    if (torso.length) await attachPartsFrom(torso, scale, undefined, outfitColorTex);
+    for (const url of Object.values(limbs).filter(Boolean) as string[]) {
+      await attachPartsFrom([url], scale, undefined, outfitColorTex);
+    }
   }
 
   if (cfg.hair !== 'none' && HAIR_URLS[cfg.hair]) {
