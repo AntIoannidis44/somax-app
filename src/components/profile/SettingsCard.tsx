@@ -41,7 +41,11 @@ export function SettingsCard() {
         toggleSetting(key);
       }
     } else if (userId) {
-      await registerForPush(userId);
+      const ok = await registerForPush(userId);
+      if (!ok) {
+        showToast('Enable notifications for SOMAXX in iOS Settings');
+        toggleSetting(key);
+      }
     }
   }
 

@@ -247,13 +247,18 @@ function App() {
   }, [session, onboarded, settings, weekPlan, workoutState, simDay, today, currentStreak, challenges]);
 
   useEffect(() => {
-    // League-update pushes need a registered device token before the
+    // League-update/message pushes need a registered device token before the
     // server-side trigger has anywhere to send them - registers (or
-    // re-confirms) on sign-in whenever the setting is already on, e.g.
-    // after signing in on a new device.
+    // re-confirms) on sign-in whenever a push setting is already on, e.g.
+    // after signing in on a new device. If permission was denied (at the OS
+    // level, or before this toggle existed on this device), this silently
+    // did nothing on every launch with no way for the user to notice their
+    // toggle isn't actually doing anything - surface it instead.
     if (!session || !onboarded || !userId || !(settings.notifLeague || settings.notifMessages)) return;
-    registerForPush(userId);
-  }, [session, onboarded, userId, settings.notifLeague, settings.notifMessages]);
+    registerForPush(userId).then((ok) => {
+      if (!ok) showToast('Push notifications are off for SOMAXX - enable them in iOS Settings');
+    });
+  }, [session, onboarded, userId, settings.notifLeague, settings.notifMessages, showToast]);
 
   useEffect(() => {
     if (!session) return;

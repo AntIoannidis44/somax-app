@@ -8,18 +8,23 @@ export function pushAvailableOnPlatform(): boolean {
 
 let listenersBound = false;
 
-// Registers this device for remote push (league updates) and saves the
-// resulting APNs token to Supabase so the notify-league-update Edge
-// Function can find it. Safe to call repeatedly - `register()` only
+// Registers this device for remote push (league updates, messages) and
+// saves the resulting APNs token to Supabase so the notify-* Edge
+// Functions can find it. Safe to call repeatedly - `register()` only
 // prompts the user once; afterwards it just re-confirms the existing
 // grant and re-fires `registration` with the same token.
-export async function registerForPush(userId: string): Promise<void> {
-  if (!pushAvailableOnPlatform()) return;
+// Returns whether the device is actually registered (permission granted
+// and register() called) - callers that gate this behind a user-facing
+// toggle need to know when it silently did nothing, e.g. because
+// permission was denied, so they can tell the user instead of leaving
+// the switch on with no token ever saved.
+export async function registerForPush(userId: string): Promise<boolean> {
+  if (!pushAvailableOnPlatform()) return false;
 
   const perm = await PushNotifications.checkPermissions();
   if (perm.receive !== 'granted') {
     const req = await PushNotifications.requestPermissions();
-    if (req.receive !== 'granted') return;
+    if (req.receive !== 'granted') return false;
   }
 
   if (!listenersBound) {
@@ -36,6 +41,7 @@ export async function registerForPush(userId: string): Promise<void> {
   }
 
   await PushNotifications.register();
+  return true;
 }
 
 export async function unregisterPushToken(userId: string): Promise<void> {
