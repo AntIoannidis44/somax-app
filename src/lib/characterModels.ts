@@ -272,6 +272,13 @@ const OUTFIT_INFLATE = 0.018;
 // (fingers, toes) needs more outward push than that to fully clear the
 // body underneath, confirmed by direct close-up render comparison.
 const LIMB_INFLATE = 0.05;
+// Female body/legs (each scaled around its own center - see the outfit-
+// attach call site): a bit more than the default inflate, just enough to
+// close the hip/waist seam gap between them that per-own-center scaling
+// alone leaves open. Tuned empirically against render comparisons - see
+// SEAM_INFLATE's call site for why this is a pure outward push, not
+// another shared pivot.
+const SEAM_INFLATE = 0.03;
 
 function attachToSkeleton(
   mesh: THREE.SkinnedMesh,
@@ -485,33 +492,46 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base] ?? ([1, 1, 1] as THREE.Vector3Tuple);
     const outfitColorUrl = outfitColorTextureName(cfg.outfit, cfg.outfitColor ?? 0);
     const outfitColorTex = outfitColorUrl ? await loadSkinTexture(outfitColorUrl) : undefined;
-    const { body, legs, ...limbs } = parts;
-    const torso = [body, legs].filter(Boolean) as string[];
-    if (torso.length) {
-      // Body and legs share one scale pivot (the waist seam they actually
-      // touch at), but NOT the same scale magnitude. Legs get the build's
-      // full Y-scale (they need to reach the real, longer leg bones down
-      // to the boots). Body does not: its own Y extent runs all the way up
-      // to the shoulder/collar, the single point in this whole outfit
-      // furthest from a torso-ish pivot along Y - scaling it by the same
-      // factor as legs overshot the real shoulder position by several cm
-      // (measured directly), reading as a collar floating above the actual
-      // shoulder. The waist seam itself sits very close to the shared
-      // pivot, where a magnitude difference between the two pieces has
-      // almost no effect - so this keeps the seam closed without dragging
-      // the collar up with it.
-      const bodyScale: THREE.Vector3Tuple = [scale[0], 1, scale[2]];
-      await attachPartsFrom(torso, (url) => (url === body ? bodyScale : scale), undefined, outfitColorTex);
-    }
-    // Limbs (arms/feet/hood) get no manual scale at all - skinning alone
-    // already carries them correctly onto the real, longer bones. A manual
-    // scale here (even from each piece's own center) displaces fine
-    // extremity geometry - fingers, toes - in ways a torso-scale shape
-    // doesn't suffer from, which showed up as bare hand/toe skin clipping
-    // through the glove/boot. A larger-than-usual inflate (pure outward
-    // push, no position change) closes that gap instead.
-    for (const url of Object.values(limbs).filter(Boolean) as string[]) {
-      await attachPartsFrom([url], undefined, undefined, outfitColorTex, LIMB_INFLATE);
+
+    if (cfg.base === 'male') {
+      // Male is explicitly, deliberately NOT touched by any of the fit
+      // work below - the user reported male rendering correctly and asked
+      // multiple times for it to be left alone. One shared-center batch
+      // for the whole outfit, exactly the behavior this codebase already
+      // had before any of that work started.
+      await attachPartsFrom(Object.values(parts).filter(Boolean) as string[], scale, undefined, outfitColorTex);
+    } else {
+      // Female: each piece scales around its OWN center, not a shared one
+      // - this is the original fit-correction design (see git history,
+      // commit 8bfcd80, "Fix outfit fit root cause"), deliberately root-
+      // caused and verified clean across every build at the time. A later,
+      // undocumented change made every piece share one pivot instead, to
+      // close the one known gap that design left (the hip/waist seam) -
+      // that shared pivot is what caused everything that went wrong this
+      // session (arm detaching from the shoulder, a torso gap, hand/toe
+      // clipping, the shoulder sitting too high): a piece far from the
+      // shared pivot gets shifted, not just resized, and the error grows
+      // with distance from that pivot. Back to each piece's own center.
+      const { body, legs, ...limbs } = parts;
+      for (const url of [body, legs].filter(Boolean) as string[]) {
+        // Body and legs still need a *slightly* larger inflate than other
+        // pieces to close the one seam that per-own-center scaling alone
+        // leaves open (confirmed present even on unmodified Teen, so it's
+        // baked into the pack's own asset, not a build-scale issue) -
+        // this is a pure outward push at the touching edge, not a shared
+        // pivot, so it doesn't drag any piece out of position.
+        await attachPartsFrom([url], scale, undefined, outfitColorTex, SEAM_INFLATE);
+      }
+      // Limbs (arms/feet/hood): no manual scale at all - skinning alone
+      // already carries them correctly onto the real, longer bones. A
+      // manual scale here (even from each piece's own center) displaces
+      // fine extremity geometry - fingers, toes - in ways a torso-scale
+      // shape doesn't suffer from, which showed up as bare hand/toe skin
+      // clipping through the glove/boot. A larger inflate (pure outward
+      // push, no position change) closes that instead.
+      for (const url of Object.values(limbs).filter(Boolean) as string[]) {
+        await attachPartsFrom([url], undefined, undefined, outfitColorTex, LIMB_INFLATE);
+      }
     }
   }
 
