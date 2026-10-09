@@ -25,14 +25,26 @@ const STUDIO_CATS: { id: StudioCat; label: string; subs?: { id: StudioCat; label
   },
   {
     id: 'top',
-    label: 'Gym',
+    label: 'Top',
     subs: [
-      { id: 'top', label: 'Top' },
-      { id: 'topColor', label: 'Top color' },
-      { id: 'bottom', label: 'Bottom' },
-      { id: 'bottomColor', label: 'Bottom color' },
-      { id: 'shoes', label: 'Shoes' },
-      { id: 'shoesColor', label: 'Shoe color' },
+      { id: 'top', label: 'Style' },
+      { id: 'topColor', label: 'Color' },
+    ],
+  },
+  {
+    id: 'bottom',
+    label: 'Bottom',
+    subs: [
+      { id: 'bottom', label: 'Style' },
+      { id: 'bottomColor', label: 'Color' },
+    ],
+  },
+  {
+    id: 'shoes',
+    label: 'Shoes',
+    subs: [
+      { id: 'shoes', label: 'Style' },
+      { id: 'shoesColor', label: 'Color' },
     ],
   },
   {
