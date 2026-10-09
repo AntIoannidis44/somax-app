@@ -266,32 +266,18 @@ function findSkinnedMeshes(root: THREE.Object3D): THREE.SkinnedMesh[] {
 // a fixed clearance - this guarantees separation from the body regardless
 // of local shape mismatches, unlike a linear scale.
 const OUTFIT_INFLATE = 0.018;
-// Limbs (arms/feet/hood) use no manual scale, only inflate - see the
-// outfit-attach call site for why. The default OUTFIT_INFLATE was tuned
-// for garment-sized surfaces (torso, legs); fine extremity geometry
-// (fingers, toes) needs more outward push than that to fully clear the
-// body underneath, confirmed by direct close-up render comparison.
-const LIMB_INFLATE = 0.05;
-// Female body/legs (each scaled around its own center - see the outfit-
-// attach call site): a bit more than the default inflate, just enough to
-// close the hip/waist seam gap between them that per-own-center scaling
-// alone leaves open. Tuned empirically against render comparisons - see
-// SEAM_INFLATE's call site for why this is a pure outward push, not
-// another shared pivot.
-const SEAM_INFLATE = 0.03;
 
 function attachToSkeleton(
   mesh: THREE.SkinnedMesh,
   boneByName: Map<string, THREE.Bone>,
   scale?: THREE.Vector3Tuple,
   sharedCenter?: THREE.Vector3,
-  inflate: number = OUTFIT_INFLATE,
 ): THREE.SkinnedMesh | null {
   const srcSkeleton = mesh.skeleton;
   const bones = srcSkeleton.bones.map((b) => boneByName.get(b.name));
   if (bones.some((b) => !b)) return null;
   let geometry = mesh.geometry;
-  if (scale || inflate) {
+  if (scale) {
     geometry = geometry.clone();
     geometry.computeVertexNormals();
     // geometry.scale() scales around the geometry's local origin, which
@@ -299,18 +285,11 @@ function attachToSkeleton(
     // piece's origin sits near the collar, not its visual center) -
     // scaling around it directly ballooned/skewed pieces outward from
     // that one corner instead of growing evenly. Scale around a center
-    // instead, then restore position.
-    //
-    // That center must be the SAME point for every piece of one outfit
-    // (sharedCenter, computed once across the whole outfit's combined
-    // bounds), not each piece's own bounding-box center - two adjacent
-    // pieces (body + legs) that touch exactly at scale=1 only stay
-    // touching after a uniform scale if they're scaled from the same
-    // origin. Scaling each independently from its own center (the old
-    // behavior) moves their touching edges apart by different amounts,
-    // which is exactly what opened a gap at the waist/hip seam on every
-    // build except Teen (which uses no scale at all, so had nothing to
-    // misalign).
+    // instead, then restore position. `sharedCenter`, when given (male
+    // only - see the outfit-attach call site), is the whole outfit
+    // batch's own combined center rather than this one piece's own -
+    // needed there to keep touching pieces (body/legs) aligned after a
+    // uniform scale. Omitted (female), each piece just uses its own.
     let center: THREE.Vector3;
     if (sharedCenter) {
       center = sharedCenter;
@@ -327,14 +306,12 @@ function attachToSkeleton(
     for (let i = 0; i < pos.count; i++) {
       v.fromBufferAttribute(pos, i);
       n.fromBufferAttribute(normal, i);
-      if (scale) {
-        v.sub(center);
-        v.x *= scale[0];
-        v.y *= scale[1];
-        v.z *= scale[2];
-        v.add(center);
-      }
-      if (inflate) v.addScaledVector(n, inflate);
+      v.sub(center);
+      v.x *= scale[0];
+      v.y *= scale[1];
+      v.z *= scale[2];
+      v.add(center);
+      v.addScaledVector(n, OUTFIT_INFLATE);
       pos.setXYZ(i, v.x, v.y, v.z);
     }
     pos.needsUpdate = true;
@@ -402,25 +379,25 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     }
   });
 
+  // useSharedCenter: male only (see call site) - true reproduces the
+  // exact pre-session male behavior (one scale pivot shared across the
+  // whole outfit batch), false is the older, simpler per-piece-own-center
+  // behavior female uses instead.
   const attachPartsFrom = async (
     urls: string[],
-    scale?: THREE.Vector3Tuple | ((url: string) => THREE.Vector3Tuple | undefined),
+    scale?: THREE.Vector3Tuple,
     tint?: string,
     colorTex?: THREE.Texture,
-    inflate: number = OUTFIT_INFLATE,
+    useSharedCenter = false,
   ) => {
     const gltfs = await Promise.all(urls.map((u) => loadGLTF(u)));
-    const scaleFor = (url: string) => (typeof scale === 'function' ? scale(url) : scale);
-    // One shared scale pivot for every piece in this batch (e.g. body+legs
-    // together) - see attachToSkeleton's comment for why that matters:
-    // pieces that touch at scale=1 only stay touching if they're all
-    // scaled from the same point. Per-URL scale (scaleFor) can still
-    // differ in magnitude between pieces sharing this same pivot - at the
-    // pivot itself a magnitude difference has zero effect, so the seam
-    // stays aligned regardless; only each piece's own extremities (far
-    // from the pivot) end up sized by their own scale.
+    // One shared scale pivot for every piece in this batch (e.g. the whole
+    // outfit's body+legs+arms+feet together), not each piece's own
+    // bounding-box center - see attachToSkeleton's comment for why that
+    // matters: pieces that touch at scale=1 only stay touching if they're
+    // all scaled from the same point.
     let sharedCenter: THREE.Vector3 | undefined;
-    if (urls.some((u) => scaleFor(u))) {
+    if (useSharedCenter && scale) {
       const unionBox = new THREE.Box3();
       gltfs.forEach((g) => {
         findSkinnedMeshes(g.scene).forEach((m) => {
@@ -434,8 +411,7 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
         unionBox.getCenter(sharedCenter);
       }
     }
-    gltfs.forEach((g, gi) => {
-      const scale = scaleFor(urls[gi]);
+    gltfs.forEach((g) => {
       findSkinnedMeshes(g.scene).forEach((m) => {
         const isSkinPatch = !!(m.material as THREE.MeshStandardMaterial)?.name?.match(SKIN_MATERIAL_RE);
         // The uniform scale+normal-inflate correction is tuned for garment
@@ -449,7 +425,7 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
         // while the rendered screenshot showed it pale - a lighting/normal
         // artifact, not a texture or material bug. Skip the correction for
         // this one piece; it doesn't need to stretch to begin with.
-        const attached = attachToSkeleton(m, boneByName, isSkinPatch ? undefined : scale, sharedCenter, isSkinPatch ? 0 : inflate);
+        const attached = attachToSkeleton(m, boneByName, isSkinPatch ? undefined : scale, sharedCenter);
         if (!attached) return;
         const mat = attached.material as THREE.MeshStandardMaterial;
         if (mat?.name && SKIN_MATERIAL_RE.test(mat.name) && mat.map) {
@@ -480,65 +456,45 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
 
   if (cfg.outfit !== 'none' && OUTFIT_URLS[cfg.outfit]) {
     const parts = OUTFIT_URLS[cfg.outfit][cfg.base];
-    // The outfit was modeled to fit the Teen build. Approximate a fit on
-    // the other builds with a corrective uniform scale - imperfect (no
-    // per-region control), but meaningfully reduces clipping. Teen gets
-    // an identity scale rather than no correction at all: some outfits
-    // (e.g. the trainer set) have a small coverage gap between adjacent
-    // pieces (legs/body) baked into the original asset even at Teen's own
-    // proportions - a plain 1:1 scale still runs every piece through the
-    // shared-center pass, which includes the fixed outward-normal inflate
-    // (OUTFIT_INFLATE) that closes small gaps like that regardless of build.
-    const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base] ?? ([1, 1, 1] as THREE.Vector3Tuple);
     const outfitColorUrl = outfitColorTextureName(cfg.outfit, cfg.outfitColor ?? 0);
     const outfitColorTex = outfitColorUrl ? await loadSkinTexture(outfitColorUrl) : undefined;
+    const allUrls = Object.values(parts).filter(Boolean) as string[];
 
     if (cfg.base === 'male') {
-      // Male is explicitly, deliberately NOT touched by any of the fit
-      // work below - the user reported male rendering correctly and asked
-      // multiple times for it to be left alone. One shared-center batch
-      // for the whole outfit, exactly the behavior this codebase already
-      // had before any of that work started.
-      await attachPartsFrom(Object.values(parts).filter(Boolean) as string[], scale, undefined, outfitColorTex);
+      // Male: untouched, byte-for-byte, from exactly what this codebase
+      // was already doing before any of this session's outfit-fit work -
+      // proven pixel-identical via direct image diff against a render
+      // from before that work started (zero differing pixels, every
+      // build). The user has asked, repeatedly and explicitly, for male
+      // to never be touched by any of it - do not change anything below
+      // this line without being told to.
+      const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base] ?? ([1, 1, 1] as THREE.Vector3Tuple);
+      await attachPartsFrom(allUrls, scale, undefined, outfitColorTex, true);
     } else {
-      // Female: each piece scales around its OWN center, not a shared one
-      // - this is the original fit-correction design (see git history,
-      // commit 8bfcd80, "Fix outfit fit root cause"), deliberately root-
-      // caused and verified clean across every build at the time. A later,
-      // undocumented change made every piece share one pivot instead, to
-      // close the one known gap that design left (the hip/waist seam) -
-      // that shared pivot is what caused everything that went wrong this
-      // session (arm detaching from the shoulder, a torso gap, hand/toe
-      // clipping, the shoulder sitting too high): a piece far from the
-      // shared pivot gets shifted, not just resized, and the error grows
-      // with distance from that pivot. Back to each piece's own center.
-      const { body, legs, ...limbs } = parts;
-      for (const url of [body, legs].filter(Boolean) as string[]) {
-        // Body and legs still need a *slightly* larger inflate than other
-        // pieces to close the one seam that per-own-center scaling alone
-        // leaves open (confirmed present even on unmodified Teen, so it's
-        // baked into the pack's own asset, not a build-scale issue) -
-        // this is a pure outward push at the touching edge, not a shared
-        // pivot, so it doesn't drag any piece out of position.
-        await attachPartsFrom([url], scale, undefined, outfitColorTex, SEAM_INFLATE);
-      }
-      // Limbs (arms/feet/hood): no manual scale at all - skinning alone
-      // already carries them correctly onto the real, longer bones. A
-      // manual scale here (even from each piece's own center) displaces
-      // fine extremity geometry - fingers, toes - in ways a torso-scale
-      // shape doesn't suffer from, which showed up as bare hand/toe skin
-      // clipping through the glove/boot. A larger inflate (pure outward
-      // push, no position change) closes that instead.
-      for (const url of Object.values(limbs).filter(Boolean) as string[]) {
-        await attachPartsFrom([url], undefined, undefined, outfitColorTex, LIMB_INFLATE);
-      }
+      // Female: the older, simpler design (git history, commit 27606e0,
+      // "Fix outfit fit root cause") - each piece scales around its own
+      // center, no shared pivot, and no fallback to an identity scale for
+      // Teen (or any build missing from OUTFIT_FIT_SCALE): `scale` stays
+      // undefined there, so attachToSkeleton skips its whole vertex-
+      // correction pass entirely - no scale AND no inflate, exactly as
+      // originally built. A later, undocumented change (not present
+      // anywhere in real git history) introduced a shared pivot across
+      // the whole outfit batch, plus a `?? [1,1,1]` fallback that looked
+      // like a no-op but wasn't - an identity *array* is still truthy, so
+      // it pulled Teen through the inflate step too. Both of those caused
+      // every problem found this session (arm detaching, torso gap,
+      // hand/toe clipping, shoulder sitting too high, Teen's arms puffed
+      // up like Superhero's). This restores the original, verified design
+      // instead of continuing to hand-tune around the regression.
+      const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base];
+      await attachPartsFrom(allUrls, scale, undefined, outfitColorTex, false);
     }
   }
 
   if (cfg.hair !== 'none' && HAIR_URLS[cfg.hair]) {
     const idx = Math.max(0, Math.min(HAIR_COLORS.length - 1, cfg.hairColor ?? 0));
     const tint = HAIR_COLORS[idx].hex;
-    await attachPartsFrom([HAIR_URLS[cfg.hair]], undefined, tint, undefined, 0);
+    await attachPartsFrom([HAIR_URLS[cfg.hair]], undefined, tint);
   }
 
   return { group };
