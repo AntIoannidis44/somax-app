@@ -95,33 +95,49 @@ export const OUTFIT_COLORS: (CatalogItem & { hex: string })[] = [
 // piece are separate garments, so each item is tied to one base, like hair styles.
 export const GYM_TOPS: HairItem[] = [
   { id: 'none', name: 'None' },
-  { id: 'cropTight', name: 'Crop (tight)', base: 'female' },
-  { id: 'cropLoose', name: 'Crop (loose)', base: 'female' },
-  { id: 'singletTight', name: 'Singlet', base: 'female' },
   { id: 'teeLoose', name: 'Tee', base: 'female' },
-  { id: 'singletTightM', name: 'Singlet (tight)', base: 'male' },
-  { id: 'singletLoose', name: 'Singlet (loose)', base: 'male' },
+  { id: 'cropTight', name: 'Crop (tight)', base: 'female' },
+  { id: 'singletTight', name: 'Singlet', base: 'female', unlock: { level: 3 } },
+  { id: 'cropLoose', name: 'Crop (loose)', base: 'female', unlock: { level: 6 } },
   { id: 'teeTight', name: 'Tee (tight)', base: 'male' },
-  { id: 'teeLooseM', name: 'Tee (loose)', base: 'male' },
+  { id: 'singletTightM', name: 'Singlet (tight)', base: 'male' },
+  { id: 'teeLooseM', name: 'Tee (loose)', base: 'male', unlock: { level: 3 } },
+  { id: 'singletLoose', name: 'Singlet (loose)', base: 'male', unlock: { level: 6 } },
 ];
 export const GYM_BOTTOMS: HairItem[] = [
   { id: 'none', name: 'None' },
   { id: 'leggingsLong', name: 'Leggings', base: 'female' },
-  { id: 'leggingsShort', name: 'Bike shorts', base: 'female' },
   { id: 'shorts', name: 'Shorts', base: 'female' },
-  { id: 'bikeShortsMale', name: 'Bike shorts', base: 'male' },
+  { id: 'leggingsShort', name: 'Bike shorts', base: 'female', unlock: { level: 4 } },
   { id: 'shortsMale', name: 'Shorts', base: 'male' },
-  { id: 'trackpants', name: 'Track pants' },
+  { id: 'bikeShortsMale', name: 'Bike shorts', base: 'male', unlock: { level: 4 } },
+  { id: 'trackpants', name: 'Track pants', unlock: { level: 8 } },
 ];
 export const GYM_SHOES: CatalogItem[] = [
   { id: 'none', name: 'Barefoot' },
-  { id: 'trainers', name: 'Trainers' },
+  { id: 'trainers', name: 'Trainers', unlock: { level: 2 } },
+];
+// Gym wear colours, shared by top, bottom and shoes. 'original' keeps each piece's own colour.
+export const GYM_COLORS: (CatalogItem & { hex: string })[] = [
+  { id: 'original', name: 'Original', hex: '' },
+  { id: 'black', name: 'Black', hex: '#1d1f22' },
+  { id: 'white', name: 'White', hex: '#ecebe7' },
+  { id: 'grey', name: 'Grey', hex: '#7c8087' },
+  { id: 'navy', name: 'Navy', hex: '#24324f', unlock: { level: 3 } },
+  { id: 'red', name: 'Red', hex: '#b3262f', unlock: { level: 5 } },
+  { id: 'forest', name: 'Forest', hex: '#2f5d3e', unlock: { level: 7 } },
+  { id: 'sky', name: 'Sky', hex: '#5d9bd1', unlock: { level: 9 } },
+  { id: 'pink', name: 'Pink', hex: '#d9668f', unlock: { level: 11 } },
+  { id: 'volt', name: 'Volt', hex: '#b6d334', unlock: { level: 13 } },
+  { id: 'orange', name: 'Orange', hex: '#e2742c', unlock: { level: 16 } },
+  { id: 'gold', name: 'Gold', hex: '#c9962f', unlock: { prestige: 1 } },
 ];
 
 export const CATALOG: Record<CatalogKey, CatalogItem[]> = {
   top: GYM_TOPS,
   bottom: GYM_BOTTOMS,
   shoes: GYM_SHOES,
+  gymColor: GYM_COLORS,
   hair: HAIR_STYLES,
   outfit: OUTFITS,
   build: BODY_BUILDS,

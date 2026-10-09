@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader, type GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { clone as skeletonClone } from 'three/examples/jsm/utils/SkeletonUtils.js';
 import type { BodyBuild, CharacterBase, CharacterConfig } from '../types';
-import { HAIR_COLORS } from '../data/catalog';
+import { GYM_COLORS, HAIR_COLORS } from '../data/catalog';
 import { buildOutfitFit, type OutfitFit } from './outfitFit';
 import { GARMENTS, buildGarment, fabricMaterial, joints, underwear } from './gymWear';
 
@@ -365,11 +365,13 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
     const skin = bodySkinned.find((m) => SKIN_MATERIAL_RE.test((m.material as THREE.Material).name));
     if (srcSkin && skin) {
       const J = joints(srcSkin), U = underwear(srcSkin, J);
-      for (const key of [cfg.bottom, cfg.top, cfg.shoes]) {
+      const slots: [string | undefined, number | undefined][] = [[cfg.bottom, cfg.bottomColor], [cfg.top, cfg.topColor], [cfg.shoes, cfg.shoesColor]];
+      for (const [key, colorIdx] of slots) {
         if (!key || key === 'none' || !GARMENTS[key]) continue;
+        const color = GYM_COLORS[colorIdx ?? 0]?.hex || GARMENTS[key].color;
         const geo = gymGarment(srcSkin, key, cfg.base, cfg.build);
         if (!geo) continue;
-        const mesh = new THREE.SkinnedMesh(geo, fabricMaterial(GARMENTS[key], GARMENTS[key].color, J, U));
+        const mesh = new THREE.SkinnedMesh(geo, fabricMaterial(GARMENTS[key], color, J, U));
         mesh.bind(skin.skeleton, skin.bindMatrix);
         mesh.castShadow = true;
         mesh.receiveShadow = true;

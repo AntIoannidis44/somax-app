@@ -29,6 +29,10 @@ export interface CharacterConfig {
   top?: string;
   bottom?: string;
   shoes?: string;
+  // index into GYM_COLORS; 0 (or unset) = the piece's own colour
+  topColor?: number;
+  bottomColor?: number;
+  shoesColor?: number;
 }
 
 export interface UnlockRule {
@@ -50,7 +54,7 @@ export interface HairItem extends CatalogItem {
 
 export interface OutfitItem extends CatalogItem {}
 
-export type CatalogKey = 'hair' | 'outfit' | 'build' | 'hairColor' | 'outfitColor' | 'skin' | 'top' | 'bottom' | 'shoes';
+export type CatalogKey = 'hair' | 'outfit' | 'build' | 'hairColor' | 'outfitColor' | 'skin' | 'top' | 'bottom' | 'shoes' | 'gymColor';
 
 export interface CharTier {
   min: number;
@@ -305,7 +309,7 @@ export interface Settings {
 }
 
 export type Route = 'home' | 'train' | 'play' | 'community' | 'profile';
-export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'hairColor' | 'outfit' | 'outfitColor' | 'top' | 'bottom' | 'shoes';
+export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'hairColor' | 'outfit' | 'outfitColor' | 'top' | 'bottom' | 'shoes' | 'topColor' | 'bottomColor' | 'shoesColor';
 export type PlayTab = 'challenges' | 'league' | 'achv';
 
 export interface AppState {

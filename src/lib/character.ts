@@ -54,7 +54,7 @@ export function lockHint(item: CatalogItem): string {
   return `Hit a ${u?.streak}-day streak to unlock ${item.name}`;
 }
 
-const WARDROBE_KEYS: CatalogKey[] = ['hair', 'outfit', 'build', 'hairColor', 'outfitColor', 'skin'];
+const WARDROBE_KEYS: CatalogKey[] = ['hair', 'outfit', 'build', 'hairColor', 'outfitColor', 'skin', 'top', 'bottom', 'shoes', 'gymColor'];
 
 export function allWardrobe(): { key: CatalogKey; item: CatalogItem }[] {
   const out: { key: CatalogKey; item: CatalogItem }[] = [];

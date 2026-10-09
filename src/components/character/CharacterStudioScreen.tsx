@@ -3,7 +3,7 @@ import { Icon } from '../Icon';
 import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
-import { BODY_BUILDS, CATALOG, HAIR_COLORS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
+import { BODY_BUILDS, CATALOG, GYM_COLORS, HAIR_COLORS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
 import { isUnlocked, lockHint, nextUnlock, tierFor, unlockLabel } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
 import type { CatalogItem, CatalogKey, HairItem, StudioCat } from '../../types';
@@ -28,8 +28,11 @@ const STUDIO_CATS: { id: StudioCat; label: string; subs?: { id: StudioCat; label
     label: 'Gym',
     subs: [
       { id: 'top', label: 'Top' },
+      { id: 'topColor', label: 'Top color' },
       { id: 'bottom', label: 'Bottom' },
+      { id: 'bottomColor', label: 'Bottom color' },
       { id: 'shoes', label: 'Shoes' },
+      { id: 'shoesColor', label: 'Shoe color' },
     ],
   },
   {
@@ -268,6 +271,35 @@ export function CharacterStudioScreen() {
                   return;
                 }
                 updateCharacterField('outfitColor', i);
+              }}
+            />
+          );
+        })}
+      </>
+    );
+  } else if (studioCat === 'topColor' || studioCat === 'bottomColor' || studioCat === 'shoesColor') {
+    // Preview each colour on the equipped piece, or a free starter piece if none is on.
+    const slot = studioCat === 'topColor' ? 'top' : studioCat === 'bottomColor' ? 'bottom' : 'shoes';
+    const fallback = slot === 'shoes' ? 'trainers' : slot === 'top' ? (character.base === 'male' ? 'teeTight' : 'teeLoose') : character.base === 'male' ? 'shortsMale' : 'leggingsLong';
+    const piece = character[slot] && character[slot] !== 'none' ? character[slot] : fallback;
+    rail = (
+      <>
+        {GYM_COLORS.map((c, i) => {
+          const locked = !isUnlocked(c, ctx);
+          return (
+            <Tile
+              key={c.id}
+              sel={(character[studioCat] ?? 0) === i}
+              locked={locked}
+              art={<CharacterThumbnail cfg={{ ...character, hair: 'none', outfit: 'none', [slot]: piece, [studioCat]: i }} mode="full" />}
+              name={c.name}
+              lockText={unlockLabel(c)}
+              onClick={() => {
+                if (locked) {
+                  showToast(lockHint(c));
+                  return;
+                }
+                updateCharacterField(studioCat, i);
               }}
             />
           );

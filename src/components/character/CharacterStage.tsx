@@ -89,7 +89,7 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.hairColor, cfg.outfit, cfg.outfitColor, cfg.top, cfg.bottom, cfg.shoes]);
+  }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.hairColor, cfg.outfit, cfg.outfitColor, cfg.top, cfg.bottom, cfg.shoes, cfg.topColor, cfg.bottomColor, cfg.shoesColor]);
 
   useFrame((_, delta) => {
     const dt = Math.min(0.05, delta);

@@ -189,7 +189,7 @@ interface Actions {
   awardWeightGoalXP: (label: string, opts?: { completed?: boolean }) => void;
   awardFitnessGoalXP: (label: string, amount: number, opts?: { completed?: boolean }) => void;
 
-  updateCharacterField: (key: CatalogKey | 'base' | 'build' | 'skin' | 'hairColor', value: string | number) => void;
+  updateCharacterField: (key: CatalogKey | 'base' | 'build' | 'skin' | 'hairColor' | 'topColor' | 'bottomColor' | 'shoesColor', value: string | number) => void;
 
   toggleSetting: (key: keyof Settings) => void;
   setTheme: (theme: Settings['theme']) => void;
