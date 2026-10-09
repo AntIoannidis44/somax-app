@@ -266,15 +266,6 @@ function findSkinnedMeshes(root: THREE.Object3D): THREE.SkinnedMesh[] {
 // a fixed clearance - this guarantees separation from the body regardless
 // of local shape mismatches, unlike a linear scale.
 const OUTFIT_INFLATE = 0.018;
-// Teen female only (see outfit-attach call site) - arms/feet/hood have a
-// small but real baked-in coverage gap at the fingertip/ankle even at
-// Teen's own, uncorrected proportions (confirmed via close-up render on
-// every outfit: trainer's glove/boot, noble's boot - not present on
-// ranger, whose fingerless-glove design means bare fingers are
-// intentional there). A bit more outward push than the default closes it
-// without any scale, so it can't shift the piece out of position the way
-// scale did everywhere else this session.
-const LIMB_INFLATE = 0.05;
 
 function attachToSkeleton(
   mesh: THREE.SkinnedMesh,
@@ -483,30 +474,20 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
       // this line without being told to.
       const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base] ?? ([1, 1, 1] as THREE.Vector3Tuple);
       await attachPartsFrom(allUrls, scale, undefined, outfitColorTex, true);
-    } else if (cfg.build === 'teen') {
-      // Female Teen only: the older per-piece-own-center design (no
-      // shared pivot - see Regular/Superhero's comment below for why
-      // that matters) leaves no body/legs gap here (confirmed clean via
-      // close-up at the hip/shoulder on every outfit), but arms/feet/hood
-      // still have a small, real baked-in coverage gap at the fingertip/
-      // ankle even at Teen's own uncorrected proportions - confirmed on
-      // the full-coverage outfits (trainer's glove/boot, noble's boot),
-      // not present on ranger (fingerless by design, nothing to close
-      // there). No manual scale, just a bit more outward push than the
-      // default to close it; body/legs stay completely uncorrected,
-      // matching what was already shipping before this change.
-      const { body, legs, ...limbs } = parts;
-      const torsoUrls = [body, legs].filter(Boolean) as string[];
-      if (torsoUrls.length) await attachPartsFrom(torsoUrls, undefined, undefined, outfitColorTex, false);
-      for (const url of Object.values(limbs).filter(Boolean) as string[]) {
-        await attachPartsFrom([url], undefined, undefined, outfitColorTex, false, LIMB_INFLATE);
-      }
     } else {
-      // Female Regular/Superhero: left exactly as currently shipping -
-      // the older, simpler design (git history, commit 27606e0, "Fix
-      // outfit fit root cause") with no further correction. Known,
-      // real gaps remain (hand/toe/shoulder-seam); the user has asked to
-      // leave these builds as they are for now rather than keep tuning.
+      // Female: the outfit pack's own files, used exactly as shipped -
+      // no manual scale, no extra inflate, no per-build special-casing.
+      // For Teen this means literally zero modification (OUTFIT_FIT_SCALE
+      // has no 'teen' entry, so `scale` is undefined here and
+      // attachToSkeleton's whole correction pass is skipped) - the pack
+      // rendered as-is, gaps and all, rather than this project adjusting
+      // it. A previous attempt to close Teen's small fingertip/ankle gap
+      // with a bigger inflate pushed the *whole* arm piece outward,
+      // including the already-padded shoulder cap, and made it visibly
+      // puffier - a new, different problem, not a fix. Regular/Superhero
+      // get their usual corrective scale (needed there - without it the
+      // body visibly pokes through, a worse problem than a gap); Teen
+      // gets none, by design, per explicit instruction not to adjust it.
       const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base];
       await attachPartsFrom(allUrls, scale, undefined, outfitColorTex, false);
     }
