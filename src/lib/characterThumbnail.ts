@@ -3,7 +3,7 @@ import { addLights } from './characterBuilder';
 import { CLIPS, composeCharacter, fitClipsToCharacter, loadAnimationClips } from './characterModels';
 import type { CharacterConfig } from '../types';
 
-export type ThumbnailMode = 'full' | 'portrait' | 'head';
+export type ThumbnailMode = 'full' | 'portrait' | 'head' | 'torso' | 'legs' | 'feet';
 
 const HAS_3D = typeof window !== 'undefined' && !!window.WebGLRenderingContext;
 
@@ -86,9 +86,30 @@ export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode):
     // Portrait is a front-on shoulders-up shot: the camera sits level with
     // the head and aims at the upper chest so head and shoulders fill the frame.
     // Head: tight close-up for the hair pickers - just the head and hair, no torso.
+    group.rotation.y = mode === 'full' || mode === 'legs' || mode === 'feet' ? -0.35 : mode === 'torso' ? -0.25 : 0;
     if (mode === 'head') {
       snapCam!.position.set(0, 1.64, 1.1);
       snapCam!.lookAt(0, 1.64, 0);
+    } else if (mode === 'torso' || mode === 'legs' || mode === 'feet') {
+      // Close-ups for the clothing pickers, framed from this body's own bones
+      // (builds differ in height): chest to hips for tops, waist to ankles for
+      // bottoms, both feet from slightly above for shoes.
+      group.updateMatrixWorld(true);
+      const at = (name: string) => group.getObjectByName(name)?.getWorldPosition(new THREE.Vector3()) ?? new THREE.Vector3();
+      const y = (name: string) => at(name).y;
+      if (mode === 'torso') {
+        const c = (y('neck_01') + y('pelvis')) / 2;
+        snapCam!.position.set(0, c + 0.05, 1.75);
+        snapCam!.lookAt(0, c, 0);
+      } else if (mode === 'legs') {
+        const c = (y('pelvis') + y('foot_l')) / 2 - 0.03;
+        snapCam!.position.set(0, c + 0.1, 2.65);
+        snapCam!.lookAt(0, c, 0);
+      } else {
+        const c = ['foot_l', 'foot_r', 'ball_l', 'ball_r'].reduce((sum, n) => sum.add(at(n)), new THREE.Vector3()).multiplyScalar(0.25);
+        snapCam!.position.set(c.x, 0.66, c.z + 1.8);
+        snapCam!.lookAt(c.x, 0.07, c.z + 0.04);
+      }
     } else if (mode === 'portrait') {
       snapCam!.position.set(0, 1.4, 1.85);
       snapCam!.lookAt(0, 1.4, 0);
@@ -98,7 +119,6 @@ export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode):
       snapCam!.position.set(0, 0.9, 4.5);
       snapCam!.lookAt(0, 0.9, 0);
     }
-    group.rotation.y = mode === 'full' ? -0.35 : 0;
     snapScene!.add(group);
     snapR.render(snapScene!, snapCam!);
     resolvedUrl = snapR.domElement.toDataURL('image/png');

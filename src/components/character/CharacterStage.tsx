@@ -9,6 +9,7 @@ import type { CharacterConfig } from '../../types';
 
 export type StageView = 'arena' | 'studio';
 export type StageAnim = 'idle' | 'run';
+export type StageFocus = 'body' | 'face';
 
 interface CharacterStageProps {
   view: StageView;
@@ -23,6 +24,9 @@ interface CharacterStageProps {
   // (it was clipping at the bottom there no matter how the camera/shift was
   // tuned) - that view just omits it rather than fighting the framing.
   showPedestal?: boolean;
+  // Studio only: 'face' moves the camera in to the head, so the close-up is
+  // rendered at full resolution rather than an enlarged picture of the body.
+  focus?: StageFocus;
 }
 
 function Lights() {
@@ -33,8 +37,11 @@ function Lights() {
   return null;
 }
 
-function CameraRig({ view }: { view: StageView }) {
+function CameraRig({ view, focus, headYRef }: { view: StageView; focus: StageFocus; headYRef: React.MutableRefObject<number> }) {
   const { camera } = useThree();
+  const look = useRef(new THREE.Vector3(0, 1.02, 0));
+  const pos = useRef(new THREE.Vector3());
+  const target = useRef(new THREE.Vector3());
   useEffect(() => {
     if (view === 'arena') {
       camera.position.set(0, 1.45, 8.5);
@@ -43,7 +50,20 @@ function CameraRig({ view }: { view: StageView }) {
       camera.position.set(0, 1.45, 6.1);
       camera.lookAt(0, 1.02, 0);
     }
+    look.current.set(0, view === 'arena' ? 0.75 : 1.02, 0);
   }, [view, camera]);
+  // Glide between the full-body shot and the face shot.
+  useFrame((_, delta) => {
+    if (view !== 'studio') return;
+    const face = focus === 'face';
+    const hy = headYRef.current;
+    pos.current.set(0, face ? hy + 0.04 : 1.45, face ? 1.15 : 6.1);
+    target.current.set(0, face ? hy - 0.02 : 1.02, 0);
+    const k = 1 - Math.exp(-Math.min(0.05, delta) * 7);
+    camera.position.lerp(pos.current, k);
+    look.current.lerp(target.current, k);
+    camera.lookAt(look.current);
+  });
   return null;
 }
 
@@ -62,12 +82,19 @@ interface CharacterRigProps {
   draggingRef: React.MutableRefObject<boolean>;
   idleTRef: React.MutableRefObject<number>;
   flexUntilRef: React.MutableRefObject<number>;
+  headYRef: React.MutableRefObject<number>;
+  focus: StageFocus;
 }
 
-function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, flexUntilRef }: CharacterRigProps) {
+function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, flexUntilRef, headYRef, focus }: CharacterRigProps) {
   const [loaded, setLoaded] = useState<Loaded | null>(null);
   const timeRef = useRef(0);
   const activeClipRef = useRef<keyof typeof CLIPS | null>(null);
+  // Going to the face close-up turns the character to face the camera.
+  const toFrontRef = useRef(false);
+  useEffect(() => {
+    if (focus === 'face') toFrontRef.current = true;
+  }, [focus]);
 
   useEffect(() => {
     let cancelled = false;
@@ -83,6 +110,12 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
         if (clip) actions[key] = mixer.clipAction(clip);
       });
       activeClipRef.current = null;
+      // Face height for the close-up: the middle of the head, which differs by build.
+      const head = scene.getObjectByName('Head');
+      if (head) {
+        scene.updateMatrixWorld(true);
+        headYRef.current = head.getWorldPosition(new THREE.Vector3()).y + 0.09;
+      }
       setLoaded({ scene, mixer, actions });
     });
     return () => {
@@ -97,14 +130,21 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
     if (!loaded) return;
     const { scene, mixer, actions } = loaded;
 
-    if (!draggingRef.current) {
+    if (draggingRef.current) toFrontRef.current = false;
+    if (toFrontRef.current) {
+      const front = -0.3 + Math.round((rotRef.current + 0.3) / (2 * Math.PI)) * 2 * Math.PI;
+      rotRef.current += (front - rotRef.current) * Math.min(1, dt * 5);
+      velRef.current = 0;
+      if (Math.abs(front - rotRef.current) < 0.005) toFrontRef.current = false;
+    } else if (!draggingRef.current) {
       rotRef.current += velRef.current;
       velRef.current *= 0.92;
       if (view === 'arena') {
         rotRef.current += (-0.22 - rotRef.current) * Math.min(1, dt * 1.6);
       } else {
         idleTRef.current += dt;
-        if (idleTRef.current > 2.2) rotRef.current += dt * 0.28;
+        // The face close-up stays where it was left; only the full body turns on its own.
+        if (idleTRef.current > 2.2 && focus !== 'face') rotRef.current += dt * 0.28;
       }
     }
     scene.rotation.y = rotRef.current;
@@ -133,7 +173,7 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
   return <primitive object={loaded.scene} />;
 }
 
-export function CharacterStage({ view, anim, cfg, level: levelProp, showPedestal = true }: CharacterStageProps) {
+export function CharacterStage({ view, anim, cfg, level: levelProp, showPedestal = true, focus = 'body' }: CharacterStageProps) {
   const myCharacter = useAppStore((s) => s.character);
   const myLevel = useAppStore((s) => s.progress.level);
   const character = cfg ?? myCharacter;
@@ -146,6 +186,7 @@ export function CharacterStage({ view, anim, cfg, level: levelProp, showPedestal
   const lastXRef = useRef(0);
   const idleTRef = useRef(0);
   const flexUntilRef = useRef(-1);
+  const headYRef = useRef(1.62);
 
   if (!character) return null;
 
@@ -188,7 +229,7 @@ export function CharacterStage({ view, anim, cfg, level: levelProp, showPedestal
         style={{ width: '100%', height: '100%', display: 'block' }}
       >
         <Lights />
-        <CameraRig view={view} />
+        <CameraRig view={view} focus={focus} headYRef={headYRef} />
         <CharacterRig
           cfg={character}
           view={view}
@@ -198,6 +239,8 @@ export function CharacterStage({ view, anim, cfg, level: levelProp, showPedestal
           draggingRef={draggingRef}
           idleTRef={idleTRef}
           flexUntilRef={flexUntilRef}
+          headYRef={headYRef}
+          focus={focus}
         />
         {showPedestal && <Pedestal level={level} />}
       </Canvas>

@@ -87,7 +87,7 @@ function Swatches({
   originalHex?: string;
 }) {
   return (
-    <div className="st2-swrow">
+    <div className="st2-swgrid">
       {items.map((c, i) => {
         const locked = !isUnlocked(c, CTX_REF.current);
         const hex = c.hex || originalHex;
@@ -100,10 +100,16 @@ function Swatches({
             aria-label={c.name}
             onClick={() => onPick(i, c)}
           >
-            {locked && (
+            {locked ? (
               <span className="st2-swlk">
                 <Icon name="lock" />
               </span>
+            ) : (
+              current === i && (
+                <span className="st2-swck">
+                  <Icon name="check" />
+                </span>
+              )
             )}
           </button>
         );
@@ -121,7 +127,6 @@ export function CharacterStudioScreen() {
   const showToast = useAppStore((s) => s.showToast);
 
   const [tab, setTab] = useState<Tab>(() => tabFor(savedCat));
-  const [hairSub, setHairSub] = useState<'style' | 'colour'>(savedCat === 'hairColor' ? 'colour' : 'style');
   const [attireSub, setAttireSub] = useState<AttireSub>(() => attireFor(savedCat));
   const [view, setView] = useState<'body' | 'face'>('body');
   const [stageH, setStageH] = useState(SH_MAX);
@@ -146,7 +151,7 @@ export function CharacterStudioScreen() {
   function goTab(next: Tab) {
     toTop();
     setTab(next);
-    setStudioCat(next === 'hair' ? (hairSub === 'colour' ? 'hairColor' : 'hair') : next === 'attire' ? attireSub : next);
+    setStudioCat(next === 'attire' ? attireSub : next);
   }
   function goAttire(next: AttireSub) {
     toTop();
@@ -298,29 +303,6 @@ export function CharacterStudioScreen() {
     }
     if (tab === 'hair') {
       const styles = (CATALOG.hair as HairItem[]).filter((h) => !h.base || h.base === character.base);
-      const previewHair = character.hair !== 'none' ? character.hair : (styles.find((h) => h.id !== 'none')?.id ?? 'none');
-      if (hairSub === 'colour') {
-        return (
-          <>
-            <div className="st2-sec">
-              <b>Hair colour</b>
-              <span>{HAIR_COLORS[character.hairColor]?.name}</span>
-            </div>
-            <div className="st2-tiles">
-              {HAIR_COLORS.map((c, i) => (
-                <Tile
-                  key={c.id}
-                  item={c}
-                  sel={character.hairColor === i}
-                  name={c.name}
-                  art={<CharacterThumbnail cfg={{ ...character, hair: previewHair, hairColor: i }} mode="head" />}
-                  onPick={() => guard(c, () => updateCharacterField('hairColor', i))}
-                />
-              ))}
-            </div>
-          </>
-        );
-      }
       return (
         <>
           <div className="st2-colours">
@@ -388,9 +370,9 @@ export function CharacterStudioScreen() {
     // Gym wear previews on the Default outfit (it's only worn with it), with
     // hair off so every tile isn't also reloading hair textures.
     const base: CharacterConfig = { ...character, hair: 'none', outfit: 'none' };
+    const close = slot === 'top' ? 'torso' : slot === 'bottom' ? 'legs' : 'feet';
     return (
       <>
-        {look}
         {wearingOutfit && (
           <div className="st2-hint warn">
             <Icon name="info" />
@@ -415,7 +397,7 @@ export function CharacterStudioScreen() {
               item={it}
               sel={!wearingOutfit && equipped === it.id}
               name={it.name}
-              art={<CharacterThumbnail cfg={{ ...base, [slot]: it.id }} mode="full" />}
+              art={<CharacterThumbnail cfg={{ ...base, [slot]: it.id }} mode={close} />}
               onPick={() => pickGym(slot, it)}
             />
           ))}
@@ -433,8 +415,8 @@ export function CharacterStudioScreen() {
         className={`st2-stage${compact ? ' compact' : ''}`}
         style={{ height: stageH, ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}
       >
-        <div className={`st2-canvas${view === 'face' ? ' face' : ''}`} style={{ ['--s' as string]: scale }}>
-          <CharacterStage view="studio" anim="idle" />
+        <div className="st2-canvas" style={{ ['--s' as string]: scale }}>
+          <CharacterStage view="studio" anim="idle" focus={view} />
         </div>
         <div className="st2-stage-top">
           <span className="hud-chip">
@@ -474,22 +456,6 @@ export function CharacterStudioScreen() {
               </button>
             ))}
           </div>
-          {tab === 'hair' && (
-            <div className="st2-subrow">
-              {(['style', 'colour'] as const).map((s) => (
-                <button
-                  key={s}
-                  className={`st2-sub${hairSub === s ? ' on' : ''}`}
-                  onClick={() => {
-                    setHairSub(s);
-                    setStudioCat(s === 'colour' ? 'hairColor' : 'hair');
-                  }}
-                >
-                  {s === 'style' ? 'Style' : 'Colour'}
-                </button>
-              ))}
-            </div>
-          )}
           {tab === 'attire' && (
             <div className="st2-subrow four">
               {ATTIRE_SUBS.map((s) => {

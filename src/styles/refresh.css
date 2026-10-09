@@ -785,7 +785,6 @@ button.day-pill{ font:inherit; color:inherit; }
 .st2-stage::before{ content:""; position:absolute; inset:0; opacity:.45; pointer-events:none; background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px); background-size:28px 28px; -webkit-mask-image: radial-gradient(70% 60% at 50% 75%, #000 30%, transparent 100%); mask-image: radial-gradient(70% 60% at 50% 75%, #000 30%, transparent 100%); }
 /* The 3D view keeps a fixed size and scales with the stage, so scrolling never resizes WebGL. */
 .st2-canvas{ position:absolute; left:0; right:0; bottom:0; height:330px; transform-origin:50% 100%; transform: scale(var(--s, 1)); transition: transform .45s var(--ease-out); }
-.st2-canvas.face{ transform-origin:50% 18%; transform: scale(calc(var(--s, 1) * 2.1)); }
 .st2-stage-top{ position:absolute; top:12px; left:12px; right:12px; display:flex; justify-content:space-between; z-index:3; pointer-events:none; }
 .st2-stage-ctl{ position:absolute; bottom:12px; left:12px; right:12px; display:flex; justify-content:space-between; align-items:center; z-index:3; pointer-events:none; }
 .st2-stage-ctl > *{ pointer-events:auto; }
@@ -832,14 +831,16 @@ button.day-pill{ font:inherit; color:inherit; }
 .st2-look .piece{ display:flex; align-items:center; gap:5px; font-size:12px; font-weight:700; padding:3px 8px 3px 6px; border-radius:999px; background: var(--surface-2); }
 .st2-look .piece i{ width:14px; height:14px; border-radius:50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); }
 .st2-look .piece i.orig, .st2-sw.orig{ background: conic-gradient(#b8455a, #4a6fa5, #2f5d3e, #c9962f, #b8455a); }
-.st2-colours{ background: var(--surface); border:1px solid var(--line); border-radius:18px; padding:12px; margin-bottom:12px; }
-.st2-colours-h{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
+.st2-colours{ background: var(--surface); border:1px solid var(--line); border-radius:18px; padding:13px 12px 14px; margin-bottom:12px; }
+.st2-colours-h{ display:flex; justify-content:space-between; align-items:baseline; margin:0 2px 8px; }
 .st2-colours-h b{ font-size:13.5px; }
 .st2-colours-h span{ font-size:12px; color: var(--text-faint); font-weight:600; }
-.st2-swrow{ display:flex; gap:10px; overflow-x:auto; scrollbar-width:none; padding:3px; }
-.st2-swrow::-webkit-scrollbar{ display:none; }
-.st2-sw{ flex-shrink:0; width:40px; height:40px; border-radius:50%; border:none; padding:0; position:relative; cursor:pointer; box-shadow: inset 0 -6px 10px rgba(0,0,0,.2), inset 0 5px 8px rgba(255,255,255,.22); }
-.st2-sw.on{ box-shadow: 0 0 0 3px var(--surface), 0 0 0 5.5px var(--accent), inset 0 -6px 10px rgba(0,0,0,.2); }
+.st2-swgrid{ display:grid; grid-template-columns:repeat(6,1fr); gap:14px 8px; padding:6px 4px 4px; justify-items:center; }
+.st2-sw{ width:100%; max-width:42px; aspect-ratio:1; border-radius:50%; border:none; padding:0; position:relative; cursor:pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12), inset 0 -6px 10px rgba(0,0,0,.18), inset 0 5px 8px rgba(255,255,255,.22); transition: box-shadow .2s, transform .2s var(--ease-spring); }
+.st2-sw:active{ transform: scale(.9); }
+.st2-sw.on{ box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--accent), inset 0 -6px 10px rgba(0,0,0,.18); }
+.st2-swck{ position:absolute; inset:0; display:grid; place-items:center; color:#fff; filter: drop-shadow(0 1px 1.5px rgba(0,0,0,.55)); }
+.st2-swck svg{ width:17px; height:17px; }
 .st2-sw.lock::after{ content:""; position:absolute; inset:0; border-radius:50%; background: rgba(8,14,32,.45); }
 .st2-swlk{ position:absolute; inset:0; display:grid; place-items:center; color:#fff; z-index:1; }
 .st2-swlk svg{ width:13px; height:13px; }
