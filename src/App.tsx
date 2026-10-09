@@ -55,13 +55,16 @@ function CurrentScreen() {
   if (viewingWorkout) return <WorkoutScreen />;
   if (viewingCharacter) return <CharacterStudioScreen />;
   if (viewingGoals) return <GoalsScreen />;
+  // Checked before viewingDM/viewingGroup/viewingProfile: tapping "View" on a
+  // shared activity inside one of those screens sets this flag without
+  // clearing them, so it must win the check or the screen never switches.
+  if (viewingSessionDetail) return <WorkoutSessionDetail />;
   if (viewingDM) return <DMScreen />;
   if (viewingGroup) return <GroupChatScreen />;
   if (viewingProfile) return <ProfileViewScreen />;
   if (viewingWorkoutEditor) return <WorkoutEditorScreen />;
   if (viewingSharedProgram) return <SharedProgramScreen />;
   if (viewingComposer) return <PostComposerScreen />;
-  if (viewingSessionDetail) return <WorkoutSessionDetail />;
 
   switch (route) {
     case 'home':

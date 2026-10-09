@@ -116,6 +116,25 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
     );
   }
 
+  // Checked before viewingDM/viewingGroup/viewingProfile: opening a shared
+  // activity from inside one of those screens sets this flag without
+  // clearing them, so it must win the check or the header never switches.
+  if (viewingSessionDetail) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeSessionDetail}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">{viewingSessionDetail.name}</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
   if (viewingDM) {
     return (
       <div className="device-header">
@@ -206,22 +225,6 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
         </button>
         <div style={{ textAlign: 'center', flex: 1 }}>
           <div className="dh-title">New post</div>
-        </div>
-        <div style={{ width: 38 }} />
-      </div>
-    );
-  }
-
-  if (viewingSessionDetail) {
-    return (
-      <div className="device-header">
-        <button className="level-chip" style={{ padding: 8 }} onClick={closeSessionDetail}>
-          <span style={{ display: 'flex' }}>
-            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
-          </span>
-        </button>
-        <div style={{ textAlign: 'center', flex: 1 }}>
-          <div className="dh-title">{viewingSessionDetail.name}</div>
         </div>
         <div style={{ width: 38 }} />
       </div>
