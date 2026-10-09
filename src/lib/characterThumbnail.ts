@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { addLights } from './characterBuilder';
-import { CLIPS, composeCharacter, loadAnimationClips } from './characterModels';
+import { CLIPS, composeCharacter, fitClipsToCharacter, loadAnimationClips } from './characterModels';
 import type { CharacterConfig } from '../types';
 
 export type ThumbnailMode = 'full' | 'portrait' | 'head';
@@ -14,7 +14,7 @@ const snapCache = new Map<string, string>();
 const pending = new Map<string, Promise<string>>();
 
 function cacheKey(cfg: CharacterConfig, mode: ThumbnailMode): string {
-  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.hairColor}|${cfg.outfit}|${cfg.outfitColor}|${mode}`;
+  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.hairColor}|${cfg.outfit}|${cfg.outfitColor}|${cfg.top ?? ''}|${cfg.bottom ?? ''}|${cfg.shoes ?? ''}|${mode}`;
 }
 
 export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode): Promise<string> {
@@ -34,7 +34,7 @@ export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode):
       // still render with no mixer, so without this it freezes on the
       // T-pose - wider than a standing pose, which is why it also reads
       // as smaller/lower within a frame sized for a normal stance.
-      const idleClip = clips.find((c) => c.name === CLIPS.idle);
+      const idleClip = fitClipsToCharacter(clips, group).find((c) => c.name === CLIPS.idle);
       if (idleClip) {
         const mixer = new THREE.AnimationMixer(group);
         mixer.clipAction(idleClip).play();

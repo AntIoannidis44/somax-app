@@ -24,6 +24,11 @@ export interface CharacterConfig {
   hairColor: number;
   outfit: string;
   outfitColor: number;
+  // Gym wear, worn with the Default outfit (a fantasy outfit replaces it). Optional so
+  // characters saved before gym wear existed load unchanged.
+  top?: string;
+  bottom?: string;
+  shoes?: string;
 }
 
 export interface UnlockRule {
@@ -45,7 +50,7 @@ export interface HairItem extends CatalogItem {
 
 export interface OutfitItem extends CatalogItem {}
 
-export type CatalogKey = 'hair' | 'outfit' | 'build' | 'hairColor' | 'outfitColor' | 'skin';
+export type CatalogKey = 'hair' | 'outfit' | 'build' | 'hairColor' | 'outfitColor' | 'skin' | 'top' | 'bottom' | 'shoes';
 
 export interface CharTier {
   min: number;
@@ -300,7 +305,7 @@ export interface Settings {
 }
 
 export type Route = 'home' | 'train' | 'play' | 'community' | 'profile';
-export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'hairColor' | 'outfit' | 'outfitColor';
+export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'hairColor' | 'outfit' | 'outfitColor' | 'top' | 'bottom' | 'shoes';
 export type PlayTab = 'challenges' | 'league' | 'achv';
 
 export interface AppState {

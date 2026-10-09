@@ -91,7 +91,37 @@ export const OUTFIT_COLORS: (CatalogItem & { hex: string })[] = [
   { id: 'gold', name: 'Gold', hex: '#c9962f', unlock: { prestige: 1 } },
 ];
 
+// Gym wear (see lib/gymWear.ts). Ids match its GARMENTS keys; men's and women's versions of a
+// piece are separate garments, so each item is tied to one base, like hair styles.
+export const GYM_TOPS: HairItem[] = [
+  { id: 'none', name: 'None' },
+  { id: 'cropTight', name: 'Crop (tight)', base: 'female' },
+  { id: 'cropLoose', name: 'Crop (loose)', base: 'female' },
+  { id: 'singletTight', name: 'Singlet', base: 'female' },
+  { id: 'teeLoose', name: 'Tee', base: 'female' },
+  { id: 'singletTightM', name: 'Singlet (tight)', base: 'male' },
+  { id: 'singletLoose', name: 'Singlet (loose)', base: 'male' },
+  { id: 'teeTight', name: 'Tee (tight)', base: 'male' },
+  { id: 'teeLooseM', name: 'Tee (loose)', base: 'male' },
+];
+export const GYM_BOTTOMS: HairItem[] = [
+  { id: 'none', name: 'None' },
+  { id: 'leggingsLong', name: 'Leggings', base: 'female' },
+  { id: 'leggingsShort', name: 'Bike shorts', base: 'female' },
+  { id: 'shorts', name: 'Shorts', base: 'female' },
+  { id: 'bikeShortsMale', name: 'Bike shorts', base: 'male' },
+  { id: 'shortsMale', name: 'Shorts', base: 'male' },
+  { id: 'trackpants', name: 'Track pants' },
+];
+export const GYM_SHOES: CatalogItem[] = [
+  { id: 'none', name: 'Barefoot' },
+  { id: 'trainers', name: 'Trainers' },
+];
+
 export const CATALOG: Record<CatalogKey, CatalogItem[]> = {
+  top: GYM_TOPS,
+  bottom: GYM_BOTTOMS,
+  shoes: GYM_SHOES,
   hair: HAIR_STYLES,
   outfit: OUTFITS,
   build: BODY_BUILDS,

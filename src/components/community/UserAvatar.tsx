@@ -28,7 +28,7 @@ export function UserAvatar({ name, character, photoUrl, className, onClick }: Us
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [photoUrl, character?.base, character?.build, character?.skin, character?.hair, character?.hairColor, character?.outfit, character?.outfitColor]);
+  }, [photoUrl, character?.base, character?.build, character?.skin, character?.hair, character?.hairColor, character?.outfit, character?.outfitColor, character?.top, character?.bottom, character?.shoes]);
 
   const imgSrc = photoUrl || src;
 

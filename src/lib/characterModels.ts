@@ -3,6 +3,8 @@ import { GLTFLoader, type GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { clone as skeletonClone } from 'three/examples/jsm/utils/SkeletonUtils.js';
 import type { BodyBuild, CharacterBase, CharacterConfig } from '../types';
 import { HAIR_COLORS } from '../data/catalog';
+import { buildOutfitFit, type OutfitFit } from './outfitFit';
+import { GARMENTS, buildGarment, fabricMaterial, joints, underwear } from './gymWear';
 
 const BODY_URLS: Record<BodyBuild, Record<CharacterBase, string>> = {
   superhero: {
@@ -94,100 +96,52 @@ const HAIR_URLS: Record<string, string> = {
   ponytail2: '/models/hair/Hair_Ponytail_2.gltf',
 };
 
-type OutfitParts = Partial<Record<'body' | 'legs' | 'arms' | 'feet' | 'hood', string>>;
-const OUTFIT_URLS: Record<string, Record<CharacterBase, OutfitParts>> = {
+// Each outfit is the pack's own assembled outfit file - every piece the pack's
+// author put in that outfit (boots, pauldrons, gorget, scarf, ...), exactly as
+// shipped in Outfits/{Gender}_{Name}.gltf of the Modular Character Outfits pack.
+// They are all bound to the Regular skeleton; see outfitFit.ts for how they're
+// fitted to the other builds.
+const OUTFIT_URLS: Record<string, Record<CharacterBase, string>> = {
   trainer: {
-    male: {
-      body: '/models/outfits/peasant/Male_Peasant_Body.gltf',
-      legs: '/models/outfits/peasant/Male_Peasant_Legs.gltf',
-      arms: '/models/outfits/peasant/Male_Peasant_Arms.gltf',
-      feet: '/models/outfits/peasant/Male_Peasant_Feet.gltf',
-    },
-    female: {
-      body: '/models/outfits/peasant/Female_Peasant_Body.gltf',
-      legs: '/models/outfits/peasant/Female_Peasant_Legs.gltf',
-      arms: '/models/outfits/peasant/Female_Peasant_Arms.gltf',
-      feet: '/models/outfits/peasant/Female_Peasant_Feet.gltf',
-    },
+    male: '/models/outfits/peasant/Male_Peasant_Outfit.gltf',
+    female: '/models/outfits/peasant/Female_Peasant_Outfit.gltf',
   },
   ranger: {
-    male: {
-      body: '/models/outfits/ranger/Male_Ranger_Body.gltf',
-      legs: '/models/outfits/ranger/Male_Ranger_Legs.gltf',
-      arms: '/models/outfits/ranger/Male_Ranger_Arms.gltf',
-      hood: '/models/outfits/ranger/Male_Ranger_Head_Hood.gltf',
-    },
-    female: {
-      body: '/models/outfits/ranger/Female_Ranger_Body.gltf',
-      legs: '/models/outfits/ranger/Female_Ranger_Legs.gltf',
-      arms: '/models/outfits/ranger/Female_Ranger_Arms.gltf',
-      hood: '/models/outfits/ranger/Female_Ranger_Head_Hood.gltf',
-    },
+    male: '/models/outfits/ranger/Male_Ranger_Outfit.gltf',
+    female: '/models/outfits/ranger/Female_Ranger_Outfit.gltf',
   },
-  // Noble/Wizard/Knight ship several alternate pieces each (two pauldron
-  // styles, cloth vs armor body, helm vs horns, etc) - one fixed default
-  // combo is wired here per outfit rather than exposing every variant as
-  // a separate pick, same simplification already applied to Ranger
-  // (whose own pauldron piece exists in the pack but was never wired in).
   noble: {
-    male: {
-      body: '/models/outfits/noble/Male_Noble_Body.gltf',
-      legs: '/models/outfits/noble/Male_Noble_Legs.gltf',
-      arms: '/models/outfits/noble/Male_Noble_Arms.gltf',
-      feet: '/models/outfits/noble/Male_Noble_Feet.gltf',
-      hood: '/models/outfits/noble/Male_Noble_Head_Crown.gltf',
-    },
-    female: {
-      body: '/models/outfits/noble/Female_Noble_Body.gltf',
-      legs: '/models/outfits/noble/Female_Noble_Legs.gltf',
-      arms: '/models/outfits/noble/Female_Noble_Arms.gltf',
-      feet: '/models/outfits/noble/Female_Noble_Feet.gltf',
-      hood: '/models/outfits/noble/Female_Noble_Head_Crown.gltf',
-    },
+    male: '/models/outfits/noble/Male_Noble_Outfit.gltf',
+    female: '/models/outfits/noble/Female_Noble_Outfit.gltf',
   },
   wizard: {
-    male: {
-      body: '/models/outfits/wizard/Male_Wizard_Body.gltf',
-      legs: '/models/outfits/wizard/Male_Wizard_Legs.gltf',
-      arms: '/models/outfits/wizard/Male_Wizard_Arms.gltf',
-      feet: '/models/outfits/wizard/Male_Wizard_Feet.gltf',
-    },
-    female: {
-      body: '/models/outfits/wizard/Female_Wizard_Body.gltf',
-      legs: '/models/outfits/wizard/Female_Wizard_Legs.gltf',
-      arms: '/models/outfits/wizard/Female_Wizard_Arms.gltf',
-      feet: '/models/outfits/wizard/Female_Wizard_Feet.gltf',
-    },
+    male: '/models/outfits/wizard/Male_Wizard_Outfit.gltf',
+    female: '/models/outfits/wizard/Female_Wizard_Outfit.gltf',
   },
   knight: {
-    male: {
-      body: '/models/outfits/knight/Male_Knight_Body_Armor.gltf',
-      legs: '/models/outfits/knight/Male_Knight_Legs_Armor.gltf',
-      arms: '/models/outfits/knight/Male_Knight_Arms.gltf',
-      feet: '/models/outfits/knight/Male_Knight_Feet_Armor.gltf',
-      hood: '/models/outfits/knight/Male_Knight_Head_Armet.gltf',
-    },
-    female: {
-      body: '/models/outfits/knight/Female_Knight_Body_Armor.gltf',
-      legs: '/models/outfits/knight/Female_Knight_Legs.gltf',
-      arms: '/models/outfits/knight/Female_Knight_Arms.gltf',
-      feet: '/models/outfits/knight/Female_Knight_Feet.gltf',
-      hood: '/models/outfits/knight/Female_Knight_Head_Armet.gltf',
-    },
+    male: '/models/outfits/knight/Male_Knight_Outfit.gltf',
+    female: '/models/outfits/knight/Female_Knight_Outfit.gltf',
   },
 };
 
-// Outfits were modeled to fit the Teen build. Corrective uniform scale
-// [x, y, z] to approximate a fit on the other builds - tuned empirically
-// against screenshots, not exact. Teen itself needs none (omitted = 1,1,1).
-const OUTFIT_FIT_SCALE: Partial<Record<BodyBuild, Partial<Record<CharacterBase, THREE.Vector3Tuple>>>> = {
+// The pack's readme: "When using the clothing, only the head of the model is
+// required. Using the full body will result in clipping." So a clothed character
+// is drawn as head-only plus the outfit. Teen and Regular ship their own
+// head-only meshes. Superhero doesn't, so it borrows Regular's - the two heads
+// match to within 4mm - and that borrowed neck is fitted to Superhero's
+// shoulders along with the outfit.
+const HEAD_URLS: Record<BodyBuild, Record<CharacterBase, string>> = {
   superhero: {
-    male: [1.18, 1.08, 1.18],
-    female: [1.2, 1.28, 1.2],
+    male: '/models/characters/Regular_Male_OnlyHead.gltf',
+    female: '/models/characters/Regular_Female_OnlyHead.gltf',
   },
   regular: {
-    male: [1.06, 1.03, 1.06],
-    female: [1.16, 1.14, 1.16],
+    male: '/models/characters/Regular_Male_OnlyHead.gltf',
+    female: '/models/characters/Regular_Female_OnlyHead.gltf',
+  },
+  teen: {
+    male: '/models/characters/Teen_Male_OnlyHead.gltf',
+    female: '/models/characters/Teen_Female_OnlyHead.gltf',
   },
 };
 
@@ -230,8 +184,56 @@ function loadSkinTexture(url: string): Promise<THREE.Texture> {
   return p;
 }
 
+const SKIN_MATERIAL_RE = /^MI_(Superhero|Regular|Teen)_(Male|Female)$/;
+
+// Rest-pose pelvis position in the animation library's own rig, read from its file.
+let animPelvisRest: THREE.Vector3 | null = null;
+
 export function loadAnimationClips(): Promise<THREE.AnimationClip[]> {
-  return loadGLTF(ANIMATIONS_URL).then((g) => g.animations);
+  return loadGLTF(ANIMATIONS_URL).then((g) => {
+    if (!animPelvisRest) {
+      const node = (g.parser.json.nodes as { name?: string; translation?: number[] }[]).find((n) => n.name === 'pelvis');
+      animPelvisRest = new THREE.Vector3().fromArray(node?.translation ?? [0, 0, 1]);
+    }
+    return g.animations;
+  });
+}
+
+// The library's clips key translation (and scale) on all 65 bones, recorded on
+// one fixed rig. Played raw, they overwrite each build's own bone lengths, so
+// Teen got stretched to adult size and every build got that rig's proportions.
+// Returns clips that keep rotations only, plus the pelvis motion rescaled to this
+// character's own hip height. Call with the group composeCharacter returned.
+const fittedClipCache = new WeakMap<THREE.AnimationClip, Map<string, THREE.AnimationClip>>();
+export function fitClipsToCharacter(clips: THREE.AnimationClip[], group: THREE.Object3D): THREE.AnimationClip[] {
+  const pelvisRest = group.userData.pelvisRest as THREE.Vector3 | undefined;
+  if (!pelvisRest || !animPelvisRest) return clips;
+  const anim = animPelvisRest;
+  const k = pelvisRest.length() / anim.length();
+  const cacheKey = pelvisRest.toArray().map((v) => v.toFixed(5)).join(',');
+  return clips.map((clip) => {
+    let perClip = fittedClipCache.get(clip);
+    if (!perClip) fittedClipCache.set(clip, (perClip = new Map()));
+    const hit = perClip.get(cacheKey);
+    if (hit) return hit;
+    const tracks: THREE.KeyframeTrack[] = [];
+    for (const t of clip.tracks) {
+      const [bone, prop] = t.name.split('.');
+      if (prop === 'quaternion') tracks.push(t);
+      else if (prop === 'position' && bone === 'pelvis') {
+        const v = t.values.slice();
+        for (let i = 0; i < v.length; i += 3) {
+          v[i] = pelvisRest.x + (v[i] - anim.x) * k;
+          v[i + 1] = pelvisRest.y + (v[i + 1] - anim.y) * k;
+          v[i + 2] = pelvisRest.z + (v[i + 2] - anim.z) * k;
+        }
+        tracks.push(new THREE.VectorKeyframeTrack(t.name, t.times as unknown as number[], v as unknown as number[]));
+      }
+    }
+    const fitted = new THREE.AnimationClip(clip.name, clip.duration, tracks);
+    perClip.set(cacheKey, fitted);
+    return fitted;
+  });
 }
 
 function findSkinnedMeshes(root: THREE.Object3D): THREE.SkinnedMesh[] {
@@ -242,93 +244,75 @@ function findSkinnedMeshes(root: THREE.Object3D): THREE.SkinnedMesh[] {
   return out;
 }
 
-// Rebuilds `mesh` bound to the master skeleton's bones (matched by name) so
-// it deforms in lockstep with the body's animation. Works because outfits
-// and hair share the exact same rig family/bind pose as the base bodies
-// (verified: identical joint names and counts across all these packs).
-//
-// The outfit pack ships exactly one mesh per piece per gender, sculpted to
-// fit the Teen build's proportions (Teen uses it with zero correction and
-// is clean from every angle). Regular/Superhero are bulkier body variants
-// this project added beyond what the pack's outfits were made for, so
-// their surface pokes through the unmodified outfit mesh in places.
-//
-// `scale`, if given, first applies a uniform bounding-box-centered scale
-// (baked into vertex positions, not the SkinnedMesh transform, since
-// scaling the transform directly conflicts with skinning). But a uniform
-// scale only approximates the real body's silhouette - wherever the actual
-// (non-uniformly bulkier) body surface still pokes past the uniformly
-// scaled cloth, the two nearly-coincident surfaces z-fight into a visible
-// dashed/zigzag pattern (confirmed: absent on Teen with no scale, present
-// at the hip/thigh/calf on scaled builds regardless of bone-weight
-// blending, ruling out a skinning-blend cause). Fixed by additionally
-// inflating every vertex outward along its own original surface normal by
-// a fixed clearance - this guarantees separation from the body regardless
-// of local shape mismatches, unlike a linear scale.
-const OUTFIT_INFLATE = 0.018;
-
+// Rebuilds `mesh` (optionally with a replacement geometry) bound to the master
+// skeleton's bones, matched by name, so it deforms in lockstep with the body.
+// Outfits, heads and hair share the base bodies' rig family (identical joint
+// names), and keep their own inverse bind matrices.
 function attachToSkeleton(
   mesh: THREE.SkinnedMesh,
   boneByName: Map<string, THREE.Bone>,
-  scale?: THREE.Vector3Tuple,
-  sharedCenter?: THREE.Vector3,
-  inflate: number = OUTFIT_INFLATE,
+  geometry: THREE.BufferGeometry = mesh.geometry,
 ): THREE.SkinnedMesh | null {
   const srcSkeleton = mesh.skeleton;
   const bones = srcSkeleton.bones.map((b) => boneByName.get(b.name));
   if (bones.some((b) => !b)) return null;
-  let geometry = mesh.geometry;
-  if (scale || inflate) {
-    geometry = geometry.clone();
-    geometry.computeVertexNormals();
-    // geometry.scale() scales around the geometry's local origin, which
-    // for these pieces isn't centered on the piece itself (e.g. the body
-    // piece's origin sits near the collar, not its visual center) -
-    // scaling around it directly ballooned/skewed pieces outward from
-    // that one corner instead of growing evenly. Scale around a center
-    // instead, then restore position. `sharedCenter`, when given (male
-    // only - see the outfit-attach call site), is the whole outfit
-    // batch's own combined center rather than this one piece's own -
-    // needed there to keep touching pieces (body/legs) aligned after a
-    // uniform scale. Omitted (female), each piece just uses its own.
-    let center: THREE.Vector3;
-    if (sharedCenter) {
-      center = sharedCenter;
-    } else {
-      geometry.computeBoundingBox();
-      center = new THREE.Vector3();
-      geometry.boundingBox!.getCenter(center);
-    }
-
-    const pos = geometry.attributes.position as THREE.BufferAttribute;
-    const normal = geometry.attributes.normal as THREE.BufferAttribute;
-    const v = new THREE.Vector3();
-    const n = new THREE.Vector3();
-    for (let i = 0; i < pos.count; i++) {
-      v.fromBufferAttribute(pos, i);
-      n.fromBufferAttribute(normal, i);
-      if (scale) {
-        v.sub(center);
-        v.x *= scale[0];
-        v.y *= scale[1];
-        v.z *= scale[2];
-        v.add(center);
-      }
-      if (inflate) v.addScaledVector(n, inflate);
-      pos.setXYZ(i, v.x, v.y, v.z);
-    }
-    pos.needsUpdate = true;
-    geometry.computeVertexNormals();
-  }
   const attached = new THREE.SkinnedMesh(geometry, mesh.material);
-  // Skip shadow casting on hair/outfit overlays - the body underneath
-  // already casts a similar silhouette, so this saves real shadow-pass
-  // draw calls (a known mobile GPU cost) for little visible difference.
   attached.castShadow = false;
   attached.receiveShadow = false;
   const skeleton = new THREE.Skeleton(bones as THREE.Bone[], srcSkeleton.boneInverses);
   attached.bind(skeleton, mesh.bindMatrix);
   return attached;
+}
+
+// Fitting is pure geometry work, so it's done once per build and cached: one fit
+// per gender+build, and one fitted geometry per source mesh per build.
+const fitCache = new Map<string, Promise<OutfitFit>>();
+const fittedGeometryCache = new Map<string, THREE.BufferGeometry>();
+function getOutfitFit(build: BodyBuild, base: CharacterBase): Promise<OutfitFit> {
+  const key = `${build}|${base}`;
+  let p = fitCache.get(key);
+  if (!p) {
+    p = Promise.all([loadGLTF(BODY_URLS.regular[base]), loadGLTF(BODY_URLS[build][base])]).then(([r, t]) =>
+      buildOutfitFit(r.scene, t.scene),
+    );
+    fitCache.set(key, p);
+  }
+  return p;
+}
+function fittedGeometry(fit: OutfitFit, mesh: THREE.SkinnedMesh, key: string): THREE.BufferGeometry {
+  let g = fittedGeometryCache.get(key);
+  if (!g) fittedGeometryCache.set(key, (g = fit.fitGeometry(mesh)));
+  return g;
+}
+
+// Gym wear: garments are generated from the build's own body (see gymWear.ts), once per
+// base+build+garment, and cached. With shoes on, the feet inside them aren't drawn.
+const gymGeoCache = new Map<string, THREE.BufferGeometry | null>();
+const footlessCache = new Map<string, THREE.BufferGeometry>();
+function gymGarment(srcSkin: THREE.SkinnedMesh, key: string, base: CharacterBase, build: BodyBuild): THREE.BufferGeometry | null {
+  const ck = `${base}|${build}|${key}`;
+  if (!gymGeoCache.has(ck)) {
+    const spec = GARMENTS[key];
+    // per-build tweaks (e.g. Athletic only), exactly as approved in the Gym Wardrobe artifact
+    const bspec = spec?.perBuild?.[build] ? { ...spec, ...spec.perBuild[build] } : spec;
+    gymGeoCache.set(ck, bspec ? buildGarment(bspec, srcSkin, joints(srcSkin)) : null);
+  }
+  return gymGeoCache.get(ck)!;
+}
+function footless(srcSkin: THREE.SkinnedMesh, base: CharacterBase, build: BodyBuild): THREE.BufferGeometry {
+  const ck = `${base}|${build}`;
+  let g = footlessCache.get(ck);
+  if (!g) {
+    const J = joints(srcSkin), full = srcSkin.geometry, pos = full.attributes.position, idx = full.index!.array;
+    const cut = J.foot.y + GARMENTS.trainers.collar - 0.012, keep: number[] = [];
+    for (let t = 0; t < idx.length; t += 3) {
+      if (!(pos.getY(idx[t]) < cut && pos.getY(idx[t + 1]) < cut && pos.getY(idx[t + 2]) < cut)) keep.push(idx[t], idx[t + 1], idx[t + 2]);
+    }
+    g = full.clone();
+    g.setIndex(keep);
+    footlessCache.set(ck, g);
+  }
+  return g;
 }
 
 export interface ComposedCharacter {
@@ -350,153 +334,123 @@ export async function composeCharacter(cfg: CharacterConfig): Promise<ComposedCh
 
   const group = new THREE.Group();
   group.add(bodyScene);
+  // Bind-pose pelvis, captured before any animation touches it - used by
+  // fitClipsToCharacter to keep this build's own proportions.
+  const pelvis = boneByName.get('pelvis');
+  if (pelvis) group.userData.pelvisRest = pelvis.position.clone();
 
-  // Skin tone: retarget the body's own skin material, identified by
-  // material name (MI_{Build}_{Base}) - not mesh name, which isn't
-  // consistent across builds. Skips MI_Eyes/MI_Hair_* (eyebrows, eyes).
-  //
-  // Outfit pieces can *also* carry a small patch of baked-in exposed skin
-  // (e.g. the trainer kit's short sleeves leave the forearm/hand modeled
-  // as part of the "Arms" mesh, not the body) - textured from the same
-  // pack's own fixed reference copy of the base skin, under the same
-  // MI_{Build}_{Base} naming as the body's own material. Left alone, that
-  // patch stays one fixed tone regardless of the complexion picked,
-  // visibly mismatched against the face - so retarget it too wherever it
-  // turns up. Match by pattern, not by the current build/base: these
-  // outfit files are shared across all three body builds, but the name
-  // baked into the file is always the one build it was originally
-  // authored against (e.g. every "Arms" piece says MI_Regular_Male even
-  // when attached to a Teen or Superhero character) - an exact match
-  // against cfg.build only worked for Regular and silently missed the
-  // identical bug on Teen/Superhero.
-  const SKIN_MATERIAL_RE = /^MI_(Superhero|Regular|Teen)_(Male|Female)$/;
-  const skinTex = await loadSkinTexture(skinTextureName(cfg.build, cfg.base, cfg.skin));
-  bodySkinned.forEach((m) => {
-    const mat = m.material as THREE.MeshStandardMaterial;
-    const name = mat?.name || '';
-    if (name.startsWith('MI_Eyes') || name.startsWith('MI_Hair')) return;
-    if (mat?.map) {
-      const cloned = mat.clone() as THREE.MeshStandardMaterial;
-      cloned.map = skinTex;
+  // Skin tone: retarget skin materials (named MI_{Build}_{Base}) onto the
+  // complexion texture. Skips MI_Eyes/MI_Hair_* (eyebrows, eyes). The texture
+  // must match the UV layout of the mesh it goes on - which is the build the
+  // mesh came from, not necessarily cfg.build: a borrowed Regular head, and
+  // the hand/forearm patches baked into outfit pieces, are Regular meshes.
+  const skinTexFor = (build: BodyBuild) => loadSkinTexture(skinTextureName(build, cfg.base, cfg.skin));
+  const applySkin = async (meshes: THREE.SkinnedMesh[], build: BodyBuild) => {
+    const tex = await skinTexFor(build);
+    meshes.forEach((m) => {
+      const mat = m.material as THREE.MeshStandardMaterial;
+      if (!mat?.map || !SKIN_MATERIAL_RE.test(mat.name || '')) return;
+      const cloned = mat.clone();
+      cloned.map = tex;
       m.material = cloned;
-    }
-  });
-
-  // useSharedCenter: male only (see call site) - true reproduces the
-  // exact pre-session male behavior (one scale pivot shared across the
-  // whole outfit batch), false is the older, simpler per-piece-own-center
-  // behavior female uses instead.
-  const attachPartsFrom = async (
-    urls: string[],
-    scale?: THREE.Vector3Tuple,
-    tint?: string,
-    colorTex?: THREE.Texture,
-    useSharedCenter = false,
-    inflate: number = OUTFIT_INFLATE,
-  ) => {
-    const gltfs = await Promise.all(urls.map((u) => loadGLTF(u)));
-    // One shared scale pivot for every piece in this batch (e.g. the whole
-    // outfit's body+legs+arms+feet together), not each piece's own
-    // bounding-box center - see attachToSkeleton's comment for why that
-    // matters: pieces that touch at scale=1 only stay touching if they're
-    // all scaled from the same point.
-    let sharedCenter: THREE.Vector3 | undefined;
-    if (useSharedCenter && scale) {
-      const unionBox = new THREE.Box3();
-      gltfs.forEach((g) => {
-        findSkinnedMeshes(g.scene).forEach((m) => {
-          if ((m.material as THREE.MeshStandardMaterial)?.name?.match(SKIN_MATERIAL_RE)) return;
-          m.geometry.computeBoundingBox();
-          unionBox.union(m.geometry.boundingBox!);
-        });
-      });
-      if (!unionBox.isEmpty()) {
-        sharedCenter = new THREE.Vector3();
-        unionBox.getCenter(sharedCenter);
-      }
-    }
-    gltfs.forEach((g) => {
-      findSkinnedMeshes(g.scene).forEach((m) => {
-        const isSkinPatch = !!(m.material as THREE.MeshStandardMaterial)?.name?.match(SKIN_MATERIAL_RE);
-        // The uniform scale+normal-inflate correction is tuned for garment
-        // fabric (legs, torso) being stretched onto a bulkier body - applied
-        // to this tiny anatomical hand/wrist patch instead, the same fixed
-        // inflate distance is large relative to finger geometry and mangles
-        // its normals, making it render washed-out/pale under the stage
-        // lighting regardless of its (correctly assigned, correctly dark)
-        // texture. Confirmed by direct pixel sampling: the texture data at
-        // this mesh's own UV coordinates was already correctly dark even
-        // while the rendered screenshot showed it pale - a lighting/normal
-        // artifact, not a texture or material bug. Skip the correction for
-        // this one piece; it doesn't need to stretch to begin with.
-        const attached = attachToSkeleton(m, boneByName, isSkinPatch ? undefined : scale, sharedCenter, isSkinPatch ? 0 : inflate);
-        if (!attached) return;
-        const mat = attached.material as THREE.MeshStandardMaterial;
-        if (mat?.name && SKIN_MATERIAL_RE.test(mat.name) && mat.map) {
-          const cloned = mat.clone();
-          cloned.map = skinTex;
-          attached.material = cloned;
-        } else if (colorTex && mat?.map) {
-          // Outfit color: unlike hair, the garment's BaseColor texture has
-          // real baked-in fabric color (not a neutral tint base), so a
-          // material.color multiply would just muddy it - swap in a whole
-          // recolored texture instead (see generate_outfit_textures.py).
-          const cloned = mat.clone();
-          cloned.map = colorTex;
-          attached.material = cloned;
-        } else if (tint) {
-          // The hair mesh's base texture is a near-neutral grey with no
-          // baked-in color (made for tinting), so a material color
-          // multiply is enough - no separate texture per color needed,
-          // unlike skin tone which had a baked-in garment to protect.
-          const cloned = (attached.material as THREE.MeshStandardMaterial).clone();
-          cloned.color.set(tint);
-          attached.material = cloned;
-        }
-        group.add(attached);
-      });
     });
   };
 
-  if (cfg.outfit !== 'none' && OUTFIT_URLS[cfg.outfit]) {
-    const parts = OUTFIT_URLS[cfg.outfit][cfg.base];
+  const outfitUrl = cfg.outfit !== 'none' ? OUTFIT_URLS[cfg.outfit]?.[cfg.base] : undefined;
+
+  if (!outfitUrl) {
+    await applySkin(bodySkinned, cfg.build);
+    // Gym wear goes over the Default outfit only.
+    const srcSkin = findSkinnedMeshes(bodyGltf.scene).find((m) => SKIN_MATERIAL_RE.test((m.material as THREE.Material).name));
+    const skin = bodySkinned.find((m) => SKIN_MATERIAL_RE.test((m.material as THREE.Material).name));
+    if (srcSkin && skin) {
+      const J = joints(srcSkin), U = underwear(srcSkin, J);
+      for (const key of [cfg.bottom, cfg.top, cfg.shoes]) {
+        if (!key || key === 'none' || !GARMENTS[key]) continue;
+        const geo = gymGarment(srcSkin, key, cfg.base, cfg.build);
+        if (!geo) continue;
+        const mesh = new THREE.SkinnedMesh(geo, fabricMaterial(GARMENTS[key], GARMENTS[key].color, J, U));
+        mesh.bind(skin.skeleton, skin.bindMatrix);
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+        mesh.frustumCulled = false;
+        group.add(mesh);
+      }
+      if (cfg.shoes && cfg.shoes !== 'none') skin.geometry = footless(srcSkin, cfg.base, cfg.build);
+    }
+  } else {
+    // Clothed: the full body only provides the skeleton; head-only mesh + outfit
+    // are drawn (see HEAD_URLS). Regular wears the pack's files unmodified.
+    bodySkinned.forEach((m) => (m.visible = false));
+    const [headGltf, outfitGltf, fit] = await Promise.all([
+      loadGLTF(HEAD_URLS[cfg.build][cfg.base]),
+      loadGLTF(outfitUrl),
+      cfg.build === 'regular' ? Promise.resolve(null) : getOutfitFit(cfg.build, cfg.base),
+    ]);
+
+    const headBuild: BodyBuild = cfg.build === 'teen' ? 'teen' : 'regular';
+    const headMeshes = findSkinnedMeshes(headGltf.scene)
+      .map((m, i) => {
+        // Only a borrowed head (Superhero) needs fitting; Teen's is its own.
+        const geo = fit && cfg.build === 'superhero' ? fittedGeometry(fit, m, `head|${cfg.build}|${cfg.base}|${i}`) : m.geometry;
+        return attachToSkeleton(m, boneByName, geo);
+      })
+      .filter((m): m is THREE.SkinnedMesh => !!m);
+    headMeshes.forEach((m) => {
+      m.castShadow = true;
+      m.receiveShadow = true;
+      group.add(m);
+    });
+    await applySkin(headMeshes, headBuild);
+
     const outfitColorUrl = outfitColorTextureName(cfg.outfit, cfg.outfitColor ?? 0);
     const outfitColorTex = outfitColorUrl ? await loadSkinTexture(outfitColorUrl) : undefined;
-    const allUrls = Object.values(parts).filter(Boolean) as string[];
-
-    if (cfg.base === 'male') {
-      // Male: untouched, byte-for-byte, from exactly what this codebase
-      // was already doing before any of this session's outfit-fit work -
-      // proven pixel-identical via direct image diff against a render
-      // from before that work started (zero differing pixels, every
-      // build). The user has asked, repeatedly and explicitly, for male
-      // to never be touched by any of it - do not change anything below
-      // this line without being told to.
-      const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base] ?? ([1, 1, 1] as THREE.Vector3Tuple);
-      await attachPartsFrom(allUrls, scale, undefined, outfitColorTex, true);
-    } else {
-      // Female: the outfit pack's own files, used exactly as shipped -
-      // no manual scale, no extra inflate, no per-build special-casing.
-      // For Teen this means literally zero modification (OUTFIT_FIT_SCALE
-      // has no 'teen' entry, so `scale` is undefined here and
-      // attachToSkeleton's whole correction pass is skipped) - the pack
-      // rendered as-is, gaps and all, rather than this project adjusting
-      // it. A previous attempt to close Teen's small fingertip/ankle gap
-      // with a bigger inflate pushed the *whole* arm piece outward,
-      // including the already-padded shoulder cap, and made it visibly
-      // puffier - a new, different problem, not a fix. Regular/Superhero
-      // get their usual corrective scale (needed there - without it the
-      // body visibly pokes through, a worse problem than a gap); Teen
-      // gets none, by design, per explicit instruction not to adjust it.
-      const scale = OUTFIT_FIT_SCALE[cfg.build]?.[cfg.base];
-      await attachPartsFrom(allUrls, scale, undefined, outfitColorTex, false);
-    }
+    const outfitMeshes: THREE.SkinnedMesh[] = [];
+    const accessories = new Set<THREE.SkinnedMesh>();
+    findSkinnedMeshes(outfitGltf.scene).forEach((m, i) => {
+      const geo = fit ? fittedGeometry(fit, m, `${outfitUrl}|${cfg.build}|${i}`) : m.geometry;
+      const attached = attachToSkeleton(m, boneByName, geo);
+      if (!attached) return;
+      outfitMeshes.push(attached);
+      // Pack accessories (pauldrons, gorget, scarf) are metal/leather the outfit
+      // recolour textures were never made for - recolouring tints the metal.
+      if (/_Acc_/.test(m.name) || /_Acc_/.test(m.parent?.name ?? '')) accessories.add(attached);
+    });
+    outfitMeshes.forEach((m) => {
+      // The body underneath is hidden, so the outfit has to cast the shadow.
+      m.castShadow = true;
+      m.receiveShadow = true;
+      const mat = m.material as THREE.MeshStandardMaterial;
+      if (outfitColorTex && mat?.map && !SKIN_MATERIAL_RE.test(mat.name || '') && !accessories.has(m)) {
+        // Outfit color: the garment's BaseColor texture has real baked-in fabric
+        // color (not a neutral tint base), so swap in a whole recolored texture
+        // (see generate_outfit_textures.py) rather than multiplying a color.
+        const cloned = mat.clone();
+        cloned.map = outfitColorTex;
+        m.material = cloned;
+      }
+      group.add(m);
+    });
+    // Hand/forearm skin baked into some outfit pieces is modeled on Regular.
+    await applySkin(outfitMeshes, 'regular');
   }
 
-  if (cfg.hair !== 'none' && HAIR_URLS[cfg.hair]) {
+  // The Knight's armet is a closed helmet; any hair would spike through it.
+  const hairHidden = !!outfitUrl && cfg.outfit === 'knight';
+  if (cfg.hair !== 'none' && HAIR_URLS[cfg.hair] && !hairHidden) {
     const idx = Math.max(0, Math.min(HAIR_COLORS.length - 1, cfg.hairColor ?? 0));
     const tint = HAIR_COLORS[idx].hex;
-    await attachPartsFrom([HAIR_URLS[cfg.hair]], undefined, tint, undefined, false, 0);
+    const hairGltf = await loadGLTF(HAIR_URLS[cfg.hair]);
+    findSkinnedMeshes(hairGltf.scene).forEach((m) => {
+      const attached = attachToSkeleton(m, boneByName);
+      if (!attached) return;
+      // The hair texture is a near-neutral grey made for tinting, so a material
+      // color multiply is enough - no separate texture per color needed.
+      const cloned = (attached.material as THREE.MeshStandardMaterial).clone();
+      cloned.color.set(tint);
+      attached.material = cloned;
+      group.add(attached);
+    });
   }
 
   return { group };

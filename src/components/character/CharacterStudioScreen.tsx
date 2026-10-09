@@ -24,6 +24,15 @@ const STUDIO_CATS: { id: StudioCat; label: string; subs?: { id: StudioCat; label
     ],
   },
   {
+    id: 'top',
+    label: 'Gym',
+    subs: [
+      { id: 'top', label: 'Top' },
+      { id: 'bottom', label: 'Bottom' },
+      { id: 'shoes', label: 'Shoes' },
+    ],
+  },
+  {
     id: 'outfit',
     label: 'Outfit',
     subs: [
@@ -145,6 +154,10 @@ export function CharacterStudioScreen() {
       return;
     }
     updateCharacterField(key, item.id);
+    // Gym wear is worn with the Default outfit, so choosing a piece takes a fantasy outfit off.
+    if ((key === 'top' || key === 'bottom' || key === 'shoes') && item.id !== 'none' && character.outfit !== 'none') {
+      updateCharacterField('outfit', 'none');
+    }
   }
 
   let rail: React.ReactNode;
@@ -262,10 +275,11 @@ export function CharacterStudioScreen() {
       </>
     );
   } else {
-    const list =
-      studioCat === 'hair'
-        ? (CATALOG.hair as HairItem[]).filter((it) => !it.base || it.base === character.base)
-        : CATALOG[studioCat];
+    const perBase = studioCat === 'hair' || studioCat === 'top' || studioCat === 'bottom';
+    const list = perBase
+      ? (CATALOG[studioCat] as HairItem[]).filter((it) => !it.base || it.base === character.base)
+      : CATALOG[studioCat];
+    const isGym = studioCat === 'top' || studioCat === 'bottom' || studioCat === 'shoes';
     const mode = studioCat === 'hair' ? 'head' : 'full';
     rail = (
       <>
@@ -273,13 +287,14 @@ export function CharacterStudioScreen() {
           // Isolate the preview to the dimension being browsed - don't also
           // recomposite whatever hair/outfit happens to be equipped, which
           // would multiply texture loads across every tile in the list.
-          const isolated = studioCat === 'hair' ? { ...character, outfit: 'none' } : { ...character, hair: 'none' };
+          // Gym wear previews on the Default outfit (it's only worn with it).
+          const isolated = studioCat === 'hair' ? { ...character, outfit: 'none' } : isGym ? { ...character, hair: 'none', outfit: 'none' } : { ...character, hair: 'none' };
           const cfg = { ...isolated, [studioCat]: it.id };
           const locked = !isUnlocked(it, ctx);
           return (
             <Tile
               key={it.id}
-              sel={character[studioCat] === it.id}
+              sel={(character[studioCat] ?? 'none') === it.id}
               locked={locked}
               art={<CharacterThumbnail cfg={cfg} mode={mode} />}
               name={it.name}
