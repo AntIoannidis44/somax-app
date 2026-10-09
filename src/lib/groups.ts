@@ -65,12 +65,23 @@ export async function createGroup(userId: string, name: string, memberIds: strin
     console.error('[groups] createGroup:', error?.message);
     return null;
   }
-  const rows = [
-    { group_id: group.id, user_id: userId, role: 'admin' as const },
-    ...memberIds.filter((id) => id !== userId).map((id) => ({ group_id: group.id, user_id: id, role: 'member' as const })),
-  ];
-  const { error: memberError } = await supabase.from('group_members').insert(rows);
-  if (memberError) console.error('[groups] createGroup members:', memberError.message);
+  // The creator's own row must be inserted (and committed) before the
+  // friend rows: group_members' RLS check is_group_admin(group_id) re-reads
+  // group_members, and rows inserted earlier in the SAME statement aren't
+  // visible to that check yet (Postgres cmin visibility), so a single
+  // multi-row insert makes every friend row fail WITH CHECK - and since an
+  // insert is all-or-nothing, that also rejects the admin's own row.
+  const { error: adminError } = await supabase.from('group_members').insert({ group_id: group.id, user_id: userId, role: 'admin' as const });
+  if (adminError) {
+    console.error('[groups] createGroup admin row:', adminError.message);
+    await supabase.from('groups').delete().eq('id', group.id);
+    return null;
+  }
+  const friendRows = memberIds.filter((id) => id !== userId).map((id) => ({ group_id: group.id, user_id: id, role: 'member' as const }));
+  if (friendRows.length) {
+    const { error: memberError } = await supabase.from('group_members').insert(friendRows);
+    if (memberError) console.error('[groups] createGroup members:', memberError.message);
+  }
   return group.id as string;
 }
 
