@@ -54,6 +54,11 @@ export const ICON_PATHS: Record<string, string> = {
   more: '<circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/>',
   go: '<path d="M8 5.5v13l10.5-6.5L8 5.5Z"/>',
   search: '<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>',
+  shuffle: '<path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/>',
+  layers: '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/>',
+  attire: '<path d="M8 3 4 6l2 4 2-1v12h8V9l2 1 2-4-4-3c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3Z"/>',
+  droplet: '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/>',
+  hairstyle: '<path d="M5 13c0-5 3-9 7-9s7 4 7 9"/><path d="M5 13c0 4 1 7 3 8M19 13c0 4-1 7-3 8"/><path d="M8 8c2 2 6 2 8 0"/>',
 };
 
 export type IconName = keyof typeof ICON_PATHS;

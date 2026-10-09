@@ -182,6 +182,9 @@ export function CharacterStage({ view, anim, cfg, level: levelProp, showPedestal
         shadows
         gl={{ alpha: true, antialias: true }}
         camera={{ fov: 27, near: 0.1, far: 60 }}
+        // Measure layout size, not the on-screen box: the Studio scales this
+        // view with a CSS transform, which must not resize the canvas.
+        resize={{ offsetSize: true }}
         style={{ width: '100%', height: '100%', display: 'block' }}
       >
         <Lights />

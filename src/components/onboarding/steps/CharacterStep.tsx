@@ -27,13 +27,13 @@ export function CharacterStep() {
           <div className="base-art">
             <CharacterThumbnail cfg={{ ...dc, base: 'female' }} mode="full" />
           </div>
-          <div className="char-name">Female</div>
+          <div className="char-name">Feminine</div>
         </div>
         <div className={`base-opt${dc.base === 'male' ? ' sel' : ''}`} onClick={() => setOnbCharacterBase('male')}>
           <div className="base-art">
             <CharacterThumbnail cfg={{ ...dc, base: 'male' }} mode="full" />
           </div>
-          <div className="char-name">Male</div>
+          <div className="char-name">Masculine</div>
         </div>
       </div>
       <div className="field" style={{ marginTop: 20 }}>
