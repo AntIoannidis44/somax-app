@@ -153,14 +153,26 @@ function statsFor(workout: CommunityPost['workout']): Stat[] {
   ];
 }
 
-function Splits({ route }: { route: NonNullable<NonNullable<CommunityPost['workout']>['route']> }) {
+// Every slide in a post's swipeable media row (photo, map, splits) must be
+// the SAME height - a flex row's height follows its tallest child, so if
+// any one of them were sized differently, the row would stretch to match it
+// and every shorter slide would show empty space underneath once scrolled
+// to. A post's photo (if it has one) is the one that should dictate that
+// height - map/splits then match whatever the photo's own natural height
+// came out to, clamped to a sane range; with no photo, there's nothing to
+// measure, so they fall back to a fixed default.
+const FEED_MEDIA_DEFAULT_H = 290;
+const FEED_MEDIA_MIN_H = 180;
+const FEED_MEDIA_MAX_H = 460;
+
+function Splits({ route, height }: { route: NonNullable<NonNullable<CommunityPost['workout']>['route']>; height: number }) {
   const splits = computeKmSplits(route).slice(0, 9);
   const per = splits.map((s, i) => s.seconds - (i ? splits[i - 1].seconds : 0));
   const min = Math.min(...per);
   const max = Math.max(...per);
   const avg = per.reduce((a, b) => a + b, 0) / per.length;
   return (
-    <div className="splits">
+    <div className="splits" style={{ height }}>
       <h4>
         Splits<span>avg {paceLabel(avg)} /km</span>
       </h4>
@@ -201,18 +213,41 @@ export function FeedPostCard({
   const isProgram = isProgramPost(post);
   const [slide, setSlide] = useState(0);
   const [pop, setPop] = useState(0);
+  // Set once the photo (if any) has actually loaded and been laid out, from
+  // its real rendered height (natural aspect ratio, width:100%, clamped by
+  // the CSS max-height below) - null for a post with no photo, or until it
+  // loads, in which case the default below applies instead.
+  const [photoH, setPhotoH] = useState<number | null>(null);
+  const mediaH = photoH ? Math.min(FEED_MEDIA_MAX_H, Math.max(FEED_MEDIA_MIN_H, photoH)) : FEED_MEDIA_DEFAULT_H;
   const route = post.workout?.route && post.workout.route.length > 1 ? post.workout.route : null;
   const hasSplits = !!route && computeKmSplits(route).length >= 2;
   const stats = statsFor(post.workout);
   const postedToday = Date.now() - new Date(post.created_at).getTime() < 24 * 3600 * 1000;
 
   const slides: ReactNode[] = [];
-  if (post.image_url) slides.push(<img src={post.image_url} alt="" loading="lazy" draggable={false} />);
+  if (post.image_url)
+    slides.push(
+      <img
+        src={post.image_url}
+        alt=""
+        loading="lazy"
+        draggable={false}
+        // Unstyled until measured, so the first load's clientHeight below
+        // reflects the photo's own natural rendered height (width:100%,
+        // aspect ratio intact, only the CSS max-height clamping it) - not
+        // a height this component already forced on it. Once that one-time
+        // measurement lands, it's switched over to the shared, clamped
+        // mediaH like the other two slides, so cropping (object-fit:cover)
+        // only kicks in if the clamp actually changed anything.
+        style={photoH !== null ? { height: mediaH } : undefined}
+        onLoad={(e) => setPhotoH(e.currentTarget.clientHeight)}
+      />,
+    );
   if (route)
     slides.push(
       <RouteMap
         points={route}
-        height={290}
+        height={mediaH}
         brand
         label={
           post.workout?.distanceMeters ? (
@@ -224,7 +259,7 @@ export function FeedPostCard({
         }
       />,
     );
-  if (route && hasSplits) slides.push(<Splits route={route} />);
+  if (route && hasSplits) slides.push(<Splits route={route} height={mediaH} />);
 
   function likeFromMedia() {
     if (!liked) onToggleLike();

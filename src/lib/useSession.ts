@@ -39,13 +39,23 @@ export function useSession() {
         // whatever stale snapshot it had, and the very next local state
         // change (e.g. checkForNewDay() on the same mount) then pushed
         // that stale snapshot up, overwriting real cloud progress.
-        let hydrated = await hydrateFromCloud(userId);
+        // Every await below is a point where a faster, later applySession
+        // call for a DIFFERENT account could already have taken over -
+        // re-check staleness after each one. Without this, a slow resolve
+        // here can call startCloudSync() last with this stale userId after
+        // the real active session has moved on, silently redirecting every
+        // future push (of whatever account is now actually active) into
+        // this wrong, no-longer-current user's cloud row.
+        let hydrated = await hydrateFromCloud(userId, () => userId === lastUserId);
+        if (cancelled || userId !== lastUserId) return;
         for (let attempt = 0; !hydrated && attempt < 3; attempt++) {
           await new Promise((r) => setTimeout(r, 800));
           if (cancelled || userId !== lastUserId) return;
-          hydrated = await hydrateFromCloud(userId);
+          hydrated = await hydrateFromCloud(userId, () => userId === lastUserId);
+          if (cancelled || userId !== lastUserId) return;
         }
         await loadMyWorkouts(userId);
+        if (cancelled || userId !== lastUserId) return;
         if (!hydrated) {
           console.error(`[useSession] giving up on cloud hydration for ${userId} after retries - staying local-only this session, not pushing`);
           return;

@@ -163,45 +163,53 @@ function App() {
     // the user has answered (either way), this just silently reflects
     // that choice - safe to call every time to keep Home fresh.
     async function syncHealth() {
-      const granted = await requestHealthAuthorization();
-      if (!granted) return;
-      const [summary, monthlySteps, cardioKm, hr, workouts] = await Promise.all([
-        getTodayHealthSummary(),
-        getMonthlySteps(),
-        getMonthlyCardioKm(),
-        getLatestHeartRate(),
-        getTodayWorkouts(),
-      ]);
-      if (summary) {
-        syncHealthMetrics({ steps: summary.steps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr: hr?.bpm ?? null });
-      }
-      if (monthlySteps !== null) setMonthlySteps(monthlySteps);
-      if (cardioKm !== null) syncCardioKm(cardioKm);
-      syncWatchWorkout(workouts);
+      try {
+        const granted = await requestHealthAuthorization();
+        if (!granted) return;
+        const [summary, monthlySteps, cardioKm, hr, workouts] = await Promise.all([
+          getTodayHealthSummary(),
+          getMonthlySteps(),
+          getMonthlyCardioKm(),
+          getLatestHeartRate(),
+          getTodayWorkouts(),
+        ]);
+        if (summary) {
+          syncHealthMetrics({ steps: summary.steps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr: hr?.bpm ?? null });
+        }
+        if (monthlySteps !== null) setMonthlySteps(monthlySteps);
+        if (cardioKm !== null) syncCardioKm(cardioKm);
+        syncWatchWorkout(workouts);
 
-      // Performance goals (distance-time PBs, cumulative distance,
-      // frequency) check against every real workout independently of
-      // whether it also happens to satisfy today's single daily-goal
-      // checkbox above - a goal should credit every matching activity,
-      // not just the first one picked for "today".
-      if (userId) {
-        for (const w of workouts) {
-          const result = await recordActivityForGoals(userId, {
-            sourceId: w.uuid,
-            category: categoryForActivityName(w.activityName),
-            distanceMeters: w.distanceMeters,
-            durationSeconds: Math.round(w.durationMinutes * 60),
-            occurredAt: w.startDate,
-          });
-          for (const credit of result) {
-            if (credit.justCompleted) {
-              awardFitnessGoalXP(`${w.activityName} goal reached`, 20, { completed: true });
-              showToast(`Goal reached! +80 bonus XP`);
-            } else if (credit.isNewBest || credit.goal.goal_type !== 'distance_time') {
-              awardFitnessGoalXP(`${w.activityName} goal progress`, 20, {});
+        // Performance goals (distance-time PBs, cumulative distance,
+        // frequency) check against every real workout independently of
+        // whether it also happens to satisfy today's single daily-goal
+        // checkbox above - a goal should credit every matching activity,
+        // not just the first one picked for "today".
+        if (userId) {
+          for (const w of workouts) {
+            const result = await recordActivityForGoals(userId, {
+              sourceId: w.uuid,
+              category: categoryForActivityName(w.activityName),
+              distanceMeters: w.distanceMeters,
+              durationSeconds: Math.round(w.durationMinutes * 60),
+              occurredAt: w.startDate,
+            });
+            for (const credit of result) {
+              if (credit.justCompleted) {
+                awardFitnessGoalXP(`${w.activityName} goal reached`, 20, { completed: true });
+                showToast(`Goal reached! +80 bonus XP`);
+              } else if (credit.isNewBest || credit.goal.goal_type !== 'distance_time') {
+                awardFitnessGoalXP(`${w.activityName} goal progress`, 20, {});
+              }
             }
           }
         }
+      } catch (err) {
+        // A native-bridge failure here (vs. a plain permission denial, which
+        // just resolves `granted: false`) used to fail this whole function
+        // silently - skipping the steps checklist item and the Watch workout
+        // sync together with zero trace of why. At least surface it.
+        console.error('[health] sync failed:', err);
       }
     }
 

@@ -84,12 +84,17 @@ async function pushToCloud(userId: string) {
 // after, so the very next local mutation (e.g. checkForNewDay() on the
 // same mount) pushed whatever stale snapshot was left in local storage
 // and overwrote real cloud progress with it.
-export async function hydrateFromCloud(userId: string): Promise<boolean> {
+export async function hydrateFromCloud(userId: string, isStillCurrent: () => boolean = () => true): Promise<boolean> {
   const { data, error } = await supabase.from('app_state').select('state').eq('user_id', userId).maybeSingle();
   if (error) {
     console.error('[cloudSync] failed to load:', error.message);
     return false;
   }
+  // A slower call for an account the user has since switched away from
+  // reaching this point is exactly the race that let one account's local
+  // edits leak into another account's cloud row (see useSession.ts) - don't
+  // even apply this snapshot to the shared store once that's happened.
+  if (!isStillCurrent()) return true;
   if (data?.state) {
     useAppStore.setState(data.state as Partial<ReturnType<typeof useAppStore.getState>>);
     useAppStore.setState({ challenges: withAllChallenges(useAppStore.getState().challenges) });

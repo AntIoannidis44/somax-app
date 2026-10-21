@@ -1,13 +1,32 @@
-import { useId, type ReactNode } from 'react';
+import { useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import type { RoutePoint } from '../../lib/health';
 import { haversineMeters } from '../../lib/routeSplits';
 
 // The GPS path drawn as a glowing brand-gradient line over a plain grid -
 // no map tiles, API key or per-view cost. The grid is deliberately abstract:
 // fake streets under a real trace would look like a map while being wrong.
-// The layout box is ~phone width, so stroke widths and markers read as px.
-const W = 360;
+// The viewBox width is the container's actual measured px width (see
+// useContainerWidth below), not a guessed constant - a fixed guess here
+// used to leave the drawing letterboxed (empty margin, wrong scale versus
+// the real-px background grid) on any device whose card isn't that exact
+// width. Matching it 1:1 means an SVG unit is always a real device px, so
+// stroke widths/marker radii below read as true px everywhere, and the
+// route always fills the box edge to edge with no dead space.
+const FALLBACK_W = 360;
 const PAD = 34;
+
+function useContainerWidth(fallback: number) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(fallback);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setWidth(Math.round(entry.contentRect.width) || fallback));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [fallback]);
+  return [ref, width] as const;
+}
 
 function kmStep(totalKm: number): number {
   if (totalKm <= 12) return 1;
@@ -29,6 +48,7 @@ export function RouteMap({
   brand?: boolean;
 }) {
   const uid = useId().replace(/:/g, '');
+  const [containerRef, W] = useContainerWidth(FALLBACK_W);
   if (points.length < 2) return null;
   const H = height;
 
@@ -71,7 +91,7 @@ export function RouteMap({
   const ys = xy.map((p) => p[1]);
 
   return (
-    <div className="route-map" style={{ height }}>
+    <div className="route-map" ref={containerRef} style={{ height }}>
       <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label="Route map">
         <defs>
           <linearGradient id={`g${uid}`} gradientUnits="userSpaceOnUse" x1={Math.min(...xs)} y1={Math.max(...ys)} x2={Math.max(...xs)} y2={Math.min(...ys)}>
