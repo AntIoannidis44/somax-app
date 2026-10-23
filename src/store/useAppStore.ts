@@ -177,6 +177,8 @@ interface Actions {
   toggleWatchWorkoutSelection: (workout: HealthWorkoutSummary) => void;
   toggleExercise: (exIndex: number) => void;
   toggleSet: (exIndex: number, setIndex: number) => void;
+  toggleSetSkip: (exIndex: number, setIndex: number) => void;
+  setSetWeight: (exIndex: number, setIndex: number, weight: string) => void;
   toggleSkip: (exIndex: number) => void;
   finishWorkout: (wid: string) => void;
 
@@ -208,17 +210,21 @@ export type Store = AppState & TransientState & Actions;
 let toastCounter = 0;
 let levelUpCounter = 0;
 
-// An exercise is finished once every one of its sets is ticked, or once it
-// has been skipped. exDone is kept in step so existing readers (recap,
-// completion check) keep working unchanged.
+// An exercise is finished once every one of its sets has been addressed -
+// ticked done OR individually crossed off as attempted-but-not-completed -
+// or once the whole exercise has been skipped. exDone is kept in step so
+// existing readers (recap, completion check) keep working unchanged.
 function syncExerciseDone(ws: WorkoutSessionState, wid: string) {
   const w = getWorkout(wid);
   if (!w) return;
   ws.exDone = ws.exDone ?? {};
   w.exercises.forEach((ex, i) => {
     const count = expandSets(ex).length;
-    const allSetsDone = Array.from({ length: count }, (_, k) => !!ws.setDone?.[setKey(i, k)]).every(Boolean);
-    ws.exDone[i] = allSetsDone || !!ws.skipped?.[i];
+    const allSetsAddressed = Array.from({ length: count }, (_, k) => {
+      const key = setKey(i, k);
+      return !!ws.setDone?.[key] || !!ws.setSkipped?.[key];
+    }).every(Boolean);
+    ws.exDone[i] = allSetsAddressed || !!ws.skipped?.[i];
   });
 }
 
@@ -530,8 +536,40 @@ export const useAppStore = create<Store>()(
             const ws = s.workoutState[s.simDay][wid];
             ws.setDone = ws.setDone ?? {};
             const key = setKey(exIndex, setIndex);
-            ws.setDone[key] = !ws.setDone[key];
+            const nowDone = !ws.setDone[key];
+            ws.setDone[key] = nowDone;
+            // Ticking a crossed-off set done un-crosses it - the two are
+            // mutually exclusive states.
+            if (nowDone && ws.setSkipped?.[key]) ws.setSkipped[key] = false;
             syncExerciseDone(ws, wid);
+          }),
+        ),
+
+      toggleSetSkip: (exIndex, setIndex) =>
+        set(
+          produce((s) => {
+            const wid = s.viewingWorkout;
+            if (!wid) return;
+            const ws = s.workoutState[s.simDay][wid];
+            ws.setSkipped = ws.setSkipped ?? {};
+            const key = setKey(exIndex, setIndex);
+            const wasSkipped = !!ws.setSkipped[key];
+            ws.setSkipped[key] = !wasSkipped;
+            // Crossing a set and ticking it done are mutually exclusive -
+            // crossing one clears the other rather than leaving both set.
+            if (!wasSkipped && ws.setDone) ws.setDone[key] = false;
+            syncExerciseDone(ws, wid);
+          }),
+        ),
+
+      setSetWeight: (exIndex, setIndex, weight) =>
+        set(
+          produce((s) => {
+            const wid = s.viewingWorkout;
+            if (!wid) return;
+            const ws = s.workoutState[s.simDay][wid];
+            ws.setWeight = ws.setWeight ?? {};
+            ws.setWeight[setKey(exIndex, setIndex)] = weight;
           }),
         ),
 

@@ -13,11 +13,115 @@ function repsLabel(reps: string): string {
   return /^\d+$/.test(reps.trim()) ? `${reps.trim()} reps` : reps;
 }
 
+// Tap-to-edit weight for one set, this session only. Free text (users log
+// "20kg", "bodyweight", ranges - see WorkoutEditorScreen), so this is a
+// plain field, not a numeric +/- stepper - some weights have no number to
+// step at all.
+function WeightChip({
+  value,
+  disabled,
+  onCommit,
+}: {
+  value: string;
+  disabled: boolean;
+  onCommit: (v: string) => void;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(value);
+  if (editing) {
+    return (
+      <input
+        className="set-weight-input"
+        autoFocus
+        value={draft}
+        onChange={(e) => setDraft(e.target.value)}
+        onClick={(e) => e.stopPropagation()}
+        onBlur={() => {
+          setEditing(false);
+          if (draft.trim() !== value) onCommit(draft.trim());
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') e.currentTarget.blur();
+        }}
+      />
+    );
+  }
+  return (
+    <button
+      type="button"
+      className="set-weight-chip"
+      disabled={disabled}
+      onClick={(e) => {
+        e.stopPropagation();
+        setDraft(value);
+        setEditing(true);
+      }}
+    >
+      {value}
+      {!disabled && <Icon name="edit" style={{ width: 9, height: 9 }} />}
+    </button>
+  );
+}
+
+interface SetRowProps {
+  exIndex: number;
+  setIndex: number;
+  reps: string;
+  weight?: string;
+  done: boolean;
+  crossed: boolean;
+  exSkipped: boolean;
+  locked: boolean;
+  effectiveWeight: string;
+  onToggleDone: () => void;
+  onToggleCross: () => void;
+  onWeightChange: (v: string) => void;
+}
+
+// One trackable set: the tick, cross and weight chip are each their own tap
+// target (not "tap anywhere in the row") - with a weight chip also living
+// in this row, making the whole row double as a 4th, overlapping "mark
+// done" target meant a tap near the chip could land on either control
+// unpredictably, sometimes doing nothing, sometimes the wrong thing.
+function SetRow({ setIndex, reps, weight, done, crossed, exSkipped, locked, effectiveWeight, onToggleDone, onToggleCross, onWeightChange }: SetRowProps) {
+  const inert = exSkipped || locked;
+  return (
+    <div className={`set-row${done ? ' done' : ''}${crossed ? ' crossed' : ''}${exSkipped ? ' skipped' : ''}`}>
+      <button
+        type="button"
+        className="set-tick-btn"
+        disabled={inert}
+        onClick={onToggleDone}
+        aria-label={done ? 'Mark set not done' : 'Mark set done'}
+      >
+        <span className={`set-tick${done ? ' done' : ''}`}>{done && <Icon name="check" style={{ width: 14, height: 14 }} />}</span>
+      </button>
+      <span className="set-label">Set {setIndex + 1}</span>
+      <span className="set-detail">
+        {repsLabel(reps)}
+        {weight && <WeightChip value={effectiveWeight} disabled={inert} onCommit={onWeightChange} />}
+      </span>
+      <button
+        type="button"
+        className={`set-cross-btn${crossed ? ' on' : ''}`}
+        disabled={inert}
+        onClick={onToggleCross}
+        title={crossed ? 'Undo' : "Didn't complete this set"}
+        aria-label={crossed ? 'Undo: mark set not completed' : "Mark set not completed"}
+      >
+        <Icon name="x" style={{ width: 10, height: 10 }} />
+      </button>
+    </div>
+  );
+}
+
 export function WorkoutScreen() {
   const wid = useAppStore((s) => s.viewingWorkout)!;
   const simDay = useAppStore((s) => s.simDay);
   const ws = useAppStore((s) => s.workoutState[simDay]?.[wid]);
   const toggleSet = useAppStore((s) => s.toggleSet);
+  const toggleSetSkip = useAppStore((s) => s.toggleSetSkip);
+  const setSetWeight = useAppStore((s) => s.setSetWeight);
   const toggleSkip = useAppStore((s) => s.toggleSkip);
   const finishWorkout = useAppStore((s) => s.finishWorkout);
   const awardFitnessGoalXP = useAppStore((s) => s.awardFitnessGoalXP);
@@ -38,7 +142,12 @@ export function WorkoutScreen() {
     (n, ex, i) => n + (ws.skipped?.[i] ? 0 : expandSets(ex).filter((_, k) => ws.setDone?.[setKey(i, k)]).length),
     0,
   );
+  const crossedSets = exercises.reduce(
+    (n, ex, i) => n + (ws.skipped?.[i] ? 0 : expandSets(ex).filter((_, k) => ws.setSkipped?.[setKey(i, k)]).length),
+    0,
+  );
   const allDone = exercises.every((_, i) => ws.exDone[i]);
+  const pct = totalSets ? Math.round((doneSets / totalSets) * 100) : 0;
 
   // Gym sessions have no real GPS distance/duration to verify against a
   // performance goal, only a real completion - so only frequency goals
@@ -83,33 +192,35 @@ export function WorkoutScreen() {
           )}
         </div>
         {item.sets.map((row) => {
-          const done = !!ws!.setDone?.[setKey(row.exIndex, row.setIndex)];
-          const label = (
-            <>
-              <span className="set-label">Set {row.setIndex + 1}</span>
-              <span className="set-detail">
-                {repsLabel(row.reps)}
-                {row.weight ? ` · ${row.weight}` : ''}
-              </span>
-            </>
-          );
+          const key = setKey(row.exIndex, row.setIndex);
+          const done = !!ws!.setDone?.[key];
           if (!tracking) {
             return (
               <div className="set-line" key={row.setIndex}>
-                {label}
+                <span className="set-label">Set {row.setIndex + 1}</span>
+                <span className="set-detail">
+                  {repsLabel(row.reps)}
+                  {row.weight ? ` · ${row.weight}` : ''}
+                </span>
               </div>
             );
           }
           return (
-            <button
+            <SetRow
               key={row.setIndex}
-              className={`set-row${done ? ' done' : ''}${skipped ? ' skipped' : ''}`}
-              disabled={skipped || ws!.completed}
-              onClick={() => toggleSet(row.exIndex, row.setIndex)}
-            >
-              <span className={`set-tick${done ? ' done' : ''}`}>{done && <Icon name="check" style={{ width: 14, height: 14 }} />}</span>
-              {label}
-            </button>
+              exIndex={row.exIndex}
+              setIndex={row.setIndex}
+              reps={row.reps}
+              weight={row.weight}
+              done={done}
+              crossed={!!ws!.setSkipped?.[key]}
+              exSkipped={skipped}
+              locked={ws!.completed}
+              effectiveWeight={ws!.setWeight?.[key] ?? row.weight ?? ''}
+              onToggleDone={() => toggleSet(row.exIndex, row.setIndex)}
+              onToggleCross={() => toggleSetSkip(row.exIndex, row.setIndex)}
+              onWeightChange={(v) => setSetWeight(row.exIndex, row.setIndex, v)}
+            />
           );
         })}
       </div>
@@ -131,14 +242,7 @@ export function WorkoutScreen() {
   return (
     <>
       <div className="section-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <span>
-          {tracking ? 'Tracking' : 'Program'}
-          {tracking && (
-            <span style={{ color: 'var(--text-faint)', fontWeight: 700, textTransform: 'none', letterSpacing: 0, marginLeft: 6 }}>
-              {doneSets} / {totalSets} sets
-            </span>
-          )}
-        </span>
+        <span>{tracking ? 'Tracking' : 'Program'}</span>
         <div style={{ display: 'flex', gap: 6 }}>
           <button className="btn btn-ghost" style={{ padding: '4px 10px', fontSize: 12, gap: 5 }} onClick={() => setSharing(true)}>
             <Icon name="send" style={{ width: 13, height: 13 }} /> Share
@@ -161,6 +265,20 @@ export function WorkoutScreen() {
         </button>
       )}
 
+      {tracking && (
+        <div className="track-sticky">
+          <div className="track-sticky-head">
+            <span className="track-sticky-title">{w.name}</span>
+            <span className="track-sticky-count">
+              {doneSets}/{totalSets} sets{crossedSets > 0 ? ` · ${crossedSets} crossed` : ''}
+            </span>
+          </div>
+          <div className="progress-track">
+            <div className="progress-fill" style={{ width: `${pct}%` }} />
+          </div>
+        </div>
+      )}
+
       {blocks.map(renderBlock)}
 
       <div style={{ height: 8 }} />
@@ -178,7 +296,7 @@ export function WorkoutScreen() {
           ) : allDone ? (
             'Finish workout · +40 XP'
           ) : (
-            'Tick every set or skip to finish'
+            'Tick or cross every set to finish'
           )}
         </button>
       )}

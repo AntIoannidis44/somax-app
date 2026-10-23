@@ -240,6 +240,15 @@ export interface WorkoutSessionState {
   // Per-set ticks, keyed "exIndex-setIndex". Optional so older saved
   // sessions (exercise-level ticks only) keep loading.
   setDone?: Record<string, boolean>;
+  // A set marked as attempted but not completed (e.g. couldn't finish all
+  // reps that day) - distinct from simply not yet ticked. Doesn't remove it
+  // from the plan, and counts as "addressed" for finishing the workout the
+  // same way a tick does, just not toward the done-sets count.
+  setSkipped?: Record<string, boolean>;
+  // Session-only override of the weight actually used for a set (e.g. going
+  // up or down from the plan on the day). Falls back to the exercise's
+  // planned weight when unset; never edits the saved program.
+  setWeight?: Record<string, string>;
   // Exercises the user chose not to do (time or other reasons). They count
   // as finished for the workout but are shown greyed out, not green.
   skipped?: Record<number, boolean>;

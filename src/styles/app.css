@@ -1293,15 +1293,48 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .skip-btn:disabled{ opacity:.5; cursor:default; }
 .set-line, .set-row{ display:flex; align-items:center; gap:10px; padding:8px 10px; margin-top:5px; border-radius:12px; font-size:13px; }
 .set-line{ background:var(--surface-2); }
-.set-row{ width:100%; border:1px solid var(--line); background:var(--surface-2); color:var(--text); font:inherit; text-align:left; cursor:pointer; transition: background var(--dur-med) var(--ease-out), border-color var(--dur-med) var(--ease-out); }
-.set-row:disabled{ cursor:default; }
+.set-row{ width:100%; border:1px solid var(--line); background:var(--surface-2); color:var(--text); transition: background var(--dur-med) var(--ease-out), border-color var(--dur-med) var(--ease-out); }
 .set-row.done{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 40%, transparent); }
 .set-row.skipped{ background:transparent; border-style:dashed; }
+/* The tick is its own button (not "tap anywhere in the row") so it never
+   competes with the weight chip/cross button for the same tap. */
+.set-tick-btn{ flex-shrink:0; padding:4px; margin:-4px; border:none; background:transparent; cursor:pointer; display:flex; }
+.set-tick-btn:disabled{ cursor:default; }
 .set-label{ min-width:48px; font-size:11.5px; font-weight:700; color:var(--text-faint); text-transform:uppercase; letter-spacing:.04em; }
-.set-detail{ font-family:var(--font-mono); font-size:13px; color:var(--text); overflow-wrap:anywhere; min-width:0; }
+.set-detail{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-family:var(--font-mono); font-size:13px; color:var(--text); overflow-wrap:anywhere; min-width:0; flex:1; }
 .set-row.done .set-detail{ color:var(--success); }
 .set-tick{ width:24px; height:24px; border-radius:50%; flex-shrink:0; border:2px solid var(--line); display:flex; align-items:center; justify-content:center; background:var(--surface); }
 .set-tick.done{ background:var(--success); border-color:var(--success); color:#fff; }
+
+/* Cross a set off as attempted-but-not-completed - distinct from simply not
+   yet ticked, reversible via the same button. */
+.set-row.crossed{ background:transparent; border-style:dashed; opacity:.7; }
+.set-row.crossed .set-label, .set-row.crossed .set-detail{ text-decoration:line-through; text-decoration-color:var(--text-faint); }
+.set-cross-btn{ flex-shrink:0; width:22px; height:22px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--text-faint); display:flex; align-items:center; justify-content:center; cursor:pointer; margin-left:auto; }
+.set-cross-btn:disabled{ opacity:.4; cursor:default; }
+.set-cross-btn.on{ background:var(--danger-soft); border-color:color-mix(in srgb, var(--danger) 45%, transparent); color:var(--danger); }
+
+/* Tap-to-edit weight for one set, this session only. */
+.set-weight-chip{ display:inline-flex; align-items:center; gap:3px; font:inherit; font-family:var(--font-mono); font-size:12px; font-weight:600; padding:2px 7px; border-radius:999px; border:1px dashed var(--line); background:transparent; color:inherit; cursor:pointer; }
+.set-weight-chip:disabled{ border-style:solid; opacity:.8; cursor:default; }
+.set-weight-input{ font:inherit; font-family:var(--font-mono); font-size:12px; width:68px; padding:2px 6px; border-radius:999px; border:1px solid var(--accent); background:var(--surface); color:var(--text); }
+
+/* Sticky progress bar for an active tracking session - pinned to the top of
+   the scroll area so it stays visible (and up to date) as the exercise list
+   scrolls underneath it. Same hero-gradient treatment as the Train tab's
+   "Today" card (.tbig), so the two read as the same feature. */
+.track-sticky{
+  position:sticky; top:-4px; z-index:6; margin:-4px -16px 14px; padding:14px 16px 16px;
+  color:#fff; background: linear-gradient(150deg, var(--hero-1), var(--hero-2));
+  box-shadow: 0 14px 28px -16px color-mix(in srgb, var(--hero-2) 70%, transparent);
+  overflow:hidden;
+}
+.track-sticky::after{ content:""; position:absolute; right:-24px; bottom:-30px; width:150px; height:150px; border-radius:50%; border:24px solid rgba(255,255,255,.08); pointer-events:none; }
+.track-sticky-head{ position:relative; z-index:1; display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:10px; }
+.track-sticky-title{ font-family:var(--font-display); font-weight:800; font-size:16px; letter-spacing:-.02em; overflow-wrap:anywhere; }
+.track-sticky-count{ flex-shrink:0; font-family:var(--font-mono); font-size:12px; font-weight:700; color:rgba(255,255,255,.8); }
+.track-sticky .progress-track{ position:relative; z-index:1; height:13px; background: rgba(255,255,255,.22); }
+.track-sticky .progress-fill{ background:#fff; box-shadow: 0 0 14px rgba(255,255,255,.65); }
 
 /* ---- Program editor: per-set rows and superset links ---- */
 .ex-edit-block{ padding:14px; }
