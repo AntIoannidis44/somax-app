@@ -101,7 +101,15 @@ function defaultAppState(): AppState {
     challenges: defaultChallengeStates(),
     coins: 0,
     achievements: {},
-    settings: { notifWorkout: true, notifStreak: true, notifLeague: false, notifChallenge: true, notifMessages: false, privateProfile: false, theme: 'system' },
+    // notifMessages defaults on (unlike notifLeague) - a message push needs
+    // the device actually registered for it to ever reach anyone, and that
+    // registration is gated behind this flag being true (see App.tsx's
+    // push-sync effect). Defaulting it off meant a brand new user had to
+    // discover and flip a Settings toggle themselves before a single
+    // message push could ever work, with nothing telling them that was
+    // the reason - confirmed as the real cause behind a tester's push
+    // silently never working at all.
+    settings: { notifWorkout: true, notifStreak: true, notifLeague: false, notifChallenge: true, notifMessages: true, privateProfile: false, theme: 'system' },
     viewingWorkout: null,
     viewingCharacter: false,
     viewingGoals: false,
