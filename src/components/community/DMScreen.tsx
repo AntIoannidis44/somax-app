@@ -3,13 +3,14 @@ import { Icon } from '../Icon';
 import { TypeIconBadge } from '../TypeIconBadge';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
-import { clearConversation, deleteDM, fetchConversation, sendDM, subscribeDMs, type DirectMessage, type PostWorkout } from '../../lib/social';
+import { clearConversation, deleteDM, fetchConversation, markConversationRead, sendDM, subscribeDMs, type DirectMessage, type PostWorkout } from '../../lib/social';
 import { saveWorkout } from '../../lib/customWorkouts';
 import { decodeProgramMessage, type SharedProgram } from '../../lib/programShare';
 import { decodeActivityMessage } from '../../lib/activityShare';
 import { expandSets } from '../../lib/workoutSets';
 import { encodeImageMessage, imagePathFromMessage, signedChatImageUrl, uploadChatImage } from '../../lib/chatImage';
 import { RouteMap } from '../train/RouteMap';
+import { setBadgeCount } from '../../lib/badge';
 
 // A photo in chat. The signed link is fetched when it first shows.
 function ChatImage({ path }: { path: string }) {
@@ -155,6 +156,7 @@ export function DMScreen() {
   // Message whose delete option is showing (tap a bubble to reveal it).
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const showToast = useAppStore((s) => s.showToast);
+  const clearUnreadFrom = useAppStore((s) => s.clearUnreadFrom);
 
   useEffect(() => {
     if (!userId) return;
@@ -170,6 +172,20 @@ export function DMScreen() {
       cancelled = true;
       unsubscribe();
     };
+  }, [userId, viewingDM.userId]);
+
+  // Opening this conversation is what "reading" it means - clears both the
+  // per-friend badge in Community and this sender's share of the app icon
+  // badge, without waiting for a server round trip to reflect it locally.
+  useEffect(() => {
+    if (!userId) return;
+    markConversationRead(userId, viewingDM.userId);
+    clearUnreadFrom(viewingDM.userId);
+    const remaining = Object.entries(useAppStore.getState().unreadDM)
+      .filter(([id]) => id !== viewingDM.userId)
+      .reduce((sum, [, n]) => sum + n, 0);
+    setBadgeCount(remaining);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, viewingDM.userId]);
 
   useEffect(() => {

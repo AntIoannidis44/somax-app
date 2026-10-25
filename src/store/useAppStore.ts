@@ -133,6 +133,9 @@ export interface Toast {
 interface TransientState {
   toast: Toast | null;
   levelUp: { id: number; level: number } | null;
+  // Unread DM count per sender - live, derived from direct_messages, never
+  // part of the synced cloud snapshot (see cloudSync.ts's stateForCloud).
+  unreadDM: Record<string, number>;
 }
 
 interface Actions {
@@ -145,6 +148,8 @@ interface Actions {
   closeGoals: () => void;
   openDM: (userId: string, name: string) => void;
   closeDM: () => void;
+  setUnreadDM: (counts: Record<string, number>) => void;
+  clearUnreadFrom: (senderId: string) => void;
   openGroup: (groupId: string, name: string) => void;
   closeGroup: () => void;
   openProfile: (userId: string) => void;
@@ -242,6 +247,7 @@ export const useAppStore = create<Store>()(
       ...defaultAppState(),
       toast: null,
       levelUp: null,
+      unreadDM: {},
 
       go: (route) =>
         set({
@@ -272,6 +278,13 @@ export const useAppStore = create<Store>()(
       closeGoals: () => set({ viewingGoals: false }),
       openDM: (userId, name) => set({ viewingDM: { userId, name } }),
       closeDM: () => set({ viewingDM: null }),
+      setUnreadDM: (counts) => set({ unreadDM: counts }),
+      clearUnreadFrom: (senderId) =>
+        set(
+          produce((s) => {
+            delete s.unreadDM[senderId];
+          }),
+        ),
       openGroup: (groupId, name) => set({ viewingGroup: { groupId, name } }),
       closeGroup: () => set({ viewingGroup: null }),
       openProfile: (userId) => set({ viewingProfile: userId }),
@@ -919,7 +932,7 @@ export const useAppStore = create<Store>()(
           }),
         );
       },
-      resetDemo: () => set({ ...defaultAppState(), toast: null, levelUp: null }),
+      resetDemo: () => set({ ...defaultAppState(), toast: null, levelUp: null, unreadDM: {} }),
 
       showToast: (message) => {
         toastCounter += 1;
@@ -931,7 +944,7 @@ export const useAppStore = create<Store>()(
     }),
     {
       name: 'somax_state_v1',
-      partialize: ({ toast: _toast, levelUp: _levelUp, ...rest }) => rest,
+      partialize: ({ toast: _toast, levelUp: _levelUp, unreadDM: _unreadDM, ...rest }) => rest,
       // v1 -> v2: `goal` changed from a single string to a multi-select
       // string[] (onboarding + profile). Existing saved profiles still
       // have the old string shape, which crashes anything calling

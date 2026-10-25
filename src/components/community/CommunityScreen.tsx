@@ -38,6 +38,7 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
   const openComposer = useAppStore((s) => s.openComposer);
   const myCharacter = useAppStore((s) => s.character);
   const myPhotoUrl = useAppStore((s) => s.profile?.photoUrl ?? null);
+  const unreadDM = useAppStore((s) => s.unreadDM);
   const [posts, setPosts] = useState<CommunityPost[]>([]);
   const [filterType, setFilterType] = useState<string | 'all'>('all');
   const [contentFilter, setContentFilter] = useState<'all' | 'programs' | 'posts'>('all');
@@ -101,10 +102,12 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
         <div className="stories">
           {storyIds.map((id) => {
             const c = characters.get(id)!;
+            const unread = unreadDM[id] ?? 0;
             return (
               <button key={id} className="story" onClick={() => openProfile(id)}>
-                <span className={`av-ring${postedTodayIds.has(id) ? ' on' : ''}`}>
+                <span className={`av-ring${postedTodayIds.has(id) ? ' on' : ''}`} style={{ position: 'relative' }}>
                   <UserAvatar className="story-av" name={c.name} character={c.character} photoUrl={c.photoUrl} />
+                  {unread > 0 && <span className="friend-unread-badge">{unread > 9 ? '9+' : unread}</span>}
                 </span>
                 <span className="n">{c.name.split(' ')[0]}</span>
               </button>
@@ -209,6 +212,7 @@ function FriendsTab({ userId }: { userId: string }) {
   const openDM = useAppStore((s) => s.openDM);
   const openProfile = useAppStore((s) => s.openProfile);
   const setFriendCount = useAppStore((s) => s.setFriendCount);
+  const unreadDM = useAppStore((s) => s.unreadDM);
   const [profiles, setProfiles] = useState<PublicProfile[]>([]);
   const [friendships, setFriendships] = useState<Friendship[]>([]);
   const [query, setQuery] = useState('');
@@ -267,10 +271,12 @@ function FriendsTab({ userId }: { userId: string }) {
 
   function Row({ p, ring, children }: { p: PublicProfile; ring?: boolean; children: React.ReactNode }) {
     const recent = !!p.recent_activity?.[0] && Date.now() - new Date(p.recent_activity[0].at).getTime() < 86400000;
+    const unread = unreadDM[p.user_id] ?? 0;
     return (
       <div className="friend-row">
-        <span className={`av-ring${ring && recent ? ' on' : ''}`}>
+        <span className={`av-ring${ring && recent ? ' on' : ''}`} style={{ position: 'relative' }}>
           <UserAvatar className="league-avatar" name={p.name} character={p.character} photoUrl={p.photo_url} onClick={() => openProfile(p.user_id)} />
+          {unread > 0 && <span className="friend-unread-badge">{unread > 9 ? '9+' : unread}</span>}
         </span>
         <div style={{ flex: 1, minWidth: 0, cursor: 'pointer' }} onClick={() => openProfile(p.user_id)}>
           <div className="league-name">{p.name}</div>

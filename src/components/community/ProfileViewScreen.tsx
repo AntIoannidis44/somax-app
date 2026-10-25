@@ -49,6 +49,7 @@ export function ProfileViewScreen() {
   const viewedId = useAppStore((s) => s.viewingProfile);
   const openDM = useAppStore((s) => s.openDM);
   const openProfile = useAppStore((s) => s.openProfile);
+  const unread = useAppStore((s) => (viewedId ? s.unreadDM[viewedId] ?? 0 : 0));
   const showToast = useAppStore((s) => s.showToast);
   const myId = useUserId();
   const myProfile = useAppStore((s) => s.profile);
@@ -183,8 +184,9 @@ export function ProfileViewScreen() {
               <button className="btn btn-ghost" style={{ flex: 1 }} disabled>
                 <Icon name="check" style={{ width: 15, height: 15 }} /> Friends
               </button>
-              <button className="btn btn-ghost" style={{ flex: 1 }} onClick={() => openDM(profile!.user_id, profile!.name)}>
+              <button className="btn btn-ghost" style={{ flex: 1, position: 'relative' }} onClick={() => openDM(profile!.user_id, profile!.name)}>
                 Message
+                {unread > 0 && <span className="friend-unread-badge" style={{ top: -6, right: -6 }}>{unread > 9 ? '9+' : unread}</span>}
               </button>
               <button className="btn btn-ghost pv-share" onClick={() => setSharePickerOpen(true)} aria-label={`Share a workout with ${profile.name}`}>
                 <Icon name="dumbbell" style={{ width: 17, height: 17 }} />

@@ -44,6 +44,24 @@ export async function registerForPush(userId: string): Promise<boolean> {
   return true;
 }
 
+let tapHandlerBound = false;
+
+// A message push carries the sender's id/name as custom data (see the
+// notify-message Edge Function) specifically so tapping it - lock screen
+// swipe, or the in-app banner while unlocked - can open that exact
+// conversation instead of just bringing the app to the foreground on
+// whatever screen it was already on. Safe to call once at startup,
+// independent of registerForPush - this only reacts to a tap on a
+// notification that already arrived, it doesn't request anything itself.
+export function registerPushTapHandler(onOpenDM: (senderId: string, senderName: string) => void): void {
+  if (!pushAvailableOnPlatform() || tapHandlerBound) return;
+  tapHandlerBound = true;
+  PushNotifications.addListener('pushNotificationActionPerformed', (action) => {
+    const data = action.notification.data as { senderId?: string } | undefined;
+    if (data?.senderId) onOpenDM(data.senderId, action.notification.title ?? 'Message');
+  });
+}
+
 export async function unregisterPushToken(userId: string): Promise<void> {
   if (!pushAvailableOnPlatform()) return;
   const current = await PushNotifications.checkPermissions();

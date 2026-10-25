@@ -32,7 +32,9 @@ import {
   getTodayWorkouts,
 } from './lib/health';
 import { syncLocalReminders } from './lib/notifications';
-import { registerForPush } from './lib/push';
+import { registerForPush, registerPushTapHandler } from './lib/push';
+import { fetchUnreadDMCounts, subscribeDMs } from './lib/social';
+import { setBadgeCount } from './lib/badge';
 import { todayPlan, isWorkoutDone } from './lib/schedule';
 import { categoryForActivityName } from './data/workoutTypes';
 import { recordActivityForGoals } from './lib/fitnessGoals';
@@ -106,6 +108,8 @@ function App() {
   const syncWatchWorkout = useAppStore((s) => s.syncWatchWorkout);
   const awardFitnessGoalXP = useAppStore((s) => s.awardFitnessGoalXP);
   const showToast = useAppStore((s) => s.showToast);
+  const setUnreadDM = useAppStore((s) => s.setUnreadDM);
+  const openDM = useAppStore((s) => s.openDM);
   const settings = useAppStore((s) => s.settings);
   const weekPlan = useAppStore((s) => s.weekPlan);
   const workoutState = useAppStore((s) => s.workoutState);
@@ -255,6 +259,14 @@ function App() {
   }, [session, onboarded, settings, weekPlan, workoutState, simDay, today, currentStreak, challenges]);
 
   useEffect(() => {
+    // Independent of permission/registration state - this only reacts to a
+    // tap on a notification that already arrived, so it's safe (and needed)
+    // to have listening from app start regardless of whether push is set up
+    // yet this session.
+    registerPushTapHandler(openDM);
+  }, [openDM]);
+
+  useEffect(() => {
     // League-update/message pushes need a registered device token before the
     // server-side trigger has anywhere to send them - registers (or
     // re-confirms) on sign-in whenever a push setting is already on, e.g.
@@ -267,6 +279,24 @@ function App() {
       if (!ok) showToast('Push notifications are off for SOMAXX - enable them in iOS Settings');
     });
   }, [session, onboarded, userId, settings.notifLeague, settings.notifMessages, showToast]);
+
+  useEffect(() => {
+    if (!session || !onboarded || !userId) return;
+    let cancelled = false;
+    function refresh() {
+      fetchUnreadDMCounts(userId!).then((counts) => {
+        if (cancelled) return;
+        setUnreadDM(counts);
+        setBadgeCount(Object.values(counts).reduce((sum, n) => sum + n, 0));
+      });
+    }
+    refresh();
+    const unsubscribe = subscribeDMs(refresh);
+    return () => {
+      cancelled = true;
+      unsubscribe();
+    };
+  }, [session, onboarded, userId, setUnreadDM]);
 
   useEffect(() => {
     if (!session) return;

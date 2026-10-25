@@ -9,7 +9,7 @@ let debounceTimer: ReturnType<typeof setTimeout> | null = null;
 function stateForCloud() {
   // Same shape as the localStorage persist partialize - just drop the
   // transient UI fields (toast/levelUp), everything else is plain data.
-  const { toast: _toast, levelUp: _levelUp, ...rest } = useAppStore.getState();
+  const { toast: _toast, levelUp: _levelUp, unreadDM: _unreadDM, ...rest } = useAppStore.getState();
   return rest;
 }
 

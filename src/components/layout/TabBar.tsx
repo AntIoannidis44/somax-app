@@ -15,6 +15,7 @@ export function TabBar() {
   const onboarded = useAppStore((s) => s.onboarded);
   const route = useAppStore((s) => s.route);
   const go = useAppStore((s) => s.go);
+  const unreadTotal = useAppStore((s) => Object.values(s.unreadDM).reduce((sum, n) => sum + n, 0));
 
   if (!onboarded) return null;
 
@@ -26,7 +27,10 @@ export function TabBar() {
           className={`tab${route === t.id ? ' active' : ''}`}
           onClick={() => go(t.id)}
         >
-          <Icon name={t.icon} />
+          <span style={{ position: 'relative', display: 'inline-flex' }}>
+            <Icon name={t.icon} />
+            {t.id === 'community' && unreadTotal > 0 && <span className="tab-badge">{unreadTotal > 9 ? '9+' : unreadTotal}</span>}
+          </span>
           <span>{t.label}</span>
         </button>
       ))}

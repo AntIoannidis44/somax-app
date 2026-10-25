@@ -53,7 +53,7 @@ async function apnsJwt(): Promise<string> {
   return token;
 }
 
-async function sendApnsPush(deviceToken: string, title: string, body: string): Promise<boolean> {
+async function sendApnsPush(deviceToken: string, title: string, body: string, badge: number, senderId: string): Promise<boolean> {
   const jwt = await apnsJwt();
   const res = await fetch(`https://${APNS_HOST}/3/device/${deviceToken}`, {
     method: 'POST',
@@ -64,9 +64,14 @@ async function sendApnsPush(deviceToken: string, title: string, body: string): P
       'apns-priority': '5',
       'content-type': 'application/json',
     },
-    body: JSON.stringify({ aps: { alert: { title, body }, sound: 'default' } }),
+    // senderId rides alongside `aps`, not inside it - APNs passes the whole
+    // payload through as-is, and the app reads this custom field to open
+    // the right conversation when the notification is tapped (see
+    // registerPushTapHandler in push.ts) instead of just foregrounding to
+    // whatever screen was already open.
+    body: JSON.stringify({ aps: { alert: { title, body }, sound: 'default', badge }, senderId }),
   });
-  if (!res.ok) console.error('[notify-league-update] APNs error', res.status, await res.text());
+  if (!res.ok) console.error('[notify-message] APNs error', res.status, await res.text());
   return res.ok;
 }
 
@@ -92,10 +97,20 @@ Deno.serve(async (req) => {
   const senderName = senderProfile?.name ?? 'Someone';
   const preview = typeof text === 'string' ? text.slice(0, 120) : 'sent you a message';
 
+  // Total unread across every sender, not just this one message - the app
+  // icon badge is one number, matching what the in-app unread count would
+  // show. This message was already inserted (unread) before the trigger
+  // that called this function fired, so it's included here for free.
+  const { count: badge } = await supabase
+    .from('direct_messages')
+    .select('id', { count: 'exact', head: true })
+    .eq('recipient_id', recipient_id)
+    .eq('read', false);
+
   const { data: tokens } = await supabase.from('push_tokens').select('token').eq('user_id', recipient_id);
   let sent = 0;
   for (const { token } of tokens ?? []) {
-    const ok = await sendApnsPush(token, senderName, preview);
+    const ok = await sendApnsPush(token, senderName, preview, badge ?? 1, sender_id);
     if (ok) sent++;
   }
 

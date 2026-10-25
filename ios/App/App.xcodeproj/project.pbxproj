@@ -20,6 +20,7 @@
 		A3983ED161EF462EB5F32B88 /* PhotoCheckPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238AEEB684664B5592D79039 /* PhotoCheckPlugin.swift */; };
 		BCF524616FB9B794C0EE8B38 /* LocationSearchPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BBC6764CF725E3A6F18D10 /* LocationSearchPlugin.swift */; };
 		204E7C13E94D0A9D1BD7CB33 /* ScaleReaderPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDF204E93C769816A81A09 /* ScaleReaderPlugin.swift */; };
+		362BE37FA404EC74801D5A06 /* BadgePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2961C06268FFE33A8010AE77 /* BadgePlugin.swift */; };
 		B590D844E9164F819FCAEDE9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DCE201C6E0438FA2E4F6D0 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		238AEEB684664B5592D79039 /* PhotoCheckPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCheckPlugin.swift; sourceTree = "<group>"; };
 		F5BBC6764CF725E3A6F18D10 /* LocationSearchPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchPlugin.swift; sourceTree = "<group>"; };
 		92EDF204E93C769816A81A09 /* ScaleReaderPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleReaderPlugin.swift; sourceTree = "<group>"; };
+		2961C06268FFE33A8010AE77 /* BadgePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePlugin.swift; sourceTree = "<group>"; };
 		22DCE201C6E0438FA2E4F6D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3809CD209EEE442080D7B7BF /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				238AEEB684664B5592D79039 /* PhotoCheckPlugin.swift */,
 				F5BBC6764CF725E3A6F18D10 /* LocationSearchPlugin.swift */,
 				92EDF204E93C769816A81A09 /* ScaleReaderPlugin.swift */,
+				2961C06268FFE33A8010AE77 /* BadgePlugin.swift */,
 				22DCE201C6E0438FA2E4F6D0 /* MainViewController.swift */,
 				3809CD209EEE442080D7B7BF /* App.entitlements */,
 				50379B222058CBB4000EE86E /* capacitor.config.json */,
@@ -181,6 +184,7 @@
 				A3983ED161EF462EB5F32B88 /* PhotoCheckPlugin.swift in Sources */,
 				BCF524616FB9B794C0EE8B38 /* LocationSearchPlugin.swift in Sources */,
 				204E7C13E94D0A9D1BD7CB33 /* ScaleReaderPlugin.swift in Sources */,
+				362BE37FA404EC74801D5A06 /* BadgePlugin.swift in Sources */,
 				B590D844E9164F819FCAEDE9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

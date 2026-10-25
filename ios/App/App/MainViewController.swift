@@ -10,5 +10,6 @@ class MainViewController: CAPBridgeViewController {
         bridge?.registerPluginInstance(PhotoCheckPlugin())
         bridge?.registerPluginInstance(LocationSearchPlugin())
         bridge?.registerPluginInstance(ScaleReaderPlugin())
+        bridge?.registerPluginInstance(BadgePlugin())
     }
 }

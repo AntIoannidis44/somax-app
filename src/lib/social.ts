@@ -300,6 +300,28 @@ export async function sendDM(senderId: string, recipientId: string, text: string
   if (error) console.error('[social] sendDM:', error.message);
 }
 
+// Unread count per sender, for the Community friend list / tab badge / app
+// icon badge - not a single total, since the UI needs to show which
+// specific friend(s) a message is from, not just a count.
+export async function fetchUnreadDMCounts(userId: string): Promise<Record<string, number>> {
+  const { data, error } = await supabase.from('direct_messages').select('sender_id').eq('recipient_id', userId).eq('read', false);
+  if (error) {
+    console.error('[social] fetchUnreadDMCounts:', error.message);
+    return {};
+  }
+  const counts: Record<string, number> = {};
+  for (const row of data) counts[row.sender_id] = (counts[row.sender_id] ?? 0) + 1;
+  return counts;
+}
+
+// Marks every message from one specific sender as read - called when their
+// conversation is opened, not globally, so unread counts for OTHER senders
+// stay correct.
+export async function markConversationRead(userId: string, senderId: string): Promise<void> {
+  const { error } = await supabase.from('direct_messages').update({ read: true }).eq('recipient_id', userId).eq('sender_id', senderId).eq('read', false);
+  if (error) console.error('[social] markConversationRead:', error.message);
+}
+
 // Removes a message for both people in the chat (the delete rule lets either
 // side remove any message in their own conversation).
 export async function deleteDM(messageId: string): Promise<boolean> {
