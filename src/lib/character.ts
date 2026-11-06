@@ -29,10 +29,12 @@ interface UnlockContext {
   level: number;
   longestStreak: number;
   prestige?: number;
+  keeps?: string[];
 }
 
 export function isUnlocked(item: CatalogItem | undefined | null, ctx: UnlockContext): boolean {
   if (!item || !item.unlock) return true;
+  if (ctx.keeps?.includes(item.id)) return true;
   const u = item.unlock;
   if (u.level && ctx.level < u.level) return false;
   if (u.streak && ctx.longestStreak < u.streak) return false;
@@ -54,7 +56,7 @@ export function lockHint(item: CatalogItem): string {
   return `Hit a ${u?.streak}-day streak to unlock ${item.name}`;
 }
 
-const WARDROBE_KEYS: CatalogKey[] = ['hair', 'outfit', 'build', 'hairColor', 'outfitColor', 'skin', 'top', 'bottom', 'shoes', 'gymColor'];
+const WARDROBE_KEYS: CatalogKey[] = ['hair', 'outfit', 'build', 'hairColor', 'outfitColor', 'skin', 'top', 'bottom', 'legwear', 'acc', 'shoes', 'gymColor'];
 
 export function allWardrobe(): { key: CatalogKey; item: CatalogItem }[] {
   const out: { key: CatalogKey; item: CatalogItem }[] = [];

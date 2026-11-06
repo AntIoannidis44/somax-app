@@ -1,3 +1,4 @@
+import { fitWearToBase } from '../data/catalog';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { produce } from 'immer';
@@ -204,7 +205,7 @@ interface Actions {
   awardWeightGoalXP: (label: string, opts?: { completed?: boolean }) => void;
   awardFitnessGoalXP: (label: string, amount: number, opts?: { completed?: boolean }) => void;
 
-  updateCharacterField: (key: CatalogKey | 'base' | 'build' | 'skin' | 'hairColor' | 'topColor' | 'bottomColor' | 'shoesColor', value: string | number) => void;
+  updateCharacterField: (key: CatalogKey | 'keeps' | 'tiersV2' | 'base' | 'build' | 'skin' | 'hairColor' | 'topColor' | 'bottomColor' | 'shoesColor', value: string | string[] | boolean | number) => void;
 
   toggleSetting: (key: keyof Settings) => void;
   setTheme: (theme: Settings['theme']) => void;
@@ -867,7 +868,7 @@ export const useAppStore = create<Store>()(
           return;
         }
         if (key === 'base') {
-          set(produce((st) => { st.character!.base = value as 'female' | 'male'; }));
+          set(produce((st) => { st.character = { ...fitWearToBase(st.character!, value as 'female' | 'male'), base: value as 'female' | 'male' }; }));
           return;
         }
         if (key === 'build') {

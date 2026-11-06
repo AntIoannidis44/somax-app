@@ -1,4 +1,4 @@
-import type { CatalogKey, CharTier, HairItem, CatalogItem, OutfitItem, BodyBuild } from '../types';
+import type { CatalogKey, CharacterBase, CharTier, HairItem, CatalogItem, OutfitItem, BodyBuild } from '../types';
 
 export const CHAR_TIERS: CharTier[] = [
   { min: 1, name: 'Novice', c1: '#4f7fd4', c2: '#1c3d86' },
@@ -73,7 +73,7 @@ export const OUTFITS: OutfitItem[] = [
   { id: 'none', name: 'Default' },
   { id: 'trainer', name: 'Trainer kit' },
   { id: 'ranger', name: 'Ranger', unlock: { level: 15 } },
-  { id: 'noble', name: 'Noble', unlock: { level: 17 } },
+  { id: 'noble', name: 'Noble', unlock: { level: 40 } },
   { id: 'knight', name: 'Knight', unlock: { prestige: 1 } },
   { id: 'wizard', name: 'Wizard', unlock: { prestige: 2 } },
 ];
@@ -103,6 +103,12 @@ export const GYM_TOPS: HairItem[] = [
   { id: 'singletTightM', name: 'Singlet (tight)', base: 'male' },
   { id: 'teeLooseM', name: 'Tee (loose)', base: 'male', unlock: { level: 3 } },
   { id: 'singletLoose', name: 'Singlet (loose)', base: 'male', unlock: { level: 6 } },
+  { id: 'trackJacketF', name: 'Track jacket', base: 'female', unlock: { level: 19 } },
+  { id: 'trackJacketM', name: 'Track jacket', base: 'male', unlock: { level: 19 } },
+  { id: 'pufferF', name: 'Puffer jacket', base: 'female', unlock: { level: 24 } },
+  { id: 'pufferM', name: 'Puffer jacket', base: 'male', unlock: { level: 24 } },
+  { id: 'leotard', name: 'Leotard', base: 'female', unlock: { level: 36 } },
+  { id: 'ringerTee', name: 'Ringer tee', base: 'male', unlock: { level: 36 } },
 ];
 export const GYM_BOTTOMS: HairItem[] = [
   { id: 'none', name: 'None' },
@@ -112,6 +118,24 @@ export const GYM_BOTTOMS: HairItem[] = [
   { id: 'shortsMale', name: 'Shorts', base: 'male' },
   { id: 'bikeShortsMale', name: 'Bike shorts', base: 'male', unlock: { level: 4 } },
   { id: 'trackpants', name: 'Track pants', unlock: { level: 8 } },
+  { id: 'jeans', name: 'Jeans', base: 'female', unlock: { level: 13 } },
+  { id: 'jeansM', name: 'Jeans', base: 'male', unlock: { level: 13 } },
+  { id: 'cargo', name: 'Cargos', base: 'female', unlock: { level: 16 } },
+  { id: 'cargoM', name: 'Cargos', base: 'male', unlock: { level: 16 } },
+  { id: 'leggingsRetro', name: 'Shiny leggings', base: 'female', unlock: { level: 33 } },
+  { id: 'retroShorts', name: 'Retro shorts', base: 'male', unlock: { level: 33 } },
+];
+export const GYM_LEGWEAR: HairItem[] = [
+  { id: 'none', name: 'None' },
+  { id: 'legWarmers', name: 'Leg warmers', base: 'female', unlock: { level: 30 } },
+  { id: 'tubeSocks', name: 'Tube socks', base: 'male', unlock: { level: 30 } },
+];
+// Worn in any combination; ids match ACCESSORIES in gymWear.ts.
+export const GYM_ACC: CatalogItem[] = [
+  { id: 'headband', name: 'Headband', unlock: { level: 5 } },
+  { id: 'wristbands', name: 'Wristbands', unlock: { level: 7 } },
+  { id: 'watch', name: 'Watch', unlock: { level: 9 } },
+  { id: 'bag', name: 'Crossbody bag', unlock: { level: 11 } },
 ];
 export const GYM_SHOES: CatalogItem[] = [
   { id: 'none', name: 'Barefoot' },
@@ -136,6 +160,8 @@ export const GYM_COLORS: (CatalogItem & { hex: string })[] = [
 export const CATALOG: Record<CatalogKey, CatalogItem[]> = {
   top: GYM_TOPS,
   bottom: GYM_BOTTOMS,
+  legwear: GYM_LEGWEAR,
+  acc: GYM_ACC,
   shoes: GYM_SHOES,
   gymColor: GYM_COLORS,
   hair: HAIR_STYLES,
@@ -145,3 +171,19 @@ export const CATALOG: Record<CatalogKey, CatalogItem[]> = {
   outfitColor: OUTFIT_COLORS,
   skin: SKIN_TONES,
 };
+
+// Tops, bottoms, legwear and hair are tied to a base. Anything that doesn't belong to `base` swaps to the same
+// item made for it (jeans for jeans), or to that base's first free item (legwear just comes off). Used when
+// switching base, and again when a character is built, so a saved or shared look can't break the rule.
+export function fitWearToBase<T extends { base: CharacterBase; top?: string; bottom?: string; legwear?: string; hair?: string }>(cfg: T, base: CharacterBase = cfg.base): T {
+  const lists: [('top' | 'bottom' | 'legwear' | 'hair'), HairItem[]][] = [['top', GYM_TOPS], ['bottom', GYM_BOTTOMS], ['legwear', GYM_LEGWEAR], ['hair', HAIR_STYLES]];
+  let out = cfg;
+  for (const [key, list] of lists) {
+    const item = list.find((x) => x.id === cfg[key]);
+    if (!item?.base || item.base === base) continue;
+    const twin = list.find((x) => x.base === base && x.name === item.name);
+    const free = list.find((x) => x.base === base && !x.unlock);
+    out = { ...out, [key]: key === 'legwear' ? 'none' : (twin ?? free)?.id ?? 'none' };
+  }
+  return out;
+}

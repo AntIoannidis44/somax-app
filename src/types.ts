@@ -33,6 +33,12 @@ export interface CharacterConfig {
   topColor?: number;
   bottomColor?: number;
   shoesColor?: number;
+  legwear?: string;
+  // accessory names, any combination (see ACCESSORIES in gymWear.ts)
+  acc?: string[];
+  // items kept from before an unlock moved to a higher level
+  keeps?: string[];
+  tiersV2?: boolean;
 }
 
 export interface UnlockRule {
@@ -54,7 +60,7 @@ export interface HairItem extends CatalogItem {
 
 export interface OutfitItem extends CatalogItem {}
 
-export type CatalogKey = 'hair' | 'outfit' | 'build' | 'hairColor' | 'outfitColor' | 'skin' | 'top' | 'bottom' | 'shoes' | 'gymColor';
+export type CatalogKey = 'hair' | 'outfit' | 'build' | 'hairColor' | 'outfitColor' | 'skin' | 'top' | 'bottom' | 'legwear' | 'acc' | 'shoes' | 'gymColor';
 
 export interface CharTier {
   min: number;
@@ -318,7 +324,7 @@ export interface Settings {
 }
 
 export type Route = 'home' | 'train' | 'play' | 'community' | 'profile';
-export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'hairColor' | 'outfit' | 'outfitColor' | 'top' | 'bottom' | 'shoes' | 'topColor' | 'bottomColor' | 'shoesColor';
+export type StudioCat = 'base' | 'build' | 'skin' | 'hair' | 'hairColor' | 'outfit' | 'outfitColor' | 'top' | 'bottom' | 'legwear' | 'acc' | 'shoes' | 'topColor' | 'bottomColor' | 'shoesColor';
 export type PlayTab = 'challenges' | 'league' | 'achv';
 
 export interface AppState {

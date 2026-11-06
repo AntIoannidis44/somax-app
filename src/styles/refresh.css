@@ -808,6 +808,9 @@ button.day-pill{ font:inherit; color:inherit; }
 .st2-cat.on{ background: var(--accent-soft); color: var(--accent); }
 .st2-subrow{ display:flex; gap:6px; padding:10px 0 2px; }
 .st2-subrow.four{ display:grid; grid-template-columns:repeat(4,1fr); gap:5px; }
+.st2-subrow.six{ gap:5px; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; margin:0 -12px; padding-left:12px; padding-right:12px; }
+.st2-subrow.six::-webkit-scrollbar{ display:none; }
+.st2-subrow.six .st2-sub{ flex:0 0 auto; padding:0 12px; }
 .st2-sub{ height:34px; padding:0 14px; border-radius:999px; border:1px solid var(--line-2); background: var(--surface); font:inherit; font-size:12.5px; font-weight:700; color: var(--text-dim); display:flex; align-items:center; justify-content:center; gap:4px; cursor:pointer; }
 .st2-subrow.four .st2-sub{ padding:0 4px; }
 .st2-sub.on{ background: var(--text); color: var(--bg); border-color: var(--text); }

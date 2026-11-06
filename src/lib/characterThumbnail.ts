@@ -42,7 +42,7 @@ function scheduleRender(job: () => Promise<void>): Promise<void> {
 }
 
 function cacheKey(cfg: CharacterConfig, mode: ThumbnailMode): string {
-  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.hairColor}|${cfg.outfit}|${cfg.outfitColor}|${cfg.top ?? ''}|${cfg.bottom ?? ''}|${cfg.shoes ?? ''}|${cfg.topColor ?? 0}|${cfg.bottomColor ?? 0}|${cfg.shoesColor ?? 0}|${mode}`;
+  return `${cfg.base}|${cfg.build}|${cfg.skin}|${cfg.hair}|${cfg.hairColor}|${cfg.outfit}|${cfg.outfitColor}|${cfg.top ?? ''}|${cfg.bottom ?? ''}|${cfg.shoes ?? ''}|${cfg.legwear ?? ''}|${(cfg.acc ?? []).join(',')}|${cfg.topColor ?? 0}|${cfg.bottomColor ?? 0}|${cfg.shoesColor ?? 0}|${mode}`;
 }
 
 export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode): Promise<string> {

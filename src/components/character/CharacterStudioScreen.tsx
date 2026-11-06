@@ -1,17 +1,18 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
-import { BODY_BUILDS, CATALOG, GYM_COLORS, GYM_BOTTOMS, GYM_SHOES, GYM_TOPS, HAIR_COLORS, OUTFITS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
+import { BODY_BUILDS, CATALOG, fitWearToBase, GYM_ACC, GYM_COLORS, GYM_BOTTOMS, GYM_LEGWEAR, GYM_SHOES, GYM_TOPS, HAIR_COLORS, OUTFITS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
 import { countUnlocked, isUnlocked, lockHint, nextUnlock, tierFor, unlockLabel } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
 import type { IconName } from '../../data/icons';
 import type { CatalogItem, CharacterBase, CharacterConfig, HairItem, StudioCat } from '../../types';
 
 type Tab = 'base' | 'build' | 'skin' | 'hair' | 'attire';
-type AttireSub = 'outfit' | 'top' | 'bottom' | 'shoes';
-type GymSlot = 'top' | 'bottom' | 'shoes';
+type AttireSub = 'outfit' | 'top' | 'bottom' | 'legwear' | 'shoes' | 'acc';
+type GymSlot = 'top' | 'bottom' | 'legwear' | 'shoes';
+type ColorSlot = 'top' | 'bottom' | 'shoes';
 
 const TABS: { id: Tab; label: string; icon: IconName }[] = [
   { id: 'base', label: 'Base', icon: 'profile' },
@@ -24,10 +25,14 @@ const ATTIRE_SUBS: { id: AttireSub; label: string }[] = [
   { id: 'outfit', label: 'Outfits' },
   { id: 'top', label: 'Tops' },
   { id: 'bottom', label: 'Bottoms' },
+  { id: 'legwear', label: 'Legwear' },
   { id: 'shoes', label: 'Shoes' },
+  { id: 'acc', label: 'Extras' },
 ];
+// Jackets, puffers and denim have their colours painted in, so a colour choice wouldn't show.
+const fixedColour = (id: string) => /^(trackJacket|puffer|jeans)/.test(id);
 const BASE_LABEL: Record<CharacterBase, string> = { male: 'Masculine', female: 'Feminine' };
-const GYM_LISTS: Record<GymSlot, CatalogItem[]> = { top: GYM_TOPS, bottom: GYM_BOTTOMS, shoes: GYM_SHOES };
+const GYM_LISTS: Record<GymSlot, CatalogItem[]> = { top: GYM_TOPS, bottom: GYM_BOTTOMS, legwear: GYM_LEGWEAR, shoes: GYM_SHOES };
 const COLOR_KEY = { top: 'topColor', bottom: 'bottomColor', shoes: 'shoesColor' } as const;
 
 // The stage is pinned above the list and shrinks from SH_MAX to SH_MIN as
@@ -46,6 +51,8 @@ function attireFor(cat: StudioCat): AttireSub {
   if (cat.startsWith('top')) return 'top';
   if (cat.startsWith('bottom')) return 'bottom';
   if (cat.startsWith('shoes')) return 'shoes';
+  if (cat === 'legwear') return 'legwear';
+  if (cat === 'acc') return 'acc';
   return 'outfit';
 }
 
@@ -137,7 +144,15 @@ export function CharacterStudioScreen() {
     setStageH(SH_MAX);
   }
 
-  const ctx = { level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige };
+  const ctx = { level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige, keeps: character.keeps };
+  // Noble moved from level 17 to 40: anyone who'd already reached it keeps it. Done here, on a normal
+  // user action, not at startup, so it can't race the cloud load.
+  useEffect(() => {
+    if (character.tiersV2) return;
+    if (progress.level >= 17) updateCharacterField('keeps', [...(character.keeps ?? []), 'noble']);
+    updateCharacterField('tiersV2', true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [character.tiersV2]);
   CTX_REF.current = ctx;
   const t = tierFor(progress.level);
   const cu = countUnlocked(ctx);
@@ -179,6 +194,17 @@ export function CharacterStudioScreen() {
     });
   }
 
+  function toggleAcc(item: CatalogItem) {
+    guard(item, () => {
+      const on = character.acc ?? [];
+      updateCharacterField('acc', on.includes(item.id) ? on.filter((x) => x !== item.id) : [...on, item.id]);
+      if (character.outfit !== 'none') {
+        updateCharacterField('outfit', 'none');
+        showToast('Outfit off - wearing gym wear');
+      }
+    });
+  }
+
   function shuffle() {
     const pick = <T extends CatalogItem>(list: T[]) => {
       const ok = list.map((x, i) => [x, i] as const).filter(([x]) => isUnlocked(x, ctx));
@@ -193,7 +219,7 @@ export function CharacterStudioScreen() {
       updateCharacterField('outfitColor', pick(OUTFIT_COLORS)[1]);
     } else {
       updateCharacterField('outfit', 'none');
-      (['top', 'bottom', 'shoes'] as GymSlot[]).forEach((slot) => {
+      (['top', 'bottom', 'shoes'] as ColorSlot[]).forEach((slot) => {
         const list = slot === 'shoes' ? GYM_SHOES : forBase(GYM_LISTS[slot] as HairItem[]);
         updateCharacterField(slot, pick(list.filter((x) => x.id !== 'none'))[0].id);
         updateCharacterField(COLOR_KEY[slot], pick(GYM_COLORS)[1]);
@@ -218,10 +244,10 @@ export function CharacterStudioScreen() {
               {outfitItem?.name} · {OUTFIT_COLORS[character.outfitColor]?.name}
             </span>
           ) : (
-            (['top', 'bottom', 'shoes'] as GymSlot[]).map((slot) => {
+            (['top', 'bottom', 'legwear', 'shoes'] as GymSlot[]).filter((slot) => slot !== 'legwear' || (character.legwear ?? 'none') !== 'none').map((slot) => {
               const id = character[slot] ?? 'none';
               const it = GYM_LISTS[slot].find((x) => x.id === id);
-              const col = GYM_COLORS[character[COLOR_KEY[slot]] ?? 0];
+              const col = slot === 'legwear' ? undefined : GYM_COLORS[character[COLOR_KEY[slot]] ?? 0];
               return (
                 <span className="piece" key={slot}>
                   {id !== 'none' && <i className={col?.hex ? '' : 'orig'} style={col?.hex ? { background: col.hex } : undefined} />}
@@ -249,7 +275,7 @@ export function CharacterStudioScreen() {
                 key={b}
                 sel={character.base === b}
                 name={BASE_LABEL[b]}
-                art={<CharacterThumbnail cfg={{ ...character, base: b }} mode="full" />}
+                art={<CharacterThumbnail cfg={{ ...fitWearToBase(character, b), base: b }} mode="full" />}
                 onPick={() => updateCharacterField('base', b)}
               />
             ))}
@@ -362,26 +388,44 @@ export function CharacterStudioScreen() {
       );
     }
 
+    if (attireSub === 'acc') {
+      const base: CharacterConfig = { ...character, hair: 'none', outfit: 'none' };
+      const on = character.acc ?? [];
+      return (
+        <>
+          <div className="st2-hint">
+            <Icon name="info" />
+            <span>Wear any mix. Wristbands and watches stay under jacket sleeves.</span>
+          </div>
+          <div className="st2-tiles">
+            {GYM_ACC.map((it) => (
+              <Tile key={it.id} item={it} sel={!wearingOutfit && on.includes(it.id)} name={it.name} art={<CharacterThumbnail cfg={{ ...base, acc: [it.id] }} mode={it.id === 'headband' ? 'head' : 'torso'} />} onPick={() => toggleAcc(it)} />
+            ))}
+          </div>
+        </>
+      );
+    }
+
     const slot = attireSub;
-    const colorKey = COLOR_KEY[slot];
+    const colorKey = slot === 'legwear' ? undefined : COLOR_KEY[slot];
     const list = slot === 'shoes' ? GYM_SHOES : (GYM_LISTS[slot] as HairItem[]).filter((it) => !it.base || it.base === character.base);
     const equipped = character[slot] ?? 'none';
-    const label = slot === 'top' ? 'Top' : slot === 'bottom' ? 'Bottoms' : 'Shoes';
+    const label = slot === 'top' ? 'Top' : slot === 'bottom' ? 'Bottoms' : slot === 'legwear' ? 'Legwear' : 'Shoes';
     // Gym wear previews on the Default outfit (it's only worn with it), with
     // hair off so every tile isn't also reloading hair textures.
     const base: CharacterConfig = { ...character, hair: 'none', outfit: 'none' };
-    const close = slot === 'top' ? 'torso' : slot === 'bottom' ? 'legs' : 'feet';
+    const close = slot === 'top' ? 'torso' : slot === 'bottom' || slot === 'legwear' ? 'legs' : 'feet';
     return (
       <>
         {wearingOutfit && (
           <div className="st2-hint warn">
             <Icon name="info" />
             <span>
-              You're wearing <b>{outfitItem?.name}</b>. Picking {slot === 'shoes' ? 'shoes' : `a ${slot === 'top' ? 'top' : 'bottom'}`} switches you to gym wear.
+              You're wearing <b>{outfitItem?.name}</b>. Picking {slot === 'shoes' ? 'shoes' : slot === 'legwear' ? 'legwear' : `a ${slot === 'top' ? 'top' : 'bottom'}`} switches you to gym wear.
             </span>
           </div>
         )}
-        {equipped !== 'none' && !wearingOutfit && (
+        {equipped !== 'none' && !wearingOutfit && colorKey && !fixedColour(equipped) && (
           <div className="st2-colours">
             <div className="st2-colours-h">
               <b>{label} colour</b>
@@ -457,10 +501,10 @@ export function CharacterStudioScreen() {
             ))}
           </div>
           {tab === 'attire' && (
-            <div className="st2-subrow four">
+            <div className="st2-subrow six">
               {ATTIRE_SUBS.map((s) => {
-                const n = s.id === 'outfit' ? OUTFITS.length - 1 : gymCount(s.id);
-                const worn = s.id === 'outfit' ? wearingOutfit : !wearingOutfit && (character[s.id] ?? 'none') !== 'none';
+                const n = s.id === 'outfit' ? OUTFITS.length - 1 : s.id === 'acc' ? GYM_ACC.length : gymCount(s.id);
+                const worn = s.id === 'outfit' ? wearingOutfit : s.id === 'acc' ? !wearingOutfit && (character.acc?.length ?? 0) > 0 : !wearingOutfit && (character[s.id] ?? 'none') !== 'none';
                 return (
                   <button key={s.id} className={`st2-sub${attireSub === s.id ? ' on' : ''}`} onClick={() => goAttire(s.id)}>
                     {s.label}
