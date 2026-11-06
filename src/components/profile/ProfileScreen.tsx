@@ -11,7 +11,7 @@ import { useAppStore } from '../../store/useAppStore';
 import { supabase } from '../../lib/supabase';
 import { useUserId } from '../../lib/useSession';
 import { uploadProfilePhoto, removeProfilePhoto } from '../../lib/profilePhoto';
-import { countUnlocked, nextUnlock, tierFor } from '../../lib/character';
+import { countUnlocked, nextUnlock, tierFor, wearUnlocked } from '../../lib/character';
 import { first, initials } from '../../lib/format';
 
 export function ProfileScreen() {
@@ -83,6 +83,7 @@ export function ProfileScreen() {
   }
 
   const ctx = { level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige };
+  const wornCharacter = character ? wearUnlocked(character, { ...ctx, keeps: character.keeps }) : character!;
   const nu = nextUnlock(ctx);
   const cu = countUnlocked(ctx);
   const tier = tierFor(progress.level);
@@ -105,7 +106,7 @@ export function ProfileScreen() {
             {profile.photoUrl ? (
               <img src={profile.photoUrl} alt={profile.name} className="fit-img" draggable={false} />
             ) : character ? (
-              <CharacterThumbnail cfg={character} mode="portrait" />
+              <CharacterThumbnail cfg={wornCharacter} mode="portrait" />
             ) : (
               initials(profile.name)
             )}
@@ -158,7 +159,7 @@ export function ProfileScreen() {
             {profile.photoUrl ? (
               <img src={profile.photoUrl} alt={profile.name} className="fit-img" draggable={false} />
             ) : character ? (
-              <CharacterThumbnail cfg={character} mode="portrait" />
+              <CharacterThumbnail cfg={wornCharacter} mode="portrait" />
             ) : (
               initials(profile.name)
             )}
@@ -208,7 +209,7 @@ export function ProfileScreen() {
 
       <div className="section-label">Character</div>
       <div className="char-card" style={{ ['--t1' as string]: tier.c1, ['--t2' as string]: tier.c2 }} onClick={openCharacterStudio}>
-        <div className="char-card-figure">{character && <CharacterThumbnail cfg={character} mode="full" />}</div>
+        <div className="char-card-figure">{character && <CharacterThumbnail cfg={wornCharacter} mode="full" />}</div>
         <div className="char-card-body">
           <div className="char-tier">
             {tierFor(progress.level).name} tier · Lv {progress.level}

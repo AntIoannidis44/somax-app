@@ -2349,7 +2349,7 @@ function fabricMaterial(spec, color, J, U) {
       float knit = sin(vRest.y * 2400.0) * sin(vRest.x * 900.0 + vRest.z * 900.0);
       diffuseColor.rgb *= 1.0 + knit * 0.025 * (1.0 - uDenim);`);
   };
-  mat.customProgramCacheKey = () => `fabric-${spec.denim ? 'd' : ''}${spec.cargo ? 'c' : ''}${spec.belt ? 'b' : ''}-${spec.shoe ? 1 : 0}-${spec.label}-${u.uStripes.value}-${u.uInner.value}-${u.uTrim.value}`;
+  mat.customProgramCacheKey = () => 'fabric'; // one shader for every garment: all differences are uniforms
   return mat;
 }
 
@@ -2367,5 +2367,7 @@ export function joints(skin): Record<string, any> {
 // Typed loosely on purpose: the garment specs are free-form data, tuned per piece in the artifact.
 const GARMENTS_ANY: Record<string, any> = GARMENTS;
 const ACCESSORIES_ANY: Record<string, string[]> = ACCESSORIES;
+// a worker has no canvas to read the skin texture with, so it's handed the result
+const seedUnderwear = (skin: any, U: any) => uwCache.set(skin.geometry, U);
 const paintedMaterialAny: (spec: any, geo: any, cutAboveY?: number | null) => any = paintedMaterial;
-export { GARMENTS_ANY as GARMENTS, MENU, ACCESSORIES_ANY as ACCESSORIES, buildGarment, fabricMaterial, paintedMaterialAny as paintedMaterial, underwear, openGap, openFrontZ, waistOf };
+export { GARMENTS_ANY as GARMENTS, MENU, ACCESSORIES_ANY as ACCESSORIES, buildGarment, fabricMaterial, paintedMaterialAny as paintedMaterial, underwear, openGap, openFrontZ, waistOf, seedUnderwear };

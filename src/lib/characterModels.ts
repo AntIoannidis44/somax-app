@@ -4,6 +4,7 @@ import { clone as skeletonClone } from 'three/examples/jsm/utils/SkeletonUtils.j
 import type { BodyBuild, CharacterBase, CharacterConfig } from '../types';
 import { GYM_COLORS, HAIR_COLORS, fitWearToBase } from '../data/catalog';
 import { buildOutfitFit, type OutfitFit } from './outfitFit';
+import { buildInWorker, isHeavyGarment } from './gymWorkerClient';
 import { ACCESSORIES, GARMENTS, buildGarment, fabricMaterial, joints, openFrontZ, openGap, paintedMaterial, underwear, waistOf } from './gymWear';
 
 const BODY_URLS: Record<BodyBuild, Record<CharacterBase, string>> = {
@@ -287,17 +288,22 @@ function fittedGeometry(fit: OutfitFit, mesh: THREE.SkinnedMesh, key: string): T
 
 // Gym wear: garments are generated from the build's own body (see gymWear.ts), once per
 // base+build+garment, and cached. With shoes on, the feet inside them aren't drawn.
-const gymGeoCache = new Map<string, THREE.BufferGeometry | null>();
+const gymGeoCache = new Map<string, Promise<THREE.BufferGeometry | null>>();
 const footlessCache = new Map<string, THREE.BufferGeometry>();
-function gymGarment(srcSkin: THREE.SkinnedMesh, key: string, base: CharacterBase, build: BodyBuild, over?: any, overKey = ''): THREE.BufferGeometry | null {
+function gymGarment(srcSkin: THREE.SkinnedMesh, U: any, key: string, base: CharacterBase, build: BodyBuild, over?: any, overKey = '', patch?: object): Promise<THREE.BufferGeometry | null> {
   const ck = `${base}|${build}|${key}|${overKey}`;
-  if (!gymGeoCache.has(ck)) {
-    const spec = over || GARMENTS[key];
-    // per-build tweaks (e.g. Athletic only), exactly as approved in the Gym Wardrobe artifact
-    const bspec = spec?.perBuild?.[build] ? { ...spec, ...spec.perBuild[build] } : spec;
-    gymGeoCache.set(ck, bspec ? buildGarment(bspec, srcSkin, joints(srcSkin)) : null);
+  let job = gymGeoCache.get(ck);
+  if (!job) {
+    const onThisThread = () => {
+      const spec = { ...(over || GARMENTS[key]), ...(patch || {}) };
+      // per-build tweaks (e.g. Athletic only), exactly as approved in the Gym Wardrobe artifact
+      const bspec = spec?.perBuild?.[build] ? { ...spec, ...spec.perBuild[build] } : spec;
+      return buildGarment(bspec, srcSkin, joints(srcSkin));
+    };
+    job = isHeavyGarment(key) && !over ? buildInWorker(srcSkin, U, key, build, patch).catch((e) => { console.warn('gym worker unavailable, building on the main thread:', e); return onThisThread(); }) : Promise.resolve().then(onThisThread);
+    gymGeoCache.set(ck, job);
   }
-  return gymGeoCache.get(ck)!;
+  return job;
 }
 // A headband is the same size on every head and folds under the hair: these styles are drawn in front of anything
 // within 2cm, so hair lying over the band always wins and no chips poke through. The band itself isn't changed.
@@ -320,7 +326,7 @@ function coveredBody(srcSkin: THREE.SkinnedMesh, cfg: CharacterConfig, hides: { 
   let g = bodyCutCache.get(ck);
   if (!g) {
     const pos = start.attributes.position, idx = start.index!.array, V = new THREE.Vector3(), keep: number[] = [];
-    const inR = (i: number) => { V.fromBufferAttribute(pos as THREE.BufferAttribute, i); return hides.some(({ hide: r }) => (r.fn ? r.fn(V) : V.y > r.y0 && V.y < r.y1)); };
+    const inR = (i: number) => { V.fromBufferAttribute(pos as THREE.BufferAttribute, i); return hides.some(({ hide: r }) => (r.mask ? r.mask[i] === 1 : r.fn ? r.fn(V) : V.y > r.y0 && V.y < r.y1)); };
     for (let t = 0; t < idx.length; t += 3) if (!(inR(idx[t]) && inR(idx[t + 1]) && inR(idx[t + 2]))) keep.push(idx[t], idx[t + 1], idx[t + 2]);
     g = start.clone();
     g.setIndex(keep);
@@ -397,11 +403,11 @@ export async function composeCharacter(rawCfg: CharacterConfig): Promise<Compose
       const J = joints(srcSkin), U = underwear(srcSkin, J);
       const hides: { key: string; hide: any }[] = [];
       let topHem: number | null = null, topGeo: THREE.BufferGeometry | undefined;
-      const wear = (key: string | undefined, slot: string, color: string | undefined, over?: any, overKey?: string) => {
+      const wear = async (key: string | undefined, slot: string, color: string | undefined, over?: any, overKey?: string, patch?: object) => {
 
         if (!key || key === 'none' || !GARMENTS[key]) return null;
-        const spec = over || GARMENTS[key], tint = color || spec.color;
-        const geo = gymGarment(srcSkin, key, cfg.base, cfg.build, over, overKey);
+        const spec = { ...(over || GARMENTS[key]), ...(patch || {}) }, tint = color || spec.color;
+        const geo = await gymGarment(srcSkin, U, key, cfg.base, cfg.build, over, overKey, patch);
         if (!geo) return null;
         let mat: THREE.Material;
         if (geo.userData.rigid) mat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.62, metalness: 0.05 });
@@ -425,20 +431,20 @@ export async function composeCharacter(rawCfg: CharacterConfig): Promise<Compose
       // a bodysuit goes over leggings but tucks into anything looser
       const bottomSpec = cfg.bottom && GARMENTS[cfg.bottom];
       const tuckAt = topSpec?.bodysuit && bottomSpec && bottomSpec.fit !== 'tight' ? waistOf(bottomSpec, J, U) - 0.025 : null;
-      const worn = tuckAt === null ? wear(cfg.top, 'top', hex(cfg.topColor)) : wear(cfg.top, 'top', hex(cfg.topColor), { ...topSpec, tuckY: tuckAt }, `tuck${tuckAt.toFixed(3)}`);
+      const worn = tuckAt === null ? await wear(cfg.top, 'top', hex(cfg.topColor)) : await wear(cfg.top, 'top', hex(cfg.topColor), { ...topSpec, tuckY: tuckAt }, `tuck${tuckAt.toFixed(3)}`);
       if (worn) { topHem = tuckAt === null ? worn.userData.hemY ?? null : null; topGeo = worn; }
       if (worn && topSpec?.under) { // worn under an open jacket: only the part inside the opening is made
         const under = GARMENTS[topSpec.under.key];
-        wear(topSpec.under.key, 'under', topSpec.under.color, { ...under, keep: (J2: any, U2: any) => [...under.keep(J2, U2), (p: any) => (p.z < openFrontZ(J2, p.y) ? -1 : openGap(topSpec, J2, p.y) + 0.012 - Math.abs(p.x))] }, `under:${cfg.top}`);
+        await wear(topSpec.under.key, 'under', topSpec.under.color, { ...under, keep: (J2: any, U2: any) => [...under.keep(J2, U2), (p: any) => (p.z < openFrontZ(J2, p.y) ? -1 : openGap(topSpec, J2, p.y) + 0.012 - Math.abs(p.x))] }, `under:${cfg.top}`);
       }
-      if (tuckAt === null) wear(cfg.bottom, 'bottom', hex(cfg.bottomColor));
-      else wear(cfg.bottom, 'bottom', hex(cfg.bottomColor), { ...bottomSpec, flatTop: true, overTop: { y: tuckAt, d: 0.016 } }, `over${tuckAt.toFixed(3)}`);
-      wear(cfg.legwear, 'legwear', undefined);
+      if (tuckAt === null) await wear(cfg.bottom, 'bottom', hex(cfg.bottomColor));
+      else await wear(cfg.bottom, 'bottom', hex(cfg.bottomColor), undefined, `over${tuckAt.toFixed(3)}`, { flatTop: true, overTop: { y: tuckAt, d: 0.016 } });
+      await wear(cfg.legwear, 'legwear', undefined);
       for (const name of cfg.acc ?? []) {
         if ((name === 'wristbands' || name === 'watch') && topSpec?.jacket) continue; // long sleeves cover the wrists
-        for (const k of ACCESSORIES[name] ?? []) wear(k, 'acc', undefined, name === 'bag' ? { ...GARMENTS[k], clothesGeo: topGeo } : undefined, name === 'bag' ? `over:${cfg.top ?? ''}` : undefined);
+        for (const k of ACCESSORIES[name] ?? []) await wear(k, 'acc', undefined, name === 'bag' ? { ...GARMENTS[k], clothesGeo: topGeo } : undefined, name === 'bag' ? `over:${cfg.top ?? ''}` : undefined);
       }
-      wear(cfg.shoes, 'shoes', hex(cfg.shoesColor));
+      await wear(cfg.shoes, 'shoes', hex(cfg.shoesColor));
       const shoesOn = !!cfg.shoes && cfg.shoes !== 'none';
       if (shoesOn || hides.length) skin.geometry = coveredBody(srcSkin, cfg, hides, shoesOn);
     }

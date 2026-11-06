@@ -4,8 +4,9 @@ import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
 import { BODY_BUILDS, CATALOG, fitWearToBase, GYM_ACC, GYM_COLORS, GYM_BOTTOMS, GYM_LEGWEAR, GYM_SHOES, GYM_TOPS, HAIR_COLORS, OUTFITS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
-import { countUnlocked, isUnlocked, lockHint, nextUnlock, tierFor, unlockLabel } from '../../lib/character';
+import { countUnlocked, isUnlocked, lockHint, nextUnlock, tierFor, unlockLabel, wearUnlocked } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
+import { isHeavyGarment } from '../../lib/gymWorkerClient';
 import type { IconName } from '../../data/icons';
 import type { CatalogItem, CharacterBase, CharacterConfig, HairItem, StudioCat } from '../../types';
 
@@ -148,11 +149,16 @@ export function CharacterStudioScreen() {
   // Noble moved from level 17 to 40: anyone who'd already reached it keeps it. Done here, on a normal
   // user action, not at startup, so it can't race the cloud load.
   useEffect(() => {
-    if (character.tiersV2) return;
-    if (progress.level >= 17) updateCharacterField('keeps', [...(character.keeps ?? []), 'noble']);
-    updateCharacterField('tiersV2', true);
+    let keeps = character.keeps;
+    if (!character.tiersV2) {
+      if (progress.level >= 17) { keeps = [...(keeps ?? []), 'noble']; updateCharacterField('keeps', keeps); }
+      updateCharacterField('tiersV2', true);
+    }
+    // anything worn but not unlocked comes off for good (e.g. a look saved from a preview build)
+    const clean: any = wearUnlocked(character, { ...ctx, keeps });
+    for (const k of Object.keys(clean)) if (clean[k] !== (character as any)[k]) updateCharacterField(k as any, clean[k]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [character.tiersV2]);
+  }, []);
   CTX_REF.current = ctx;
   const t = tierFor(progress.level);
   const cu = countUnlocked(ctx);
@@ -441,7 +447,7 @@ export function CharacterStudioScreen() {
               item={it}
               sel={!wearingOutfit && equipped === it.id}
               name={it.name}
-              art={<CharacterThumbnail cfg={{ ...base, [slot]: it.id }} mode={close} />}
+              art={isHeavyGarment(it.id) ? <img className="fit-img" src={`/tiles/${character.base}_${character.build}_${it.id}.png`} alt="" draggable={false} /> : <CharacterThumbnail cfg={{ ...base, [slot]: it.id }} mode={close} />}
               onPick={() => pickGym(slot, it)}
             />
           ))}

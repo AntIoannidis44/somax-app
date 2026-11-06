@@ -5,6 +5,7 @@ import { addLights } from '../../lib/characterBuilder';
 import { CLIPS, composeCharacter, fitClipsToCharacter, loadAnimationClips } from '../../lib/characterModels';
 import { Pedestal } from './Pedestal';
 import { useAppStore } from '../../store/useAppStore';
+import { wearUnlocked } from '../../lib/character';
 import type { CharacterConfig } from '../../types';
 
 export type StageView = 'arena' | 'studio';
@@ -176,7 +177,9 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
 export function CharacterStage({ view, anim, cfg, level: levelProp, showPedestal = true, focus = 'body' }: CharacterStageProps) {
   const myCharacter = useAppStore((s) => s.character);
   const myLevel = useAppStore((s) => s.progress.level);
-  const character = cfg ?? myCharacter;
+  const myStreak = useAppStore((s) => s.progress.longestStreak);
+  const myPrestige = useAppStore((s) => s.progress.prestige);
+  const character = cfg ?? (myCharacter && wearUnlocked(myCharacter, { level: myLevel, longestStreak: myStreak, prestige: myPrestige, keeps: myCharacter.keeps }));
   const level = levelProp ?? myLevel;
 
   const rotRef = useRef(view === 'arena' ? -0.22 : -0.3);

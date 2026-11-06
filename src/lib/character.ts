@@ -42,6 +42,21 @@ export function isUnlocked(item: CatalogItem | undefined | null, ctx: UnlockCont
   return true;
 }
 
+// What a character can actually wear at this level: anything locked comes off, or falls back to a free item. Clears
+// looks saved from a preview build, and items whose unlock moved up. Pure, so screens can use it without saving.
+export function wearUnlocked(cfg: CharacterConfig, ctx: UnlockContext): CharacterConfig {
+  const out: any = { ...cfg };
+  const ok = (key: CatalogKey, id: unknown) => isUnlocked(CATALOG[key].find((x) => x.id === id), ctx);
+  const free = (key: CatalogKey) => (CATALOG[key] as (CatalogItem & { base?: CharacterBase })[]).find((x) => x.id !== 'none' && !x.unlock && (!x.base || x.base === cfg.base))?.id ?? 'none';
+  for (const key of ['top', 'bottom', 'hair'] as CatalogKey[]) if (!ok(key, out[key])) out[key] = free(key);
+  for (const key of ['legwear', 'shoes', 'outfit'] as CatalogKey[]) if (!ok(key, out[key])) out[key] = 'none';
+  if (!ok('build', out.build)) out.build = 'regular';
+  if (cfg.acc?.some((id) => !ok('acc', id))) out.acc = cfg.acc.filter((id) => ok('acc', id));
+  const fine = (key: CatalogKey, i: number | undefined) => isUnlocked(CATALOG[key][i ?? 0], ctx);
+  for (const [field, key] of [['skin', 'skin'], ['hairColor', 'hairColor'], ['outfitColor', 'outfitColor'], ['topColor', 'gymColor'], ['bottomColor', 'gymColor'], ['shoesColor', 'gymColor']] as [string, CatalogKey][]) if (!fine(key, out[field])) out[field] = 0;
+  return out;
+}
+
 export function unlockLabel(item: CatalogItem): string {
   if (!item.unlock) return '';
   if (item.unlock.prestige) return 'Evolve ' + item.unlock.prestige;
