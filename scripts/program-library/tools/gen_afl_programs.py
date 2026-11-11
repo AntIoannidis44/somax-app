@@ -20,7 +20,7 @@ def P(**k):
 
 FF_URL = "https://cove.army.gov.au/sites/default/files/2022-05/AFL%20Footy%20First.pdf"
 FF_CREDIT = "FootyFirst - NoGAPS research team (Federation Uni/Monash/Griffith) with the AFL"
-FF_NOTE = ("Free community-football injury-prevention manual (FootyFirst, NoGAPS project, NHMRC-funded with the AFL and partners; endorsed by the AFL "
+FF_NOTE = ("Free community AFL injury-prevention manual (FootyFirst, NoGAPS project, NHMRC-funded with the AFL and partners; endorsed by the AFL "
            "Medical Officers, Physiotherapists and Sports Science associations). Read from the full 48-page manual hosted publicly on the Australian Army's CoVE site; "
            "no copyright/reproduction wording found in the text layer. Only exercise names, sets, reps, tempos and distances recorded; descriptions are ours.")
 
@@ -87,7 +87,7 @@ for lvl, (wk, level, main) in FF_LEVELS.items():
         category="other", level=level, goals=["sport-performance", "strength", "general-fitness"], daysPerWeek=2, sessionMinutes=20,
         equipment=["bodyweight", "cones", "ball", "partner"],
         description=f"The AFL-endorsed leg-injury prevention routine for community footy, level {lvl}: a 5-minute group warm-up, then hamstring, groin and hip strength and a balance/landing/side-stepping drill.",
-        whoItsFor="Community Australian football players (senior and older junior) who want fewer hamstring, groin, knee and ankle injuries. Done on the footy ground with a partner and a ball.",
+        whoItsFor="Community AFL players (senior and older junior) who want fewer hamstring, groin, knee and ankle injuries. Done on the footy ground with a partner and a ball.",
         lifestyle=["outdoor", "minimal-equipment", "time-efficient"],
         howToRun=[
             "Do it at the start of every club training session, at least twice a week, through pre-season and in-season.",
@@ -122,7 +122,7 @@ for i, (opt, lvl) in enumerate([("A", "beginner"), ("C", "advanced")]):
         day=i + 1, daysInSeries=2, category="other", level=lvl, goals=["sport-performance", "mobility", "general-fitness"],
         daysPerWeek=3, sessionMinutes=10, equipment=["cones", "ball", "partner"],
         description=f"The AFL's 10-minute knee and head-injury reduction warm-up for women and girls, all 8 activities at the {'easiest' if opt=='A' else 'hardest'} option: deceleration, cutting, landing, contact, sprinting and balance.",
-        whoItsFor="Women and girls (14+) playing community Australian football, and any player who wants a warm-up that trains landing and change of direction. Needs 16 cones and a partner.",
+        whoItsFor="Women and girls (14+) playing community AFL, and any player who wants a warm-up that trains landing and change of direction. Needs 16 cones and a partner.",
         lifestyle=["outdoor", "minimal-equipment", "time-efficient"],
         howToRun=[
             "Do all 8 activities at the start of every training session and every game (about 10 minutes).",
@@ -144,7 +144,7 @@ for i, (opt, lvl) in enumerate([("A", "beginner"), ("B", "intermediate"), ("C", 
         day=i + 1, daysInSeries=3, category="fitness", level=lvl, goals=["strength", "sport-performance"],
         daysPerWeek=3, sessionMinutes=10, equipment=["bodyweight", "partner"] + (["bench"] if opt == "B" else []),
         description=f"Three no-equipment strength activities from the AFL's Prep to Play program (lower limb, hamstring/glute, core/hip), option {opt}.",
-        whoItsFor="Female community footballers and juniors 14+ (and anyone else) wanting a 10-minute leg, hamstring and groin strength routine at every training.",
+        whoItsFor="Female community AFL players and juniors 14+ (and anyone else) wanting a 10-minute leg, hamstring and groin strength routine at every training.",
         lifestyle=["outdoor", "minimal-equipment", "time-efficient", "home"],
         howToRun=[
             "Do one activity from each of the 3 groups, about 10 minutes, before, during or after every training session.",
@@ -190,7 +190,7 @@ for phase, (goal, page, lvl, goals, cat, days) in MU.items():
             id=f"musashi-afl-{phase}-day-{d}", name=f"Musashi AFL {phase.title()} - {goal} Day {d}", series=f"Musashi AFL {phase.title()}",
             day=d, daysInSeries=3, category=cat, level=lvl, goals=goals, daysPerWeek=3, sessionMinutes=45, equipment=eq,
             description=f"Day {d} of the free 3-day Musashi AFL {phase} plan ('{goal}'), built to sit between club training and games.",
-            whoItsFor=f"Footballers wanting a simple {phase} gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+            whoItsFor=f"AFL players wanting a simple {phase} gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
             lifestyle=["full-gym"] if cat == "gym" else ["outdoor", "minimal-equipment"],
             howToRun=[
                 "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
@@ -240,7 +240,7 @@ for i, (k, rows) in enumerate(armour.items(), 1):
         category="fitness", level=["beginner", "intermediate", "advanced"][i - 1], goals=["strength", "mobility", "sport-performance"],
         daysPerWeek=2, sessionMinutes=20, equipment=["bodyweight", "bench"] if k != "A" else ["bodyweight"],
         description=f"Body Armour {k}: two short circuits targeting the most common running-injury sites (groin, hamstring, calf, hips), done straight after track work.",
-        whoItsFor="Footballers and umpires doing lots of running who want a bodyweight 'prehab' circuit after their run. Grass or gym floor.",
+        whoItsFor="AFL players and umpires doing lots of running who want a bodyweight 'prehab' circuit after their run. Grass or gym floor.",
         lifestyle=["outdoor", "minimal-equipment", "time-efficient", "home"],
         howToRun=["Do it after track work: circuit 1 twice through, then circuit 2 twice through.",
                   "Move from series A to B to C as the static holds and single-leg work feel controlled.",
@@ -416,7 +416,7 @@ somax = [
    basedOn=["rob-jackson-body-weight-flush", "rob-jackson-movement-prep-t1"]),
  S(id="somax-afl-hamstring-groin-bulletproofing", name="Somax AFL Hamstring & Groin Bulletproofing", category="fitness", level="intermediate",
    goals=["strength", "sport-performance"], daysPerWeek=2, sessionMinutes=20, equipment=["bodyweight", "partner", "ball", "slider"],
-   description="Nordics, Copenhagens and friends - the strength work with the best evidence for keeping footballers' hamstrings and groins on the park.",
+   description="Nordics, Copenhagens and friends - the strength work with the best evidence for keeping AFL players' hamstrings and groins on the park.",
    whoItsFor="Players with a history of hamstring or groin trouble, or anyone heading into a running-heavy pre-season. Needs a partner (or a heavy anchor) and a mat.",
    lifestyle=["outdoor", "home", "minimal-equipment", "time-efficient"],
    howToRun=["Pre-season: 2-3 times a week; in-season: once a week, early in the week (not MD-1 or MD-2).",
@@ -443,8 +443,8 @@ somax = [
    basedOn=["prep-to-play-warm-up-option-a", "prep-to-play-warm-up-option-c", "prep-to-play-strength-option-b"]),
  S(id="somax-junior-afl-fundamentals", name="Somax Junior AFL Fundamentals", category="other", level="beginner",
    goals=["general-fitness", "sport-performance"], daysPerWeek=2, sessionMinutes=45, equipment=["cones", "ball", "bodyweight"],
-   description="Fun, skill-first athletic development for young footballers: running technique, safe landing and falling, bodyweight strength and kick-handball games.",
-   whoItsFor="Junior footballers about 10-15 (with a parent or coach) who want to get fitter and more coordinated without adult-style training.",
+   description="Fun, skill-first athletic development for young AFL players: running technique, safe landing and falling, bodyweight strength and kick-handball games.",
+   whoItsFor="Junior AFL players about 10-15 (with a parent or coach) who want to get fitter and more coordinated without adult-style training.",
    lifestyle=["outdoor", "minimal-equipment"],
    howToRun=["Up to 2 extra sessions a week on top of club training; keep at least one full rest day.",
              "Bodyweight only - no maximal lifting; technique first, effort second.",
