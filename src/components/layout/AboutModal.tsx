@@ -16,35 +16,51 @@ export function AboutModal({ open, onClose }: AboutModalProps) {
         </p>
       </div>
       <div className="about-block">
-        <h4>What this prototype is</h4>
+        <h4>What this build is</h4>
         <p>
-          A fully click-through beta of the core product: onboarding, daily goals, a training program, the XP &amp;
-          level engine, challenges, a league leaderboard and profile stats. It's a static, front-end-only build —
-          there's no server, so XP is calculated in your browser and saved to this device only.
+          A real account on a real backend: onboarding, daily goals, a training program, the XP &amp; level engine,
+          challenges, a league leaderboard, community, messaging and macro tracking. Your account, progress and XP
+          are saved to the cloud and sync across your devices — nothing here is local-only.
         </p>
       </div>
       <div className="about-block">
-        <h4>In production</h4>
+        <h4>Known limitation</h4>
         <ul>
-          <li>XP is server-authoritative — the client never decides an award, the backend validates it.</li>
-          <li>Every award writes an audit-trail event so leaderboard disputes can be investigated.</li>
-          <li>Daily XP caps and duplicate-activity detection keep league rankings fair.</li>
+          <li>XP amounts are still calculated on your device, not independently verified by the server.</li>
+          <li>There's no audit-trail event per award yet, so a disputed leaderboard figure can't be traced.</li>
+          <li>Daily XP caps exist, but duplicate-activity detection beyond that is still basic.</li>
         </ul>
       </div>
       <div className="about-block">
-        <h4>Planned stack</h4>
+        <h4>Stack</h4>
         <div className="about-stack">
-          <span className="stack-pill">Expo / React Native</span>
-          <span className="stack-pill">TypeScript</span>
+          <span className="stack-pill">React / TypeScript</span>
+          <span className="stack-pill">Capacitor (iOS)</span>
           <span className="stack-pill">Supabase / Postgres</span>
           <span className="stack-pill">Row-level auth</span>
         </div>
       </div>
-      <div className="about-block" style={{ marginBottom: 0 }}>
+      <div className="about-block">
         <h4>Beta hypothesis</h4>
         <p>
           Does turning fitness consistency into visible game progression make people more likely to actually keep
           their training consistent? This build exists to test that, nothing more.
+        </p>
+      </div>
+      <div className="about-block" style={{ marginBottom: 0 }}>
+        <h4>Nutrition data</h4>
+        <p>
+          Barcode and packaged-product data provided by{' '}
+          <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener noreferrer">
+            Open Food Facts
+          </a>
+          , a free, open database built by a community of contributors, used under the Open Database License.
+          Generic whole-food data (fruit, vegetables, meat, grains and other staples) from the U.S. Department of
+          Agriculture's{' '}
+          <a href="https://fdc.nal.usda.gov" target="_blank" rel="noopener noreferrer">
+            FoodData Central
+          </a>
+          , public domain.
         </p>
       </div>
     </Modal>

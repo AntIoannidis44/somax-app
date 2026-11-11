@@ -60,15 +60,30 @@ export const CHALLENGE_DEFS: ChallengeDef[] = [
     // manual "log km" button letting anyone self-report fake progress.
   },
   {
+    id: 'macrotrack',
+    name: 'Macro Tracker',
+    desc: 'Log a full day of meals (breakfast, lunch, dinner & snacks) on 5 of the last 7 days.',
+    lengthDays: 7,
+    target: 5,
+    unit: 'day',
+    xpPerUnit: 10,
+    bonusXp: 50,
+    // Also deliberately no logStep - driven by real food_log_entries rows
+    // (see syncMacroChallenge), not a manual "log a day" button.
+  },
+  {
     id: 'streak7',
     name: 'Seven-Day Streak',
-    desc: 'Log any activity 7 days in a row.',
+    desc: 'Keep your real daily activity streak going for 7 days.',
     lengthDays: 14,
     target: 7,
     unit: 'day',
     xpPerUnit: 5,
     bonusXp: 50,
-    logStep: 1,
+    // Deliberately no logStep (as of this fix) - this now mirrors your
+    // actual progress.currentStreak counter (see syncStreakChallenge), not
+    // a manual "log a day" tap. It used to be self-reported; fixed because
+    // it let anyone claim a streak with no real activity behind it.
   },
 ];
 

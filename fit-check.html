@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0">
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { clone } from 'three/examples/jsm/utils/SkeletonUtils.js';
+import { buildOutfitFit } from '/src/lib/outfitFit.ts';
+import { loadAnimationClips, fitClipsToCharacter, CLIPS } from '/src/lib/characterModels.ts';
+const p = new URLSearchParams(location.search), G = p.get('g'), piece = p.get('piece'), grey = p.get('grey') === '1';
+const L = new GLTFLoader(), load = (u) => L.loadAsync(u);
+const W = 300, H = 440, builds = ['Teen', 'Regular', 'Superhero'];
+const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+r.setPixelRatio(2); r.setSize(W * 3, H); r.setScissorTest(true); r.outputColorSpace = THREE.SRGBColorSpace; r.toneMapping = THREE.ACESFilmicToneMapping;
+document.body.appendChild(r.domElement);
+const clips = await loadAnimationClips();
+const reg = await load(`/models/characters/Regular_${G}_FullBody.gltf`);
+const pc = await load(piece);
+const sk = (o) => { const a = []; o.traverse((m) => m.isSkinnedMesh && a.push(m)); return a; };
+for (let i = 0; i < 3; i++) {
+  const bodyG = await load(`/models/characters/${builds[i]}_${G}_FullBody.gltf`);
+  const body = clone(bodyG.scene); const group = new THREE.Group(); group.add(body);
+  const bones = new Map(); sk(body)[0].skeleton.bones.forEach((b) => bones.set(b.name, b));
+  const pelvis = bones.get('pelvis'); group.userData.pelvisRest = pelvis.position.clone();
+  const fit = builds[i] === 'Regular' ? null : buildOutfitFit(reg.scene, bodyG.scene);
+  for (const m of sk(pc.scene)) {
+    const geo = fit ? fit.fitGeometry(m) : m.geometry;
+    const a = new THREE.SkinnedMesh(geo, grey ? new THREE.MeshStandardMaterial({ color: 0x8a8f99, roughness: 0.8 }) : m.material);
+    a.bind(new THREE.Skeleton(m.skeleton.bones.map((b) => bones.get(b.name)), m.skeleton.boneInverses), m.bindMatrix); a.frustumCulled = false; group.add(a);
+  }
+  const mx = new THREE.AnimationMixer(group); mx.clipAction(fitClipsToCharacter(clips, group).find((c) => c.name === CLIPS.idle)).play(); mx.update(0.3);
+  const s = new THREE.Scene(); s.background = new THREE.Color(0xe6e3dd);
+  s.add(new THREE.HemisphereLight(0xfff4e6, 0x3a3530, 1.6)); const d = new THREE.DirectionalLight(0xffffff, 2.2); d.position.set(1.5, 3, 2.5); s.add(d); s.add(group);
+  const cam = new THREE.PerspectiveCamera(24, W / H, 0.05, 50); const a = THREE.MathUtils.degToRad(+(p.get('turn') || -20));
+  cam.position.set(Math.sin(a) * 3.0, 0.75, Math.cos(a) * 3.0); cam.lookAt(0, 0.6, 0);
+  r.setViewport(i * W, 0, W, H); r.setScissor(i * W, 0, W, H); r.render(s, cam);
+}
+window.__done = true;
+</script></body></html>

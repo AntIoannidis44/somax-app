@@ -89,6 +89,23 @@ export interface NextUnlock {
   key: CatalogKey;
 }
 
+// Colour/skin/build catalogs reuse plain names like "Blue" or "Crimson" across
+// several categories - naming the category is the only way "unlocks at 13"
+// means anything. Other categories (hair styles, outfits, gym pieces) already
+// have self-describing names, so leave those as-is.
+const CATEGORY_SUFFIX: Partial<Record<CatalogKey, string>> = {
+  hairColor: 'Hair Color',
+  outfitColor: 'Outfit Color',
+  gymColor: 'Color',
+  skin: 'Skin Tone',
+  build: 'Build',
+};
+
+export function unlockItemName(key: CatalogKey, item: CatalogItem): string {
+  const suffix = CATEGORY_SUFFIX[key];
+  return suffix ? `${item.name} ${suffix}` : item.name;
+}
+
 export function nextUnlock(ctx: UnlockContext): NextUnlock | null {
   let best: NextUnlock | null = null;
   allWardrobe().forEach((w) => {

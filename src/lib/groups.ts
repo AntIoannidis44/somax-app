@@ -1,10 +1,19 @@
 import { supabase } from './supabase';
+import { resizeToJpeg } from './chatImage';
 
 export interface Group {
   id: string;
   name: string;
   created_by: string;
   created_at: string;
+  photo_url: string | null;
+}
+
+export interface GroupMember {
+  user_id: string;
+  name: string;
+  photo_url: string | null;
+  role: 'admin' | 'member';
 }
 
 export interface GroupMembership extends Group {
@@ -36,7 +45,7 @@ function subscribeTable(table: string, onChange: () => void) {
 export async function fetchMyGroups(userId: string): Promise<GroupMembership[]> {
   const { data, error } = await supabase
     .from('group_members')
-    .select('role, groups(id, name, created_by, created_at)')
+    .select('role, groups(id, name, created_by, created_at, photo_url)')
     .eq('user_id', userId)
     .order('joined_at', { ascending: false });
   if (error) {
@@ -85,6 +94,18 @@ export async function createGroup(userId: string, name: string, memberIds: strin
   return group.id as string;
 }
 
+// A single group's own row, fresh (not from a cached list) - used by the
+// chat screen and chat-info screen so a photo change shows immediately
+// without depending on how the screen was navigated to.
+export async function fetchGroup(groupId: string): Promise<Group | null> {
+  const { data, error } = await supabase.from('groups').select('id, name, created_by, created_at, photo_url').eq('id', groupId).maybeSingle();
+  if (error) {
+    console.error('[groups] fetchGroup:', error.message);
+    return null;
+  }
+  return data as Group | null;
+}
+
 export async function fetchGroupMemberIds(groupId: string): Promise<string[]> {
   const { data, error } = await supabase.from('group_members').select('user_id').eq('group_id', groupId);
   if (error) {
@@ -92,6 +113,57 @@ export async function fetchGroupMemberIds(groupId: string): Promise<string[]> {
     return [];
   }
   return data.map((r) => r.user_id as string);
+}
+
+// Full member list for the group-info screen - name and photo, not just ids.
+// group_members.user_id has no FK to public_profiles (it points at
+// auth.users), so PostgREST can't embed it directly - two queries, joined
+// by hand, same as every other cross-reference to public_profiles in the app.
+export async function fetchGroupMembers(groupId: string): Promise<GroupMember[]> {
+  const { data: rows, error } = await supabase.from('group_members').select('user_id, role').eq('group_id', groupId);
+  if (error) {
+    console.error('[groups] fetchGroupMembers:', error.message);
+    return [];
+  }
+  const ids = rows.map((r) => r.user_id as string);
+  if (ids.length === 0) return [];
+  const { data: profiles, error: profileError } = await supabase.from('public_profiles').select('user_id, name, photo_url').in('user_id', ids);
+  if (profileError) console.error('[groups] fetchGroupMembers profiles:', profileError.message);
+  const byId = new Map((profiles ?? []).map((p) => [p.user_id as string, p]));
+  return (rows as { user_id: string; role: 'admin' | 'member' }[]).map((row) => {
+    const p = byId.get(row.user_id);
+    return { user_id: row.user_id, role: row.role, name: (p?.name as string) ?? 'Member', photo_url: (p?.photo_url as string | null) ?? null };
+  });
+}
+
+const GROUP_PHOTO_BUCKET = 'group-photos';
+
+// One photo per group, fixed filename so changing it just overwrites the old
+// one (storage.objects RLS scopes writes to members of that group - see the
+// group_photos_member_* policies). No person-check like profile photos: a
+// group's photo can be anything (the gym, a group selfie, a logo).
+export async function uploadGroupPhoto(groupId: string, file: File): Promise<string | null> {
+  const blob = await resizeToJpeg(file, 800);
+  const path = `${groupId}/photo.jpg`;
+  const { error: uploadError } = await supabase.storage.from(GROUP_PHOTO_BUCKET).upload(path, blob, { contentType: 'image/jpeg', upsert: true });
+  if (uploadError) {
+    console.error('[groups] uploadGroupPhoto:', uploadError.message);
+    return null;
+  }
+  const { data } = supabase.storage.from(GROUP_PHOTO_BUCKET).getPublicUrl(path);
+  const url = `${data.publicUrl}?v=${Date.now()}`;
+  const { error: updateError } = await supabase.from('groups').update({ photo_url: url }).eq('id', groupId);
+  if (updateError) {
+    console.error('[groups] uploadGroupPhoto update:', updateError.message);
+    return null;
+  }
+  return url;
+}
+
+export async function removeGroupPhoto(groupId: string): Promise<void> {
+  await supabase.storage.from(GROUP_PHOTO_BUCKET).remove([`${groupId}/photo.jpg`]);
+  const { error } = await supabase.from('groups').update({ photo_url: null }).eq('id', groupId);
+  if (error) console.error('[groups] removeGroupPhoto:', error.message);
 }
 
 export async function leaveGroup(groupId: string, userId: string): Promise<void> {
@@ -126,4 +198,23 @@ export async function deleteGroupMessage(messageId: string): Promise<boolean> {
 
 export function subscribeGroupMessages(onChange: () => void): () => void {
   return subscribeTable('group_messages', onChange);
+}
+
+// Last message per group, for the unified Messages inbox - same
+// fetch-recent-and-reduce-client-side approach as fetchLastDMPerPartner.
+export async function fetchLastGroupMessagesFor(groupIds: string[]): Promise<Record<string, GroupMessage>> {
+  if (groupIds.length === 0) return {};
+  const { data, error } = await supabase
+    .from('group_messages')
+    .select('*')
+    .in('group_id', groupIds)
+    .order('created_at', { ascending: false })
+    .limit(500);
+  if (error) {
+    console.error('[groups] fetchLastGroupMessagesFor:', error.message);
+    return {};
+  }
+  const out: Record<string, GroupMessage> = {};
+  for (const row of data as GroupMessage[]) if (!out[row.group_id]) out[row.group_id] = row;
+  return out;
 }

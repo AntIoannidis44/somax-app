@@ -158,9 +158,26 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     // Workouts logged via the Watch's own Fitness/Workout app (or any
     // other app that writes to HealthKit) land here as HKWorkout samples -
     // this is how a session done outside SOMAXX gets noticed at all.
+    // `startDate`/`endDate` (ISO8601 strings) are optional - omitted, this
+    // behaves exactly as before (today only). Passed, it queries that
+    // explicit range instead - used to sync a Watch workout onto a PAST
+    // day's logged session, not just today's.
     @objc func getTodayWorkouts(_ call: CAPPluginCall) {
-        let startOfDay = Calendar.current.startOfDay(for: Date())
-        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: Date(), options: .strictStartDate)
+        let formatter = ISO8601DateFormatter()
+        let rangeStart: Date
+        let rangeEnd: Date
+        if let startStr = call.getString("startDate"), let parsedStart = formatter.date(from: startStr) {
+            rangeStart = parsedStart
+            if let endStr = call.getString("endDate"), let parsedEnd = formatter.date(from: endStr) {
+                rangeEnd = parsedEnd
+            } else {
+                rangeEnd = Calendar.current.date(byAdding: .day, value: 1, to: rangeStart) ?? Date()
+            }
+        } else {
+            rangeStart = Calendar.current.startOfDay(for: Date())
+            rangeEnd = Date()
+        }
+        let predicate = HKQuery.predicateForSamples(withStart: rangeStart, end: rangeEnd, options: .strictStartDate)
         let sort = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sort]) { _, samples, error in
             if error != nil {
@@ -277,6 +294,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         case .highIntensityIntervalTraining: return "HIIT"
         case .mixedCardio, .cardioDance: return "Cardio"
         case .yoga: return "Yoga"
+        case .pilates: return "Pilates"
         default: return "Workout"
         }
     }

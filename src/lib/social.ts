@@ -50,6 +50,21 @@ export interface PostWorkout {
   isProgram?: boolean;
   distanceMeters?: number;
   route?: { lat: number; lng: number; t: string }[];
+  // True when the post shares a recipe/favourite meal (Share → Post to
+  // feed, from Nutrition). name/duration/category/exercises above still get
+  // filled with sentinel values (duration: "N servings", category:
+  // "nutrition", exercises: []) so every other consumer of PostWorkout keeps
+  // working unchanged - the fields below are what the recipe card actually
+  // renders from.
+  isRecipe?: boolean;
+  servings?: number;
+  kcal?: number;
+  proteinG?: number;
+  carbsG?: number;
+  fatG?: number;
+  ingredients?: { name: string; amount: string }[];
+  steps?: string[];
+  sourceLabel?: string;
 }
 
 export interface CommunityPost {
@@ -61,6 +76,9 @@ export interface CommunityPost {
   // One of WORKOUT_TYPES' ids, or null for a post not tied to a workout type.
   workout_type: string | null;
   image_url: string | null;
+  // Extra photos beyond image_url, for a multi-photo meal share - null/empty
+  // for every other post type, which still only ever had the one image.
+  image_urls: string[] | null;
   // A self-contained snapshot (same idea as shared_programs/DM program
   // messages) - not a live reference, so it still renders correctly even
   // if the sender later edits or deletes the original program.
@@ -74,6 +92,7 @@ export interface CommunityPost {
   // accepted friends (and the poster) - enforced server-side by RLS, not
   // just hidden client-side, so this is real for a private profile.
   visibility: 'public' | 'friends';
+  shares_count: number;
 }
 
 export interface DirectMessage {
@@ -140,10 +159,11 @@ export async function createPost(
   location: string | null = null,
   link: string | null = null,
   visibility: 'public' | 'friends' = 'public',
+  imageUrls: string[] | null = null,
 ): Promise<void> {
   const { error } = await supabase
     .from('community_posts')
-    .insert({ user_id: userId, name, text, workout_type: workoutType, image_url: imageUrl, workout, location, link, visibility });
+    .insert({ user_id: userId, name, text, workout_type: workoutType, image_url: imageUrl, image_urls: imageUrls, workout, location, link, visibility });
   if (error) console.error('[social] createPost:', error.message);
 }
 
@@ -226,6 +246,14 @@ export async function addComment(postId: string, userId: string, name: string, t
 export async function deleteComment(id: string): Promise<void> {
   const { error } = await supabase.from('post_comments').delete().eq('id', id);
   if (error) console.error('[social] deleteComment:', error.message);
+}
+
+// Server-side counter bump via an RPC rather than a client UPDATE, so
+// sharing doesn't need an UPDATE RLS policy opening up the rest of the row
+// (text, visibility, etc.) to anyone who can see the post.
+export async function incrementPostShares(postId: string): Promise<void> {
+  const { error } = await supabase.rpc('increment_post_shares', { post_id_input: postId });
+  if (error) console.error('[social] incrementPostShares:', error.message);
 }
 
 export function subscribeLikes(onChange: () => void): () => void {
@@ -342,4 +370,28 @@ export async function clearConversation(userId: string, otherId: string): Promis
 
 export function subscribeDMs(onChange: () => void): () => void {
   return subscribeTable('direct_messages', onChange);
+}
+
+// Last message per conversation partner, for the unified Messages inbox.
+// direct_messages has no conversation id, so this pulls the most recent
+// slice across every conversation and reduces to one row per partner
+// client-side - the same "fetch everything, reduce in the client" approach
+// fetchLeaderboard already uses, fine at this scale.
+export async function fetchLastDMPerPartner(userId: string): Promise<Record<string, DirectMessage>> {
+  const { data, error } = await supabase
+    .from('direct_messages')
+    .select('*')
+    .or(`sender_id.eq.${userId},recipient_id.eq.${userId}`)
+    .order('created_at', { ascending: false })
+    .limit(500);
+  if (error) {
+    console.error('[social] fetchLastDMPerPartner:', error.message);
+    return {};
+  }
+  const out: Record<string, DirectMessage> = {};
+  for (const row of data as DirectMessage[]) {
+    const partner = row.sender_id === userId ? row.recipient_id : row.sender_id;
+    if (!out[partner]) out[partner] = row;
+  }
+  return out;
 }

@@ -9,6 +9,8 @@ import { initials, timeAgo } from '../../lib/format';
 import { RouteMap } from '../train/RouteMap';
 import { computeKmSplits } from '../../lib/routeSplits';
 import { isProgramPost } from '../../lib/programPosts';
+import { isRecipePost } from '../../lib/recipePosts';
+import { FeedRecipeCard } from './FeedRecipeCard';
 import type { CommunityPost, PostComment } from '../../lib/social';
 import type { CharacterConfig } from '../../types';
 
@@ -115,6 +117,7 @@ interface FeedPostCardProps {
   onSubmitComment: () => void;
   onDeleteComment: (id: string) => void;
   onDeletePost?: () => void;
+  onShareRecipe?: (post: CommunityPost) => void;
 }
 
 // "45 min", "1h 5m", "1 h 05 min" -> minutes.
@@ -208,9 +211,11 @@ export function FeedPostCard({
   onSubmitComment,
   onDeleteComment,
   onDeletePost,
+  onShareRecipe,
 }: FeedPostCardProps) {
   const wt = workoutTypeById(post.workout_type ?? post.workout?.category);
   const isProgram = isProgramPost(post);
+  const isRecipe = isRecipePost(post);
   const [slide, setSlide] = useState(0);
   const [pop, setPop] = useState(0);
   // Set once the photo (if any) has actually loaded and been laid out, from
@@ -243,6 +248,10 @@ export function FeedPostCard({
         onLoad={(e) => setPhotoH(e.currentTarget.clientHeight)}
       />,
     );
+  // A multi-photo meal share: image_url is the cover (already pushed above),
+  // image_urls holds the rest - same carousel, just more slides in it.
+  for (const url of post.image_urls ?? [])
+    slides.push(<img src={url} alt="" loading="lazy" draggable={false} style={{ height: mediaH }} />);
   if (route)
     slides.push(
       <RouteMap
@@ -280,7 +289,9 @@ export function FeedPostCard({
           <div className="feed-sub" style={wt ? { color: undefined } : undefined}>
             {wt && <Icon name={wt.icon} style={{ color: `var(${wt.colorVar})` }} />}
             <span>
-              {[isProgram ? 'Shared a program' : wt?.label, timeAgo(post.created_at), post.location].filter(Boolean).join(' · ')}
+              {[isProgram ? 'Shared a program' : isRecipe ? 'Shared a recipe' : wt?.label, timeAgo(post.created_at), post.location]
+                .filter(Boolean)
+                .join(' · ')}
             </span>
           </div>
         </div>
@@ -298,7 +309,7 @@ export function FeedPostCard({
       {post.workout && !isProgram && <div className="feed-post-title">{post.workout.name}</div>}
       {post.text && <div className="feed-text">{post.text}</div>}
 
-      {stats.length > 0 && !isProgram && (
+      {stats.length > 0 && !isProgram && !isRecipe && (
         <div className="feed-stats">
           {stats.map((st) => (
             <div className="feed-stat" key={st.k}>
@@ -349,7 +360,10 @@ export function FeedPostCard({
         </>
       )}
 
-      {post.workout && <FeedWorkoutCard workout={post.workout} userId={myUserId} asProgram={isProgram} />}
+      {post.workout && isRecipe && (
+        <FeedRecipeCard recipe={post.workout} sharesCount={post.shares_count} onShare={() => onShareRecipe?.(post)} />
+      )}
+      {post.workout && !isRecipe && <FeedWorkoutCard workout={post.workout} userId={myUserId} asProgram={isProgram} />}
       {post.link && (
         <a className="feed-link-chip" href={post.link} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
           <Icon name="link" style={{ width: 12, height: 12 }} />

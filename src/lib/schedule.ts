@@ -149,6 +149,7 @@ export function buildTodayGoals(weekPlan: PlanDay[]): TodayGoal[] {
   goals.push({ id: 'warmup', label: 'Warm-up & mobility (5 min)', meta: 'Habit', xp: 10, type: 'toggle', done: false });
   goals.push({ id: 'hydration', label: 'Hit hydration target', meta: '2L', xp: 10, type: 'toggle', done: false });
   goals.push({ id: 'logfeel', label: 'Log how you felt', meta: '30 sec', xp: 10, type: 'toggle', done: false });
+  goals.push({ id: 'macros', label: 'Log a full day of meals', meta: 'Breakfast, lunch, dinner & snacks', xp: 15, type: 'toggle', done: false });
   return goals;
 }
 

@@ -4,7 +4,7 @@ import { CharacterStage } from './CharacterStage';
 import { CharacterThumbnail } from './CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
 import { BODY_BUILDS, CATALOG, fitWearToBase, GYM_ACC, GYM_COLORS, GYM_BOTTOMS, GYM_LEGWEAR, GYM_SHOES, GYM_TOPS, HAIR_COLORS, OUTFITS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
-import { countUnlocked, isUnlocked, lockHint, nextUnlock, tierFor, unlockLabel, wearUnlocked } from '../../lib/character';
+import { countUnlocked, isUnlocked, lockHint, nextUnlock, tierFor, unlockItemName, unlockLabel, wearUnlocked } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
 import { isHeavyGarment } from '../../lib/gymWorkerClient';
 import type { IconName } from '../../data/icons';
@@ -528,7 +528,7 @@ export function CharacterStudioScreen() {
             <div className="st2-unlock">
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div className="t">
-                  Next unlock: {nu.item.name}
+                  Next unlock: {unlockItemName(nu.key, nu.item)}
                 </div>
                 <div className="s">
                   Reach level {nu.level} · {Math.max(0, levelFloor(nu.level) - progress.totalXP).toLocaleString()} XP to go

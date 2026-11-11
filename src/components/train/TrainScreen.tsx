@@ -51,9 +51,11 @@ async function resolveWatchActivity(selectedWatchWorkouts: HealthWorkoutSummary[
 // What actually happened on a past day: logged gym sets (workoutState) plus
 // everything that earned XP that day (Watch syncs, checklist items, goals),
 // which is where Apple Fitness days live - they never touch workoutState.
-function DayRecap({ sim, dayName }: { sim: number; dayName: string }) {
+function DayRecap({ sim, dayName, onNavigate }: { sim: number; dayName: string; onNavigate: () => void }) {
   const workoutState = useAppStore((s) => s.workoutState);
   const history = useAppStore((s) => s.history);
+  const openWorkout = useAppStore((s) => s.openWorkout);
+  const resumeWorkout = useAppStore((s) => s.resumeWorkout);
   const entries = Object.entries(workoutState[sim] ?? {}).filter(([, ws]) => ws.completed || Object.keys(ws.exDone).length > 0);
   const earned = history.filter((h) => h.type === 'xp' && h.day === sim);
   const totalXp = earned.reduce((sum, h) => sum + h.xp, 0);
@@ -85,8 +87,20 @@ function DayRecap({ sim, dayName }: { sim: number; dayName: string }) {
         const w = getWorkout(wid);
         return (
           <div key={wid}>
-            <div className="sheet-sub">
-              {w?.name ?? 'Workout'} · {ws.completed ? 'completed' : 'partly done'}
+            <div className="sheet-sub" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+              <span>
+                {w?.name ?? 'Workout'} · {ws.completed ? 'completed' : 'partly done'}
+              </span>
+              <button
+                className="link-btn"
+                onClick={() => {
+                  if (ws.completed) resumeWorkout(wid, sim);
+                  openWorkout(wid, sim);
+                  onNavigate();
+                }}
+              >
+                {ws.completed ? 'Resume workout' : 'Continue'}
+              </button>
             </div>
             {(w?.exercises ?? []).map((ex, i) => (
               <div key={i} className="sheet-ex">
@@ -180,7 +194,14 @@ export function TrainScreen() {
 
   function renderDaySheet(i: number) {
     const p = weekPlan[i];
-    if (i < todayIdx) return <DayRecap sim={simDay - (todayIdx - i)} dayName={['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][i]} />;
+    if (i < todayIdx)
+      return (
+        <DayRecap
+          sim={simDay - (todayIdx - i)}
+          dayName={['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][i]}
+          onNavigate={() => setSheetDay(null)}
+        />
+      );
     const w = p.type === 'train' && p.key ? getWorkout(p.key) : undefined;
     return (
       <>

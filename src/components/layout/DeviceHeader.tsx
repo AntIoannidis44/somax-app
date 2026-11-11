@@ -1,4 +1,6 @@
 import { Icon } from '../Icon';
+import { UserAvatar } from '../community/UserAvatar';
+import { groupGradient } from '../../lib/groupIcon';
 import { useAppStore } from '../../store/useAppStore';
 import { getWorkout } from '../../lib/customWorkouts';
 import { countUnlocked } from '../../lib/character';
@@ -38,8 +40,11 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const viewingWorkout = useAppStore((s) => s.viewingWorkout);
   const viewingCharacter = useAppStore((s) => s.viewingCharacter);
   const viewingGoals = useAppStore((s) => s.viewingGoals);
+  const viewingMacros = useAppStore((s) => s.viewingMacros);
   const viewingDM = useAppStore((s) => s.viewingDM);
   const viewingGroup = useAppStore((s) => s.viewingGroup);
+  const viewingChatInfo = useAppStore((s) => s.viewingChatInfo);
+  const viewingSharedContent = useAppStore((s) => s.viewingSharedContent);
   const viewingProfile = useAppStore((s) => s.viewingProfile);
   const viewingWorkoutEditor = useAppStore((s) => s.viewingWorkoutEditor);
   const viewingSharedProgram = useAppStore((s) => s.viewingSharedProgram);
@@ -52,8 +57,13 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const closeWorkout = useAppStore((s) => s.closeWorkout);
   const closeCharacterStudio = useAppStore((s) => s.closeCharacterStudio);
   const closeGoals = useAppStore((s) => s.closeGoals);
+  const closeMacros = useAppStore((s) => s.closeMacros);
   const closeDM = useAppStore((s) => s.closeDM);
   const closeGroup = useAppStore((s) => s.closeGroup);
+  const closeChatInfo = useAppStore((s) => s.closeChatInfo);
+  const closeSharedContent = useAppStore((s) => s.closeSharedContent);
+  const openChatInfo = useAppStore((s) => s.openChatInfo);
+  const openWallpaperPicker = useAppStore((s) => s.openWallpaperPicker);
   const closeProfile = useAppStore((s) => s.closeProfile);
   const closeWorkoutEditor = useAppStore((s) => s.closeWorkoutEditor);
   const closeSharedProgram = useAppStore((s) => s.closeSharedProgram);
@@ -116,6 +126,22 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
     );
   }
 
+  if (viewingMacros) {
+    return (
+      <div className="device-header">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeMacros}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <div style={{ textAlign: 'center', flex: 1 }}>
+          <div className="dh-title">Macros</div>
+        </div>
+        <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
   // Checked before viewingDM/viewingGroup/viewingProfile: opening a shared
   // activity from inside one of those screens sets this flag without
   // clearing them, so it must win the check or the header never switches.
@@ -135,34 +161,89 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
     );
   }
 
-  if (viewingDM) {
+  // Checked before viewingDM/viewingGroup: both stack on top of a DM/group
+  // chat without clearing it, same reasoning as viewingSessionDetail above.
+  if (viewingSharedContent) {
     return (
       <div className="device-header">
-        <button className="level-chip" style={{ padding: 8 }} onClick={closeDM}>
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeSharedContent}>
           <span style={{ display: 'flex' }}>
             <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
           </span>
         </button>
         <div style={{ textAlign: 'center', flex: 1 }}>
-          <div className="dh-title">{viewingDM.name}</div>
+          <div className="dh-title">Shared content</div>
+          <div className="dh-sub">{viewingSharedContent.name}</div>
         </div>
         <div style={{ width: 38 }} />
       </div>
     );
   }
 
-  if (viewingGroup) {
+  if (viewingChatInfo) {
     return (
       <div className="device-header">
-        <button className="level-chip" style={{ padding: 8 }} onClick={closeGroup}>
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeChatInfo}>
           <span style={{ display: 'flex' }}>
             <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
           </span>
         </button>
         <div style={{ textAlign: 'center', flex: 1 }}>
-          <div className="dh-title">{viewingGroup.name}</div>
+          <div className="dh-title">{viewingChatInfo.kind === 'group' ? 'Group info' : 'Contact info'}</div>
         </div>
         <div style={{ width: 38 }} />
+      </div>
+    );
+  }
+
+  if (viewingDM) {
+    return (
+      <div className="device-header dm-header-solid">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeDM}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <button
+          style={{ display: 'flex', alignItems: 'center', gap: 8, flex: 1, minWidth: 0, background: 'none', border: 'none', padding: 0, textAlign: 'left' }}
+          onClick={() => openChatInfo('dm', viewingDM.userId, viewingDM.name)}
+        >
+          <UserAvatar className="chat-subhead-avatar" name={viewingDM.name} photoUrl={viewingDM.photoUrl} character={viewingDM.character} />
+          <div className="dh-title" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{viewingDM.name}</div>
+        </button>
+        <button className="level-chip" style={{ padding: 8 }} aria-label="Chat wallpaper" onClick={openWallpaperPicker}>
+          <Icon name="camera" />
+        </button>
+      </div>
+    );
+  }
+
+  if (viewingGroup) {
+    return (
+      <div className="device-header dm-header-solid">
+        <button className="level-chip" style={{ padding: 8 }} onClick={closeGroup}>
+          <span style={{ display: 'flex' }}>
+            <Icon name="chevron" style={{ transform: 'rotate(180deg)' }} />
+          </span>
+        </button>
+        <button
+          style={{ display: 'flex', alignItems: 'center', gap: 8, flex: 1, minWidth: 0, background: 'none', border: 'none', padding: 0, textAlign: 'left' }}
+          onClick={() => openChatInfo('group', viewingGroup.groupId, viewingGroup.name)}
+        >
+          {viewingGroup.photoUrl ? (
+            <span className="chat-subhead-avatar" style={{ padding: 0, overflow: 'hidden' }}>
+              <img className="fit-img" src={viewingGroup.photoUrl} alt="" />
+            </span>
+          ) : (
+            <span className="group-icon" style={{ width: 34, height: 34, borderRadius: '50%', background: groupGradient(viewingGroup.name) }}>
+              <Icon name="community" style={{ width: 16, height: 16 }} />
+            </span>
+          )}
+          <div className="dh-title" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{viewingGroup.name}</div>
+        </button>
+        <button className="level-chip" style={{ padding: 8 }} aria-label="Chat wallpaper" onClick={openWallpaperPicker}>
+          <Icon name="camera" />
+        </button>
       </div>
     );
   }

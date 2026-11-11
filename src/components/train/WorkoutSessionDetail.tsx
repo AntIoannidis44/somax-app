@@ -1,6 +1,8 @@
+import { TypeIconBadge } from '../TypeIconBadge';
 import { useAppStore } from '../../store/useAppStore';
 import { RouteMap } from './RouteMap';
 import { computeKmSplits, formatPace } from '../../lib/routeSplits';
+import { categoryForActivityName } from '../../data/workoutTypes';
 
 // Full screen, not a popup - a tapped session needs real room to scroll
 // (stats, map, every km split) without being cramped against the top nav
@@ -11,7 +13,13 @@ export function WorkoutSessionDetail() {
 
   const km = workout.distanceMeters ? workout.distanceMeters / 1000 : null;
   const durationMin = parseFloat(workout.duration);
-  const avgPaceSec = km && km > 0 ? (durationMin * 60) / km : null;
+  // A merged multi-activity share (e.g. a Watch sync bundling "Walk + Walk +
+  // Workout" into one send) has no single real pace - averaging total
+  // distance over total time across activities that aren't all
+  // distance-based is actively misleading, not just imprecise. Only show
+  // pace for what's genuinely a single tracked activity.
+  const isMerged = workout.exercises.length > 1;
+  const avgPaceSec = !isMerged && km && km > 0 ? (durationMin * 60) / km : null;
   const splits = workout.route && workout.route.length > 1 ? computeKmSplits(workout.route) : [];
 
   return (
@@ -35,6 +43,23 @@ export function WorkoutSessionDetail() {
             </div>
           )}
         </div>
+
+        {isMerged && (
+          <>
+            <div className="section-label">Activities in this session</div>
+            <div className="card">
+              {workout.exercises.map((ex, i) => (
+                <div className="goal-row" key={i}>
+                  <TypeIconBadge category={categoryForActivityName(ex.name)} size={30} />
+                  <div className="goal-main" style={{ marginLeft: 10 }}>
+                    <div className="goal-title">{ex.name}</div>
+                  </div>
+                  <div className="goal-xp">{ex.reps}</div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
 
         {workout.route && workout.route.length > 1 && (
           <>

@@ -3,7 +3,7 @@ const FLAGS = [
   { name: 'Leagues', on: true },
   { name: 'Character Mode', on: true },
   { name: 'AI Coach', on: false },
-  { name: 'Nutrition tracking', on: false },
+  { name: 'Nutrition tracking', on: true },
   { name: 'Store', on: false },
 ];
 

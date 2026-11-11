@@ -7,15 +7,30 @@ import { GoalsKPI } from './GoalsKPI';
 import { StepChallengeCard } from './StepChallengeCard';
 import { LevelPath } from './LevelPath';
 import { useAppStore } from '../../store/useAppStore';
-import { DAILY_CAP } from '../../lib/xp';
+import { dailyCapForLevel } from '../../lib/xp';
+import { STEP_GOAL } from '../../lib/schedule';
+import { healthAvailableOnPlatform } from '../../lib/health';
 
 export function HomeScreen() {
   const xpEarnedToday = useAppStore((s) => s.today.xpEarnedToday);
+  const level = useAppStore((s) => s.progress.level);
   const openGoals = useAppStore((s) => s.openGoals);
   const go = useAppStore((s) => s.go);
   const goals = useAppStore((s) => s.today.goals);
-  const doneCount = goals.filter((g) => g.done).length;
-  const capPct = Math.min(100, Math.round((xpEarnedToday / DAILY_CAP) * 100));
+  const health = useAppStore((s) => s.today.health);
+  // StepChallengeCard renders as its own checklist row (same goal-row/
+  // goal-check markup as every item in GoalsList) whenever HealthKit is
+  // available on this platform, whether or not health data has loaded yet -
+  // it just shows "no step data yet" rather than disappearing. It isn't
+  // part of `today.goals`, so the header's count has to add it in by hand
+  // or it silently undercounts the checklist the user is actually looking
+  // at (5 real goals shown as "/5" when a 6th row - steps - is right there).
+  const stepChallengeShown = healthAvailableOnPlatform();
+  const stepChallengeDone = !!health && health.steps >= STEP_GOAL;
+  const totalCount = goals.length + (stepChallengeShown ? 1 : 0);
+  const doneCount = goals.filter((g) => g.done).length + (stepChallengeShown && stepChallengeDone ? 1 : 0);
+  const dailyCap = dailyCapForLevel(level);
+  const capPct = Math.min(100, Math.round((xpEarnedToday / dailyCap) * 100));
 
   return (
     <>
@@ -38,7 +53,7 @@ export function HomeScreen() {
       <div className="section-label">
         Today's checklist
         <span className="mono" style={{ fontWeight: 500, color: 'var(--text-faint)' }}>
-          {doneCount}/{goals.length} done · {xpEarnedToday}/{DAILY_CAP} XP
+          {doneCount}/{totalCount} done · {xpEarnedToday}/{dailyCap} XP
         </span>
       </div>
       <div className="card checklist">

@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
+import { groupGradient } from '../../lib/groupIcon';
 import {
   deletePost,
+  fetchFriends,
   fetchFriendships,
+  fetchLastDMPerPartner,
   fetchLeaderboard,
   fetchPosts,
+  fetchUnreadDMCounts,
   respondToFriendRequest,
   sendFriendRequest,
+  subscribeDMs,
   subscribeFriendships,
   subscribeLeaderboard,
   subscribePosts,
@@ -15,11 +20,15 @@ import {
   type Friendship,
   type PublicProfile,
 } from '../../lib/social';
-import { createGroup, fetchMyGroups, subscribeMyGroups, type GroupMembership } from '../../lib/groups';
+import { createGroup, fetchLastGroupMessagesFor, fetchMyGroups, subscribeGroupMessages, subscribeMyGroups } from '../../lib/groups';
+import { messagePreview } from '../../lib/messagePreview';
 import { useFeedEngagement } from '../../lib/useFeedEngagement';
 import { FeedPostCard } from './FeedPostCard';
 import { WeekSummary } from './WeekSummary';
 import { isProgramPost } from '../../lib/programPosts';
+import { isRecipePost, recipeFromPost, type RecipeToShare } from '../../lib/recipePosts';
+import { ShareRecipeSheet } from './ShareRecipeSheet';
+import { MyRecipesScreen } from './MyRecipesScreen';
 import { UserAvatar } from './UserAvatar';
 import { Icon } from '../Icon';
 import { WORKOUT_TYPES } from '../../data/workoutTypes';
@@ -30,7 +39,7 @@ import { timeAgo } from '../../lib/format';
 const TABS = [
   { id: 'feed', label: 'Feed' },
   { id: 'friends', label: 'Friends' },
-  { id: 'groups', label: 'Groups' },
+  { id: 'messages', label: 'Messages' },
 ] as const;
 
 function FeedTab({ userId, myName }: { userId: string; myName: string }) {
@@ -41,8 +50,11 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
   const unreadDM = useAppStore((s) => s.unreadDM);
   const [posts, setPosts] = useState<CommunityPost[]>([]);
   const [filterType, setFilterType] = useState<string | 'all'>('all');
-  const [contentFilter, setContentFilter] = useState<'all' | 'programs' | 'posts'>('all');
+  const [contentFilter, setContentFilter] = useState<'all' | 'programs' | 'posts' | 'nutrition'>('all');
+  const [feedSort, setFeedSort] = useState<'recent' | 'trending'>('recent');
   const [feedScope, setFeedScope] = useState<'community' | 'friends'>('community');
+  const [myRecipesOpen, setMyRecipesOpen] = useState(false);
+  const [shareTarget, setShareTarget] = useState<{ recipe: RecipeToShare; sourcePostId: string } | null>(null);
   const [friendIds, setFriendIds] = useState<Set<string>>(new Set());
   const [characters, setCharacters] = useState<Map<string, { character: CharacterConfig | null; photoUrl: string | null; level: number; name: string }>>(new Map());
   const engagement = useFeedEngagement(posts.map((p) => p.id), userId);
@@ -82,11 +94,28 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
     feedScope === 'community'
       ? posts.filter((p) => p.visibility === 'public')
       : posts.filter((p) => p.user_id === userId || friendIds.has(p.user_id));
-  // Programs = a routine someone shared for others to add. Posts = everything
-  // else, including finished workouts and Watch activities (social posts).
+  // Programs = a routine someone shared for others to add. Nutrition =
+  // shared recipes/favourite meals. Posts = everything else, including
+  // finished workouts and Watch activities (social posts).
   const contentFiltered =
-    contentFilter === 'all' ? scoped : contentFilter === 'programs' ? scoped.filter(isProgramPost) : scoped.filter((p) => !isProgramPost(p));
-  const shown = filterType === 'all' ? contentFiltered : contentFiltered.filter((p) => p.workout_type === filterType);
+    contentFilter === 'all'
+      ? scoped
+      : contentFilter === 'programs'
+        ? scoped.filter(isProgramPost)
+        : contentFilter === 'nutrition'
+          ? scoped.filter(isRecipePost)
+          : scoped.filter((p) => !isProgramPost(p) && !isRecipePost(p));
+  const typeFiltered = filterType === 'all' ? contentFiltered : contentFiltered.filter((p) => p.workout_type === filterType);
+  // Trending has no real signal yet, so likes + comments + shares stands
+  // in for it - ranked highest first; Recent just keeps created_at order.
+  const shown =
+    feedSort === 'trending'
+      ? [...typeFiltered].sort(
+          (a, b) =>
+            engagement.likeCountFor(b.id) + engagement.commentsFor(b.id).length + b.shares_count -
+            (engagement.likeCountFor(a.id) + engagement.commentsFor(a.id).length + a.shares_count),
+        )
+      : typeFiltered;
   // Stories row: friends first, then anyone else who has posted. A gradient
   // ring means they posted in the last 24 hours.
   const dayAgo = Date.now() - 24 * 3600 * 1000;
@@ -139,19 +168,40 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
             <Icon name="comment" />
             Posts
           </button>
+          <button className={contentFilter === 'nutrition' ? 'on' : ''} onClick={() => setContentFilter('nutrition')}>
+            <Icon name="nutrition" />
+            Nutrition
+          </button>
         </div>
       </div>
-      <div className="feed-filters">
-        <button className={`type-chip${filterType === 'all' ? ' active' : ''}`} onClick={() => setFilterType('all')}>
-          All sports
-        </button>
-        {WORKOUT_TYPES.map((w) => (
-          <button key={w.id} className={`type-chip${filterType === w.id ? ' active' : ''}`} onClick={() => setFilterType(w.id)}>
-            <span className="sw" style={{ background: `var(${w.colorVar})` }} />
-            {w.label}
+      {contentFilter === 'nutrition' ? (
+        <div className="feed-filters" style={{ justifyContent: 'space-between' }}>
+          <div className="scope">
+            <button className={feedSort === 'recent' ? 'on' : ''} onClick={() => setFeedSort('recent')}>
+              Recent
+            </button>
+            <button className={feedSort === 'trending' ? 'on' : ''} onClick={() => setFeedSort('trending')}>
+              <Icon name="flame" />
+              Trending
+            </button>
+          </div>
+          <button className="link-btn" onClick={() => setMyRecipesOpen(true)}>
+            My recipes
           </button>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div className="feed-filters">
+          <button className={`type-chip${filterType === 'all' ? ' active' : ''}`} onClick={() => setFilterType('all')}>
+            All sports
+          </button>
+          {WORKOUT_TYPES.map((w) => (
+            <button key={w.id} className={`type-chip${filterType === w.id ? ' active' : ''}`} onClick={() => setFilterType(w.id)}>
+              <span className="sw" style={{ background: `var(${w.colorVar})` }} />
+              {w.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       <WeekSummary />
 
@@ -201,8 +251,22 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
             onSubmitComment={() => engagement.submitComment(p.id, myName)}
             onDeleteComment={engagement.removeComment}
             onDeletePost={() => deletePost(p.id)}
+            onShareRecipe={(post) => {
+              const recipe = recipeFromPost(post);
+              if (recipe) setShareTarget({ recipe, sourcePostId: post.id });
+            }}
           />
         ))
+      )}
+
+      <MyRecipesScreen open={myRecipesOpen} onClose={() => setMyRecipesOpen(false)} />
+      {shareTarget && (
+        <ShareRecipeSheet
+          recipe={shareTarget.recipe}
+          sourcePostId={shareTarget.sourcePostId}
+          initialStep="friends"
+          onClose={() => setShareTarget(null)}
+        />
       )}
     </>
   );
@@ -331,7 +395,7 @@ function FriendsTab({ userId }: { userId: string }) {
         ) : (
           friends.filter(match).map((f) => (
             <Row key={f.user_id} p={f} ring>
-              <button className="btn btn-sm btn-ghost" onClick={() => openDM(f.user_id, f.name)}>
+              <button className="btn btn-sm btn-ghost" onClick={() => openDM(f.user_id, f.name, f.photo_url, f.character)}>
                 Message
               </button>
             </Row>
@@ -361,25 +425,24 @@ function FriendsTab({ userId }: { userId: string }) {
   );
 }
 
-// Each group gets a stable colour from its name.
-const GROUP_GRADIENTS = [
-  'linear-gradient(140deg, #0f8f5c, #0b5a3a)',
-  'linear-gradient(140deg, #d4425c, #7a1d2c)',
-  'linear-gradient(140deg, #1554e6, #0b2f8e)',
-  'linear-gradient(140deg, #8936e8, #4b1a8c)',
-  'linear-gradient(140deg, #c1830f, #7a4a08)',
-  'linear-gradient(140deg, #0f95a5, #0a5560)',
-];
-function hashName(name: string): number {
-  let h = 0;
-  for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  return h;
+interface Conversation {
+  id: string;
+  kind: 'individual' | 'group';
+  name: string;
+  photoUrl: string | null;
+  character: CharacterConfig | null;
+  preview: string;
+  at: string | null;
+  unread: number;
 }
 
-function GroupsTab({ userId }: { userId: string }) {
+function MessagesTab({ userId }: { userId: string }) {
+  const openDM = useAppStore((s) => s.openDM);
   const openGroup = useAppStore((s) => s.openGroup);
   const showToast = useAppStore((s) => s.showToast);
-  const [groups, setGroups] = useState<GroupMembership[]>([]);
+  const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [query, setQuery] = useState('');
+  const [typeFilter, setTypeFilter] = useState<'all' | 'individual' | 'group'>('all');
   const [creating, setCreating] = useState(false);
   const [name, setName] = useState('');
   const [picked, setPicked] = useState<Set<string>>(new Set());
@@ -388,18 +451,66 @@ function GroupsTab({ userId }: { userId: string }) {
 
   useEffect(() => {
     let cancelled = false;
-    function load() {
-      fetchMyGroups(userId).then((rows) => {
-        if (!cancelled) setGroups(rows);
+    async function load() {
+      const [friends, lastDms, unreadCounts, groups] = await Promise.all([
+        fetchFriends(userId),
+        fetchLastDMPerPartner(userId),
+        fetchUnreadDMCounts(userId),
+        fetchMyGroups(userId),
+      ]);
+      const groupMsgs = await fetchLastGroupMessagesFor(groups.map((g) => g.id));
+      if (cancelled) return;
+      const individuals: Conversation[] = friends.map((f) => {
+        const last = lastDms[f.user_id];
+        return {
+          id: f.user_id,
+          kind: 'individual',
+          name: f.name,
+          photoUrl: f.photo_url,
+          character: f.character,
+          preview: last ? messagePreview(last.text) : 'Say hi 👋',
+          at: last?.created_at ?? null,
+          unread: unreadCounts[f.user_id] ?? 0,
+        };
       });
+      const groupConvos: Conversation[] = groups.map((g) => {
+        const last = groupMsgs[g.id];
+        return {
+          id: g.id,
+          kind: 'group',
+          name: g.name,
+          photoUrl: g.photo_url,
+          character: null,
+          preview: last ? `${last.sender_name}: ${messagePreview(last.text)}` : 'No messages yet',
+          at: last?.created_at ?? null,
+          unread: 0,
+        };
+      });
+      setConversations([...individuals, ...groupConvos]);
     }
     load();
-    const unsubscribe = subscribeMyGroups(load);
+    const un1 = subscribeDMs(load);
+    const un2 = subscribeMyGroups(load);
+    const un3 = subscribeFriendships(load);
+    const un4 = subscribeGroupMessages(load);
     return () => {
       cancelled = true;
-      unsubscribe();
+      un1();
+      un2();
+      un3();
+      un4();
     };
   }, [userId]);
+
+  const q = query.trim().toLowerCase();
+  const shown = conversations
+    .filter((c) => (typeFilter === 'all' || c.kind === typeFilter) && (!q || c.name.toLowerCase().includes(q)))
+    .sort((a, b) => {
+      if (a.at && b.at) return new Date(b.at).getTime() - new Date(a.at).getTime();
+      if (a.at) return -1;
+      if (b.at) return 1;
+      return a.name.localeCompare(b.name);
+    });
 
   function startCreate() {
     setCreating(true);
@@ -473,30 +584,61 @@ function GroupsTab({ userId }: { userId: string }) {
 
   return (
     <>
-      <div className="section-label">
-        My groups
+      <div className="search-field">
+        <Icon name="search" />
+        <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search messages" aria-label="Search messages" />
+      </div>
+      <div className="feed-filters">
+        <div className="scope">
+          <button className={typeFilter === 'all' ? 'on' : ''} onClick={() => setTypeFilter('all')}>
+            All
+          </button>
+          <button className={typeFilter === 'individual' ? 'on' : ''} onClick={() => setTypeFilter('individual')}>
+            Individual
+          </button>
+          <button className={typeFilter === 'group' ? 'on' : ''} onClick={() => setTypeFilter('group')}>
+            Groups
+          </button>
+        </div>
+        <span className="divider" />
         <button className="link-btn" onClick={startCreate}>
-          <Icon name="plus" style={{ width: 13, height: 13 }} /> Create
+          <Icon name="plus" style={{ width: 13, height: 13 }} /> New group
         </button>
       </div>
-      <div className="card">
-        {groups.length === 0 ? (
-          <div className="empty-hint">No groups yet - start one with a few friends.</div>
-        ) : (
-          groups.map((g) => (
-            <div className="group-row" key={g.id} onClick={() => openGroup(g.id, g.name)}>
-              <div className="group-icon" style={{ background: GROUP_GRADIENTS[hashName(g.name) % GROUP_GRADIENTS.length] }}>
-                <Icon name="community" style={{ width: 20, height: 20 }} />
-              </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div className="league-name">{g.name}</div>
-                <div className="group-meta">{g.role === 'admin' ? 'You created this' : 'Member'}</div>
-              </div>
-              <Icon name="chevron" style={{ width: 16, height: 16, color: 'var(--text-faint)' }} />
+
+      {shown.length === 0 ? (
+        <div className="card" style={{ padding: '16px 4px', color: 'var(--text-faint)', fontSize: 13 }}>
+          {q ? 'No conversations match that name.' : 'No conversations yet - message a friend or start a group.'}
+        </div>
+      ) : (
+        shown.map((c) => (
+          <div
+            className="msg-row"
+            key={`${c.kind}-${c.id}`}
+            onClick={() => (c.kind === 'individual' ? openDM(c.id, c.name, c.photoUrl, c.character) : openGroup(c.id, c.name, c.photoUrl))}
+          >
+            {c.kind === 'individual' ? (
+              <UserAvatar className="msg-row-avatar" name={c.name} character={c.character} photoUrl={c.photoUrl} />
+            ) : c.photoUrl ? (
+              <span className="msg-row-avatar" style={{ padding: 0, overflow: 'hidden' }}>
+                <img className="fit-img" src={c.photoUrl} alt="" />
+              </span>
+            ) : (
+              <span className="group-icon" style={{ width: 50, height: 50, borderRadius: 16, background: groupGradient(c.name) }}>
+                <Icon name="community" style={{ width: 22, height: 22 }} />
+              </span>
+            )}
+            <div className="msg-row-main">
+              <div className="msg-row-name">{c.name}</div>
+              <div className="msg-row-preview">{c.preview}</div>
             </div>
-          ))
-        )}
-      </div>
+            <div className="msg-row-meta">
+              {c.at && <span className="msg-row-time">{timeAgo(c.at)}</span>}
+              {c.unread > 0 && <span className="msg-unread-badge">{c.unread > 9 ? '9+' : c.unread}</span>}
+            </div>
+          </div>
+        ))
+      )}
     </>
   );
 }
@@ -504,7 +646,7 @@ function GroupsTab({ userId }: { userId: string }) {
 export function CommunityScreen() {
   const userId = useUserId();
   const profile = useAppStore((s) => s.profile);
-  const [tab, setTab] = useState<'feed' | 'friends' | 'groups'>('feed');
+  const [tab, setTab] = useState<'feed' | 'friends' | 'messages'>('feed');
 
   const [requestCount, setRequestCount] = useState(0);
 
@@ -551,7 +693,7 @@ export function CommunityScreen() {
       ) : tab === 'friends' ? (
         <FriendsTab userId={userId} />
       ) : (
-        <GroupsTab userId={userId} />
+        <MessagesTab userId={userId} />
       )}
     </>
   );

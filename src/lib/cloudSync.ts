@@ -6,6 +6,14 @@ import { monthStartOf } from '../store/useAppStore';
 let unsubscribeStore: (() => void) | null = null;
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
 
+// The cloud row's updated_at as of the last time THIS session either pulled
+// it down (hydrate) or successfully wrote it (push). Lets pushToCloud tell
+// "my local state reflects the latest cloud write" apart from "something
+// else wrote to the cloud more recently than I know about" - the second
+// case is exactly how a stale local snapshot reverted a profile photo even
+// though nothing about XP looked wrong (see the guard below).
+let lastSyncedAt: string | null = null;
+
 function stateForCloud() {
   // Same shape as the localStorage persist partialize - just drop the
   // transient UI fields (toast/levelUp), everything else is plain data.
@@ -27,7 +35,7 @@ async function pushToCloud(userId: string) {
   // state repeatedly overwrote more-advanced cloud progress with an old
   // snapshot - root cause not fully confirmed, so this guard is the
   // actual fix regardless of the exact mechanism.
-  const { data: existing } = await supabase.from('app_state').select('state').eq('user_id', userId).maybeSingle();
+  const { data: existing } = await supabase.from('app_state').select('state, updated_at').eq('user_id', userId).maybeSingle();
   const cloudXP = (existing?.state as { progress?: { totalXP?: number } } | null)?.progress?.totalXP ?? 0;
   const localXP = state.progress.totalXP;
   if (existing && localXP < cloudXP) {
@@ -37,8 +45,28 @@ async function pushToCloud(userId: string) {
     return;
   }
 
-  const { error } = await supabase.from('app_state').upsert({ user_id: userId, state, updated_at: new Date().toISOString() });
-  if (error) console.error('[cloudSync] failed to save:', error.message);
+  // General version of the guard above, for every OTHER field a stale
+  // snapshot could revert without XP looking wrong at all (profile photo,
+  // name, equipped character gear) - if the cloud's updated_at has moved
+  // on since this session last saw it, something else (another device,
+  // another tab) wrote more recently than what this push is based on.
+  // Pushing now would silently clobber that write with this session's
+  // possibly-stale copy of it, so refuse and re-pull the real state instead.
+  if (existing && lastSyncedAt && existing.updated_at && existing.updated_at > lastSyncedAt) {
+    console.error(
+      `[cloudSync] refused to push: cloud state for user ${userId} was updated (${existing.updated_at}) more recently than this session last synced (${lastSyncedAt}) - re-hydrating instead of overwriting it`,
+    );
+    await hydrateFromCloud(userId);
+    return;
+  }
+
+  const nowIso = new Date().toISOString();
+  const { error } = await supabase.from('app_state').upsert({ user_id: userId, state, updated_at: nowIso });
+  if (error) {
+    console.error('[cloudSync] failed to save:', error.message);
+  } else {
+    lastSyncedAt = nowIso;
+  }
 
   // A slice of the same state is mirrored into public_profiles - just
   // enough for the league and community to show a real name/level/XP/
@@ -85,7 +113,7 @@ async function pushToCloud(userId: string) {
 // same mount) pushed whatever stale snapshot was left in local storage
 // and overwrote real cloud progress with it.
 export async function hydrateFromCloud(userId: string, isStillCurrent: () => boolean = () => true): Promise<boolean> {
-  const { data, error } = await supabase.from('app_state').select('state').eq('user_id', userId).maybeSingle();
+  const { data, error } = await supabase.from('app_state').select('state, updated_at').eq('user_id', userId).maybeSingle();
   if (error) {
     console.error('[cloudSync] failed to load:', error.message);
     return false;
@@ -95,9 +123,20 @@ export async function hydrateFromCloud(userId: string, isStillCurrent: () => boo
   // edits leak into another account's cloud row (see useSession.ts) - don't
   // even apply this snapshot to the shared store once that's happened.
   if (!isStillCurrent()) return true;
+  if (data?.updated_at) lastSyncedAt = data.updated_at;
   if (data?.state) {
     useAppStore.setState(data.state as Partial<ReturnType<typeof useAppStore.getState>>);
     useAppStore.setState({ challenges: withAllChallenges(useAppStore.getState().challenges) });
+    // The cloud snapshot's `today` (checklist goals, streak-sync flags,
+    // etc.) was pushed whenever it last synced - possibly yesterday or
+    // earlier. Hydration is async and can resolve after App.tsx's own
+    // mount-time checkForNewDay() already reset `today` correctly for the
+    // real current day, in which case this setState just silently
+    // overwrote that fresh reset with a stale one (e.g. yesterday's
+    // "log a full day of meals" still marked done). Re-running the day
+    // check right here guarantees hydration can never leave a stale day
+    // in place, regardless of how the two async operations interleave.
+    useAppStore.getState().checkForNewDay();
     const p = useAppStore.getState().progress;
     if (typeof p.monthlyXP !== 'number' || !p.monthStart || typeof p.prestige !== 'number' || typeof p.monthlySteps !== 'number') {
       useAppStore.setState({
@@ -133,4 +172,8 @@ export function stopCloudSync(): void {
     clearTimeout(debounceTimer);
     debounceTimer = null;
   }
+  // Cleared so a subsequent sign-in (possibly a different account) starts
+  // the staleness guard fresh rather than comparing against a timestamp
+  // from a different user's cloud row.
+  lastSyncedAt = null;
 }

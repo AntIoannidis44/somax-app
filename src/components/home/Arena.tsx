@@ -1,7 +1,7 @@
 import { Icon } from '../Icon';
 import { CharacterStage } from '../character/CharacterStage';
 import { useAppStore } from '../../store/useAppStore';
-import { nextUnlock, tierFor } from '../../lib/character';
+import { nextUnlock, tierFor, unlockItemName } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
 
 export function Arena() {
@@ -47,7 +47,7 @@ export function Arena() {
         </div>
         <div className="af-sub">
           {Math.max(0, ceil - progress.totalXP).toLocaleString()} XP to Level {lvl + 1}
-          {nu ? ` · ${nu.item.name} unlocks at ${nu.level}` : ''}
+          {nu ? ` · ${unlockItemName(nu.key, nu.item)} unlocks at ${nu.level}` : ''}
         </div>
       </div>
     </div>

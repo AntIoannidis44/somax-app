@@ -181,31 +181,53 @@ GARMENTS.watchCase = { label: 'Watch', slot: 'acc', color: '#17181b', rigid: (sk
     return rigidPiece([{ geo: roundedBox(0.04, 0.036, 0.011, 0.005), color: '#17181b' }, { geo: roundedBox(0.032, 0.028, 0.002, 0.0009, 2), color: '#07100f', at: new THREE.Vector3(0, 0, 0.005) }, { geo: roundedBox(0.02, 0.004, 0.001, 0.0004, 1), color: '#2fd6a8', at: new THREE.Vector3(0, 0.005, 0.0062) }, { geo: roundedBox(0.012, 0.003, 0.001, 0.0004, 1), color: '#58a6ff', at: new THREE.Vector3(-0.004, -0.003, 0.0062) }], pos, q, skin, 'lowerarm_l'); } };
 // Crossbody strap: a flat ribbon round the outline of the body and the top being worn, in the plane from the left
 // shoulder to the right hip, so it rides over any top and spans every hollow.
-function strapRing(skin, J, clothes) {
+function strapRing(skin, J, clothes, spec) {
+  // Athletic's broader deltoid/shoulder cap sits further out laterally than
+  // other builds - the default margin/tolerance below leaves a gap in the
+  // ring scan right at the shoulder crossing, which the neighbour-average
+  // fallback (a few lines down) fills with a poor fit, visibly "breaking"
+  // the strap there. perBuild.superhero widens both to actually catch it.
+  const margin = spec?.armMargin ?? 0.05, tol = spec?.ringTol ?? 0.018;
   const L = strapLine(J), A = new THREE.Vector3(L.ax, L.ay, 0), B = new THREE.Vector3(L.bx, L.by, 0), u = A.clone().sub(B).normalize(), v = new THREE.Vector3(0, 0, 1), n = new THREE.Vector3().crossVectors(u, v).normalize();
   const C = A.clone().add(B).multiplyScalar(0.5); C.z = lerp(J.spine_02.z, J.spine_03.z, 0.5);
-  const NB = 96, R = new Float32Array(NB), V = new THREE.Vector3(), add = (attr) => { for (let i = 0; i < attr.count; i++) { V.fromBufferAttribute(attr, i); if (Math.abs(V.clone().sub(C).dot(n)) > 0.018 || Math.abs(V.x) > J.upperarm.x + 0.05 || V.y < J.pelvis.y - 0.03) continue; const d = V.clone().sub(C), a = d.dot(u), b = d.dot(v), k = ((Math.round(Math.atan2(b, a) / (2 * Math.PI) * NB) % NB) + NB) % NB; R[k] = Math.max(R[k], Math.hypot(a, b)); } };
+  const NB = 96, R = new Float32Array(NB), V = new THREE.Vector3(), add = (attr) => { for (let i = 0; i < attr.count; i++) { V.fromBufferAttribute(attr, i); if (Math.abs(V.clone().sub(C).dot(n)) > tol || Math.abs(V.x) > J.upperarm.x + margin || V.y < J.pelvis.y - 0.03) continue; const d = V.clone().sub(C), a = d.dot(u), b = d.dot(v), k = ((Math.round(Math.atan2(b, a) / (2 * Math.PI) * NB) % NB) + NB) % NB; R[k] = Math.max(R[k], Math.hypot(a, b)); } };
   add(skin.geometry.attributes.position); if (clothes) add(clothes.attributes.position);
   for (let k = 0; k < NB; k++) if (!R[k]) { let a = k, b = k; while (!R[a]) a = (a + NB - 1) % NB; while (!R[b]) b = (b + 1) % NB; R[k] = (R[a] + R[b]) / 2; }
+  // the raw, gap-filled scan - the real body surface at each angle. The taut
+  // pass below smooths sharp peaks (quilting ridges, folds) by shrinking
+  // them ~1.5%/iteration over 24 iterations, which is fine for high-
+  // frequency noise but pulls a genuinely broad peak - like Athletic's
+  // shoulder cap - down far enough to sink the strap under the skin there.
+  // Floor the final radius to this raw scan so the strap can never end up
+  // narrower than the body it's supposed to sit on top of.
+  const floor = R.slice();
   // the taut outline: a strap spans hollows, so each radius is lifted to the line between higher neighbours, then eased
   for (let it = 0; it < 3; it++) { const c = R.slice(); for (let k = 0; k < NB; k++) for (const w of [3, 6, 10]) R[k] = Math.max(R[k], (c[(k + NB - w) % NB] + c[(k + w) % NB]) / 2 * Math.cos(2 * Math.PI * w / NB)); }
   for (let it = 0; it < 24; it++) { const c = R.slice(); for (let k = 0; k < NB; k++) R[k] = Math.max(c[k] * 0.985, (c[(k + NB - 1) % NB] + 2 * c[k] + c[(k + 1) % NB]) / 4); } // taut: no kinks over quilting or folds
+  for (let k = 0; k < NB; k++) R[k] = Math.max(R[k], floor[k]);
   const at = (th) => { const t = ((th / (2 * Math.PI) * NB) % NB + NB) % NB, a = Math.floor(t), b = (a + 1) % NB, r = lerp(R[a], R[b], t - a) + 0.007; return C.clone().addScaledVector(u, Math.cos(th) * r).addScaledVector(v, Math.sin(th) * r); };
   return { at, n, u, v, C };
 }
 // the strap moves with the body beneath it: bone weights averaged from the torso skin nearby (arm-driven skin left out)
-const strapBones = (skin, J) => { const g = skin.geometry, pos = g.attributes.position, si = g.attributes.skinIndex, sw = g.attributes.skinWeight, names = skin.skeleton.bones.map((b) => b.name), V = new THREE.Vector3(), near = [];
-  for (let i = 0; i < pos.count; i++) { V.fromBufferAttribute(pos, i); if (V.y < J.pelvis.y - 0.05 || V.y > J.neck.y + 0.03 || Math.abs(V.x) > J.upperarm.x + 0.06) continue; const w = []; let arm = 0; for (let q = 0; q < 4; q++) { const n = names[si.getComponent(i, q)], x = sw.getComponent(i, q); if (x <= 0) continue; if (/upperarm|lowerarm|hand|thigh|calf/.test(n)) arm += x; else w.push([n, x]); } if (arm < 0.5 && w.length) near.push([V.clone(), w]); }
+const strapBones = (skin, J, spec) => { const margin = (spec?.armMargin ?? 0.05) + 0.01; const g = skin.geometry, pos = g.attributes.position, si = g.attributes.skinIndex, sw = g.attributes.skinWeight, names = skin.skeleton.bones.map((b) => b.name), V = new THREE.Vector3(), near = [];
+  for (let i = 0; i < pos.count; i++) { V.fromBufferAttribute(pos, i); if (V.y < J.pelvis.y - 0.05 || V.y > J.neck.y + 0.03 || Math.abs(V.x) > J.upperarm.x + margin) continue; const w = []; let arm = 0; for (let q = 0; q < 4; q++) { const n = names[si.getComponent(i, q)], x = sw.getComponent(i, q); if (x <= 0) continue; if (/upperarm|lowerarm|hand|thigh|calf/.test(n)) arm += x; else w.push([n, x]); } if (arm < 0.5 && w.length) near.push([V.clone(), w]); }
   return (p) => { const acc = new Map(); for (const [v, w] of near) { const d = v.distanceTo(p); if (d > 0.22) continue; const f = (1 - d / 0.22) ** 8; /* wide, soft reach: a strap over a puffer sits well off the body */ for (const [n, x] of w) acc.set(n, (acc.get(n) || 0) + f * x); } const top = [...acc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4), sum = top.reduce((a, e) => a + e[1], 0) || 1; return top.length ? top.map(([n, x]) => [n, x / sum]) : [['spine_02', 1]]; }; };
-GARMENTS.bagStrap = { label: 'Crossbody bag', slot: 'acc', color: '#17181b', rigid: (skin, J, spec) => { const ring = strapRing(skin, J, spec.clothesGeo), SEG = 160, hw = 0.0125, th = 0.0022, P = [], Nn = [], I = [];
+GARMENTS.bagStrap = { label: 'Crossbody bag', slot: 'acc', color: '#17181b',
+  // Athletic's shoulder cap sits wider than the default strapRing margin
+  // expects (see strapRing's comment) - this is the exact correction
+  // approved for other garments' Athletic-only sculpt tweaks.
+  perBuild: { superhero: { armMargin: 0.09, ringTol: 0.028 } },
+  rigid: (skin, J, spec) => { const ring = strapRing(skin, J, spec.clothesGeo, spec), SEG = 160, hw = 0.0125, th = 0.0022, P = [], Nn = [], I = [];
     for (let i = 0; i <= SEG; i++) { const a = i / SEG * 2 * Math.PI, p = ring.at(a), q = ring.at(a + 0.02), out = new THREE.Vector3().crossVectors(q.clone().sub(p), ring.n).normalize(); if (out.dot(p.clone().sub(ring.C)) < 0) out.negate();
       [[-hw, 0, ring.n, -1], [hw, 0, ring.n, 1]].forEach(([w]) => { const o = p.clone().addScaledVector(ring.n, w).addScaledVector(out, th); P.push(o.x, o.y, o.z); Nn.push(out.x, out.y, out.z); }); }
     for (let i = 0; i < SEG; i++) { const a = i * 2; I.push(a, a + 2, a + 1, a + 1, a + 2, a + 3); }
     const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(P, 3)); geo.setAttribute('normal', new THREE.Float32BufferAttribute(Nn, 3)); geo.setIndex(I);
     const bp = ring.at(0.42), q = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(ring.n, new THREE.Vector3().crossVectors(new THREE.Vector3(0, 0, 1), ring.n).normalize(), new THREE.Vector3(0, 0, 1)));
     const buckle = roundedBox(0.034, 0.016, 0.006, 0.002, 2); buckle.applyQuaternion(q); buckle.translate(bp.x, bp.y, bp.z + 0.003);
-    return rigidPiece([{ geo, color: '#17181b' }, { geo: buckle, color: '#2c2e33' }], new THREE.Vector3(), new THREE.Quaternion(), skin, strapBones(skin, J)); } };
-GARMENTS.bagPouch = { label: 'Crossbody bag', slot: 'acc', color: '#17181b', rigid: (skin, J, spec) => { const ring = strapRing(skin, J, spec.clothesGeo), th = Math.PI - 0.62, p = ring.at(th), yaw = Math.atan2(p.x - ring.C.x, p.z - ring.C.z) * 0.8, q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), yaw), pos = p.clone().add(new THREE.Vector3(Math.sin(yaw) * 0.03, -0.075, Math.cos(yaw) * 0.03));
+    return rigidPiece([{ geo, color: '#17181b' }, { geo: buckle, color: '#2c2e33' }], new THREE.Vector3(), new THREE.Quaternion(), skin, strapBones(skin, J, spec)); } };
+GARMENTS.bagPouch = { label: 'Crossbody bag', slot: 'acc', color: '#17181b',
+  perBuild: { superhero: { armMargin: 0.09, ringTol: 0.028 } },
+  rigid: (skin, J, spec) => { const ring = strapRing(skin, J, spec.clothesGeo, spec), th = Math.PI - 0.62, p = ring.at(th), yaw = Math.atan2(p.x - ring.C.x, p.z - ring.C.z) * 0.8, q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), yaw), pos = p.clone().add(new THREE.Vector3(Math.sin(yaw) * 0.03, -0.075, Math.cos(yaw) * 0.03));
     const black = '#17181b', mid = '#23252a';
     return rigidPiece([{ geo: roundedBox(0.125, 0.15, 0.052, 0.02), color: black }, { geo: roundedBox(0.098, 0.07, 0.016, 0.008), color: mid, at: new THREE.Vector3(0, -0.028, 0.028) }, { geo: roundedBox(0.104, 0.003, 0.004, 0.001, 1), color: '#3a3d43', at: new THREE.Vector3(0, 0.032, 0.027) }], pos, q, skin, 'pelvis'); } };
 const ACCESSORIES = { headband: ['headband'], wristbands: ['wristbands'], watch: ['watchStrap', 'watchCase'], bag: ['bagStrap', 'bagPouch'] };

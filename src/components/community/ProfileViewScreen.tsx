@@ -184,7 +184,7 @@ export function ProfileViewScreen() {
               <button className="btn btn-ghost" style={{ flex: 1 }} disabled>
                 <Icon name="check" style={{ width: 15, height: 15 }} /> Friends
               </button>
-              <button className="btn btn-ghost" style={{ flex: 1, position: 'relative' }} onClick={() => openDM(profile!.user_id, profile!.name)}>
+              <button className="btn btn-ghost" style={{ flex: 1, position: 'relative' }} onClick={() => openDM(profile!.user_id, profile!.name, profile!.photo_url, profile!.character)}>
                 Message
                 {unread > 0 && <span className="friend-unread-badge" style={{ top: -6, right: -6 }}>{unread > 9 ? '9+' : unread}</span>}
               </button>

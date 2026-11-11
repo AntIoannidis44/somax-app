@@ -8,6 +8,16 @@ import { workoutTypeById } from '../../data/workoutTypes';
 import { ShareSessionButton } from './ShareSessionButton';
 import { ShareProgramSheet } from './ShareProgramSheet';
 import { recordActivityForGoals } from '../../lib/fitnessGoals';
+import { getWorkoutsForDate, healthAvailableOnPlatform, type HealthWorkout } from '../../lib/health';
+
+// `day` is a simDay (days-since-onboarding counter, not a real date) -
+// shift today's real ISO date by the same number of days to get the real
+// calendar date that simDay refers to.
+function isoDateForSimDay(day: number, realSimDay: number, lastActiveDate: string): string {
+  const d = new Date(`${lastActiveDate}T00:00:00`);
+  d.setDate(d.getDate() + (day - realSimDay));
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
 
 function repsLabel(reps: string): string {
   return /^\d+$/.test(reps.trim()) ? `${reps.trim()} reps` : reps;
@@ -117,13 +127,18 @@ function SetRow({ setIndex, reps, weight, done, crossed, exSkipped, locked, effe
 
 export function WorkoutScreen() {
   const wid = useAppStore((s) => s.viewingWorkout)!;
-  const simDay = useAppStore((s) => s.simDay);
+  const realSimDay = useAppStore((s) => s.simDay);
+  const viewingWorkoutDay = useAppStore((s) => s.viewingWorkoutDay);
+  const simDay = viewingWorkoutDay ?? realSimDay;
+  const lastActiveDate = useAppStore((s) => s.lastActiveDate);
   const ws = useAppStore((s) => s.workoutState[simDay]?.[wid]);
   const toggleSet = useAppStore((s) => s.toggleSet);
   const toggleSetSkip = useAppStore((s) => s.toggleSetSkip);
   const setSetWeight = useAppStore((s) => s.setSetWeight);
   const toggleSkip = useAppStore((s) => s.toggleSkip);
   const finishWorkout = useAppStore((s) => s.finishWorkout);
+  const resumeWorkout = useAppStore((s) => s.resumeWorkout);
+  const attachWatchWorkoutToSession = useAppStore((s) => s.attachWatchWorkoutToSession);
   const awardFitnessGoalXP = useAppStore((s) => s.awardFitnessGoalXP);
   const openWorkoutEditor = useAppStore((s) => s.openWorkoutEditor);
   const openComposer = useAppStore((s) => s.openComposer);
@@ -131,6 +146,9 @@ export function WorkoutScreen() {
   const userId = useUserId();
   const [tracking, setTracking] = useState(false);
   const [sharing, setSharing] = useState(false);
+  const [syncOpen, setSyncOpen] = useState(false);
+  const [syncLoading, setSyncLoading] = useState(false);
+  const [syncOptions, setSyncOptions] = useState<HealthWorkout[] | null>(null);
 
   const w = getWorkout(wid);
   if (!ws || !w) return null;
@@ -155,6 +173,7 @@ export function WorkoutScreen() {
   // here; distance_time/distance_total goals simply won't match since
   // distanceMeters/durationSeconds are null (see recordActivityForGoals).
   function handleFinish() {
+    if (!window.confirm('Finish this workout? You can resume it afterwards if you tapped this by mistake.')) return;
     finishWorkout(wid);
     if (!userId) return;
     recordActivityForGoals(userId, {
@@ -173,6 +192,22 @@ export function WorkoutScreen() {
         }
       }
     });
+  }
+
+  async function handleOpenSync() {
+    setSyncOpen(true);
+    setSyncLoading(true);
+    setSyncOptions(null);
+    const isoDate = isoDateForSimDay(simDay, realSimDay, lastActiveDate);
+    const workouts = await getWorkoutsForDate(isoDate);
+    setSyncOptions(workouts);
+    setSyncLoading(false);
+  }
+
+  function handleSelectSyncWorkout(workout: HealthWorkout) {
+    attachWatchWorkoutToSession(wid, simDay, workout);
+    setSyncOpen(false);
+    showToast(`Synced "${workout.activityName}" to this workout`);
   }
 
   // One exercise: its label and name, then a row per set. In tracking mode
@@ -303,6 +338,16 @@ export function WorkoutScreen() {
       {ws.completed && (
         <>
           <div style={{ height: 10 }} />
+          <button
+            className="btn btn-ghost"
+            onClick={() => {
+              if (!window.confirm('Resume this workout? It unlocks set tracking again - tap Finish once you\'re actually done.')) return;
+              resumeWorkout(wid, simDay);
+            }}
+          >
+            <Icon name="rotate" style={{ width: 15, height: 15 }} /> Resume workout
+          </button>
+          <div style={{ height: 10 }} />
           <ShareSessionButton
             resolveActivity={async () => ({ name: w.name, duration: w.duration, category: w.category, exercises: w.exercises })}
           />
@@ -321,6 +366,50 @@ export function WorkoutScreen() {
             <Icon name={workoutTypeById(w.category)?.icon ?? 'zap'} style={{ width: 15, height: 15 }} />
             Post to {workoutTypeById(w.category)?.label ?? 'the'} feed
           </button>
+
+          {healthAvailableOnPlatform() && (
+            <>
+              <div style={{ height: 10 }} />
+              {ws.watchSync ? (
+                <div className="day-picker" style={{ padding: '11px 14px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 13, fontWeight: 600 }}>
+                    <Icon name="watch" style={{ width: 15, height: 15, color: 'var(--accent)', flexShrink: 0 }} />
+                    <span style={{ flex: 1 }}>
+                      Synced from Apple Fitness: {ws.watchSync.activityName} · {Math.round(ws.watchSync.kcal)} kcal · {Math.round(ws.watchSync.durationMinutes)} min
+                    </span>
+                  </div>
+                  <button className="link-btn" style={{ marginTop: 6 }} onClick={handleOpenSync}>
+                    Change
+                  </button>
+                </div>
+              ) : (
+                <button className="btn btn-ghost" onClick={handleOpenSync}>
+                  <Icon name="watch" style={{ width: 15, height: 15 }} /> Sync from Apple Fitness
+                </button>
+              )}
+              {syncOpen && (
+                <div className="day-picker">
+                  {syncLoading && <div className="day-picker-group-label">Loading…</div>}
+                  {!syncLoading && syncOptions?.length === 0 && (
+                    <div className="day-picker-group-label">No Apple Fitness workouts found for this day</div>
+                  )}
+                  {!syncLoading &&
+                    syncOptions?.map((workout) => (
+                      <div
+                        key={workout.uuid}
+                        className={`day-picker-opt${ws.watchSync?.uuid === workout.uuid ? ' current' : ''}`}
+                        onClick={() => handleSelectSyncWorkout(workout)}
+                      >
+                        {workout.activityName} · {Math.round(workout.kcal)} kcal · {Math.round(workout.durationMinutes)} min
+                      </div>
+                    ))}
+                  <div className="day-picker-opt" onClick={() => setSyncOpen(false)}>
+                    Cancel
+                  </div>
+                </div>
+              )}
+            </>
+          )}
         </>
       )}
       {sharing && w && (

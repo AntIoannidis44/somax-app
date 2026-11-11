@@ -21,6 +21,9 @@
 		BCF524616FB9B794C0EE8B38 /* LocationSearchPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BBC6764CF725E3A6F18D10 /* LocationSearchPlugin.swift */; };
 		204E7C13E94D0A9D1BD7CB33 /* ScaleReaderPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDF204E93C769816A81A09 /* ScaleReaderPlugin.swift */; };
 		362BE37FA404EC74801D5A06 /* BadgePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2961C06268FFE33A8010AE77 /* BadgePlugin.swift */; };
+		7701D5891CE77554FBBDB65E /* BarcodeScannerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C07B5BF11A61F8657EB380 /* BarcodeScannerPlugin.swift */; };
+		FD4F4CAEE0E4DCA476CA0372 /* SpeechToTextPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C040992A363B43C0C25E98 /* SpeechToTextPlugin.swift */; };
+		02CDDE3A43177FD96174BD52 /* NoKeyboardAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0899ED6CBFF133F7424829 /* NoKeyboardAccessory.swift */; };
 		B590D844E9164F819FCAEDE9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DCE201C6E0438FA2E4F6D0 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		F5BBC6764CF725E3A6F18D10 /* LocationSearchPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchPlugin.swift; sourceTree = "<group>"; };
 		92EDF204E93C769816A81A09 /* ScaleReaderPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleReaderPlugin.swift; sourceTree = "<group>"; };
 		2961C06268FFE33A8010AE77 /* BadgePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePlugin.swift; sourceTree = "<group>"; };
+		F2C07B5BF11A61F8657EB380 /* BarcodeScannerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerPlugin.swift; sourceTree = "<group>"; };
+		31C040992A363B43C0C25E98 /* SpeechToTextPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextPlugin.swift; sourceTree = "<group>"; };
+		6E0899ED6CBFF133F7424829 /* NoKeyboardAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoKeyboardAccessory.swift; sourceTree = "<group>"; };
 		22DCE201C6E0438FA2E4F6D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3809CD209EEE442080D7B7BF /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +89,9 @@
 				F5BBC6764CF725E3A6F18D10 /* LocationSearchPlugin.swift */,
 				92EDF204E93C769816A81A09 /* ScaleReaderPlugin.swift */,
 				2961C06268FFE33A8010AE77 /* BadgePlugin.swift */,
+				F2C07B5BF11A61F8657EB380 /* BarcodeScannerPlugin.swift */,
+				31C040992A363B43C0C25E98 /* SpeechToTextPlugin.swift */,
+				6E0899ED6CBFF133F7424829 /* NoKeyboardAccessory.swift */,
 				22DCE201C6E0438FA2E4F6D0 /* MainViewController.swift */,
 				3809CD209EEE442080D7B7BF /* App.entitlements */,
 				50379B222058CBB4000EE86E /* capacitor.config.json */,
@@ -185,6 +194,9 @@
 				BCF524616FB9B794C0EE8B38 /* LocationSearchPlugin.swift in Sources */,
 				204E7C13E94D0A9D1BD7CB33 /* ScaleReaderPlugin.swift in Sources */,
 				362BE37FA404EC74801D5A06 /* BadgePlugin.swift in Sources */,
+				7701D5891CE77554FBBDB65E /* BarcodeScannerPlugin.swift in Sources */,
+				FD4F4CAEE0E4DCA476CA0372 /* SpeechToTextPlugin.swift in Sources */,
+				02CDDE3A43177FD96174BD52 /* NoKeyboardAccessory.swift in Sources */,
 				B590D844E9164F819FCAEDE9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 45;
 				DEVELOPMENT_TEAM = 5MF4FF7MYD;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -351,7 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 45;
 				DEVELOPMENT_TEAM = 5MF4FF7MYD;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

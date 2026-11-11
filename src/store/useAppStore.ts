@@ -9,7 +9,7 @@ import { defaultCharacter } from '../lib/character';
 import { HYDRATION_TARGET_ML, STEP_GOAL, STEP_GOAL_XP, buildTodayGoals, generateWeekPlan, reviseWeekPlanFrom, todayPlanIndex } from '../lib/schedule';
 import { getWorkout } from '../lib/customWorkouts';
 import { expandSets, setKey } from '../lib/workoutSets';
-import { DAILY_CAP, MAX_LEVEL, levelFromXP } from '../lib/xp';
+import { dailyCapForLevel, MAX_LEVEL, levelFromXP } from '../lib/xp';
 import type { PostWorkout } from '../lib/social';
 import type {
   AppState,
@@ -95,6 +95,7 @@ function defaultAppState(): AppState {
       stats: { strength: 8, endurance: 8, agility: 8, vitality: 10, recovery: 9, discipline: 8 },
     },
     stats_workoutsDone: 0,
+    stats_fullMealDaysLogged: 0,
     today: { forDay: simDay, goals: buildTodayGoals(weekPlan), dayHadCompletion: false, xpEarnedToday: 0 },
     weekPlan,
     workoutState: { [simDay]: {} },
@@ -112,10 +113,15 @@ function defaultAppState(): AppState {
     // silently never working at all.
     settings: { notifWorkout: true, notifStreak: true, notifLeague: false, notifChallenge: true, notifMessages: true, privateProfile: false, theme: 'system' },
     viewingWorkout: null,
+    viewingWorkoutDay: null,
     viewingCharacter: false,
     viewingGoals: false,
+    viewingMacros: false,
     viewingDM: null,
     viewingGroup: null,
+    viewingChatInfo: null,
+    viewingSharedContent: null,
+    wallpaperPickerOpen: false,
     viewingProfile: null,
     viewingWorkoutEditor: null,
     viewingSharedProgram: null,
@@ -141,18 +147,28 @@ interface TransientState {
 
 interface Actions {
   go: (route: Route) => void;
-  openWorkout: (wid: string) => void;
+  openWorkout: (wid: string, day?: number) => void;
   closeWorkout: () => void;
+  resumeWorkout: (wid: string, day?: number) => void;
+  attachWatchWorkoutToSession: (wid: string, day: number, workout: HealthWorkoutSummary) => void;
   openCharacterStudio: () => void;
   closeCharacterStudio: () => void;
   openGoals: () => void;
   closeGoals: () => void;
-  openDM: (userId: string, name: string) => void;
+  openMacros: () => void;
+  closeMacros: () => void;
+  openDM: (userId: string, name: string, photoUrl?: string | null, character?: CharacterConfig | null) => void;
   closeDM: () => void;
   setUnreadDM: (counts: Record<string, number>) => void;
   clearUnreadFrom: (senderId: string) => void;
-  openGroup: (groupId: string, name: string) => void;
+  openGroup: (groupId: string, name: string, photoUrl?: string | null, character?: CharacterConfig | null) => void;
   closeGroup: () => void;
+  openChatInfo: (kind: 'dm' | 'group', id: string, name: string) => void;
+  closeChatInfo: () => void;
+  openSharedContent: (kind: 'dm' | 'group', id: string, name: string) => void;
+  closeSharedContent: () => void;
+  openWallpaperPicker: () => void;
+  closeWallpaperPicker: () => void;
   openProfile: (userId: string) => void;
   closeProfile: () => void;
   openWorkoutEditor: (sourceKey: string | 'new') => void;
@@ -189,6 +205,7 @@ interface Actions {
   setMonthlySteps: (steps: number) => void;
   syncWatchWorkout: (workouts: HealthWorkoutSummary[]) => void;
   toggleWatchWorkoutSelection: (workout: HealthWorkoutSummary) => void;
+  syncMacroGoal: (mealsLoggedToday: string[]) => void;
   toggleExercise: (exIndex: number) => void;
   toggleSet: (exIndex: number, setIndex: number) => void;
   toggleSetSkip: (exIndex: number, setIndex: number) => void;
@@ -199,6 +216,7 @@ interface Actions {
   joinChallenge: (id: string) => void;
   logChallenge: (id: string) => void;
   syncCardioKm: (km: number) => void;
+  syncMacroChallenge: (fullyLoggedDays: number) => void;
   setFriendCount: (count: number) => void;
   prestige: () => void;
   leaveChallenge: (id: string) => void;
@@ -254,30 +272,62 @@ export const useAppStore = create<Store>()(
         set({
           route,
           viewingWorkout: null,
+          viewingWorkoutDay: null,
           viewingCharacter: false,
           viewingGoals: false,
+          viewingMacros: false,
           viewingDM: null,
           viewingGroup: null,
+          viewingChatInfo: null,
+          viewingSharedContent: null,
+          wallpaperPickerOpen: false,
           viewingProfile: null,
           viewingWorkoutEditor: null,
           viewingSharedProgram: null,
           viewingComposer: null,
           viewingSessionDetail: null,
         }),
-      openWorkout: (wid) =>
+      openWorkout: (wid, day) =>
         set(
           produce((s) => {
             s.viewingWorkout = wid;
-            if (!s.workoutState[s.simDay]) s.workoutState[s.simDay] = {};
-            if (!s.workoutState[s.simDay][wid]) s.workoutState[s.simDay][wid] = { exDone: {}, completed: false };
+            const d = day ?? s.simDay;
+            s.viewingWorkoutDay = d;
+            if (!s.workoutState[d]) s.workoutState[d] = {};
+            if (!s.workoutState[d][wid]) s.workoutState[d][wid] = { exDone: {}, completed: false };
           }),
         ),
-      closeWorkout: () => set({ viewingWorkout: null }),
+      closeWorkout: () => set({ viewingWorkout: null, viewingWorkoutDay: null }),
+      resumeWorkout: (wid, day) =>
+        set(
+          produce((s) => {
+            const d = day ?? s.viewingWorkoutDay ?? s.simDay;
+            const ws = s.workoutState[d]?.[wid];
+            if (!ws) return;
+            ws.completed = false;
+          }),
+        ),
+      attachWatchWorkoutToSession: (wid, day, workout) =>
+        set(
+          produce((s) => {
+            const ws = s.workoutState[day]?.[wid];
+            if (!ws) return;
+            ws.watchSync = {
+              uuid: workout.uuid,
+              activityName: workout.activityName,
+              kcal: workout.kcal,
+              durationMinutes: workout.durationMinutes,
+              distanceMeters: workout.distanceMeters,
+            };
+          }),
+        ),
       openCharacterStudio: () => set({ viewingCharacter: true, route: 'profile' }),
       closeCharacterStudio: () => set({ viewingCharacter: false }),
       openGoals: () => set({ viewingGoals: true, route: 'profile' }),
       closeGoals: () => set({ viewingGoals: false }),
-      openDM: (userId, name) => set({ viewingDM: { userId, name } }),
+      openMacros: () => set({ viewingMacros: true, route: 'profile' }),
+      closeMacros: () => set({ viewingMacros: false }),
+      openDM: (userId, name, photoUrl = null, character = null) => set({ viewingDM: { userId, name, photoUrl, character } }),
       closeDM: () => set({ viewingDM: null }),
       setUnreadDM: (counts) => set({ unreadDM: counts }),
       clearUnreadFrom: (senderId) =>
@@ -286,16 +336,22 @@ export const useAppStore = create<Store>()(
             delete s.unreadDM[senderId];
           }),
         ),
-      openGroup: (groupId, name) => set({ viewingGroup: { groupId, name } }),
+      openGroup: (groupId, name, photoUrl = null, character = null) => set({ viewingGroup: { groupId, name, photoUrl, character } }),
       closeGroup: () => set({ viewingGroup: null }),
+      openChatInfo: (kind, id, name) => set({ viewingChatInfo: { kind, id, name } }),
+      closeChatInfo: () => set({ viewingChatInfo: null }),
+      openWallpaperPicker: () => set({ wallpaperPickerOpen: true }),
+      closeWallpaperPicker: () => set({ wallpaperPickerOpen: false }),
+      openSharedContent: (kind, id, name) => set({ viewingSharedContent: { kind, id, name } }),
+      closeSharedContent: () => set({ viewingSharedContent: null }),
       openProfile: (userId) => set({ viewingProfile: userId }),
       closeProfile: () => set({ viewingProfile: null }),
       // Opening the editor replaces whatever workout view launched it
       // (WorkoutScreen's Edit button, or Train's own program list) rather
       // than stacking on top of it - closing lands back on the route
       // underneath instead of an intermediate workout view.
-      openWorkoutEditor: (sourceKey) => set({ viewingWorkoutEditor: sourceKey, viewingWorkout: null }),
-      closeWorkoutEditor: () => set({ viewingWorkoutEditor: null, viewingWorkout: null }),
+      openWorkoutEditor: (sourceKey) => set({ viewingWorkoutEditor: sourceKey, viewingWorkout: null, viewingWorkoutDay: null }),
+      closeWorkoutEditor: () => set({ viewingWorkoutEditor: null, viewingWorkout: null, viewingWorkoutDay: null }),
       openSharedProgram: (id) => set({ viewingSharedProgram: id }),
       closeSharedProgram: () => set({ viewingSharedProgram: null }),
       openComposer: (seed) => set({ viewingComposer: seed ?? {} }),
@@ -459,6 +515,12 @@ export const useAppStore = create<Store>()(
       },
 
       toggleGoal: (goalId) => {
+        // Real-data-only goals never go through here in the UI (see
+        // GoalsList.tsx's special cases), but guard it here too rather
+        // than trust that alone - these must only ever flip via their own
+        // sync function (syncMacroGoal, the watch-workout flow), never a
+        // manual tap, or their checkbox stops meaning anything real.
+        if (goalId === 'macros' || goalId === 'watch_workout' || goalId === 'hydration') return;
         const s = get();
         const goal = s.today.goals.find((g) => g.id === goalId);
         if (!goal || goal.done) return;
@@ -545,7 +607,7 @@ export const useAppStore = create<Store>()(
           produce((s) => {
             const wid = s.viewingWorkout;
             if (!wid) return;
-            const ws = s.workoutState[s.simDay][wid];
+            const ws = s.workoutState[s.viewingWorkoutDay ?? s.simDay][wid];
             ws.exDone[exIndex] = !ws.exDone[exIndex];
           }),
         ),
@@ -555,7 +617,7 @@ export const useAppStore = create<Store>()(
           produce((s) => {
             const wid = s.viewingWorkout;
             if (!wid) return;
-            const ws = s.workoutState[s.simDay][wid];
+            const ws = s.workoutState[s.viewingWorkoutDay ?? s.simDay][wid];
             ws.setDone = ws.setDone ?? {};
             const key = setKey(exIndex, setIndex);
             const nowDone = !ws.setDone[key];
@@ -572,7 +634,7 @@ export const useAppStore = create<Store>()(
           produce((s) => {
             const wid = s.viewingWorkout;
             if (!wid) return;
-            const ws = s.workoutState[s.simDay][wid];
+            const ws = s.workoutState[s.viewingWorkoutDay ?? s.simDay][wid];
             ws.setSkipped = ws.setSkipped ?? {};
             const key = setKey(exIndex, setIndex);
             const wasSkipped = !!ws.setSkipped[key];
@@ -589,7 +651,7 @@ export const useAppStore = create<Store>()(
           produce((s) => {
             const wid = s.viewingWorkout;
             if (!wid) return;
-            const ws = s.workoutState[s.simDay][wid];
+            const ws = s.workoutState[s.viewingWorkoutDay ?? s.simDay][wid];
             ws.setWeight = ws.setWeight ?? {};
             ws.setWeight[setKey(exIndex, setIndex)] = weight;
           }),
@@ -600,7 +662,7 @@ export const useAppStore = create<Store>()(
           produce((s) => {
             const wid = s.viewingWorkout;
             if (!wid) return;
-            const ws = s.workoutState[s.simDay][wid];
+            const ws = s.workoutState[s.viewingWorkoutDay ?? s.simDay][wid];
             ws.skipped = ws.skipped ?? {};
             ws.skipped[exIndex] = !ws.skipped[exIndex];
             syncExerciseDone(ws, wid);
@@ -609,15 +671,33 @@ export const useAppStore = create<Store>()(
 
       finishWorkout: (wid) => {
         const s = get();
-        const ws = s.workoutState[s.simDay]?.[wid];
-        if (!ws || ws.completed) return;
+        const day = s.viewingWorkoutDay ?? s.simDay;
+        const ws = s.workoutState[day]?.[wid];
+        // xpAwarded, not completed, guards the award - completed alone gets
+        // flipped back to false by resumeWorkout (undoing a mis-tapped
+        // Finish), and finishing again afterwards must not pay out twice.
+        if (!ws) return;
+        if (ws.xpAwarded) {
+          // Already paid out once (e.g. resumed, then finished again
+          // without changing anything) - just re-lock the UI, no re-award.
+          if (!ws.completed) set(produce((st) => { st.workoutState[day][wid].completed = true; }));
+          return;
+        }
+        const isToday = day === s.simDay;
         set(
           produce((st) => {
-            st.workoutState[st.simDay][wid].completed = true;
+            const sess = st.workoutState[day][wid];
+            sess.completed = true;
+            sess.xpAwarded = true;
             st.stats_workoutsDone += 1;
-            const wg = st.today.goals.find((g: { id: string }) => g.id === 'workout');
-            if (wg) wg.done = true;
-            st.today.dayHadCompletion = true;
+            // Only today's own checklist/day-completion flags make sense to
+            // flip - finishing a resumed workout from a past day shouldn't
+            // retroactively mark today's "workout" goal done.
+            if (isToday) {
+              const wg = st.today.goals.find((g: { id: string }) => g.id === 'workout');
+              if (wg) wg.done = true;
+              st.today.dayHadCompletion = true;
+            }
             const bumps = statBumpFor(wid);
             Object.entries(bumps).forEach(([k, v]) => {
               const key = k as keyof typeof st.progress.stats;
@@ -626,7 +706,7 @@ export const useAppStore = create<Store>()(
           }),
         );
         awardXP(40, `${getWorkout(wid)?.name || 'Workout'} completed`);
-        updateStreakOnActivity();
+        if (isToday) updateStreakOnActivity();
         bumpChallengeProgress('consistency', 1);
         checkAchievements();
       },
@@ -729,6 +809,40 @@ export const useAppStore = create<Store>()(
         get().showToast(`Synced "${workouts[0].activityName}" from Apple Fitness`);
       },
 
+      // Called from MacrosScreen whenever today's food log changes - marks
+      // the "Log a full day of meals" checklist goal done the moment all
+      // four meals have at least one real entry, same auto-detect pattern
+      // as syncWatchWorkout (real data decides, not a manual tap).
+      syncMacroGoal: (mealsLoggedToday) => {
+        const s = get();
+        const goal = s.today.goals.find((g) => g.id === 'macros');
+        if (!goal) return;
+        const loggedAllMeals = new Set(mealsLoggedToday).size >= 4;
+        if (goal.done === loggedAllMeals) return;
+
+        // Also corrects a wrongly-stuck "done" back to false when today's
+        // real food log doesn't actually have all 4 meals - e.g. a cloud
+        // hydration that resolved after this screen last checked could
+        // otherwise leave yesterday's completed flag visible today. No XP
+        // clawback either direction - this only ever syncs the checkbox to
+        // match reality, same principle as every other toggle in this file.
+        set(
+          produce((st) => {
+            const g = st.today.goals.find((g: { id: string }) => g.id === 'macros');
+            if (g) g.done = loggedAllMeals;
+            if (loggedAllMeals) {
+              st.today.dayHadCompletion = true;
+              st.stats_fullMealDaysLogged = (st.stats_fullMealDaysLogged ?? 0) + 1;
+            }
+          }),
+        );
+        if (!loggedAllMeals) return;
+        awardXP(goal.xp, goal.label);
+        updateStreakOnActivity();
+        checkAchievements();
+        get().showToast('Logged a full day of meals');
+      },
+
       // Toggles one activity in/out of today's picks - the user can select
       // more than one (e.g. two separate indoor walks both count). XP
       // only awards once, the first time the selection goes from none to
@@ -823,22 +937,24 @@ export const useAppStore = create<Store>()(
         bumpChallengeProgress(id, def.logStep);
       },
       // A verified weigh-in (logWeight already confirmed it against the
-      // goal) earns flat XP same as hitting a daily goal; actually reaching
-      // the target earns a one-off bonus on top, scaled like a challenge
-      // completion since a weight goal runs for months, not days.
+      // goal) earns flat XP same as hitting a daily goal, so it's subject to
+      // the same daily cap; actually reaching the target earns a one-off
+      // bonus on top, scaled like a challenge completion since a weight goal
+      // runs for months, not days, so that bonus stays uncapped.
       awardWeightGoalXP: (label, opts) => {
-        awardXP(WEIGHT_LOG_XP, label, { ignoreCap: true });
+        awardXP(WEIGHT_LOG_XP, label);
         if (opts?.completed) awardXP(WEIGHT_GOAL_BONUS_XP, `${label} - goal reached`, { ignoreCap: true });
         checkAchievements();
       },
       // Performance goals (distance-time PBs, cumulative distance, frequency)
       // are verified automatically from real synced Apple Health activity -
       // see fitnessGoals.ts's recordActivityForGoals, called from App.tsx
-      // whenever new workouts come in. amount is per-credit XP (small,
-      // uncapped like a daily goal) separate from the one-off completion
-      // bonus, mirroring the weight-goal and challenge-completion shape.
+      // whenever new workouts come in. amount is per-credit XP (small, capped
+      // like a daily goal) separate from the one-off completion bonus, which
+      // mirrors the weight-goal and challenge-completion shape and stays
+      // uncapped.
       awardFitnessGoalXP: (label, amount, opts) => {
-        awardXP(amount, label, { ignoreCap: true });
+        awardXP(amount, label);
         if (opts?.completed) awardXP(FITNESS_GOAL_BONUS_XP, `${label} - goal reached`, { ignoreCap: true });
         checkAchievements();
       },
@@ -858,6 +974,15 @@ export const useAppStore = create<Store>()(
         const c = get().challenges.find((x) => x.id === 'cardio');
         if (!c || !c.joined || c.completed || km <= 0) return;
         if (km !== c.progress) bumpChallengeProgress('cardio', km - c.progress);
+      },
+
+      // Real count of the last 7 days with a full day's meals logged (see
+      // MacrosScreen) - same diff-against-stored-progress pattern as
+      // syncCardioKm, so re-syncing never double-counts.
+      syncMacroChallenge: (fullyLoggedDays) => {
+        const c = get().challenges.find((x) => x.id === 'macrotrack');
+        if (!c || !c.joined || c.completed || fullyLoggedDays <= 0) return;
+        if (fullyLoggedDays !== c.progress) bumpChallengeProgress('macrotrack', fullyLoggedDays - c.progress);
       },
 
       updateCharacterField: (key, value) => {
@@ -908,6 +1033,21 @@ export const useAppStore = create<Store>()(
       checkForNewDay: () => {
         const s = get();
         if (!s.onboarded) return;
+
+        // Reconcile today's checklist against buildTodayGoals() every time
+        // this runs, not just on an actual day rollover - a goal type added
+        // in an app update (e.g. "macros") otherwise never appears for an
+        // account whose `today` was already built before the update, since
+        // only advanceDay() (a real day change) rebuilds the list from
+        // scratch. This merges in anything missing without touching already
+        // in-progress/done goals.
+        const freshGoals = buildTodayGoals(s.weekPlan);
+        const missing = freshGoals.filter((fg) => !s.today.goals.some((g) => g.id === fg.id));
+        if (missing.length > 0) {
+          set(produce((st) => { st.today.goals.push(...missing); }));
+        }
+        syncStreakChallenge();
+
         const today = todayISO();
         if (today === s.lastActiveDate) return;
         const elapsed = Math.max(
@@ -915,6 +1055,10 @@ export const useAppStore = create<Store>()(
           Math.round((new Date(today).getTime() - new Date(s.lastActiveDate).getTime()) / 86_400_000),
         );
         for (let i = 0; i < elapsed; i++) get().advanceDay();
+        // advanceDay() may have just reset currentStreak to 0 (a missed
+        // day) - sync again so the challenge reflects that immediately
+        // rather than waiting for the next poll.
+        syncStreakChallenge();
         const newMonthStart = monthStartOf(today);
         set(
           produce((st) => {
@@ -998,7 +1142,7 @@ export const useAppStore = create<Store>()(
 
 function awardXP(amount: number, label: string, opts: { ignoreCap?: boolean } = {}) {
   const s = useAppStore.getState();
-  const remainingCap = Math.max(0, DAILY_CAP - s.today.xpEarnedToday);
+  const remainingCap = Math.max(0, dailyCapForLevel(s.progress.level) - s.today.xpEarnedToday);
   const awarded = opts.ignoreCap ? amount : Math.min(amount, remainingCap);
   const capped = !opts.ignoreCap && awarded < amount;
   if (awarded <= 0 && !opts.ignoreCap) {
@@ -1043,6 +1187,19 @@ function updateStreakOnActivity() {
     );
     checkAchievements();
   }
+  syncStreakChallenge();
+}
+
+// Real count from progress.currentStreak - same diff-against-stored-
+// progress pattern as syncCardioKm/syncMacroChallenge, so the "Seven-Day
+// Streak" challenge always reflects the actual streak (including a reset
+// to 0) rather than a manually tapped, unverified number.
+function syncStreakChallenge() {
+  const s = useAppStore.getState();
+  const c = s.challenges.find((x) => x.id === 'streak7');
+  if (!c || !c.joined || c.completed) return;
+  const real = s.progress.currentStreak;
+  if (real !== c.progress) bumpChallengeProgress('streak7', real - c.progress);
 }
 
 function bumpChallengeProgress(id: string, amount: number) {
@@ -1053,12 +1210,14 @@ function bumpChallengeProgress(id: string, amount: number) {
   useAppStore.setState(
     produce((st) => {
       const cc = st.challenges.find((x: { id: string }) => x.id === id)!;
-      cc.progress = Math.min(def.target, cc.progress + amount);
+      // Floored at 0 - a real-data sync (e.g. a reset streak) can pass a
+      // negative delta, and progress should never go below zero.
+      cc.progress = Math.max(0, Math.min(def.target, cc.progress + amount));
     }),
   );
   const xpGain = Math.round(amount * def.xpPerUnit);
   if (xpGain > 0) {
-    awardXP(xpGain, `${def.name} progress`, { ignoreCap: true });
+    awardXP(xpGain, `${def.name} progress`);
   }
   const updated = useAppStore.getState().challenges.find((x) => x.id === id)!;
   if (updated.progress >= def.target && !updated.completed) {

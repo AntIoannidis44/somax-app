@@ -6,6 +6,8 @@ export const ICON_PATHS: Record<string, string> = {
     '<circle cx="9" cy="8" r="3"/><path d="M2.5 19c.7-3 2.7-5 6.5-5s5.8 2 6.5 5"/><circle cx="17.5" cy="9" r="2.3"/><path d="M15.8 12.3c2.6.2 4 1.8 4.6 4"/>',
   profile: '<circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.2-4.2 4-6.3 7.5-6.3s6.3 2.1 7.5 6.3"/>',
   check: '<polyline points="4 12 9 17 20 6"/>',
+  checkDouble: '<polyline points="1 12 6 17 13 9"/><polyline points="9 12 14 17 23 6"/>',
+  mic: '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4M8 22h8"/>',
   chevron: '<polyline points="9 6 15 12 9 18"/>',
   dumbbell: '<path d="M4 8v8M20 8v8M4 12H2M22 12h-2M7 6v12M17 6v12"/>',
   flame:
@@ -19,6 +21,7 @@ export const ICON_PATHS: Record<string, string> = {
   coffee:
     '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M7 3.5c-.6.6-.6 1.4 0 2M11 3.5c-.6.6-.6 1.4 0 2"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 8v.01"/>',
+  nutrition: '<path d="M4 9h16l-1.2 9.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>',
   bell: '<path d="M18 8a6 6 0 0 0-12 0c0 6-2 7-2 7h16s-2-1-2-7Z"/><path d="M10 19a2 2 0 0 0 4 0"/>',
   lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
   rotate:
@@ -46,6 +49,8 @@ export const ICON_PATHS: Record<string, string> = {
   swim: '<circle cx="8.5" cy="6.5" r="1.7"/><path d="M6 10.5l2-2 3 1 2.5-2"/><path d="M11 9.5l3 2.5"/><path d="M2.5 16c1.6 1.6 3.2 1.6 4.8 0s3.2-1.6 4.8 0 3.2 1.6 4.8 0 3.2-1.6 4.8 0"/><path d="M2.5 20c1.6 1.6 3.2 1.6 4.8 0s3.2-1.6 4.8 0 3.2 1.6 4.8 0 3.2-1.6 4.8 0"/>',
   fitness: '<path d="M2.5 13h3.5l2-6 4 11 2-7 1.5 2H21.5"/>',
   other: '<circle cx="5.5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18.5" cy="12" r="1.8"/>',
+  pilates: '<circle cx="7" cy="8" r="1.7"/><path d="M8.2 9.2 12 16"/><path d="M12 16 18 9"/><path d="M9.5 11 14.3 9"/>',
+  reformer: '<circle cx="7" cy="7.5" r="1.6"/><path d="M8.2 8.7 11.5 15"/><path d="M11.5 15 17 8.5"/><path d="M9.3 10.3 13.6 8.7"/><rect x="3" y="17.5" width="18" height="2" rx="1"/><path d="M19 15.5 21.5 17.5 19 19.5"/>',
   pin: '<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/>',
   music: '<circle cx="6.5" cy="18" r="2.3"/><circle cx="17" cy="16" r="2.3"/><path d="M8.8 18V5.5L19.3 3v13"/><path d="M8.8 9.5 19.3 7"/>',
   scale: '<rect x="4" y="4" width="16" height="16" rx="4.5"/><path d="M8.3 10.5a5 5 0 0 1 7.4 0"/><path d="m12 10.5 1.6-2.2"/>',

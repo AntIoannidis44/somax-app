@@ -33,7 +33,7 @@ interface HealthPlugin {
   getMonthlyStepsSummary(): Promise<{ steps: number }>;
   getMonthlyCardioDistance(): Promise<{ meters: number }>;
   getLatestHeartRate(): Promise<LatestHeartRate>;
-  getTodayWorkouts(): Promise<{ workouts: HealthWorkout[] }>;
+  getTodayWorkouts(options?: { startDate?: string; endDate?: string }): Promise<{ workouts: HealthWorkout[] }>;
   getWorkoutRoute(options: { uuid: string }): Promise<{ points: RoutePoint[] }>;
   openAppSettings(): Promise<{ opened: boolean }>;
 }
@@ -82,6 +82,17 @@ export async function getLatestHeartRate(): Promise<LatestHeartRate | null> {
 export async function getTodayWorkouts(): Promise<HealthWorkout[]> {
   if (!healthAvailableOnPlatform()) return [];
   const { workouts } = await Health.getTodayWorkouts();
+  return workouts;
+}
+
+// For syncing a Watch workout onto a PAST day's logged session - startDate
+// is a plain "YYYY-MM-DD" (local calendar day), converted here to the
+// midnight-to-midnight ISO range the native side expects.
+export async function getWorkoutsForDate(isoDate: string): Promise<HealthWorkout[]> {
+  if (!healthAvailableOnPlatform()) return [];
+  const start = new Date(`${isoDate}T00:00:00`);
+  const end = new Date(start.getTime() + 24 * 60 * 60 * 1000);
+  const { workouts } = await Health.getTodayWorkouts({ startDate: start.toISOString(), endDate: end.toISOString() });
   return workouts;
 }
 

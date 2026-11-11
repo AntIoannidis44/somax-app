@@ -4,6 +4,7 @@ import { useAppStore } from '../../store/useAppStore';
 import { HydrationBar } from './HydrationBar';
 import { WatchSyncGoalRow } from './WatchSyncGoalRow';
 import { LogFeelGoalRow } from './LogFeelGoalRow';
+import { MacroSyncGoalRow } from './MacroSyncGoalRow';
 
 export function GoalsList() {
   const goals = useAppStore((s) => s.today.goals);
@@ -25,6 +26,7 @@ export function GoalsList() {
         if (g.id === 'hydration') return <HydrationBar key={g.id} />;
         if (g.id === 'watch_workout') return <WatchSyncGoalRow key={g.id} />;
         if (g.id === 'logfeel') return <LogFeelGoalRow key={g.id} />;
+        if (g.id === 'macros') return <MacroSyncGoalRow key={g.id} />;
         return (
           <div className="goal-row" key={g.id}>
             <button

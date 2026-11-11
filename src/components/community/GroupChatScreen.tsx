@@ -1,28 +1,50 @@
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
+import { formatDateLabel } from '../../lib/format';
 import {
   deleteGroupMessage,
-  fetchGroupMemberIds,
+  fetchGroup,
   fetchGroupMessages,
-  leaveGroup,
   sendGroupMessage,
   subscribeGroupMessages,
   type GroupMessage,
 } from '../../lib/groups';
+import { decodeProgramMessage } from '../../lib/programShare';
+import { decodeActivityMessage } from '../../lib/activityShare';
+import { decodeRecipeMessage } from '../../lib/recipeShare';
+import { encodeImageMessage, imagePathFromMessage, uploadChatImage } from '../../lib/chatImage';
+import { ChatImage, ProgramMessage, RecipeMessage, ActivityMessage, MessageMeta } from './SharedMessageCards';
+import { WallpaperPicker, getWallpaper, setWallpaper, useSwipeToDismissKeyboard, useVoiceDictation, type WallpaperKey } from './ChatChrome';
 
 export function GroupChatScreen() {
   const viewingGroup = useAppStore((s) => s.viewingGroup)!;
-  const closeGroup = useAppStore((s) => s.closeGroup);
+  const openGroup = useAppStore((s) => s.openGroup);
   const profile = useAppStore((s) => s.profile);
   const showToast = useAppStore((s) => s.showToast);
   const userId = useUserId();
   const [messages, setMessages] = useState<GroupMessage[]>([]);
-  const [memberCount, setMemberCount] = useState<number | null>(null);
   const [draft, setDraft] = useState('');
+  const [uploading, setUploading] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [inputFocused, setInputFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  // The wallpaper button lives in the top device header now, not a second
+  // header row in this screen - wallpaperPickerOpen is global so it can
+  // reach this modal from there.
+  const wallpaperPickerOpen = useAppStore((s) => s.wallpaperPickerOpen);
+  const closeWallpaperPicker = useAppStore((s) => s.closeWallpaperPicker);
+
+  const wallpaperKey = `somaxx-wallpaper:group:${viewingGroup.groupId}`;
+  const [wallpaper, setWallpaperState] = useState<WallpaperKey>(() => getWallpaper(wallpaperKey));
+  const swipeToDismiss = useSwipeToDismissKeyboard();
+  const { listening, toggle: toggleDictation, available: voiceAvailable } = useVoiceDictation(draft, setDraft);
+  function pickWallpaper(key: WallpaperKey) {
+    setWallpaperState(key);
+    setWallpaper(wallpaperKey, key);
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -32,18 +54,28 @@ export function GroupChatScreen() {
       });
     }
     load();
-    fetchGroupMemberIds(viewingGroup.groupId).then((ids) => {
-      if (!cancelled) setMemberCount(ids.length);
+    // Fetched fresh (not from viewingGroup) so a photo/name change made from
+    // the Chat Info screen shows immediately in the device header, which
+    // only reads viewingGroup's own photoUrl - refreshing it here is what
+    // makes that header stay in sync regardless of how this screen was
+    // navigated to.
+    fetchGroup(viewingGroup.groupId).then((g) => {
+      if (!cancelled && g) openGroup(viewingGroup.groupId, g.name, g.photo_url);
     });
     const unsubscribe = subscribeGroupMessages(load);
     return () => {
       cancelled = true;
       unsubscribe();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [viewingGroup.groupId]);
 
-  useEffect(() => {
+  function scrollToBottom() {
     bottomRef.current?.scrollIntoView({ block: 'end' });
+  }
+
+  useEffect(() => {
+    scrollToBottom();
   }, [messages.length]);
 
   function handleSend() {
@@ -59,64 +91,164 @@ export function GroupChatScreen() {
     await deleteGroupMessage(id);
   }
 
-  async function handleLeave() {
-    if (!userId) return;
-    if (!window.confirm(`Leave ${viewingGroup.name}? You'll need a new invite to rejoin.`)) return;
-    await leaveGroup(viewingGroup.groupId, userId);
-    showToast('Left the group');
-    closeGroup();
+  async function handlePhoto(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file || !userId || !profile) return;
+    setUploading(true);
+    try {
+      const path = await uploadChatImage(userId, file);
+      await sendGroupMessage(viewingGroup.groupId, userId, profile.name, encodeImageMessage(path));
+    } catch (err) {
+      showToast(err instanceof Error ? `Photo not sent: ${err.message}` : 'Photo not sent');
+    } finally {
+      setUploading(false);
+    }
   }
 
   return (
     <div className="dm-panel">
-      <div className="group-sub-row">
-        <span>{memberCount != null ? `${memberCount} member${memberCount === 1 ? '' : 's'}` : ''}</span>
-        <button className="link-btn" onClick={handleLeave}>
-          Leave group
-        </button>
-      </div>
-      <div className="dm-messages">
+      <div className="dm-messages" data-wallpaper={wallpaper} {...swipeToDismiss}>
         {messages.length === 0 && (
           <div style={{ padding: '16px 4px', color: 'var(--text-faint)', fontSize: 13, textAlign: 'center' }}>
             No messages yet - say hi to the group.
           </div>
         )}
-        {messages.map((m) => {
+        {messages.map((m, i) => {
           const mine = m.sender_id === userId;
           const showDelete = selectedId === m.id;
-          return (
-            <div key={m.id} className={`dm-row ${mine ? 'mine' : 'theirs'}`}>
-              {!mine && <div className="group-sender">{m.sender_name}</div>}
-              <div className={`dm-bubble ${mine ? 'mine' : 'theirs'}`} onClick={() => mine && setSelectedId(showDelete ? null : m.id)}>
-                {m.text}
-              </div>
-              {showDelete && (
-                <div className="dm-delete-row mine">
-                  <button className="btn btn-danger-ghost btn-sm" onClick={() => handleDelete(m.id)}>
-                    Delete
-                  </button>
-                  <button className="link-btn" onClick={() => setSelectedId(null)}>
-                    Cancel
-                  </button>
-                </div>
-              )}
+          const senderLine = !mine && <div className="group-sender">{m.sender_name}</div>;
+          const dateLabel = formatDateLabel(m.created_at);
+          const dateSep =
+            (i === 0 || formatDateLabel(messages[i - 1].created_at) !== dateLabel) ? <div className="date-sep">{dateLabel}</div> : null;
+          const deleteRow = showDelete && (
+            <div className="dm-delete-row mine">
+              <button className="btn btn-danger-ghost btn-sm" onClick={() => handleDelete(m.id)}>
+                Delete
+              </button>
+              <button className="link-btn" onClick={() => setSelectedId(null)}>
+                Cancel
+              </button>
             </div>
+          );
+
+          const imagePath = imagePathFromMessage(m.text);
+          if (imagePath) {
+            return (
+              <Fragment key={m.id}>
+                {dateSep}
+                <div className={`dm-row ${mine ? 'mine' : 'theirs'}`}>
+                  {senderLine}
+                  <div className={`dm-bubble image ${mine ? 'mine' : 'theirs'}`} onClick={() => mine && setSelectedId(showDelete ? null : m.id)}>
+                    <ChatImage path={imagePath} onLoad={scrollToBottom} />
+                    <MessageMeta at={m.created_at} mine={mine} />
+                  </div>
+                  {deleteRow}
+                </div>
+              </Fragment>
+            );
+          }
+          const program = decodeProgramMessage(m.text);
+          if (program) {
+            return (
+              <Fragment key={m.id}>
+                {dateSep}
+                <div className={`dm-row ${mine ? 'mine' : 'theirs'}`}>
+                  {senderLine}
+                  <div className={`dm-bubble program ${mine ? 'mine' : 'theirs'}`}>
+                    <ProgramMessage program={program} userId={userId} />
+                    <MessageMeta at={m.created_at} mine={mine} />
+                  </div>
+                  {deleteRow}
+                </div>
+              </Fragment>
+            );
+          }
+          const recipe = decodeRecipeMessage(m.text);
+          if (recipe) {
+            return (
+              <Fragment key={m.id}>
+                {dateSep}
+                <div className={`dm-row ${mine ? 'mine' : 'theirs'}`}>
+                  {senderLine}
+                  <div className={`dm-bubble program ${mine ? 'mine' : 'theirs'}`}>
+                    <RecipeMessage recipe={recipe} userId={userId} />
+                    <MessageMeta at={m.created_at} mine={mine} />
+                  </div>
+                  {deleteRow}
+                </div>
+              </Fragment>
+            );
+          }
+          const activity = decodeActivityMessage(m.text);
+          if (activity) {
+            return (
+              <Fragment key={m.id}>
+                {dateSep}
+                <div className={`dm-row ${mine ? 'mine' : 'theirs'}`}>
+                  {senderLine}
+                  <div className={`dm-bubble program ${mine ? 'mine' : 'theirs'}`}>
+                    <ActivityMessage activity={activity} userId={userId} />
+                    <MessageMeta at={m.created_at} mine={mine} />
+                  </div>
+                  {deleteRow}
+                </div>
+              </Fragment>
+            );
+          }
+          return (
+            <Fragment key={m.id}>
+              {dateSep}
+              <div className={`dm-row ${mine ? 'mine' : 'theirs'}`}>
+                {senderLine}
+                <div className={`dm-bubble ${mine ? 'mine' : 'theirs'}`} onClick={() => mine && setSelectedId(showDelete ? null : m.id)}>
+                  <span className="dm-text">{m.text}</span>
+                  <MessageMeta at={m.created_at} mine={mine} />
+                </div>
+                {deleteRow}
+              </div>
+            </Fragment>
           );
         })}
         <div ref={bottomRef} />
       </div>
       <div className="dm-input-row">
-        <input
-          type="text"
-          placeholder="Message"
-          value={draft}
-          onChange={(e) => setDraft(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-        />
-        <button className="btn btn-primary btn-sm" onClick={handleSend} disabled={!draft.trim()}>
-          <Icon name="chevron" />
-        </button>
+        <label className={`dm-attach${uploading ? ' busy' : ''}`} aria-label="Send a photo">
+          <Icon name="plus" />
+          <input type="file" accept="image/*" onChange={handlePhoto} disabled={uploading} style={{ display: 'none' }} />
+        </label>
+        <div className="dm-input-pill">
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Message"
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+            onFocus={() => setInputFocused(true)}
+            onBlur={() => setInputFocused(false)}
+          />
+        </div>
+        {inputFocused && (
+          <button className="dm-kb-dismiss" onClick={() => inputRef.current?.blur()} aria-label="Minimise keyboard">
+            <Icon name="chevron" />
+          </button>
+        )}
+        {draft.trim() || !voiceAvailable ? (
+          <button className="dm-send-circle" onClick={handleSend} disabled={!draft.trim()} aria-label="Send">
+            <Icon name="chevron" />
+          </button>
+        ) : (
+          <button
+            className={`dm-mic-circle${listening ? ' listening' : ''}`}
+            onClick={toggleDictation}
+            aria-label={listening ? 'Stop dictation' : 'Dictate message'}
+          >
+            <Icon name="mic" />
+          </button>
+        )}
       </div>
+      <WallpaperPicker open={wallpaperPickerOpen} value={wallpaper} onClose={closeWallpaperPicker} onPick={pickWallpaper} />
     </div>
   );
 }

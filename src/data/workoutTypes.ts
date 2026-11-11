@@ -20,6 +20,8 @@ export const WORKOUT_TYPES: WorkoutType[] = [
   { id: 'walk', label: 'Walk', icon: 'walk', colorVar: '--stat-recovery' },
   { id: 'ride', label: 'Ride', icon: 'ride', colorVar: '--stat-agility' },
   { id: 'swim', label: 'Swim', icon: 'swim', colorVar: '--stat-discipline' },
+  { id: 'pilates', label: 'Pilates', icon: 'pilates', colorVar: '--sport-pilates' },
+  { id: 'reformer', label: 'Reformer Pilates', icon: 'reformer', colorVar: '--sport-reformer' },
   { id: 'other', label: 'Other', icon: 'other', colorVar: '--text-faint' },
 ];
 
@@ -38,6 +40,8 @@ export function categoryForActivityName(activityName: string): string {
   if (name.includes('cycl')) return 'ride';
   if (name.includes('swim')) return 'swim';
   if (name.includes('strength')) return 'gym';
+  if (name.includes('reformer')) return 'reformer';
+  if (name.includes('pilates')) return 'pilates';
   if (name.includes('core') || name.includes('hiit') || name.includes('cardio') || name.includes('yoga')) return 'fitness';
   return 'other';
 }

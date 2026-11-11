@@ -10,6 +10,7 @@ const LOOK: Record<string, { icon: IconName; colorVar: string }> = {
   squats: { icon: 'fitness', colorVar: '--stat-vitality' },
   core: { icon: 'zap', colorVar: '--stat-agility' },
   cardio: { icon: 'run', colorVar: '--stat-endurance' },
+  macrotrack: { icon: 'nutrition', colorVar: '--stat-vitality' },
   streak7: { icon: 'flame', colorVar: '--stat-recovery' },
 };
 

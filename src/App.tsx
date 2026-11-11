@@ -1,25 +1,36 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { App as CapacitorApp } from '@capacitor/app';
 import { Sitebar } from './components/layout/Sitebar';
 import { AboutModal } from './components/layout/AboutModal';
 import { DeviceShell } from './components/layout/DeviceShell';
+import { LoadingSpinner } from './components/layout/LoadingSpinner';
 import { AuthScreen } from './components/auth/AuthScreen';
 import { OnboardingFlow } from './components/onboarding/OnboardingFlow';
 import { HomeScreen } from './components/home/HomeScreen';
-import { TrainScreen } from './components/train/TrainScreen';
-import { WorkoutScreen } from './components/train/WorkoutScreen';
-import { PlayScreen } from './components/play/PlayScreen';
-import { CommunityScreen } from './components/community/CommunityScreen';
-import { ProfileScreen } from './components/profile/ProfileScreen';
-import { CharacterStudioScreen } from './components/character/CharacterStudioScreen';
-import { GoalsScreen } from './components/goals/GoalsScreen';
-import { DMScreen } from './components/community/DMScreen';
-import { GroupChatScreen } from './components/community/GroupChatScreen';
-import { ProfileViewScreen } from './components/community/ProfileViewScreen';
-import { WorkoutEditorScreen } from './components/train/WorkoutEditorScreen';
-import { SharedProgramScreen } from './components/train/SharedProgramScreen';
-import { PostComposerScreen } from './components/community/PostComposerScreen';
-import { WorkoutSessionDetail } from './components/train/WorkoutSessionDetail';
+
+// Code-split: everything below is one tap away from Home, not part of the
+// very first paint, so there's no reason to make every cold start parse
+// and evaluate all of it up front - this is what was behind Vite's
+// "chunk larger than 500kB" warning. Each import() becomes its own chunk,
+// fetched (from the bundle already shipped with the app, so effectively
+// instant - no network involved) only the first time its screen is shown.
+const TrainScreen = lazy(() => import('./components/train/TrainScreen').then((m) => ({ default: m.TrainScreen })));
+const WorkoutScreen = lazy(() => import('./components/train/WorkoutScreen').then((m) => ({ default: m.WorkoutScreen })));
+const PlayScreen = lazy(() => import('./components/play/PlayScreen').then((m) => ({ default: m.PlayScreen })));
+const CommunityScreen = lazy(() => import('./components/community/CommunityScreen').then((m) => ({ default: m.CommunityScreen })));
+const ProfileScreen = lazy(() => import('./components/profile/ProfileScreen').then((m) => ({ default: m.ProfileScreen })));
+const CharacterStudioScreen = lazy(() => import('./components/character/CharacterStudioScreen').then((m) => ({ default: m.CharacterStudioScreen })));
+const GoalsScreen = lazy(() => import('./components/goals/GoalsScreen').then((m) => ({ default: m.GoalsScreen })));
+const MacrosScreen = lazy(() => import('./components/macros/MacrosScreen').then((m) => ({ default: m.MacrosScreen })));
+const DMScreen = lazy(() => import('./components/community/DMScreen').then((m) => ({ default: m.DMScreen })));
+const GroupChatScreen = lazy(() => import('./components/community/GroupChatScreen').then((m) => ({ default: m.GroupChatScreen })));
+const ChatInfoScreen = lazy(() => import('./components/community/ChatInfoScreen').then((m) => ({ default: m.ChatInfoScreen })));
+const SharedContentScreen = lazy(() => import('./components/community/SharedContentScreen').then((m) => ({ default: m.SharedContentScreen })));
+const ProfileViewScreen = lazy(() => import('./components/community/ProfileViewScreen').then((m) => ({ default: m.ProfileViewScreen })));
+const WorkoutEditorScreen = lazy(() => import('./components/train/WorkoutEditorScreen').then((m) => ({ default: m.WorkoutEditorScreen })));
+const SharedProgramScreen = lazy(() => import('./components/train/SharedProgramScreen').then((m) => ({ default: m.SharedProgramScreen })));
+const PostComposerScreen = lazy(() => import('./components/community/PostComposerScreen').then((m) => ({ default: m.PostComposerScreen })));
+const WorkoutSessionDetail = lazy(() => import('./components/train/WorkoutSessionDetail').then((m) => ({ default: m.WorkoutSessionDetail })));
 import { useAppStore } from './store/useAppStore';
 import { useSession, useUserId } from './lib/useSession';
 import {
@@ -44,8 +55,11 @@ function CurrentScreen() {
   const viewingWorkout = useAppStore((s) => s.viewingWorkout);
   const viewingCharacter = useAppStore((s) => s.viewingCharacter);
   const viewingGoals = useAppStore((s) => s.viewingGoals);
+  const viewingMacros = useAppStore((s) => s.viewingMacros);
   const viewingDM = useAppStore((s) => s.viewingDM);
   const viewingGroup = useAppStore((s) => s.viewingGroup);
+  const viewingChatInfo = useAppStore((s) => s.viewingChatInfo);
+  const viewingSharedContent = useAppStore((s) => s.viewingSharedContent);
   const viewingProfile = useAppStore((s) => s.viewingProfile);
   const viewingWorkoutEditor = useAppStore((s) => s.viewingWorkoutEditor);
   const viewingSharedProgram = useAppStore((s) => s.viewingSharedProgram);
@@ -57,10 +71,17 @@ function CurrentScreen() {
   if (viewingWorkout) return <WorkoutScreen />;
   if (viewingCharacter) return <CharacterStudioScreen />;
   if (viewingGoals) return <GoalsScreen />;
+  if (viewingMacros) return <MacrosScreen />;
   // Checked before viewingDM/viewingGroup/viewingProfile: tapping "View" on a
-  // shared activity inside one of those screens sets this flag without
-  // clearing them, so it must win the check or the screen never switches.
+  // shared activity inside one of those screens (or inside Chat Info/Shared
+  // Content, which stack on top of them) sets this flag without clearing
+  // the others, so it must win the check or the screen never switches.
   if (viewingSessionDetail) return <WorkoutSessionDetail />;
+  // Also stacked, innermost first: Shared Content opens from Chat Info,
+  // which opens from a DM/group chat - none of the screens underneath get
+  // cleared, so "back" naturally lands on the right one.
+  if (viewingSharedContent) return <SharedContentScreen />;
+  if (viewingChatInfo) return <ChatInfoScreen />;
   if (viewingDM) return <DMScreen />;
   if (viewingGroup) return <GroupChatScreen />;
   if (viewingProfile) return <ProfileViewScreen />;
@@ -97,6 +118,7 @@ function App() {
   const viewingComposer = useAppStore((s) => s.viewingComposer);
   const viewingSessionDetail = useAppStore((s) => s.viewingSessionDetail);
   const viewingGoals = useAppStore((s) => s.viewingGoals);
+  const viewingMacros = useAppStore((s) => s.viewingMacros);
   const route = useAppStore((s) => s.route);
   const { session, ready } = useSession();
   const userId = useUserId();
@@ -336,6 +358,7 @@ function App() {
     !viewingWorkout &&
     !viewingCharacter &&
     !viewingGoals &&
+    !viewingMacros &&
     !viewingDM &&
     !viewingGroup &&
     !viewingProfile &&
@@ -349,7 +372,7 @@ function App() {
     <div className="page">
       <Sitebar onAboutClick={() => setAboutOpen(true)} />
       <DeviceShell isHomeHero={!!session && isHomeHero}>
-        {!ready ? null : !session ? <AuthScreen /> : <CurrentScreen />}
+        {!ready ? null : !session ? <AuthScreen /> : <Suspense fallback={<LoadingSpinner />}><CurrentScreen /></Suspense>}
       </DeviceShell>
       <div className="sitefoot">
         Somax Beta — a click-through product prototype. Progress, XP and leaderboard data are saved to your account

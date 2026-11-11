@@ -259,6 +259,22 @@ export interface WorkoutSessionState {
   // as finished for the workout but are shown greyed out, not green.
   skipped?: Record<number, boolean>;
   completed: boolean;
+  // Separate from `completed` so a mis-tapped Finish can be undone (just
+  // flip `completed` back to false) without re-awarding the 40 XP/stat
+  // bumps a second time when it's finished again - finishWorkout checks
+  // this, not `completed`, before awarding anything.
+  xpAwarded?: boolean;
+  // A real Apple Watch/Fitness app workout attached to this session after
+  // the fact (e.g. you forgot to start tracking, or want its real calories/
+  // duration attached to a session you logged by hand) - informational
+  // only, never re-triggers XP/stat awards.
+  watchSync?: {
+    uuid: string;
+    activityName: string;
+    kcal: number;
+    durationMinutes: number;
+    distanceMeters: number | null;
+  };
 }
 
 export type WorkoutState = Record<number, Record<string, WorkoutSessionState>>;
@@ -343,6 +359,10 @@ export interface AppState {
   profile: Profile | null;
   progress: Progress;
   stats_workoutsDone: number;
+  // Lifetime count of real days where all 4 meals got logged (see
+  // syncMacroGoal) - drives the nutrition achievements, same pattern as
+  // stats_workoutsDone.
+  stats_fullMealDaysLogged: number;
   today: TodayState;
   weekPlan: PlanDay[];
   workoutState: WorkoutState;
@@ -352,12 +372,32 @@ export interface AppState {
   achievements: Record<string, boolean>;
   settings: Settings;
   viewingWorkout: string | null;
+  // The simDay this open workout session belongs to - null means "today"
+  // (s.simDay), set explicitly when opened from a past day's recap so the
+  // whole screen (ticks, finish, resume, Watch sync) operates on that day
+  // instead of silently falling back to today.
+  viewingWorkoutDay: number | null;
   viewingCharacter: boolean;
   // Full-screen goal management (weight + performance goals) - opened from
   // Profile's Goals section, not part of the bottom-nav route switch.
   viewingGoals: boolean;
-  viewingDM: { userId: string; name: string } | null;
-  viewingGroup: { groupId: string; name: string } | null;
+  // Full-screen macro/food tracker - opened from Profile's Feature flags
+  // section, not part of the bottom-nav route switch.
+  viewingMacros: boolean;
+  viewingDM: { userId: string; name: string; photoUrl?: string | null; character?: CharacterConfig | null } | null;
+  viewingGroup: { groupId: string; name: string; photoUrl?: string | null; character?: CharacterConfig | null } | null;
+  // Group/contact info overlay, opened by tapping a chat's header - stacks
+  // on top of viewingDM/viewingGroup without clearing it, so "back" returns
+  // to the chat.
+  viewingChatInfo: { kind: 'dm' | 'group'; id: string; name: string } | null;
+  // Media/workouts/meals shared in one conversation, opened from the chat
+  // info screen - stacks on top of viewingChatInfo the same way.
+  viewingSharedContent: { kind: 'dm' | 'group'; id: string; name: string } | null;
+  // The wallpaper-picker sheet for whichever chat is open - its trigger
+  // button lives in the top device header (not a second header row inside
+  // the chat screen itself), so this needs to be global state the header
+  // and the chat screen both reach.
+  wallpaperPickerOpen: boolean;
   // A userId being viewed via a full profile screen (tapped from League,
   // Community, or a feed post) - separate from viewingDM, which is the
   // message thread, not the profile itself.

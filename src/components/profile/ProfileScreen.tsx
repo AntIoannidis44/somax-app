@@ -3,6 +3,7 @@ import { Icon } from '../Icon';
 import { StatBars } from './StatBars';
 import { SettingsCard } from './SettingsCard';
 import { FeatureFlags } from './FeatureFlags';
+import { AboutModal } from '../layout/AboutModal';
 import { GoalsSummary } from '../goals/GoalsSummary';
 import { fetchPostsByUser, type CommunityPost } from '../../lib/social';
 import { workoutTypeById } from '../../data/workoutTypes';
@@ -11,7 +12,7 @@ import { useAppStore } from '../../store/useAppStore';
 import { supabase } from '../../lib/supabase';
 import { useUserId } from '../../lib/useSession';
 import { uploadProfilePhoto, removeProfilePhoto } from '../../lib/profilePhoto';
-import { countUnlocked, nextUnlock, tierFor, wearUnlocked } from '../../lib/character';
+import { countUnlocked, nextUnlock, tierFor, unlockItemName, wearUnlocked } from '../../lib/character';
 import { first, initials } from '../../lib/format';
 
 export function ProfileScreen() {
@@ -20,6 +21,7 @@ export function ProfileScreen() {
   const character = useAppStore((s) => s.character);
   const openCharacterStudio = useAppStore((s) => s.openCharacterStudio);
   const openGoals = useAppStore((s) => s.openGoals);
+  const openMacros = useAppStore((s) => s.openMacros);
   const resetDemo = useAppStore((s) => s.resetDemo);
   const prestige = useAppStore((s) => s.prestige);
   const setProfilePhoto = useAppStore((s) => s.setProfilePhoto);
@@ -29,6 +31,7 @@ export function ProfileScreen() {
   const userId = useUserId();
   const friendCount = useAppStore((s) => s.progress.friendCount);
   const [myPosts, setMyPosts] = useState<CommunityPost[]>([]);
+  const [aboutOpen, setAboutOpen] = useState(false);
   useEffect(() => {
     if (userId) fetchPostsByUser(userId).then(setMyPosts);
   }, [userId]);
@@ -87,7 +90,7 @@ export function ProfileScreen() {
   const nu = nextUnlock(ctx);
   const cu = countUnlocked(ctx);
   const tier = tierFor(progress.level);
-  const nuText = nu ? `Next unlock: ${nu.item.name} at Level ${nu.level}` : 'Every item unlocked';
+  const nuText = nu ? `Next unlock: ${unlockItemName(nu.key, nu.item)} at Level ${nu.level}` : 'Every item unlocked';
 
   if (editing) {
     return (
@@ -234,6 +237,24 @@ export function ProfileScreen() {
       </div>
       <GoalsSummary />
 
+      <div className="section-label">Nutrition</div>
+      <div className="card" style={{ marginBottom: 18 }}>
+        <button
+          className="setting-row"
+          style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer' }}
+          onClick={() => openMacros()}
+        >
+          <span className="set-ic">
+            <Icon name="nutrition" />
+          </span>
+          <div>
+            <div className="setting-title">Macro tracker</div>
+            <div className="setting-sub">Calories, macros, barcode &amp; photo scanning</div>
+          </div>
+          <Icon name="chevron" style={{ width: 16, height: 16, color: 'var(--text-faint)' }} />
+        </button>
+      </div>
+
       <div className="section-label">Highlights</div>
       <div className="pv-achievements">
         <div className="pv-achievement">
@@ -342,6 +363,24 @@ export function ProfileScreen() {
       </div>
       <FeatureFlags />
 
+      <div className="section-label">About</div>
+      <div className="card" style={{ marginBottom: 18 }}>
+        <button
+          className="setting-row"
+          style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer' }}
+          onClick={() => setAboutOpen(true)}
+        >
+          <span className="set-ic">
+            <Icon name="info" />
+          </span>
+          <div>
+            <div className="setting-title">About this build</div>
+            <div className="setting-sub">What this is, and nutrition data credits</div>
+          </div>
+          <Icon name="chevron" style={{ width: 16, height: 16, color: 'var(--text-faint)' }} />
+        </button>
+      </div>
+
       <div className="section-label">Account</div>
       <button
         className="btn btn-ghost signout"
@@ -357,6 +396,7 @@ export function ProfileScreen() {
         Sign out
       </button>
       <div style={{ height: 20 }} />
+      <AboutModal open={aboutOpen} onClose={() => setAboutOpen(false)} />
     </>
   );
 }

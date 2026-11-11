@@ -18,6 +18,7 @@ const workouts: Metric = (s) => s.stats_workoutsDone;
 const longestStreak: Metric = (s) => s.progress.longestStreak;
 const level: Metric = (s) => s.progress.level;
 const friends: Metric = (s) => s.progress.friendCount ?? 0;
+const fullMealDays: Metric = (s) => s.stats_fullMealDaysLogged ?? 0;
 
 export const ACHIEVEMENT_DEFS: AchievementDef[] = [
   counted('first_rep', 'First Rep', 'Complete your first workout', 'dumbbell', workouts, 1),
@@ -41,6 +42,9 @@ export const ACHIEVEMENT_DEFS: AchievementDef[] = [
   counted('first_friend', 'First Friend', 'Add your first friend', 'heart', friends, 1),
   counted('squad', 'Squad Goals', 'Have 5 friends', 'heart', friends, 5),
   counted('crew', 'Full Crew', 'Have 10 friends', 'heart', friends, 10),
+  counted('first_meal_day', 'Full Plate', 'Log a complete day of meals', 'nutrition', fullMealDays, 1),
+  counted('meal_days10', 'Meal Logger', 'Log a complete day of meals 10 times', 'nutrition', fullMealDays, 10),
+  counted('meal_days30', 'Nutrition Nerd', 'Log a complete day of meals 30 times', 'nutrition', fullMealDays, 30),
   { id: 'challenge1', name: 'Challenger', desc: 'Join your first challenge', icon: 'heart', xp: 0, test: (s) => s.challenges.some((c) => c.joined) },
   { id: 'challenge_done', name: 'Challenge Complete', desc: 'Finish a challenge', icon: 'zap', xp: 0, test: (s) => s.challenges.some((c) => c.completed) },
   { id: 'double_duty', name: 'Double Duty', desc: 'Run two challenges at once', icon: 'zap', xp: 0, test: (s) => s.challenges.filter((c) => c.joined && !c.completed).length >= 2 },
@@ -52,6 +56,7 @@ const ACHIEVEMENT_XP: Record<string, number> = {
   streak3: 20, streak7: 40, streak14: 60, streak30: 100,
   level5: 20, level10: 40, level15: 50, level20: 60, level25: 80, level30: 100, level40: 120, level50: 150, level55: 200, prestige1: 150,
   first_friend: 20, squad: 50, crew: 80,
+  first_meal_day: 20, meal_days10: 40, meal_days30: 70,
   challenge1: 20, challenge_done: 60, double_duty: 40,
 };
 

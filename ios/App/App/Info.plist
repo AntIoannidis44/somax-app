@@ -29,11 +29,15 @@
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>SOMAXX can log completed workouts back to Health so they show up alongside your other activity data.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>SOMAXX uses your camera to take a profile photo.</string>
+	<string>SOMAXX uses your camera to take a profile photo, scan food barcodes, and log meal photos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>SOMAXX can save a photo you take here back to your library.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>SOMAXX uses your location to suggest nearby places when you tag a location on a post.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>SOMAXX uses your microphone so you can dictate a message or log a meal by voice.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>SOMAXX converts your voice to text so you can dictate a chat message or log a meal by speaking.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleURLTypes</key>

@@ -18,6 +18,30 @@ const APNS_BUNDLE_ID = Deno.env.get('APNS_BUNDLE_ID') ?? 'com.somaxx.app';
 // profile needs the sandbox host.
 const APNS_HOST = Deno.env.get('APNS_ENV') === 'sandbox' ? 'api.sandbox.push.apple.com' : 'api.push.apple.com';
 
+// Shared content travels inside the message text itself as a prefix + JSON
+// (see src/lib/programShare.ts, activityShare.ts, recipeShare.ts,
+// chatImage.ts) rather than a link - there's no web address that resolves
+// inside the native app. That's exactly why a raw push notification body
+// showed literal `[program]{"name":...}` JSON on the lock screen: this
+// mirrors each client-side decoder with a human label instead, before ever
+// truncating to 120 chars.
+function previewForMessage(text: unknown): string {
+  if (typeof text !== 'string') return 'sent you a message';
+  function named(label: string): string {
+    try {
+      const parsed = JSON.parse(text.slice(text.indexOf(']') + 1));
+      return typeof parsed?.name === 'string' ? `${label}: ${parsed.name}` : label;
+    } catch {
+      return label;
+    }
+  }
+  if (text.startsWith('[program]')) return named('Shared a program');
+  if (text.startsWith('[activity]')) return named('Shared an activity');
+  if (text.startsWith('[recipe]')) return named('Shared a recipe');
+  if (text.startsWith('[image]')) return 'Sent a photo';
+  return text.slice(0, 120);
+}
+
 function base64url(bytes: ArrayBuffer | Uint8Array): string {
   const buf = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
   let str = '';
@@ -95,7 +119,7 @@ Deno.serve(async (req) => {
 
   const { data: senderProfile } = await supabase.from('public_profiles').select('name').eq('user_id', sender_id).maybeSingle();
   const senderName = senderProfile?.name ?? 'Someone';
-  const preview = typeof text === 'string' ? text.slice(0, 120) : 'sent you a message';
+  const preview = previewForMessage(text);
 
   // Total unread across every sender, not just this one message - the app
   // icon badge is one number, matching what the in-app unread count would
