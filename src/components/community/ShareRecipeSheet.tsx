@@ -10,6 +10,8 @@ import { encodeRecipeMessage } from '../../lib/recipeShare';
 import { shareRecipeToFeed, type RecipeToShare } from '../../lib/recipePosts';
 import { uploadRecipeImage } from '../../lib/recipes';
 import { createRecipeShareLink } from '../../lib/shareLinks';
+import { shareMealToLibrary } from '../../lib/library';
+import { ShareToLibraryForm } from '../library/ShareToLibraryForm';
 
 // Share a recipe two ways: post it to the Nutrition feed, or send it to a
 // friend (arrives in Messages as a card with Save to my favourites). Mirrors
@@ -23,13 +25,13 @@ export function ShareRecipeSheet({
 }: {
   recipe: RecipeToShare;
   onClose: () => void;
-  initialStep?: 'menu' | 'post' | 'friends';
+  initialStep?: 'menu' | 'post' | 'friends' | 'library';
   sourcePostId?: string;
 }) {
   const userId = useUserId();
   const myName = useAppStore((s) => s.profile?.name ?? '');
   const showToast = useAppStore((s) => s.showToast);
-  const [step, setStep] = useState<'menu' | 'post' | 'friends'>(initialStep);
+  const [step, setStep] = useState<'menu' | 'post' | 'friends' | 'library'>(initialStep);
   const [visibility, setVisibility] = useState<'public' | 'friends'>('public');
   const [caption, setCaption] = useState(`Shared ${recipe.name}`);
   const [friends, setFriends] = useState<PublicProfile[] | null>(null);
@@ -105,7 +107,7 @@ export function ShareRecipeSheet({
   );
 
   return (
-    <Modal open onClose={onClose} title={step === 'menu' ? 'Share recipe' : step === 'post' ? 'Post to feed' : 'Send to a friend'}>
+    <Modal open onClose={onClose} title={step === 'menu' ? 'Share recipe' : step === 'post' ? 'Post to feed' : step === 'library' ? 'Add to the Library' : 'Send to a friend'}>
       {step !== 'menu' && (
         <button className="link-btn" style={{ margin: '0 0 12px' }} onClick={() => setStep('menu')}>
           <Icon name="chevron" style={{ width: 12, height: 12, transform: 'rotate(180deg)' }} /> Back
@@ -131,6 +133,16 @@ export function ShareRecipeSheet({
             <div>
               <div className="t">Send to a friend</div>
               <div className="s">Arrives in Messages with the full recipe card</div>
+            </div>
+            <Icon name="chevron" className="tick" />
+          </button>
+          <button className="sheet-opt" onClick={() => setStep('library')}>
+            <span className="share-ic" style={{ background: 'var(--stat-strength)' }}>
+              <Icon name="layers" />
+            </span>
+            <div>
+              <div className="t">Add to the Meal Library</div>
+              <div className="s">Anyone can find it by goal, meal and diet</div>
             </div>
             <Icon name="chevron" className="tick" />
           </button>
@@ -194,6 +206,29 @@ export function ShareRecipeSheet({
             {busy ? 'Posting…' : visibility === 'public' ? 'Post to community' : 'Post for friends'}
           </button>
         </>
+      )}
+      {step === 'library' && (
+        <ShareToLibraryForm
+          kind="meal"
+          onSubmit={(meta, mealType) =>
+            shareMealToLibrary(
+              {
+                name: recipe.name,
+                imageUrl: recipe.imageUrl,
+                servings: recipe.servings,
+                kcal: recipe.kcal,
+                proteinG: recipe.proteinG,
+                carbsG: recipe.carbsG,
+                fatG: recipe.fatG,
+                ingredients: recipe.ingredients,
+                steps: recipe.steps,
+              },
+              mealType,
+              meta,
+            )
+          }
+          onDone={onClose}
+        />
       )}
       {step === 'friends' && (
         <div className="share-friends">

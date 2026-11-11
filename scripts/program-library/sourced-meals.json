@@ -1,0 +1,1434 @@
+[
+  {
+    "id": "nhs-egg-shakshuka",
+    "name": "Egg Shakshuka",
+    "mealType": "breakfast",
+    "level": "beginner",
+    "goals": [
+      "general-fitness",
+      "muscle"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein",
+      "gluten-free"
+    ],
+    "prepMinutes": 45,
+    "servings": 4,
+    "kcal": 417,
+    "proteinG": 25,
+    "carbsG": 32,
+    "fatG": 18,
+    "ingredients": [
+      {
+        "name": "vegetable oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "yellow onion, finely chopped",
+        "amount": "1"
+      },
+      {
+        "name": "red pepper, deseeded and chopped",
+        "amount": "½"
+      },
+      {
+        "name": "yellow pepper, deseeded and chopped",
+        "amount": "½"
+      },
+      {
+        "name": "garlic cloves, chopped",
+        "amount": "6"
+      },
+      {
+        "name": "aubergine, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "tinned chopped tomatoes",
+        "amount": "800g"
+      },
+      {
+        "name": "tomato purée",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "ground cumin",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "tinned chickpeas, drained",
+        "amount": "400g"
+      },
+      {
+        "name": "salt (optional)",
+        "amount": "½ tsp"
+      },
+      {
+        "name": "cayenne pepper",
+        "amount": "½ tsp"
+      },
+      {
+        "name": "spinach, chopped",
+        "amount": "200g"
+      },
+      {
+        "name": "medium eggs",
+        "amount": "6"
+      },
+      {
+        "name": "fresh coriander (optional)",
+        "amount": "15g"
+      }
+    ],
+    "steps": [
+      "Gently cook the onion, peppers and garlic in the oil until soft.",
+      "Add the aubergine and brown it, then stir in tomatoes, purée, spices and salt and simmer until thick.",
+      "Add the chickpeas, then wilt in the spinach.",
+      "Make six hollows, crack in the eggs, cover and cook on low until the whites set.",
+      "Rest a minute, scatter with coriander and serve."
+    ],
+    "description": "Eggs poached in a spiced tomato, aubergine and chickpea sauce - a big, veg-packed brunch.",
+    "whoItsFor": "Vegetarians and anyone wanting a filling weekend brunch with plant and egg protein.",
+    "tips": [
+      "Make the sauce ahead and reheat portions with fresh eggs on busy mornings.",
+      "Add a slice of wholemeal toast for extra carbs before a long session."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/shakshuka/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-turkey-koftas",
+    "name": "Turkey Koftas with Minty Yoghurt",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein"
+    ],
+    "prepMinutes": 40,
+    "servings": 4,
+    "kcal": 162,
+    "proteinG": 18.4,
+    "carbsG": 9.6,
+    "fatG": 5.1,
+    "ingredients": [
+      {
+        "name": "wooden skewers, soaked",
+        "amount": "8"
+      },
+      {
+        "name": "onion, finely chopped",
+        "amount": "½"
+      },
+      {
+        "name": "small carrot, grated",
+        "amount": "1"
+      },
+      {
+        "name": "turkey mince",
+        "amount": "250g"
+      },
+      {
+        "name": "garlic clove, crushed",
+        "amount": "1"
+      },
+      {
+        "name": "dried cumin",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "tomato purée",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "wholemeal breadcrumbs",
+        "amount": "1 slice"
+      },
+      {
+        "name": "egg yolk, beaten",
+        "amount": "1"
+      },
+      {
+        "name": "zero-fat Greek-style yoghurt",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "fresh mint, chopped",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "medium tomatoes, sliced",
+        "amount": "2"
+      },
+      {
+        "name": "red onion, sliced",
+        "amount": "1"
+      },
+      {
+        "name": "olive oil",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      }
+    ],
+    "steps": [
+      "Combine the turkey with the onion, carrot, garlic, cumin, purée, breadcrumbs and egg yolk.",
+      "Shape into eight sausages around the skewers.",
+      "Grill for 15-20 minutes, turning now and then, until cooked through.",
+      "Stir the mint into the yoghurt and dress the sliced tomato and red onion with oil and pepper."
+    ],
+    "description": "Lean spiced turkey skewers with a cool mint yoghurt dip and tomato salad.",
+    "whoItsFor": "People cutting calories who still want a satisfying, high-protein dinner.",
+    "tips": [
+      "Serve with pitta or rice on training days for more carbs.",
+      "Double the batch - cooked koftas keep 3 days in the fridge."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/turkey-koftas/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-pesto-parmesan-salmon",
+    "name": "Pesto & Parmesan Salmon Traybake",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "general-fitness",
+      "endurance"
+    ],
+    "diet": [
+      "high-protein"
+    ],
+    "prepMinutes": 40,
+    "servings": 4,
+    "kcal": 501,
+    "proteinG": 30,
+    "carbsG": 52,
+    "fatG": 20.9,
+    "ingredients": [
+      {
+        "name": "vegetable oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "boneless salmon fillets",
+        "amount": "4"
+      },
+      {
+        "name": "breadcrumbs",
+        "amount": "75g"
+      },
+      {
+        "name": "green pesto",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "parmesan, grated",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "lower-fat spread",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "medium courgettes, sliced",
+        "amount": "3"
+      },
+      {
+        "name": "medium red onions, chopped",
+        "amount": "2"
+      },
+      {
+        "name": "medium carrots, chopped",
+        "amount": "3"
+      },
+      {
+        "name": "new potatoes",
+        "amount": "600g"
+      }
+    ],
+    "steps": [
+      "Roast the courgettes, onions and carrots with the oil and pepper at 200°C for about 30 minutes, stirring halfway.",
+      "Mix breadcrumbs, pesto, cheese and spread and press onto the salmon on a lined tray.",
+      "Bake the salmon with the veg for 15-20 minutes until the fish flakes.",
+      "Boil the potatoes for about 15 minutes and serve alongside."
+    ],
+    "description": "Crumb-topped salmon roasted with vegetables and new potatoes - omega-3s and carbs in one tray.",
+    "whoItsFor": "Endurance athletes and anyone wanting an easy, balanced post-training dinner.",
+    "tips": [
+      "Great the evening after a long run or ride.",
+      "Swap new potatoes for sweet potato for variety."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/pesto-and-parmesan-salmon/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page. The page lists kcal and fat only; protein and carbs are Somax estimates from the ingredients.",
+    "verified": true
+  },
+  {
+    "id": "nhs-turkey-stir-fry",
+    "name": "Turkey & Orange Stir-fry",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 25,
+    "servings": 4,
+    "kcal": 301,
+    "proteinG": 25,
+    "carbsG": 35,
+    "fatG": 7,
+    "ingredients": [
+      {
+        "name": "dried egg noodles",
+        "amount": "125g"
+      },
+      {
+        "name": "small orange, juiced",
+        "amount": "1"
+      },
+      {
+        "name": "reduced-salt soy sauce",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "cornflour",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "skinless turkey breast, in strips",
+        "amount": "350g"
+      },
+      {
+        "name": "spring onions, sliced",
+        "amount": "5"
+      },
+      {
+        "name": "pepper, sliced",
+        "amount": "1"
+      },
+      {
+        "name": "carrot, in thin strips",
+        "amount": "1"
+      },
+      {
+        "name": "celery sticks, sliced",
+        "amount": "2"
+      },
+      {
+        "name": "mushrooms, sliced",
+        "amount": "1 handful"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      }
+    ],
+    "steps": [
+      "Soak the noodles in boiling water for about 6 minutes.",
+      "Whisk orange juice, soy sauce and cornflour; heat the oil in a wok.",
+      "Stir-fry the turkey for 3-4 minutes, add the veg and cook on high for another 3-4 minutes.",
+      "Add the sauce until it thickens, toss in the drained noodles and serve."
+    ],
+    "description": "A fast, lean noodle stir-fry with a sticky orange-soy glaze.",
+    "whoItsFor": "Busy people who need a 25-minute high-protein dinner.",
+    "tips": [
+      "Use firm tofu for a vegetarian version.",
+      "Swap noodles for rice and pack leftovers for lunch."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/turkey-stir-fry/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-panjabi-dhal",
+    "name": "Panjabi Dhal",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "general-fitness",
+      "endurance"
+    ],
+    "diet": [
+      "vegan",
+      "vegetarian",
+      "dairy-free",
+      "gluten-free"
+    ],
+    "prepMinutes": 30,
+    "servings": 4,
+    "kcal": 245,
+    "proteinG": 15,
+    "carbsG": 28.4,
+    "fatG": 8.2,
+    "ingredients": [
+      {
+        "name": "red split lentils",
+        "amount": "50g"
+      },
+      {
+        "name": "split mung dhal",
+        "amount": "170g"
+      },
+      {
+        "name": "water",
+        "amount": "1.5 litres"
+      },
+      {
+        "name": "large onion, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "garlic cloves, chopped",
+        "amount": "4"
+      },
+      {
+        "name": "green chillies, chopped",
+        "amount": "4"
+      },
+      {
+        "name": "rapeseed oil",
+        "amount": "30ml"
+      },
+      {
+        "name": "salt (optional)",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "turmeric",
+        "amount": "1½ tsp"
+      },
+      {
+        "name": "cumin seeds",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "fresh coriander",
+        "amount": "to serve"
+      }
+    ],
+    "steps": [
+      "Simmer the lentils in the water with turmeric and salt, part-covered, for about 15 minutes.",
+      "Fry the cumin seeds in the oil, then soften and brown the onion and garlic; add the chillies.",
+      "Stir the spiced onions into the lentils, bring to the boil, then take off the heat.",
+      "Top with coriander and serve with rice or chapatis."
+    ],
+    "description": "A comforting, budget-friendly lentil dhal packed with plant protein and fibre.",
+    "whoItsFor": "Vegans, vegetarians and anyone on a budget wanting a filling plant-based meal.",
+    "tips": [
+      "Soak the lentils for a few hours to cut cooking time.",
+      "Serve with rice and yoghurt (or soya yoghurt) to boost protein."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/panjabi-dhal/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-tuna-bean-salad",
+    "name": "Tuna & Bean Lunchbox Salad",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 10,
+    "servings": 1,
+    "kcal": 325,
+    "proteinG": 22.5,
+    "carbsG": 23.2,
+    "fatG": 14.4,
+    "ingredients": [
+      {
+        "name": "olive oil",
+        "amount": "3 tsp"
+      },
+      {
+        "name": "lemon juice",
+        "amount": "½ lemon"
+      },
+      {
+        "name": "dried mixed herbs",
+        "amount": "large pinch"
+      },
+      {
+        "name": "mustard powder",
+        "amount": "large pinch"
+      },
+      {
+        "name": "black pepper",
+        "amount": "large pinch"
+      },
+      {
+        "name": "pepper, chopped",
+        "amount": "1 slice"
+      },
+      {
+        "name": "spring onions, sliced",
+        "amount": "2"
+      },
+      {
+        "name": "cucumber, chopped",
+        "amount": "3cm piece"
+      },
+      {
+        "name": "canned mixed beans, drained",
+        "amount": "1 heaped tbsp"
+      },
+      {
+        "name": "tuna in spring water, drained",
+        "amount": "½ of a 160g can"
+      },
+      {
+        "name": "wholemeal bread with lower-fat spread",
+        "amount": "1 thick slice"
+      }
+    ],
+    "steps": [
+      "Whisk the oil, lemon, herbs, mustard and pepper.",
+      "Fold in the chopped veg, beans and tuna.",
+      "Pack with the bread, or swap the bread for cold pasta."
+    ],
+    "description": "A no-cook lunchbox salad of tuna, beans and crunchy veg in a lemony dressing.",
+    "whoItsFor": "Office workers wanting a quick, portable, high-protein lunch.",
+    "tips": [
+      "Make it the night before - it holds up well.",
+      "Add a full can of tuna for a 35g+ protein lunch."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/tuna-and-bean-salad/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-porridge-yoghurt-berries",
+    "name": "Porridge with Yoghurt & Berries",
+    "mealType": "breakfast",
+    "level": "beginner",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "diet": [
+      "vegetarian"
+    ],
+    "prepMinutes": 15,
+    "servings": 4,
+    "kcal": 207,
+    "proteinG": 8.4,
+    "carbsG": 33.8,
+    "fatG": 3.9,
+    "ingredients": [
+      {
+        "name": "porridge oats",
+        "amount": "150g"
+      },
+      {
+        "name": "low-fat natural yoghurt",
+        "amount": "8 tbsp"
+      },
+      {
+        "name": "frozen summer berries, defrosted",
+        "amount": "100g"
+      },
+      {
+        "name": "water",
+        "amount": "as needed"
+      }
+    ],
+    "steps": [
+      "Bring the oats and water to the boil in a non-stick pan, stirring.",
+      "Simmer gently for about 5 minutes.",
+      "Spoon into bowls and top each with yoghurt and berries."
+    ],
+    "description": "Simple oat porridge topped with yoghurt and berries - slow-release carbs to start the day.",
+    "whoItsFor": "Runners, cyclists and anyone training in the morning who needs steady energy.",
+    "tips": [
+      "Eat 1-2 hours before an endurance session.",
+      "Stir in a scoop of protein powder or use Greek yoghurt to boost protein."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/porridge-with-yoghurt-and-berries/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-chicken-jalfrezi",
+    "name": "Chicken Jalfrezi",
+    "mealType": "dinner",
+    "level": "intermediate",
+    "goals": [
+      "muscle",
+      "fat-loss",
+      "strength"
+    ],
+    "diet": [
+      "high-protein",
+      "gluten-free"
+    ],
+    "prepMinutes": 40,
+    "servings": 4,
+    "kcal": 334,
+    "proteinG": 41,
+    "carbsG": 7.7,
+    "fatG": 11,
+    "ingredients": [
+      {
+        "name": "rapeseed oil",
+        "amount": "30ml"
+      },
+      {
+        "name": "boneless chicken, cubed",
+        "amount": "700g"
+      },
+      {
+        "name": "medium onions, chopped",
+        "amount": "3"
+      },
+      {
+        "name": "bell peppers, chopped",
+        "amount": "2"
+      },
+      {
+        "name": "green chillies, sliced",
+        "amount": "4"
+      },
+      {
+        "name": "garlic cloves, chopped",
+        "amount": "4"
+      },
+      {
+        "name": "fresh ginger, sliced",
+        "amount": "20g"
+      },
+      {
+        "name": "tin chopped tomatoes",
+        "amount": "400g"
+      },
+      {
+        "name": "salt (optional)",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "turmeric",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "cumin seeds",
+        "amount": "1 heaped tsp"
+      },
+      {
+        "name": "red chilli powder",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "garam masala",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "coriander powder",
+        "amount": "1½ tsp"
+      },
+      {
+        "name": "water",
+        "amount": "250ml"
+      },
+      {
+        "name": "fresh coriander (optional)",
+        "amount": "to serve"
+      }
+    ],
+    "steps": [
+      "Brown the chicken in the oil with cumin, turmeric, chilli and half the salt; set aside.",
+      "Soften the onions until golden; blend or mash the tomatoes.",
+      "Add ginger, garlic and peppers, then the tomatoes and remaining spices.",
+      "Return the chicken with the chillies and water and simmer, covered, for 10-15 minutes.",
+      "Finish with coriander."
+    ],
+    "description": "A punchy, high-protein chicken curry with peppers and chillies - lighter than a takeaway.",
+    "whoItsFor": "Lifters wanting 40g of protein in a flavourful dinner; good for batch-cooking.",
+    "tips": [
+      "Batch-cook and freeze in portions.",
+      "Serve with rice on heavy training days, extra veg on rest days."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/chicken-jalfrezi/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page. The page's fat figure reads '79g', an apparent typo; 11g is a Somax estimate from the ingredients.",
+    "verified": true
+  },
+  {
+    "id": "nhs-potato-poached-egg-hash",
+    "name": "Potato & Poached Egg Hash",
+    "mealType": "breakfast",
+    "level": "beginner",
+    "goals": [
+      "general-fitness",
+      "endurance"
+    ],
+    "diet": [
+      "gluten-free",
+      "dairy-free"
+    ],
+    "prepMinutes": 30,
+    "servings": 4,
+    "kcal": 209,
+    "proteinG": 12.3,
+    "carbsG": 19.4,
+    "fatG": 8.6,
+    "ingredients": [
+      {
+        "name": "vegetable oil",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "lean back bacon, chopped",
+        "amount": "2 rashers"
+      },
+      {
+        "name": "cooked potatoes, in chunks",
+        "amount": "400g"
+      },
+      {
+        "name": "spring onions, chopped",
+        "amount": "4"
+      },
+      {
+        "name": "tomatoes, chopped",
+        "amount": "4"
+      },
+      {
+        "name": "eggs",
+        "amount": "4"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      }
+    ],
+    "steps": [
+      "Fry the bacon in the oil, add the potatoes and brown them.",
+      "Stir in the spring onions and tomatoes and keep warm on a low heat.",
+      "Poach the eggs in simmering water with a dash of vinegar.",
+      "Share the hash between plates, top with an egg and season."
+    ],
+    "description": "Crispy potato and bacon hash topped with a runny poached egg.",
+    "whoItsFor": "Anyone wanting a hearty weekend breakfast that uses up leftover potatoes.",
+    "tips": [
+      "Cook extra potatoes at dinner to make this quick.",
+      "Add a second egg for more protein."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/potato-and-poached-egg-hash/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-spicy-turkey-stuffed-peppers",
+    "name": "Peppers with Spicy Turkey Stuffing",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "fat-loss"
+    ],
+    "diet": [
+      "high-protein",
+      "gluten-free",
+      "dairy-free"
+    ],
+    "prepMinutes": 55,
+    "servings": 4,
+    "kcal": 302,
+    "proteinG": 24,
+    "carbsG": 48,
+    "fatG": 3,
+    "ingredients": [
+      {
+        "name": "peppers, halved and deseeded",
+        "amount": "4"
+      },
+      {
+        "name": "easy-cook long grain rice",
+        "amount": "150g"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "small onion, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "garlic clove, crushed",
+        "amount": "1"
+      },
+      {
+        "name": "skinless turkey breast, in chunks",
+        "amount": "300g"
+      },
+      {
+        "name": "tomatoes, chopped",
+        "amount": "2"
+      },
+      {
+        "name": "frozen peas, thawed",
+        "amount": "75g"
+      },
+      {
+        "name": "mild paprika",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "dried mixed herbs",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 190°C and sit the pepper halves in a roasting tin.",
+      "Cook the rice for 12-15 minutes and drain.",
+      "Soften onion and garlic, stir-fry the turkey, then add tomatoes, peas, paprika and herbs.",
+      "Mix in the rice, fill the peppers, cover with foil and bake for 20-25 minutes."
+    ],
+    "description": "Roasted peppers stuffed with paprika turkey and rice - very low in fat.",
+    "whoItsFor": "People in a fat-loss phase who want big portions for few calories.",
+    "tips": [
+      "Fill and refrigerate in the morning, bake in the evening.",
+      "Use brown rice for extra fibre."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/spicy-turkey-stuffed-peppers/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-haddock-florentine",
+    "name": "Haddock Florentine",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "fat-loss",
+      "strength"
+    ],
+    "diet": [
+      "high-protein"
+    ],
+    "prepMinutes": 15,
+    "servings": 4,
+    "kcal": 322,
+    "proteinG": 37,
+    "carbsG": 18.8,
+    "fatG": 10.2,
+    "ingredients": [
+      {
+        "name": "skinless haddock fillets",
+        "amount": "4"
+      },
+      {
+        "name": "tomatoes, halved",
+        "amount": "4"
+      },
+      {
+        "name": "eggs",
+        "amount": "4"
+      },
+      {
+        "name": "wholemeal bread",
+        "amount": "4 slices"
+      },
+      {
+        "name": "reduced-fat spread",
+        "amount": "4 tsp"
+      },
+      {
+        "name": "spinach",
+        "amount": "300g"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      }
+    ],
+    "steps": [
+      "Grill the haddock with the tomatoes for 5-6 minutes until the fish flakes.",
+      "Poach the eggs for 4-5 minutes and toast the bread.",
+      "Wilt the spinach by pouring boiling water over it in a colander, then drain.",
+      "Plate spinach, fish and egg; serve with the tomatoes and toast."
+    ],
+    "description": "Grilled haddock on wilted spinach topped with a poached egg - 37g protein in 15 minutes.",
+    "whoItsFor": "Anyone wanting a very fast, lean, high-protein meal.",
+    "tips": [
+      "Works as a big post-workout brunch too.",
+      "Swap haddock for any white fish or salmon."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/haddock-florentine/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-rajma-curry",
+    "name": "Simple Rajma (Kidney Bean) Curry",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "diet": [
+      "vegetarian",
+      "gluten-free"
+    ],
+    "prepMinutes": 30,
+    "servings": 4,
+    "kcal": 446,
+    "proteinG": 20,
+    "carbsG": 63,
+    "fatG": 10,
+    "ingredients": [
+      {
+        "name": "rapeseed or vegetable oil",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "dried curry leaves",
+        "amount": "1 handful"
+      },
+      {
+        "name": "mustard seeds",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "cumin seeds",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "dried red chilli, halved",
+        "amount": "1"
+      },
+      {
+        "name": "hing/asafoetida (optional)",
+        "amount": "¼ tsp"
+      },
+      {
+        "name": "tin chopped tomatoes",
+        "amount": "1"
+      },
+      {
+        "name": "green chillies, chopped",
+        "amount": "3"
+      },
+      {
+        "name": "garlic cloves, crushed",
+        "amount": "3"
+      },
+      {
+        "name": "ginger, grated",
+        "amount": "thumb-sized piece"
+      },
+      {
+        "name": "turmeric",
+        "amount": "½ tsp"
+      },
+      {
+        "name": "dhana jeera (ground cumin & coriander)",
+        "amount": "2 heaped tsp"
+      },
+      {
+        "name": "salt (optional)",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "tins red kidney beans, drained",
+        "amount": "2"
+      },
+      {
+        "name": "hot water",
+        "amount": "200ml"
+      },
+      {
+        "name": "fresh coriander",
+        "amount": "1 handful"
+      },
+      {
+        "name": "basmati rice, cooked",
+        "amount": "200g"
+      },
+      {
+        "name": "cucumber, in wedges",
+        "amount": "½ large"
+      },
+      {
+        "name": "low-fat plain yoghurt",
+        "amount": "4 tbsp"
+      }
+    ],
+    "steps": [
+      "Fry the curry leaves, seeds, dried chilli and hing in hot oil until the seeds pop.",
+      "Add garlic, then tomatoes and the remaining spices; cook hard for 10 minutes.",
+      "Add the beans and hot water, cover and simmer for 15-20 minutes.",
+      "Stir in coriander and serve with rice, yoghurt and cucumber."
+    ],
+    "description": "A fragrant North-Indian-style kidney bean curry served with rice - big on carbs and fibre.",
+    "whoItsFor": "Vegetarians and endurance athletes needing a carb-rich, budget meal.",
+    "tips": [
+      "Great the night before a long run or match.",
+      "Use soya yoghurt to make it vegan."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/kidney-bean-rajma-curry/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-salmon-broccoli-pasta",
+    "name": "Salmon & Broccoli Pasta",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "endurance"
+    ],
+    "diet": [
+      "high-protein"
+    ],
+    "prepMinutes": 30,
+    "servings": 4,
+    "kcal": 465,
+    "proteinG": 34.2,
+    "carbsG": 45.9,
+    "fatG": 13.8,
+    "ingredients": [
+      {
+        "name": "salmon fillets",
+        "amount": "2"
+      },
+      {
+        "name": "wholemeal pasta",
+        "amount": "250g"
+      },
+      {
+        "name": "spring onions, chopped",
+        "amount": "5"
+      },
+      {
+        "name": "broccoli florets",
+        "amount": "400g"
+      },
+      {
+        "name": "peas",
+        "amount": "100g"
+      },
+      {
+        "name": "lower-fat soft cheese",
+        "amount": "150g"
+      },
+      {
+        "name": "skimmed milk",
+        "amount": "150ml"
+      },
+      {
+        "name": "lemon zest",
+        "amount": "1 lemon"
+      },
+      {
+        "name": "parsley or chives, chopped",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      },
+      {
+        "name": "reduced-fat hard cheese, grated",
+        "amount": "4 tsp"
+      }
+    ],
+    "steps": [
+      "Grill the salmon for 5-6 minutes and rest it.",
+      "Boil the pasta for 8 minutes, then add spring onions and broccoli for 3-4 more.",
+      "Drain over the peas, keeping 2 tbsp of the water.",
+      "Melt soft cheese and milk with the reserved water into a sauce; add lemon zest and herbs.",
+      "Return pasta and veg, flake in the salmon, season and top with cheese."
+    ],
+    "description": "Creamy lemon-herb wholemeal pasta with flaked salmon, broccoli and peas.",
+    "whoItsFor": "Active people who want a balanced carb-and-protein dinner in 30 minutes.",
+    "tips": [
+      "Ideal after evening training.",
+      "Portion leftovers for next-day lunch - eat cold or reheat thoroughly."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/salmon-and-broccoli-pasta/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-greek-yoghurt-raspberry-chill",
+    "name": "Greek Yoghurt & Raspberry Chill",
+    "mealType": "snack",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "general-fitness"
+    ],
+    "diet": [
+      "vegetarian"
+    ],
+    "prepMinutes": 8,
+    "servings": 4,
+    "kcal": 129,
+    "proteinG": 6.6,
+    "carbsG": 17,
+    "fatG": 3.2,
+    "ingredients": [
+      {
+        "name": "porridge oats",
+        "amount": "50g"
+      },
+      {
+        "name": "raspberries",
+        "amount": "250g"
+      },
+      {
+        "name": "low-fat Greek-style natural yoghurt",
+        "amount": "300g"
+      }
+    ],
+    "steps": [
+      "Toast the oats under the grill until golden and leave to cool.",
+      "Lightly mash half the raspberries.",
+      "Stir the yoghurt and oats through the mashed fruit.",
+      "Spoon into glasses, top with whole raspberries and chill."
+    ],
+    "description": "A light, fruity yoghurt pot with toasted oats.",
+    "whoItsFor": "Anyone wanting a sweet, low-calorie snack or dessert.",
+    "tips": [
+      "Use 0% Greek yoghurt or skyr to double the protein.",
+      "Make 4 pots on Sunday for the week's snacks."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/greek-yoghurt-and-raspberry-chill/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-quick-chicken-couscous",
+    "name": "Quick Chicken Couscous",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "endurance",
+      "general-fitness"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 20,
+    "servings": 4,
+    "kcal": 322,
+    "proteinG": 26.8,
+    "carbsG": 42.8,
+    "fatG": 4.2,
+    "ingredients": [
+      {
+        "name": "couscous",
+        "amount": "200g"
+      },
+      {
+        "name": "reduced-salt chicken or vegetable stock",
+        "amount": "450ml"
+      },
+      {
+        "name": "skinless roast chicken breast, chopped",
+        "amount": "250g"
+      },
+      {
+        "name": "sweetcorn",
+        "amount": "100g"
+      },
+      {
+        "name": "tomatoes, chopped",
+        "amount": "2"
+      },
+      {
+        "name": "cucumber, chopped",
+        "amount": "¼"
+      },
+      {
+        "name": "lemon juice",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      }
+    ],
+    "steps": [
+      "Pour the hot stock over the couscous and leave for 10-15 minutes.",
+      "Fluff with a fork.",
+      "Stir through the chicken, sweetcorn, tomato, cucumber, lemon and pepper."
+    ],
+    "description": "A no-cook-really couscous salad with leftover roast chicken.",
+    "whoItsFor": "Busy people wanting a fast lunchbox with protein and carbs for afternoon training.",
+    "tips": [
+      "Use leftover roast chicken.",
+      "Keeps 2 days in the fridge - good meal-prep lunch."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/quick-chicken-couscous/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-turkey-burgers",
+    "name": "Turkey Burgers",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "fat-loss",
+      "strength"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 30,
+    "servings": 4,
+    "kcal": 354,
+    "proteinG": 38,
+    "carbsG": 28.5,
+    "fatG": 8.9,
+    "ingredients": [
+      {
+        "name": "minced turkey",
+        "amount": "450g"
+      },
+      {
+        "name": "small onion, very finely chopped",
+        "amount": "1"
+      },
+      {
+        "name": "carrot, grated",
+        "amount": "1"
+      },
+      {
+        "name": "sweetcorn",
+        "amount": "50g"
+      },
+      {
+        "name": "dried mixed herbs",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      },
+      {
+        "name": "burger buns, halved",
+        "amount": "4"
+      },
+      {
+        "name": "lettuce leaves",
+        "amount": "2 handfuls"
+      },
+      {
+        "name": "tomato slices",
+        "amount": "8"
+      }
+    ],
+    "steps": [
+      "Mix the turkey, onion, carrot, sweetcorn, herbs and pepper and shape four burgers.",
+      "Grill for 12-15 minutes, turning once, until cooked through; rest briefly.",
+      "Toast the buns and build with lettuce, burger and tomato."
+    ],
+    "description": "Juicy homemade turkey burgers with hidden veg - 38g protein each.",
+    "whoItsFor": "Families and lifters wanting a fakeaway that fits their goals.",
+    "tips": [
+      "Freeze uncooked patties between baking paper.",
+      "Use a lettuce wrap instead of a bun for fewer carbs."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/turkey-burgers/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-tuna-bean-jackets",
+    "name": "Tuna & Bean Jacket Potatoes",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "diet": [
+      "high-protein",
+      "gluten-free",
+      "dairy-free"
+    ],
+    "prepMinutes": 80,
+    "servings": 4,
+    "kcal": 281,
+    "proteinG": 20,
+    "carbsG": 49,
+    "fatG": 1.5,
+    "ingredients": [
+      {
+        "name": "baking potatoes",
+        "amount": "4"
+      },
+      {
+        "name": "can cannellini beans, drained",
+        "amount": "1"
+      },
+      {
+        "name": "tuna in water, drained",
+        "amount": "200g"
+      },
+      {
+        "name": "tomato purée",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "pepper, chopped (optional)",
+        "amount": "1"
+      },
+      {
+        "name": "tomatoes, chopped (optional)",
+        "amount": "2"
+      },
+      {
+        "name": "spring onions (optional)",
+        "amount": "4"
+      },
+      {
+        "name": "wine vinegar (optional)",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": "pinch"
+      }
+    ],
+    "steps": [
+      "Bake the pricked potatoes at 200°C for about an hour.",
+      "Mix the beans, tuna, veg, vinegar and purée and season.",
+      "Split the hot potatoes and pile in the filling."
+    ],
+    "description": "Fluffy jacket potatoes with a zingy tuna and bean filling - almost no fat.",
+    "whoItsFor": "Anyone wanting a cheap, filling, low-fat meal.",
+    "tips": [
+      "Microwave the potatoes for 8-10 minutes then crisp in the oven to save time.",
+      "Use tofu for a vegetarian version."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/tuna-and-bean-jacket-potatoes/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  },
+  {
+    "id": "nhs-scrambled-eggs-mushrooms-peppers",
+    "name": "Scrambled Eggs on Mega-Mushrooms",
+    "mealType": "breakfast",
+    "level": "beginner",
+    "goals": [
+      "general-fitness",
+      "muscle"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein"
+    ],
+    "prepMinutes": 20,
+    "servings": 4,
+    "kcal": 369,
+    "proteinG": 21.3,
+    "carbsG": 44.3,
+    "fatG": 9.8,
+    "ingredients": [
+      {
+        "name": "red peppers, sliced",
+        "amount": "2"
+      },
+      {
+        "name": "very large mushrooms (stalks chopped)",
+        "amount": "4"
+      },
+      {
+        "name": "eggs",
+        "amount": "6"
+      },
+      {
+        "name": "skimmed milk",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "lower-fat spread",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "cherry tomatoes, halved",
+        "amount": "12"
+      },
+      {
+        "name": "wholemeal pittas",
+        "amount": "4"
+      },
+      {
+        "name": "black pepper",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Grill the peppers and mushroom caps for 4-5 minutes, turning once.",
+      "Whisk the eggs with the milk.",
+      "Scramble the eggs with the chopped stalks in the melted spread, then fold in the peppers and tomatoes.",
+      "Serve on the mushroom caps with toasted pitta."
+    ],
+    "description": "Fluffy scrambled eggs piled on grilled mushrooms with peppers and pitta.",
+    "whoItsFor": "Vegetarians and anyone wanting a veg-heavy cooked breakfast.",
+    "tips": [
+      "Add egg whites to bump protein without many calories.",
+      "Skip the pitta on rest days for a lower-carb plate."
+    ],
+    "credit": "NHS Healthier Families",
+    "sourceUrl": "https://www.nhs.uk/healthier-families/recipes/scrambled-eggs-on-mushrooms-with-grilled-peppers/",
+    "sourceNote": "NHS Healthier Families recipe (© Crown copyright). Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published on the page.",
+    "verified": true
+  }
+]

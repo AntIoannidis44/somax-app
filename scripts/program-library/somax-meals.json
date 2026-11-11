@@ -1,0 +1,1399 @@
+[
+  {
+    "id": "somax-protein-overnight-oats",
+    "name": "Somax Protein Overnight Oats",
+    "mealType": "breakfast",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "endurance"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein"
+    ],
+    "prepMinutes": 5,
+    "servings": 1,
+    "kcal": 514,
+    "proteinG": 40.8,
+    "carbsG": 66.0,
+    "fatG": 10.4,
+    "ingredients": [
+      {
+        "name": "rolled oats",
+        "amount": "60g"
+      },
+      {
+        "name": "0% Greek yoghurt",
+        "amount": "150g"
+      },
+      {
+        "name": "semi-skimmed milk",
+        "amount": "100g"
+      },
+      {
+        "name": "vanilla whey (½ scoop)",
+        "amount": "15g"
+      },
+      {
+        "name": "chia seeds",
+        "amount": "10g"
+      },
+      {
+        "name": "mixed berries",
+        "amount": "80g"
+      }
+    ],
+    "steps": [
+      "Stir oats, yoghurt, milk, whey and chia together in a jar.",
+      "Refrigerate overnight (or at least 4 hours).",
+      "Top with berries in the morning."
+    ],
+    "description": "Creamy no-cook oats with 40g+ protein, ready when you wake up.",
+    "whoItsFor": "Early trainers and busy commuters who want breakfast with zero morning effort.",
+    "tips": [
+      "Make 3 jars at once - they keep 3 days.",
+      "Eat 60-90 min before a morning session or straight after."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-porridge-yoghurt-berries"
+    ]
+  },
+  {
+    "id": "somax-veggie-egg-white-scramble",
+    "name": "Somax Veggie Egg-White Scramble",
+    "mealType": "breakfast",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "muscle"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein",
+      "gluten-free",
+      "low-carb"
+    ],
+    "prepMinutes": 10,
+    "servings": 1,
+    "kcal": 342,
+    "proteinG": 36.2,
+    "carbsG": 9.8,
+    "fatG": 17.6,
+    "ingredients": [
+      {
+        "name": "eggs (2 large)",
+        "amount": "100g"
+      },
+      {
+        "name": "liquid egg whites",
+        "amount": "150g"
+      },
+      {
+        "name": "spinach",
+        "amount": "60g"
+      },
+      {
+        "name": "mushrooms",
+        "amount": "60g"
+      },
+      {
+        "name": "cherry tomatoes",
+        "amount": "80g"
+      },
+      {
+        "name": "feta",
+        "amount": "20g"
+      },
+      {
+        "name": "olive oil (spray)",
+        "amount": "3g"
+      }
+    ],
+    "steps": [
+      "Sauté mushrooms in a sprayed pan for 3 minutes.",
+      "Add spinach to wilt, then pour in whisked eggs and whites.",
+      "Stir gently until just set; top with tomatoes and crumbled feta."
+    ],
+    "description": "A big, fluffy, low-calorie scramble with 35g+ protein.",
+    "whoItsFor": "Anyone in a fat-loss phase who wants a filling breakfast under 350 kcal.",
+    "tips": [
+      "Add a slice of wholemeal toast on training days.",
+      "Swap feta for cottage cheese to cut fat further."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-scrambled-eggs-mushrooms-peppers",
+      "nhs-egg-shakshuka"
+    ]
+  },
+  {
+    "id": "somax-pb-banana-protein-toast",
+    "name": "Somax PB Banana Power Toast",
+    "mealType": "breakfast",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "endurance",
+      "strength"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein"
+    ],
+    "prepMinutes": 5,
+    "servings": 1,
+    "kcal": 514,
+    "proteinG": 33.0,
+    "carbsG": 69.9,
+    "fatG": 13.3,
+    "ingredients": [
+      {
+        "name": "wholemeal bread (2 slices)",
+        "amount": "80g"
+      },
+      {
+        "name": "peanut butter",
+        "amount": "20g"
+      },
+      {
+        "name": "banana",
+        "amount": "100g"
+      },
+      {
+        "name": "skyr / Icelandic yoghurt (on the side)",
+        "amount": "150g"
+      },
+      {
+        "name": "honey",
+        "amount": "5g"
+      }
+    ],
+    "steps": [
+      "Toast the bread and spread with peanut butter.",
+      "Top with sliced banana and a drizzle of honey.",
+      "Serve with a pot of skyr."
+    ],
+    "description": "Fast carbs, healthy fats and protein for heavy training mornings.",
+    "whoItsFor": "Lifters and runners who need a quick, calorie-dense breakfast.",
+    "tips": [
+      "Good 1-2 hours before lifting.",
+      "Use almond butter or a nut-free spread to swap allergens."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-porridge-yoghurt-berries"
+    ]
+  },
+  {
+    "id": "somax-tofu-breakfast-burrito",
+    "name": "Somax Tofu Breakfast Burrito",
+    "mealType": "breakfast",
+    "level": "intermediate",
+    "goals": [
+      "muscle",
+      "general-fitness"
+    ],
+    "diet": [
+      "vegan",
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 15,
+    "servings": 1,
+    "kcal": 546,
+    "proteinG": 34.9,
+    "carbsG": 51.9,
+    "fatG": 23.0,
+    "ingredients": [
+      {
+        "name": "firm tofu, crumbled",
+        "amount": "150g"
+      },
+      {
+        "name": "black beans (canned, drained)",
+        "amount": "60g"
+      },
+      {
+        "name": "mixed peppers",
+        "amount": "60g"
+      },
+      {
+        "name": "spinach",
+        "amount": "30g"
+      },
+      {
+        "name": "wholemeal tortilla (1 large)",
+        "amount": "60g"
+      },
+      {
+        "name": "salsa",
+        "amount": "40g"
+      },
+      {
+        "name": "olive oil",
+        "amount": "5g"
+      },
+      {
+        "name": "turmeric, cumin, smoked paprika",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Fry peppers in the oil, then add crumbled tofu and spices and cook for 5 minutes.",
+      "Stir in beans and spinach until warm.",
+      "Wrap in the tortilla with salsa and toast seam-side down."
+    ],
+    "description": "A spicy plant-protein breakfast wrap that travels well.",
+    "whoItsFor": "Vegans and anyone wanting a grab-and-go hot breakfast.",
+    "tips": [
+      "Make 4, wrap in foil and freeze; reheat from frozen.",
+      "Add avocado for extra calories when bulking."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-egg-shakshuka"
+    ]
+  },
+  {
+    "id": "somax-recovery-smoothie",
+    "name": "Somax Recovery Smoothie",
+    "mealType": "snack",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "endurance"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein",
+      "gluten-free"
+    ],
+    "prepMinutes": 5,
+    "servings": 1,
+    "kcal": 483,
+    "proteinG": 38.2,
+    "carbsG": 65.4,
+    "fatG": 8.8,
+    "ingredients": [
+      {
+        "name": "semi-skimmed milk",
+        "amount": "300g"
+      },
+      {
+        "name": "whey protein (1 scoop)",
+        "amount": "30g"
+      },
+      {
+        "name": "banana",
+        "amount": "100g"
+      },
+      {
+        "name": "frozen mango",
+        "amount": "80g"
+      },
+      {
+        "name": "oats",
+        "amount": "20g"
+      }
+    ],
+    "steps": [
+      "Blend everything until smooth.",
+      "Drink within an hour of training."
+    ],
+    "description": "A carb-plus-protein shake to refuel after hard sessions.",
+    "whoItsFor": "Endurance athletes and lifters training twice a day or with a long gap until the next meal.",
+    "tips": [
+      "Use soya milk and pea protein for a dairy-free version.",
+      "Freeze the banana for a thicker shake."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-greek-yoghurt-raspberry-chill"
+    ]
+  },
+  {
+    "id": "somax-chicken-quinoa-power-bowl",
+    "name": "Somax Chicken Quinoa Power Bowl",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "general-fitness"
+    ],
+    "diet": [
+      "high-protein",
+      "gluten-free",
+      "dairy-free"
+    ],
+    "prepMinutes": 25,
+    "servings": 2,
+    "kcal": 593,
+    "proteinG": 50.2,
+    "carbsG": 53.1,
+    "fatG": 20.8,
+    "ingredients": [
+      {
+        "name": "chicken breast",
+        "amount": "300g"
+      },
+      {
+        "name": "quinoa (dry)",
+        "amount": "120g"
+      },
+      {
+        "name": "broccoli",
+        "amount": "150g"
+      },
+      {
+        "name": "edamame (shelled)",
+        "amount": "80g"
+      },
+      {
+        "name": "cucumber",
+        "amount": "100g"
+      },
+      {
+        "name": "avocado",
+        "amount": "80g"
+      },
+      {
+        "name": "olive oil",
+        "amount": "10g"
+      },
+      {
+        "name": "lemon juice",
+        "amount": "20g"
+      },
+      {
+        "name": "garlic, paprika, salt & pepper",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Cook the quinoa (about 15 minutes) and steam the broccoli and edamame.",
+      "Season the chicken and pan-fry in half the oil for 6-7 minutes a side.",
+      "Slice and build bowls with quinoa, veg, cucumber and avocado.",
+      "Dress with the remaining oil and lemon."
+    ],
+    "description": "A colourful meal-prep bowl with over 45g protein per portion.",
+    "whoItsFor": "Gym-goers who meal-prep lunches for the week.",
+    "tips": [
+      "Keep avocado separate until eating.",
+      "Swap chicken for tofu to make it vegan."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-quick-chicken-couscous"
+    ]
+  },
+  {
+    "id": "somax-tuna-chickpea-crunch-salad",
+    "name": "Somax Tuna Chickpea Crunch Salad",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free",
+      "gluten-free"
+    ],
+    "prepMinutes": 10,
+    "servings": 1,
+    "kcal": 369,
+    "proteinG": 39.5,
+    "carbsG": 29.5,
+    "fatG": 10.9,
+    "ingredients": [
+      {
+        "name": "tuna (canned, drained)",
+        "amount": "120g"
+      },
+      {
+        "name": "chickpeas (canned, drained)",
+        "amount": "80g"
+      },
+      {
+        "name": "salad leaves",
+        "amount": "60g"
+      },
+      {
+        "name": "cucumber",
+        "amount": "80g"
+      },
+      {
+        "name": "cherry tomatoes",
+        "amount": "80g"
+      },
+      {
+        "name": "red pepper",
+        "amount": "50g"
+      },
+      {
+        "name": "olive oil",
+        "amount": "7g"
+      },
+      {
+        "name": "lemon juice",
+        "amount": "15g"
+      }
+    ],
+    "steps": [
+      "Chop the veg.",
+      "Toss everything with the oil and lemon; season well."
+    ],
+    "description": "A no-cook, high-protein lunch that keeps you full all afternoon.",
+    "whoItsFor": "Office workers and anyone cutting who wants a quick, cheap lunch.",
+    "tips": [
+      "Pack dressing separately.",
+      "Add a rye crispbread or two if you train in the afternoon."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-tuna-bean-salad"
+    ]
+  },
+  {
+    "id": "somax-turkey-hummus-wrap",
+    "name": "Somax Turkey & Hummus Wrap",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "general-fitness"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 10,
+    "servings": 1,
+    "kcal": 436,
+    "proteinG": 35.1,
+    "carbsG": 42.1,
+    "fatG": 14.4,
+    "ingredients": [
+      {
+        "name": "wholemeal tortilla",
+        "amount": "60g"
+      },
+      {
+        "name": "cooked turkey breast slices",
+        "amount": "120g"
+      },
+      {
+        "name": "hummus",
+        "amount": "40g"
+      },
+      {
+        "name": "salad leaves",
+        "amount": "30g"
+      },
+      {
+        "name": "grated carrot",
+        "amount": "50g"
+      },
+      {
+        "name": "cucumber",
+        "amount": "50g"
+      }
+    ],
+    "steps": [
+      "Spread hummus over the wrap.",
+      "Layer turkey, leaves, carrot and cucumber.",
+      "Roll tightly and halve."
+    ],
+    "description": "A five-minute protein wrap for desk lunches.",
+    "whoItsFor": "Busy people who need lunch that can be made the night before.",
+    "tips": [
+      "Wrap in foil to stop it going soggy.",
+      "Use chicken or tofu as a swap."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-quick-chicken-couscous"
+    ]
+  },
+  {
+    "id": "somax-lentil-veg-soup",
+    "name": "Somax Red Lentil & Veg Soup",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "general-fitness",
+      "endurance"
+    ],
+    "diet": [
+      "vegan",
+      "dairy-free",
+      "gluten-free"
+    ],
+    "prepMinutes": 35,
+    "servings": 4,
+    "kcal": 266,
+    "proteinG": 14.8,
+    "carbsG": 43.3,
+    "fatG": 3.9,
+    "ingredients": [
+      {
+        "name": "red lentils (dry)",
+        "amount": "200g"
+      },
+      {
+        "name": "onion",
+        "amount": "150g"
+      },
+      {
+        "name": "carrot",
+        "amount": "200g"
+      },
+      {
+        "name": "chopped tomatoes (tin)",
+        "amount": "400g"
+      },
+      {
+        "name": "spinach",
+        "amount": "100g"
+      },
+      {
+        "name": "olive oil",
+        "amount": "10g"
+      },
+      {
+        "name": "cumin, smoked paprika, garlic, low-salt stock",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Soften onion and carrot in the oil for 5 minutes with the spices.",
+      "Add lentils, tomatoes and 1 litre stock; simmer 20 minutes.",
+      "Stir in spinach, then blend partly or fully."
+    ],
+    "description": "A thick, warming soup that freezes perfectly - cheap, filling and plant-based.",
+    "whoItsFor": "Budget-conscious people and anyone wanting a high-fibre, low-calorie lunch.",
+    "tips": [
+      "Freeze in single portions.",
+      "Top with Greek yoghurt or pumpkin seeds for extra protein."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-panjabi-dhal"
+    ]
+  },
+  {
+    "id": "somax-salmon-sweet-potato-tray",
+    "name": "Somax Salmon & Sweet Potato Traybake",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "endurance",
+      "general-fitness"
+    ],
+    "diet": [
+      "high-protein",
+      "gluten-free",
+      "dairy-free"
+    ],
+    "prepMinutes": 35,
+    "servings": 2,
+    "kcal": 546,
+    "proteinG": 32.8,
+    "carbsG": 52.0,
+    "fatG": 22.7,
+    "ingredients": [
+      {
+        "name": "salmon fillets (2)",
+        "amount": "260g"
+      },
+      {
+        "name": "sweet potato",
+        "amount": "400g"
+      },
+      {
+        "name": "broccoli",
+        "amount": "200g"
+      },
+      {
+        "name": "mixed peppers",
+        "amount": "150g"
+      },
+      {
+        "name": "olive oil",
+        "amount": "10g"
+      },
+      {
+        "name": "lemon juice",
+        "amount": "15g"
+      },
+      {
+        "name": "garlic, smoked paprika",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Roast cubed sweet potato and peppers in the oil at 200°C for 20 minutes.",
+      "Add broccoli and the salmon, season, and roast 12-15 minutes more.",
+      "Squeeze over lemon to serve."
+    ],
+    "description": "One-tray salmon dinner with plenty of slow carbs and omega-3s.",
+    "whoItsFor": "Endurance athletes and anyone wanting an easy, nutrient-dense dinner.",
+    "tips": [
+      "Great the night before a race or long session.",
+      "Swap salmon for cod to reduce calories."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-pesto-parmesan-salmon"
+    ]
+  },
+  {
+    "id": "somax-beef-burrito-bowl",
+    "name": "Somax Lean Beef Burrito Bowl",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "strength"
+    ],
+    "diet": [
+      "high-protein",
+      "gluten-free",
+      "dairy-free"
+    ],
+    "prepMinutes": 25,
+    "servings": 4,
+    "kcal": 536,
+    "proteinG": 37.2,
+    "carbsG": 69.2,
+    "fatG": 11.6,
+    "ingredients": [
+      {
+        "name": "beef mince 5%",
+        "amount": "500g"
+      },
+      {
+        "name": "basmati rice (dry)",
+        "amount": "240g"
+      },
+      {
+        "name": "black beans (canned, drained)",
+        "amount": "240g"
+      },
+      {
+        "name": "mixed peppers",
+        "amount": "200g"
+      },
+      {
+        "name": "onion",
+        "amount": "100g"
+      },
+      {
+        "name": "salsa",
+        "amount": "160g"
+      },
+      {
+        "name": "avocado",
+        "amount": "120g"
+      },
+      {
+        "name": "lime juice",
+        "amount": "20g"
+      },
+      {
+        "name": "fajita spice",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Cook the rice.",
+      "Brown the mince with onion and peppers, add fajita spice and beans and heat through.",
+      "Serve over rice with salsa, avocado and lime."
+    ],
+    "description": "A big, macro-friendly Tex-Mex bowl with 40g+ protein.",
+    "whoItsFor": "Lifters bulking or maintaining who want a crowd-pleasing batch meal.",
+    "tips": [
+      "Portion into 4 boxes for lunches.",
+      "Use cauliflower rice to cut carbs on rest days."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-turkey-burgers"
+    ]
+  },
+  {
+    "id": "somax-chicken-veg-stir-fry",
+    "name": "Somax 15-Minute Chicken Stir-fry",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 15,
+    "servings": 2,
+    "kcal": 477,
+    "proteinG": 45.0,
+    "carbsG": 45.2,
+    "fatG": 11.6,
+    "ingredients": [
+      {
+        "name": "chicken breast",
+        "amount": "300g"
+      },
+      {
+        "name": "frozen mixed stir-fry veg",
+        "amount": "300g"
+      },
+      {
+        "name": "egg noodles (dry)",
+        "amount": "100g"
+      },
+      {
+        "name": "soy sauce (reduced salt)",
+        "amount": "30g"
+      },
+      {
+        "name": "rapeseed or olive oil",
+        "amount": "10g"
+      },
+      {
+        "name": "garlic, ginger, chilli",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Cook the noodles.",
+      "Stir-fry sliced chicken in hot oil for 5 minutes, add garlic, ginger and chilli.",
+      "Add the veg for 3-4 minutes, then the soy and noodles; toss and serve."
+    ],
+    "description": "Faster than a takeaway, with half the calories.",
+    "whoItsFor": "Busy weeknight cooks wanting a quick, high-protein dinner.",
+    "tips": [
+      "Keep frozen stir-fry veg in the freezer for emergencies.",
+      "Swap noodles for extra veg to go low-carb."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-turkey-stir-fry"
+    ]
+  },
+  {
+    "id": "somax-tofu-red-curry",
+    "name": "Somax Tofu & Veg Red Curry",
+    "mealType": "dinner",
+    "level": "intermediate",
+    "goals": [
+      "general-fitness",
+      "endurance"
+    ],
+    "diet": [
+      "vegan",
+      "dairy-free",
+      "gluten-free"
+    ],
+    "prepMinutes": 30,
+    "servings": 3,
+    "kcal": 562,
+    "proteinG": 28.9,
+    "carbsG": 61.3,
+    "fatG": 24.0,
+    "ingredients": [
+      {
+        "name": "firm tofu",
+        "amount": "400g"
+      },
+      {
+        "name": "light coconut milk",
+        "amount": "400g"
+      },
+      {
+        "name": "red curry paste",
+        "amount": "40g"
+      },
+      {
+        "name": "mixed peppers",
+        "amount": "200g"
+      },
+      {
+        "name": "courgette",
+        "amount": "200g"
+      },
+      {
+        "name": "spinach",
+        "amount": "100g"
+      },
+      {
+        "name": "brown rice (dry)",
+        "amount": "180g"
+      },
+      {
+        "name": "lime juice",
+        "amount": "15g"
+      }
+    ],
+    "steps": [
+      "Cook the rice.",
+      "Press and cube the tofu and pan-fry until golden.",
+      "Fry the paste for a minute, add coconut milk and veg and simmer 10 minutes.",
+      "Add tofu and spinach, finish with lime, and serve over rice."
+    ],
+    "description": "A creamy Thai-style curry with crispy tofu.",
+    "whoItsFor": "Vegans and anyone wanting a comforting, plant-based dinner.",
+    "tips": [
+      "Press the tofu for 15 minutes for crispier results.",
+      "Add edamame to push protein higher."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-panjabi-dhal",
+      "nhs-rajma-curry"
+    ]
+  },
+  {
+    "id": "somax-turkey-bolognese",
+    "name": "Somax High-Protein Turkey Bolognese",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "fat-loss",
+      "strength"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 35,
+    "servings": 4,
+    "kcal": 532,
+    "proteinG": 40.3,
+    "carbsG": 66.6,
+    "fatG": 11.2,
+    "ingredients": [
+      {
+        "name": "turkey mince 5%",
+        "amount": "500g"
+      },
+      {
+        "name": "wholewheat pasta (dry)",
+        "amount": "300g"
+      },
+      {
+        "name": "chopped tomatoes (tin)",
+        "amount": "800g"
+      },
+      {
+        "name": "onion",
+        "amount": "150g"
+      },
+      {
+        "name": "carrot",
+        "amount": "150g"
+      },
+      {
+        "name": "mushrooms",
+        "amount": "150g"
+      },
+      {
+        "name": "olive oil",
+        "amount": "10g"
+      },
+      {
+        "name": "garlic, oregano, basil",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Soften onion, carrot and mushrooms in the oil.",
+      "Brown the turkey, add tomatoes and herbs and simmer 20 minutes.",
+      "Serve over the cooked pasta."
+    ],
+    "description": "A leaner take on spag bol with hidden veg and 40g protein.",
+    "whoItsFor": "Families and lifters wanting a batch-cook staple.",
+    "tips": [
+      "Freeze sauce portions for up to 3 months.",
+      "Top with a little parmesan if dairy is fine for you."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-turkey-koftas",
+      "nhs-turkey-burgers"
+    ]
+  },
+  {
+    "id": "somax-steak-potato-greens",
+    "name": "Somax Steak, Potatoes & Greens",
+    "mealType": "dinner",
+    "level": "intermediate",
+    "goals": [
+      "strength",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein",
+      "gluten-free",
+      "dairy-free"
+    ],
+    "prepMinutes": 30,
+    "servings": 2,
+    "kcal": 515,
+    "proteinG": 47.8,
+    "carbsG": 41.0,
+    "fatG": 18.8,
+    "ingredients": [
+      {
+        "name": "lean sirloin steak",
+        "amount": "350g"
+      },
+      {
+        "name": "baby potatoes",
+        "amount": "400g"
+      },
+      {
+        "name": "tenderstem broccoli",
+        "amount": "150g"
+      },
+      {
+        "name": "spinach",
+        "amount": "100g"
+      },
+      {
+        "name": "olive oil",
+        "amount": "10g"
+      },
+      {
+        "name": "garlic & rosemary",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Boil the potatoes 15 minutes, then crush and crisp in a pan with half the oil.",
+      "Sear the steak 2-4 minutes a side and rest 5 minutes.",
+      "Sauté broccoli and spinach with garlic in the remaining oil.",
+      "Slice the steak and serve."
+    ],
+    "description": "A strength-athlete classic: iron-rich steak, potatoes and greens.",
+    "whoItsFor": "Strength trainees who want a satisfying, high-protein dinner after heavy sessions.",
+    "tips": [
+      "Rest the steak before slicing.",
+      "Swap potatoes for sweet potatoes for variety."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-haddock-florentine"
+    ]
+  },
+  {
+    "id": "somax-cod-chickpea-stew",
+    "name": "Somax Cod & Chickpea Tomato Stew",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free",
+      "gluten-free"
+    ],
+    "prepMinutes": 25,
+    "servings": 2,
+    "kcal": 414,
+    "proteinG": 39.8,
+    "carbsG": 40.7,
+    "fatG": 9.8,
+    "ingredients": [
+      {
+        "name": "cod",
+        "amount": "300g"
+      },
+      {
+        "name": "chickpeas (canned, drained)",
+        "amount": "240g"
+      },
+      {
+        "name": "chopped tomatoes (tin)",
+        "amount": "400g"
+      },
+      {
+        "name": "spinach",
+        "amount": "100g"
+      },
+      {
+        "name": "onion",
+        "amount": "100g"
+      },
+      {
+        "name": "olive oil",
+        "amount": "10g"
+      },
+      {
+        "name": "garlic, smoked paprika, cumin",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Soften the onion and spices in the oil.",
+      "Add tomatoes and chickpeas and simmer 10 minutes.",
+      "Nestle in the cod, cover and cook 6-8 minutes; stir through spinach."
+    ],
+    "description": "A light Spanish-style one-pot fish stew.",
+    "whoItsFor": "People cutting who want a big, warming bowl for few calories.",
+    "tips": [
+      "Serve with crusty bread on training days.",
+      "Any white fish works."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-egg-shakshuka",
+      "nhs-haddock-florentine"
+    ]
+  },
+  {
+    "id": "somax-cottage-cheese-crispbreads",
+    "name": "Somax Cottage Cheese Crispbreads",
+    "mealType": "snack",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "muscle"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein"
+    ],
+    "prepMinutes": 3,
+    "servings": 1,
+    "kcal": 231,
+    "proteinG": 19.1,
+    "carbsG": 21.9,
+    "fatG": 6.9,
+    "ingredients": [
+      {
+        "name": "rye crispbreads (2)",
+        "amount": "20g"
+      },
+      {
+        "name": "cottage cheese",
+        "amount": "150g"
+      },
+      {
+        "name": "cherry tomatoes",
+        "amount": "60g"
+      },
+      {
+        "name": "cucumber",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      "Spread cottage cheese on the crispbreads.",
+      "Top with sliced tomatoes and cucumber and season with pepper."
+    ],
+    "description": "A crunchy, savoury high-protein snack.",
+    "whoItsFor": "Anyone needing an afternoon snack that won't derail a deficit.",
+    "tips": [
+      "Great before bed for slow-digesting protein.",
+      "Add smoked salmon for an extra protein hit."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-greek-yoghurt-raspberry-chill"
+    ]
+  },
+  {
+    "id": "somax-chocolate-protein-yoghurt",
+    "name": "Somax Chocolate Protein Yoghurt Pot",
+    "mealType": "snack",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "fat-loss"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein",
+      "gluten-free"
+    ],
+    "prepMinutes": 3,
+    "servings": 1,
+    "kcal": 249,
+    "proteinG": 34.2,
+    "carbsG": 20.8,
+    "fatG": 4.7,
+    "ingredients": [
+      {
+        "name": "0% Greek yoghurt",
+        "amount": "200g"
+      },
+      {
+        "name": "chocolate whey (½ scoop)",
+        "amount": "15g"
+      },
+      {
+        "name": "cocoa powder",
+        "amount": "5g"
+      },
+      {
+        "name": "mixed berries",
+        "amount": "60g"
+      },
+      {
+        "name": "dark chocolate, grated",
+        "amount": "5g"
+      }
+    ],
+    "steps": [
+      "Whisk yoghurt, whey and cocoa until smooth.",
+      "Top with berries and grated chocolate."
+    ],
+    "description": "A dessert-style snack with 30g protein.",
+    "whoItsFor": "Anyone with a sweet tooth trying to hit protein targets.",
+    "tips": [
+      "Freeze for 30 minutes for a frozen-yoghurt texture.",
+      "Use skyr instead of Greek yoghurt for a thicker pot."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-greek-yoghurt-raspberry-chill"
+    ]
+  },
+  {
+    "id": "somax-pre-workout-rice-cakes",
+    "name": "Somax Pre-Workout Rice Cakes",
+    "mealType": "snack",
+    "level": "beginner",
+    "goals": [
+      "endurance",
+      "strength"
+    ],
+    "diet": [
+      "vegetarian",
+      "dairy-free",
+      "gluten-free"
+    ],
+    "prepMinutes": 2,
+    "servings": 1,
+    "kcal": 270,
+    "proteinG": 6.5,
+    "carbsG": 46.3,
+    "fatG": 8.4,
+    "ingredients": [
+      {
+        "name": "rice cakes (2)",
+        "amount": "20g"
+      },
+      {
+        "name": "peanut butter",
+        "amount": "15g"
+      },
+      {
+        "name": "banana",
+        "amount": "100g"
+      },
+      {
+        "name": "honey",
+        "amount": "5g"
+      }
+    ],
+    "steps": [
+      "Spread rice cakes with peanut butter.",
+      "Top with banana slices and a drizzle of honey."
+    ],
+    "description": "Quick-digesting carbs to fuel a session 30-60 minutes later.",
+    "whoItsFor": "Athletes training soon after work who need fast energy.",
+    "tips": [
+      "Eat 30-60 minutes before training.",
+      "Skip the peanut butter if you train within 30 minutes."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-porridge-yoghurt-berries"
+    ]
+  },
+  {
+    "id": "somax-edamame-almond-snack-box",
+    "name": "Somax Edamame & Almond Snack Box",
+    "mealType": "snack",
+    "level": "beginner",
+    "goals": [
+      "general-fitness",
+      "fat-loss"
+    ],
+    "diet": [
+      "vegan",
+      "dairy-free",
+      "gluten-free",
+      "high-protein"
+    ],
+    "prepMinutes": 5,
+    "servings": 1,
+    "kcal": 350,
+    "proteinG": 20.9,
+    "carbsG": 32.0,
+    "fatG": 18.6,
+    "ingredients": [
+      {
+        "name": "edamame (shelled)",
+        "amount": "120g"
+      },
+      {
+        "name": "almonds",
+        "amount": "15g"
+      },
+      {
+        "name": "apple",
+        "amount": "120g"
+      },
+      {
+        "name": "pumpkin seeds",
+        "amount": "10g"
+      }
+    ],
+    "steps": [
+      "Defrost or briefly boil the edamame and season with salt and chilli.",
+      "Pack with the almonds, seeds and a sliced apple."
+    ],
+    "description": "A plant-protein snack box for desks and bags.",
+    "whoItsFor": "Vegans and busy people who snack on the go.",
+    "tips": [
+      "Prep 5 boxes on Sunday.",
+      "Swap almonds for another nut or seed if needed."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-tuna-bean-salad"
+    ]
+  },
+  {
+    "id": "somax-smoked-salmon-egg-rye",
+    "name": "Somax Smoked Salmon & Egg Rye Plate",
+    "mealType": "breakfast",
+    "level": "beginner",
+    "goals": [
+      "muscle",
+      "fat-loss"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 10,
+    "servings": 1,
+    "kcal": 349,
+    "proteinG": 31.2,
+    "carbsG": 22.4,
+    "fatG": 13.6,
+    "ingredients": [
+      {
+        "name": "rye bread or crispbread",
+        "amount": "30g"
+      },
+      {
+        "name": "smoked salmon",
+        "amount": "80g"
+      },
+      {
+        "name": "eggs (2), poached",
+        "amount": "100g"
+      },
+      {
+        "name": "spinach",
+        "amount": "50g"
+      },
+      {
+        "name": "lemon juice",
+        "amount": "5g"
+      }
+    ],
+    "steps": [
+      "Poach the eggs for 3-4 minutes.",
+      "Wilt the spinach.",
+      "Serve the salmon and eggs over rye with spinach and lemon."
+    ],
+    "description": "A protein-packed, omega-3-rich savoury breakfast.",
+    "whoItsFor": "Anyone wanting a lower-carb, high-protein morning plate.",
+    "tips": [
+      "Good on rest days.",
+      "Add avocado when you need more calories."
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax recipe. Macros calculated from standard food-composition values for the listed raw weights; treat as estimates.",
+    "verified": false,
+    "basedOn": [
+      "nhs-haddock-florentine"
+    ]
+  }
+]

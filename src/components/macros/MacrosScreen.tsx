@@ -7,6 +7,8 @@ import { AddFoodSheet } from './AddFoodSheet';
 import { EditFoodEntrySheet } from './EditFoodEntrySheet';
 import { MacroGoalsSheet } from './MacroGoalsSheet';
 import { MyRecipesScreen } from '../community/MyRecipesScreen';
+import { LibraryScreen } from '../library/LibraryScreen';
+import { Icon } from '../Icon';
 import { ShareRecipeSheet } from '../community/ShareRecipeSheet';
 import type { RecipeToShare } from '../../lib/recipePosts';
 import {
@@ -51,6 +53,7 @@ export function MacrosScreen() {
   const syncMacroChallenge = useAppStore((s) => s.syncMacroChallenge);
 
   const [activeDate, setActiveDate] = useState(isoToday());
+  const [libraryOpen, setLibraryOpen] = useState(false);
   const [entries, setEntries] = useState<FoodLogEntry[]>([]);
   const [recentEntries, setRecentEntries] = useState<FoodLogEntry[]>([]);
   const [goals, setGoals] = useState<NutritionGoals | null>(null);
@@ -444,6 +447,18 @@ export function MacrosScreen() {
           </div>
         );
       })}
+
+      <button className="lib-entry lib-entry-bottom" onClick={() => setLibraryOpen(true)}>
+        <span className="ic">
+          <Icon name="nutrition" />
+        </span>
+        <span>
+          <b>Browse the Meal Library</b>
+          <small>Recipes by goal, meal and diet - from Somax and the community</small>
+        </span>
+        <Icon name="chevron" />
+      </button>
+      <LibraryScreen open={libraryOpen} mode="nutrition" onClose={() => setLibraryOpen(false)} />
 
       <AddFoodSheet
         open={addSheetMeal !== null}

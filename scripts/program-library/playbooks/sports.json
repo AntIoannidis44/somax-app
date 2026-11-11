@@ -1,0 +1,717 @@
+{
+  "sports": {
+    "football": {
+      "notes": "Covers association football (soccer). Any text starting 'UNVERIFIED' was not confirmed on a fetched page (search snippet, secondary summary or our own coaching heuristic). 'DERIVED' means our own arithmetic on verified numbers.",
+      "benchmarks": [
+        {
+          "id": "yoyo_ir1",
+          "label": "Yo-Yo Intermittent Recovery Test Level 1",
+          "unit": "metres (or level.shuttle)",
+          "howToTest": "Cones at 0, 5 and 25 m (the 20 m shuttle lane plus a 5 m recovery zone). Run 20 m out and back to the beeps, then 10 s active recovery walking/jogging around the 5 m cone. Starts at 10 km/h and speeds up by level. Two consecutive missed lines ends the test; score = last completed shuttle, total distance = shuttles x 40 m. Test fresh (48-72 h after hard training)."
+        },
+        {
+          "id": "beep_20m",
+          "label": "20 m multistage fitness test (beep test)",
+          "unit": "level",
+          "howToTest": "20 m lane, continuous running to beeps; starts at 8.0-8.5 km/h and rises ~0.5 km/h about every minute. Miss the line by >2 m twice and the test ends. Record the last level.shuttle reached. Not interchangeable with Yo-Yo scores."
+        },
+        {
+          "id": "sprint_30m",
+          "label": "30 m sprint",
+          "unit": "seconds",
+          "howToTest": "Standing (split-stance) start, 0.5-1 m behind the start line, all-out to 30 m. Best of 2-3 trials with 3-5 min rest between trials. Timing gates preferred; hand timing over short sprints is unreliable (Haugen & Buchheit advise against manual timing). Always re-test with the same method and surface. Optional 10 m split = acceleration."
+        },
+        {
+          "id": "cmj",
+          "label": "Countermovement jump (hands on hips)",
+          "unit": "cm",
+          "howToTest": "Hands on hips, quick dip and jump for max height, land on the same spot. Best of 3 with ~1 min rest. Phone app (flight-time) or jump mat. Keep arm-swing setting identical between tests because arm swing changes the score a lot."
+        },
+        {
+          "id": "rsa_6x30",
+          "label": "Repeated sprint ability 6 x 30 m",
+          "unit": "seconds (total or mean)",
+          "howToTest": "UNVERIFIED protocol (common practice): 6 x 30 m all-out sprints, each starting every 20-25 s (walk back recovery). Record total time and % decrement from best rep."
+        }
+      ],
+      "levelPlacement": {
+        "method": "Place by Yo-Yo IR1 distance where available (most football-specific), else beep level; use the LOWER of aerobic and speed placement for overall intensity, and each benchmark's own band for the goal block.",
+        "yoyoIR1Bands_men_m": { "veryPoor": "<520", "belowAverage": "520-1000", "average": "1040-1480", "good": "1520-1960", "excellent": "2000-2400", "elite": ">2400" },
+        "yoyoIR1Bands_women_m": { "veryPoor": "<320", "belowAverage": "320-640", "average": "680-960", "good": "1000-1280", "excellent": "1320-1600", "elite": ">1600" },
+        "yoyoBandsCaveat": "TopEndSports states these adult bands are guidance only and not research-based.",
+        "footballReferenceValues_yoyoIR1_m": { "maleInternational": 2420, "maleElite": 2190, "maleModeratelyTrained": 1810, "femaleInternational": 1600, "femaleElite": 1360, "femaleSubElite": 1160, "source": "Bangsbo et al. 2008 as cited by TopEndSports" },
+        "beepBands_adult_level": { "men": { "veryPoor": "<5", "poor": "5-7", "average": "7-9", "good": "9-11", "veryGood": "11-13", "excellent": ">13" }, "women": { "veryPoor": "<4", "poor": "4-6", "average": "6-8", "good": "8-10", "veryGood": "10-12", "excellent": ">12" } },
+        "cmjReference": "Norwegian national-team athletes (force plate, hands on hips): highest group athletic sprinters 62.7 cm men / 48.4 cm women; men jump ~33% (~10 cm) higher than women. UNVERIFIED rule-of-thumb bands for trained men 50-60 average, 60-70 good, >70 excellent; trained women 35-45 average, 45-55 good, >55 excellent.",
+        "sprint30mReference": "UNVERIFIED: no fetched norm table for 30 m in footballers. Use the athlete's own baseline; improvement goals expressed as % of baseline.",
+        "appLevels": {
+          "beginner": "Yo-Yo below average or lower / beep <7 (men) or <6 (women) / <6 months structured gym training / cannot hold 30 s single-leg balance",
+          "intermediate": "Yo-Yo average-good / 6-24 months training / passes plyometric readiness checks",
+          "advanced": "Yo-Yo excellent-elite / >2 years structured strength + speed training",
+          "ruleSource": "DERIVED from bands above plus NSCA plyometric readiness criteria"
+        }
+      },
+      "seasonPhases": {
+        "offSeason": "NSCA preparatory period: build base conditioning so the athlete tolerates harder work later; longest phase. Strength work: hypertrophy/endurance 50-75% 1RM, 3-6 sets x 8-20, then basic strength 80-95% 1RM, 2-6 sets x 2-6. Plyometrics 2-3 days apart. Sprint: acceleration and max-velocity blocks per Haugen table.",
+        "preSeason": "Shift to strength/power (NSCA: 30-95% 1RM, 2-5 sets x 2-5) and raise sport-specific intensity: repeated sprints, intermittent running (Yo-Yo style), small-sided games. UNVERIFIED: Bangsbo reports Yo-Yo scores in elite players typically rise ~20-40% across pre-season while VO2max changes only a few %, so pre-season is when the Yo-Yo goal moves fastest.",
+        "inSeason": "Maintenance: NSCA 85-93% 1RM, 2-5 sets x 3-6. One strength session per week kept strength and 40 m sprint gains for 12 weeks in pro footballers; one session every second week lost them (Ronnestad 2011). FIFA 11+ as warm-up every training session; before matches use only the running parts. Low-volume Nordics weekly.",
+        "postSeason": "Active rest under 4 weeks, low intensity and volume, recreational activity and rehab (NSCA)."
+      },
+      "improvementModel": {
+        "cmj": "Plyometric training raised CMJ by 8.7% on average (95% CI 7.0-10.4%), CMJ with arm swing 7.5%, squat jump 4.7% (Markovic 2007, 26 studies). Typical plyometric programs run 6-10 weeks; vertical jump can improve in as little as 4 weeks (NSCA/CSCS ch.18). DERIVED weekly rate: beginner ~1.0%/wk, intermediate ~0.6%/wk, advanced ~0.3%/wk (advanced reduced because trained athletes improve less).",
+        "sprint": "Well-trained senior athletes improve less per year than test-retest variation; world top-100 sprinters in their early 20s improved ~0.1-0.2%/yr (Haugen 2019). Typical 20 m test noise ~0.025 s (CV 0.8-1.0%, Haugen thesis, UNVERIFIED search summary). DERIVED/UNVERIFIED planning rates for 30 m time: beginner 0.4%/wk, intermediate 0.2%/wk, advanced 0.1%/wk; any target faster than ~5% of baseline flagged as 'stretch'.",
+        "yoyo": "UNVERIFIED: ~20-40% Yo-Yo gains across an elite pre-season (Bangsbo conference abstract via search). DERIVED planning rates: beginner 4%/wk, intermediate 3%/wk, advanced 1.5%/wk of baseline distance, capped by phase (in-season = maintain).",
+        "beep": "UNVERIFIED/DERIVED: 0.3-0.5 levels per week for beginners, 0.2 for intermediate, 0.1 for advanced.",
+        "minimumDetectableChange": "Treat changes smaller than ~1% on sprint and ~1 cm on CMJ as noise; don't adjust plan on them (DERIVED from Haugen reliability figure)."
+      },
+      "planLengthRule": {
+        "formula": "gapPct = |target - current| / current x 100; weeks = ceil(gapPct / weeklyRatePct[level][benchmark]); round up to whole 4-week mesocycles (NSCA: blocks 2-6 wk, most commonly 4) where possible; insert a lighter week after every 2-3 loading weeks (Haugen: 2:1 or 3:1 load:easy).",
+        "minWeeks": 4,
+        "maxWeeks": 16,
+        "overMax": "If weeks > 16, cap at 16, set an intermediate target the athlete can reach, then re-test and generate the next block.",
+        "retest": "Re-test benchmark every 4 weeks (end of each mesocycle) and on deload weeks; Yo-Yo 2-4x per year in real teams (pre-, mid-, post-season).",
+        "phaseCap": "In-season plans: target = maintain or small gains only; cap goal-block intensity at 'maintenance' and stretch length rather than raise volume.",
+        "source": "DERIVED from Markovic, NSCA ch.18/21, Haugen 2019"
+      },
+      "volumeModel": {
+        "plyoFootContactsPerSession": { "beginner": "80-100", "intermediate": "100-120", "advanced": "120-140", "source": "NSCA CSCS ch.18 (via PT Pioneer)", "note": "When intensity rises, volume falls. Same body area not on consecutive days; 48-72 h between plyo sessions; 2-4 plyo sessions/week max. Adolescents 2-3 days recovery; masters 3-4 days and fewer, lower-intensity contacts." },
+        "plyoInSeason": "UNVERIFIED: football studies used ~100 contacts per session x2/week for 8 weeks (Moran 2024) and recommend 140-240 jumps/week x2 sessions inside practice (Ramirez-Campillo parameters). App rule: in-season use ~50-60% of off-season contacts, 1-2 sessions/week, never MD-1.",
+        "plyoReadiness": "Squat 1RM ~1.5 x bodyweight is the classic prerequisite (technique matters more); stand on one leg 30 s and hold single-leg half squat 30 s. Athletes >100 kg (220 lb): no depth jumps above 18 in (~45 cm). Depth jump heights 16-42 in, average 30-32 in for advanced only.",
+        "sprintPerSession": {
+          "acceleration": { "distance_m": "10-50", "intensity": ">98% max velocity", "rest_min": "2-7", "sessionVolume_m": "100-300", "nextHighIntensity": "48 h" },
+          "maxVelocityFlying": { "distance_m": "10-30 flying after 20-60 m build-up", "intensity": ">98%", "rest_min": "4-15", "sessionVolume_m": "50-150", "nextHighIntensity": "48-72 h" },
+          "speedEndurance": { "distance_m": "60-80", "intensity": "90-95%", "rest_min": "2-4 between reps, 8-15 between series", "sessionVolume_m": "600-2000", "nextHighIntensity": "48-72 h" },
+          "resisted": { "distance_m": "10-30", "intensity": "80-95%", "rest_min": "3-6", "sessionVolume_m": "50-200", "load": "light <10% velocity loss, moderate 10-15%, heavy 15-30%, very heavy >30%" },
+          "tempo": { "distance_m": "100-300", "intensity": "60-70%", "rest_min": "1-3", "sessionVolume_m": "1000-2000", "nextHighIntensity": "24 h" },
+          "levelScaling": "Use low end of distance/volume/rest for beginners and youth (e.g. 20 m starts with 2 min rest), high end for advanced (e.g. 40 m with 7 min). Avoid the 70-95% 'grey zone' for speed work: sprint >=95% or tempo <70%.",
+          "source": "Haugen et al. 2019 Table 2"
+        },
+        "nordics": "FIFA 11+ Part 2 Nordic doses: level 1 3-5 reps, level 2 7-10, level 3 12-15 (1 set inside warm-up). Petersen 2011 used a 10-week progression of 27 sessions starting at 10 reps in week 1, then a once-weekly maintenance session (UNVERIFIED search summary). UNVERIFIED: low-volume Nordics (~1-2 sets x 3-5, 1-2x/week) produced similar eccentric strength gains to high volume (Cuthbert 2020; Cholp & Zemkova 2025).",
+        "strength": "Off-season 2-3 sessions/wk; pre-season 2-3; in-season 1 (minimum effective, Ronnestad) to 2.",
+        "weeklyProgression": "DERIVED: raise plyo contacts or sprint metres by no more than ~10-15% week to week within a level band; deload week = ~50-60% volume, intensity kept."
+      },
+      "weekStructure": {
+        "matchDayLabels": "MD = match day; MD-1 = day before; MD+1 = day after. UNVERIFIED convention used across pro football; not from a fetched source.",
+        "offSeason": {
+          "2": ["Strength + acceleration + plyo (lower)", "Strength (upper/total) + aerobic intervals"],
+          "3": ["Strength A + acceleration + plyo", "Aerobic/intermittent intervals + core/Nordics", "Strength B + max-velocity sprint"],
+          "4": ["Strength A + acceleration + plyo", "Aerobic intervals + mobility", "Strength B + max velocity", "Tempo runs + FIFA 11+ Part 2 strength"],
+          "5": ["Strength A + acceleration + plyo", "Aerobic intervals", "Strength B + max velocity", "Tempo + mobility", "Repeated sprint / small-sided style conditioning"]
+        },
+        "inSeason_1match": {
+          "MD+1": "Recovery: easy bike/tempo, mobility (no plyo, no sprint)",
+          "MD+2": "Day off or light",
+          "MD-4/MD-3": "Main strength session (maintenance load) + short acceleration work + low-volume plyo + Nordics",
+          "MD-2": "Speed: short max-velocity exposures, low volume",
+          "MD-1": "Activation only: FIFA 11+ running parts, a few short strides",
+          "MD": "Match; warm-up = FIFA 11+ parts 1 and 3",
+          "daysPerWeekMapping": "2 days -> MD-4 strength/speed + MD+1 recovery; 3 days -> add MD-2 speed; 4 days -> add MD-3 conditioning; 5 days -> add MD+2 light aerobic. UNVERIFIED structure; constraints from verified rules: >=48 h between high-intensity sprint days, plyo not consecutive days, at least 1 strength/week."
+        },
+        "inSeason_2matches": "UNVERIFIED: with two matches/week drop extra conditioning; keep one short strength session (~30 min) on the day after recovery and FIFA 11+ warm-ups only.",
+        "hardRules": ["No plyo or max sprint on MD-1 or MD+1", ">=48 h between high-intensity sprint sessions (Haugen)", "Same-area plyo never on consecutive days (NSCA)", "At least one strength session per week in-season (Ronnestad)", "FIFA 11+ warm-up >=2x/week, ideally every session"]
+      },
+      "sessionTemplates": [
+        {
+          "id": "fb_fifa11plus",
+          "name": "FIFA 11+ warm-up",
+          "type": "injury_prevention_warmup",
+          "useWhen": "Start of every training session (>=2x/week minimum). Pre-match: Part 1 + Part 3 only.",
+          "exercises": [
+            { "name": "Running straight ahead (cone lane 6-10 pairs)", "sets": 2, "reps": "1 lane", "intensity": "easy", "group": "part1" },
+            { "name": "Running hip out", "sets": 2, "reps": "1 lane", "intensity": "easy", "group": "part1" },
+            { "name": "Running hip in", "sets": 2, "reps": "1 lane", "intensity": "easy", "group": "part1" },
+            { "name": "Running circling partner", "sets": 2, "reps": "1 lane", "intensity": "easy", "group": "part1" },
+            { "name": "Running and jumping (shoulder contact)", "sets": 2, "reps": "1 lane", "intensity": "easy-moderate", "group": "part1" },
+            { "name": "Quick forwards and backwards run", "sets": 2, "reps": "1 lane", "intensity": "moderate", "group": "part1" },
+            { "name": "Plank (L1 both legs / L2 alternate legs / L3 one-leg lift)", "sets": 3, "reps": "20-30 s", "group": "part2" },
+            { "name": "Side plank (L1 static / L2 dynamic / L3 leg lift)", "sets": 3, "reps": "20-30 s each side", "group": "part2" },
+            { "name": "Nordic hamstring lower", "sets": 1, "reps": "L1 3-5 / L2 7-10 / L3 12-15", "group": "part2" },
+            { "name": "Single-leg balance (L1 hold ball / L2 throw with partner / L3 test partner)", "sets": 2, "reps": "30 s each leg", "group": "part2" },
+            { "name": "Squats (L1 heel raises / L2 walking lunges 2x30 s / L3 one-leg squat 2x10 each)", "sets": 2, "reps": "30 s or 10 each leg", "group": "part2" },
+            { "name": "Jumping (L1 vertical / L2 lateral / L3 box jumps)", "sets": 2, "reps": "30 s", "group": "part2" },
+            { "name": "Running across pitch", "sets": 2, "reps": "1", "distance": "~40 m", "intensity": "75-80%", "group": "part3" },
+            { "name": "Bounding run", "sets": 2, "reps": "1", "distance": "~30 m", "intensity": "high", "group": "part3" },
+            { "name": "Plant and cut", "sets": 2, "reps": "1", "distance": "~20 m", "intensity": "high", "group": "part3" }
+          ]
+        },
+        {
+          "id": "fb_accel_plyo",
+          "name": "Acceleration + plyometrics",
+          "type": "speed_power",
+          "useWhen": "Goal: faster 10-30 m sprint or higher jump. Off-season/pre-season 1-2x/week; in-season MD-4/MD-3 at reduced volume.",
+          "exercises": [
+            { "name": "A-skips / dribbles drill set", "sets": 2, "reps": "1", "distance": "20 m", "intensity": "drill", "group": "prep" },
+            { "name": "Pogo jumps", "sets": 2, "reps": 10, "intensity": "low (contacts count)", "group": "plyo" },
+            { "name": "Countermovement jump to stick", "sets": 3, "reps": 5, "intensity": "max effort, full rest", "group": "plyo" },
+            { "name": "Broad jump", "sets": 3, "reps": 4, "intensity": "max effort", "group": "plyo" },
+            { "name": "Lateral bound and stick", "sets": 2, "reps": "4 each side", "intensity": "moderate", "group": "plyo" },
+            { "name": "Split-stance acceleration", "sets": 1, "reps": "6-8", "distance": "10-20 m", "intensity": ">98%, 2-3 min rest", "group": "sprint" },
+            { "name": "Resisted sled sprint (light, <10% velocity loss)", "sets": 1, "reps": "4-6", "distance": "10-20 m", "intensity": "3-4 min rest", "group": "sprint" }
+          ]
+        },
+        {
+          "id": "fb_maxvel",
+          "name": "Max velocity (flying sprints)",
+          "type": "speed",
+          "useWhen": "Goal: faster 30 m+ / top speed; intermediate+ only; >=48-72 h from next sprint day.",
+          "exercises": [
+            { "name": "Build-up strides", "sets": 1, "reps": 3, "distance": "60 m", "intensity": "70-90%", "group": "prep" },
+            { "name": "Flying sprint", "sets": 1, "reps": "4-6", "distance": "10-30 m fly after 20-40 m build-up", "intensity": ">98%, 4-6 min rest (beginner short end)", "group": "sprint" },
+            { "name": "Nordic hamstring", "sets": 2, "reps": "3-5", "intensity": "slow eccentric", "group": "injury_prevention" }
+          ]
+        },
+        {
+          "id": "fb_strength_A",
+          "name": "Strength A (lower bias)",
+          "type": "strength",
+          "useWhen": "Off-season 2-3x/week alternating A/B; in-season 1x/week maintenance (85-93% 1RM, 2-5 x 3-6 for trained; beginners use RPE 7-8 rep ranges).",
+          "exercises": [
+            { "name": "Back squat or trap-bar deadlift", "sets": "3-4", "reps": "off-season 6-8 -> 3-5; in-season 3-5", "intensity": "off 75-90% 1RM; in 85-93%", "group": "main" },
+            { "name": "Rear-foot elevated split squat", "sets": 3, "reps": "6-8 each", "intensity": "RPE 8", "group": "main" },
+            { "name": "Romanian deadlift", "sets": 3, "reps": "6-8", "intensity": "RPE 7-8", "group": "posterior" },
+            { "name": "Nordic hamstring", "sets": 2, "reps": "3-5", "group": "posterior" },
+            { "name": "Copenhagen adductor plank", "sets": 2, "reps": "20 s each side", "intensity": "UNVERIFIED dose", "group": "injury_prevention" },
+            { "name": "Calf raise (single-leg)", "sets": 3, "reps": 12, "group": "accessory" }
+          ]
+        },
+        {
+          "id": "fb_strength_B",
+          "name": "Strength B (power + upper)",
+          "type": "strength_power",
+          "useWhen": "Off-season/pre-season second weekly session.",
+          "exercises": [
+            { "name": "Hang power clean or jump squat", "sets": 4, "reps": 3, "intensity": "30-60% 1RM, fast", "group": "power" },
+            { "name": "Bench press or push-up variation", "sets": 3, "reps": "5-8", "group": "upper" },
+            { "name": "Pull-up / row", "sets": 3, "reps": "6-8", "group": "upper" },
+            { "name": "Single-leg hip thrust", "sets": 3, "reps": "8 each", "group": "posterior" },
+            { "name": "Pallof press", "sets": 3, "reps": "10 each", "group": "core" }
+          ]
+        },
+        {
+          "id": "fb_yoyo_intervals",
+          "name": "Intermittent running intervals (Yo-Yo builder)",
+          "type": "conditioning",
+          "useWhen": "Goal: Yo-Yo IR1 / beep target. Off-season and pre-season 2x/week; in-season 1x/week or replaced by small-sided games.",
+          "exercises": [
+            { "name": "Aerobic intervals (e.g. 4 x 4 min)", "sets": 4, "reps": "4 min", "intensity": "~90-95% HRmax, 3 min easy jog between; UNVERIFIED dose (classic Helgerud protocol not fetched)", "group": "aerobic" },
+            { "name": "Shuttle intervals 2 x 20 m with 10 s rest (Yo-Yo style)", "sets": "2-3", "reps": "6-10 shuttles at target level speed", "distance": "40 m per shuttle", "intensity": "start ~1-2 levels below current test score; 2-3 min between sets; UNVERIFIED progression", "group": "specific" },
+            { "name": "Repeated sprints", "sets": 2, "reps": 6, "distance": "30 m", "intensity": "all-out, rep every 25 s, 4 min between sets; UNVERIFIED", "group": "rsa" }
+          ]
+        },
+        {
+          "id": "fb_recovery",
+          "name": "Recovery / tempo",
+          "type": "recovery",
+          "useWhen": "MD+1, between high-intensity days, deload weeks.",
+          "exercises": [
+            { "name": "Tempo runs", "sets": 1, "reps": "8-10", "distance": "100 m", "intensity": "60-70%, walk back 1-3 min", "group": "aerobic" },
+            { "name": "Hip/ankle mobility circuit", "sets": 1, "reps": "8 min", "group": "mobility" },
+            { "name": "FIFA 11+ Part 2 (level 1)", "sets": 1, "reps": "as template", "group": "injury_prevention" }
+          ]
+        }
+      ],
+      "safety": [
+        "FIFA 11+ in female youth players (Soligard 2008 cluster RCT): all injuries RR 0.68, overuse RR 0.47, severe RR 0.55; the most compliant third had 35% lower injury risk than the middle third. Adherence is the lever - surface it in the app.",
+        "Programs that include Nordic hamstring exercise cut hamstring injury rate ~51% (Al Attar 2017, RR 0.49); effect cannot be separated from the rest of the program. UNVERIFIED: van Dyk 2019 (15 studies, 8,459 athletes) also RR 0.49.",
+        "Plyometric readiness gates (1.5x BW squat ideal, 30 s single-leg balance); heavy athletes (>100 kg) limited to low boxes; watch knee valgus on landings, especially adolescents.",
+        ">=48 h between maximal sprint sessions; stop sprint reps if time drops off noticeably (UNVERIFIED cut-off ~3-5%).",
+        "Treat sudden hamstring tightness, groin pain, or pain on landing as stop signals; refer to physio.",
+        "Youth: no maximal 1RM testing; emphasise technique, longer recovery between plyo days (2-3 days)."
+      ],
+      "sources": [
+        { "title": "Comprehensive warm-up programme to prevent injuries in young female footballers: cluster randomised controlled trial", "author": "Soligard T et al. (BMJ 2008)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2600961/", "whatWeUsed": "Full FIFA 11+ exercise list, levels, sets/reps/durations, frequency, injury rate ratios, compliance effect. Fetched." },
+        { "title": "Systematic review: injury prevention programs including Nordic hamstring exercise (Al Attar 2017) - PEDro summary", "author": "PEDro / Al Attar WS et al.", "url": "https://pedro.org.au/english/systematic-review-found-injury-prevention-programs-include-nordic-hamstring-exercises-decrease-risk-hamstring-injuries-among-soccer-players/", "whatWeUsed": "51% reduction, RR 0.49, 5 studies 4,455 players, caveat on isolating NHE. Fetched." },
+        { "title": "CSCS Chapter 18: Plyometric and speed training (study notes)", "author": "PT Pioneer, summarising NSCA Essentials", "url": "https://www.ptpioneer.com/personal-training/certifications/nsca-cscs/cscs-chapter-18/", "whatWeUsed": "Foot contacts by level, recovery days, readiness criteria, box heights, program length 6-10 wk. Fetched (secondary summary of NSCA text)." },
+        { "title": "CSCS Chapter 21: Periodization (study notes)", "author": "PT Pioneer, summarising NSCA Essentials", "url": "https://origin.ptpioneer.com/personal-training/certifications/nsca-cscs/cscs-chapter-21/", "whatWeUsed": "Phase goals, %1RM and set/rep ranges by phase, mesocycle lengths, postseason <4 wk. Fetched." },
+        { "title": "The Training and Development of Elite Sprint Performance", "author": "Haugen T, Seiler S, Sandbakk O, Tonnessen E (Sports Med Open 2019)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6872694/", "whatWeUsed": "Sprint session table (distance, intensity, rest, volume, recovery), sled load categories, 2:1/3:1 loading, improvement rates, taper. Fetched." },
+        { "title": "Effects of in-season strength maintenance training frequency in professional soccer players", "author": "Ronnestad BR, Nymark BS, Raastad T (JSCR 2011)", "url": "https://lida.sport-iat.de/dfb/Record/4023410?lng=en", "whatWeUsed": "1x/week maintains strength and 40 m sprint over 12 in-season weeks; every second week does not. Fetched abstract." },
+        { "title": "Yo-Yo test norms", "author": "TopEndSports (Rob Wood)", "url": "https://www.topendsports.com/testing/norms/yo-yo.htm", "whatWeUsed": "IR1 adult bands by sex, football reference values (Bangsbo 2008), protocol summary. Fetched." },
+        { "title": "Yo-Yo intermittent test", "author": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Yo-Yo_intermittent_test", "whatWeUsed": "Course layout (0/5/25 m), 10 s recovery, scoring. Fetched." },
+        { "title": "20 m multistage fitness test", "author": "TopEndSports", "url": "https://www.topendsports.com/testing/tests/20mshuttle.htm", "whatWeUsed": "Beep test protocol and adult level bands. Fetched." },
+        { "title": "Does plyometric training improve vertical jump height? A meta-analytical review", "author": "Markovic G (BJSM 2007)", "url": "https://lida.sport-iat.de/ta/Record/4013060", "whatWeUsed": "Pooled jump improvements (CMJ 8.7%, CMJA 7.5%, SJ 4.7%, DJ 4.7%). Fetched abstract." },
+        { "title": "Countermovement jump height in national-team athletes of various sports", "author": "Haugen T, Breitschadel F, Wiig H, Seiler S (IJSPP 2021)", "url": "https://lida.sport-iat.de/ta/Record/4068651?lng=en", "whatWeUsed": "CMJ reference values and sex difference. Fetched abstract." },
+        { "title": "Petersen 2011 Nordic protocol; van Dyk 2019; Cuthbert 2020; Ramirez-Campillo/Moran plyo dosing; Bangsbo pre-season Yo-Yo change", "author": "various", "url": "https://bjsm.bmj.com/content/53/21/1362.info", "whatWeUsed": "UNVERIFIED - seen only in search summaries, not fetched. Used only for items labelled UNVERIFIED." }
+      ]
+    },
+
+    "basketball": {
+      "notes": "Same verification labels as football. Basketball game demand data from Petway 2020 systematic review.",
+      "benchmarks": [
+        { "id": "cmj", "label": "Countermovement jump (hands on hips)", "unit": "cm", "howToTest": "As football. Best of 3, ~1 min rest, same measuring method each time." },
+        { "id": "standing_reach_vertical", "label": "Standing vertical (reach, arm swing)", "unit": "cm or in", "howToTest": "Chalk/Vertec style: standing reach, then no-step jump with arm swing; jump reach minus standing reach. Best of 3. Not comparable with hands-on-hips CMJ." },
+        { "id": "sprint_3q_court", "label": "Three-quarter court sprint", "unit": "seconds", "howToTest": "Baseline to the far free-throw line extended (~22.9 m / 75 ft), standing start, best of 2. UNVERIFIED distance from NBA combine practice." },
+        { "id": "lane_agility", "label": "Lane agility drill", "unit": "seconds", "howToTest": "UNVERIFIED (NBA combine): around the key - sprint, defensive slide, backpedal, slide - around the lane perimeter; best of 2. Combine prospects typically ~11.0-11.5 s (search summary)." },
+        { "id": "yoyo_ir1", "label": "Yo-Yo IR1", "unit": "metres", "howToTest": "As football. Elite basketball players generally >2000 m (TopEndSports)." }
+      ],
+      "levelPlacement": {
+        "method": "Primary placement by CMJ relative to sex reference + training age; aerobic block placement by Yo-Yo/beep bands (see football).",
+        "cmjReference": "See football cmjReference (Haugen 2021; men ~10 cm higher than women).",
+        "gameDemands": "Elite players: ~4.4 km per game average (range 2.0-6.3 km), ~44-46 jumps per game, 43-145 accelerations (1-15 high-intensity), 24-95 decelerations, average HR 150-175 bpm (Petway 2020).",
+        "appLevels": { "beginner": "<6 months structured training or fails plyo readiness", "intermediate": "6-24 months, passes readiness", "advanced": ">2 years, competitive club/college level" }
+      },
+      "seasonPhases": {
+        "offSeason": "NSCA basketball example: test at start and end, resistance training is highest priority plus flexibility and aerobic base. Hypertrophy then basic strength ranges as football.",
+        "preSeason": "NSCA basketball example: resistance training 3x/week, anaerobic conditioning and plyometrics become the highest priorities; strength/power 2-5 x 2-5.",
+        "inSeason": "NSCA basketball example: ~30 min resistance sessions 1-3x/week alternated with plyometrics; most time goes to skill and tactics. Basketball games already contain ~45 jumps, so count game jumps toward weekly load (DERIVED).",
+        "postSeason": "Active rest <4 weeks, no formal structured workouts (NSCA basketball example)."
+      },
+      "improvementModel": {
+        "vertical": "Markovic: CMJ +8.7%, CMJ with arm swing +7.5% average from plyometric programs. UNVERIFIED: basketball-specific meta-analysis (Frontiers 2026) CMJ effect g = 0.77 with no significant effect of program length. DERIVED rates as football: beginner 1.0%/wk, intermediate 0.6%/wk, advanced 0.3%/wk; >10% total gap flagged 'stretch' for advanced.",
+        "sprintAgility": "DERIVED/UNVERIFIED: same as football sprint rates.",
+        "conditioning": "As football Yo-Yo rates."
+      },
+      "planLengthRule": {
+        "formula": "Same as football: weeks = ceil(gapPct / weeklyRatePct), rounded to 4-week blocks with 3:1 or 2:1 load:deload.",
+        "minWeeks": 4,
+        "maxWeeks": 16,
+        "overMax": "Cap at 16 weeks, set intermediate target, re-test.",
+        "retest": "Every 4 weeks; vertical can show change in ~4 weeks.",
+        "phaseCap": "In-season: maintain or small gains; deduct game jumps from plyo budget."
+      },
+      "volumeModel": {
+        "plyoFootContactsPerSession": { "beginner": "80-100", "intermediate": "100-120", "advanced": "120-140", "source": "NSCA ch.18" },
+        "gameJumpCredit": "DERIVED: a game counts as ~45 contacts of high-intensity jumping (Petway 2020 jump counts); in-season plyo sessions = level budget minus recent game/practice jumps, minimum 30 quality contacts.",
+        "sprint": "Use Haugen acceleration row (10-30 m, >98%, 2-4 min rest, 100-200 m/session) - basketball sprints are short; max-velocity work optional.",
+        "codDecel": "UNVERIFIED: progress deceleration/cut drills 2x/week off-season; elite training sessions contain ~324 changes of direction (Svilar via Petway) so in-season extra COD work is usually unnecessary.",
+        "strength": "Off-season 2-3/week; pre-season 3/week; in-season 1-3 short (~30 min) sessions."
+      },
+      "weekStructure": {
+        "offSeason": {
+          "2": ["Lower strength + plyo (vertical)", "Upper strength + acceleration/COD + conditioning"],
+          "3": ["Lower strength + vertical plyo", "Conditioning (intervals) + core", "Total-body power + acceleration/decel"],
+          "4": ["Lower strength + vertical plyo", "Upper strength + conditioning", "Power + acceleration/COD", "Recovery/mobility + landing mechanics"],
+          "5": ["Lower strength + plyo", "Conditioning", "Upper strength + COD", "Power + sprint", "Recovery/mobility"]
+        },
+        "inSeason": {
+          "rules": ["No plyo or heavy lower lifting on game day -1", "Day after game: recovery only", "1-3 x 30 min lifting, alternate with plyo (NSCA)"],
+          "daysPerWeekMapping": "2 days -> 1 strength (GD+2) + 1 short power/plyo (GD-3 or earlier); 3 days -> add recovery GD+1; 4+ days -> add conditioning only if minutes played are low (UNVERIFIED rule)."
+        }
+      },
+      "sessionTemplates": [
+        {
+          "id": "bb_vertical_plyo",
+          "name": "Vertical jump plyometrics",
+          "type": "power",
+          "useWhen": "Goal: higher vertical. Off-season 2x/week (48-72 h apart), pre-season 1-2x, in-season 1x with game-jump credit.",
+          "exercises": [
+            { "name": "Ankle pogos", "sets": 2, "reps": 15, "intensity": "low", "group": "plyo_low" },
+            { "name": "Snap-down to stick landing", "sets": 2, "reps": 5, "intensity": "landing quality", "group": "landing" },
+            { "name": "Countermovement jump (max)", "sets": 3, "reps": 5, "intensity": "max, 60-90 s rest", "group": "plyo_mod" },
+            { "name": "Approach jump (1- or 2-foot, game-like)", "sets": 3, "reps": 4, "intensity": "max", "group": "plyo_high" },
+            { "name": "Box jump", "sets": 3, "reps": 4, "intensity": "box 30-60 cm (ch.18 range 6-42 in)", "group": "plyo_mod" },
+            { "name": "Depth jump (advanced only)", "sets": 3, "reps": 4, "intensity": "drop 30-45 cm; 5-10 s between reps, 2-3 min between sets", "group": "plyo_high" }
+          ]
+        },
+        {
+          "id": "bb_lower_strength",
+          "name": "Lower strength",
+          "type": "strength",
+          "useWhen": "Off-season 2x, pre-season 1-2x, in-season 1x (~30 min).",
+          "exercises": [
+            { "name": "Trap-bar deadlift or front squat", "sets": "3-5", "reps": "3-6", "intensity": "80-90% 1RM (in-season 85-93%, fewer sets)", "group": "main" },
+            { "name": "Bulgarian split squat", "sets": 3, "reps": "6 each", "group": "unilateral" },
+            { "name": "Single-leg RDL", "sets": 3, "reps": "8 each", "group": "posterior" },
+            { "name": "Nordic hamstring", "sets": 2, "reps": "3-5", "group": "injury_prevention" },
+            { "name": "Tibialis raise + calf raise", "sets": 2, "reps": 15, "group": "ankle" }
+          ]
+        },
+        {
+          "id": "bb_accel_cod",
+          "name": "Acceleration + deceleration/change of direction",
+          "type": "speed_agility",
+          "useWhen": "Goal: faster 3/4-court sprint or lane agility. Off/pre-season 1-2x/week.",
+          "exercises": [
+            { "name": "Acceleration sprints", "sets": 1, "reps": 6, "distance": "10-20 m", "intensity": ">98%, 2-3 min rest", "group": "sprint" },
+            { "name": "Decel to stick (sprint 10 m, stop in 3 steps)", "sets": 2, "reps": 4, "intensity": "high", "group": "decel" },
+            { "name": "Lateral shuffle to sprint", "sets": 2, "reps": "3 each way", "distance": "5 + 10 m", "group": "cod" },
+            { "name": "Lane agility rehearsal", "sets": 1, "reps": 3, "intensity": "max, 3 min rest", "group": "specific" }
+          ]
+        },
+        {
+          "id": "bb_conditioning",
+          "name": "Court conditioning",
+          "type": "conditioning",
+          "useWhen": "Pre-season priority; in-season only for low-minute players.",
+          "exercises": [
+            { "name": "Court sprints (baseline-baseline)", "sets": 3, "reps": 6, "distance": "28 m x2 per rep", "intensity": "~90%, rest = 2-3x work; UNVERIFIED dose", "group": "anaerobic" },
+            { "name": "Yo-Yo style shuttles", "sets": 2, "reps": "8 shuttles", "distance": "2x20 m", "intensity": "target level, 10 s rest between shuttles", "group": "intermittent" }
+          ]
+        },
+        {
+          "id": "bb_upper_core",
+          "name": "Upper body + core",
+          "type": "strength",
+          "useWhen": "Off-season/pre-season; pair with conditioning day.",
+          "exercises": [
+            { "name": "Dumbbell bench press", "sets": 3, "reps": "6-10", "group": "upper" },
+            { "name": "Chin-up or lat pulldown", "sets": 3, "reps": "6-10", "group": "upper" },
+            { "name": "Med-ball chest pass (explosive)", "sets": 3, "reps": 5, "group": "power" },
+            { "name": "Side plank", "sets": 3, "reps": "20-30 s each", "group": "core" },
+            { "name": "Dead bug", "sets": 3, "reps": "8 each", "group": "core" }
+          ]
+        }
+      ],
+      "safety": [
+        "Landing mechanics first: no depth jumps until the athlete passes readiness checks and lands without knee valgus.",
+        "Count games and practices toward jump load in-season (games ~45 jumps).",
+        "Ankle and knee pain on landing = stop plyo for the session.",
+        "FIFA 11+ style neuromuscular warm-ups have reported good results in basketball (UNVERIFIED claim from a physio clinic article).",
+        "Athletes >100 kg: no depth jumps above ~45 cm (NSCA)."
+      ],
+      "sources": [
+        { "title": "Training load and match-play demands in basketball based on competition level: a systematic review", "author": "Petway AJ, Freitas TT, Calleja-Gonzalez J, Medina Leal D, Alcaraz PE (PLoS One 2020)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7058381", "whatWeUsed": "Distance, jumps, accelerations/decelerations, HR in games; training COD counts. Fetched." },
+        { "title": "CSCS Chapter 21: Periodization (basketball worked example)", "author": "PT Pioneer, summarising NSCA Essentials", "url": "https://origin.ptpioneer.com/personal-training/certifications/nsca-cscs/cscs-chapter-21/", "whatWeUsed": "Off/pre/in/post-season priorities and frequencies for basketball. Fetched." },
+        { "title": "CSCS Chapter 18: Plyometric and speed training", "author": "PT Pioneer, summarising NSCA Essentials", "url": "https://www.ptpioneer.com/personal-training/certifications/nsca-cscs/cscs-chapter-18/", "whatWeUsed": "Contacts by level, readiness, box heights, depth-jump rest. Fetched." },
+        { "title": "Does plyometric training improve vertical jump height?", "author": "Markovic G (BJSM 2007)", "url": "https://lida.sport-iat.de/ta/Record/4013060", "whatWeUsed": "Expected jump gains. Fetched." },
+        { "title": "Countermovement jump height in national-team athletes", "author": "Haugen T et al. (IJSPP 2021)", "url": "https://lida.sport-iat.de/ta/Record/4068651?lng=en", "whatWeUsed": "CMJ references. Fetched." },
+        { "title": "The Training and Development of Elite Sprint Performance", "author": "Haugen T et al. (2019)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6872694/", "whatWeUsed": "Acceleration session parameters. Fetched." },
+        { "title": "NBA combine drill descriptions and typical times", "author": "NBC Sports / numberFire (search summaries)", "url": "https://www.nbcsports.com/fantasy/basketball/news/article-draft-preview-nba-combine-agility-testing", "whatWeUsed": "UNVERIFIED lane agility typical range and drill names." }
+      ]
+    },
+
+    "tennis": {
+      "notes": "Tennis and padel share one playbook; padel-specific differences flagged. Kovacs 2006 is the main fetched demand source.",
+      "benchmarks": [
+        { "id": "sprint_20m", "label": "20 m sprint", "unit": "seconds", "howToTest": "Standing start, best of 3, 3 min rest; tennis sprints rarely exceed ~20 m (Kovacs)." },
+        { "id": "spider_drill", "label": "Spider / court agility drill", "unit": "seconds", "howToTest": "UNVERIFIED protocol: from centre of baseline, retrieve/return to 5 targets around the half court (corners, net-post T etc.) in order; best of 2." },
+        { "id": "beep_20m", "label": "Beep test", "unit": "level", "howToTest": "As football." },
+        { "id": "yoyo_ir1", "label": "Yo-Yo IR1 (alternative)", "unit": "metres", "howToTest": "As football." },
+        { "id": "cmj", "label": "Countermovement jump", "unit": "cm", "howToTest": "As football." },
+        { "id": "med_ball_rot_throw", "label": "Rotational med-ball side throw", "unit": "metres", "howToTest": "UNVERIFIED protocol: 2-3 kg ball, side-on stance, throw for distance each side, best of 3. Use change vs own baseline." }
+      ],
+      "levelPlacement": {
+        "method": "Aerobic placement by beep/Yo-Yo bands (see football); Kovacs recommends VO2max >50 ml/kg/min for competitive players (competitive players typically 44-69, most >50). Speed/agility by own baseline.",
+        "appLevels": { "beginner": "Recreational, <6 months gym training", "intermediate": "Club/league player, 6-24 months", "advanced": "Tournament player, >2 years" }
+      },
+      "seasonPhases": {
+        "offSeason": "NSCA preparatory approach: aerobic base (target VO2max >50), general strength (bilateral + unilateral lower body, shoulder, forearm/grip, lower back, core).",
+        "preSeason": "Shift to tennis-specific intermittent drills: 5-20 s efforts, work:rest 1:3 to 1:5, stop-start sprints <20 m in linear/lateral/multidirectional patterns (Kovacs).",
+        "inSeason": "Tournament weeks: maintenance strength 1-2x/week, mobility and shoulder care daily-ish, no new high-volume plyo. UNVERIFIED structure.",
+        "postSeason": "Active rest <4 weeks (NSCA)."
+      },
+      "improvementModel": {
+        "sprintAgility": "DERIVED/UNVERIFIED: football sprint rates.",
+        "aerobic": "DERIVED/UNVERIFIED: football beep/Yo-Yo rates.",
+        "power": "Markovic CMJ rates."
+      },
+      "planLengthRule": {
+        "formula": "Same as football.",
+        "minWeeks": 4,
+        "maxWeeks": 16,
+        "overMax": "Cap at 16, set intermediate target.",
+        "retest": "Every 4 weeks; avoid testing in tournament weeks.",
+        "phaseCap": "Tournament/in-season = maintain."
+      },
+      "volumeModel": {
+        "matchDemands": "Points average ~8 s (3-15 s by surface/style), ~20 s between points, 90 s at changeovers, 120 s between sets; ball in play ~20-30% of match time; work:rest ~1:2 to 1:5 at high level; mean HR ~145 bpm in college match play (Kovacs 2006).",
+        "padelDemands": "Padel is intermittent with moderate physiological load and low glycolytic contribution; distance/speed scale with player level; same 20/90/120 s rest rules (Mellado-Arbelo & Baiget 2022 abstract fetched; rest rules UNVERIFIED). UNVERIFIED: ball in play ~30-35% of match time, sets ~30-40 min, longer rallies than tennis because of walls.",
+        "intervalDose": "Drills of 5-20 s with 1:3 to 1:5 work:rest (Kovacs). Repeated-sprint training: efforts <=10 s with incomplete recovery 1:4-1:6 (ITF coaching review, UNVERIFIED search summary).",
+        "plyo": "NSCA contacts by level, mostly lateral and multidirectional.",
+        "sprint": "Haugen acceleration row, distances 5-20 m."
+      },
+      "weekStructure": {
+        "offSeason": {
+          "2": ["Strength (lower + shoulder) + acceleration", "Intervals (tennis-specific) + core/rotation"],
+          "3": ["Strength A + lateral plyo", "Aerobic/intermittent intervals + shoulder care", "Strength B + acceleration/agility"],
+          "4": ["Strength A + lateral plyo", "Intermittent intervals", "Strength B + agility", "Aerobic base / recovery + mobility"],
+          "5": ["Strength A", "Intervals", "Strength B + agility", "Aerobic base", "Rotation power + shoulder care"]
+        },
+        "tournamentWeek": "UNVERIFIED: day before first match = activation + shoulder care only; between matches = recovery and mobility; one short maintenance strength session early in the week if >=2 days before match."
+      },
+      "sessionTemplates": [
+        {
+          "id": "tn_intervals",
+          "name": "Tennis-specific intermittent intervals",
+          "type": "conditioning",
+          "useWhen": "Goal: last longer in matches / beep target. Off-season and pre-season 1-2x/week.",
+          "exercises": [
+            { "name": "Multidirectional shuttle drill (point simulation)", "sets": "3-4", "reps": "8-10", "distance": "<20 m per effort", "intensity": "5-20 s near max, work:rest 1:3 to 1:5, 2-3 min between sets", "group": "specific" },
+            { "name": "Lateral shuffle + crossover recovery", "sets": 3, "reps": 6, "intensity": "10 s on / 30-40 s off", "group": "specific" },
+            { "name": "Changeover simulation", "sets": 1, "reps": "90 s rest after every 2 sets of drills", "group": "structure" }
+          ]
+        },
+        {
+          "id": "tn_strength",
+          "name": "Strength: legs, trunk, grip",
+          "type": "strength",
+          "useWhen": "Off-season 2x, pre-season 2x, in-season 1x.",
+          "exercises": [
+            { "name": "Goblet or back squat", "sets": "3-4", "reps": "5-8", "intensity": "RPE 7-8", "group": "bilateral" },
+            { "name": "Lateral lunge", "sets": 3, "reps": "6 each", "group": "unilateral" },
+            { "name": "Single-leg RDL", "sets": 3, "reps": "8 each", "group": "unilateral" },
+            { "name": "Back extension", "sets": 2, "reps": 12, "group": "lower_back" },
+            { "name": "Farmer carry", "sets": 3, "reps": 1, "distance": "20 m", "group": "grip" },
+            { "name": "Wrist flexion/extension curls", "sets": 2, "reps": 15, "group": "forearm" }
+          ]
+        },
+        {
+          "id": "tn_shoulder_care",
+          "name": "Shoulder care",
+          "type": "injury_prevention",
+          "useWhen": "2-3x/week, short; Kovacs: concentric + eccentric shoulder work and external-rotation range.",
+          "exercises": [
+            { "name": "Band external rotation (side-lying or 90/90)", "sets": 3, "reps": 12, "intensity": "slow eccentric", "group": "rotator_cuff" },
+            { "name": "Eccentric external rotation (lower slowly over 3 s)", "sets": 2, "reps": 8, "group": "rotator_cuff" },
+            { "name": "Prone Y-T-W raise", "sets": 2, "reps": "8 each", "group": "scapula" },
+            { "name": "Sleeper stretch / internal-rotation ROM", "sets": 2, "reps": "30 s", "group": "mobility" }
+          ]
+        },
+        {
+          "id": "tn_agility_power",
+          "name": "First-step speed + rotational power",
+          "type": "speed_power",
+          "useWhen": "Goal: faster to the ball / more serve power. 1-2x/week off/pre-season.",
+          "exercises": [
+            { "name": "Split-step to 5 m sprint (reactive)", "sets": 2, "reps": "6", "distance": "5 m", "intensity": "max, 60 s rest", "group": "speed" },
+            { "name": "Lateral bound and stick", "sets": 3, "reps": "4 each", "group": "plyo" },
+            { "name": "Rotational med-ball side throw", "sets": 3, "reps": "5 each side", "intensity": "2-3 kg, max intent", "group": "rotation" },
+            { "name": "Med-ball overhead slam", "sets": 3, "reps": 5, "group": "power" }
+          ]
+        }
+      ],
+      "safety": [
+        "Shoulder: build external rotation strength/ROM; watch workload spikes (UNVERIFIED: spikes in external workload are more clearly linked to shoulder complaints in adolescents than strength alone).",
+        "Excessive stretching may reduce power - individualise flexibility (Kovacs).",
+        "Juniors: technique and placement first before puberty; add internal-rotation ROM programme as they age (Kovacs).",
+        "Give longer rest in technical drills than in conditioning drills so stroke quality holds (Kovacs).",
+        "Padel: same shoulder/elbow care; no padel-specific injury-prevention program verified."
+      ],
+      "sources": [
+        { "title": "Applied physiology of tennis performance", "author": "Kovacs MS (BJSM 2006)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/2653871/", "whatWeUsed": "Point/rest durations, work:rest, HR, VO2max, drill design, strength and flexibility priorities, junior advice. Fetched." },
+        { "title": "Activity profile and physiological demand of padel match play: a systematic review", "author": "Mellado-Arbelo O, Baiget E (Kinesiology 2022)", "url": "https://ojs.srce.hr/index.php/kinesiology/article/view/9871", "whatWeUsed": "Qualitative padel demands (intermittent, moderate load, low glycolytic). Fetched abstract." },
+        { "title": "Padel vs tennis doubles physiological comparison", "author": "Frontiers in Sports and Active Living 2025 (search summary)", "url": "https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1540424/pdf", "whatWeUsed": "UNVERIFIED ball-in-play % and set duration." },
+        { "title": "ITF Coaching & Sport Science Review (repeated sprint training)", "author": "ITF (search summary)", "url": "https://itfcoachingreview.com/index.php/journal/article/download/80/184", "whatWeUsed": "UNVERIFIED RST work:rest 1:4-1:6." },
+        { "title": "CSCS Chapter 18 & 21", "author": "PT Pioneer / NSCA", "url": "https://origin.ptpioneer.com/personal-training/certifications/nsca-cscs/cscs-chapter-21/", "whatWeUsed": "Phase structure, plyo volume. Fetched." }
+      ]
+    },
+
+    "boxing": {
+      "notes": "Covers boxing and striking combat sports. Fetched evidence is amateur 3x3-min data; professional (up to 12 x 3 min) prescriptions are extrapolated and marked UNVERIFIED.",
+      "benchmarks": [
+        { "id": "rounds_sustained", "label": "Rounds sustained at target pace (bag or pads)", "unit": "rounds of 3 min (1 min rest)", "howToTest": "UNVERIFIED app protocol: 3-min rounds on the heavy bag at a set work rate (e.g. RPE 8 / HR >=90% HRmax), 1 min rest; count rounds completed before pace or form drops (RPE 10 or a set punch-count drop). Retest every 4 weeks." },
+        { "id": "punch_output", "label": "Punches per 3-min round", "unit": "punches", "howToTest": "UNVERIFIED: punch tracker or video count of one max-effort bag round." },
+        { "id": "beep_20m", "label": "Beep test", "unit": "level", "howToTest": "As football." },
+        { "id": "run_3km", "label": "3 km run (roadwork)", "unit": "minutes", "howToTest": "UNVERIFIED: flat course, best effort." },
+        { "id": "cmj", "label": "Countermovement jump", "unit": "cm", "howToTest": "As football." }
+      ],
+      "levelPlacement": {
+        "method": "Place by rounds sustained + beep level + training age. Beginner: <3 rounds at pace; intermediate: 3-6; advanced: 6+ (DERIVED app bands, UNVERIFIED).",
+        "demands": "Highly trained amateurs in 3x3-min fights: HR >93% HRmax rounds 1-2, >97% round 3; lactate ~15 mmol/L (12-18); VO2 ~89% VO2max; energy 73% aerobic, 19% alactic, 8% glycolytic (Bruzas 2023, fetched abstract)."
+      },
+      "seasonPhases": {
+        "offSeason": "General preparation: aerobic base (roadwork, tempo), general strength (NSCA hypertrophy/basic strength ranges).",
+        "preSeason": "Fight camp: UNVERIFIED typical 8-12 weeks. Build round-based conditioning toward fight length + 1-2 extra rounds (UNVERIFIED practitioner convention), add strength-power and alactic sprint work (19% alactic contribution).",
+        "inSeason": "Fight week / taper: Haugen general power-sport taper guidance 2-3 weeks with 40-60% volume reduction, intensity maintained (applied by analogy - UNVERIFIED for boxing).",
+        "postSeason": "Active rest <4 weeks (NSCA)."
+      },
+      "improvementModel": {
+        "rounds": "UNVERIFIED/DERIVED: add ~1 round at target pace every 1-2 weeks for beginners, every 2-3 weeks intermediate, every 3-4 weeks advanced. Target '12 rounds' from a beginner baseline triggers max length + intermediate milestone.",
+        "aerobic": "As football beep rates (DERIVED)."
+      },
+      "planLengthRule": {
+        "formula": "roundsGap = target - current; weeks = ceil(roundsGap x weeksPerRound[level]) where weeksPerRound = beginner 1.5, intermediate 2.5, advanced 3.5 (DERIVED/UNVERIFIED). Round up to 4-week blocks with a deload every 3rd-4th week.",
+        "minWeeks": 4,
+        "maxWeeks": 16,
+        "overMax": "Cap at 16 weeks (UNVERIFIED typical camp 8-12 weeks); set milestone e.g. 6 rounds, then re-test.",
+        "retest": "Every 4 weeks on deload week.",
+        "phaseCap": "Final 2 weeks before a fight = taper, no new rounds added."
+      },
+      "volumeModel": {
+        "roundStructure": "Train in 3-min rounds with 1-min rest to match competition; amateur bouts are 3 x 3 min; professional fights 4-12 rounds (UNVERIFIED search summary).",
+        "intervals": "Bout data supports HIIT above ~90% VO2max for boxers (Thomson & Lamb 2017 via search summary, UNVERIFIED). App dose: 2-3 conditioning sessions/week off-season, 3-4 in camp, each 4-12 rounds by level (DERIVED).",
+        "alactic": "Short max efforts 5-10 s with long rest (Haugen acceleration row: >98%, 2-7 min rest) to train the alactic system.",
+        "plyo": "NSCA contacts by level; upper-body plyo (med-ball, plyo push-ups) counted separately, ~half the lower-body budget (DERIVED).",
+        "strength": "2 sessions/week off-season and camp; 1 in fight week -2; none in final week (UNVERIFIED)."
+      },
+      "weekStructure": {
+        "offSeason": {
+          "2": ["Strength + alactic sprints", "Round-based conditioning (bag/pads)"],
+          "3": ["Strength A + power", "Round-based conditioning", "Aerobic roadwork + core"],
+          "4": ["Strength A + power", "Round-based conditioning", "Aerobic roadwork", "Strength B + neck/core"],
+          "5": ["Strength A", "Rounds", "Roadwork", "Strength B", "Rounds (HIIT)"]
+        },
+        "fightCamp": "UNVERIFIED: keep >=48 h between the two hardest sessions (rounds + sprint); hardest sparring/rounds day early in week, strength the day after, roadwork/recovery between."
+      },
+      "sessionTemplates": [
+        {
+          "id": "bx_rounds",
+          "name": "Round-based conditioning",
+          "type": "conditioning",
+          "useWhen": "Goal: last X rounds. 2-4x/week depending on phase.",
+          "exercises": [
+            { "name": "Skipping rope", "sets": 2, "reps": "3 min", "intensity": "moderate, 1 min rest", "group": "warmup" },
+            { "name": "Heavy bag rounds", "sets": "4-12 by level", "reps": "3 min", "intensity": "RPE 8-9 / HR >=90% HRmax, 1 min rest", "group": "main" },
+            { "name": "Within-round bursts (10 s all-out every 30 s)", "sets": 1, "reps": "every round", "intensity": "max", "group": "main" },
+            { "name": "Core finisher: plank + Russian twist", "sets": 2, "reps": "30 s each", "group": "core" }
+          ]
+        },
+        {
+          "id": "bx_strength_power",
+          "name": "Strength + rotational power",
+          "type": "strength_power",
+          "useWhen": "2x/week off-season and camp.",
+          "exercises": [
+            { "name": "Trap-bar deadlift", "sets": 4, "reps": "3-5", "intensity": "80-90% 1RM", "group": "main" },
+            { "name": "Landmine punch press", "sets": 3, "reps": "6 each", "intensity": "fast", "group": "power" },
+            { "name": "Rotational med-ball throw", "sets": 3, "reps": "5 each side", "intensity": "max", "group": "power" },
+            { "name": "Pull-up", "sets": 3, "reps": "6-8", "group": "upper" },
+            { "name": "Plyo push-up", "sets": 3, "reps": 5, "group": "upper_plyo" },
+            { "name": "Neck isometrics", "sets": 2, "reps": "15 s each direction", "intensity": "UNVERIFIED dose", "group": "injury_prevention" }
+          ]
+        },
+        {
+          "id": "bx_alactic",
+          "name": "Alactic sprints",
+          "type": "speed",
+          "useWhen": "1x/week off-season and camp.",
+          "exercises": [
+            { "name": "Sprint", "sets": 1, "reps": "6-8", "distance": "10-20 m", "intensity": ">98%, 2-3 min rest", "group": "sprint" },
+            { "name": "Bag flurry (max punches)", "sets": 2, "reps": "5 x 8 s", "intensity": "max, 60 s rest between reps", "group": "specific" }
+          ]
+        },
+        {
+          "id": "bx_roadwork",
+          "name": "Aerobic roadwork",
+          "type": "aerobic",
+          "useWhen": "Base building; 73% aerobic contribution in bouts.",
+          "exercises": [
+            { "name": "Steady run", "sets": 1, "reps": "25-45 min", "intensity": "conversational / 65-75% HRmax (UNVERIFIED zone)", "group": "aerobic" },
+            { "name": "Tempo strides", "sets": 1, "reps": 6, "distance": "100 m", "intensity": "60-70%", "group": "tempo" }
+          ]
+        }
+      ],
+      "safety": [
+        "Bouts drive HR >93-97% HRmax and lactate up to 18 mmol/L - screen for heart conditions; beginners build aerobic base before max-round tests.",
+        "Monitor internal load (RPE) to avoid overreaching (El-Ashker 2018, via search summary - UNVERIFIED).",
+        "Hand wraps/gloves for all bag work; stop with wrist/hand pain.",
+        "Head contact (sparring) is outside app scope; app plans cover conditioning only. Any concussion symptoms = no training until cleared.",
+        "Weight cutting is not prescribed by the app."
+      ],
+      "sources": [
+        { "title": "Metabolic and physiological demands of 3x3-min-round boxing fights in highly trained amateur boxers", "author": "Bruzas V et al. (2023)", "url": "https://lida.sport-iat.de/ta/Record/4082828?lng=en", "whatWeUsed": "HR, lactate, VO2 and energy system split. Fetched abstract." },
+        { "title": "The Training and Development of Elite Sprint Performance", "author": "Haugen T et al. (2019)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6872694/", "whatWeUsed": "Alactic sprint parameters; taper guidance by analogy. Fetched." },
+        { "title": "Strength and conditioning for professional boxing: recommendations for physical preparation", "author": "Ruddock A et al. (Strength Cond J 2016)", "url": "https://shura.shu.ac.uk/11499", "whatWeUsed": "NOT fetched (bot-blocked). Listed for follow-up only." },
+        { "title": "Simulated amateur boxing studies (Thomson & Lamb 2017; El-Ashker 2018)", "author": "search summaries", "url": "https://research.edgehill.ac.uk/en/publications/quantifying-the-physical-response-to-acontemporary-amateur-boxing-2/", "whatWeUsed": "UNVERIFIED HIIT >90% VO2max suggestion; RPE monitoring." },
+        { "title": "CSCS Chapter 21: Periodization", "author": "PT Pioneer / NSCA", "url": "https://origin.ptpioneer.com/personal-training/certifications/nsca-cscs/cscs-chapter-21/", "whatWeUsed": "Phase loading ranges. Fetched." }
+      ]
+    },
+
+    "golf": {
+      "notes": "Golf plans focus on clubhead speed, rotation/mobility and back health. TPI material is case-study/marketing, not peer-reviewed.",
+      "benchmarks": [
+        { "id": "chs_driver", "label": "Driver clubhead speed", "unit": "mph", "howToTest": "Launch monitor or radar (Trackman, PRGR, etc.). After warm-up, 5-10 full-effort swings, record the average of the best 3 (UNVERIFIED averaging rule). Same device each test. Each +1 mph can add up to ~3 yards (Trackman)." },
+        { "id": "tpi_pelvic_rotation", "label": "TPI pelvic rotation test", "unit": "pass/fail", "howToTest": "Golf posture, arms crossed on chest; rotate the pelvis without moving the upper body. Checks lower-body rotation and separation from the upper body." },
+        { "id": "tpi_torso_rotation", "label": "TPI torso rotation test", "unit": "pass/fail", "howToTest": "Golf posture; rotate the upper body while keeping the pelvis still. Failing (extending the spine instead of rotating) linked to reverse spine angle and limited shoulder turn in the TPI case study." },
+        { "id": "tpi_seated_trunk_rotation", "label": "TPI seated trunk rotation", "unit": "pass/fail or degrees", "howToTest": "Seated (removes hips), club across chest, rotate each way; UNVERIFIED pass threshold ~45 degrees each side." },
+        { "id": "tpi_pelvic_tilt", "label": "TPI pelvic tilt test", "unit": "pass/fail", "howToTest": "Golf posture; tilt pelvis forward and back. Failure can be stability/coordination rather than mobility." },
+        { "id": "single_leg_balance", "label": "Single-leg balance", "unit": "seconds", "howToTest": "Eyes open then eyes closed, each leg; TPI case golfer went from 2-3 s to 30+ s eyes open." },
+        { "id": "med_ball_rot_throw", "label": "Seated or standing rotational med-ball throw", "unit": "metres", "howToTest": "UNVERIFIED protocol: 2-3 kg ball, side-on, throw each side, best of 3." }
+      ],
+      "levelPlacement": {
+        "method": "Place by driver CHS against handicap norms + screen results (any failed rotation test -> start with corrective block).",
+        "chsNorms_mph": { "male": { "pgaTour": 115, "scratch": 110, "hcp5": 101, "hcp10": 95, "averageHcp14_5": 94, "bogey": 92 }, "female": { "lpgaTour": 96, "scratch": 90, "hcp5": 87, "hcp10": 83, "hcp15": 79 }, "source": "Trackman blog (fetched)" },
+        "appLevels": { "beginner": "Male CHS <90 / female <75 mph or any failed screen (DERIVED)", "intermediate": "Male 90-105 / female 75-88", "advanced": ">105 / >88 and passes screens" }
+      },
+      "seasonPhases": {
+        "offSeason": "Main window for gains: corrective mobility/stability for failed screens, then strength 3x/week for 8-10 weeks, then speed/overspeed work (TPI case-study sequence).",
+        "preSeason": "Shift to golf-specific high-velocity work; UNVERIFIED: 8-week programs combining general strength with golf-specific high-velocity movements, 3-4 sets of 5-15 reps, gave the best CHS gains (Uthoff 2021 review).",
+        "inSeason": "Maintenance strength 1-2x/week, mobility daily, speed work short; potentiation warm-ups before rounds (UNVERIFIED: bodyweight jumps/explosive warm-ups raised CHS acutely as much as speed sticks; SuperSpeed warm-up +2.6 mph faded after walking a hole).",
+        "postSeason": "Active rest <4 weeks (NSCA), re-screen."
+      },
+      "improvementModel": {
+        "chs": "UNVERIFIED (Uthoff 2021 abstract via search): combined general + golf-specific training ~+4.1% CHS, general strength alone ~+1.6%, typically over ~8 weeks. DERIVED weekly rates: beginner 0.5%/wk, intermediate 0.35%/wk, advanced 0.2%/wk. TPI case study (fetched): 70-year-old went 90 -> 107 mph peak over a multi-phase program (~3 mph in first month from corrective work alone) - an outlier, not a planning rate.",
+        "mobility": "Screens re-checked every 4 weeks; TPI case: backswing rotation 60 -> 80 degrees and hip-shoulder separation 20 -> 41 degrees within 1 month."
+      },
+      "planLengthRule": {
+        "formula": "gapPct = (targetCHS - currentCHS)/currentCHS x 100; weeks = ceil(gapPct / weeklyRate[level]); if any rotation screen fails, prepend a 4-week corrective block. Round to 4-week blocks.",
+        "minWeeks": 4,
+        "maxWeeks": 16,
+        "overMax": "Gap >~6% for intermediates/advanced is a stretch; cap at 16 weeks with an intermediate target.",
+        "retest": "CHS and screens every 4 weeks.",
+        "phaseCap": "In-season: maintain CHS; short speed sessions only."
+      },
+      "volumeModel": {
+        "speedSwings": "UNVERIFIED: overspeed/speed-stick sessions 3x/week of short sets with full rest are common practice; no multi-week RCT fetched supporting lasting gains from overspeed alone.",
+        "strength": "3x/week in the strength phase (TPI case), 3-4 sets x 5-15 reps for golf-specific high-velocity drills (UNVERIFIED, Uthoff).",
+        "plyo": "Low lower-body contacts (beginner band 80-100 max); rotational med-ball throws counted as ~30-60 throws/session (DERIVED/UNVERIFIED).",
+        "mobility": "Daily 10-min rotation/hip mobility for failed screens (UNVERIFIED dose)."
+      },
+      "weekStructure": {
+        "offSeason": {
+          "2": ["Strength + rotational power", "Mobility/stability correctives + speed swings"],
+          "3": ["Strength A + med-ball", "Correctives + speed swings", "Strength B + jumps"],
+          "4": ["Strength A + med-ball", "Correctives + speed swings", "Strength B + jumps", "Mobility + speed swings"],
+          "5": ["Strength A", "Speed swings + correctives", "Strength B", "Speed swings + med-ball", "Mobility"]
+        },
+        "inSeason": "UNVERIFIED: 1-2 strength sessions not the day before a competitive round; potentiation warm-up (jumps + med-ball) before rounds; mobility daily."
+      },
+      "sessionTemplates": [
+        {
+          "id": "gf_corrective",
+          "name": "Rotation correctives (TPI screen fails)",
+          "type": "mobility_stability",
+          "useWhen": "Any failed pelvic/torso rotation, pelvic tilt or balance test; first 4 weeks.",
+          "exercises": [
+            { "name": "Open book thoracic rotation", "sets": 2, "reps": "8 each side", "group": "t_spine" },
+            { "name": "Half-kneeling torso rotation with club (hips still)", "sets": 2, "reps": "8 each side", "group": "dissociation" },
+            { "name": "Golf-posture pelvic rotation drill (shoulders still)", "sets": 2, "reps": "10 each side", "group": "dissociation" },
+            { "name": "Cat-cow / pelvic tilt in golf posture", "sets": 2, "reps": 10, "group": "pelvic_control" },
+            { "name": "90/90 hip switches", "sets": 2, "reps": "8 each side", "group": "hips" },
+            { "name": "Single-leg balance (eyes open -> closed)", "sets": 3, "reps": "30 s each leg", "group": "balance" }
+          ]
+        },
+        {
+          "id": "gf_strength",
+          "name": "Golf strength",
+          "type": "strength",
+          "useWhen": "Strength phase 3x/week for 8-10 weeks (TPI case), in-season 1-2x.",
+          "exercises": [
+            { "name": "Goblet squat or trap-bar deadlift", "sets": "3-4", "reps": "5-8", "intensity": "RPE 7-8", "group": "lower" },
+            { "name": "Single-leg RDL", "sets": 3, "reps": "8 each", "group": "lower" },
+            { "name": "Lateral lunge", "sets": 3, "reps": "6 each", "group": "lower" },
+            { "name": "Half-kneeling cable chop", "sets": 3, "reps": "8 each", "group": "rotation" },
+            { "name": "Pallof press", "sets": 3, "reps": "10 each", "group": "anti_rotation" },
+            { "name": "Single-arm row", "sets": 3, "reps": "8 each", "group": "upper" }
+          ]
+        },
+        {
+          "id": "gf_power_speed",
+          "name": "Rotational power + speed swings",
+          "type": "speed_power",
+          "useWhen": "Goal: more clubhead speed; after correctives/strength base. 2-3x/week.",
+          "exercises": [
+            { "name": "Countermovement jump", "sets": 3, "reps": 5, "intensity": "max", "group": "lower_power" },
+            { "name": "Rotational med-ball scoop toss", "sets": 3, "reps": "5 each side", "intensity": "2-4 kg, max intent", "group": "rotation_power" },
+            { "name": "Med-ball step-behind throw", "sets": 3, "reps": "4 each side", "group": "rotation_power" },
+            { "name": "Speed swings (light / normal / heavy stick or flipped club)", "sets": 3, "reps": "5 each side (dominant + non-dominant)", "intensity": "max intent, full rest; UNVERIFIED protocol", "group": "speed" }
+          ]
+        },
+        {
+          "id": "gf_pre_round",
+          "name": "Pre-round potentiation warm-up",
+          "type": "warmup",
+          "useWhen": "Before range session or round.",
+          "exercises": [
+            { "name": "Mobility flow (open book, hip circles)", "sets": 1, "reps": "3 min", "group": "mobility" },
+            { "name": "Bodyweight squat jumps", "sets": 2, "reps": 5, "intensity": "explosive", "group": "potentiation" },
+            { "name": "Med-ball or band rotational throws", "sets": 2, "reps": "5 each side", "group": "potentiation" },
+            { "name": "Progressive practice swings", "sets": 1, "reps": "10", "intensity": "50% -> 100%", "group": "specific" }
+          ]
+        }
+      ],
+      "safety": [
+        "Low back pain is common; corrective work first - in the TPI case it removed the golfer's back pain within a month.",
+        "Swinging harder can cost distance through poor contact; track ball speed/strike, not CHS alone (Trackman coach note).",
+        "Screens' predictive validity is debated (Sportsmith critique via search) - use them to choose correctives, not to diagnose.",
+        "Older golfers: masters plyo rules (fewer contacts, 3-4 days recovery).",
+        "Stop rotational work with sharp back, rib or elbow pain."
+      ],
+      "sources": [
+        { "title": "What is Club Speed?", "author": "Trackman", "url": "https://www.trackman.com/blog/golf/what-is-club-speed", "whatWeUsed": "Driver club speed by handicap/tour (male/female), +1 mph ~ +3 yd. Fetched." },
+        { "title": "Offseason golf performance program case study", "author": "Titleist Performance Institute (mytpi.com)", "url": "https://www.mytpi.com/articles/health/offseason-golf-performance-program-case-study-it's-never-too-late-to-improve-your-body", "whatWeUsed": "Screen test names/meanings, phase sequence (correctives -> 3x/week strength 8-10 wk -> SuperSpeed), outcomes. Fetched (case study)." },
+        { "title": "Effects of Resistance Training Methods on Golf Clubhead Speed and Hitting Distance: A Systematic Review", "author": "Uthoff A, Sommerfield LM, Pichardo AW (JSCR 2021)", "url": "https://pubmed.ncbi.nlm.nih.gov/34224506/", "whatWeUsed": "UNVERIFIED (PubMed blocked fetch; numbers from search summary): +4.1% vs +1.6% CHS, 8-week, 3-4 x 5-15." },
+        { "title": "Field-based and overspeed potentiated warm-ups increase clubhead speed", "author": "Bliss A et al. 2021 (search summary)", "url": "https://research.brighton.ac.uk/en/publications/field-based-and-overspeed-potentiated-warm-ups-increase-clubhead-/", "whatWeUsed": "UNVERIFIED acute warm-up effects." },
+        { "title": "CSCS Chapter 18 & 21", "author": "PT Pioneer / NSCA", "url": "https://www.ptpioneer.com/personal-training/certifications/nsca-cscs/cscs-chapter-18/", "whatWeUsed": "Masters plyo rules, phase structure. Fetched." }
+      ]
+    }
+  }
+}

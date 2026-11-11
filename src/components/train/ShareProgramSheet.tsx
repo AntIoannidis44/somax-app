@@ -10,15 +10,17 @@ import { fetchFriends, sendDM, type PublicProfile } from '../../lib/social';
 import { encodeProgramMessage } from '../../lib/programShare';
 import { createShareLink } from '../../lib/shareLinks';
 import { shareProgramToFeed, type ProgramToShare } from '../../lib/programPosts';
+import { shareProgramToLibrary } from '../../lib/library';
+import { ShareToLibraryForm } from '../library/ShareToLibraryForm';
 
 // Share a program three ways: post it to the feed (shows as a program card
 // others can add), send it to a friend (arrives in Messages as a card that
 // opens in the app with Add to my programs), or copy a link.
-export function ShareProgramSheet({ program, onClose, initialStep = 'menu' }: { program: ProgramToShare; onClose: () => void; initialStep?: 'menu' | 'post' | 'friends' }) {
+export function ShareProgramSheet({ program, onClose, initialStep = 'menu' }: { program: ProgramToShare; onClose: () => void; initialStep?: 'menu' | 'post' | 'friends' | 'library' }) {
   const userId = useUserId();
   const myName = useAppStore((s) => s.profile?.name ?? '');
   const showToast = useAppStore((s) => s.showToast);
-  const [step, setStep] = useState<'menu' | 'post' | 'friends'>(initialStep);
+  const [step, setStep] = useState<'menu' | 'post' | 'friends' | 'library'>(initialStep);
   const [visibility, setVisibility] = useState<'public' | 'friends'>('public');
   const [caption, setCaption] = useState(`Sharing my ${program.name} program`);
   const [friends, setFriends] = useState<PublicProfile[] | null>(null);
@@ -73,7 +75,7 @@ export function ShareProgramSheet({ program, onClose, initialStep = 'menu' }: { 
   );
 
   return (
-    <Modal open onClose={onClose} title={step === 'menu' ? 'Share program' : step === 'post' ? 'Post to feed' : 'Send to a friend'}>
+    <Modal open onClose={onClose} title={step === 'menu' ? 'Share program' : step === 'post' ? 'Post to feed' : step === 'library' ? 'Add to the Library' : 'Send to a friend'}>
       {step !== 'menu' && (
         <button className="link-btn" style={{ margin: '0 0 12px' }} onClick={() => setStep('menu')}>
           <Icon name="chevron" style={{ width: 12, height: 12, transform: 'rotate(180deg)' }} /> Back
@@ -99,6 +101,16 @@ export function ShareProgramSheet({ program, onClose, initialStep = 'menu' }: { 
             <div>
               <div className="t">Send to a friend</div>
               <div className="s">Arrives in Messages with Add to my programs</div>
+            </div>
+            <Icon name="chevron" className="tick" />
+          </button>
+          <button className="sheet-opt" onClick={() => setStep('library')}>
+            <span className="share-ic" style={{ background: 'var(--stat-strength)' }}>
+              <Icon name="layers" />
+            </span>
+            <div>
+              <div className="t">Add to the Library</div>
+              <div className="s">Anyone can find it by level, sport and goal</div>
             </div>
             <Icon name="chevron" className="tick" />
           </button>
@@ -133,6 +145,7 @@ export function ShareProgramSheet({ program, onClose, initialStep = 'menu' }: { 
           </button>
         </>
       )}
+      {step === 'library' && <ShareToLibraryForm kind="program" onSubmit={(meta) => shareProgramToLibrary(program, meta)} onDone={onClose} />}
       {step === 'friends' && (
         <div className="share-friends">
           {friends === null && <div className="empty-hint">Loading friends…</div>}

@@ -1,0 +1,721 @@
+{
+  "meta": {
+    "playbook": "endurance",
+    "version": 1,
+    "compiled": "2026-11-12",
+    "conventions": {
+      "verified": "Plain text facts/numbers were read on a fetched source page listed in that sport's sources.",
+      "[unverified]": "Seen only in search-result snippets or secondary summaries, not confirmed on a fetched page. Do not ship as a hard rule without checking.",
+      "[derived]": "Somax design choice built from the sourced facts (interpolation, caps, rounding). Not a claim made by any source. Tune with real user data."
+    },
+    "globalRules": {
+      "taper": "Bosquet et al. 2007 meta-analysis (MSSE 39(8):1358-65), abstract as quoted in search results: best taper is ~2 weeks, volume cut 41-60% in a progressive/exponential way, intensity and frequency kept. [unverified - PubMed page blocked fetch; numbers consistent across 2+ secondary results]",
+      "intensityDistribution": "Polarized (~75-80% low / ~5% threshold / ~15-20% high) is a description of elite training from Seiler's work. In Stoggl & Sperlich 2014 (9 weeks, well-trained athletes) the polarized group (68/6/26) improved VO2peak 11.7% vs no significant change for threshold and high-volume groups. Somax default: most minutes easy, 1-2 hard sessions/week. [derived]",
+      "recoveryWeeks": "Stoggl & Sperlich 2014 used 3-week blocks: 2 loading weeks + 1 recovery week. FitnessVolt HYROX plan: week 4 deload at ~60% volume. Somax default: every 3rd week (if age 40+ or beginner) or 4th week at ~60-70% volume, intensity kept short. [derived]",
+      "volumeRampLimits": "Buist 2008 (novice runners, per secondary summaries) found a 10%/week rule did not reduce injury vs ~24%/week [unverified]. CTS (trainright.com) recommends capping growth of the single longest session at ~10% per month vs the previous 30 days for running, and judging weekly volume by 24-48 h recovery. Somax default: cap the longest session jump per week (sport-specific below); if user reports soreness/stiffness lasting >48 h, repeat the week. [derived]",
+      "gapEngine": "[derived] weeksNeeded = ceil(gap / expectedWeeklyRate(level)) + taperWeeks. Clamp to [minWeeks, maxWeeks]. If weeksNeeded > maxWeeks, split into milestone blocks (each block ends with a retest and a recalculated next target); the user sees block 1 target + the long-term target."
+    }
+  },
+  "sports": {
+    "cycling": {
+      "benchmarks": [
+        {
+          "id": "ftp_20min",
+          "label": "FTP (20-minute test)",
+          "unit": "W",
+          "howToTest": "Thorough warm-up (optional hard 5-min effort then easy spinning [unverified]). Ride one self-paced 20-minute time trial at the highest power you can hold. Indoors use resistance/slope mode, not ERG. FTP = 0.95 x 20-min average power. Note: the 0.95 factor fits only ~50-60% of riders (range seen 86-96%)."
+        },
+        {
+          "id": "ftp_ramp",
+          "label": "FTP (ramp test)",
+          "unit": "W",
+          "howToTest": "After a warm-up, start at 100 W and add 20 W every minute until you cannot continue (ERG mode on a smart trainer). Without an app, FTP = 0.75 x power of the last completed 1-minute stage."
+        },
+        {
+          "id": "ftp_8min",
+          "label": "FTP (2 x 8-minute test)",
+          "unit": "W",
+          "howToTest": "After a warm-up, ride two 8-minute time trials separated by 10 minutes easy spinning. FTP = 0.90 x the higher of the two averages (CTS method)."
+        },
+        {
+          "id": "body_mass",
+          "label": "Body weight (for W/kg)",
+          "unit": "kg",
+          "howToTest": "Morning weight. Used only to compute W/kg for level placement."
+        },
+        {
+          "id": "longest_ride_km",
+          "label": "Longest comfortable ride in last 4 weeks",
+          "unit": "km",
+          "howToTest": "Distance of the longest ride completed at easy/conversational effort in the last 4 weeks. Used for distance goals and for riders without a power meter. [derived]"
+        },
+        {
+          "id": "longest_ride_min",
+          "label": "Longest comfortable ride (time)",
+          "unit": "min",
+          "howToTest": "Same as above in minutes; use if the user rides indoors. [derived]"
+        }
+      ],
+      "levelPlacement": {
+        "byPower": {
+          "metric": "FTP / body mass (W/kg)",
+          "source": "Allen & Coggan FTP ratings as published by Garmin",
+          "male": { "untrained": "<2.23", "fair": "2.23-2.78", "good": "2.79-3.92", "excellent": "3.93-5.04", "superior": ">=5.05" },
+          "female": { "untrained": "<1.90", "fair": "1.90-2.35", "good": "2.36-3.32", "excellent": "3.33-4.29", "superior": ">=4.30" },
+          "somaxMapping": "[derived] untrained -> beginner; fair -> novice; good -> intermediate; excellent/superior -> advanced"
+        },
+        "byDistance": {
+          "rule": "[derived] longest_ride_km < 25 -> beginner (Cycling UK 100 km plan starts at a 15-25 km long ride); 25-60 -> novice; 60-100 -> intermediate; >100 -> advanced",
+          "prerequisite": "Cycling UK 10-week 100 km plan targets people new to cycling or who ride occasionally; suggests checking with a doctor if inactive."
+        }
+      },
+      "zoneModel": {
+        "basis": "Percent of FTP",
+        "coggan": [
+          { "zone": 1, "name": "Active recovery", "pctFTP": "<55", "notes": "recovery spins, between intervals" },
+          { "zone": 2, "name": "Endurance", "pctFTP": "56-75", "notes": "long steady rides" },
+          { "zone": 3, "name": "Tempo", "pctFTP": "76-90", "notes": "" },
+          { "zone": 4, "name": "Lactate threshold", "pctFTP": "91-105", "notes": "repeats/blocks of 10-30 min" },
+          { "zone": 5, "name": "VO2max", "pctFTP": "106-120", "notes": "intervals ~3-8 min; 30-40 min total is hard to exceed" },
+          { "zone": 6, "name": "Anaerobic capacity", "pctFTP": ">121", "notes": "30 s - 3 min; HR not useful" },
+          { "zone": 7, "name": "Neuromuscular", "pctFTP": "n/a", "notes": "sprints/jumps" }
+        ],
+        "sweetSpot": { "pctFTP": "88-94", "notes": "TrainerRoad and TrainingPeaks both define it as 88-94% FTP; TrainerRoad's own table uses Tempo 76-87, Sweet Spot 88-94, Threshold 95-105." },
+        "heartRateFallback": "Coggan HR column (% of threshold HR): Z1 <68, Z2 69-83, Z3 84-94, Z4 95-105, Z5 >106. Use only if no power meter.",
+        "rpeFallback": "Cycling UK talk test: easy = can hold a conversation; steady = can talk in short sentences; harder efforts = Z4-ish. [derived mapping: easy=Z1-2, steady=Z3, harder=Z4]",
+        "formula": "targetWatts = round(FTP x pct / 100). Example FTP 200 W: Z2 = 112-150 W; sweet spot = 176-188 W; threshold = 182-210 W."
+      },
+      "improvementModel": {
+        "ftp": {
+          "observed": "TrainerRoad data on riders following plans: ~5% gain in 20-min power after 2 months, ~9% after 4 months, ~10% by summer. Riders doing 3 hard days/week (avg ~5 h/week) improved 5-60 min power more than those doing 2.",
+          "research": "Stoggl & Sperlich 2014: polarized training +5.1% peak power and +8.1% power at 4 mmol in 9 weeks (well-trained athletes).",
+          "expectedWeeklyRate": "[derived] beginner/untrained 1.0%/wk for first 8 weeks then 0.5%; novice 0.7%/wk; intermediate 0.5%/wk; advanced 0.25%/wk. Rates halve after week 16. (TrainerRoad average ~0.6%/wk over first 8 weeks; beginners assumed faster - unverified.)",
+          "maxSingleBlockGain": "[derived] 10% (beginner 15%)"
+        },
+        "distance": {
+          "observed": "Cycling UK 10-week plan takes the long ride from 15-25 km (week 1) to 90-100 km (week 9), i.e. roughly +10 km per week, then a 2-ride taper week.",
+          "expectedWeeklyRate": "[derived] long ride +10 km/week (or +15 min) for beginners/novices; +15 km/week if longest_ride_km >= 60; never more than +30% in one week."
+        }
+      },
+      "planLengthRule": {
+        "ftpGoal": "[derived] gapPct = (targetFTP - currentFTP)/currentFTP x 100. weeks = ceil(gapPct / expectedWeeklyRate) + 1 (test week). Clamp min 6 (shortest retest interval per CTS is ~6 weeks), max 16. If gapPct > maxSingleBlockGain or weeks > 16, split into blocks of 8-12 weeks, each ending with an FTP retest and recalculated zones.",
+        "distanceGoal": "[derived] weeks = ceil((targetKm - longestRideKm) / weeklyLongRideIncrease) + 1 taper week. Clamp min 4, max 16. Peak long ride should reach 90-100% of target 1-2 weeks before the event (Cycling UK peaks at 90-100 km for a 100 km ride in week 9 of 10). If > 16 weeks, milestone block 1 target = longest + 16 x increase.",
+        "retest": "FTP retest no sooner than ~6 weeks; ideally after a recovery week (CTS)."
+      },
+      "volumeModel": {
+        "start": "British Cycling beginner plan (25 weeks to a 60-mile/100 km sportive): 3-7.5 h/week, 3 rides/week (1 midweek, 2 weekend) + optional cross-training. Cycling UK 100 km plan: 3-4 rides/week, 2-3 rest days/week.",
+        "startRule": "[derived] week-1 weekly time = clamp(1.5 x longest_ride_min, 90, 300) min, spread over chosen days with the long ride ~40% of weekly time.",
+        "progression": "[derived] weekly time +5-10%, long ride per improvementModel.distance; hard sessions progress by interval duration first (e.g. 3x5 -> 4x5 -> 2x10 min as in Cycling UK), then by intensity.",
+        "recoveryWeeks": "[derived] every 3rd (beginner/40+) or 4th week at 60-70% of previous week's volume, keep one short quality session. Basis: Stoggl & Sperlich 2+1 block structure.",
+        "taper": "Event goals: final 1-2 weeks, volume down ~40-60%, keep intensity and frequency (Bosquet, unverified). Cycling UK final week: two short easy rides (60 and 45 min). FTP goals: replace taper with 4-5 easy days before the retest.",
+        "intensityMix": "[derived] beginners: 0-1 hard session/week for first 4 weeks (Cycling UK adds harder efforts from week 5); later 1-2. Intermediate+: 2 (3 only if >=5 days and recovering well, per TrainerRoad data)."
+      },
+      "weekStructure": {
+        "2": ["Midweek: quality ride (sweet spot / harder efforts) 45-60 min", "Weekend: long endurance ride"],
+        "3": ["Midweek: quality ride", "Midweek: easy endurance ride", "Weekend: long ride (steady section in middle once base built)"],
+        "4": ["Tue: quality ride", "Thu: easy endurance", "Sat: easy/recovery or second quality (intermediate+)", "Sun: long ride"],
+        "5": ["Mon: rest", "Tue: quality (threshold/sweet spot)", "Wed: easy endurance", "Thu: quality (VO2) or tempo", "Sat: long ride", "Sun: recovery spin"],
+        "6": ["As 5 days + one extra easy endurance ride; never 3 hard days in a row [derived]"],
+        "notes": "Pattern from Cycling UK (Tue intervals, Thu easy, weekend long) and British Cycling (1 midweek + 2 weekend). Separate hard days by >=1 easy/rest day. [derived]"
+      },
+      "sessionTemplates": [
+        {
+          "id": "cyc_endurance",
+          "name": "Endurance ride",
+          "type": "endurance",
+          "structure": [
+            { "name": "Steady ride", "sets": 1, "reps": 1, "duration": "30-90 min", "intensity": "Z2 56-75% FTP / conversational" }
+          ],
+          "useWhen": "Base of every week; 2-day plans skip it."
+        },
+        {
+          "id": "cyc_long_ride",
+          "name": "Long ride",
+          "type": "long",
+          "structure": [
+            { "name": "Long ride", "sets": 1, "reps": 1, "distance": "per planLengthRule progression", "intensity": "Z2 / easy, conversational" }
+          ],
+          "useWhen": "Weekly, for distance goals and all base phases."
+        },
+        {
+          "id": "cyc_steady_middle",
+          "name": "Ride with steady middle",
+          "type": "tempo",
+          "structure": [
+            { "name": "Easy", "sets": 1, "reps": 1, "duration": "~20 min", "intensity": "Z2" },
+            { "name": "Steady block", "sets": 1, "reps": 1, "duration": "20-30 min", "intensity": "Z3 tempo / short sentences" },
+            { "name": "Easy", "sets": 1, "reps": 1, "duration": "~20 min", "intensity": "Z2" }
+          ],
+          "useWhen": "Beginners from week 3 (Cycling UK pattern: 60-70 min with 20-30 min steady)."
+        },
+        {
+          "id": "cyc_harder_efforts",
+          "name": "Harder efforts (beginner intervals)",
+          "type": "threshold",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "duration": "~5-10 min", "intensity": "easy" },
+            { "name": "Efforts", "sets": 1, "reps": "3-4 x 5 min, progressing to 2 x 10 min", "intensity": "Z4 91-105% FTP / hard but controlled" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "duration": "5-10 min", "intensity": "easy" }
+          ],
+          "useWhen": "Beginners from week 5 of a distance plan (Cycling UK). Recovery between efforts not stated by source; use ~equal time easy [derived]."
+        },
+        {
+          "id": "cyc_sweet_spot",
+          "name": "Sweet spot 3 x 12",
+          "type": "sweet_spot",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "duration": "10 min", "intensity": "Z1-2" },
+            { "name": "Sweet spot", "sets": 1, "reps": 3, "duration": "12 min, 3 min recovery", "intensity": "88-94% FTP" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "duration": "10 min", "intensity": "Z1" }
+          ],
+          "useWhen": "Novice+ FTP goals, time-crunched riders. Progress reps to 4-5 or interval to 15-20 min [derived]."
+        },
+        {
+          "id": "cyc_threshold",
+          "name": "Threshold 4 x 9",
+          "type": "threshold",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "duration": "10-15 min", "intensity": "Z1-2" },
+            { "name": "Threshold", "sets": 1, "reps": 4, "duration": "9 min, 4 min recovery", "intensity": "95-105% FTP" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "duration": "10 min", "intensity": "Z1" }
+          ],
+          "useWhen": "Intermediate+ FTP goals after 3-4 weeks of sweet spot."
+        },
+        {
+          "id": "cyc_vo2_short",
+          "name": "VO2max short intervals",
+          "type": "vo2max",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "duration": "15 min", "intensity": "Z2 with 2-3 short openers" },
+            { "name": "VO2 efforts", "sets": 3, "reps": 5, "duration": "1:00-1:20 on, rest not stated by source (use equal time easy [derived])", "intensity": "120-125% FTP" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "duration": "10 min", "intensity": "Z1" }
+          ],
+          "useWhen": "Intermediate+, 1x/week max, final 4-6 weeks of an FTP block."
+        },
+        {
+          "id": "cyc_vo2_4x4",
+          "name": "4 x 4 min HIIT",
+          "type": "vo2max",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "duration": "20 min", "intensity": "~75% HRpeak" },
+            { "name": "Intervals", "sets": 1, "reps": 4, "duration": "4 min, 3 min active recovery", "intensity": "90-95% HRpeak (~106-120% FTP [derived])" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "duration": "15 min", "intensity": "~75% HRpeak" }
+          ],
+          "useWhen": "Polarized plans: the 'hard' session (Stoggl & Sperlich HIIT format)."
+        },
+        {
+          "id": "cyc_recovery",
+          "name": "Recovery spin",
+          "type": "recovery",
+          "structure": [
+            { "name": "Easy spin", "sets": 1, "reps": 1, "duration": "20-45 min", "intensity": "Z1 <55% FTP" }
+          ],
+          "useWhen": "Day after hard sessions; recovery weeks; optional on rest days."
+        },
+        {
+          "id": "cyc_ftp_test",
+          "name": "FTP test session",
+          "type": "test",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "duration": "15-20 min incl. short efforts", "intensity": "Z2 building" },
+            { "name": "Test", "sets": 1, "reps": 1, "duration": "20 min (or ramp / 2x8)", "intensity": "max sustainable" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "duration": "10 min", "intensity": "Z1" }
+          ],
+          "useWhen": "Week 1 (baseline) and end of each block after a recovery week."
+        }
+      ],
+      "safety": [
+        "Cycling UK: if inactive, check with a doctor before starting; stop training when ill or injured and resume from where you left off rather than skipping ahead.",
+        "Cycling UK: 2-3 rest days per week for beginners; warm up ~5 min and cool down 5-10 min.",
+        "FTP tests are maximal efforts - pacing too hard early causes blow-ups; skip tests when ill or fatigued. [derived]",
+        "[derived] Do not prescribe VO2/anaerobic work to untrained riders in their first 4 weeks.",
+        "[derived] Outdoor long rides: carry water/food and repair kit; indoor sessions need fan + hydration."
+      ],
+      "sources": [
+        { "title": "Power Training Levels", "author": "Andrew Coggan / TrainingPeaks", "url": "https://www.trainingpeaks.com/learn/articles/power-training-levels/", "whatWeUsed": "7 power levels with % threshold and HR ranges, interval durations" },
+        { "title": "Cycling Power Zones: Training Zones Explained", "author": "TrainerRoad", "url": "https://www.trainerroad.com/blog/cycling-power-zones-training-zones-explained/", "whatWeUsed": "Sweet spot 88-94% and example workouts (3x12, 4x9, VO2 3x5, anaerobic)" },
+        { "title": "TrainerRoad blog index (training data teasers)", "author": "TrainerRoad", "url": "https://www.trainerroad.com/blog/?p=33200", "whatWeUsed": "~5%/9%/10% 20-min power gains at 2/4/~6 months; 3 hard days > 2 hard days" },
+        { "title": "FTP Tests: How to perform 20-Minute, 8-Minute, and Ramp Tests", "author": "CTS (Chris Carmichael)", "url": "https://trainright.com/?p=27294", "whatWeUsed": "Test protocols, multipliers 0.95 / 0.90 / 0.75, retest interval >=6 weeks" },
+        { "title": "The Physiology of FTP and New Testing Protocols", "author": "TrainingPeaks blog (Empirical Cycling)", "url": "https://www.trainingpeaks.com/blog/the-physiology-of-ftp-and-new-testing-protocols/", "whatWeUsed": "95% factor fits ~50-60% of riders (range 86-96%)" },
+        { "title": "FTP Ratings", "author": "Garmin (after Allen & Coggan)", "url": "https://www8.garmin.com/manuals/webhelp/GUID-3A4F9C4A-8735-46C0-8DA9-65F11400B150/EN-US/GUID-1F58FA8E-09FF-4E51-B9B4-C4B83ED1D6CE.html", "whatWeUsed": "W/kg level table by sex" },
+        { "title": "10-week training plan for a 100km ride", "author": "Cycling UK", "url": "https://www.cyclinguk.org/article/10-week-training-plan-100km-ride", "whatWeUsed": "Long-ride progression 15-25 -> 90-100 km, rides/week, intensity cues, taper, rest days" },
+        { "title": "Beginners' training plan (British Cycling)", "author": "British Cycling via Marie Curie", "url": "https://www.mariecurie.org.uk/get-involved/charity-events/cycling/cycle-zone/beginners-training-plan", "whatWeUsed": "25 weeks, 3-7.5 h/week, 3 rides/week structure" },
+        { "title": "Polarized training has greater impact on key endurance variables...", "author": "Stoggl & Sperlich, Frontiers in Physiology 2014", "url": "https://www.frontiersin.org/articles/10.3389/fphys.2014.00033/full", "whatWeUsed": "Intensity distributions, 2+1 week blocks, 4x4 HIIT format, outcome % changes" },
+        { "title": "Effects of tapering on performance: a meta-analysis", "author": "Bosquet et al. 2007", "url": "https://pubmed.ncbi.nlm.nih.gov/17762369/", "whatWeUsed": "[unverified - page blocked] 2-week taper, 41-60% volume cut, keep intensity/frequency" }
+      ]
+    },
+
+    "swimming": {
+      "benchmarks": [
+        {
+          "id": "css",
+          "label": "Critical Swim Speed (CSS)",
+          "unit": "sec per 100m",
+          "howToTest": "Warm up thoroughly. Swim 400m all-out but evenly paced; recover 5-10 min with easy swimming; swim 200m all-out; cool down. CSS (s/100m) = (T400 - T200) / 2. The 200 must be faster per 100m than the 400 or the result is invalid. Test in the pool length you usually train in."
+        },
+        {
+          "id": "time_400",
+          "label": "400m time trial",
+          "unit": "mm:ss",
+          "howToTest": "First half of the CSS test. Also the direct benchmark for goals like '400m under 8:00'."
+        },
+        {
+          "id": "time_100",
+          "label": "100m time",
+          "unit": "mm:ss",
+          "howToTest": "After warm-up, one hard but controlled 100m freestyle. Quick benchmark for users who cannot yet swim 400m. [derived]"
+        },
+        {
+          "id": "longest_continuous",
+          "label": "Longest continuous swim",
+          "unit": "m",
+          "howToTest": "Swim easy, any stroke allowed but note stroke, without stopping or holding the wall; record metres completed (25m pool = count lengths x 25). [derived]"
+        }
+      ],
+      "levelPlacement": {
+        "rule": "[derived] by longest_continuous: <100m -> 'learn-to-swim' (refer to adult lessons, Swim England Adult Swimming Framework; do not run a CSS test); 100-399m -> beginner (no CSS test yet; use time_100 + RPE); 400-999m -> novice (CSS test valid); >=1000m -> intermediate; intermediate with CSS faster than 1:40/100m -> advanced [unverified cut-off].",
+        "supportingFacts": [
+          "Triathlete 8-week sprint plan requires being able to swim 100 yards nonstop; by week 6 it prescribes 1000 nonstop.",
+          "Swim England's adult framework has 4 progressive stages; a provider using it sets 100m continuous as the entry-level goal [unverified - search snippet].",
+          "Swim England fitness plan is 20 sessions starting at ~300m per session with kick/float work (only session 1 is public)."
+        ]
+      },
+      "zoneModel": {
+        "basis": "Offset from CSS pace in seconds per 100m",
+        "zones": [
+          { "name": "Easy / technique / recovery", "offset": "CSS +8 to +10 s", "use": "drills, warm-up, relaxed swimming" },
+          { "name": "Steady aerobic", "offset": "CSS +6 s", "use": "long aerobic sets, e.g. 10x400 r30" },
+          { "name": "Threshold (CSS)", "offset": "CSS +0", "use": "Goldilocks sets, 100-400m reps with ~20 s rest" },
+          { "name": "Above threshold / VO2", "offset": "CSS -3 s [unverified - Swim Smooth 2020 article via search snippet only]", "use": "short reps with longer rest; intermediate+ only" }
+        ],
+        "noCssFallback": "Triathlete RPE zones: Z1 easy rhythmic breathing; Z2 slightly deeper, can still talk; Z3 moderate 'feel-good fast'; Z4 hard, ~15-min all-out swim pace; Z5 all-out 1-5 min.",
+        "pacingTool": "Pace per length = CSS/100 x pool length (e.g. 2:00/100 in 25m pool = 30 s per length; beep per length on a Tempo Trainer).",
+        "formula": "zonePace(s/100m) = CSS + offset. Example CSS 2:00 -> steady 2:06, easy 2:08-2:10."
+      },
+      "improvementModel": {
+        "pace": {
+          "observed": "Swim Smooth: beginners often gain 5-10 s/100m in CSS; well-trained swimmers 1-2 s/100m is significant; improving CSS by 3-4 s/100m is a good target. Search snippet claims 4-10 s/100m over 8 weeks of CSS training [unverified].",
+          "expectedWeeklyRate": "[derived] beginner/novice 0.75 s/100m per week (=~6 s over 8 weeks); intermediate 0.4 s/wk; advanced 0.15 s/wk.",
+          "inSessionAdjust": "Swim Smooth: if a CSS session was too easy, lower the target pace (one reply suggests 3 s steps for beginners; their GURU 'strong' tweak is <1 s/100m); if too hard, slow it 3-5 s/100m and work back down."
+        },
+        "distance": {
+          "observed": "Triathlete plan moves a swimmer who can do 100 yds nonstop to 1000 nonstop in 6 weeks with 2 swims/week, using short reps with rest (16x25, 10x50, 8x75, 4x100, 2x200 + 4x100, 500 + 5x100, then 1000). Swim Serpentine: break a target distance into shorter reps with short rests (e.g. 1000m as 10x100), and periodically do a timed non-stop swim.",
+          "expectedWeeklyRate": "[derived] longest continuous +50% per week while under 400m, then +100-150m/week to 1000m, then +200m/week. Main set total should reach ~target distance before the continuous attempt."
+        }
+      },
+      "planLengthRule": {
+        "paceGoal": "[derived] Convert target to per-100m pace (e.g. 400m in 8:00 = 2:00/100). Use time_400 pace (not CSS) for 400m goals: gap = current400pace - target400pace. weeks = ceil(gap / expectedWeeklyRate) + 1 (test week). Clamp min 4, max 12. If >12, milestone block 1 = current - 12 x rate; retest CSS every 4-6 weeks (Swim Smooth; their newer blog says retest less often and tweak instead).",
+        "distanceGoal": "[derived] Simulate the weekly increase schedule above from longest_continuous to target; weeks = steps + 1. Clamp min 3, max 12. Learn-to-swim users (<100m) get a pre-plan: adult lessons recommendation + kick/float technique block before any distance plan.",
+        "combinedGoal": "[derived] If a pace goal is set but longest_continuous < goal distance, run the distance plan first, then the pace plan."
+      },
+      "volumeModel": {
+        "start": "[derived] beginner: 2 sessions/week, ~300-600m (Swim England session 1 ~300m; Triathlete week 1 16x25 and 10x50). Novice: 2-3 sessions, 1000-1800m. Intermediate: 3+ sessions, 2000m+ (Swim Smooth suggests building toward ~2000 yds/session before long CSS efforts).",
+        "sessionStructure": "Warm-up -> main set -> contrast set (kick/drills) -> warm-down (Swim Serpentine / London Marathon Events).",
+        "progression": "[derived] session volume +10-15%/week; within CSS sets add reps (3 -> 4 x 100) or lengthen the final rep (200 -> 300 -> 400, Goldilocks Baby->Mama->Papa) before speeding up.",
+        "recoveryWeeks": "[derived] every 4th week -25-35% volume, keep one CSS set.",
+        "taper": "Event goals: last week shorter sessions, a few short fast reps (Triathlete week 8: 200 easy + 8x50 alternating hard/easy). Bosquet 2-week taper rule for >=10-week plans [unverified]."
+      },
+      "weekStructure": {
+        "1": ["Mixed: technique warm-up + CSS/pace set or distance-building set"],
+        "2": ["Session A: distance/aerobic (reps with short rest, steady)", "Session B: technique + pace (CSS or Z3-4 short reps)"],
+        "3": ["Technique session", "CSS/threshold session", "Endurance/open-water or long continuous session (Swim Smooth 3-session week: technique, open water skills, CSS)"],
+        "4": ["As 3 + an extra easy aerobic/drill session [derived]"],
+        "notes": "Leave >=1 day between the two harder sessions where possible. [derived]"
+      },
+      "sessionTemplates": [
+        {
+          "id": "swim_css_test",
+          "name": "CSS test",
+          "type": "test",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "distance": "300-400m", "intensity": "easy building" },
+            { "name": "400m time trial", "sets": 1, "reps": 1, "distance": "400m", "intensity": "max, evenly paced" },
+            { "name": "Recovery", "sets": 1, "reps": 1, "distance": "5-10 min easy", "intensity": "easy" },
+            { "name": "200m time trial", "sets": 1, "reps": 1, "distance": "200m", "intensity": "max" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "distance": "200m", "intensity": "easy" }
+          ],
+          "useWhen": "Baseline for users with longest_continuous >= 400m; retest every 4-6 weeks."
+        },
+        {
+          "id": "swim_beginner_25s",
+          "name": "Beginner short reps",
+          "type": "endurance",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 2, "distance": "25m", "intensity": "easy, any stroke" },
+            { "name": "Kick with float", "sets": 1, "reps": 4, "distance": "25m, 20-30 s rest", "intensity": "steady" },
+            { "name": "Main", "sets": 1, "reps": "16", "distance": "25m, 30 s rest", "intensity": "Z1 easy" },
+            { "name": "Swim down", "sets": 1, "reps": 2, "distance": "25m", "intensity": "easy, long strokes" }
+          ],
+          "useWhen": "Week 1-2 for beginners (100-399m continuous). Then 10-12 x 50 r35-45, then 8-12 x 75 r20-40 (Triathlete progression)."
+        },
+        {
+          "id": "swim_distance_builder",
+          "name": "Distance builder",
+          "type": "endurance",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "distance": "200m", "intensity": "easy" },
+            { "name": "Main", "sets": 1, "reps": "e.g. 2x200 r30 + 4x100 r20, or 500 + 5x100 r20", "distance": "total ~= goal distance", "intensity": "Z2 steady / CSS+6" },
+            { "name": "Contrast", "sets": 1, "reps": 4, "distance": "50m kick or drill", "intensity": "easy" },
+            { "name": "Warm-down", "sets": 1, "reps": 1, "distance": "100-200m", "intensity": "easy" }
+          ],
+          "useWhen": "Distance goals (e.g. 'Swim 1km non-stop'); every 2-3 weeks swap the main set for a single continuous attempt."
+        },
+        {
+          "id": "swim_goldilocks",
+          "name": "Goldilocks CSS set",
+          "type": "threshold",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "distance": "300-400m incl. drills", "intensity": "easy" },
+            { "name": "Baby Bear", "sets": 1, "reps": "2x100 + 1x200", "distance": "20 s rest after each", "intensity": "CSS" },
+            { "name": "Mama Bear", "sets": 1, "reps": "2x100 + 1x300", "distance": "20 s rest after each", "intensity": "CSS" },
+            { "name": "Papa Bear", "sets": 1, "reps": "2x100 + 1x400", "distance": "20 s rest after each", "intensity": "CSS" },
+            { "name": "Warm-down", "sets": 1, "reps": 1, "distance": "200m", "intensity": "easy" }
+          ],
+          "useWhen": "Pace goals, novice+. Beginners may do only Baby Bear (or Baby + Mama). Lengthen with 3-4 x 100. If pace can't be held, slow slightly rather than resting longer."
+        },
+        {
+          "id": "swim_steady_400s",
+          "name": "Steady 400s",
+          "type": "endurance",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "distance": "400m", "intensity": "easy" },
+            { "name": "Main", "sets": 1, "reps": "4-10", "distance": "400m, 30 s rest", "intensity": "CSS +6 s" },
+            { "name": "Warm-down", "sets": 1, "reps": 1, "distance": "200m", "intensity": "easy" }
+          ],
+          "useWhen": "Intermediate+ aerobic session (Swim Smooth example is 10x400; scale reps to level [derived])."
+        },
+        {
+          "id": "swim_pyramid",
+          "name": "Big step pyramid",
+          "type": "endurance",
+          "structure": [
+            { "name": "Pyramid", "sets": 1, "reps": "25-50-100-200-400-200-100-50-25", "distance": "1150m; rest 5/10/15/20/30 s scaling with rep length", "intensity": "Z2-3" }
+          ],
+          "useWhen": "Novice+ building toward 1 mile / 1.5 km; alternative: build set 25 to 400 in 50m steps (1475m) with 5-45 s rest."
+        },
+        {
+          "id": "swim_broken_400s",
+          "name": "5 x 400 broken",
+          "type": "endurance",
+          "structure": [
+            { "name": "Round 1", "sets": 1, "reps": 16, "distance": "25m, 5 s rest", "intensity": "Z2" },
+            { "name": "Round 2", "sets": 1, "reps": 8, "distance": "50m, 10 s rest", "intensity": "Z2" },
+            { "name": "Round 3", "sets": 1, "reps": 4, "distance": "100m, 15 s rest", "intensity": "Z2" },
+            { "name": "Round 4", "sets": 1, "reps": 2, "distance": "200m", "intensity": "Z2" },
+            { "name": "Round 5", "sets": 1, "reps": 1, "distance": "400m continuous", "intensity": "Z2" }
+          ],
+          "useWhen": "Intermediate; 30 s between rounds; teaches holding 400m continuously."
+        },
+        {
+          "id": "swim_speed",
+          "name": "Speed 50s",
+          "type": "vo2max",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "distance": "200-500m", "intensity": "easy building" },
+            { "name": "Main", "sets": 1, "reps": "8-10", "distance": "50m, 20 s rest", "intensity": "alternate Z4 / Z1" },
+            { "name": "Warm-down", "sets": 1, "reps": 1, "distance": "100m", "intensity": "easy" }
+          ],
+          "useWhen": "Pace goals over short distances (100-400m); final weeks / taper (Triathlete weeks 7-8)."
+        },
+        {
+          "id": "swim_technique",
+          "name": "Technique & drills",
+          "type": "technique",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "distance": "200m", "intensity": "easy" },
+            { "name": "Kick", "sets": 1, "reps": 8, "distance": "50m with kickboard", "intensity": "easy-steady" },
+            { "name": "Drill/swim", "sets": 1, "reps": 8, "distance": "50m as 25 drill + 25 swim (single arm, catch-up, kick on side, 3-point touch, clenched fist)", "intensity": "easy" },
+            { "name": "Warm-down", "sets": 1, "reps": 1, "distance": "100-200m", "intensity": "easy" }
+          ],
+          "useWhen": "Every plan, 1x/week; the only quality session for learn-to-swim/beginner users."
+        }
+      ],
+      "safety": [
+        "Users who cannot swim 100m continuously should be pointed to adult lessons (Swim England Adult Swimming Framework) rather than a training plan. [derived threshold]",
+        "Open water hazards (RLSS UK): cold water shock, no rescue equipment, unpredictable depth, hidden underwater objects, strong currents, uneven banks, poor water quality/toxic algae. Somax should only schedule open-water sessions as optional with an organised/lifeguarded venue note. [derived]",
+        "Never do max-effort tests (CSS) without a warm-up; skip when ill. [derived]",
+        "Swim England session 1 uses a float/kickboard - beginners should have one."
+      ],
+      "sources": [
+        { "title": "CSS Training For Absolute Beginners", "author": "Swim Smooth", "url": "https://swimsmoothtips.blogspot.com/2014/04/css-training-for-absolute-beginners.html", "whatWeUsed": "CSS test protocol, Goldilocks sets, pace adjustment, beginner gains 5-10 s/100m, retest 4-6 weeks, 3-session week" },
+        { "title": "Understanding training zones", "author": "Swim Smooth blog", "url": "https://blog.swimsmooth.com/p/understanding-training-zones", "whatWeUsed": "Easy CSS+8-10, Steady CSS+6 (10x400 r30), Threshold = CSS" },
+        { "title": "Swim, Tweak, Sleep, Repeat", "author": "Swim Smooth blog", "url": "https://blog.swimsmooth.com/p/swim-tweak-sleep-repeat", "whatWeUsed": "Retest less often, tweak <1 s/100m instead; sample CSS sets" },
+        { "title": "46 seconds per 100m faster in 10 weeks", "author": "Swim Smooth blog", "url": "https://blog.swimsmooth.com/p/46-seconds-per-100m-faster-in-10-weeks", "whatWeUsed": "3-4 s/100m CSS gain is a good target (rest paywalled)" },
+        { "title": "What Is Critical Swim Speed (CSS)?", "author": "MyProCoach", "url": "https://support.myprocoach.net/hc/en-us/articles/360040593392", "whatWeUsed": "CSS formula (T400-T200)/2, CSS ~= 1500m pace" },
+        { "title": "One-mile pool training plan", "author": "London Marathon Events / Swim Serpentine", "url": "https://www.londonmarathonevents.co.uk/sites/default/files/2025-01/one-mile-pool-training-plan.pdf", "whatWeUsed": "Session structure, pyramid/build/5x400 sets, drills" },
+        { "title": "The Swim England swimming fitness training plan", "author": "Swim England / Fitness First", "url": "https://www.fitnessfirst.co.uk/blog/the-swim-england-swimming-fitness-training-plan", "whatWeUsed": "Beginner session 1 (~300m, float, kick, 20-30 s rest)" },
+        { "title": "8-Week Sprint Triathlon Training Plan For Beginners", "author": "Triathlete", "url": "https://www.triathlete.com/training/getting-started/8-week-sprint-triathlon-training-plan-beginners", "whatWeUsed": "Swim progression 16x25 -> 1000 nonstop in 6 weeks; RPE zones" },
+        { "title": "Open water safety", "author": "Royal Life Saving Society UK", "url": "https://www.rlss.org.uk/open-water-safety", "whatWeUsed": "Open-water hazard list" },
+        { "title": "Understanding PACE - The Key To Improving Your Swimming", "author": "Swim Smooth", "url": "https://swimsmooth.com/free-resources/2020/08/understanding-pace-key-to-improving.html", "whatWeUsed": "[unverified - 404 on fetch] CSS-3 s VO2 pace (search snippet)" }
+      ]
+    },
+
+    "triathlon": {
+      "raceDistances": {
+        "superSprint": "400m swim / 10km bike / 2.5km run [unverified - consistent across search snippets; UK events vary, some use 250m swims]",
+        "sprint": "750m / 20km / 5km [unverified - consistent across search snippets incl. TrainingPeaks plan descriptions; organisers often tweak]",
+        "notes": "Plan from the user's actual event distances when entered. [derived]"
+      },
+      "benchmarks": [
+        { "id": "swim_longest_continuous", "label": "Longest continuous swim", "unit": "m", "howToTest": "See swimming.longest_continuous." },
+        { "id": "swim_css", "label": "CSS (optional)", "unit": "sec per 100m", "howToTest": "See swimming.css; only if 400m continuous is possible." },
+        { "id": "bike_ftp_or_time", "label": "FTP or longest continuous ride", "unit": "W or min", "howToTest": "See cycling benchmarks; riders without power log longest continuous ride in minutes." },
+        { "id": "run_continuous_min", "label": "Longest continuous run", "unit": "min", "howToTest": "Easy pace, no walk breaks. [derived]" },
+        { "id": "run_5k_time", "label": "5 km run time (optional)", "unit": "mm:ss", "howToTest": "Best-effort 5 km on flat ground after warm-up. Defer to running playbook for run zones. [derived]" }
+      ],
+      "levelPlacement": {
+        "prerequisite": "Triathlete 8-week beginner sprint plan assumes: healthy/uninjured, 100 yards nonstop swim (ideally freestyle), 20 min nonstop bike, 10 min continuous run.",
+        "rule": "[derived] Below any prerequisite -> 'foundation' block (4-6 weeks) in that sport first. Meets prerequisites only -> beginner (8-12 weeks). Can already swim 750m, ride 60 min, run 30 min -> novice. Has done a sprint or meets novice + CSS/FTP data -> intermediate.",
+        "planLengthHint": "ACTIVE.com: 8 weeks suits people already active in 1-2 endurance sports; 12 weeks for newer / less water-confident athletes [unverified - search snippet]. Published beginner sprint plans run 8-20 weeks at ~2-10 h/week [unverified - TrainingPeaks listings via search]."
+      },
+      "zoneModel": {
+        "swim": "swimming.zoneModel (CSS offsets) or Triathlete RPE zones if no CSS.",
+        "bike": "cycling.zoneModel (Coggan %FTP) or RPE zones; Triathlete plan specifies cadence 80-100 rpm.",
+        "run": "RPE zones from Triathlete plan (Z1 easy ... Z4 ~30-min all-out pace, Z5 1-5 min all-out). Defer to running playbook if available. [derived]",
+        "rpeZones": [
+          { "zone": 1, "description": "Easy, relaxed, rhythmic breathing" },
+          { "zone": 2, "description": "Slightly deeper breathing, can still converse" },
+          { "zone": 3, "description": "Moderate, 'feel-good fast', harder to talk" },
+          { "zone": 4, "description": "Hard/uncomfortable, ~15-min all-out swim or 30-min all-out bike/run pace" },
+          { "zone": 5, "description": "Deep forceful breathing, all-out sustainable 1-5 min" }
+        ]
+      },
+      "improvementModel": {
+        "approach": "[derived] Per-discipline: apply swimming.improvementModel.distance to reach race swim distance (+ ~20% margin in pool), cycling distance model to reach race bike duration, running continuous-time model to reach race run distance. Weeks needed = max over disciplines (they train in parallel).",
+        "observed": "Triathlete plan moves from 100 yd swim / 20 min bike / 10 min run to finishing a sprint in 8 weeks (peaks: 1000 nonstop swim, 80 min bike, 40 min run)."
+      },
+      "planLengthRule": {
+        "rule": "[derived] weeks = max(swimWeeks, bikeWeeks, runWeeks) + 1 taper week + (beginner ? 1 extra recovery week per 4 : 0). Clamp min 8 (meets prereqs + already active), max 20. Below prereqs: prepend a foundation block of 4-6 weeks. Event date fixed: if weeks available < needed, warn and recommend super sprint or a later race.",
+        "milestones": "[derived] Mid-plan milestone: race-distance swim continuous + a brick of race bike + 10-20 min run."
+      },
+      "volumeModel": {
+        "start": "Triathlete beginner: 5 training days, 1 session/day, ~2.5-3.5 h/week in week 1 [derived from plan durations]. Published beginner plans: ~2-7 h/week for 12 weeks; Tri247 8-week plan ~4-6 h/week [unverified].",
+        "progression": "Triathlete: weeks 1-3 two swims + alternate (2 bikes, 1 run)/(1 bike, 2 runs); weeks 4-8 two of each with Sunday brick. Bike grows 30 -> 80 min; run 25 min run-walk -> 40 min continuous.",
+        "recoveryWeeks": "[derived] every 4th week -30% volume for beginner plans >8 weeks.",
+        "taper": "Triathlete week 8: all sessions shortened (swim ~700m, run 20 min, bike 30 min + 15 min shakeout), race on Sunday. For plans >=12 weeks apply 2-week taper with ~40-60% volume cut [unverified Bosquet]."
+      },
+      "weekStructure": {
+        "3": ["Swim (technique + CSS)", "Bike (quality or endurance)", "Brick: bike then short run (from week 4) [derived]"],
+        "4": ["Swim", "Run", "Bike", "Weekend: swim or brick [derived]"],
+        "5": ["Mon: rest", "Tue: swim", "Wed: run (or bike in alternate weeks)", "Thu: bike", "Fri: rest", "Sat: swim", "Sun: run (wk1-3) / bike + brick run (wk4+)"],
+        "6": ["5-day pattern + extra easy bike or run; two sessions on one day only for intermediate+ [derived]"],
+        "notes": "5-day pattern is the Triathlete beginner plan. Keep >=1 full rest day. [derived]"
+      },
+      "sessionTemplates": [
+        {
+          "id": "tri_brick",
+          "name": "Brick (bike -> run)",
+          "type": "brick",
+          "structure": [
+            { "name": "Bike", "sets": 1, "reps": 1, "duration": "40-60 min", "intensity": "Z1-Z2, 90-100 rpm (Z3-4 blocks from week 6)" },
+            { "name": "Transition", "sets": 1, "reps": 1, "duration": "<3 min (later <2 min)", "intensity": "practise kit change" },
+            { "name": "Run", "sets": 1, "reps": 1, "duration": "15-20 min", "intensity": "Z2 flat (later 5-10 min Z4 then easy)" }
+          ],
+          "useWhen": "Weekly from week 4 of a sprint plan."
+        },
+        {
+          "id": "tri_run_walk",
+          "name": "Run-walk intervals",
+          "type": "endurance",
+          "structure": [
+            { "name": "Run-walk", "sets": 1, "reps": "5-6", "duration": "1.5-2 min walk + 3-3.5 min run", "intensity": "Z1 flat" }
+          ],
+          "useWhen": "Week 1-2 for users who can only run ~10 min continuously; progress to 2x10 min with 2 min walk, then continuous 20-30 min."
+        },
+        {
+          "id": "tri_bike_endurance",
+          "name": "Bike endurance with tempo",
+          "type": "endurance",
+          "structure": [
+            { "name": "Easy", "sets": 1, "reps": 1, "duration": "15-20 min", "intensity": "Z1" },
+            { "name": "Steady", "sets": 1, "reps": 1, "duration": "25-50 min (incl. 15 min Z3 later)", "intensity": "Z2-Z3, 85-95 rpm" },
+            { "name": "Easy", "sets": 1, "reps": 1, "duration": "10-20 min", "intensity": "Z1-2" }
+          ],
+          "useWhen": "Midweek bike, weeks 2-5."
+        },
+        {
+          "id": "tri_bike_intervals",
+          "name": "Bike race-pace intervals",
+          "type": "threshold",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "duration": "15 min", "intensity": "Z1" },
+            { "name": "Intervals", "sets": 2, "reps": 1, "duration": "5 min Z3, 2.5 min Z2, 5 min Z4, 2.5 min Z2", "intensity": "Z3-Z4" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "duration": "15 min", "intensity": "Z1" }
+          ],
+          "useWhen": "Weeks 6-7; week 7 alternative 5 x (1 min Z5 / 2 min Z1)."
+        },
+        {
+          "id": "tri_run_progression",
+          "name": "Run with race-pace finish",
+          "type": "tempo",
+          "structure": [
+            { "name": "Easy", "sets": 1, "reps": 1, "duration": "15 min", "intensity": "Z1" },
+            { "name": "Build", "sets": 1, "reps": 1, "duration": "10 min Z3 + 5 min Z4/Z5", "intensity": "Z3-Z5" },
+            { "name": "Easy", "sets": 1, "reps": 1, "duration": "5 min", "intensity": "Z2" }
+          ],
+          "useWhen": "Weeks 6-7 midweek run."
+        },
+        {
+          "id": "tri_swim_continuous",
+          "name": "Race-distance continuous swim",
+          "type": "test",
+          "structure": [
+            { "name": "Continuous swim", "sets": 1, "reps": 1, "distance": "race swim distance or more (Triathlete week 6: 1000)", "intensity": "Z2" }
+          ],
+          "useWhen": "Milestone 2-3 weeks before race; swim sessions otherwise from swimming.sessionTemplates."
+        }
+      ],
+      "safety": [
+        "Triathlete plan prerequisites: good health, no injuries.",
+        "Open-water swim legs: see swimming.safety (RLSS hazards); practise in organised venues before race day. [derived]",
+        "[derived] Do not put two hard sessions (Z4+) on consecutive days for beginners; bricks count as hard.",
+        "[derived] If a discipline is below prerequisite, run a foundation block instead of compressing the plan."
+      ],
+      "sources": [
+        { "title": "8-Week Sprint Triathlon Training Plan For Beginners", "author": "Triathlete", "url": "https://www.triathlete.com/training/getting-started/8-week-sprint-triathlon-training-plan-beginners", "whatWeUsed": "Prerequisites, RPE zones, full 8-week structure, brick format, taper week" },
+        { "title": "Sprint triathlon plan listings", "author": "TrainingPeaks (various coaches)", "url": "https://www.trainingpeaks.com/training-plans/triathlon/sprint/tp-303027/sprint-distance-training-plan-beginner-first-timer-12-weeks-3-6-hours-per-week-1", "whatWeUsed": "[unverified - search snippets only] typical beginner plan lengths/hours and sprint distances" },
+        { "title": "A Beginner's Sprint Triathlon Training Plan", "author": "ACTIVE.com", "url": "https://www.active.com/triathlon/articles/a-beginners-sprint-triathlon-training-plan", "whatWeUsed": "[unverified - search snippet] 8 vs 12 week guidance" },
+        { "title": "Download your free triathlon training plan", "author": "220 Triathlon", "url": "https://www.220triathlon.com/news/download-your-free-triathlon-training-plan", "whatWeUsed": "[unverified - site returned 403] existence of sprint and super-sprint plans only; content not used" },
+        { "title": "Swimming and cycling sources", "author": "see swimming/cycling", "url": "https://www.cyclinguk.org/article/10-week-training-plan-100km-ride", "whatWeUsed": "Per-discipline zone and progression models" }
+      ]
+    },
+
+    "hybrid": {
+      "raceFormat": {
+        "source": "hyrox.com/the-fitness-race (fetched)",
+        "structure": "8 x (1 km run + 1 station); 8 km running total. Transitions (Roxzone) count toward finish time.",
+        "stations": [
+          { "order": 1, "name": "SkiErg", "work": "1000 m" },
+          { "order": 2, "name": "Sled Push", "work": "50 m (2 x 25 m)", "openMen": "152 kg incl. sled", "openWomen": "102 kg incl. sled" },
+          { "order": 3, "name": "Sled Pull", "work": "50 m (2 x 25 m)", "openMen": "103 kg incl. sled", "openWomen": "78 kg incl. sled" },
+          { "order": 4, "name": "Burpee Broad Jump", "work": "80 m" },
+          { "order": 5, "name": "Rowing", "work": "1000 m" },
+          { "order": 6, "name": "Farmers Carry", "work": "200 m", "openMen": "2 x 24 kg", "openWomen": "2 x 16 kg" },
+          { "order": 7, "name": "Sandbag Lunges", "work": "100 m", "openMen": "20 kg", "openWomen": "10 kg" },
+          { "order": 8, "name": "Wall Balls", "work": "100 reps", "openMen": "6 kg", "openWomen": "4 kg" }
+        ],
+        "conflicts": "FitnessVolt's plan lists wall balls 9 kg / 6 kg (likely Pro or older standard) - use hyrox.com Open values. hyrox.com 'best preparation' page mentions a 125 kg sled - season/division differences; confirm per event. Pro division uses heavier loads.",
+        "averageFinish": "~90 minutes (hyrox.com)."
+      },
+      "benchmarks": [
+        { "id": "run_5k", "label": "5 km run time", "unit": "mm:ss", "howToTest": "Best-effort 5 km after warm-up. Prerequisite for the standard 8-week plan is running 5 km comfortably (FitnessVolt target <30 min)." },
+        { "id": "run_1k", "label": "1 km run time (fresh)", "unit": "mm:ss", "howToTest": "Best-effort 1 km after warm-up. [derived]" },
+        { "id": "ski_1000", "label": "1000 m SkiErg", "unit": "mm:ss", "howToTest": "Controlled hard effort, steady rhythm. [derived]" },
+        { "id": "row_1000", "label": "1000 m row", "unit": "mm:ss", "howToTest": "Controlled hard effort. [derived]" },
+        { "id": "half_sim", "label": "Half simulation", "unit": "mm:ss", "howToTest": "4 x (1 km run + station 1-4 or 5-8) at race weights or scaled; record total time and which station broke form. [derived from FitnessVolt simulation format]" },
+        { "id": "wallball_unbroken", "label": "Max unbroken wall balls", "unit": "reps", "howToTest": "Open-division ball, standard depth and target; stop at first no-rep. [derived]" }
+      ],
+      "levelPlacement": {
+        "rule": "[derived] Cannot run 5 km continuously -> 'foundation' (run-building block first, see planLengthRule). 5 km in >=30 min or no gym equipment experience -> beginner. 5 km <30 min + can complete all stations at Open weight (scaled reps OK) -> novice. Has finished a HYROX or completes full simulation -> intermediate. Sub-25 min 5 km and full simulation near goal time -> advanced.",
+        "prerequisitesFitnessVolt": "Run 5 km without stopping (target <30 min); basic gym experience (rower, squat/lunge mechanics); SkiErg or rower access; sled or sandbag substitute; ~3-3.5 h/week in build weeks."
+      },
+      "zoneModel": {
+        "run": "FitnessVolt Day 1 intervals: 1 km at target race pace, ~80% effort, reaching 85-90% HRmax; 60-90 s rest between sets. Easy runs conversational (Z2). [derived for easy]",
+        "racePace": "[derived] targetRunPace = (goalTime - estimatedStationTime - roxzoneAllowance) / 8 per km; estimate stations from benchmark ergs + simulation splits.",
+        "pacing": "hyrox.com: do not start too fast; treat like a half marathon/Olympic triathlon effort and control heart rate. Red Bull: pace the sled push with short pauses; rowing too hard saves seconds but costs more later.",
+        "strength": "Station strength work in quality sets with full recovery, not circuits (FitnessVolt)."
+      },
+      "improvementModel": {
+        "observed": "No published improvement-rate data found for HYROX. [unverified]",
+        "approach": "[derived] Split goal-time gap into running gap and station gap from the half simulation. Running improves per running playbook rates; station time improves fastest early (technique + standards) - assume 10-15% station-time drop over first 8 weeks for beginners [unverified assumption]."
+      },
+      "planLengthRule": {
+        "rule": "Default 8 weeks at 3 days/week for users meeting prerequisites (FitnessVolt). [derived] Foundation users (cannot run 5 km): prepend 4-8 weeks of run-building + station technique. Advanced users with a time goal: 10-12 weeks with two 4-week build blocks. Clamp min 6, max 16.",
+        "milestones": "Week 3: 4 km + 4 stations; week 6: full 8 km + 8 stations simulation (FitnessVolt). [derived] Each simulation result recalculates race pace."
+      },
+      "volumeModel": {
+        "start": "FitnessVolt 3-day plan: ~3-3.5 h/week in build weeks. Red Bull (HYROX Elite athlete advice): 3 sessions/week can cover endurance, strength and race-specific fitness [unverified - snippet]. Some pros train 6 days/week [unverified - snippet].",
+        "progression": "FitnessVolt: run intervals 3x1 km -> 6x1 km; simulation 2 km + 2 stations -> 8 km + 8 stations by week 6; station work from technique to full weights.",
+        "recoveryWeeks": "FitnessVolt week 4 deload at ~60% volume (easy runs, technique/mobility, short easy simulation).",
+        "taper": "FitnessVolt week 8: 3 x 1 km easy + light erg, light station rehearsal, race day. Week 7 'peak' at race effort (6 km + 6 stations)."
+      },
+      "weekStructure": {
+        "2": ["Run + erg intervals", "Simulation / stations (alternate weekly with strength) [derived]"],
+        "3": ["Day 1: run + cardio-station intervals", "Day 2: station strength", "Day 3: race simulation (FitnessVolt)"],
+        "4": ["3-day pattern + easy Z2 run 30-45 min [derived]"],
+        "5": ["4-day pattern + compromised-running session (stations straight into short runs) [derived]"],
+        "6": ["5-day pattern + extra easy run or mobility; keep 1 rest day [derived]"],
+        "notes": "hyrox.com: practise running on fatigued legs and arms; learn official movement standards."
+      },
+      "sessionTemplates": [
+        {
+          "id": "hyb_run_erg_intervals",
+          "name": "Run + erg intervals",
+          "type": "intervals",
+          "structure": [
+            { "name": "Warm-up", "sets": 1, "reps": 1, "duration": "10 min", "intensity": "easy jog + drills" },
+            { "name": "Run", "sets": "3-6", "reps": 1, "distance": "1 km", "intensity": "target race pace, ~80% effort, 85-90% HRmax" },
+            { "name": "Erg (straight after run)", "sets": "same", "reps": 1, "distance": "500-1000 m SkiErg or row", "intensity": "race effort" },
+            { "name": "Rest", "sets": "same", "reps": 1, "duration": "60-90 s", "intensity": "rest" },
+            { "name": "Cool-down", "sets": 1, "reps": 1, "duration": "5 min", "intensity": "easy jog + stretch" }
+          ],
+          "useWhen": "Day 1 every week; sets per FitnessVolt progression (3, 4, 5, 3 deload, 5, 6, 5, 3 taper)."
+        },
+        {
+          "id": "hyb_station_strength",
+          "name": "Station strength",
+          "type": "strength",
+          "structure": [
+            { "name": "Sled push", "sets": 4, "reps": 1, "distance": "50 m at 152/102 kg, 3 min rest", "intensity": "race weight" },
+            { "name": "Farmers carry", "sets": 3, "reps": 1, "distance": "100 m at 2x24/2x16 kg, 90 s rest", "intensity": "race weight" },
+            { "name": "Sandbag lunges", "sets": 3, "reps": 1, "distance": "30 m at 20/10 kg, 2 min rest", "intensity": "race weight" },
+            { "name": "Wall balls", "sets": 3, "reps": 30, "distance": "90 s rest", "intensity": "Open: 6/4 kg (hyrox.com)" },
+            { "name": "Burpee broad jumps", "sets": 2, "reps": 1, "distance": "20 m, 2 min rest", "intensity": "steady rhythm" }
+          ],
+          "useWhen": "Day 2, weeks 5-7 (FitnessVolt sample). Weeks 1-3: technique + lighter loads; week 4: technique/mobility. Gym sleds feel different from race sleds (Red Bull)."
+        },
+        {
+          "id": "hyb_simulation",
+          "name": "Race simulation",
+          "type": "simulation",
+          "structure": [
+            { "name": "Run + station rounds", "sets": "2-8", "reps": 1, "distance": "1 km run then next station, no rest", "intensity": "race effort (easy in deload weeks)" }
+          ],
+          "useWhen": "Day 3. Rounds: wk1 2, wk2 3, wk3 4, wk4 2 easy, wk5 6, wk6 8 (full), wk7 6, wk8 race. Log slowest station, whether run pace held, and where form broke."
+        },
+        {
+          "id": "hyb_compromised_run",
+          "name": "Compromised running",
+          "type": "intervals",
+          "structure": [
+            { "name": "Station block", "sets": 4, "reps": 1, "distance": "e.g. 20 wall balls or 25 m sled push or 250 m erg", "intensity": "race effort" },
+            { "name": "Run", "sets": 4, "reps": 1, "distance": "400 m-1 km", "intensity": "race pace" }
+          ],
+          "useWhen": "[derived from hyrox.com advice to practise running on fatigued legs] 4-5 day plans, novice+."
+        },
+        {
+          "id": "hyb_easy_run",
+          "name": "Easy aerobic run",
+          "type": "endurance",
+          "structure": [
+            { "name": "Run", "sets": 1, "reps": 1, "duration": "30-60 min", "intensity": "Z2 conversational" }
+          ],
+          "useWhen": "[derived] 4+ day plans and foundation run-building."
+        },
+        {
+          "id": "hyb_station_technique",
+          "name": "Station technique & standards",
+          "type": "technique",
+          "structure": [
+            { "name": "Each station", "sets": "1-2", "reps": "short", "distance": "light load", "intensity": "learn standards: wall-ball depth + target, burpee broad jump feet not past hands + parallel take-off/landing, lunge knee touches floor, sled-pull rope management in racer's box" }
+          ],
+          "useWhen": "Weeks 1-2 and deload weeks; foundation users."
+        }
+      ],
+      "safety": [
+        "hyrox.com: learn the official movement standards to avoid poor form and injury; consider a certified coach.",
+        "hyrox.com: rest, eat and hydrate through training and race build-up.",
+        "Red Bull: pace the sled push (short pauses) - going all-out ruins the following run; resting on the sled pull is allowed but leaving the lane area is penalised.",
+        "[derived] Scale loads (not just reps) for beginners: start stations at ~50-70% of race weight and build to race weight by week 5.",
+        "[derived] Users who cannot run 5 km continuously start with a run-building block before race-specific work."
+      ],
+      "sources": [
+        { "title": "The Fitness Race", "author": "HYROX (official)", "url": "https://hyrox.com/the-fitness-race/", "whatWeUsed": "Race format, station order, distances, Open weights" },
+        { "title": "Best HYROX Preparation", "author": "HYROX (official)", "url": "https://hyrox.com/best-hyrox-preparation/", "whatWeUsed": "Train on fatigued legs, learn standards, pacing, recovery, ~90 min average finish" },
+        { "title": "HYROX 3-Day Training Plan", "author": "FitnessVolt", "url": "https://fitnessvolt.com/roxrace/training/3-day-plan/", "whatWeUsed": "8-week 3-day structure, session contents, deload/taper, prerequisites (third-party, not official)" },
+        { "title": "HYROX exercise stations guide", "author": "Red Bull", "url": "https://www.redbull.com/ie-en/hyrox-exercise-stations-guide", "whatWeUsed": "Per-station technique and pacing tips, Roxzone ~700 m" },
+        { "title": "How to train for HYROX in just 3 days per week", "author": "Red Bull (Ed Cooper)", "url": "https://www.redbull.com/gb-en/hyrox-training-3-days-per-week", "whatWeUsed": "[unverified - page returned empty; snippet only] 3 sessions/week sufficient" }
+      ]
+    }
+  }
+}

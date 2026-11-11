@@ -13,6 +13,7 @@ import { categoryForActivityName, workoutTypeById } from '../../data/workoutType
 import { ShareSessionButton } from './ShareSessionButton';
 import { ShareProgramSheet } from './ShareProgramSheet';
 import { Modal } from '../layout/Modal';
+import { LibraryScreen } from '../library/LibraryScreen';
 import { exerciseMeta } from '../../data/workouts';
 import type { PostWorkout } from '../../lib/social';
 import type { HealthWorkoutSummary } from '../../types';
@@ -149,6 +150,7 @@ export function TrainScreen() {
   const [sheetDay, setSheetDay] = useState<number | null>(null);
   const [progMenu, setProgMenu] = useState<(typeof myPrograms)[number] | null>(null);
   const [sharingProg, setSharingProg] = useState<(typeof myPrograms)[number] | null>(null);
+  const [libraryOpen, setLibraryOpen] = useState(false);
 
   const plan = todayPlan(weekPlan);
   const todayIdx = todayPlanIndex();
@@ -532,6 +534,17 @@ export function TrainScreen() {
           );
         })}
       </div>
+      <button className="lib-entry lib-entry-bottom" onClick={() => setLibraryOpen(true)}>
+        <span className="ic">
+          <Icon name="layers" />
+        </span>
+        <span>
+          <b>Browse the Library</b>
+          <small>Programs and goal plans by level, sport and goal</small>
+        </span>
+        <Icon name="chevron" />
+      </button>
+      <LibraryScreen open={libraryOpen} mode="training" onClose={() => setLibraryOpen(false)} />
       {progMenu && (
         <Modal open onClose={() => setProgMenu(null)} title={progMenu.name}>
           <div style={{ display: 'grid', gap: 8 }}>

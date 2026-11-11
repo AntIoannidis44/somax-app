@@ -1,0 +1,3052 @@
+{
+ "sport": "running",
+ "version": "1.0.0",
+ "generated": "2026-11-12",
+ "notes": [
+  "All numbers are tagged with a 'confidence' of 'sourced' (taken from a fetched source page), 'derived' (computed from a sourced formula) or 'unverified' / 'somaxHeuristic' (our own engineering choice or a figure we could not confirm on a fetched page).",
+  "Distances in metres/km, times in seconds, paces in seconds per km unless stated."
+ ],
+ "benchmarks": [
+  {
+   "id": "5k-time",
+   "label": "5 km time",
+   "unit": "seconds",
+   "primary": true,
+   "howToTest": "All-out solo time trial or parkrun/5K race on a flat course after 10-15 min easy warm-up incl. 3-4 strides. Use a race or time trial from the last 6 weeks. GPS distance must be 4.95-5.10 km; otherwise prorate.",
+   "validRange": [
+    720,
+    3600
+   ]
+  },
+  {
+   "id": "1mile-time",
+   "label": "1 mile / 1600 m time",
+   "unit": "seconds",
+   "howToTest": "Track time trial, 4 laps + 9 m (or 4 laps for 1600 m) after warm-up. Converted to 5K-equivalent via VDOT.",
+   "validRange": [
+    240,
+    900
+   ]
+  },
+  {
+   "id": "10k-time",
+   "label": "10 km time",
+   "unit": "seconds",
+   "howToTest": "Race or solo time trial. Converted to VDOT.",
+   "validRange": [
+    1500,
+    7200
+   ]
+  },
+  {
+   "id": "half-time",
+   "label": "Half marathon time",
+   "unit": "seconds",
+   "howToTest": "Race result from the last 12 weeks.",
+   "validRange": [
+    3300,
+    14400
+   ]
+  },
+  {
+   "id": "marathon-time",
+   "label": "Marathon time",
+   "unit": "seconds",
+   "howToTest": "Race result from the last 16 weeks.",
+   "validRange": [
+    7200,
+    25200
+   ]
+  },
+  {
+   "id": "continuous-run-minutes",
+   "label": "Longest continuous easy run",
+   "unit": "minutes",
+   "howToTest": "How long can you jog without walking at a conversational pace? Used to place new runners (under 30 min continuous = Couch-to-5K style walk/run start).",
+   "validRange": [
+    0,
+    240
+   ]
+  },
+  {
+   "id": "weekly-distance-km",
+   "label": "Average weekly running distance (last 4 weeks)",
+   "unit": "km",
+   "howToTest": "Average of the last 4 weeks from the watch/app log. Caps the starting volume.",
+   "validRange": [
+    0,
+    200
+   ]
+  },
+  {
+   "id": "longest-run-km",
+   "label": "Longest single run in last 4 weeks",
+   "unit": "km",
+   "howToTest": "From log. Caps the first long run.",
+   "validRange": [
+    0,
+    50
+   ]
+  },
+  {
+   "id": "days-per-week",
+   "label": "Days available to run",
+   "unit": "days",
+   "howToTest": "User selects 3, 4, 5 or 6.",
+   "validRange": [
+    3,
+    6
+   ]
+  },
+  {
+   "id": "running-history-months",
+   "label": "Months of consistent running (>=3x/week)",
+   "unit": "months",
+   "howToTest": "Self-report.",
+   "validRange": [
+    0,
+    600
+   ]
+  }
+ ],
+ "levelPlacement": {
+  "description": "Level = the LOWER of (performance level from 5K-equivalent time) and (history level from volume/consistency). A runner who cannot run 30 min continuously is 'new' regardless of anything else.",
+  "conversion": "Any race benchmark is converted to VDOT with paceModel.formulas, then to a 5K-equivalent time.",
+  "levels": [
+   "new",
+   "beginner",
+   "intermediate",
+   "advanced"
+  ],
+  "newRunner": {
+   "rule": "continuous-run-minutes < 30 OR cannot complete 5 km without walking",
+   "plan": "Couch-to-5K walk/run progression (sessionTemplates c25k-*) before any pace-based training",
+   "confidence": "sourced",
+   "source": "NHS Couch to 5K"
+  },
+  "performanceBySex": {
+   "basis": "Percentiles of 2018 US 5K race finishers (RunRepeat, ~2.6M participants; parkrun excluded). Median men 31:18, women 36:24; 10th-fastest-percentile men 22:06, women 25:16; 30th men 26:48, women 30:41.",
+   "confidence": "sourced (percentiles); the cut points chosen are a somaxHeuristic",
+   "male": {
+    "beginner": {
+     "slowerThanSec": 1878,
+     "note": "slower than ~median 31:18"
+    },
+    "intermediate": {
+     "fromSec": 1326,
+     "toSec": 1878
+    },
+    "advanced": {
+     "fasterThanSec": 1326,
+     "note": "top ~10% (22:06)"
+    }
+   },
+   "female": {
+    "beginner": {
+     "slowerThanSec": 2184,
+     "note": "slower than ~median 36:24"
+    },
+    "intermediate": {
+     "fromSec": 1516,
+     "toSec": 2184
+    },
+    "advanced": {
+     "fasterThanSec": 1516,
+     "note": "top ~10% (25:16)"
+    }
+   },
+   "unspecified": {
+    "useVdot": true
+   }
+  },
+  "performanceByVdot": {
+   "beginner": "VDOT < 33 (5K slower than ~28:00)",
+   "intermediate": "VDOT 33-45 (~28:00 to ~21:50)",
+   "advanced": "VDOT > 45 (faster than ~21:50)",
+   "confidence": "somaxHeuristic (sex-neutral fallback)"
+  },
+  "historyLevel": {
+   "beginner": "< 12 months consistent running OR < 20 km/week",
+   "intermediate": ">= 12 months running 3-4 days/week AND 20-40 km/week (Higdon's Intermediate 5K prerequisite is 1-2 years at 3-4 days/week, 15-20 miles/week)",
+   "advanced": ">= 24 months AND > 40 km/week (Pfitzinger's lowest 10K schedule expects 25-35 miles/week already)",
+   "confidence": "thresholds partly sourced (Higdon, Pfitzinger prerequisites), cut points somaxHeuristic"
+  },
+  "ageAndSex": {
+   "status": "optional refinement",
+   "method": "WMA age-grading: age-grade % = age-and-sex standard time / runner's time. Class bands (USATF Masters): 60%+ local, 70%+ regional, 80%+ national, 90%+ world class.",
+   "suggestedUse": "For runners 40+, if age grade >= 60% place at least 'intermediate'; >= 70% 'advanced'. Factor tables (WMA 2023) not bundled here.",
+   "confidence": "class bands sourced; mapping to levels somaxHeuristic; factor tables not fetched (unverified)"
+  }
+ },
+ "paceModel": {
+  "method": "Daniels/Gilbert VDOT. Compute VDOT from any recent race, then derive training paces as speeds that correspond to a fraction of VDOT on the oxygen-cost curve.",
+  "formulas": {
+   "oxygenCost": "VO2(v) = -4.60 + 0.182258*v + 0.000104*v^2   (v in metres/min, VO2 in ml/kg/min)",
+   "fractionSustainable": "F(t) = 0.8 + 0.1894393*e^(-0.012778*t) + 0.2989558*e^(-0.1932605*t)   (t = race duration in minutes)",
+   "vdot": "VDOT = VO2(distance/t) / F(t)",
+   "velocityAtFraction": "v = (-0.182258 + sqrt(0.182258^2 + 4*0.000104*(4.60 + f*VDOT))) / (2*0.000104)",
+   "equivalentRaceTime": "Solve VDOT(distance, t) = runnerVDOT for t (bisection, 1..900 min).",
+   "checks": "10K in 40:00 -> VO2 47.46, F 0.914, VDOT ~51.9 (matches billmill worked example). 5K 20:00 -> VDOT 49.8.",
+   "confidence": "sourced formula (billmill notes + multiple calculator pages, originating in Daniels & Gilbert 1979 'Oxygen Power')"
+  },
+  "trainingPaceFractions": {
+   "easy": {
+    "fractionOfVdot": [
+     0.63,
+     0.73
+    ],
+    "use": "easy, recovery, warm-up, cool-down, long runs",
+    "sourceRange": "Daniels: E = 59-74% VO2max; 0.63-0.73 calibrated so VDOT 51 gives 4:52-5:29/km as in Daniels' Table 5.2 excerpt"
+   },
+   "long": {
+    "same": "easy",
+    "note": "long runs are E pace; first half at the slow end"
+   },
+   "marathon": {
+    "rule": "equivalent marathon race pace at current VDOT",
+    "sourceRange": "Daniels M = 75-84% VO2max; VDOT 51 -> 4:27/km matches book excerpt"
+   },
+   "threshold": {
+    "fractionOfVdot": 0.88,
+    "sourceRange": "Daniels T 'comfortably hard', ~1 hour race effort; 0.88 reproduces VDOT 51 -> 4:11/km from book excerpt"
+   },
+   "interval": {
+    "fractionOfVdot": 0.975,
+    "sourceRange": "Daniels I = 95-100% VO2max; 0.975 reproduces VDOT 51 -> 3:51/km from book excerpt. One third-party calculator gives ~5 s/km faster at VDOT 40 (unverified)."
+   },
+   "rep": {
+    "rule": "faster of (equivalent 1-mile race pace) and (interval pace x 0.95, i.e. >=5% faster than I) at current VDOT",
+    "sourceRange": "Daniels R = 105-120% VO2max, short reps (200-600 m) with full recovery. Mile-race-pace approximation is unverified against Daniels' printed R column."
+   },
+   "race": {
+    "rule": "goal race pace (target time / distance) — only used in peak-phase race-pace sessions"
+   },
+   "walk": {
+    "rule": "brisk walk, no pace target"
+   }
+  },
+  "rules": [
+   "Train at CURRENT fitness (latest test VDOT), not goal VDOT; goal pace appears only in race-pace reps (unverified attribution to Daniels, standard coaching practice).",
+   "Without a new test, raise VDOT by at most 1 point every 4-6 weeks and only if sessions are going well (Daniels, Ask Dr Jack Daniels Q&A — sourced).",
+   "With a new race/time trial, reset VDOT to the result (up or down).",
+   "Riegel T2 = T1*(D2/D1)^1.06 may be shown as a cross-check for equivalent times (valid ~3.5-230 min); it predicts optimistically for long distances, so VDOT equivalence is the default.",
+   "New runners (slower than ~35:00 5K or 'new' level): pace targets are advisory only; prescribe by effort (talk test) and walk/run.",
+   "Adjust paces slower in heat/altitude (McMillan calculator supports this; no specific coefficients sourced)."
+  ],
+  "tableNote": "Rows with extrapolated=true (VDOT < 30) lie below the range covered by most published VDOT tables; values are formula extrapolations — treat as effort guides.",
+  "table": [
+   {
+    "fiveK": "16:00",
+    "fiveKSec": 960,
+    "vdot": 64.6,
+    "equiv": {
+     "mileSec": 279,
+     "tenKSec": 1993,
+     "halfSec": 4399,
+     "marathonSec": 9206
+    },
+    "paceSecPerKm": {
+     "easy": [
+      241,
+      272
+     ],
+     "long": [
+      241,
+      272
+     ],
+     "marathon": 218,
+     "threshold": 207,
+     "interval": 191,
+     "rep": 173,
+     "race5k": 192
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "4:01-4:32",
+     "long": "4:01-4:32",
+     "marathon": "3:38",
+     "threshold": "3:27",
+     "interval": "3:11",
+     "rep": "2:53",
+     "race5k": "3:12"
+    },
+    "equivDisplay": {
+     "mile": "4:39",
+     "tenK": "33:13",
+     "half": "1:13:19",
+     "marathon": "2:33:26"
+    }
+   },
+   {
+    "fiveK": "17:00",
+    "fiveKSec": 1020,
+    "vdot": 60.2,
+    "equiv": {
+     "mileSec": 297,
+     "tenKSec": 2116,
+     "halfSec": 4676,
+     "marathonSec": 9776
+    },
+    "paceSecPerKm": {
+     "easy": [
+      255,
+      288
+     ],
+     "long": [
+      255,
+      288
+     ],
+     "marathon": 232,
+     "threshold": 220,
+     "interval": 202,
+     "rep": 184,
+     "race5k": 204
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "4:15-4:48",
+     "long": "4:15-4:48",
+     "marathon": "3:52",
+     "threshold": "3:40",
+     "interval": "3:22",
+     "rep": "3:04",
+     "race5k": "3:24"
+    },
+    "equivDisplay": {
+     "mile": "4:57",
+     "tenK": "35:16",
+     "half": "1:17:56",
+     "marathon": "2:42:56"
+    }
+   },
+   {
+    "fiveK": "18:00",
+    "fiveKSec": 1080,
+    "vdot": 56.3,
+    "equiv": {
+     "mileSec": 315,
+     "tenKSec": 2240,
+     "halfSec": 4953,
+     "marathonSec": 10345
+    },
+    "paceSecPerKm": {
+     "easy": [
+      270,
+      304
+     ],
+     "long": [
+      270,
+      304
+     ],
+     "marathon": 245,
+     "threshold": 232,
+     "interval": 213,
+     "rep": 195,
+     "race5k": 216
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "4:30-5:04",
+     "long": "4:30-5:04",
+     "marathon": "4:05",
+     "threshold": "3:52",
+     "interval": "3:33",
+     "rep": "3:15",
+     "race5k": "3:36"
+    },
+    "equivDisplay": {
+     "mile": "5:15",
+     "tenK": "37:20",
+     "half": "1:22:33",
+     "marathon": "2:52:25"
+    }
+   },
+   {
+    "fiveK": "19:00",
+    "fiveKSec": 1140,
+    "vdot": 52.9,
+    "equiv": {
+     "mileSec": 333,
+     "tenKSec": 2364,
+     "halfSec": 5231,
+     "marathonSec": 10912
+    },
+    "paceSecPerKm": {
+     "easy": [
+      284,
+      319
+     ],
+     "long": [
+      284,
+      319
+     ],
+     "marathon": 259,
+     "threshold": 244,
+     "interval": 224,
+     "rep": 207,
+     "race5k": 228
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "4:44-5:19",
+     "long": "4:44-5:19",
+     "marathon": "4:19",
+     "threshold": "4:04",
+     "interval": "3:44",
+     "rep": "3:27",
+     "race5k": "3:48"
+    },
+    "equivDisplay": {
+     "mile": "5:33",
+     "tenK": "39:24",
+     "half": "1:27:11",
+     "marathon": "3:01:52"
+    }
+   },
+   {
+    "fiveK": "20:00",
+    "fiveKSec": 1200,
+    "vdot": 49.8,
+    "equiv": {
+     "mileSec": 351,
+     "tenKSec": 2488,
+     "halfSec": 5510,
+     "marathonSec": 11477
+    },
+    "paceSecPerKm": {
+     "easy": [
+      298,
+      335
+     ],
+     "long": [
+      298,
+      335
+     ],
+     "marathon": 272,
+     "threshold": 256,
+     "interval": 236,
+     "rep": 218,
+     "race5k": 240
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "4:58-5:35",
+     "long": "4:58-5:35",
+     "marathon": "4:32",
+     "threshold": "4:16",
+     "interval": "3:56",
+     "rep": "3:38",
+     "race5k": "4:00"
+    },
+    "equivDisplay": {
+     "mile": "5:51",
+     "tenK": "41:28",
+     "half": "1:31:50",
+     "marathon": "3:11:17"
+    }
+   },
+   {
+    "fiveK": "21:00",
+    "fiveKSec": 1260,
+    "vdot": 47.0,
+    "equiv": {
+     "mileSec": 369,
+     "tenKSec": 2612,
+     "halfSec": 5788,
+     "marathonSec": 12041
+    },
+    "paceSecPerKm": {
+     "easy": [
+      312,
+      351
+     ],
+     "long": [
+      312,
+      351
+     ],
+     "marathon": 285,
+     "threshold": 268,
+     "interval": 247,
+     "rep": 230,
+     "race5k": 252
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "5:12-5:51",
+     "long": "5:12-5:51",
+     "marathon": "4:45",
+     "threshold": "4:28",
+     "interval": "4:07",
+     "rep": "3:50",
+     "race5k": "4:12"
+    },
+    "equivDisplay": {
+     "mile": "6:09",
+     "tenK": "43:32",
+     "half": "1:36:28",
+     "marathon": "3:20:41"
+    }
+   },
+   {
+    "fiveK": "22:00",
+    "fiveKSec": 1320,
+    "vdot": 44.5,
+    "equiv": {
+     "mileSec": 388,
+     "tenKSec": 2737,
+     "halfSec": 6067,
+     "marathonSec": 12603
+    },
+    "paceSecPerKm": {
+     "easy": [
+      326,
+      366
+     ],
+     "long": [
+      326,
+      366
+     ],
+     "marathon": 299,
+     "threshold": 280,
+     "interval": 258,
+     "rep": 241,
+     "race5k": 264
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "5:26-6:06",
+     "long": "5:26-6:06",
+     "marathon": "4:59",
+     "threshold": "4:40",
+     "interval": "4:18",
+     "rep": "4:01",
+     "race5k": "4:24"
+    },
+    "equivDisplay": {
+     "mile": "6:28",
+     "tenK": "45:37",
+     "half": "1:41:07",
+     "marathon": "3:30:03"
+    }
+   },
+   {
+    "fiveK": "23:00",
+    "fiveKSec": 1380,
+    "vdot": 42.3,
+    "equiv": {
+     "mileSec": 406,
+     "tenKSec": 2862,
+     "halfSec": 6346,
+     "marathonSec": 13162
+    },
+    "paceSecPerKm": {
+     "easy": [
+      339,
+      382
+     ],
+     "long": [
+      339,
+      382
+     ],
+     "marathon": 312,
+     "threshold": 292,
+     "interval": 269,
+     "rep": 253,
+     "race5k": 276
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "5:39-6:22",
+     "long": "5:39-6:22",
+     "marathon": "5:12",
+     "threshold": "4:52",
+     "interval": "4:29",
+     "rep": "4:13",
+     "race5k": "4:36"
+    },
+    "equivDisplay": {
+     "mile": "6:46",
+     "tenK": "47:42",
+     "half": "1:45:46",
+     "marathon": "3:39:22"
+    }
+   },
+   {
+    "fiveK": "24:00",
+    "fiveKSec": 1440,
+    "vdot": 40.2,
+    "equiv": {
+     "mileSec": 425,
+     "tenKSec": 2988,
+     "halfSec": 6625,
+     "marathonSec": 13720
+    },
+    "paceSecPerKm": {
+     "easy": [
+      353,
+      397
+     ],
+     "long": [
+      353,
+      397
+     ],
+     "marathon": 325,
+     "threshold": 304,
+     "interval": 280,
+     "rep": 264,
+     "race5k": 288
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "5:53-6:37",
+     "long": "5:53-6:37",
+     "marathon": "5:25",
+     "threshold": "5:04",
+     "interval": "4:40",
+     "rep": "4:24",
+     "race5k": "4:48"
+    },
+    "equivDisplay": {
+     "mile": "7:05",
+     "tenK": "49:48",
+     "half": "1:50:25",
+     "marathon": "3:48:40"
+    }
+   },
+   {
+    "fiveK": "25:00",
+    "fiveKSec": 1500,
+    "vdot": 38.3,
+    "equiv": {
+     "mileSec": 444,
+     "tenKSec": 3113,
+     "halfSec": 6904,
+     "marathonSec": 14275
+    },
+    "paceSecPerKm": {
+     "easy": [
+      367,
+      412
+     ],
+     "long": [
+      367,
+      412
+     ],
+     "marathon": 338,
+     "threshold": 316,
+     "interval": 291,
+     "rep": 276,
+     "race5k": 300
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "6:07-6:52",
+     "long": "6:07-6:52",
+     "marathon": "5:38",
+     "threshold": "5:16",
+     "interval": "4:51",
+     "rep": "4:36",
+     "race5k": "5:00"
+    },
+    "equivDisplay": {
+     "mile": "7:24",
+     "tenK": "51:53",
+     "half": "1:55:04",
+     "marathon": "3:57:55"
+    }
+   },
+   {
+    "fiveK": "26:00",
+    "fiveKSec": 1560,
+    "vdot": 36.6,
+    "equiv": {
+     "mileSec": 462,
+     "tenKSec": 3239,
+     "halfSec": 7182,
+     "marathonSec": 14828
+    },
+    "paceSecPerKm": {
+     "easy": [
+      381,
+      427
+     ],
+     "long": [
+      381,
+      427
+     ],
+     "marathon": 351,
+     "threshold": 328,
+     "interval": 302,
+     "rep": 287,
+     "race5k": 312
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "6:21-7:07",
+     "long": "6:21-7:07",
+     "marathon": "5:51",
+     "threshold": "5:28",
+     "interval": "5:02",
+     "rep": "4:47",
+     "race5k": "5:12"
+    },
+    "equivDisplay": {
+     "mile": "7:42",
+     "tenK": "53:59",
+     "half": "1:59:42",
+     "marathon": "4:07:08"
+    }
+   },
+   {
+    "fiveK": "27:00",
+    "fiveKSec": 1620,
+    "vdot": 35.0,
+    "equiv": {
+     "mileSec": 481,
+     "tenKSec": 3365,
+     "halfSec": 7460,
+     "marathonSec": 15379
+    },
+    "paceSecPerKm": {
+     "easy": [
+      395,
+      442
+     ],
+     "long": [
+      395,
+      442
+     ],
+     "marathon": 364,
+     "threshold": 340,
+     "interval": 314,
+     "rep": 298,
+     "race5k": 324
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "6:35-7:22",
+     "long": "6:35-7:22",
+     "marathon": "6:04",
+     "threshold": "5:40",
+     "interval": "5:14",
+     "rep": "4:58",
+     "race5k": "5:24"
+    },
+    "equivDisplay": {
+     "mile": "8:01",
+     "tenK": "56:05",
+     "half": "2:04:20",
+     "marathon": "4:16:19"
+    }
+   },
+   {
+    "fiveK": "28:00",
+    "fiveKSec": 1680,
+    "vdot": 33.5,
+    "equiv": {
+     "mileSec": 500,
+     "tenKSec": 3491,
+     "halfSec": 7737,
+     "marathonSec": 15928
+    },
+    "paceSecPerKm": {
+     "easy": [
+      408,
+      457
+     ],
+     "long": [
+      408,
+      457
+     ],
+     "marathon": 377,
+     "threshold": 352,
+     "interval": 325,
+     "rep": 309,
+     "race5k": 336
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "6:48-7:37",
+     "long": "6:48-7:37",
+     "marathon": "6:17",
+     "threshold": "5:52",
+     "interval": "5:25",
+     "rep": "5:09",
+     "race5k": "5:36"
+    },
+    "equivDisplay": {
+     "mile": "8:20",
+     "tenK": "58:11",
+     "half": "2:08:57",
+     "marathon": "4:25:28"
+    }
+   },
+   {
+    "fiveK": "29:00",
+    "fiveKSec": 1740,
+    "vdot": 32.1,
+    "equiv": {
+     "mileSec": 519,
+     "tenKSec": 3617,
+     "halfSec": 8014,
+     "marathonSec": 16475
+    },
+    "paceSecPerKm": {
+     "easy": [
+      422,
+      472
+     ],
+     "long": [
+      422,
+      472
+     ],
+     "marathon": 390,
+     "threshold": 364,
+     "interval": 336,
+     "rep": 319,
+     "race5k": 348
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "7:02-7:52",
+     "long": "7:02-7:52",
+     "marathon": "6:30",
+     "threshold": "6:04",
+     "interval": "5:36",
+     "rep": "5:19",
+     "race5k": "5:48"
+    },
+    "equivDisplay": {
+     "mile": "8:39",
+     "tenK": "1:00:17",
+     "half": "2:13:34",
+     "marathon": "4:34:35"
+    }
+   },
+   {
+    "fiveK": "30:00",
+    "fiveKSec": 1800,
+    "vdot": 30.8,
+    "equiv": {
+     "mileSec": 538,
+     "tenKSec": 3743,
+     "halfSec": 8290,
+     "marathonSec": 17019
+    },
+    "paceSecPerKm": {
+     "easy": [
+      435,
+      487
+     ],
+     "long": [
+      435,
+      487
+     ],
+     "marathon": 403,
+     "threshold": 376,
+     "interval": 347,
+     "rep": 330,
+     "race5k": 360
+    },
+    "extrapolated": false,
+    "paceDisplayPerKm": {
+     "easy": "7:15-8:07",
+     "long": "7:15-8:07",
+     "marathon": "6:43",
+     "threshold": "6:16",
+     "interval": "5:47",
+     "rep": "5:30",
+     "race5k": "6:00"
+    },
+    "equivDisplay": {
+     "mile": "8:58",
+     "tenK": "1:02:23",
+     "half": "2:18:10",
+     "marathon": "4:43:39"
+    }
+   },
+   {
+    "fiveK": "31:00",
+    "fiveKSec": 1860,
+    "vdot": 29.6,
+    "equiv": {
+     "mileSec": 556,
+     "tenKSec": 3869,
+     "halfSec": 8565,
+     "marathonSec": 17561
+    },
+    "paceSecPerKm": {
+     "easy": [
+      449,
+      502
+     ],
+     "long": [
+      449,
+      502
+     ],
+     "marathon": 416,
+     "threshold": 388,
+     "interval": 358,
+     "rep": 340,
+     "race5k": 372
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "7:29-8:22",
+     "long": "7:29-8:22",
+     "marathon": "6:56",
+     "threshold": "6:28",
+     "interval": "5:58",
+     "rep": "5:40",
+     "race5k": "6:12"
+    },
+    "equivDisplay": {
+     "mile": "9:16",
+     "tenK": "1:04:29",
+     "half": "2:22:45",
+     "marathon": "4:52:41"
+    }
+   },
+   {
+    "fiveK": "32:00",
+    "fiveKSec": 1920,
+    "vdot": 28.5,
+    "equiv": {
+     "mileSec": 575,
+     "tenKSec": 3995,
+     "halfSec": 8840,
+     "marathonSec": 18102
+    },
+    "paceSecPerKm": {
+     "easy": [
+      462,
+      517
+     ],
+     "long": [
+      462,
+      517
+     ],
+     "marathon": 429,
+     "threshold": 400,
+     "interval": 369,
+     "rep": 351,
+     "race5k": 384
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "7:42-8:37",
+     "long": "7:42-8:37",
+     "marathon": "7:09",
+     "threshold": "6:40",
+     "interval": "6:09",
+     "rep": "5:51",
+     "race5k": "6:24"
+    },
+    "equivDisplay": {
+     "mile": "9:35",
+     "tenK": "1:06:35",
+     "half": "2:27:20",
+     "marathon": "5:01:42"
+    }
+   },
+   {
+    "fiveK": "33:00",
+    "fiveKSec": 1980,
+    "vdot": 27.5,
+    "equiv": {
+     "mileSec": 594,
+     "tenKSec": 4121,
+     "halfSec": 9113,
+     "marathonSec": 18640
+    },
+    "paceSecPerKm": {
+     "easy": [
+      476,
+      531
+     ],
+     "long": [
+      476,
+      531
+     ],
+     "marathon": 442,
+     "threshold": 412,
+     "interval": 380,
+     "rep": 361,
+     "race5k": 396
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "7:56-8:51",
+     "long": "7:56-8:51",
+     "marathon": "7:22",
+     "threshold": "6:52",
+     "interval": "6:20",
+     "rep": "6:01",
+     "race5k": "6:36"
+    },
+    "equivDisplay": {
+     "mile": "9:54",
+     "tenK": "1:08:41",
+     "half": "2:31:53",
+     "marathon": "5:10:40"
+    }
+   },
+   {
+    "fiveK": "34:00",
+    "fiveKSec": 2040,
+    "vdot": 26.5,
+    "equiv": {
+     "mileSec": 613,
+     "tenKSec": 4247,
+     "halfSec": 9386,
+     "marathonSec": 19176
+    },
+    "paceSecPerKm": {
+     "easy": [
+      489,
+      546
+     ],
+     "long": [
+      489,
+      546
+     ],
+     "marathon": 454,
+     "threshold": 423,
+     "interval": 391,
+     "rep": 371,
+     "race5k": 408
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "8:09-9:06",
+     "long": "8:09-9:06",
+     "marathon": "7:34",
+     "threshold": "7:03",
+     "interval": "6:31",
+     "rep": "6:11",
+     "race5k": "6:48"
+    },
+    "equivDisplay": {
+     "mile": "10:13",
+     "tenK": "1:10:47",
+     "half": "2:36:26",
+     "marathon": "5:19:36"
+    }
+   },
+   {
+    "fiveK": "35:00",
+    "fiveKSec": 2100,
+    "vdot": 25.6,
+    "equiv": {
+     "mileSec": 632,
+     "tenKSec": 4373,
+     "halfSec": 9659,
+     "marathonSec": 19710
+    },
+    "paceSecPerKm": {
+     "easy": [
+      502,
+      560
+     ],
+     "long": [
+      502,
+      560
+     ],
+     "marathon": 467,
+     "threshold": 435,
+     "interval": 402,
+     "rep": 382,
+     "race5k": 420
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "8:22-9:20",
+     "long": "8:22-9:20",
+     "marathon": "7:47",
+     "threshold": "7:15",
+     "interval": "6:42",
+     "rep": "6:22",
+     "race5k": "7:00"
+    },
+    "equivDisplay": {
+     "mile": "10:32",
+     "tenK": "1:12:53",
+     "half": "2:40:59",
+     "marathon": "5:28:30"
+    }
+   },
+   {
+    "fiveK": "36:00",
+    "fiveKSec": 2160,
+    "vdot": 24.7,
+    "equiv": {
+     "mileSec": 651,
+     "tenKSec": 4499,
+     "halfSec": 9930,
+     "marathonSec": 20242
+    },
+    "paceSecPerKm": {
+     "easy": [
+      515,
+      575
+     ],
+     "long": [
+      515,
+      575
+     ],
+     "marathon": 480,
+     "threshold": 447,
+     "interval": 413,
+     "rep": 392,
+     "race5k": 432
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "8:35-9:35",
+     "long": "8:35-9:35",
+     "marathon": "8:00",
+     "threshold": "7:27",
+     "interval": "6:53",
+     "rep": "6:32",
+     "race5k": "7:12"
+    },
+    "equivDisplay": {
+     "mile": "10:51",
+     "tenK": "1:14:59",
+     "half": "2:45:30",
+     "marathon": "5:37:22"
+    }
+   },
+   {
+    "fiveK": "37:00",
+    "fiveKSec": 2220,
+    "vdot": 23.9,
+    "equiv": {
+     "mileSec": 669,
+     "tenKSec": 4625,
+     "halfSec": 10201,
+     "marathonSec": 20773
+    },
+    "paceSecPerKm": {
+     "easy": [
+      528,
+      589
+     ],
+     "long": [
+      528,
+      589
+     ],
+     "marathon": 492,
+     "threshold": 459,
+     "interval": 424,
+     "rep": 403,
+     "race5k": 444
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "8:48-9:49",
+     "long": "8:48-9:49",
+     "marathon": "8:12",
+     "threshold": "7:39",
+     "interval": "7:04",
+     "rep": "6:43",
+     "race5k": "7:24"
+    },
+    "equivDisplay": {
+     "mile": "11:09",
+     "tenK": "1:17:05",
+     "half": "2:50:01",
+     "marathon": "5:46:13"
+    }
+   },
+   {
+    "fiveK": "38:00",
+    "fiveKSec": 2280,
+    "vdot": 23.1,
+    "equiv": {
+     "mileSec": 688,
+     "tenKSec": 4751,
+     "halfSec": 10470,
+     "marathonSec": 21301
+    },
+    "paceSecPerKm": {
+     "easy": [
+      542,
+      603
+     ],
+     "long": [
+      542,
+      603
+     ],
+     "marathon": 505,
+     "threshold": 471,
+     "interval": 435,
+     "rep": 413,
+     "race5k": 456
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "9:02-10:03",
+     "long": "9:02-10:03",
+     "marathon": "8:25",
+     "threshold": "7:51",
+     "interval": "7:15",
+     "rep": "6:53",
+     "race5k": "7:36"
+    },
+    "equivDisplay": {
+     "mile": "11:28",
+     "tenK": "1:19:11",
+     "half": "2:54:30",
+     "marathon": "5:55:01"
+    }
+   },
+   {
+    "fiveK": "39:00",
+    "fiveKSec": 2340,
+    "vdot": 22.4,
+    "equiv": {
+     "mileSec": 707,
+     "tenKSec": 4877,
+     "halfSec": 10739,
+     "marathonSec": 21828
+    },
+    "paceSecPerKm": {
+     "easy": [
+      555,
+      617
+     ],
+     "long": [
+      555,
+      617
+     ],
+     "marathon": 517,
+     "threshold": 482,
+     "interval": 446,
+     "rep": 424,
+     "race5k": 468
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "9:15-10:17",
+     "long": "9:15-10:17",
+     "marathon": "8:37",
+     "threshold": "8:02",
+     "interval": "7:26",
+     "rep": "7:04",
+     "race5k": "7:48"
+    },
+    "equivDisplay": {
+     "mile": "11:47",
+     "tenK": "1:21:17",
+     "half": "2:58:59",
+     "marathon": "6:03:48"
+    }
+   },
+   {
+    "fiveK": "40:00",
+    "fiveKSec": 2400,
+    "vdot": 21.7,
+    "equiv": {
+     "mileSec": 726,
+     "tenKSec": 5002,
+     "halfSec": 11007,
+     "marathonSec": 22353
+    },
+    "paceSecPerKm": {
+     "easy": [
+      568,
+      631
+     ],
+     "long": [
+      568,
+      631
+     ],
+     "marathon": 530,
+     "threshold": 494,
+     "interval": 457,
+     "rep": 434,
+     "race5k": 480
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "9:28-10:31",
+     "long": "9:28-10:31",
+     "marathon": "8:50",
+     "threshold": "8:14",
+     "interval": "7:37",
+     "rep": "7:14",
+     "race5k": "8:00"
+    },
+    "equivDisplay": {
+     "mile": "12:06",
+     "tenK": "1:23:22",
+     "half": "3:03:27",
+     "marathon": "6:12:33"
+    }
+   },
+   {
+    "fiveK": "41:00",
+    "fiveKSec": 2460,
+    "vdot": 21.0,
+    "equiv": {
+     "mileSec": 745,
+     "tenKSec": 5128,
+     "halfSec": 11275,
+     "marathonSec": 22877
+    },
+    "paceSecPerKm": {
+     "easy": [
+      581,
+      645
+     ],
+     "long": [
+      581,
+      645
+     ],
+     "marathon": 542,
+     "threshold": 506,
+     "interval": 468,
+     "rep": 445,
+     "race5k": 492
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "9:41-10:45",
+     "long": "9:41-10:45",
+     "marathon": "9:02",
+     "threshold": "8:26",
+     "interval": "7:48",
+     "rep": "7:25",
+     "race5k": "8:12"
+    },
+    "equivDisplay": {
+     "mile": "12:25",
+     "tenK": "1:25:28",
+     "half": "3:07:55",
+     "marathon": "6:21:17"
+    }
+   },
+   {
+    "fiveK": "42:00",
+    "fiveKSec": 2520,
+    "vdot": 20.4,
+    "equiv": {
+     "mileSec": 763,
+     "tenKSec": 5253,
+     "halfSec": 11541,
+     "marathonSec": 23399
+    },
+    "paceSecPerKm": {
+     "easy": [
+      594,
+      659
+     ],
+     "long": [
+      594,
+      659
+     ],
+     "marathon": 555,
+     "threshold": 517,
+     "interval": 479,
+     "rep": 455,
+     "race5k": 504
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "9:54-10:59",
+     "long": "9:54-10:59",
+     "marathon": "9:15",
+     "threshold": "8:37",
+     "interval": "7:59",
+     "rep": "7:35",
+     "race5k": "8:24"
+    },
+    "equivDisplay": {
+     "mile": "12:43",
+     "tenK": "1:27:33",
+     "half": "3:12:21",
+     "marathon": "6:29:59"
+    }
+   },
+   {
+    "fiveK": "43:00",
+    "fiveKSec": 2580,
+    "vdot": 19.8,
+    "equiv": {
+     "mileSec": 782,
+     "tenKSec": 5379,
+     "halfSec": 11807,
+     "marathonSec": 23919
+    },
+    "paceSecPerKm": {
+     "easy": [
+      607,
+      673
+     ],
+     "long": [
+      607,
+      673
+     ],
+     "marathon": 567,
+     "threshold": 529,
+     "interval": 490,
+     "rep": 466,
+     "race5k": 516
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "10:07-11:13",
+     "long": "10:07-11:13",
+     "marathon": "9:27",
+     "threshold": "8:49",
+     "interval": "8:10",
+     "rep": "7:46",
+     "race5k": "8:36"
+    },
+    "equivDisplay": {
+     "mile": "13:02",
+     "tenK": "1:29:39",
+     "half": "3:16:47",
+     "marathon": "6:38:39"
+    }
+   },
+   {
+    "fiveK": "44:00",
+    "fiveKSec": 2640,
+    "vdot": 19.2,
+    "equiv": {
+     "mileSec": 801,
+     "tenKSec": 5504,
+     "halfSec": 12071,
+     "marathonSec": 24438
+    },
+    "paceSecPerKm": {
+     "easy": [
+      619,
+      687
+     ],
+     "long": [
+      619,
+      687
+     ],
+     "marathon": 579,
+     "threshold": 540,
+     "interval": 501,
+     "rep": 476,
+     "race5k": 528
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "10:19-11:27",
+     "long": "10:19-11:27",
+     "marathon": "9:39",
+     "threshold": "9:00",
+     "interval": "8:21",
+     "rep": "7:56",
+     "race5k": "8:48"
+    },
+    "equivDisplay": {
+     "mile": "13:21",
+     "tenK": "1:31:44",
+     "half": "3:21:11",
+     "marathon": "6:47:18"
+    }
+   },
+   {
+    "fiveK": "45:00",
+    "fiveKSec": 2700,
+    "vdot": 18.7,
+    "equiv": {
+     "mileSec": 820,
+     "tenKSec": 5629,
+     "halfSec": 12335,
+     "marathonSec": 24955
+    },
+    "paceSecPerKm": {
+     "easy": [
+      632,
+      701
+     ],
+     "long": [
+      632,
+      701
+     ],
+     "marathon": 591,
+     "threshold": 552,
+     "interval": 511,
+     "rep": 485,
+     "race5k": 540
+    },
+    "extrapolated": true,
+    "paceDisplayPerKm": {
+     "easy": "10:32-11:41",
+     "long": "10:32-11:41",
+     "marathon": "9:51",
+     "threshold": "9:12",
+     "interval": "8:31",
+     "rep": "8:05",
+     "race5k": "9:00"
+    },
+    "equivDisplay": {
+     "mile": "13:40",
+     "tenK": "1:33:49",
+     "half": "3:25:35",
+     "marathon": "6:55:55"
+    }
+   }
+  ]
+ },
+ "improvementModel": {
+  "evidence": [
+   {
+    "fact": "Daniels: without a race, raise VDOT by ~1 point every 4-6 weeks at most (~0.17-0.25 VDOT/week).",
+    "confidence": "sourced"
+   },
+   {
+    "fact": "Gunnarsson & Bangsbo 2012: 7 weeks of 10-20-30 training in moderately trained runners improved 5 km by 48 s (VO2max +4%).",
+    "confidence": "sourced (abstract)"
+   },
+   {
+    "fact": "Gliemann et al.: 160 recreational runners, 8 weeks 10-20-30, 5 km improved 38 s.",
+    "confidence": "sourced (abstract via search)"
+   },
+   {
+    "fact": "Beginners improve faster than trained runners in absolute terms; no fetched source gave a % figure for novices.",
+    "confidence": "unverified"
+   }
+  ],
+  "vdotGainPerWeek": {
+   "byCurrentVdot": [
+    {
+     "vdotBelow": 30,
+     "gain": 0.5
+    },
+    {
+     "vdotBelow": 35,
+     "gain": 0.4
+    },
+    {
+     "vdotBelow": 42,
+     "gain": 0.25
+    },
+    {
+     "vdotBelow": 50,
+     "gain": 0.18
+    },
+    {
+     "vdotBelow": 58,
+     "gain": 0.1
+    },
+    {
+     "vdotBelow": 99,
+     "gain": 0.05
+    }
+   ],
+   "daysPerWeekMultiplier": {
+    "3": 0.85,
+    "4": 1.0,
+    "5": 1.1,
+    "6": 1.15
+   },
+   "scenarioMultiplier": {
+    "conservative": 0.7,
+    "expected": 1.0,
+    "optimistic": 1.3
+   },
+   "confidence": "somaxHeuristic, calibrated so intermediate rates sit inside Daniels' 1 VDOT / 4-6 wk and the 10-20-30 trial results; beginner rate is higher (unverified)",
+   "integration": "Simulate week by week: vdot += gain(vdot) * daysMultiplier; rate is re-looked-up each week so improvement slows as the runner gets fitter."
+  },
+  "planLength": {
+   "algorithm": [
+    "1. currentVdot = VDOT(benchmark); targetVdot = VDOT(goal distance, goal time).",
+    "2. If targetVdot <= currentVdot: goal already met at current fitness -> offer a maintenance/sharpening plan of minWeeks, or suggest a harder goal.",
+    "3. buildWeeks = number of simulated weeks until vdot >= targetVdot (expected scenario).",
+    "4. totalWeeks = buildWeeks + taperWeeks(goal distance), then clamp to [minWeeks(goal), maxBlockWeeks(level)].",
+    "5. If buildWeeks + taper > maxBlockWeeks: STEPPING-STONE. Block 1 goal = time equivalent to the VDOT reachable in maxBlockWeeks (conservative scenario, rounded to a friendly time e.g. nearest :30). After block 1, retest and generate the next block.",
+    "6. If total weeks across all blocks > 52, mark goal 'long-term'; show the first stepping stone only and say the final goal is a 1-year+ target.",
+    "7. Re-plan after every retest (every 4-6 weeks): recompute paces and remaining weeks; shorten or extend within clamps."
+   ],
+   "minWeeks": {
+    "5k": 6,
+    "10k": 8,
+    "half": 10,
+    "marathon": 16,
+    "first5k": 9
+   },
+   "maxBlockWeeks": {
+    "new": 12,
+    "beginner": 16,
+    "intermediate": 16,
+    "advanced": 18,
+    "marathon": 20
+   },
+   "taperWeeks": {
+    "5k": 1,
+    "10k": 1,
+    "half": 2,
+    "marathon": 3
+   },
+   "workedExamples": [
+    {
+     "current": "5K 30:00 (VDOT 30.8)",
+     "goal": "5K 25:00 (VDOT 38.3)",
+     "daysPerWeek": 4,
+     "result": "24 simulated build weeks (+1 taper) > 16-week block -> STEPPING STONE. Block 1 = 16 weeks; conservative scenario reaches VDOT ~35.2 (~26:50), so block-1 goal = 27:00. Retest, then Block 2 (~8-10 weeks) to 25:00. Starts with easy volume + strides; threshold from build phase."
+    },
+    {
+     "current": "5K 30:00",
+     "goal": "5K 25:00",
+     "daysPerWeek": 3,
+     "result": "28 build weeks; Block 1 conservative ~27:15 -> goal 27:30, then Block 2."
+    },
+    {
+     "current": "5K 26:00 (VDOT 36.6)",
+     "goal": "5K 25:00",
+     "daysPerWeek": 4,
+     "result": "7 build weeks + 1 taper = 8 weeks. Short base (2 wk), then threshold, VO2max intervals and goal-pace reps."
+    },
+    {
+     "current": "5K 22:00 (VDOT 44.5)",
+     "goal": "5K 20:00 (VDOT 49.8)",
+     "daysPerWeek": 5,
+     "result": "27 build weeks -> 2 blocks: Block 1 (16 wk) to ~21:00-21:15, Block 2 to sub-20."
+    },
+    {
+     "current": "5K 20:00",
+     "goal": "5K 18:00 (VDOT 56.3)",
+     "daysPerWeek": 6,
+     "result": "~56 weeks -> 'long-term' goal (>52 wk). Show first stepping stone (~19:30) only."
+    }
+   ],
+   "distanceCompletionGoals": {
+    "first5k": {
+     "weeks": 9,
+     "from": "NHS Couch to 5K",
+     "prereq": "none (walking ability)"
+    },
+    "5kFinishBeginner": {
+     "weeks": 8,
+     "from": "Higdon Novice 5K",
+     "prereq": "some jogging experience; can run ~1.5 miles (2.4 km)"
+    },
+    "halfFinish": {
+     "weeks": 12,
+     "from": "Higdon Novice 1 Half",
+     "prereq": "can run 3 miles (~5 km) 3-4x/week"
+    },
+    "marathonFinish": {
+     "weeks": 18,
+     "from": "Higdon Novice 1 Marathon",
+     "prereq": "first-time marathoners; regular running base (half marathon experience recommended — somaxHeuristic)"
+    },
+    "10kFinish": {
+     "weeks": 8,
+     "from": "Higdon Novice 10K (plan exists; details unverified)",
+     "prereq": "can run 5 km continuously"
+    }
+   },
+   "goalCatalog": [
+    {
+     "id": "first-5k",
+     "distanceM": 5000,
+     "targetSec": null,
+     "type": "completion"
+    },
+    {
+     "id": "sub-30-5k",
+     "distanceM": 5000,
+     "targetSec": 1799,
+     "targetVdot": 30.8
+    },
+    {
+     "id": "sub-25-5k",
+     "distanceM": 5000,
+     "targetSec": 1499,
+     "targetVdot": 38.3
+    },
+    {
+     "id": "sub-20-5k",
+     "distanceM": 5000,
+     "targetSec": 1199,
+     "targetVdot": 49.8
+    },
+    {
+     "id": "10k",
+     "distanceM": 10000,
+     "targetSec": "user"
+    },
+    {
+     "id": "half-marathon",
+     "distanceM": 21097.5,
+     "targetSec": "user or completion"
+    },
+    {
+     "id": "marathon",
+     "distanceM": 42195,
+     "targetSec": "user or completion"
+    }
+   ]
+  }
+ },
+ "volumeModel": {
+  "unit": "km per week (new runners: minutes)",
+  "startingWeeklyKm": {
+   "rule": "start = min(table value, 1.1 * reported weekly-distance-km); if no history, use the low end",
+   "beginner": {
+    "3": [
+     7,
+     12
+    ],
+    "4": [
+     10,
+     16
+    ],
+    "5": [
+     12,
+     20
+    ],
+    "6": [
+     15,
+     22
+    ]
+   },
+   "intermediate": {
+    "3": [
+     15,
+     22
+    ],
+    "4": [
+     20,
+     30
+    ],
+    "5": [
+     25,
+     38
+    ],
+    "6": [
+     30,
+     45
+    ]
+   },
+   "advanced": {
+    "3": [
+     25,
+     35
+    ],
+    "4": [
+     35,
+     48
+    ],
+    "5": [
+     45,
+     60
+    ],
+    "6": [
+     50,
+     75
+    ]
+   },
+   "anchors": "Higdon Novice 5K week 1 = 4.5 miles (7.2 km) over 3 runs (sourced); Higdon Intermediate 5K prereq 15-20 mi/wk (24-32 km, sourced); Pfitzinger 10K schedules start at 30/45/60 mi/wk (48/72/97 km, sourced). Ranges between anchors are somaxHeuristic."
+  },
+  "peakWeeklyKm": {
+   "5k": {
+    "beginner": [
+     13,
+     20
+    ],
+    "intermediate": [
+     30,
+     45
+    ],
+    "advanced": [
+     50,
+     80
+    ]
+   },
+   "10k": {
+    "beginner": [
+     20,
+     30
+    ],
+    "intermediate": [
+     35,
+     55
+    ],
+    "advanced": [
+     67,
+     122
+    ]
+   },
+   "half": {
+    "beginner": [
+     32,
+     40
+    ],
+    "intermediate": [
+     40,
+     60
+    ],
+    "advanced": [
+     60,
+     90
+    ]
+   },
+   "marathon": {
+    "beginner": [
+     55,
+     65
+    ],
+    "intermediate": [
+     65,
+     85
+    ],
+    "advanced": [
+     85,
+     120
+    ]
+   },
+   "anchors": "Higdon Novice 5K peak ~8 mi run (+walk); Novice HM peak ~20-23 mi (32-37 km); Novice 1 Marathon peak ~40 mi (64 km); Pfitzinger 10K peaks 42/57/76 mi (67/92/122 km). Other ranges somaxHeuristic.",
+   "rule": "also cap peak at the volume the days available can hold: maxKm = days * 90 min * (easy pace)"
+  },
+  "progression": {
+   "weeklyIncrease": "+5-10% per week (default 8%); for weekly volume < 20 km allow +2 km absolute instead",
+   "hardCaps": [
+    "never > +10% week-on-week for 'new'/'beginner' after the walk/run phase",
+    "never > +30% over any 2-week window (Nielsen 2014: >30% over 2 weeks associated with more injuries vs <10%)"
+   ],
+   "evidenceNote": "Buist 2008 RCT (532 novices): a graded 10%-rule programme (13 wk) had the same injury rate (20.8%) as a standard 8-week programme (20.3%, ~24% weekly increases). The 10% rule is a conservative default, not a proven threshold.",
+   "longRun": {
+    "shareOfWeek": "<= 25-30% of weekly km when weekly km <= ~64 (Daniels)",
+    "maxMinutes": 150,
+    "increase": "+1-2 km per week (Higdon novice plans add ~0.25-0.5 mi/week on 5K, ~1 mi/week on half/marathon)"
+   },
+   "intensityCaps": {
+    "threshold": "<= 10% of weekly km per session",
+    "interval": "<= 8% of weekly km and <= 10 km per session",
+    "rep": "<= 5% of weekly km and <= 8 km per session",
+    "easyShare": ">= 80% of weekly time at easy/low intensity (Seiler; Fitzgerald 80/20)"
+   }
+  },
+  "cutbackWeeks": {
+   "rule": "every 3rd week for new/beginner and marathon plans (Higdon Novice 1 Marathon uses every 3rd week); every 4th week otherwise",
+   "reduction": "reduce volume 20-30%, keep one light quality session",
+   "confidence": "pattern sourced (Higdon); size of reduction unverified"
+  },
+  "taper": {
+   "evidence": "Bosquet 2007 meta-analysis: ~2-week taper, volume reduced 41-60% (progressive/exponential), intensity and frequency maintained.",
+   "rules": {
+    "5k": "last 7-10 days: volume -30-50%, keep 1 short sharp session (e.g. 4-6 x 400 at race pace)",
+    "10k": "7-10 days, -30-50%",
+    "half": "10-14 days, -40-60%",
+    "marathon": "3 weeks (Higdon): week -3 ~80%, -2 ~60%, race week ~40% of peak (percentages somaxHeuristic, within Bosquet range)"
+   },
+   "keep": "same number of run days; keep some race-pace work; drop long run length first"
+  }
+ },
+ "sessionTemplates": [
+  {
+   "id": "c25k-w1",
+   "name": "Walk/run starter (C25K wk1)",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Warm-up walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    },
+    {
+     "name": "Run/walk",
+     "sets": 8,
+     "reps": 1,
+     "workSec": 60,
+     "recoverySec": 90,
+     "pace": "easy",
+     "recoveryPace": "walk",
+     "note": "last rep has no walk"
+    },
+    {
+     "name": "Cool-down walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    }
+   ],
+   "useWhen": "new runners, weeks 1 (repeat if hard)",
+   "source": "NHS Couch to 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "c25k-w2",
+   "name": "Walk/run (C25K wk2)",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Warm-up walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    },
+    {
+     "name": "Run/walk",
+     "sets": 6,
+     "reps": 1,
+     "workSec": 90,
+     "recoverySec": 120,
+     "pace": "easy",
+     "recoveryPace": "walk"
+    },
+    {
+     "name": "Cool-down walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    }
+   ],
+   "useWhen": "new runners week 2",
+   "source": "NHS Couch to 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "c25k-w3",
+   "name": "Walk/run ladder (C25K wk3)",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Warm-up walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    },
+    {
+     "name": "Run",
+     "sets": 2,
+     "reps": 1,
+     "blocks": [
+      {
+       "workSec": 90,
+       "recoverySec": 90
+      },
+      {
+       "workSec": 180,
+       "recoverySec": 180
+      }
+     ],
+     "pace": "easy",
+     "recoveryPace": "walk"
+    },
+    {
+     "name": "Cool-down walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    }
+   ],
+   "useWhen": "new runners week 3",
+   "source": "NHS Couch to 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "c25k-w4",
+   "name": "Walk/run (C25K wk4)",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Warm-up walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    },
+    {
+     "name": "Run",
+     "sets": 2,
+     "reps": 1,
+     "blocks": [
+      {
+       "workSec": 180,
+       "recoverySec": 90
+      },
+      {
+       "workSec": 300,
+       "recoverySec": 150
+      }
+     ],
+     "pace": "easy",
+     "recoveryPace": "walk"
+    },
+    {
+     "name": "Cool-down walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    }
+   ],
+   "useWhen": "new runners week 4 (16 min running)",
+   "source": "NHS Couch to 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "c25k-w5",
+   "name": "Walk/run to 20 min (C25K wk5)",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Warm-up walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    },
+    {
+     "name": "Variant A 3x5 min run / 3 min walk; B 2x8 min / 5 min walk; C 20 min continuous",
+     "sets": 1,
+     "reps": 1,
+     "pace": "easy"
+    },
+    {
+     "name": "Cool-down walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    }
+   ],
+   "useWhen": "new runners week 5",
+   "source": "NHS Couch to 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "c25k-w6",
+   "name": "Walk/run to 25 min (C25K wk6)",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Warm-up walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    },
+    {
+     "name": "A 5-8-5 min runs w/ 3 min walks; B 2x10 min / 3 min walk; C 25 min continuous",
+     "sets": 1,
+     "reps": 1,
+     "pace": "easy"
+    },
+    {
+     "name": "Cool-down walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    }
+   ],
+   "useWhen": "new runners week 6",
+   "source": "NHS Couch to 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "c25k-continuous",
+   "name": "Continuous run (C25K wk7-9)",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Warm-up walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    },
+    {
+     "name": "Continuous run",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": [
+      1500,
+      1680,
+      1800
+     ],
+     "pace": "easy",
+     "note": "25 min wk7, 28 min wk8, 30 min wk9"
+    },
+    {
+     "name": "Cool-down walk",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 300,
+     "pace": "walk"
+    }
+   ],
+   "useWhen": "new runners weeks 7-9",
+   "source": "NHS Couch to 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "easy",
+   "name": "Easy run",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Easy run",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": [
+      1200,
+      4200
+     ],
+     "pace": "easy",
+     "note": "conversational; HR ~65-75% max"
+    }
+   ],
+   "useWhen": "most days; >=80% of weekly time",
+   "source": "Daniels E; Higdon talk test / 65-75% HRmax",
+   "confidence": "sourced"
+  },
+  {
+   "id": "easy-strides",
+   "name": "Easy + strides",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Easy run",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": [
+      1200,
+      2700
+     ],
+     "pace": "easy"
+    },
+    {
+     "name": "Strides",
+     "sets": 1,
+     "reps": [
+      4,
+      6
+     ],
+     "durationSec": 20,
+     "recoverySec": 60,
+     "pace": "rep",
+     "note": "smooth, fast, relaxed; full walk/jog recovery"
+    }
+   ],
+   "useWhen": "base phase quality substitute; day before workouts; taper",
+   "source": "strides: standard practice",
+   "confidence": "unverified"
+  },
+  {
+   "id": "recovery",
+   "name": "Recovery run",
+   "type": "easy",
+   "structure": [
+    {
+     "name": "Very easy run",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": [
+      1200,
+      2400
+     ],
+     "pace": "easy",
+     "note": "slow end of easy range"
+    }
+   ],
+   "useWhen": "day after a hard session for 5-6 day runners",
+   "source": "Daniels E",
+   "confidence": "sourced"
+  },
+  {
+   "id": "long",
+   "name": "Long run",
+   "type": "long",
+   "structure": [
+    {
+     "name": "Long easy run",
+     "sets": 1,
+     "reps": 1,
+     "distanceKm": "from volumeModel.progression.longRun",
+     "pace": "easy",
+     "note": "<=25-30% of weekly km, <=150 min"
+    }
+   ],
+   "useWhen": "once per week, all phases except race week",
+   "source": "Daniels E caps; Higdon long runs",
+   "confidence": "sourced"
+  },
+  {
+   "id": "long-mp-finish",
+   "name": "Long run with marathon-pace finish",
+   "type": "long",
+   "structure": [
+    {
+     "name": "Easy",
+     "sets": 1,
+     "reps": 1,
+     "shareOfRun": 0.7,
+     "pace": "easy"
+    },
+    {
+     "name": "Marathon pace",
+     "sets": 1,
+     "reps": 1,
+     "shareOfRun": 0.3,
+     "pace": "race",
+     "note": "M pace; Daniels caps M sessions at lesser of 110 min / 18 mi"
+    }
+   ],
+   "useWhen": "half/marathon build+peak, intermediate/advanced",
+   "source": "Daniels M caps (sourced); structure unverified",
+   "confidence": "unverified"
+  },
+  {
+   "id": "tempo",
+   "name": "Threshold (tempo) run",
+   "type": "tempo",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "Steady threshold",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": [
+      900,
+      1200
+     ],
+     "pace": "tempo",
+     "note": "comfortably hard; Daniels ~15-20 min sustained"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "build phase onward; 1x/week",
+   "source": "Daniels T",
+   "confidence": "sourced"
+  },
+  {
+   "id": "tempo-progressive",
+   "name": "Higdon-style tempo",
+   "type": "tempo",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "Tempo build",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": [
+      1800,
+      2400
+     ],
+     "pace": "tempo",
+     "note": "30-40 min total, easing up to ~10K effort in the middle, easy either side"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "intermediate 5K/10K build",
+   "source": "Higdon Intermediate 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "cruise-intervals",
+   "name": "Cruise intervals",
+   "type": "tempo",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "Threshold reps",
+     "sets": 1,
+     "reps": [
+      3,
+      6
+     ],
+     "distanceKm": [
+      1.0,
+      1.6
+     ],
+     "pace": "tempo",
+     "recoveryRatio": "5:1 work:rest (e.g. 1 min jog per 5 min)"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "build/peak; alternative to steady tempo",
+   "source": "Daniels T (cruise intervals, 5:1)",
+   "confidence": "sourced"
+  },
+  {
+   "id": "intervals-vo2",
+   "name": "VO2max intervals",
+   "type": "intervals",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "I-pace reps",
+     "sets": 1,
+     "reps": [
+      4,
+      6
+     ],
+     "distanceKm": [
+      0.8,
+      1.2
+     ],
+     "pace": "interval",
+     "note": "each rep 3-5 min",
+     "recovery": "jog slightly shorter than the rep duration (e.g. 6x800 with 400 jog)"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "peak phase 5K/10K; intermediate+",
+   "source": "Daniels I (3-5 min bouts; <=8% weekly km)",
+   "confidence": "sourced"
+  },
+  {
+   "id": "intervals-400",
+   "name": "400 m repeats",
+   "type": "reps",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "400s",
+     "sets": 1,
+     "reps": [
+      5,
+      8
+     ],
+     "distanceKm": 0.4,
+     "pace": "rep",
+     "recovery": "equal-distance jog/walk",
+     "note": "start 5, build to 8"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "5K build/peak for intermediates",
+   "source": "Higdon Intermediate 5K (400s at mile pace)",
+   "confidence": "sourced"
+  },
+  {
+   "id": "reps-200",
+   "name": "Short repetitions",
+   "type": "reps",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "200s",
+     "sets": 1,
+     "reps": [
+      6,
+      10
+     ],
+     "distanceKm": 0.2,
+     "pace": "rep",
+     "recovery": "full recovery, 2-3x rep time (1:2-3)"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "speed/economy; build phase for 5K; <=5% weekly km",
+   "source": "Daniels R",
+   "confidence": "sourced"
+  },
+  {
+   "id": "fartlek",
+   "name": "Fartlek",
+   "type": "fartlek",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "Surges",
+     "sets": 1,
+     "reps": [
+      6,
+      10
+     ],
+     "durationSec": [
+      30,
+      120
+     ],
+     "pace": "interval",
+     "recovery": "equal time easy",
+     "note": "by feel; good first 'quality' session for beginners"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "beginner first quality; base-to-build bridge",
+   "source": "general practice",
+   "confidence": "unverified"
+  },
+  {
+   "id": "10-20-30",
+   "name": "10-20-30 blocks",
+   "type": "intervals",
+   "structure": [
+    {
+     "name": "Warm-up",
+     "sets": 1,
+     "reps": 1,
+     "distanceKm": 1.0,
+     "pace": "easy"
+    },
+    {
+     "name": "10-20-30 block",
+     "sets": [
+      3,
+      4
+     ],
+     "reps": 5,
+     "blocks": [
+      {
+       "durationSec": 30,
+       "pace": "easy"
+      },
+      {
+       "durationSec": 20,
+       "pace": "tempo"
+      },
+      {
+       "durationSec": 10,
+       "pace": "rep",
+       "note": "near max"
+      }
+     ],
+     "setRecoverySec": 120
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "time-efficient quality for 3-4 day/week runners",
+   "source": "Gunnarsson & Bangsbo 2012 (1 km warm-up, 3-4 x 5-min blocks, 2 min rest)",
+   "confidence": "sourced"
+  },
+  {
+   "id": "race-pace",
+   "name": "Goal race-pace reps",
+   "type": "intervals",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "Goal pace reps",
+     "sets": 1,
+     "reps": [
+      4,
+      6
+     ],
+     "distanceKm": 1.0,
+     "pace": "race",
+     "recovery": "90-120 s jog"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "peak phase only, final 3-5 weeks",
+   "source": "structure somaxHeuristic",
+   "confidence": "unverified"
+  },
+  {
+   "id": "time-trial",
+   "name": "5K time trial / parkrun",
+   "type": "intervals",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "5 km all-out",
+     "sets": 1,
+     "reps": 1,
+     "distanceKm": 5.0,
+     "pace": "race"
+    },
+    {
+     "name": "Cool-down jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "retest every 4-6 weeks; resets VDOT",
+   "source": "Daniels: use races to reset VDOT; Higdon Intermediate 5K includes a week-4 test 5K",
+   "confidence": "sourced"
+  },
+  {
+   "id": "race",
+   "name": "Goal race",
+   "type": "intervals",
+   "structure": [
+    {
+     "name": "Warm-up jog",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": 600,
+     "pace": "easy"
+    },
+    {
+     "name": "Race",
+     "sets": 1,
+     "reps": 1,
+     "distanceKm": "goal",
+     "pace": "race"
+    }
+   ],
+   "useWhen": "final day",
+   "source": "—",
+   "confidence": "sourced"
+  },
+  {
+   "id": "cross",
+   "name": "Cross-training",
+   "type": "cross",
+   "structure": [
+    {
+     "name": "Low-impact cardio (bike, swim, elliptical, walk)",
+     "sets": 1,
+     "reps": 1,
+     "durationSec": [
+      1800,
+      3600
+     ],
+     "pace": "easy"
+    }
+   ],
+   "useWhen": "replace a run day when days > tolerable run days, or for injury-prone runners",
+   "source": "Higdon (Sat/Sun cross-training 30-60 min)",
+   "confidence": "sourced"
+  },
+  {
+   "id": "rest",
+   "name": "Rest",
+   "type": "rest",
+   "structure": [],
+   "useWhen": "at least 1 day/week; between every run for new runners",
+   "source": "NHS C25K rest between runs; Higdon",
+   "confidence": "sourced"
+  }
+ ],
+ "weekStructure": {
+  "dayIndex": "0=Mon ... 6=Sun (engine may rotate so 'long' falls on the user's preferred day)",
+  "phases": {
+   "split": {
+    "base": 0.35,
+    "build": 0.35,
+    "peak": 0.2,
+    "taper": "taperWeeks(goal)",
+    "minBaseWeeks": 2,
+    "note": "for plans <= 8 weeks: base 2, build 2-3, peak 2-3, taper 1. Phase split somaxHeuristic; Daniels uses a 4-phase structure (unverified detail)."
+   },
+   "base": {
+    "focus": "easy volume + strides/fartlek; build long run",
+    "qualityTypes": [
+     "easy-strides",
+     "fartlek"
+    ]
+   },
+   "build": {
+    "focus": "introduce threshold; short reps for economy",
+    "qualityTypes": [
+     "tempo",
+     "tempo-progressive",
+     "cruise-intervals",
+     "reps-200",
+     "intervals-400",
+     "10-20-30"
+    ]
+   },
+   "peak": {
+    "focus": "VO2max intervals + goal race pace; volume plateaus",
+    "qualityTypes": [
+     "intervals-vo2",
+     "race-pace",
+     "cruise-intervals",
+     "intervals-400",
+     "long-mp-finish"
+    ]
+   },
+   "taper": {
+    "focus": "cut volume, keep frequency and a little intensity",
+    "qualityTypes": [
+     "race-pace",
+     "easy-strides"
+    ]
+   }
+  },
+  "byDays": {
+   "3": {
+    "hardSessions": 1,
+    "layout": {
+     "base": [
+      "rest",
+      "easy-strides",
+      "rest",
+      "easy",
+      "rest",
+      "long",
+      "rest"
+     ],
+     "build": [
+      "rest",
+      "Q1",
+      "rest",
+      "easy",
+      "rest",
+      "long",
+      "rest"
+     ],
+     "peak": [
+      "rest",
+      "Q1",
+      "rest",
+      "easy-strides",
+      "rest",
+      "long",
+      "rest"
+     ],
+     "taper": [
+      "rest",
+      "race-pace",
+      "rest",
+      "easy-strides",
+      "rest",
+      "race",
+      "rest"
+     ]
+    },
+    "note": "Never run consecutive days for 'new'/'beginner' (C25K/Higdon novice pattern Tue/Thu/Sat). Intermediate+ on 3 days may make Thu a second quality (Q2) in peak."
+   },
+   "4": {
+    "hardSessions": "1 (beginner) or 2",
+    "layout": {
+     "base": [
+      "rest",
+      "easy-strides",
+      "easy",
+      "rest",
+      "easy",
+      "rest",
+      "long"
+     ],
+     "build": [
+      "rest",
+      "Q1",
+      "easy",
+      "rest",
+      "Q2|easy",
+      "rest",
+      "long"
+     ],
+     "peak": [
+      "rest",
+      "Q1",
+      "easy",
+      "rest",
+      "Q2",
+      "rest",
+      "long"
+     ],
+     "taper": [
+      "rest",
+      "race-pace",
+      "easy",
+      "rest",
+      "easy-strides",
+      "rest",
+      "race"
+     ]
+    }
+   },
+   "5": {
+    "hardSessions": 2,
+    "layout": {
+     "base": [
+      "rest",
+      "easy",
+      "easy-strides",
+      "easy",
+      "rest",
+      "easy",
+      "long"
+     ],
+     "build": [
+      "rest",
+      "easy",
+      "Q1",
+      "easy",
+      "rest",
+      "Q2|easy",
+      "long"
+     ],
+     "peak": [
+      "rest",
+      "easy",
+      "Q1",
+      "easy",
+      "rest",
+      "Q2",
+      "long"
+     ],
+     "taper": [
+      "rest",
+      "easy",
+      "race-pace",
+      "easy",
+      "rest",
+      "easy-strides",
+      "race"
+     ]
+    },
+    "note": "Mirrors Higdon Intermediate 5K: Mon/Fri rest, Tue/Thu easy, Wed workout, Sat fast-or-easy, Sun long."
+   },
+   "6": {
+    "hardSessions": 2,
+    "layout": {
+     "base": [
+      "rest",
+      "easy",
+      "easy-strides",
+      "easy",
+      "easy",
+      "easy",
+      "long"
+     ],
+     "build": [
+      "rest",
+      "Q1",
+      "recovery",
+      "easy",
+      "Q2",
+      "easy",
+      "long"
+     ],
+     "peak": [
+      "rest",
+      "Q1",
+      "recovery",
+      "easy",
+      "Q2",
+      "easy",
+      "long"
+     ],
+     "taper": [
+      "rest",
+      "race-pace",
+      "easy",
+      "easy",
+      "easy-strides",
+      "rest",
+      "race"
+     ]
+    },
+    "note": "Intermediate/advanced only; beginners capped at 4 run days + optional cross."
+   }
+  },
+  "qualitySelection": {
+   "Q1": "phase primary (build: tempo/cruise; peak: intervals-vo2 or race-pace)",
+   "Q2": "phase secondary (build: reps-200/intervals-400/10-20-30; peak: cruise-intervals or long-mp-finish for half/marathon)",
+   "rules": [
+    "no two hard days back-to-back",
+    "long run counts as a hard day for beginners",
+    "cutback week: drop Q2, shorten Q1 and long run",
+    "retest week: time-trial replaces Q1"
+   ]
+  },
+  "goalDistanceTweaks": {
+   "5k": "more I and R; long run 60-90 min max",
+   "10k": "T and I balanced",
+   "half": "T emphasis, long run up to 16-19 km (Higdon novice peak 10 mi) for beginners",
+   "marathon": "long run priority (Higdon novice peak 20 mi / 32 km); M-pace work; Q2 often dropped for beginners"
+  }
+ },
+ "safety": [
+  {
+   "rule": "Health screen: no major health problems / clearance if unsure before starting (Higdon prerequisite).",
+   "confidence": "sourced"
+  },
+  {
+   "rule": "New runners start with walk/run (C25K: 1 min run / 1.5 min walk, 3x/week, rest day between) and only progress when the current week feels manageable; repeating a week is allowed (NHS says you can take longer than 9 weeks).",
+   "confidence": "sourced"
+  },
+  {
+   "rule": "Weekly volume: default +<=10%/week; never > +30% over any 2 weeks (Nielsen 2014). The 10% rule itself has weak evidence (Buist 2008) so it is a conservative default.",
+   "confidence": "sourced"
+  },
+  {
+   "rule": "Novices have ~2.3x the injury rate of recreational runners per 1000 h (17.8 vs 7.7; Videbaek 2015) — beginners get extra rest days and no back-to-back hard days.",
+   "confidence": "sourced"
+  },
+  {
+   "rule": ">= 80% of training time at easy intensity; easy = conversational (Seiler, Fitzgerald 80/20, Higdon).",
+   "confidence": "sourced"
+  },
+  {
+   "rule": "Quality volume caps per session: T <= 10%, I <= 8% (and <= 10 km), R <= 5% (and <= 8 km) of weekly km (Daniels).",
+   "confidence": "sourced"
+  },
+  {
+   "rule": "Long run <= 25-30% of weekly km (when <= ~64 km/week) and <= 150 min (Daniels E caps).",
+   "confidence": "sourced"
+  },
+  {
+   "rule": "Pace increases: no more than +1 VDOT per 4-6 weeks without a test (Daniels).",
+   "confidence": "sourced"
+  },
+  {
+   "rule": "No structured intervals for 'new' runners until they can run 30 min continuously; first quality is strides/fartlek.",
+   "confidence": "somaxHeuristic"
+  },
+  {
+   "rule": "Pain that changes your gait, or that worsens during a run, = stop and rest; persistent pain > 3 days = see a professional.",
+   "confidence": "unverified (general guidance)"
+  },
+  {
+   "rule": "Missed >= 2 weeks: resume at ~50-70% of previous volume and retest before using old paces.",
+   "confidence": "unverified"
+  },
+  {
+   "rule": "Hot/humid or altitude: run by effort, slow paces.",
+   "confidence": "McMillan supports heat/altitude adjustment; no coefficients sourced"
+  }
+ ],
+ "sources": [
+  {
+   "title": "Get running with Couch to 5K / Couch to 5K running plan",
+   "author": "NHS (UK)",
+   "url": "https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/couch-to-5k-running-plan/",
+   "whatWeUsed": "9-week walk/run progression, week-by-week intervals, 3 runs/week with rest days, 5 min warm-up/cool-down walks"
+  },
+  {
+   "title": "Novice 5K",
+   "author": "Hal Higdon",
+   "url": "https://www.halhigdon.com/training-programs/5k-training/novice-5k/",
+   "whatWeUsed": "8 weeks, 3 runs from 1.5 to 3 mi, walk days, conversational pace, prerequisites"
+  },
+  {
+   "title": "Intermediate 5K",
+   "author": "Hal Higdon",
+   "url": "https://www.halhigdon.com/training-programs/5k-training/intermediate-5k/",
+   "whatWeUsed": "5-day layout, 400 m repeats 5->8, 30-40 min tempo, long run 5->7 mi, week-4 test 5K, prerequisites 15-20 mi/wk"
+  },
+  {
+   "title": "Novice 1 Half Marathon",
+   "author": "Hal Higdon",
+   "url": "https://www.halhigdon.com/training-programs/half-marathon-training/novice-1-half-marathon/",
+   "whatWeUsed": "12 weeks, 4 run days, long run 4->10 mi, ~20-23 mi peak, 65-75% HRmax easy, 1-week taper"
+  },
+  {
+   "title": "Novice 1 Marathon",
+   "author": "Hal Higdon",
+   "url": "https://www.halhigdon.com/training-programs/marathon-training/novice-1-marathon/",
+   "whatWeUsed": "18 weeks, long run 6->20 mi, ~40 mi peak, step-back every 3rd week, 3-week taper"
+  },
+  {
+   "title": "Training for an 8K or 10K race (Faster Road Racing excerpt)",
+   "author": "Pete Pfitzinger & Philip Latter (Human Kinetics)",
+   "url": "https://us.humankinetics.com/blogs/excerpt/training-for-an-8k-or-10k-race",
+   "whatWeUsed": "12-week schedules, mileage tiers 30-42 / 45-57 / 60-76 mi, entry prerequisites, peak 3 weeks out then taper"
+  },
+  {
+   "title": "Jack Daniels (coach)",
+   "author": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Jack_Daniels_(coach)",
+   "whatWeUsed": "VDOT concept, E/M/T/I/R purposes, %HRmax, session caps (T 10%, I 8%, R 5%), 3-5 min intervals"
+  },
+  {
+   "title": "Reading Daniels' Running Formula - Chapter 4",
+   "author": "C. D. Baca (book notes)",
+   "url": "https://cdbaca.github.io/ssg/reading-daniels-running-formula-chapter-4.html",
+   "whatWeUsed": "%VO2max per zone (E 59-74, I 95-100, R 105-120), E/long run caps, cruise interval 5:1, R recovery 1:2-3"
+  },
+  {
+   "title": "Calculating VO2max",
+   "author": "Bill Mill (notes)",
+   "url": "https://notes.billmill.org/fitness/calculating_v02_max.html",
+   "whatWeUsed": "Daniels/Gilbert oxygen-cost and %max equations with worked 10K example"
+  },
+  {
+   "title": "VDOT pace table search results (Daniels' Running Formula Table 5.2 excerpt for VDOT 51)",
+   "author": "various (search snippet)",
+   "url": "https://test.knowt.com/note/c9a27c0b-2f67-49ce-8736-e000492dbdae/Daniels-Running-Formula--Comprehensive",
+   "whatWeUsed": "Calibration point VDOT 51: E 4:52-5:29, M 4:27, T 4:11, I 3:51 per km (from search snippet, page not fetched — treat as partially verified)"
+  },
+  {
+   "title": "Ask Dr. Jack Daniels",
+   "author": "V.O2 / Run SMART Project",
+   "url": "https://news.vdoto2.com/2010/03/02/ask-dr-jack-daniels/",
+   "whatWeUsed": "+1 VDOT every 4-6 weeks max without a race"
+  },
+  {
+   "title": "Peter Riegel",
+   "author": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Peter_Riegel",
+   "whatWeUsed": "T2 = T1*(D2/D1)^1.06, valid ~3.5-230 min, optimistic for longer distances"
+  },
+  {
+   "title": "McMillan Running",
+   "author": "Greg McMillan",
+   "url": "https://www.mcmillanrunning.com/",
+   "whatWeUsed": "Principle: combine physiology with real-world results; heat/altitude adjustments; paces from recent race or goal"
+  },
+  {
+   "title": "No effect of a graded training program on the number of running-related injuries in novice runners (Buist et al. 2008, AJSM)",
+   "author": "Buist et al.",
+   "url": "https://research.rug.nl/en/publications/no-effect-of-a-graded-training-program-on-the-number-of-running-r/",
+   "whatWeUsed": "10% rule RCT: 20.8% vs 20.3% injuries (via search summary of abstract)"
+  },
+  {
+   "title": "Excessive progression in weekly running distance and risk of running-related injuries (Nielsen et al. 2014, JOSPT)",
+   "author": "Nielsen et al.",
+   "url": "https://vbn.aau.dk/da/publications/excessive-progression-in-weekly-running-distance-and-risk-of-runn",
+   "whatWeUsed": "874 novices; >30% increase over 2 weeks linked to more injuries (via search summary of abstract)"
+  },
+  {
+   "title": "Incidence of running-related injuries per 1000 h (Videbaek et al. 2015, Sports Med)",
+   "author": "Videbaek et al.",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4473093/",
+   "whatWeUsed": "Novice 17.8 vs recreational 7.7 injuries per 1000 h (via search summary)"
+  },
+  {
+   "title": "Effects of tapering on performance: a meta-analysis (Bosquet et al. 2007, MSSE)",
+   "author": "Bosquet et al.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17762369/",
+   "whatWeUsed": "2-week taper, 41-60% volume cut, maintain intensity and frequency (via search summary)"
+  },
+  {
+   "title": "Polarized training has greater impact on key endurance variables... (Stöggl & Sperlich) / Seiler reviews",
+   "author": "Seiler; Stöggl & Sperlich",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4621419/",
+   "whatWeUsed": "~80% low intensity in elite endurance athletes; polarized > threshold-heavy (via search summary)"
+  },
+  {
+   "title": "80/20 Endurance articles",
+   "author": "Matt Fitzgerald",
+   "url": "https://www.8020endurance.com/i-would-pack-the-ventilatory-threshold-heres-why/",
+   "whatWeUsed": "~80% below VT1; talk test as VT1 marker (via search summary)"
+  },
+  {
+   "title": "The 10-20-30 training concept improves performance... (Gunnarsson & Bangsbo 2012)",
+   "author": "Gunnarsson & Bangsbo",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22556401/",
+   "whatWeUsed": "7 weeks, 5 km -48 s, VO2max +4%; session structure (via search summary)"
+  },
+  {
+   "title": "US 5K stats page",
+   "author": "RunRepeat",
+   "url": "https://runrepeat.com/the-us-5k-stats-page",
+   "whatWeUsed": "5K percentiles by sex (2018 US races) for level placement"
+  },
+  {
+   "title": "Age Grading",
+   "author": "USATF Masters",
+   "url": "https://usatfmasters.org/age-grading/",
+   "whatWeUsed": "Age-grade class bands 60/70/80/90%, WMA 2023 tables"
+  }
+ ]
+}

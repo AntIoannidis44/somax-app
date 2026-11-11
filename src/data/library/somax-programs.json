@@ -1,0 +1,3121 @@
+[
+  {
+    "id": "somax-first-steps-full-body",
+    "name": "Somax First Steps Full Body",
+    "category": "gym",
+    "level": "beginner",
+    "sport": "strength-training",
+    "goals": [
+      "general-fitness",
+      "strength",
+      "muscle"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "machines",
+      "dumbbells",
+      "cables"
+    ],
+    "description": "A confidence-building full-body session using machines and dumbbells so you can learn the movement patterns before loading a barbell.",
+    "whoItsFor": "Complete beginners in a commercial gym who want a simple plan they can follow without a coach, around a busy week.",
+    "lifestyle": [
+      "full-gym",
+      "busy"
+    ],
+    "howToRun": [
+      "Mon/Wed/Fri or any 3 days with a rest day between.",
+      "Pick weights that leave 2-3 reps in the tank; when you hit the top of the rep range on every set, go up the next increment.",
+      "Rest 60-90s between sets.",
+      "After 8-12 weeks, move to Somax Strength Foundations or StrongLifts 5x5."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or rower",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: bodyweight squats + arm circles",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Leg Press",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Chest Press Machine",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Lat Pulldown",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Seated Cable Row",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Dead Bug",
+        "sets": 2,
+        "reps": "8/side",
+        "group": "A"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 2,
+        "reps": "12",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "stronglifts-5x5-workout-a",
+      "rfitness-basic-beginner-a",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-home-dumbbell-full-body",
+    "name": "Somax Home Dumbbell Full Body",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "strength-training",
+    "goals": [
+      "muscle",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "dumbbells",
+      "bodyweight"
+    ],
+    "description": "A full-body muscle-building session with just a pair of dumbbells, paired into supersets to save time.",
+    "whoItsFor": "Beginners training at home with one or two pairs of dumbbells - ideal for parents, shift workers or anyone who can't get to a gym.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "busy",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "3 days a week, non-consecutive.",
+      "Use a weight you can lift for the top of the range with 1-2 reps to spare; add reps first, then weight.",
+      "Rest 60s after each superset round.",
+      "When the heaviest dumbbells feel light for 15 reps, slow the lowering to 3 seconds or move to a gym plan."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Goblet Squat",
+        "sets": 3,
+        "reps": "10-15",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Floor Press",
+        "sets": 3,
+        "reps": "10-15",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 3,
+        "reps": "10-15",
+        "group": "B"
+      },
+      {
+        "name": "One-arm Dumbbell Row",
+        "sets": 3,
+        "reps": "10/arm",
+        "group": "B"
+      },
+      {
+        "name": "Dumbbell Reverse Lunge",
+        "sets": 2,
+        "reps": "8/leg",
+        "group": "C"
+      },
+      {
+        "name": "Dumbbell Shoulder Press (seated)",
+        "sets": 2,
+        "reps": "10-12",
+        "group": "C"
+      },
+      {
+        "name": "Plank",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "rfitness-basic-beginner-a",
+      "bwf-recommended-routine"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-strength-foundations",
+    "name": "Somax Strength Foundations",
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "strength-training",
+    "goals": [
+      "strength",
+      "muscle"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 60,
+    "equipment": [
+      "barbell",
+      "squat rack",
+      "dumbbells",
+      "pull-up bar"
+    ],
+    "description": "A barbell session with one heavy top lift, a lighter second lift and targeted accessories - the bridge from beginner linear progress to wave loading.",
+    "whoItsFor": "Lifters 6-18 months in who have stalled on a beginner 5x5 and can train three times a week around work.",
+    "lifestyle": [
+      "full-gym",
+      "busy"
+    ],
+    "howToRun": [
+      "3 days a week; rotate the main lift (squat, bench, deadlift, press) each session.",
+      "Work up to a top set of 5 at RPE 8, then 3 back-off sets at 90% of that weight. Add 2.5kg to the top set when it moves well.",
+      "Rest 3 min on main lifts, 90s on accessories.",
+      "Every 4th week take a lighter deload week."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or rower",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: bodyweight squats + arm circles",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Back Squat – top set",
+        "sets": 1,
+        "reps": "5",
+        "weight": "RPE 8"
+      },
+      {
+        "name": "Back Squat – back-off",
+        "sets": 3,
+        "reps": "5",
+        "weight": "90% of top set"
+      },
+      {
+        "name": "Bench Press",
+        "sets": 3,
+        "reps": "8",
+        "weight": "RPE 7"
+      },
+      {
+        "name": "Chin-up",
+        "sets": 3,
+        "reps": "6-8",
+        "weight": "bodyweight or assisted",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Split Squat",
+        "sets": 3,
+        "reps": "8/leg",
+        "group": "A"
+      },
+      {
+        "name": "Hanging Knee Raise",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "wendler-531-beginners-day-1",
+      "gzclp-day-1",
+      "stronglifts-5x5-workout-a"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-upper-builder",
+    "name": "Somax Upper Builder",
+    "series": "Somax Upper/Lower",
+    "day": 1,
+    "daysInSeries": 2,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "bodybuilding",
+    "goals": [
+      "muscle",
+      "strength"
+    ],
+    "duration": "55 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 55,
+    "equipment": [
+      "barbell",
+      "dumbbells",
+      "cables",
+      "bench"
+    ],
+    "description": "Chest, back, shoulders and arms with a heavier compound start and supersets to finish. Pairs with Somax Lower Builder.",
+    "whoItsFor": "Intermediate gym-goers who want to build muscle on four days a week without spending hours per session.",
+    "lifestyle": [
+      "full-gym",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Upper/Lower/rest/Upper/Lower/rest/rest (e.g. Mon, Tue, Thu, Fri).",
+      "Double progression: when all sets hit the top of the rep range, add 2.5kg (or the next dumbbell).",
+      "Rest 2 min on the first two lifts, 60-90s on supersets.",
+      "After 8-12 weeks, move to a push/pull/legs split for more volume."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or rower",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: bodyweight squats + arm circles",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Bench Press",
+        "sets": 4,
+        "reps": "6-8"
+      },
+      {
+        "name": "Chest-supported Row",
+        "sets": 4,
+        "reps": "8-10"
+      },
+      {
+        "name": "Incline Dumbbell Press",
+        "sets": 3,
+        "reps": "10-12",
+        "group": "A"
+      },
+      {
+        "name": "Lat Pulldown",
+        "sets": 3,
+        "reps": "10-12",
+        "group": "A"
+      },
+      {
+        "name": "Lateral Raise",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "B"
+      },
+      {
+        "name": "Face Pull",
+        "sets": 3,
+        "reps": "15",
+        "group": "B"
+      },
+      {
+        "name": "EZ-bar Curl",
+        "sets": 2,
+        "reps": "10-12",
+        "group": "C"
+      },
+      {
+        "name": "Triceps Pushdown",
+        "sets": 2,
+        "reps": "10-12",
+        "group": "C"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "metallicdpa-ppl-push-a",
+      "metallicdpa-ppl-pull-a"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-lower-builder",
+    "name": "Somax Lower Builder",
+    "series": "Somax Upper/Lower",
+    "day": 2,
+    "daysInSeries": 2,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "bodybuilding",
+    "goals": [
+      "muscle",
+      "strength"
+    ],
+    "duration": "55 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 55,
+    "equipment": [
+      "barbell",
+      "machines",
+      "dumbbells"
+    ],
+    "description": "Quads, glutes, hamstrings and calves: a heavy squat, a hinge, then single-leg and machine work.",
+    "whoItsFor": "Intermediate gym-goers on a four-day upper/lower split who want stronger, bigger legs.",
+    "lifestyle": [
+      "full-gym",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Run with Somax Upper Builder: Upper/Lower x2 per week.",
+      "Add 2.5-5kg to squat and RDL when you hit the top of the range on all sets.",
+      "Rest 2-3 min on squats and RDLs, 60-90s elsewhere.",
+      "Deload every 5th-6th week."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or rower",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: bodyweight squats + arm circles",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Back Squat",
+        "sets": 4,
+        "reps": "6-8"
+      },
+      {
+        "name": "Romanian Deadlift",
+        "sets": 3,
+        "reps": "8-10"
+      },
+      {
+        "name": "Bulgarian Split Squat",
+        "sets": 3,
+        "reps": "8-10/leg"
+      },
+      {
+        "name": "Leg Curl",
+        "sets": 3,
+        "reps": "10-12",
+        "group": "A"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Cable Pallof Press",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "metallicdpa-ppl-legs",
+      "wendler-bbb-day-4"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-heavy-singles-power-day",
+    "name": "Somax Heavy Singles Power Day",
+    "category": "gym",
+    "level": "advanced",
+    "sport": "powerlifting",
+    "goals": [
+      "strength"
+    ],
+    "duration": "75 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 75,
+    "equipment": [
+      "barbell",
+      "squat rack",
+      "bench",
+      "plates"
+    ],
+    "description": "A peaking-style day for experienced lifters: a long warm-up ladder, heavy singles, then volume back-offs and minimal accessories.",
+    "whoItsFor": "Advanced lifters (2+ years, solid technique) training for a powerlifting meet or a new max. Needs a proper rack with safeties.",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Use once a week per main lift within a 4-day plan.",
+      "Work up in small jumps to a single at RPE 8-9 - never a grinder. Then 3x3 at ~85% of today's single.",
+      "Rest 3-5 min between heavy sets.",
+      "Run 3 weeks heavier, then 1 lighter week. Test maxes no more than every 8-12 weeks."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: bike + hip and thoracic mobility",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Squat – warm-up ladder",
+        "sets": 5,
+        "reps": "5, 3, 2, 1, 1",
+        "weight": "40-80% 1RM"
+      },
+      {
+        "name": "Squat – heavy single",
+        "sets": 1,
+        "reps": "1",
+        "weight": "RPE 8-9 (~90% 1RM)"
+      },
+      {
+        "name": "Squat – back-off",
+        "sets": 3,
+        "reps": "3",
+        "weight": "~85% of today's single"
+      },
+      {
+        "name": "Paused Bench Press",
+        "sets": 4,
+        "reps": "3",
+        "weight": "80% 1RM"
+      },
+      {
+        "name": "Barbell Row",
+        "sets": 3,
+        "reps": "6-8"
+      },
+      {
+        "name": "Ab Wheel Rollout",
+        "sets": 3,
+        "reps": "8-10"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "gzclp-day-1",
+      "wendler-bbb-day-4"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-advanced-push-hypertrophy",
+    "name": "Somax Advanced Push Hypertrophy",
+    "category": "gym",
+    "level": "advanced",
+    "sport": "bodybuilding",
+    "goals": [
+      "muscle"
+    ],
+    "duration": "70 min",
+    "daysPerWeek": 6,
+    "sessionMinutes": 70,
+    "equipment": [
+      "barbell",
+      "dumbbells",
+      "cables",
+      "machines"
+    ],
+    "description": "High-volume chest, shoulder and triceps work with a drop set and supersets for experienced lifters chasing size.",
+    "whoItsFor": "Advanced lifters running a 6-day push/pull/legs split who recover well and want more volume than a beginner PPL.",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Use in a PPL-PPL-rest week.",
+      "Leave 1-2 reps in reserve on compounds; take isolation work close to failure.",
+      "Rest 2-3 min on presses, 60s on isolation and supersets.",
+      "Add a set to one exercise every 2 weeks, then deload and reset volume every 6-8 weeks."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or rower",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: bodyweight squats + arm circles",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Incline Barbell Press",
+        "sets": 4,
+        "reps": "6-8"
+      },
+      {
+        "name": "Machine Chest Press",
+        "sets": 3,
+        "reps": "8-10"
+      },
+      {
+        "name": "Seated Dumbbell Shoulder Press",
+        "sets": 3,
+        "reps": "8-10"
+      },
+      {
+        "name": "Cable Fly",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Lateral Raise (last set drop set)",
+        "sets": 4,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Weighted Dip",
+        "sets": 3,
+        "reps": "8-10",
+        "group": "B"
+      },
+      {
+        "name": "Overhead Cable Triceps Extension",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "B"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "metallicdpa-ppl-push-a",
+      "metallicdpa-ppl-push-b"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-kettlebell-express",
+    "name": "Somax Kettlebell Express",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "strength-training",
+    "goals": [
+      "strength",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 25,
+    "equipment": [
+      "kettlebell"
+    ],
+    "description": "A 25-minute one-bell session: swing and goblet squat practice, then an EMOM of presses, rows and carries.",
+    "whoItsFor": "Busy people with one kettlebell and the basic swing already learned, training at home or in a hotel.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy",
+      "travel"
+    ],
+    "howToRun": [
+      "3 non-consecutive days a week.",
+      "Pick a bell you can press 5 times per arm with good form.",
+      "In the EMOM, start each exercise at the top of the minute and rest for the rest of it.",
+      "When the EMOM leaves you 25s+ rest every minute, move to a heavier bell."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Kettlebell Deadlift",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Kettlebell Swing",
+        "sets": 5,
+        "reps": "15"
+      },
+      {
+        "name": "Goblet Squat",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "EMOM: Single-arm Press",
+        "sets": 4,
+        "reps": "5/arm",
+        "group": "A"
+      },
+      {
+        "name": "EMOM: Single-arm Row",
+        "sets": 4,
+        "reps": "8/arm",
+        "group": "A"
+      },
+      {
+        "name": "EMOM: Suitcase Carry",
+        "sets": 4,
+        "reps": "30s/side",
+        "group": "A"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "strongfirst-simple-and-sinister",
+      "seven-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-low-impact-hiit-20",
+    "name": "Somax Low-Impact HIIT 20",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A joint-friendly interval session with no jumping: 30 seconds on, 30 seconds off, done quietly in a living room.",
+    "whoItsFor": "Beginners, larger bodies, people with sore knees, and anyone in a flat where jumping isn't an option.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy",
+      "travel"
+    ],
+    "howToRun": [
+      "3 days a week, non-consecutive.",
+      "Work at a 6-7/10 effort; you should be breathing hard but in control.",
+      "Rest 30s between moves; 60s between rounds.",
+      "Progress to 40s on / 20s off, then to the 7-Minute Workout."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Squat to Calf Raise",
+        "sets": 3,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Incline Push-up (on a table)",
+        "sets": 3,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Standing Knee Drive (alternating)",
+        "sets": 3,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Reverse Lunge (alternating)",
+        "sets": 3,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Standing Cross-body Punches",
+        "sets": 3,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 3,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-dumbbell-fat-loss-circuit",
+    "name": "Somax Dumbbell Fat-Loss Circuit",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "muscle",
+      "endurance"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "dumbbells"
+    ],
+    "description": "A full-body dumbbell circuit that keeps your heart rate up while still training every muscle - strength and conditioning in one.",
+    "whoItsFor": "Intermediate exercisers who want to lose fat while keeping muscle, with only 35 minutes and a set of dumbbells.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "3 days a week; walk on rest days for extra activity.",
+      "Move straight from one exercise to the next; rest 90s after each round.",
+      "Add a 5th round, or go heavier, once 4 rounds feel manageable.",
+      "Pair with a modest calorie deficit and enough protein for real fat loss."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Dumbbell Thruster",
+        "sets": 4,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Renegade Row",
+        "sets": 4,
+        "reps": "8/arm",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Walking Lunge",
+        "sets": 4,
+        "reps": "10/leg",
+        "group": "A"
+      },
+      {
+        "name": "Push-up",
+        "sets": 4,
+        "reps": "10-15",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Swing",
+        "sets": 4,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Mountain Climbers",
+        "sets": 4,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "nuffield-boxing-conditioning"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-advanced-metcon",
+    "name": "Somax Advanced Engine Metcon",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 40,
+    "equipment": [
+      "rower",
+      "kettlebell",
+      "pull-up bar",
+      "box"
+    ],
+    "description": "A demanding conditioning session: rower sprints followed by a 20-minute AMRAP of kettlebell and gymnastics work.",
+    "whoItsFor": "Very fit people with solid technique on swings, pull-ups and box jumps who want maximum conditioning in under an hour.",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "No more than 2 times a week, at least 48h apart.",
+      "Row intervals at near-max effort; the AMRAP at a pace you can hold for the full 20 minutes.",
+      "Rest 90s between row sprints.",
+      "Track rounds completed and try to beat it in 3-4 weeks."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or rower",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: bodyweight squats + arm circles",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Row sprint (90s rest)",
+        "sets": 6,
+        "reps": "1",
+        "weight": "max effort",
+        "distance": "250m"
+      },
+      {
+        "name": "AMRAP 20 min: Kettlebell Swing",
+        "sets": 1,
+        "reps": "15",
+        "weight": "24kg men / 16kg women",
+        "group": "A"
+      },
+      {
+        "name": "AMRAP 20 min: Pull-up",
+        "sets": 1,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "AMRAP 20 min: Box Jump (step down)",
+        "sets": 1,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "AMRAP 20 min: Burpee",
+        "sets": 1,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "hyrox-race-simulation",
+      "ntnu-4x4-intervals",
+      "seven-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-bodyweight-starter-20",
+    "name": "Somax Bodyweight Starter 20",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "calisthenics",
+    "goals": [
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "chair"
+    ],
+    "description": "A 20-minute no-equipment session that teaches the basic squat, push, hinge and plank patterns.",
+    "whoItsFor": "Complete beginners and returning exercisers who want to start at home with nothing but a chair.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy",
+      "travel"
+    ],
+    "howToRun": [
+      "3 days a week, e.g. Mon/Wed/Fri.",
+      "Add 2 reps per set each week until you reach 15, then move to the harder version (e.g. floor push-ups).",
+      "Rest 45-60s between rounds.",
+      "When everything feels easy at 15 reps, move on to the r/bodyweightfitness Recommended Routine."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Chair Squat",
+        "sets": 3,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Incline Push-up (hands on chair)",
+        "sets": 3,
+        "reps": "8",
+        "group": "A"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 3,
+        "reps": "12",
+        "group": "A"
+      },
+      {
+        "name": "Bird Dog",
+        "sets": 3,
+        "reps": "6/side",
+        "group": "A"
+      },
+      {
+        "name": "Plank (knees allowed)",
+        "sets": 3,
+        "reps": "20s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "bwf-recommended-routine",
+      "seven-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-calisthenics-skill-strength",
+    "name": "Somax Calisthenics Skill & Strength",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "calisthenics",
+    "goals": [
+      "strength",
+      "muscle"
+    ],
+    "duration": "55 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 55,
+    "equipment": [
+      "pull-up bar",
+      "parallettes or dip bars",
+      "bodyweight"
+    ],
+    "description": "Skill practice (handstand and L-sit) while fresh, then harder strength pairs: pull-ups, dips, pistol progressions and core.",
+    "whoItsFor": "Intermediate bodyweight trainees who can do at least 5 pull-ups and 10 push-ups and want to work toward skills. Great for park or home training.",
+    "lifestyle": [
+      "home",
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "3 days a week with rest days between.",
+      "Skill work: short, perfect holds - stop before form breaks.",
+      "Strength pairs: when you hit 3x8, add weight or move to a harder progression.",
+      "Rest 90s between paired exercises."
+    ],
+    "exercises": [
+      {
+        "name": "Wrist & shoulder prep",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Wall Handstand Hold (chest to wall)",
+        "sets": 4,
+        "reps": "20-30s"
+      },
+      {
+        "name": "L-sit (tuck if needed)",
+        "sets": 4,
+        "reps": "10-15s"
+      },
+      {
+        "name": "Pull-up",
+        "sets": 3,
+        "reps": "5-8",
+        "group": "A"
+      },
+      {
+        "name": "Assisted Pistol Squat",
+        "sets": 3,
+        "reps": "5-8/leg",
+        "group": "A"
+      },
+      {
+        "name": "Parallel Bar Dip",
+        "sets": 3,
+        "reps": "6-10",
+        "group": "B"
+      },
+      {
+        "name": "Nordic Curl (eccentric)",
+        "sets": 3,
+        "reps": "3-5",
+        "group": "B"
+      },
+      {
+        "name": "Archer Push-up",
+        "sets": 3,
+        "reps": "5/side",
+        "group": "C"
+      },
+      {
+        "name": "Hanging Leg Raise",
+        "sets": 3,
+        "reps": "8-10",
+        "group": "C"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "bwf-recommended-routine"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-advanced-calisthenics",
+    "name": "Somax Advanced Calisthenics Strength",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "calisthenics",
+    "goals": [
+      "strength",
+      "muscle",
+      "sport-performance"
+    ],
+    "duration": "70 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 70,
+    "equipment": [
+      "pull-up bar",
+      "rings",
+      "dip belt"
+    ],
+    "description": "Weighted pull-ups and dips, front-lever and planche progressions, and unilateral leg strength for very experienced athletes.",
+    "whoItsFor": "Advanced calisthenics athletes (15+ pull-ups, 20+ dips) who train skills seriously and want structured strength work.",
+    "lifestyle": [
+      "minimal-equipment",
+      "outdoor"
+    ],
+    "howToRun": [
+      "4 days a week (upper/lower or two full-body pairs).",
+      "Weighted work at RPE 8; add 1-2.5kg when all sets hit the top of the range.",
+      "Rest 2-3 minutes between heavy sets; skills before strength.",
+      "Deload every 5th week; retest max holds every 6-8 weeks."
+    ],
+    "exercises": [
+      {
+        "name": "Wrist, shoulder & scapular prep",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Front Lever progression hold",
+        "sets": 5,
+        "reps": "8-10s"
+      },
+      {
+        "name": "Planche Lean / Tuck Planche",
+        "sets": 5,
+        "reps": "8-10s"
+      },
+      {
+        "name": "Weighted Pull-up",
+        "sets": 4,
+        "reps": "4-6",
+        "weight": "RPE 8"
+      },
+      {
+        "name": "Weighted Ring Dip",
+        "sets": 4,
+        "reps": "5-8",
+        "weight": "RPE 8"
+      },
+      {
+        "name": "Pistol Squat",
+        "sets": 3,
+        "reps": "5-6/leg"
+      },
+      {
+        "name": "Ring Row (feet elevated)",
+        "sets": 3,
+        "reps": "10-12",
+        "group": "A"
+      },
+      {
+        "name": "Dragon Flag negative",
+        "sets": 3,
+        "reps": "4-6",
+        "group": "A"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "bwf-recommended-routine"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-easy-run-strides",
+    "name": "Somax Easy Run & Strides",
+    "category": "run",
+    "level": "beginner",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A relaxed conversational run with short, fast strides at the end to build easy speed and good form.",
+    "whoItsFor": "New runners who can already run 20-30 minutes non-stop (e.g. Couch to 5K graduates).",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "3 runs a week; keep at least 2 of them fully easy.",
+      "Easy = you can talk in full sentences.",
+      "Strides: 20s quick but relaxed, walk back to recover.",
+      "Add 5 minutes to one run per week, no more than ~10% total weekly increase."
+    ],
+    "exercises": [
+      {
+        "name": "Brisk walk / easy jog",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Leg swings",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Walking lunges",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Easy run",
+        "sets": 1,
+        "reps": "25 min",
+        "weight": "conversational pace"
+      },
+      {
+        "name": "Strides",
+        "sets": 4,
+        "reps": "20s",
+        "weight": "fast, relaxed"
+      },
+      {
+        "name": "Walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-couch-to-5k-week-9",
+      "ntnu-4x4-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-tempo-run",
+    "name": "Somax Tempo Run",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A sustained 'comfortably hard' run that lifts your lactate threshold - the key session for faster 5K-half marathon times.",
+    "whoItsFor": "Runners covering 20+ km a week who want to race faster.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Once a week, with easy runs either side.",
+      "Tempo pace: around your 10K-to-half-marathon pace, 7/10 effort - you can speak a few words only.",
+      "Build from 2x8 min to 2x12 min or 20-25 min continuous over 6-8 weeks.",
+      "Don't race the tempo; finishing feeling you could do more is right."
+    ],
+    "exercises": [
+      {
+        "name": "Brisk walk / easy jog",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Leg swings",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Walking lunges",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Easy jog",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Tempo",
+        "sets": 2,
+        "reps": "10 min",
+        "weight": "comfortably hard, 7/10",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog recovery",
+        "sets": 2,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "8 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "ntnu-4x4-intervals",
+      "nhs-couch-to-5k-week-9"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-track-800s",
+    "name": "Somax Track 800s",
+    "category": "run",
+    "level": "advanced",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 60,
+    "equipment": [
+      "track or measured route"
+    ],
+    "description": "Classic VO2max intervals: six 800m repeats at around 5K race pace with equal-time jog recoveries.",
+    "whoItsFor": "Experienced runners (30+ km/week, consistent for a year) training for 5K-10K races.",
+    "lifestyle": [
+      "outdoor"
+    ],
+    "howToRun": [
+      "Once a week; never on back-to-back days with another hard session.",
+      "Run each rep at 5K race pace; the last rep should match the first.",
+      "Jog 400m (or 2-3 min) between reps.",
+      "Progress to 8x800m, then to 5x1000m."
+    ],
+    "exercises": [
+      {
+        "name": "Brisk walk / easy jog",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Leg swings",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Walking lunges",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Easy jog",
+        "sets": 1,
+        "reps": "15 min"
+      },
+      {
+        "name": "Drills: A-skips, high knees, butt kicks",
+        "sets": 2,
+        "reps": "20m each"
+      },
+      {
+        "name": "800m rep",
+        "sets": 6,
+        "reps": "1",
+        "weight": "5K race pace",
+        "distance": "800m",
+        "group": "A"
+      },
+      {
+        "name": "Recovery jog",
+        "sets": 6,
+        "reps": "1",
+        "distance": "400m",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "10 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "ntnu-4x4-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-runners-strength",
+    "name": "Somax Runner's Strength",
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 40,
+    "equipment": [
+      "dumbbells",
+      "bodyweight",
+      "step or box"
+    ],
+    "description": "Single-leg strength, calf and hip work and a little plyometrics to make runners more resilient and economical.",
+    "whoItsFor": "Runners of any distance who currently do no strength work, training at home or in a gym twice a week.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2 sessions a week, ideally on easy-run days (after the run) - not before a key workout.",
+      "Use dumbbells that make the last 2 reps hard; add weight when all reps are smooth.",
+      "Rest 60-90s.",
+      "Reduce to 1 session a week in the last 10 days before a race."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Pogo Hops",
+        "sets": 3,
+        "reps": "20"
+      },
+      {
+        "name": "Rear-foot Elevated Split Squat",
+        "sets": 3,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Single-leg Romanian Deadlift",
+        "sets": 3,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Step-up",
+        "sets": 3,
+        "reps": "10/leg",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Calf Raise (bent & straight knee)",
+        "sets": 3,
+        "reps": "12/leg",
+        "group": "A"
+      },
+      {
+        "name": "Side Plank with Leg Lift",
+        "sets": 3,
+        "reps": "8/side",
+        "group": "B"
+      },
+      {
+        "name": "Copenhagen Plank (short lever)",
+        "sets": 3,
+        "reps": "15s/side",
+        "group": "B"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "bwf-recommended-routine",
+      "fifa-11-plus-warm-up"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-brisk-walk-hills",
+    "name": "Somax Brisk Walk & Hills",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "general-fitness",
+      "endurance"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A brisk walk with short uphill or fast-pace intervals to raise your heart rate without running.",
+    "whoItsFor": "Beginners, older adults, and anyone who prefers walking to running and wants more from their daily walk.",
+    "lifestyle": [
+      "outdoor",
+      "older-adults",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "4-5 days a week; this is the hard walk - make the other walks easy.",
+      "Push sections: walk fast or uphill until slightly breathless but able to talk.",
+      "Add one push interval per week up to 8.",
+      "Once 8 intervals are easy, try Couch to 5K."
+    ],
+    "exercises": [
+      {
+        "name": "Easy walk warm-up",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Brisk / uphill walk",
+        "sets": 6,
+        "reps": "2 min",
+        "weight": "breathless but can talk",
+        "group": "A"
+      },
+      {
+        "name": "Easy walk recovery",
+        "sets": 6,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Easy walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Calf & hip flexor stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-wirral-walking-plan-medium-walk",
+      "nhs-couch-to-5k-week-1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-indoor-ride-endurance",
+    "name": "Somax Indoor Endurance Ride",
+    "category": "ride",
+    "level": "beginner",
+    "sport": "cycling",
+    "goals": [
+      "endurance",
+      "fat-loss"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bike",
+      "turbo trainer or static bike"
+    ],
+    "description": "A steady zone-2 ride with gentle cadence drills - builds the aerobic base everything else sits on.",
+    "whoItsFor": "New cyclists, gym exercise-bike users, and anyone who wants low-impact cardio at home.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "2-4 times a week.",
+      "Zone 2: you can hold a conversation; nose breathing is a good check.",
+      "Add 5-10 minutes per week to the steady block.",
+      "When 60 minutes is comfortable, add British Cycling's 20-min warm-up efforts or the 2x20 session."
+    ],
+    "exercises": [
+      {
+        "name": "Easy spin",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "zone 1-2, 85-95 rpm"
+      },
+      {
+        "name": "Steady zone 2",
+        "sets": 1,
+        "reps": "15 min",
+        "weight": "conversational"
+      },
+      {
+        "name": "High-cadence spin-up",
+        "sets": 3,
+        "reps": "1 min",
+        "weight": "100-110 rpm",
+        "group": "A"
+      },
+      {
+        "name": "Easy spin",
+        "sets": 3,
+        "reps": "2 min",
+        "weight": "85-90 rpm",
+        "group": "A"
+      },
+      {
+        "name": "Easy cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "british-cycling-20-min-warm-up"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-cycling-vo2-intervals",
+    "name": "Somax Cycling VO2 Intervals",
+    "category": "ride",
+    "level": "advanced",
+    "sport": "cycling",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 60,
+    "equipment": [
+      "bike",
+      "turbo trainer",
+      "power meter or HR monitor"
+    ],
+    "description": "Five hard 4-minute efforts just above threshold to push your aerobic ceiling, for riders who already train with power or heart rate.",
+    "whoItsFor": "Experienced cyclists training for racing, crits or hilly sportives, who know their FTP or max HR.",
+    "lifestyle": [
+      "home"
+    ],
+    "howToRun": [
+      "Once a week in build phases; never two days in a row.",
+      "Efforts at 106-120% FTP (or 90-95% max HR); recover at under 55% FTP.",
+      "If you can't hold power on the 4th rep, stop the session there.",
+      "Progress from 4x4 to 5x5 minutes over 6 weeks."
+    ],
+    "exercises": [
+      {
+        "name": "British Cycling 20-min warm-up",
+        "sets": 1,
+        "reps": "20 min"
+      },
+      {
+        "name": "VO2 effort",
+        "sets": 5,
+        "reps": "4 min",
+        "weight": "106-120% FTP",
+        "group": "A"
+      },
+      {
+        "name": "Recovery spin",
+        "sets": 5,
+        "reps": "4 min",
+        "weight": "<55% FTP",
+        "group": "A"
+      },
+      {
+        "name": "Easy cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "british-cycling-2x20-sweet-spot",
+      "british-cycling-20-min-warm-up",
+      "ntnu-4x4-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-swim-confidence",
+    "name": "Somax Swim Confidence Builder",
+    "category": "swim",
+    "level": "beginner",
+    "sport": "swimming",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "pool",
+      "kickboard"
+    ],
+    "description": "Short lengths with plenty of rest, kick and breathing drills to build comfort in the water.",
+    "whoItsFor": "Adults who can swim a length but get out of breath quickly, or are returning to swimming after years away.",
+    "lifestyle": [
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "2 swims a week.",
+      "Rest 20-30s (or as long as you need) after each length.",
+      "Breathe out steadily underwater; turn the head to breathe rather than lifting it.",
+      "When you can do 4x50 with 20s rest, move to the USMS Quick Hit."
+    ],
+    "exercises": [
+      {
+        "name": "Easy swim (any stroke)",
+        "sets": 4,
+        "reps": "1",
+        "weight": "rest 30s",
+        "distance": "25m"
+      },
+      {
+        "name": "Kick with board",
+        "sets": 4,
+        "reps": "1",
+        "weight": "rest 30s",
+        "distance": "25m"
+      },
+      {
+        "name": "Bubble-breathing drill at the wall",
+        "sets": 3,
+        "reps": "10 breaths"
+      },
+      {
+        "name": "Freestyle, breathe every 2-3 strokes",
+        "sets": 6,
+        "reps": "1",
+        "weight": "rest 20-30s",
+        "distance": "25m"
+      },
+      {
+        "name": "Backstroke easy",
+        "sets": 2,
+        "reps": "1",
+        "distance": "25m"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "usms-beginner-breathe-swim",
+      "usms-technique-tune-up-swim"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-swim-endurance-builder",
+    "name": "Somax Swim Endurance Builder",
+    "category": "swim",
+    "level": "intermediate",
+    "sport": "swimming",
+    "goals": [
+      "endurance",
+      "fat-loss"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "pool",
+      "pull buoy"
+    ],
+    "description": "A 2,000m aerobic session with a descending main set and pull work for steady endurance.",
+    "whoItsFor": "Swimmers comfortable with 1,000m+ continuous freestyle, including triathletes in base training.",
+    "lifestyle": [
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2-3 swims a week.",
+      "Main set: hold an even pace; descend effort 1-3 within each round.",
+      "Rest 15-20s between 100s.",
+      "Shorten rest by 5s every two weeks, then add a round."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up – choice, easy",
+        "sets": 1,
+        "reps": "1",
+        "distance": "300m"
+      },
+      {
+        "name": "Drill/swim by 25",
+        "sets": 4,
+        "reps": "1",
+        "weight": "rest 15s",
+        "distance": "50m"
+      },
+      {
+        "name": "Freestyle, descend 1-3",
+        "sets": 3,
+        "reps": "3",
+        "weight": "rest 20s",
+        "distance": "100m",
+        "group": "A"
+      },
+      {
+        "name": "Easy backstroke",
+        "sets": 3,
+        "reps": "1",
+        "distance": "50m",
+        "group": "A"
+      },
+      {
+        "name": "Pull with buoy, steady",
+        "sets": 4,
+        "reps": "1",
+        "weight": "rest 20s",
+        "distance": "100m"
+      },
+      {
+        "name": "Cool-down – easy",
+        "sets": 1,
+        "reps": "1",
+        "distance": "200m"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "usms-quick-hit-swim",
+      "usms-beginner-breathe-swim"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-footballers-speed-power",
+    "name": "Somax Footballer's Speed & Power",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "football",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 50,
+    "equipment": [
+      "cones",
+      "dumbbells",
+      "bodyweight"
+    ],
+    "description": "Acceleration, change of direction and lower-body power, built on a FIFA 11+-style warm-up to keep hamstrings and knees healthy.",
+    "whoItsFor": "Amateur and youth footballers (14+) who want to be quicker over the first 10 metres and stronger in duels, off a pitch or field.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "2 sessions a week in-season, not within 48h before a match.",
+      "Sprints are maximal with full recovery (walk back + 60s); stop if speed drops.",
+      "Land jumps softly with knees tracking over toes.",
+      "In pre-season, add a third session and increase sprint reps by 2."
+    ],
+    "exercises": [
+      {
+        "name": "FIFA 11+ Part 1 running drills",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Nordic Hamstring Curl",
+        "sets": 3,
+        "reps": "4-6"
+      },
+      {
+        "name": "Broad Jump (stick the landing)",
+        "sets": 4,
+        "reps": "3"
+      },
+      {
+        "name": "10m Acceleration Sprint",
+        "sets": 6,
+        "reps": "1",
+        "weight": "max",
+        "distance": "10m"
+      },
+      {
+        "name": "5-10-5 Pro Agility",
+        "sets": 4,
+        "reps": "1",
+        "weight": "max"
+      },
+      {
+        "name": "Dumbbell Split Squat",
+        "sets": 3,
+        "reps": "6/leg",
+        "group": "A"
+      },
+      {
+        "name": "Lateral Bound (stick)",
+        "sets": 3,
+        "reps": "5/side",
+        "group": "A"
+      },
+      {
+        "name": "Copenhagen Plank",
+        "sets": 2,
+        "reps": "20s/side"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "fifa-11-plus-warm-up"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-basketball-jump-agility",
+    "name": "Somax Basketball Jump & Agility",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "basketball",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "dumbbells",
+      "box",
+      "cones"
+    ],
+    "description": "Vertical jump, landing mechanics, lateral quickness and ankle-knee resilience for hoopers.",
+    "whoItsFor": "Teen and adult basketball players who want to jump higher and move better laterally, training around team practice.",
+    "lifestyle": [
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "2 sessions a week, away from the day before games.",
+      "Keep jump reps low and every rep explosive; rest 60-90s between jump sets.",
+      "Add load to squats/RDLs when all reps are crisp.",
+      "Taper to one lighter session in heavy game weeks."
+    ],
+    "exercises": [
+      {
+        "name": "Dynamic warm-up: skips, lateral shuffles, leg swings",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Drop Landing (from low box)",
+        "sets": 3,
+        "reps": "5"
+      },
+      {
+        "name": "Box Jump (step down)",
+        "sets": 4,
+        "reps": "4"
+      },
+      {
+        "name": "Lateral Shuffle to Sprint",
+        "sets": 4,
+        "reps": "1",
+        "distance": "10m"
+      },
+      {
+        "name": "Goblet Squat",
+        "sets": 3,
+        "reps": "8",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Romanian Deadlift",
+        "sets": 3,
+        "reps": "8/leg",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Calf Raise",
+        "sets": 3,
+        "reps": "12/leg",
+        "group": "B"
+      },
+      {
+        "name": "Pallof Press",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "B"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "fifa-11-plus-warm-up",
+      "usta-dynamic-warm-up"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-tennis-footwork-rotation",
+    "name": "Somax Tennis Footwork & Rotational Power",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "tennis",
+    "goals": [
+      "sport-performance",
+      "mobility"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "medicine ball",
+      "bands",
+      "cones"
+    ],
+    "description": "Split-step footwork, rotational med-ball power and shoulder care to support faster movement and stronger groundstrokes.",
+    "whoItsFor": "Club and junior tennis players who want better court speed and fewer shoulder issues, training twice a week alongside hitting.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "2 sessions a week, ideally after a hitting session or on non-match days.",
+      "Med-ball throws: maximum intent, full rest between sets.",
+      "Shoulder band work is light - it should never cause pain.",
+      "Before tournaments, keep only the warm-up and band work."
+    ],
+    "exercises": [
+      {
+        "name": "USTA-style dynamic warm-up",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Split-step to First Step (react to call)",
+        "sets": 5,
+        "reps": "4"
+      },
+      {
+        "name": "Spider Drill (5 cones)",
+        "sets": 4,
+        "reps": "1"
+      },
+      {
+        "name": "Rotational Med Ball Throw (side to wall)",
+        "sets": 4,
+        "reps": "5/side"
+      },
+      {
+        "name": "Med Ball Overhead Slam",
+        "sets": 3,
+        "reps": "6"
+      },
+      {
+        "name": "Band External Rotation",
+        "sets": 3,
+        "reps": "12/arm",
+        "group": "A"
+      },
+      {
+        "name": "Band Y-T-W Raise",
+        "sets": 3,
+        "reps": "8 each",
+        "group": "A"
+      },
+      {
+        "name": "Lateral Lunge",
+        "sets": 3,
+        "reps": "8/side"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "usta-dynamic-warm-up"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-boxing-conditioning",
+    "name": "Somax Boxing Conditioning",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "boxing",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "jump rope",
+      "heavy bag",
+      "bodyweight"
+    ],
+    "description": "Boxing-round conditioning: skipping, heavy-bag combinations and bodyweight finishers on a 3-minute work, 1-minute rest clock.",
+    "whoItsFor": "People who train boxing or want boxing-style fitness, with access to a bag (gym or garage).",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "3 times a week, non-consecutive.",
+      "Keep hands up and breathe out on every punch; quality beats volume.",
+      "Rounds: 3 min on, 1 min off; drop to 2 min rounds if you're new.",
+      "Add a bag round every 2 weeks up to 8."
+    ],
+    "exercises": [
+      {
+        "name": "Jump Rope",
+        "sets": 2,
+        "reps": "3 min"
+      },
+      {
+        "name": "Shadow Boxing (footwork + jab-cross)",
+        "sets": 2,
+        "reps": "3 min"
+      },
+      {
+        "name": "Heavy Bag: jab-cross-hook combos",
+        "sets": 4,
+        "reps": "3 min"
+      },
+      {
+        "name": "Heavy Bag: 30s all-out flurries",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Push-up",
+        "sets": 3,
+        "reps": "12",
+        "group": "A"
+      },
+      {
+        "name": "Squat Jump",
+        "sets": 3,
+        "reps": "12",
+        "group": "A"
+      },
+      {
+        "name": "Russian Twist",
+        "sets": 3,
+        "reps": "20",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "expertboxing-basic-routine",
+      "nuffield-boxing-conditioning"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-shadow-boxing-starter",
+    "name": "Somax Shadow Boxing Starter",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "boxing",
+    "goals": [
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Learn stance, guard and basic punches through 2-minute shadow-boxing rounds with simple bodyweight moves between.",
+    "whoItsFor": "Beginners who want fun cardio at home with no equipment, including those curious about starting boxing.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy",
+      "travel"
+    ],
+    "howToRun": [
+      "3 times a week.",
+      "2-minute rounds, 1 minute rest; stay light on your feet.",
+      "Punch at speed but never lock the elbows.",
+      "When 6 rounds feel easy, move to 3-minute rounds or Somax Boxing Conditioning."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Shadow box: stance & footwork",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Shadow box: jab-cross",
+        "sets": 2,
+        "reps": "2 min"
+      },
+      {
+        "name": "Shadow box: jab-cross-hook",
+        "sets": 2,
+        "reps": "2 min"
+      },
+      {
+        "name": "Shadow box: freestyle with slips",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Squat",
+        "sets": 2,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Plank",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "expertboxing-basic-routine",
+      "nuffield-boxing-conditioning"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-golf-mobility-rotation",
+    "name": "Somax Golf Mobility & Rotation",
+    "category": "other",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bands",
+      "mat",
+      "golf club"
+    ],
+    "description": "Hip and thoracic mobility plus rotational strength so you can turn more freely and swing with less strain on your lower back.",
+    "whoItsFor": "Golfers of all ages - including older players - who feel stiff in the swing, training at home twice a week.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2 sessions a week at home; do the 5-minute warm-up before every round.",
+      "Move into stretches slowly and breathe; hold end range 2 seconds on rotations.",
+      "Add band resistance once the movements feel easy.",
+      "Pain in the lower back means reduce range and seek advice."
+    ],
+    "exercises": [
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Open Book (side-lying T-spine rotation)",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "90/90 Hip Switches",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Half-kneeling Hip Flexor Stretch",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 3,
+        "reps": "12",
+        "group": "A"
+      },
+      {
+        "name": "Half-kneeling Band Chop",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "A"
+      },
+      {
+        "name": "Pallof Press",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "B"
+      },
+      {
+        "name": "Club-across-shoulders Trunk Turns",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "B"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "golfshake-5-minute-golf-warm-up",
+      "sun-salutation-flow"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-hybrid-starter",
+    "name": "Somax Hybrid Starter",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "hybrid",
+    "goals": [
+      "general-fitness",
+      "endurance",
+      "strength"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 40,
+    "equipment": [
+      "rower or bike",
+      "dumbbells",
+      "kettlebell"
+    ],
+    "description": "A taste of hybrid racing: short run or erg intervals alternating with simple strength stations.",
+    "whoItsFor": "Gym-goers curious about HYROX-style events who can jog 15-20 minutes and want an approachable first step.",
+    "lifestyle": [
+      "full-gym",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2 times a week alongside normal training.",
+      "Run/erg at a steady 6/10 effort; stations controlled, not rushed.",
+      "Rest 1 minute between rounds.",
+      "After 6 weeks, add a 4th round and move toward Somax Hybrid Race Prep."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or rower",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: bodyweight squats + arm circles",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Run or row",
+        "sets": 3,
+        "reps": "1",
+        "weight": "steady 6/10",
+        "distance": "400m",
+        "group": "A"
+      },
+      {
+        "name": "Goblet Squat",
+        "sets": 3,
+        "reps": "12",
+        "group": "A"
+      },
+      {
+        "name": "Farmer's Carry",
+        "sets": 3,
+        "reps": "1",
+        "weight": "moderate dumbbells",
+        "distance": "40m",
+        "group": "A"
+      },
+      {
+        "name": "Wall Ball or DB Thruster",
+        "sets": 3,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "hyrox-race-simulation",
+      "ntnu-4x4-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-hybrid-race-prep",
+    "name": "Somax Hybrid Race Prep",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hybrid",
+    "goals": [
+      "endurance",
+      "sport-performance",
+      "general-fitness"
+    ],
+    "duration": "70 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 70,
+    "equipment": [
+      "ski erg",
+      "rower",
+      "sled",
+      "kettlebell",
+      "sandbag",
+      "wall ball"
+    ],
+    "description": "Race-pace compromised running: 1km repeats straight off the hardest HYROX stations to train running on tired legs.",
+    "whoItsFor": "Experienced hybrid athletes 6-12 weeks out from a HYROX-style race.",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Once a week; the other sessions should be easy runs and strength.",
+      "Run at goal race pace; stations at race standard.",
+      "Rest 2 minutes between rounds.",
+      "Do the full race simulation 3-4 weeks before race day, then taper."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or rower",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: bodyweight squats + arm circles",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Run",
+        "sets": 4,
+        "reps": "1",
+        "weight": "goal race pace",
+        "distance": "1km",
+        "group": "A"
+      },
+      {
+        "name": "Rotating station: sled push / burpee broad jump / sandbag lunge / wall balls",
+        "sets": 4,
+        "reps": "1",
+        "weight": "race standard",
+        "group": "A"
+      },
+      {
+        "name": "SkiErg",
+        "sets": 1,
+        "reps": "1",
+        "weight": "steady",
+        "distance": "1000m"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "hyrox-race-simulation"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-pilates-core-foundations",
+    "name": "Somax Pilates Core Foundations",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat"
+    ],
+    "description": "Beginner-friendly mat Pilates with modified versions of the classical exercises: breathing, pelvic control and gentle core work.",
+    "whoItsFor": "Pilates newcomers, desk workers with stiff backs and older adults who want controlled core work at home.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "3 times a week.",
+      "Move slowly; keep the lower back gently in contact with the mat during abdominal work.",
+      "Add 2 reps per exercise every couple of weeks.",
+      "When these feel easy, move to the Classical Mat Pilates First Fifteen."
+    ],
+    "exercises": [
+      {
+        "name": "Diaphragmatic breathing",
+        "sets": 1,
+        "reps": "10 breaths"
+      },
+      {
+        "name": "Pelvic Tilts",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Hundred (knees bent, feet down)",
+        "sets": 1,
+        "reps": "50 beats"
+      },
+      {
+        "name": "Half Roll Down",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Single Leg Circles (bent knee)",
+        "sets": 1,
+        "reps": "5 each way/leg"
+      },
+      {
+        "name": "Single Leg Stretch (head down)",
+        "sets": 1,
+        "reps": "10 changes"
+      },
+      {
+        "name": "Bridge with spinal roll",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Side-lying Clam",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Swimming prep (opposite arm/leg)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "45s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "nhs-flexibility-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-mobility-reset-15",
+    "name": "Somax Mobility Reset 15",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 15,
+    "equipment": [
+      "mat"
+    ],
+    "description": "A daily 15-minute routine for hips, spine and shoulders - perfect after a day at a desk or as a rest-day session.",
+    "whoItsFor": "Anyone stiff from sitting, travelling or training - busy people, older adults and lifters on rest days.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Daily or on rest days.",
+      "Hold each stretch with slow nasal breathing; ease off if anything pinches.",
+      "Gradually increase holds from 30s to 60s.",
+      "Combine with the Sun Salutation for a longer flow."
+    ],
+    "exercises": [
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "World's Greatest Stretch",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "90/90 Hip Switches",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Thread the Needle",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Deep Squat Hold (hold support)",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Half-kneeling Hip Flexor Stretch",
+        "sets": 1,
+        "reps": "45s/side"
+      },
+      {
+        "name": "Downward Dog with calf pedal",
+        "sets": 1,
+        "reps": "45s"
+      },
+      {
+        "name": "Doorway Chest Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-flexibility-exercises",
+      "sun-salutation-flow"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-deep-flexibility-flow",
+    "name": "Somax Deep Flexibility Flow",
+    "category": "other",
+    "level": "advanced",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "mat",
+      "yoga blocks",
+      "bands"
+    ],
+    "description": "End-range strength and long holds for splits, pancake and overhead mobility - flexibility you can actually use.",
+    "whoItsFor": "Experienced trainees, martial artists, dancers and climbers who already stretch regularly and want advanced flexibility.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "3 times a week, not before heavy leg training.",
+      "Active end-range work: contract at the end of the stretch for 5-10s, then relax deeper.",
+      "Never force range; aim for a 6/10 stretch intensity.",
+      "Track range monthly (e.g. hands-to-floor in pancake)."
+    ],
+    "exercises": [
+      {
+        "name": "Sun Salutation flow",
+        "sets": 3,
+        "reps": "1 round"
+      },
+      {
+        "name": "Jefferson Curl (light)",
+        "sets": 3,
+        "reps": "8",
+        "weight": "2-5kg"
+      },
+      {
+        "name": "Pancake with PNF contract-relax",
+        "sets": 3,
+        "reps": "60s"
+      },
+      {
+        "name": "Front Split (blocks) with contract-relax",
+        "sets": 3,
+        "reps": "60s/side"
+      },
+      {
+        "name": "Cossack Squat",
+        "sets": 3,
+        "reps": "6/side"
+      },
+      {
+        "name": "Elevated Pigeon",
+        "sets": 2,
+        "reps": "60s/side"
+      },
+      {
+        "name": "Band Shoulder Dislocates",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Bridge (wheel) or Wall Walks",
+        "sets": 3,
+        "reps": "20s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "sun-salutation-flow",
+      "nhs-flexibility-exercises",
+      "classical-mat-pilates-first-fifteen"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-strong-and-steady",
+    "name": "Somax Strong & Steady",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "chair",
+      "light dumbbells",
+      "bands"
+    ],
+    "description": "Strength and balance for everyday life: sit-to-stands, step-ups, rows and balance holds with a chair for support.",
+    "whoItsFor": "Older adults and people new to exercise who want to stay strong, steady on their feet and independent.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2-3 times a week on non-consecutive days.",
+      "Hold a chair or counter for balance work; progress by lightly touching, then letting go.",
+      "Build to 12-15 reps before adding a band or heavier weight.",
+      "Stop and seek advice if you feel dizzy or have chest pain."
+    ],
+    "exercises": [
+      {
+        "name": "Marching on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Sit-to-Stand",
+        "sets": 2,
+        "reps": "8-12"
+      },
+      {
+        "name": "Step-up to low step (hold rail)",
+        "sets": 2,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Band Row",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Wall Press-up",
+        "sets": 2,
+        "reps": "8-12"
+      },
+      {
+        "name": "Single-leg Stand (hold chair)",
+        "sets": 2,
+        "reps": "20s/leg"
+      },
+      {
+        "name": "Heel-to-Toe Walk",
+        "sets": 2,
+        "reps": "10 steps"
+      },
+      {
+        "name": "Seated Calf & Hamstring Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "nhs-flexibility-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-hotel-room-full-body",
+    "name": "Somax Hotel Room Full Body",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "muscle",
+      "fat-loss"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight",
+      "chair"
+    ],
+    "description": "A no-equipment workout that fits a hotel room: slow-tempo strength supersets and a short finisher.",
+    "whoItsFor": "Frequent travellers and busy professionals who want to keep training on the road with nothing but the floor and a chair.",
+    "lifestyle": [
+      "travel",
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Use 2-3 times a week while travelling.",
+      "Use a 3-second lowering phase to make bodyweight harder.",
+      "Rest 60s after each superset.",
+      "Back home, return to your normal gym plan - this keeps your fitness ticking over."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Tempo Bulgarian Split Squat (rear foot on bed/chair)",
+        "sets": 3,
+        "reps": "10/leg",
+        "group": "A"
+      },
+      {
+        "name": "Tempo Push-up",
+        "sets": 3,
+        "reps": "10-15",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Hip Thrust (shoulders on bed)",
+        "sets": 3,
+        "reps": "12/leg",
+        "group": "B"
+      },
+      {
+        "name": "Chair Dip",
+        "sets": 3,
+        "reps": "12",
+        "group": "B"
+      },
+      {
+        "name": "Finisher: Burpee",
+        "sets": 3,
+        "reps": "10",
+        "group": "C"
+      },
+      {
+        "name": "Finisher: Hollow Hold",
+        "sets": 3,
+        "reps": "20s",
+        "group": "C"
+      },
+      {
+        "name": "Cool-down stretch (hips, hamstrings, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "bwf-recommended-routine"
+    ],
+    "verified": false
+  }
+]

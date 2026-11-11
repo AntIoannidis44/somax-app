@@ -1,0 +1,803 @@
+{
+ "sport": "strength",
+ "version": "1.0.0",
+ "generated": "2026-11-12",
+ "notes": [
+  "Every number carries a 'confidence': 'sourced' = taken from a fetched source page; 'secondary' = taken from a fetched third-party write-up of a named program (not the author's own page); 'derived' = computed by us from sourced numbers; 'unverified' = recalled or common practice, not confirmed on a fetched page; 'somaxHeuristic' = our own engineering choice.",
+  "Loads in kg. Percentages are fractions of 1RM unless the field says TM (training max). Rounding: round working weights to the nearest 2.5 kg (barbell) or 1 kg / nearest available dumbbell.",
+  "Source numbers given in lb were converted at 1 lb = 0.4536 kg and then rounded to plate-friendly kg (e.g. 5 lb -> 2.5 kg, 10 lb -> 5 kg)."
+ ],
+
+ "benchmarks": [
+  {
+   "id": "bodyweight-kg",
+   "label": "Bodyweight",
+   "unit": "kg",
+   "required": true,
+   "howToTest": "Morning weigh-in after the toilet, before food. Use a 3-day average if available.",
+   "validRange": [35, 250]
+  },
+  {
+   "id": "sex",
+   "label": "Sex used for strength standards",
+   "unit": "enum: male | female",
+   "required": true,
+   "howToTest": "User-selected. Only used to choose the standards table; let users opt out and default to the female table for conservative placement on lifts (somaxHeuristic)."
+  },
+  {
+   "id": "training-age-months",
+   "label": "Months of consistent lifting",
+   "unit": "months",
+   "required": false,
+   "howToTest": "Self-reported months of regular (2+ sessions/week) resistance training in the last 2 years.",
+   "validRange": [0, 600]
+  },
+  {
+   "id": "squat-1rm",
+   "label": "Back squat 1RM",
+   "unit": "kg",
+   "howToTest": "Preferred: a rep-max set of 3-5 reps to depth (hip crease below top of knee) with good bar speed, safeties set. Beginners should NOT test a true single; log a 5RM instead. Experienced lifters may log an actual 1RM.",
+   "estimateFrom": "Rep max -> e1RM via the average of Epley and Brzycki (see estimationFormulas). Accept reps 1-10; reject >12 for barbell lifts.",
+   "validRange": [10, 400]
+  },
+  {
+   "id": "bench-1rm",
+   "label": "Bench press 1RM",
+   "unit": "kg",
+   "howToTest": "3-5 rep max, paused-touch or touch-and-go (record which), bum on bench, spotter or safeties. Form breaks count as missed reps (StrongLifts rule).",
+   "estimateFrom": "Rep max -> e1RM via Epley/Brzycki average.",
+   "validRange": [10, 300]
+  },
+  {
+   "id": "deadlift-1rm",
+   "label": "Deadlift 1RM",
+   "unit": "kg",
+   "howToTest": "3-5 rep max from the floor, conventional or sumo (record which), no hitching, neutral back.",
+   "estimateFrom": "Rep max -> e1RM via Epley/Brzycki average.",
+   "validRange": [20, 450]
+  },
+  {
+   "id": "ohp-1rm",
+   "label": "Standing overhead press 1RM",
+   "unit": "kg",
+   "howToTest": "3-5 rep max, strict (no leg drive), bar from shoulders to locked out overhead.",
+   "estimateFrom": "Rep max -> e1RM via Epley/Brzycki average.",
+   "validRange": [5, 200]
+  },
+  {
+   "id": "row-5rm",
+   "label": "Barbell row 5RM",
+   "unit": "kg",
+   "required": false,
+   "howToTest": "5 strict reps, torso roughly parallel-to-45 deg, bar to lower chest/upper belly. Used only to seed accessory loads.",
+   "estimateFrom": "Not converted to 1RM; used directly as the 5RM working anchor."
+  },
+  {
+   "id": "pullup-max-reps",
+   "label": "Max strict pull-ups",
+   "unit": "reps",
+   "howToTest": "One set from dead hang (elbows straight) to chin over bar, no kipping, overhand grip. 0 is a valid result. If 0, also record max negative (lowering) time in seconds and whether a 30 s dead hang is possible.",
+   "estimateFrom": "Direct. For weighted pull-up planning, effective load = bodyweight + added weight and Epley applies to that total (derived; formula accuracy for bodyweight movements is unverified).",
+   "validRange": [0, 60]
+  },
+  {
+   "id": "pullup-negative-seconds",
+   "label": "Slowest controlled pull-up negative",
+   "unit": "seconds",
+   "required": false,
+   "howToTest": "Jump or step to chin-over-bar, lower as slowly as possible to straight arms. Only asked if pullup-max-reps = 0.",
+   "validRange": [0, 60]
+  },
+  {
+   "id": "chinup-max-reps",
+   "label": "Max strict chin-ups",
+   "unit": "reps",
+   "required": false,
+   "howToTest": "As pull-ups but underhand grip.",
+   "validRange": [0, 60]
+  },
+  {
+   "id": "pushup-max-reps",
+   "label": "Max push-ups",
+   "unit": "reps",
+   "howToTest": "Rigid plank, chest to fist-height (or floor touch), full lockout; set ends at first rep with sagging hips or partial range. Record knee/incline variant if 0 full push-ups.",
+   "validRange": [0, 150]
+  },
+  {
+   "id": "dip-max-reps",
+   "label": "Max parallel-bar dips",
+   "unit": "reps",
+   "required": false,
+   "howToTest": "Shoulders to at least elbow height at the bottom, full lockout at top.",
+   "validRange": [0, 80]
+  }
+ ],
+
+ "estimationFormulas": {
+  "epley": { "formula": "e1RM = w * (1 + r/30)", "validWhen": "r >= 2", "confidence": "sourced", "source": "wikipedia-1rm" },
+  "brzycki": { "formula": "e1RM = w * 36 / (37 - r)", "confidence": "sourced", "source": "wikipedia-1rm" },
+  "notes": [
+   "Epley and Brzycki give identical results at 10 reps; below 10 Epley reads slightly higher (e.g. 100 x 6 -> ~120 Epley vs ~116 Brzycki). They diverge strongly above ~10 reps. Estimates can be off by 10% or more. (sourced: wikipedia-1rm)",
+   "Most formulas were built on experienced lifters; novices may have a lower true 1RM than predicted (wikipedia flags this 'citation needed' -> unverified).",
+   "Somax rule: e1RM = mean(Epley, Brzycki) for 2-10 reps; r = 1 -> the weight itself; 11-12 reps -> Brzycki only and mark lowConfidence; >12 -> reject and ask for a heavier set. (somaxHeuristic)",
+   "RPE/RIR adjustment: treat a set of r reps at RIR x as an r + x rep max (RPE 10 = 0 RIR, 9 = 1, 8 = 2, 7 = 3). This is the logic of the Tuchscherer/RTS chart, where e.g. 3 reps @ RPE 10 and 1 rep @ RPE 8 sit at the same %1RM (~92%). (secondary: fitnessvolt RPE pages)",
+   "Lifters typically under-predict reps left in the tank by ~2-5 reps, so self-reported RIR on high-rep sets is unreliable; prefer sets of <= 8 reps for estimation. (sourced: barbell-medicine-nia)",
+   "Inverse use for prescription: weight for target reps r = e1RM / (1 + r/30) (Epley inverse) (derived)."
+  ],
+  "rpeChartAnchors": {
+   "confidence": "secondary",
+   "source": "fitnessvolt-rpe",
+   "rpe10_percentByReps": { "1": 1.0, "2": 0.955, "3": 0.922, "4": 0.892, "5": 0.863 },
+   "note": "Sites disagree by ~1 percentage point per cell; use only as approximations."
+  }
+ },
+
+ "levelPlacement": {
+  "source": "symmetric-strength-standards",
+  "method": [
+   "1. Compute e1RM for each tested lift and ratio = e1RM / bodyweight.",
+   "2. Compare to the threshold ratios for the user's sex below (adjusted for bodyweight, step 3).",
+   "3. Bodyweight adjustment (somaxHeuristic, unverified exponent): the tables were derived at a reference bodyweight; heavier lifters need lower ratios, lighter lifters higher. thresholdAtBW = refRatio * (BW / refBW)^(-1/3). This approximates allometric (BW^0.67) scaling; Symmetric Strength itself uses a Wilks-based chain, which we did not reproduce.",
+   "4. Per-lift level = beginner if ratio < 'intermediate' threshold; intermediate if 'intermediate' <= ratio < 'advanced'; advanced if ratio >= 'advanced'. (mapping of Symmetric Strength's 8 bands to our 3 levels is a somaxHeuristic)",
+   "5. Overall level = the median of tested lift levels (ties -> lower level).",
+   "6. Training-age override (somaxHeuristic, informed by Barbell Medicine's argument that progression speed reflects distance to ceiling, not a label): if training-age-months < 6, cap at beginner progression even if ratios say intermediate (new lifters still make session-to-session gains). If training-age-months >= 24 and the lifter reports no recent linear progression, use intermediate progression even if ratios say beginner.",
+   "7. Re-evaluate at every benchmark retest; per-lift levels drive per-lift progression (a lifter can be intermediate on deadlift and beginner on OHP)."
+  ],
+  "bandsNote": "Symmetric Strength bands: untrained, novice, intermediate, proficient, advanced, exceptional, elite, worldClass. The site states they are model bands, not population percentiles. Ratios below are derived by dividing its example absolute 1RMs by the example bodyweight (180 lb man, 140 lb woman, no age adjustment).",
+  "confidence": "derived",
+  "refBodyweightKg": { "male": 81.6, "female": 63.5 },
+  "ratios": {
+   "male": {
+    "squat":    { "untrained": 0.75, "novice": 1.14, "intermediate": 1.50, "proficient": 1.89, "advanced": 2.19, "exceptional": 2.50, "elite": 2.83, "worldClass": 3.14 },
+    "bench":    { "untrained": 0.56, "novice": 0.83, "intermediate": 1.11, "proficient": 1.42, "advanced": 1.64, "exceptional": 1.86, "elite": 2.11, "worldClass": 2.33 },
+    "deadlift": { "untrained": 0.86, "novice": 1.31, "intermediate": 1.72, "proficient": 2.17, "advanced": 2.53, "exceptional": 2.89, "elite": 3.25, "worldClass": 3.61 },
+    "ohp":      { "untrained": 0.36, "novice": 0.56, "intermediate": 0.72, "proficient": 0.92, "advanced": 1.06, "exceptional": 1.22, "elite": 1.36, "worldClass": 1.53 }
+   },
+   "female": {
+    "squat":    { "untrained": 0.61, "novice": 0.93, "intermediate": 1.25, "proficient": 1.54, "advanced": 1.79, "exceptional": 2.07, "elite": 2.32, "worldClass": 2.57 },
+    "bench":    { "untrained": 0.43, "novice": 0.64, "intermediate": 0.82, "proficient": 1.04, "advanced": 1.21, "exceptional": 1.39, "elite": 1.57, "worldClass": 1.75 },
+    "deadlift": { "untrained": 0.75, "novice": 1.11, "intermediate": 1.46, "proficient": 1.82, "advanced": 2.14, "exceptional": 2.46, "elite": 2.75, "worldClass": 3.07 },
+    "ohp":      { "untrained": 0.29, "novice": 0.39, "intermediate": 0.54, "proficient": 0.68, "advanced": 0.79, "exceptional": 0.89, "elite": 1.04, "worldClass": 1.14 }
+   }
+  },
+  "somaxLevelMap": { "beginner": ["untrained", "novice"], "intermediate": ["intermediate", "proficient"], "advanced": ["advanced", "exceptional", "elite", "worldClass"] },
+  "calisthenics": {
+   "confidence": "somaxHeuristic",
+   "note": "No reputable bodyweight-relative standard for pull-up/push-up reps was verified. These cut-offs are our own and should be reviewed.",
+   "pullupMaxReps": { "foundation": "0 (cannot do one)", "beginner": "1-4", "intermediate": "5-11", "advanced": "12+" },
+   "pushupMaxReps": { "foundation": "0 full reps", "beginner": "1-14", "intermediate": "15-34", "advanced": "35+" },
+   "anchor": "The r/bodyweightfitness wiki treats 3 sets of 8 pull-ups as the point to move on to weighted or harder pull-up progressions (secondary: search snippet of the wiki pull-up page; page itself not fetched)."
+  }
+ },
+
+ "progressionModel": {
+  "principle": "Progression should react to demonstrated performance, not to the calendar or a label (Barbell Medicine). Our levels select a default cadence; the engine still adapts from logged sessions.",
+  "beginner": {
+   "cadence": "linear, session to session",
+   "loadIncrements": {
+    "confidence": "sourced",
+    "sources": ["stronglifts-progress", "rfitness-bbr"],
+    "squat": "+2.5 kg per session (StrongLifts allows 2.5-5 kg; r/Fitness BBR uses +5 lb ~ 2.5 kg)",
+    "deadlift": "+5 kg per session for men while easy, drop to +2.5 kg once it gets hard (StrongLifts); BBR uses +5 lb ~ 2.5 kg",
+    "bench": "+2.5 kg (men) / +1.25 kg (women) per session (StrongLifts); BBR uses +2.5 lb ~ 1-1.25 kg",
+    "ohp": "+1.25-2.5 kg per session; prefer +1.25 kg if microplates exist",
+    "row": "+1.25-2.5 kg per session",
+    "somaxDefault": "Lower body +2.5 kg, upper body +1.25 kg (or +2.5 kg if gym has no microplates and the lift is >= 60 kg). Double the jump for the next session if the AMRAP last set exceeds 10 reps (BBR rule).",
+    "frequencySlowdown": "When adding weight every session gets hard, add weight every 2-3 sessions instead (StrongLifts)."
+   },
+   "failureRules": {
+    "confidence": "sourced",
+    "rules": [
+     "Missed reps (any set short of target, including reps with broken form): repeat the same weight next session (StrongLifts).",
+     "A single missed rep with an obvious one-off cause may still progress (StrongLifts).",
+     "r/Fitness BBR (3x5+): if total reps across the 3 sets < 15, cut the next working weight by 10% and rebuild (sourced).",
+     "GZCLP tiered fallback: T1 5x3+ -> 6x2+ -> 10x1+ on each failure; after failing 10x1, test a new 5RM and restart at 85% of it at 5x3. T2 3x10 -> 3x8 -> 3x6; after failing 3x6, restart 3x10 at last 3x10 weight + 7.5-10 kg (sourced: fitness-wiki-gzclp).",
+     "Somax default: 2 consecutive sessions failing the same weight -> deload that lift 10% (BBR magnitude). Third reset on the same lift within 8 weeks -> switch that lift to intermediate (weekly) progression. (somaxHeuristic combining sourced rules)"
+    ]
+   },
+   "startingWeight": "Work up from the empty bar in 5-10 kg jumps for sets of 5 until form or bar speed degrades; start at the last good weight, conservatively (BBR, sourced). If a 5RM is logged, start working sets at ~85-90% of the 5RM (somaxHeuristic; GZCLP restarts at 85% of 5RM, sourced).",
+   "realisticGain": {
+    "confidence": "sourced",
+    "source": "barbell-medicine-nia",
+    "value": "Untrained lifters typically gain 15-30% on 1RM over 12 weeks; time to the first measurable strength gain averages ~4.3 weeks (range 1-12) across 40 studies.",
+    "engineRate": { "conservative": 0.0125, "expected": 0.01875, "optimistic": 0.025, "unit": "fraction of the starting 1RM gained per week, applied linearly (derived: 15/22.5/30% over 12 weeks)" },
+    "lowerVsUpper": "A 2023 meta-analysis title (PMC10101404) reports higher weekly strength gains in the lower body than the upper body in trained women; magnitude not extracted (unverified). Somax applies the same rate to all lifts."
+   },
+   "phaseLength": "Run pure linear progression for up to ~3 months, then move to GZCLP or 5/3/1 for Beginners (BBR guidance, sourced). Somax: weeks 1-12 at the beginner rate, weeks 13-24 at half that rate (linear-log decay from SBS modelling, derived), then intermediate rates.",
+   "deload": "No scheduled deload needed in the first 8-12 weeks; reactive 10% resets on failure (BBR). Somax inserts one lighter week (-10% load, -1 set) after week 8-12 if the lifter reports poor recovery (somaxHeuristic)."
+  },
+  "intermediate": {
+   "cadence": "weekly (Texas Method) or 3-week wave + TM bump each ~month (5/3/1)",
+   "options": [
+    {
+     "id": "texas-method",
+     "confidence": "secondary",
+     "source": "fitnessvolt-texas",
+     "rules": "Mon volume 5x5 @ ~90% of current 5RM (deadlift 1x5); Wed light ~80% of Monday load; Fri attempt a new 5RM single set. Progress weekly; in the generator example squat/deadlift Friday sets rise ~2.5 kg/week and bench ~2.5 kg every 2 weeks. On stall: trim Monday volume or run a reset; persistent stalls -> move to a more advanced block."
+    },
+    {
+     "id": "531",
+     "confidence": "sourced",
+     "source": "fitness-wiki-531-beginners",
+     "rules": "TM = 90% of e1RM (from a crisp 3-5 rep set). 3-week cycle: W1 5/5/5+ @ 65/75/85% TM, W2 3/3/3+ @ 70/80/90%, W3 5/3/1+ @ 75/85/95%. After each cycle +2.5 kg TM upper (bench, OHP), +5 kg TM lower (squat, deadlift), regardless of AMRAP reps. If you consistently miss reps over a whole cycle, drop TM by 3 increments (7.5 kg upper / 15 kg lower). Test week every ~10th week / after 3 cycles."
+    },
+    {
+     "id": "nsuns-tm",
+     "confidence": "sourced",
+     "source": "fitness-wiki-nsuns",
+     "rules": "TM starts at 90% of 1RM; weekly TM change from the 1+ AMRAP set: 0-1 reps no change; 2-3 reps +2.5 kg; 4-5 reps +2.5-5 kg; >5 reps +5-7.5 kg."
+    }
+   ],
+   "realisticGain": {
+    "sources": ["sbs-predict-gains", "latella-2020", "sbs-modeling"],
+    "facts": [
+     "OpenPowerlifting (~19.7k lifters): mean +0.58%/month (men) and +0.92%/month (women) on scaled total, SD > mean; median progress fell from 0.78%/month (meet 1->2) to 0.26%/month (meet 4->5). (sourced)",
+     "Latella 2020 (1,897 powerlifters): ~+55 kg/year (men) and ~+44 kg/year (women) on total, ~10.7%/year for men. (sourced)",
+     "Linear-log pattern: each equal increment of strength takes roughly twice as long as the previous one (e.g. +10 kg in month 1, the next +10 kg ~2 months, then ~4). Relative gains over 6 years were comparable between men and women. (sourced)"
+    ],
+    "engineRate": { "conservative": 0.005, "expected": 0.0125, "optimistic": 0.025, "unit": "fraction of current 1RM per month (derived: lower bound from powerlifting data; upper bound = 5/3/1 TM increments of 2.5-5 kg on typical 100-150 kg intermediate lifts)" }
+   },
+   "deload": "Every 4th week light (5/3/1 'deload' / RP mesocycle model: 4-5 accumulation weeks then 1 week at ~maintenance volume). RP example: weekly sets 12,14,16,18,20 then week 6 at ~6 sets per muscle (sourced: rp-volume-landmarks). Somax default: 3 weeks loading + 1 deload week at ~60% of normal sets and -10% load (somaxHeuristic).",
+   "stallHandling": "A real stall = no measurable improvement on a priority lift for ~3-4 weeks despite consistent training, sleep, protein and manageable stress; compare to best of the last 6-8 weeks, not lifetime best. Flat but fresh -> add a little volume/frequency; grinding, sore, declining -> cut load temporarily; life stress up -> cut load. A few flat sessions are noise. (sourced: barbell-medicine-nia)"
+  },
+  "advanced": {
+   "cadence": "monthly or block-to-block (e.g. 5/3/1 cycles with BBB/varied supplemental, or 4-6 week blocks with RPE-based top sets)",
+   "realisticGain": {
+    "confidence": "sourced",
+    "source": "barbell-medicine-nia",
+    "value": "Well-trained lifters gain roughly 2-6% per year; day-to-day 1RM noise is ~3-5%, so monthly gains on a strong lifter can be smaller than daily variation.",
+    "engineRate": { "conservative": 0.0015, "expected": 0.003, "optimistic": 0.005, "unit": "fraction of current 1RM per month (derived from 2-6%/year)" }
+   },
+   "loading": "Prescribe top sets by RPE (e.g. 1-5 reps @ RPE 7-9) with back-off sets at -5-10%; adjust next week's e1RM from logged RPE (somaxHeuristic built on RTS RPE logic; unverified as a specific published template).",
+   "deload": "Every 4-6 weeks or reactively when performance drops (RP rule: performance score 4 -> recovery session or deload).",
+   "stallHandling": "Same diagnosis as intermediate; also rotate exercise variations and run a new block starting near MEV (RP)."
+  },
+  "detraining": "Strength loss is minor or absent for ~28 days of complete cessation (sourced: barbell-medicine-nia). Somax: gap <= 2 weeks -> resume at 95% of last loads; 2-4 weeks -> 90%; > 4 weeks -> 85% and re-benchmark after 2 weeks (somaxHeuristic)."
+ },
+
+ "planLengthRule": {
+  "inputs": ["lift", "current e1RM", "target 1RM", "bodyweight", "sex", "per-lift level", "training-age-months", "days/week"],
+  "algorithm": [
+   "1. gap = target - current. If gap <= 0 -> 'already there': offer a maintenance or next-milestone plan.",
+   "2. Simulate week by week starting at the lifter's phase: beginner weeks 1-12 add expectedRate_beginner * startingE1RM per week; weeks 13-24 add half that; after week 24 (or once the lift crosses the 'intermediate' standard) use intermediate monthly rate / 4.33 per week applied to the current e1RM; once it crosses 'advanced', use the advanced rate.",
+   "3. Training-age override: if the lifter has >= 24 months training age, skip beginner phase entirely; 6-24 months -> start at the half-rate beginner phase.",
+   "4. Days/week factor: lifts trained only once per week progress at 0.85x; 3+ exposures/week 1.0x (somaxHeuristic).",
+   "5. weeksExpected = first week the simulated e1RM >= target, then multiply by 1.15 for missed sessions/illness buffer and round up to whole weeks (somaxHeuristic).",
+   "6. Also compute weeksOptimistic and weeksConservative with the other rates; show the user a range.",
+   "7. Round to plan blocks: one block = 4-12 weeks (min 4 = one 3-week wave + deload; max 12 = BBR's 3-month cap and the BBB 3-month challenge length). If weeksExpected <= 12 -> single block. If > 12 -> split into milestones every <= 12 weeks, each milestone = simulated e1RM at that week rounded down to 2.5 kg; re-benchmark at each milestone and re-project.",
+   "8. Realism flags: weeksExpected > 52 -> label 'long-term goal' and plan only the first 2 milestones; target ratio above the 'elite' band for sex+bodyweight -> warn it may take many years and set the first milestone at the next band.",
+   "9. Hard limits: minimum plan 4 weeks; maximum single plan horizon 52 weeks."
+  ],
+  "confidence": "somaxHeuristic (rates are derived from sourced figures; the simulation, buffer and caps are ours)",
+  "workedExample": {
+   "input": "Male, 75 kg, bench e1RM 60 kg, target 80 kg, 3 days/week, new-ish lifter",
+   "placement": "60/75 = 0.80 BW; bodyweight-adjusted 'intermediate' bench threshold ~1.11*(75/81.6)^(-1/3) ~ 1.14 -> beginner. Target 80 kg = 1.07 BW, still below intermediate band.",
+   "expected": "Weeks 1-12: +0.01875*60 = 1.125 kg/week -> 73.5 kg. Weeks 13+: 0.56 kg/week -> 80 kg at ~week 24. x1.15 buffer -> ~28 weeks.",
+   "optimistic": "1.5 kg/week x 12 -> 78 kg; then 0.75 kg/week -> 80 kg at ~week 15 (x1.15 -> ~17).",
+   "conservative": "0.75 kg/week x 12 -> 69 kg; 0.375 kg/week x 12 -> 73.5 kg; then intermediate conservative 0.005*73.5 ~ 0.37 kg/month -> another ~18 months for the last 6.5 kg. Total > 52 weeks, so show it as 'could take 12+ months if progress is slow'.",
+   "milestones": "Block 1 (12 wk): 72.5 kg. Block 2 (12 wk): 77.5-80 kg. Re-benchmark at week 12.",
+   "note": "Optimistic-to-expected range (~4-7 months) matches common novice experience but is not externally validated; the conservative tail shows why per-block re-projection matters."
+  },
+  "calisthenicsRules": {
+   "confidence": "unverified",
+   "firstPullup": "If 0 pull-ups: plan 6-12 weeks (blog-level claim, unverified) using the pull-up progression templates, 3 sessions/week. Milestones: 30 s dead hang -> 3x8 scapular pulls -> 3x5 negatives of 5 s each -> first rep. Re-test every 2 weeks.",
+   "repGoals": "Somax heuristic: expect ~+1 rep on max every 1-2 weeks while under 10 reps, ~+1 rep every 2-4 weeks from 10-20. weeks = sum over reps. Cap a block at 8-12 weeks, then re-test. Bodyweight loss/gain changes this a lot; recompute if bodyweight changes > 3%.",
+   "pushups": "Somax heuristic: ~+2-3 reps per week for beginners under 20 reps; +1 rep per week above 20."
+  }
+ },
+
+ "hypertrophyModel": {
+  "setCounting": "Count fractional sets: 1 set for a muscle that is the prime mover, 0.5 for a meaningful synergist (e.g. a row = 1 back set + 0.5 biceps set). (sourced: sbs-volume)",
+  "weeklySetsPerMuscle": {
+   "maintenance": { "sets": 6, "note": "RP maintenance volume (~6 working sets/muscle/week, trained 2x/week). Use for deloads and non-priority muscles.", "confidence": "sourced" },
+   "beginner": { "start": 8, "range": [8, 12], "note": "SBS: ~10 sets/week is a good starting point for solid gains on limited time; beginners' MEV sits close to maintenance (RP). Range is our pick around those anchors.", "confidence": "derived" },
+   "intermediate": { "start": 12, "range": [12, 20], "note": "RP worked example MEV 12 -> MRV 20; 2021 trained-men meta-analysis suggested 12-20; Barbell Medicine heuristic 10-20.", "confidence": "sourced" },
+   "advanced": { "start": 15, "range": [15, 25], "note": "SBS: ~15-25 sets/week as a starting point to maximise hypertrophy; 20-30 for high-volume experiments.", "confidence": "sourced" }
+  },
+  "perSessionCap": "Keep <= ~10-11 fractional sets per muscle per session (SBS: point of undetectable outcome superiority ~11 fractional sets per session); split weekly volume across 2-3 sessions per muscle. 20-25 sets in one session is very likely past the useful point. (sourced: sbs-volume)",
+  "frequency": "Each muscle at least 2x/week (RP maintenance note; ACSM frequency guidance: novice 2-3 d/wk, intermediate 3-4, advanced 4-5).",
+  "repRanges": {
+   "confidence": "sourced",
+   "facts": [
+    "Hypertrophy can be achieved across a wide spectrum of loads; the old 'strength 1-5 / hypertrophy 8-12 / endurance 15+' zones are not well supported, though a heavy-load 'strength zone' does exist for 1RM gains (Schoenfeld et al. 2021).",
+    "RP working-set definition: 30-85% 1RM, 5-30 reps, 0-4 RIR.",
+    "ACSM 2009: novices train with loads of 8-12RM."
+   ],
+   "somaxDefaults": { "compoundsHeavy": "4-8 reps", "compoundsModerate": "6-12 reps", "isolations": "10-20 reps", "calves_abs_lateralRaises": "12-25 reps" }
+  },
+  "proximityToFailure": {
+   "facts": [
+    "Hypertrophy improves as sets get closer to failure (Robinson meta-regression, via SBS: ~10% growth at 0 RIR vs ~5% at 10 RIR); strength gains were similar across 0-10 RIR. (sourced: sbs-volume)",
+    "RP counts sets at 0-4 RIR as effective working sets. (sourced)"
+   ],
+   "somaxDefaults": { "compounds": "1-3 RIR", "isolations": "0-2 RIR", "mesocycleWalk": "Week 1 at ~3 RIR, ending week at ~0-1 RIR, then deload (RP-style; specific walk-down not confirmed on a fetched page -> unverified)" }
+  },
+  "progression": {
+   "volume": "Start each mesocycle near MEV and add sets weekly based on feedback: soreness and performance both good -> +2-3 sets; mostly good -> +1; soreness lingering or performance flat -> hold; performance dropping (cannot match last week) -> recovery session or deload. RP example: 12,14,16,18,20 sets then deload at ~6. (sourced: rp-volume-landmarks)",
+   "load": "Double progression: work within the rep range; when all sets reach the top of the range with good form, add load (~2.5 kg, PHUL/StrengthLog; ACSM: +2-10% when you can do 1-2 reps over target) and work back up. (sourced/secondary)",
+   "mesocycleLength": "4-6 weeks accumulation + 1 deload week (derived from RP example: 5 loading weeks + deload)."
+  }
+ },
+
+ "splitsByDays": {
+  "notes": "ACSM 2009 frequency: novice 2-3 days/week, intermediate 3-4, advanced 4-5 (sourced: acsm-2009). Leave at least one rest day between full-body sessions (GZCLP guidance).",
+  "2": {
+   "beginner": { "split": "Full body A/B", "sessions": ["fb-2day-A", "fb-2day-B"], "why": "StrongLifts Lite is a 2-3x/week low-volume option (sourced listing); 2 full-body days keep each lift at 1x/week, so progression slows (0.85x factor)." },
+   "intermediate": { "split": "Full body A/B with 5/3/1 main lifts (2 main lifts per day)", "sessions": ["531-2day-A", "531-2day-B"], "why": "Somax adaptation of 5/3/1 for Beginners' 2-lifts-per-day layout (somaxHeuristic)." },
+   "hypertrophy": { "split": "Full body A/B, ~6-10 sets per muscle per week", "sessions": ["hyp-fullbody-A", "hyp-fullbody-B"] }
+  },
+  "3": {
+   "beginner": { "split": "Full body A/B alternating (Mon/Wed/Fri)", "sessions": ["bbr-A", "bbr-B"], "alt": ["gzclp-1", "gzclp-2", "gzclp-3", "gzclp-4"], "why": "r/Fitness Basic Beginner Routine (A/B, 3x5+) for up to 3 months, then GZCLP or 5/3/1 for Beginners (sourced). GZCLP's 4 workouts rotate across a 3-day week." },
+   "intermediate": { "split": "5/3/1 for Beginners (2 main lifts/day) or Texas Method (volume/light/intensity)", "sessions": ["531b-1", "531b-2", "531b-3"], "alt": ["texas-mon", "texas-wed", "texas-fri"] },
+   "advanced": { "split": "5/3/1 with rotating supplemental (FSL/BBB) at 3 days, 4 main lifts rotated", "sessions": ["531b-1", "531b-2", "531b-3"] },
+   "hypertrophy": { "split": "Full body x3 or Push/Pull/Legs x1", "sessions": ["hyp-fullbody-A", "hyp-fullbody-B", "hyp-fullbody-A"], "alt": ["ppl-push", "ppl-pull", "ppl-legs"], "why": "Metallicadpa PPL can be run 3 days/week as Pull/Push/Legs (secondary)." }
+  },
+  "4": {
+   "beginner": { "split": "GZCLP 4-day", "sessions": ["gzclp-1", "gzclp-2", "gzclp-3", "gzclp-4"] },
+   "intermediate": { "split": "5/3/1 Boring But Big (Press / Deadlift / Bench / Squat) or PHUL upper/lower", "sessions": ["bbb-press", "bbb-deadlift", "bbb-bench", "bbb-squat"], "alt": ["phul-upper-power", "phul-lower-power", "phul-upper-hyp", "phul-lower-hyp"] },
+   "advanced": { "split": "Upper/Lower with RPE top sets + back-offs, or BBB with 60-70% TM supplemental months", "sessions": ["bbb-press", "bbb-deadlift", "bbb-bench", "bbb-squat"] },
+   "hypertrophy": { "split": "PHUL (2 power + 2 hypertrophy days)", "sessions": ["phul-upper-power", "phul-lower-power", "phul-upper-hyp", "phul-lower-hyp"] }
+  },
+  "5": {
+   "beginner": { "split": "Not recommended (ACSM novice 2-3 days). Offer 3 lifting days + 2 optional conditioning/mobility days.", "sessions": ["bbr-A", "bbr-B", "bbr-A"] },
+   "intermediate": { "split": "Upper/Lower/Push/Pull/Legs hybrid, or nSuns 5-day (nSuns exists in 4/5/6-day versions)", "sessions": ["phul-upper-power", "phul-lower-power", "ppl-push", "ppl-pull", "ppl-legs"], "why": "ULPPL hybrid is common practice (unverified as a named source)." },
+   "advanced": { "split": "Same as intermediate with RPE-driven top sets", "sessions": ["phul-upper-power", "phul-lower-power", "ppl-push", "ppl-pull", "ppl-legs"] },
+   "hypertrophy": { "split": "ULPPL hybrid (or PHAT, Layne Norton's 5-day power+hypertrophy, listed on the r/Fitness wiki)", "sessions": ["phul-upper-power", "phul-lower-power", "ppl-push", "ppl-pull", "ppl-legs"] }
+  },
+  "6": {
+   "beginner": { "split": "Metallicadpa PPL x2 (aimed at 0-12 months experience) only if the user insists on 6 days; otherwise suggest 3-4", "sessions": ["ppl-push", "ppl-pull", "ppl-legs", "ppl-push", "ppl-pull", "ppl-legs"] },
+   "intermediate": { "split": "PPL x2 or nSuns 6-day", "sessions": ["ppl-push", "ppl-pull", "ppl-legs", "ppl-push", "ppl-pull", "ppl-legs"] },
+   "advanced": { "split": "PPL x2 with heavy/light alternation of main lifts", "sessions": ["ppl-push", "ppl-pull", "ppl-legs", "ppl-push", "ppl-pull", "ppl-legs"] },
+   "hypertrophy": { "split": "PPL x2", "sessions": ["ppl-push", "ppl-pull", "ppl-legs", "ppl-push", "ppl-pull", "ppl-legs"] }
+  },
+  "calisthenicsAddOn": "For pull-up/push-up goals, add the matching calisthenics template 2-3x/week, either as its own short session or replacing the vertical pull / horizontal push slot in the gym split. Bodyweight progressions are typically trained 3x/week (unverified; BWF Recommended Routine frequency not confirmed on a fetched page)."
+ },
+
+ "sessionTemplates": [
+  {
+   "id": "bbr-A", "name": "Beginner Full Body A", "focus": "strength-linear",
+   "source": "rfitness-bbr", "confidence": "sourced",
+   "exercises": [
+    { "name": "Barbell Row", "sets": 3, "reps": "5, 5, 5+ (AMRAP, stop 1-2 RIR)", "intensity": "LP working weight" },
+    { "name": "Bench Press", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP working weight" },
+    { "name": "Back Squat", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP working weight" }
+   ],
+   "rest": "2-3 min between sets, up to 5 min between exercises",
+   "useWhen": "Beginner, 3 days/week (alternate with B), first ~3 months"
+  },
+  {
+   "id": "bbr-B", "name": "Beginner Full Body B", "focus": "strength-linear",
+   "source": "rfitness-bbr", "confidence": "sourced",
+   "exercises": [
+    { "name": "Chin-up (or lat pulldown / assisted)", "sets": 3, "reps": "5, 5, 5+", "intensity": "bodyweight, add load when 3x8+ (somaxHeuristic)" },
+    { "name": "Overhead Press", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP working weight" },
+    { "name": "Deadlift", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP working weight" }
+   ],
+   "rest": "2-3 min between sets",
+   "useWhen": "Beginner, alternates with bbr-A"
+  },
+  {
+   "id": "sl5x5-A", "name": "5x5 Workout A", "focus": "strength-linear",
+   "source": "stronglifts", "confidence": "unverified",
+   "exercises": [
+    { "name": "Back Squat", "sets": 5, "reps": 5, "intensity": "LP working weight" },
+    { "name": "Bench Press", "sets": 5, "reps": 5, "intensity": "LP working weight" },
+    { "name": "Barbell Row", "sets": 5, "reps": 5, "intensity": "LP working weight" }
+   ],
+   "useWhen": "Beginner wanting more volume than 3x5+. Exercise layout recalled, not confirmed on fetched page (increments and failure rules are sourced)."
+  },
+  {
+   "id": "sl5x5-B", "name": "5x5 Workout B", "focus": "strength-linear",
+   "source": "stronglifts", "confidence": "unverified",
+   "exercises": [
+    { "name": "Back Squat", "sets": 5, "reps": 5, "intensity": "LP working weight" },
+    { "name": "Overhead Press", "sets": 5, "reps": 5, "intensity": "LP working weight" },
+    { "name": "Deadlift", "sets": 1, "reps": 5, "intensity": "LP working weight" }
+   ],
+   "useWhen": "Alternates with sl5x5-A"
+  },
+  {
+   "id": "gzclp-1", "name": "GZCLP Day 1", "focus": "strength-linear-tiered",
+   "source": "fitness-wiki-gzclp", "confidence": "sourced",
+   "exercises": [
+    { "name": "Back Squat (T1)", "sets": 5, "reps": "3 (last set 3+)", "intensity": "~85% 5RM to start; stage fallback 6x2+ then 10x1+" },
+    { "name": "Bench Press (T2)", "sets": 3, "reps": 10, "intensity": "lighter, stage fallback 3x8 then 3x6" },
+    { "name": "Lat Pulldown (T3)", "sets": 3, "reps": "15 (last set 15+)", "intensity": "add weight when last set hits 25" }
+   ],
+   "rest": "T1 3-5 min, T2 2-3 min, T3 60-90 s",
+   "useWhen": "Beginner 3-4 days/week, or graduate of bbr after 3 months"
+  },
+  {
+   "id": "gzclp-2", "name": "GZCLP Day 2", "focus": "strength-linear-tiered",
+   "source": "fitness-wiki-gzclp", "confidence": "sourced",
+   "exercises": [
+    { "name": "Overhead Press (T1)", "sets": 5, "reps": "3 (last 3+)", "intensity": "T1 rules" },
+    { "name": "Deadlift (T2)", "sets": 3, "reps": 10, "intensity": "T2 rules" },
+    { "name": "Dumbbell Row (T3)", "sets": 3, "reps": "15 (last 15+)", "intensity": "T3 rules" }
+   ],
+   "useWhen": "GZCLP rotation"
+  },
+  {
+   "id": "gzclp-3", "name": "GZCLP Day 3", "focus": "strength-linear-tiered",
+   "source": "fitness-wiki-gzclp", "confidence": "sourced",
+   "exercises": [
+    { "name": "Bench Press (T1)", "sets": 5, "reps": "3 (last 3+)", "intensity": "T1 rules" },
+    { "name": "Back Squat (T2)", "sets": 3, "reps": 10, "intensity": "T2 rules" },
+    { "name": "Lat Pulldown (T3)", "sets": 3, "reps": "15 (last 15+)", "intensity": "T3 rules" }
+   ],
+   "useWhen": "GZCLP rotation"
+  },
+  {
+   "id": "gzclp-4", "name": "GZCLP Day 4", "focus": "strength-linear-tiered",
+   "source": "fitness-wiki-gzclp", "confidence": "sourced",
+   "exercises": [
+    { "name": "Deadlift (T1)", "sets": 5, "reps": "3 (last 3+)", "intensity": "T1 rules" },
+    { "name": "Overhead Press (T2)", "sets": 3, "reps": 10, "intensity": "T2 rules" },
+    { "name": "Dumbbell Row (T3)", "sets": 3, "reps": "15 (last 15+)", "intensity": "T3 rules" }
+   ],
+   "useWhen": "GZCLP rotation. Increments: +2.5 kg bench/OHP, +5 kg squat/deadlift per successful session (source lists 5/10 lb; Somax may halve for lighter lifters)."
+  },
+  {
+   "id": "531b-1", "name": "5/3/1 Beginners Day 1", "focus": "strength-wave",
+   "source": "fitness-wiki-531-beginners", "confidence": "sourced",
+   "weekScheme": { "w1": "5 @ 65%, 5 @ 75%, 5+ @ 85% TM; FSL 5x5 @ 65%", "w2": "3 @ 70%, 3 @ 80%, 3+ @ 90% TM; FSL 5x5 @ 70%", "w3": "5 @ 75%, 3 @ 85%, 1+ @ 95% TM; FSL 5x5 @ 75%" },
+   "exercises": [
+    { "name": "Back Squat", "sets": 8, "reps": "3 main sets per weekScheme + 5x5 FSL", "intensity": "%TM per weekScheme" },
+    { "name": "Bench Press", "sets": 8, "reps": "3 main sets + 5x5 FSL", "intensity": "%TM per weekScheme" },
+    { "name": "Push accessory (dips, push-ups)", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" },
+    { "name": "Pull accessory (chin-ups, rows)", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" },
+    { "name": "Single-leg / core (lunges, ab wheel)", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" }
+   ],
+   "useWhen": "Late beginner / intermediate, 3 days/week. TM = 90% e1RM; +2.5 kg upper, +5 kg lower TM per 3-week cycle."
+  },
+  {
+   "id": "531b-2", "name": "5/3/1 Beginners Day 2", "focus": "strength-wave",
+   "source": "fitness-wiki-531-beginners", "confidence": "sourced",
+   "exercises": [
+    { "name": "Deadlift", "sets": 8, "reps": "3 main + 5x5 FSL", "intensity": "%TM per weekScheme" },
+    { "name": "Overhead Press", "sets": 8, "reps": "3 main + 5x5 FSL", "intensity": "%TM per weekScheme" },
+    { "name": "Push accessory", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" },
+    { "name": "Pull accessory", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" },
+    { "name": "Single-leg / core", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" }
+   ],
+   "useWhen": "With 531b-1/3"
+  },
+  {
+   "id": "531b-3", "name": "5/3/1 Beginners Day 3", "focus": "strength-wave",
+   "source": "fitness-wiki-531-beginners", "confidence": "sourced",
+   "exercises": [
+    { "name": "Bench Press", "sets": 8, "reps": "3 main + 5x5 FSL", "intensity": "%TM per weekScheme" },
+    { "name": "Back Squat", "sets": 8, "reps": "3 main + 5x5 FSL", "intensity": "%TM per weekScheme" },
+    { "name": "Push accessory", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" },
+    { "name": "Pull accessory", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" },
+    { "name": "Single-leg / core", "sets": "any", "reps": "50-100 total", "intensity": "moderate", "group": "A" }
+   ],
+   "useWhen": "With 531b-1/2"
+  },
+  {
+   "id": "531-2day-A", "name": "5/3/1 Two-Day A", "focus": "strength-wave",
+   "source": "somax adaptation of 5/3/1 for Beginners", "confidence": "somaxHeuristic",
+   "exercises": [
+    { "name": "Back Squat", "sets": 8, "reps": "3 main + 5x5 FSL", "intensity": "%TM per 531 weekScheme" },
+    { "name": "Bench Press", "sets": 8, "reps": "3 main + 5x5 FSL", "intensity": "%TM" },
+    { "name": "Chin-up or Row", "sets": 4, "reps": "8-12", "intensity": "2 RIR" }
+   ],
+   "useWhen": "Intermediate with only 2 days/week"
+  },
+  {
+   "id": "531-2day-B", "name": "5/3/1 Two-Day B", "focus": "strength-wave",
+   "source": "somax adaptation", "confidence": "somaxHeuristic",
+   "exercises": [
+    { "name": "Deadlift", "sets": 4, "reps": "3 main + 1x5 FSL", "intensity": "%TM" },
+    { "name": "Overhead Press", "sets": 8, "reps": "3 main + 5x5 FSL", "intensity": "%TM" },
+    { "name": "Split Squat", "sets": 3, "reps": "8-12/leg", "intensity": "2 RIR" }
+   ],
+   "useWhen": "Pairs with 531-2day-A"
+  },
+  {
+   "id": "bbb-press", "name": "BBB Press Day", "focus": "strength-hypertrophy",
+   "source": "wendler-bbb-challenge", "confidence": "sourced",
+   "exercises": [
+    { "name": "Overhead Press (5/3/1)", "sets": 3, "reps": "5/3/1 week scheme, stop at prescribed reps", "intensity": "%TM per 531 weekScheme" },
+    { "name": "Overhead Press (BBB)", "sets": 5, "reps": 10, "intensity": "month 1: 50% TM, month 2: 60%, month 3: 70%" },
+    { "name": "Rows or Chin-ups", "sets": "any", "reps": "25-50 total", "intensity": "easy", "group": "A" },
+    { "name": "Abs", "sets": "any", "reps": "25-50 total", "intensity": "easy", "group": "A" }
+   ],
+   "useWhen": "Intermediate 4 days/week strength+size"
+  },
+  {
+   "id": "bbb-deadlift", "name": "BBB Deadlift Day", "focus": "strength-hypertrophy",
+   "source": "wendler-bbb-challenge", "confidence": "sourced",
+   "exercises": [
+    { "name": "Deadlift (5/3/1)", "sets": 3, "reps": "5/3/1 scheme", "intensity": "%TM" },
+    { "name": "Deadlift (BBB)", "sets": 5, "reps": 10, "intensity": "50/60/70% TM by month" },
+    { "name": "Face Pulls", "sets": "any", "reps": "25-50 total", "intensity": "easy", "group": "A" },
+    { "name": "Abs", "sets": "any", "reps": "25-50 total", "intensity": "easy", "group": "A" }
+   ],
+   "useWhen": "BBB 4-day"
+  },
+  {
+   "id": "bbb-bench", "name": "BBB Bench Day", "focus": "strength-hypertrophy",
+   "source": "wendler-bbb-challenge", "confidence": "sourced",
+   "exercises": [
+    { "name": "Bench Press (5/3/1)", "sets": 3, "reps": "5/3/1 scheme", "intensity": "%TM" },
+    { "name": "Bench Press (BBB)", "sets": 5, "reps": 10, "intensity": "50/60/70% TM by month" },
+    { "name": "Rows or Chin-ups", "sets": "any", "reps": "25-50 total", "intensity": "easy", "group": "A" },
+    { "name": "Abs", "sets": "any", "reps": "25-50 total", "intensity": "easy", "group": "A" }
+   ],
+   "useWhen": "BBB 4-day"
+  },
+  {
+   "id": "bbb-squat", "name": "BBB Squat Day", "focus": "strength-hypertrophy",
+   "source": "wendler-bbb-challenge", "confidence": "sourced",
+   "exercises": [
+    { "name": "Back Squat (5/3/1)", "sets": 3, "reps": "5/3/1 scheme", "intensity": "%TM" },
+    { "name": "Back Squat (BBB)", "sets": 5, "reps": 10, "intensity": "50/60/70% TM by month" },
+    { "name": "Face Pulls", "sets": "any", "reps": "25-50 total", "intensity": "easy", "group": "A" },
+    { "name": "Abs", "sets": "any", "reps": "25-50 total", "intensity": "easy", "group": "A" }
+   ],
+   "useWhen": "BBB 4-day. Note: Wendler's challenge page does not state TM % or TM increments; use the 5/3/1 Beginners TM rules (90% e1RM, +2.5/+5 kg per cycle)."
+  },
+  {
+   "id": "texas-mon", "name": "Texas Method Volume Day", "focus": "strength-weekly",
+   "source": "fitnessvolt-texas", "confidence": "secondary",
+   "exercises": [
+    { "name": "Back Squat", "sets": 5, "reps": 5, "intensity": "~90% of current 5RM" },
+    { "name": "Bench Press or Overhead Press (alternate weeks)", "sets": 5, "reps": 5, "intensity": "~90% of current 5RM" },
+    { "name": "Deadlift", "sets": 1, "reps": 5, "intensity": "~90% of 5RM" }
+   ],
+   "useWhen": "Intermediate 3 days/week whose session-to-session LP has stalled"
+  },
+  {
+   "id": "texas-wed", "name": "Texas Method Light Day", "focus": "strength-weekly",
+   "source": "fitnessvolt-texas", "confidence": "secondary",
+   "exercises": [
+    { "name": "Back Squat", "sets": 2, "reps": 5, "intensity": "~80% of Monday load (squat may go lighter)" },
+    { "name": "Overhead Press or Bench (the one not trained heavy Monday)", "sets": 3, "reps": 5, "intensity": "~80-90% of Monday load" },
+    { "name": "Chin-ups", "sets": 3, "reps": "max-2", "intensity": "bodyweight" }
+   ],
+   "useWhen": "Texas Method Wednesday. Set counts on this day are unverified (only the ~80% load is sourced)."
+  },
+  {
+   "id": "texas-fri", "name": "Texas Method Intensity Day", "focus": "strength-weekly",
+   "source": "fitnessvolt-texas", "confidence": "secondary",
+   "exercises": [
+    { "name": "Back Squat", "sets": 1, "reps": 5, "intensity": "new 5RM (last week's + 2.5 kg)" },
+    { "name": "Bench Press or Overhead Press", "sets": 1, "reps": 5, "intensity": "new 5RM (+1-2.5 kg)" },
+    { "name": "Power Clean or Deadlift", "sets": 3, "reps": 3, "intensity": "heavy, technical (unverified)" }
+   ],
+   "useWhen": "Texas Method Friday"
+  },
+  {
+   "id": "phul-upper-power", "name": "PHUL Upper Power", "focus": "strength-hypertrophy",
+   "source": "strengthlog-phul", "confidence": "secondary",
+   "exercises": [
+    { "name": "Bench Press", "sets": 3, "reps": "3-5", "intensity": "1-2 RIR" },
+    { "name": "Barbell Row", "sets": 3, "reps": "3-5", "intensity": "1-2 RIR" },
+    { "name": "Incline Dumbbell Press", "sets": 3, "reps": "6-10", "intensity": "1-2 RIR" },
+    { "name": "Lat Pulldown", "sets": 3, "reps": "6-10", "intensity": "1-2 RIR" },
+    { "name": "Overhead Press", "sets": 2, "reps": "5-8", "intensity": "2 RIR" },
+    { "name": "Barbell Curl", "sets": 2, "reps": "6-10", "intensity": "0-1 RIR last set", "group": "A" },
+    { "name": "Lying Triceps Extension", "sets": 2, "reps": "8-12", "intensity": "0-1 RIR last set", "group": "A" }
+   ],
+   "useWhen": "4 days/week strength+size. Source range is 3-4 sets per exercise (2-3 for arms/OHP); start at the minimum (Campbell's advice per secondary sources), add the 4th set as volume progression."
+  },
+  {
+   "id": "phul-lower-power", "name": "PHUL Lower Power", "focus": "strength-hypertrophy",
+   "source": "strengthlog-phul", "confidence": "secondary",
+   "exercises": [
+    { "name": "Back Squat", "sets": 3, "reps": "3-5", "intensity": "1-2 RIR" },
+    { "name": "Deadlift", "sets": 3, "reps": "3-5", "intensity": "1-2 RIR" },
+    { "name": "Bulgarian Split Squat", "sets": 3, "reps": "6-10/leg", "intensity": "2 RIR" },
+    { "name": "Leg Curl", "sets": 3, "reps": "6-10", "intensity": "1 RIR", "group": "A" },
+    { "name": "Standing Calf Raise", "sets": 3, "reps": "6-10", "intensity": "1 RIR", "group": "A" }
+   ],
+   "useWhen": "PHUL"
+  },
+  {
+   "id": "phul-upper-hyp", "name": "PHUL Upper Hypertrophy", "focus": "hypertrophy",
+   "source": "strengthlog-phul", "confidence": "secondary",
+   "exercises": [
+    { "name": "Incline Bench Press", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Seated Cable Row", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Dumbbell Chest Fly", "sets": 3, "reps": "8-12", "intensity": "1 RIR", "group": "A" },
+    { "name": "Dumbbell Row", "sets": 3, "reps": "8-12", "intensity": "1 RIR", "group": "A" },
+    { "name": "Dumbbell Lateral Raise", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR" },
+    { "name": "Dumbbell Curl", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR", "group": "B" },
+    { "name": "Triceps Pushdown", "sets": 3, "reps": "10-15", "intensity": "0-1 RIR", "group": "B" }
+   ],
+   "useWhen": "PHUL"
+  },
+  {
+   "id": "phul-lower-hyp", "name": "PHUL Lower Hypertrophy", "focus": "hypertrophy",
+   "source": "strengthlog-phul", "confidence": "secondary",
+   "exercises": [
+    { "name": "Barbell Lunge", "sets": 3, "reps": "8-12/leg", "intensity": "2 RIR" },
+    { "name": "Leg Press", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Leg Extension", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR", "group": "A" },
+    { "name": "Leg Curl", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR", "group": "A" },
+    { "name": "Standing Calf Raise", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR", "group": "B" },
+    { "name": "Seated Calf Raise", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR", "group": "B" }
+   ],
+   "useWhen": "PHUL. Note: some versions list Front Squat as the first lift; StrengthLog's does not."
+  },
+  {
+   "id": "ppl-push", "name": "Push Day", "focus": "hypertrophy-linear",
+   "source": "metallicadpa-ppl", "confidence": "unverified",
+   "exercises": [
+    { "name": "Bench Press (alternate with Overhead Press as the heavy lift each push day)", "sets": 5, "reps": "5 (last set 5+)", "intensity": "LP: +2.5 kg/session when all reps hit" },
+    { "name": "Overhead Press (or Bench, the one not heavy today)", "sets": 3, "reps": "8-12", "intensity": "2 RIR" },
+    { "name": "Incline Dumbbell Press", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Triceps Pushdown", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR", "group": "A" },
+    { "name": "Lateral Raise", "sets": 3, "reps": "15-20", "intensity": "0-1 RIR", "group": "A" },
+    { "name": "Overhead Triceps Extension", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR", "group": "B" },
+    { "name": "Lateral Raise", "sets": 3, "reps": "15-20", "intensity": "0-1 RIR", "group": "B" }
+   ],
+   "useWhen": "3 or 6 days/week PPL. Exact sets/reps recalled from the original post; only the PPL split, 6-day/3-day use, 0-12 month target and +5 lb (+10 lb deadlift) per-session LP are confirmed via secondary sources."
+  },
+  {
+   "id": "ppl-pull", "name": "Pull Day", "focus": "hypertrophy-linear",
+   "source": "metallicadpa-ppl", "confidence": "unverified",
+   "exercises": [
+    { "name": "Deadlift (alternate with Barbell Row as the heavy lift)", "sets": 1, "reps": "5+", "intensity": "LP: +5 kg/session" },
+    { "name": "Pull-ups or Lat Pulldown", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Seated Cable Row", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Face Pull", "sets": 5, "reps": "15-20", "intensity": "1 RIR", "group": "A" },
+    { "name": "Hammer Curl", "sets": 4, "reps": "8-12", "intensity": "0-1 RIR", "group": "A" },
+    { "name": "Dumbbell Curl", "sets": 4, "reps": "8-12", "intensity": "0-1 RIR" }
+   ],
+   "useWhen": "PPL"
+  },
+  {
+   "id": "ppl-legs", "name": "Leg Day", "focus": "hypertrophy-linear",
+   "source": "metallicadpa-ppl", "confidence": "unverified",
+   "exercises": [
+    { "name": "Back Squat", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP: +2.5 kg/session (Liftosaur lists 2x5 + 1x5+, secondary)" },
+    { "name": "Romanian Deadlift", "sets": 3, "reps": "8-12", "intensity": "2 RIR" },
+    { "name": "Leg Press", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Leg Curl", "sets": 3, "reps": "8-12", "intensity": "0-1 RIR", "group": "A" },
+    { "name": "Calf Raise", "sets": 5, "reps": "8-12", "intensity": "0-1 RIR", "group": "A" }
+   ],
+   "useWhen": "PPL"
+  },
+  {
+   "id": "fb-2day-A", "name": "Two-Day Full Body A", "focus": "strength-linear",
+   "source": "somax adaptation of BBR", "confidence": "somaxHeuristic",
+   "exercises": [
+    { "name": "Back Squat", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP" },
+    { "name": "Bench Press", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP" },
+    { "name": "Barbell Row", "sets": 3, "reps": "8", "intensity": "2 RIR" },
+    { "name": "Romanian Deadlift", "sets": 2, "reps": "8-10", "intensity": "2 RIR" }
+   ],
+   "useWhen": "Beginner, 2 days/week"
+  },
+  {
+   "id": "fb-2day-B", "name": "Two-Day Full Body B", "focus": "strength-linear",
+   "source": "somax adaptation of BBR", "confidence": "somaxHeuristic",
+   "exercises": [
+    { "name": "Deadlift", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP" },
+    { "name": "Overhead Press", "sets": 3, "reps": "5, 5, 5+", "intensity": "LP" },
+    { "name": "Chin-up / Lat Pulldown", "sets": 3, "reps": "6-10", "intensity": "2 RIR" },
+    { "name": "Goblet Squat or Split Squat", "sets": 2, "reps": "8-10", "intensity": "2 RIR" }
+   ],
+   "useWhen": "Beginner, 2 days/week"
+  },
+  {
+   "id": "hyp-fullbody-A", "name": "Hypertrophy Full Body A", "focus": "hypertrophy",
+   "source": "built from hypertrophyModel", "confidence": "somaxHeuristic",
+   "exercises": [
+    { "name": "Back Squat or Hack Squat", "sets": 3, "reps": "6-10", "intensity": "2 RIR" },
+    { "name": "Bench Press or DB Press", "sets": 3, "reps": "6-10", "intensity": "1-2 RIR" },
+    { "name": "Chest-Supported Row", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Romanian Deadlift", "sets": 2, "reps": "8-10", "intensity": "2 RIR" },
+    { "name": "Lateral Raise", "sets": 2, "reps": "12-20", "intensity": "0-1 RIR", "group": "A" },
+    { "name": "Cable Curl", "sets": 2, "reps": "10-15", "intensity": "0-1 RIR", "group": "A" }
+   ],
+   "useWhen": "Build-muscle goal, 2-3 days/week (alternate with B). ~8-12 fractional sets/muscle/week at 3x."
+  },
+  {
+   "id": "hyp-fullbody-B", "name": "Hypertrophy Full Body B", "focus": "hypertrophy",
+   "source": "built from hypertrophyModel", "confidence": "somaxHeuristic",
+   "exercises": [
+    { "name": "Leg Press or Bulgarian Split Squat", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Overhead Press or Incline DB Press", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Lat Pulldown or Pull-up", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Leg Curl", "sets": 2, "reps": "10-15", "intensity": "0-1 RIR" },
+    { "name": "Triceps Pushdown", "sets": 2, "reps": "10-15", "intensity": "0-1 RIR", "group": "A" },
+    { "name": "Calf Raise", "sets": 2, "reps": "10-20", "intensity": "0-1 RIR", "group": "A" }
+   ],
+   "useWhen": "Alternates with hyp-fullbody-A"
+  },
+  {
+   "id": "pullup-foundation", "name": "First Pull-up Builder", "focus": "calisthenics-pull",
+   "source": "BWF Recommended Routine (via mirror) + pull-up progression guides", "confidence": "unverified",
+   "exercises": [
+    { "name": "Dead Hang", "sets": 3, "reps": "max hold, build to 30-60 s", "intensity": "bodyweight" },
+    { "name": "Scapular Pulls", "sets": 3, "reps": "5-8 (progress to 10)", "intensity": "bodyweight, 1 s squeeze at top" },
+    { "name": "Arch Hangs", "sets": 3, "reps": "5-8", "intensity": "bodyweight" },
+    { "name": "Negative Pull-ups", "sets": 3, "reps": "3-5", "intensity": "3-5 s+ controlled descent" },
+    { "name": "Inverted Row (or Band-Assisted Pull-up)", "sets": 3, "reps": "8-12", "intensity": "2 RIR; lower the bar / thinner band over time" }
+   ],
+   "rest": "~90 s",
+   "useWhen": "pullup-max-reps = 0. 3x/week. Step order (scapular pulls -> arch hangs -> negatives -> pull-ups) per a mirror of the BWF Recommended Routine; move a step forward when 3x8 is achieved (somaxHeuristic based on the wiki's 3x8 milestone). Readiness gate for unassisted attempts: 3x8 band-assisted or 3x5 slow negatives (blog-level, unverified)."
+  },
+  {
+   "id": "pullup-reps", "name": "Pull-up Rep Builder", "focus": "calisthenics-pull",
+   "source": "somaxHeuristic built on BWF 3x5-8 scheme", "confidence": "somaxHeuristic",
+   "exercises": [
+    { "name": "Pull-ups", "sets": 4, "reps": "~60-70% of current max per set (min 1)", "intensity": "stop 1-2 reps before failure" },
+    { "name": "Negative Pull-ups", "sets": 2, "reps": "3", "intensity": "5 s descent (only if max < 5)" },
+    { "name": "Chin-ups or Lat Pulldown", "sets": 3, "reps": "8-12", "intensity": "1-2 RIR" },
+    { "name": "Barbell / Inverted Row", "sets": 3, "reps": "8-12", "intensity": "2 RIR" }
+   ],
+   "useWhen": "Goal = N pull-ups and current max >= 1. 2-3x/week. Add 1 total rep per session (spread across sets) and re-test max every 2 weeks. Once 3x8 strict, add a weighted pull-up day (BWF milestone)."
+  },
+  {
+   "id": "pushup-reps", "name": "Push-up Rep Builder", "focus": "calisthenics-push",
+   "source": "somaxHeuristic", "confidence": "somaxHeuristic",
+   "exercises": [
+    { "name": "Push-ups (incline or knee if max < 5)", "sets": 4, "reps": "~60-70% of current max", "intensity": "1-2 RIR" },
+    { "name": "Dips or Bench Press", "sets": 3, "reps": "6-10", "intensity": "2 RIR" },
+    { "name": "Plank or RKC Plank", "sets": 3, "reps": "20-45 s", "intensity": "rigid body" }
+   ],
+   "useWhen": "Push-up rep goals. 3x/week, re-test max every 2 weeks."
+  },
+  {
+   "id": "deload-week", "name": "Deload Session", "focus": "recovery",
+   "source": "RP volume landmarks (deload to ~maintenance) + somax", "confidence": "derived",
+   "exercises": [
+    { "name": "Same main lifts as the normal session", "sets": "~half of normal", "reps": "same reps", "intensity": "-10% load or 5/3/1 deload percentages, 3+ RIR" },
+    { "name": "Accessories", "sets": "~half", "reps": "same", "intensity": "3+ RIR" }
+   ],
+   "useWhen": "Scheduled deload week or reactive deload (performance dropping two sessions in a row)."
+  }
+ ],
+
+ "safety": [
+  { "rule": "Technique gates load: reps with broken form (squat above depth, bum off bench, rounded-back deadlift) count as missed reps and the weight does not go up.", "source": "stronglifts-progress", "confidence": "sourced" },
+  { "rule": "Do not test true 1-rep maxes for beginners; estimate from a 3-5 rep set at good bar speed. Treat every e1RM as +/-10%.", "source": "fitness-wiki-531-beginners, wikipedia-1rm", "confidence": "sourced" },
+  { "rule": "AMRAP sets stop 1-2 reps short of failure, or earlier if form or bar speed drops; no grinders on 5/3/1 AMRAPs.", "source": "rfitness-bbr, fitness-wiki-gzclp, fitness-wiki-531-beginners", "confidence": "sourced" },
+  { "rule": "Start conservatively (empty-bar ramp test) and progress in small fixed jumps; never more than +10% on a lift's working weight week over week (ACSM: 2-10% per increase).", "source": "rfitness-bbr, acsm-2009", "confidence": "sourced" },
+  { "rule": "Connective tissue adapts slower than muscle (tendon stiffness changes need ~6-8 weeks of heavy loading; 12+ weeks for high-strain work). Do not let a new lifter's load climb faster than the plan just because muscles feel fine; novices also show higher injury rates in high-intensity settings.", "source": "barbell-medicine-nia", "confidence": "sourced" },
+  { "rule": "Self-rated RIR is often 2-5 reps off, especially on high-rep sets; bias prescriptions toward more reserve for beginners (e.g. prescribe 2 RIR when aiming for 1).", "source": "barbell-medicine-nia", "confidence": "sourced" },
+  { "rule": "Use safety pins/arms or a spotter for squat and bench; never bench heavy alone without safeties.", "confidence": "unverified" },
+  { "rule": "Sharp or joint pain (not muscle burn), numbness, dizziness or chest pain = stop the session and seek medical/physio advice; the app must not auto-progress that lift until the user marks it resolved.", "confidence": "unverified" },
+  { "rule": "Show a pre-participation health screen (heart/BP conditions, recent surgery, pregnancy) and recommend medical clearance where flagged before generating heavy plans.", "confidence": "unverified" },
+  { "rule": "Unrealistic targets are split into milestones and the first milestone shown; never compress a plan to hit a user-chosen date beyond the optimistic rate.", "confidence": "somaxHeuristic" },
+  { "rule": "After a layoff longer than ~4 weeks, restart lighter and re-benchmark (strength is largely retained for ~4 weeks).", "source": "barbell-medicine-nia", "confidence": "sourced" },
+  { "rule": "Minimum 1 rest day between full-body sessions; at most 2 heavy deadlift exposures per week.", "source": "fitness-wiki-gzclp (rest day); deadlift cap unverified", "confidence": "sourced/unverified" }
+ ],
+
+ "sources": [
+  { "id": "fitness-wiki-gzclp", "title": "GZCLP", "author": "r/Fitness wiki (program by Cody Lefever / GZCL)", "url": "https://thefitness.wiki/routines/gzclp/", "whatWeUsed": "Tier structure, 4-workout rotation, stage fallbacks, increments, rest times, T3 25-rep rule, 85% 5RM restart." },
+  { "id": "fitness-wiki-531-beginners", "title": "5/3/1 for Beginners", "author": "r/Fitness wiki (program by Jim Wendler)", "url": "https://thefitness.wiki/routines/5-3-1-for-beginners/", "whatWeUsed": "TM = 90% e1RM, weekly %TM, FSL, assistance reps, TM increments, reset rule, 3-day layout, test week." },
+  { "id": "wendler-bbb-challenge", "title": "Boring But Big, 3 Month Challenge", "author": "Jim Wendler", "url": "https://jimwendler.com/blogs/jimwendler-com/boring-but-big-3-month-challenge", "whatWeUsed": "4-day BBB layout, 5x10 at 50/60/70% TM by month, assistance reps." },
+  { "id": "rfitness-bbr", "title": "Basic Beginner Routine", "author": "r/Fitness wiki", "url": "https://thefitness.wiki/routines/r-fitness-basic-beginner-routine/", "whatWeUsed": "A/B workouts, 3x5+, increments, >10 AMRAP bump, <15 reps -> -10% rule, empty-bar start test, 3-month cap, rest times." },
+  { "id": "stronglifts-progress", "title": "StrongLifts 5x5: How to Progress", "author": "Mehdi Hadim (StrongLifts)", "url": "https://stronglifts.com/stronglifts-5x5/progress/", "whatWeUsed": "Per-lift increments (kg), slowing to every 2-3 sessions, failure = repeat weight, form failures count as misses." },
+  { "id": "stronglifts", "title": "StrongLifts 5x5 overview", "author": "StrongLifts", "url": "https://stronglifts.com/stronglifts-5x5/", "whatWeUsed": "Program family and days/week (Lite 2-3x, Ultra 4x, Ultra Max 5x). A/B exercise list NOT confirmed on fetched pages (unverified)." },
+  { "id": "fitness-wiki-nsuns", "title": "nSuns LP", "author": "r/Fitness wiki", "url": "https://thefitness.wiki/routines/nsuns-lp/", "whatWeUsed": "4/5/6-day versions exist; TM = 90% 1RM; AMRAP-based TM increase table." },
+  { "id": "fitness-wiki-routines", "title": "Strength Training & Muscle Building Routines", "author": "r/Fitness wiki", "url": "https://thefitness.wiki/routines/strength-training-muscle-building/", "whatWeUsed": "Days/week of 5/3/1 variants, GZCLP, nSuns, Metallicadpa PPL (6 or 3), PHAT (5), WS4SB (4)." },
+  { "id": "fitnessvolt-texas", "title": "Texas Method program", "author": "Fitness Volt (secondary; program by Glenn Pendlay / Mark Rippetoe)", "url": "https://fitnessvolt.com/rpe-training/programs/texas-method/", "whatWeUsed": "Volume 5x5 @ ~90% 5RM, light day ~80%, Friday 5RM, weekly progression example, stall handling." },
+  { "id": "strengthlog-phul", "title": "PHUL Workout Routine", "author": "Daniel Richter, StrengthLog (secondary; program by Brandon Campbell)", "url": "https://www.strengthlog.com/phul-workout-routine/", "whatWeUsed": "Day-by-day exercises, sets x reps, ~2.5 kg double progression, rest times." },
+  { "id": "metallicadpa-ppl", "title": "Metallicadpa PPL (via Liftosaur / LiftVault / Jefit copies)", "author": "u/metallicadpa (secondary sources)", "url": "https://www.liftosaur.com/programs/metallicadpappl", "whatWeUsed": "PPL x2 split, 0-12 month audience, 3-day alternative, per-session LP increments, squat 2x5+1x5+. Accessory details unverified." },
+  { "id": "rp-volume-landmarks", "title": "Training Volume Landmarks for Muscle Growth", "author": "Mike Israetel / Renaissance Periodization", "url": "https://rpstrength.com/blogs/articles/training-volume-landmarks-muscle-growth", "whatWeUsed": "MV ~6 sets, MEV/MAV/MRV definitions, +sets per week feedback rules, 12->20 example, deload to MV, working-set definition (30-85% 1RM, 5-30 reps, 0-4 RIR)." },
+  { "id": "sbs-volume", "title": "More Training, More Gaining: Everything You Need to Know About Training Volume", "author": "Stronger by Science", "url": "https://www.strongerbyscience.com/volume/", "whatWeUsed": "Fractional set counting, ~10 / 15-25 / 20-30 weekly set starting points, ~11 fractional sets per-session PUOS, proximity-to-failure findings." },
+  { "id": "sbs-modeling", "title": "Modeling strength gains over time", "author": "Stronger by Science", "url": "https://www.strongerbyscience.com/research-spotlight-modeling-strength/", "whatWeUsed": "Linear-log model (each equal gain takes ~2x as long), sex parity in relative gains." },
+  { "id": "sbs-predict-gains", "title": "How Sex, Strength, and Age Affect Strength Gains In Powerlifters", "author": "Stronger by Science", "url": "https://www.strongerbyscience.com/predict-strength-gains/", "whatWeUsed": "0.58%/month men, 0.92%/month women, decline with meets, low predictive power of sex/age/strength." },
+  { "id": "latella-2020", "title": "Long-term strength adaptation: a 15-year analysis of powerlifting athletes", "author": "Latella et al., 2020 (PMC7448836)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7448836/", "whatWeUsed": "~55 kg/yr (men), ~44 kg/yr (women) total gains; weaker lifters gain faster." },
+  { "id": "barbell-medicine-nia", "title": "Progressive Loading Part 3: The Death of the Novice-Intermediate-Advanced Framework", "author": "Barbell Medicine", "url": "https://www.barbellmedicine.com/blog/novice-intermediate-advanced-strength-training/", "whatWeUsed": "15-30% in 12 weeks untrained, 2-6%/yr trained, stall definition and responses, day-to-day noise, RIR misjudgement, tendon timeline, detraining, reactive progression philosophy." },
+  { "id": "symmetric-strength-standards", "title": "Strength Standards", "author": "Symmetric Strength", "url": "https://symmetricstrength.com/standards", "whatWeUsed": "Absolute 1RM bands for 180 lb man / 140 lb woman, converted to BW ratios; methodology note (Wilks-based model bands, not percentiles)." },
+  { "id": "wikipedia-1rm", "title": "One-repetition maximum", "author": "Wikipedia", "url": "https://en.wikipedia.org/wiki/One-repetition_maximum", "whatWeUsed": "Epley and Brzycki formulas, divergence above 10 reps, ~10% error, novice caveat." },
+  { "id": "fitnessvolt-rpe", "title": "Tuchscherer RPE chart explained / RPE vs RIR", "author": "Fitness Volt (secondary; chart by Mike Tuchscherer, RTS)", "url": "https://fitnessvolt.com/rpe-training/guides/tuchscherer-chart-explained", "whatWeUsed": "RPE-to-RIR mapping, RPE 10 %1RM anchors, reps+RIR equivalence." },
+  { "id": "acsm-2009", "title": "ACSM Position Stand: Progression Models in Resistance Training for Healthy Adults (2009)", "author": "American College of Sports Medicine", "url": "https://pubmed.ncbi.nlm.nih.gov/19204579/", "whatWeUsed": "Novice 8-12RM, +2-10% load when 1-2 reps over target, frequency 2-3 / 3-4 / 4-5 days by level (via abstract/search summary)." },
+  { "id": "schoenfeld-2021", "title": "Loading Recommendations for Muscle Strength, Hypertrophy, and Local Endurance: A Re-Examination of the Repetition Continuum", "author": "Schoenfeld, Grgic, Van Every, Plotkin (Sports, 2021)", "url": "https://doaj.org/article/6d51b905504d46f0873bb43d5d84bf21", "whatWeUsed": "Hypertrophy across a wide load spectrum; heavy-load strength zone. (abstract-level, via search)" },
+  { "id": "schoenfeld-2017", "title": "Dose-response relationship between weekly resistance training volume and increases in muscle mass", "author": "Schoenfeld, Ogborn, Krieger", "url": "https://pubmed.ncbi.nlm.nih.gov/27433992/", "whatWeUsed": "Graded volume effect, 10+ weekly sets category (via search summary; PubMed URL not fetched - unverified link)." },
+  { "id": "bwf-rr-mirror", "title": "r/bodyweightfitness Recommended Routine (Google Doc mirror) and wiki pull-up page", "author": "r/bodyweightfitness", "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine/", "whatWeUsed": "Pull-up progression order (scapular pulls -> arch hangs -> negatives -> pull-ups), 3x5-8 style scheme, 3x8 milestone. Reddit pages could NOT be fetched; seen only in search snippets -> unverified." }
+ ],
+
+ "notUsed": [
+  "Starting Strength official pages returned 403/connection refused; no SS-specific numbers are used.",
+  "ExRx strength standards were not fetched; Symmetric Strength used instead.",
+  "Mike Tuchscherer's own RTS pages were not fetched; RPE values come from secondary pages."
+ ]
+}
