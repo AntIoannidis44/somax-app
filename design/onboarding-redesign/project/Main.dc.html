@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Somax onboarding</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #f3f5fa; color: #0a1224; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; overflow: hidden; position: relative;">
+
+<sc-if value="{{isWelcome}}" hint-placeholder-val="{{false}}">
+<div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 72px 28px 40px; background: linear-gradient(160deg, #4866f6 0%, #6a4cf0 45%, #8936e8 100%); color: #ffffff;">
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.32em;">SOMAXX</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+<sc-for list="{{welcomeIcons}}" as="ic" hint-placeholder-count="8">
+<div style="height: 64px; border-radius: 20px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center;">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ic.d}}"></path></svg>
+</div>
+</sc-for>
+</div>
+<h1 style="margin: 12px 0 0; font-family: 'Sora', sans-serif; font-size: 36px; line-height: 1.08; letter-spacing: -0.03em; font-weight: 800;">Train for the sport you love.</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; opacity: 0.88;">AFL to Pilates, first 5K to heavy singles. Tell us your sport and goal and we'll build your week, then adapt it as you log.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<button type="button" onClick="{{next}}" style="height: 56px; border: none; border-radius: 18px; background: #ffffff; color: #3b2fd6; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; cursor: pointer;">Get started</button>
+<button type="button" style="height: 48px; border: none; background: transparent; color: #ffffff; font-family: inherit; font-weight: 600; font-size: 15px; opacity: 0.85; cursor: pointer;">I already have an account</button>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{inFlow}}" hint-placeholder-val="{{true}}">
+<div style="flex-shrink: 0; padding: 54px 20px 8px; display: flex; flex-direction: column; gap: 14px;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<button type="button" aria-label="Back" onClick="{{back}}" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(14,27,61,0.12); background: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4d5671" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+</button>
+<div style="flex-grow: 1; display: flex; gap: 5px;">
+<sc-for list="{{progress}}" as="seg" hint-placeholder-count="8">
+<div style="{{seg.style}}"></div>
+</sc-for>
+</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: #8790a7; min-width: 34px; text-align: right;">{{stepLabel}}</div>
+</div>
+</div>
+
+<div style="flex-grow: 1; overflow-y: auto; padding: 8px 20px 24px; display: flex; flex-direction: column; gap: 18px;">
+
+<sc-if value="{{isPath}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">HOW DO YOU WANT TO START?</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">Plan it for me, or jump in?</h2>
+<p style="margin: 0; font-size: 15px; color: #4d5671; line-height: 1.5;">Either way you'll set up your name and character. You can switch any time in Settings.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<sc-for list="{{pathCards}}" as="p" hint-placeholder-count="2">
+<button type="button" onClick="{{p.pick}}" aria-pressed="{{p.on}}" style="{{p.cardStyle}}">
+<div style="display: flex; align-items: center; gap: 12px; width: 100%;">
+<div style="{{p.badge}}">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{p.icon}}"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; text-align: left; flex-grow: 1;">
+<span style="font-size: 17px; font-weight: 800; font-family: 'Sora', sans-serif; letter-spacing: -0.02em;">{{p.label}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; color: #8790a7;">{{p.time}}</span>
+</div>
+<div style="{{p.check}}"></div>
+</div>
+<span style="font-size: 13.5px; color: #4d5671; line-height: 1.45; text-align: left;">{{p.sub}}</span>
+<div style="padding: 8px 12px; border-radius: 12px; background: #f0f3f9; font-size: 12px; font-weight: 700; color: #4d5671; text-align: left;">{{p.stepsText}}</div>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{isAbout}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">ABOUT YOU</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">Let's get to know you</h2>
+<p style="margin: 0; font-size: 15px; color: #4d5671; line-height: 1.5;">Used to set your starting load, paces and calories.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; color: #4d5671;">First name
+<input value="{{name}}" onChange="{{onName}}" placeholder="e.g. Ant" style="height: 52px; border-radius: 16px; border: 1px solid rgba(14,27,61,0.12); background: #ffffff; padding: 0 16px; font-family: inherit; font-size: 16px; color: #0a1224;">
+</label>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; color: #4d5671;">Age
+<input value="{{age}}" onChange="{{onAge}}" inputmode="numeric" placeholder="32" style="height: 52px; border-radius: 16px; border: 1px solid rgba(14,27,61,0.12); background: #ffffff; padding: 0 14px; font-family: inherit; font-size: 16px; color: #0a1224; min-width: 0;">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; color: #4d5671;">Height cm
+<input value="{{height}}" onChange="{{onHeight}}" inputmode="numeric" placeholder="180" style="height: 52px; border-radius: 16px; border: 1px solid rgba(14,27,61,0.12); background: #ffffff; padding: 0 14px; font-family: inherit; font-size: 16px; color: #0a1224; min-width: 0;">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; color: #4d5671;">Weight kg
+<input value="{{weight}}" onChange="{{onWeight}}" inputmode="numeric" placeholder="78" style="height: 52px; border-radius: 16px; border: 1px solid rgba(14,27,61,0.12); background: #ffffff; padding: 0 14px; font-family: inherit; font-size: 16px; color: #0a1224; min-width: 0;">
+</label>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isSport}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">YOUR SPORT</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">What's your main sport?</h2>
+<p style="margin: 0; font-size: 15px; color: #4d5671; line-height: 1.5;">Your week is built around this. You can add others next.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+<sc-for list="{{sportTiles}}" as="s" hint-placeholder-count="15">
+<button type="button" onClick="{{s.pick}}" aria-pressed="{{s.on}}" style="{{s.tileStyle}}">
+<div style="{{s.iconWrap}}">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{s.d}}"></path></svg>
+</div>
+<span style="font-size: 12.5px; font-weight: 700; line-height: 1.2; text-align: center;">{{s.label}}</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{isExtras}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">ALSO DO</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">Anything else you do?</h2>
+<p style="margin: 0; font-size: 15px; color: #4d5671; line-height: 1.5;">Optional. We'll mix a session of these in each week alongside {{mainSportLabel}}.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{extraChips}}" as="c" hint-placeholder-count="12">
+<button type="button" onClick="{{c.toggle}}" aria-pressed="{{c.on}}" style="{{c.chipStyle}}">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.d}}"></path></svg>
+{{c.label}}
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{isGoal}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">YOUR GOAL</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">What are you training for?</h2>
+<p style="margin: 0; font-size: 15px; color: #4d5671; line-height: 1.5;">Pick up to two.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<sc-for list="{{goalCards}}" as="g" hint-placeholder-count="7">
+<button type="button" onClick="{{g.toggle}}" aria-pressed="{{g.on}}" style="{{g.cardStyle}}">
+<div style="{{g.iconWrap}}">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{g.d}}"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; text-align: left; flex-grow: 1;">
+<span style="font-size: 15px; font-weight: 700;">{{g.label}}</span>
+<span style="font-size: 12.5px; color: #4d5671;">{{g.sub}}</span>
+</div>
+<div style="{{g.check}}"></div>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 22px; background: #ffffff; border: 1px solid rgba(14,27,61,0.08); box-shadow: 0 14px 30px -18px rgba(12,24,56,0.25);">
+<div style="display: flex; align-items: center; gap: 8px;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a4fe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path></svg>
+<span style="font-size: 15px; font-weight: 800;">Set a {{mainSportLabel}} target</span>
+<span style="margin-left: auto; font-size: 12px; font-weight: 700; color: #8790a7;">Optional</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{targetChips}}" as="t" hint-placeholder-count="4">
+<button type="button" onClick="{{t.pick}}" aria-pressed="{{t.on}}" style="{{t.chipStyle}}">{{t.label}}</button>
+</sc-for>
+</div>
+<sc-if value="{{showTimes}}" hint-placeholder-val="{{false}}">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; font-weight: 700; color: #4d5671;">{{currentLabel}}
+<input value="{{current}}" onChange="{{onCurrent}}" placeholder="{{currentPh}}" style="height: 48px; border-radius: 14px; border: 1px solid rgba(14,27,61,0.12); background: #f0f3f9; padding: 0 14px; font-family: 'IBM Plex Mono', monospace; font-size: 16px; color: #0a1224; min-width: 0;">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; font-weight: 700; color: #4d5671;">Target
+<input value="{{target}}" onChange="{{onTarget}}" placeholder="{{targetPh}}" style="height: 48px; border-radius: 14px; border: 1px solid rgba(14,27,61,0.12); background: #f0f3f9; padding: 0 14px; font-family: 'IBM Plex Mono', monospace; font-size: 16px; color: #0a1224; min-width: 0;">
+</label>
+</div>
+</sc-if>
+<sc-if value="{{hasEstimate}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; background: #eeebff; color: #2f2a7a; font-size: 13.5px; line-height: 1.45;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a4fe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M3 12h4l3-8 4 16 3-8h4"></path></svg>
+<span>{{estimate}}</span>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{isSchedule}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">LEVEL &amp; WEEK</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">How much can you train?</h2>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<sc-for list="{{levelCards}}" as="l" hint-placeholder-count="3">
+<button type="button" onClick="{{l.pick}}" aria-pressed="{{l.on}}" style="{{l.cardStyle}}">
+<div style="display: flex; gap: 3px; align-items: flex-end; height: 22px; flex-shrink: 0;">
+<div style="{{l.bar1}}"></div><div style="{{l.bar2}}"></div><div style="{{l.bar3}}"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; text-align: left; flex-grow: 1;">
+<span style="font-size: 15px; font-weight: 700;">{{l.label}}</span>
+<span style="font-size: 12.5px; color: #4d5671;">{{l.sub}}</span>
+</div>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; align-items: baseline; justify-content: space-between;">
+<span style="font-size: 15px; font-weight: 800;">Days per week</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #5a4fe8;">{{days}} days</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px;">
+<sc-for list="{{dayOpts}}" as="d" hint-placeholder-count="5">
+<button type="button" onClick="{{d.pick}}" aria-pressed="{{d.on}}" style="{{d.style}}">{{d.n}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 15px; font-weight: 800;">Session length</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;">
+<sc-for list="{{lenOpts}}" as="d" hint-placeholder-count="4">
+<button type="button" onClick="{{d.pick}}" aria-pressed="{{d.on}}" style="{{d.style}}">{{d.n}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; border-radius: 20px; background: #ffffff; border: 1px solid rgba(14,27,61,0.08);">
+<span style="font-size: 12px; font-weight: 700; color: #8790a7; letter-spacing: 0.04em;">PREVIEW</span>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px;">
+<sc-for list="{{weekPreview}}" as="w" hint-placeholder-count="7">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+<span style="font-size: 11px; font-weight: 700; color: #8790a7;">{{w.d}}</span>
+<div style="{{w.dot}}"></div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isEquip}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">WHERE YOU TRAIN</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">Where will you train?</h2>
+<p style="margin: 0; font-size: 15px; color: #4d5671; line-height: 1.5;">We only suggest programs you can actually do.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+<sc-for list="{{placeCards}}" as="p" hint-placeholder-count="4">
+<button type="button" onClick="{{p.pick}}" aria-pressed="{{p.on}}" style="{{p.cardStyle}}">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{p.d}}"></path></svg>
+<span style="font-size: 14.5px; font-weight: 700;">{{p.label}}</span>
+<span style="font-size: 12px; color: #4d5671; line-height: 1.35;">{{p.sub}}</span>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 15px; font-weight: 800;">Kit you have</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{kitChips}}" as="c" hint-placeholder-count="7">
+<button type="button" onClick="{{c.toggle}}" aria-pressed="{{c.on}}" style="{{c.chipStyle}}">{{c.label}}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isCharacter}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">YOUR CHARACTER</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">Create your athlete</h2>
+<p style="margin: 0; font-size: 15px; color: #4d5671; line-height: 1.5;">{{characterLead}}</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+<sc-for list="{{baseCards}}" as="b" hint-placeholder-count="2">
+<button type="button" onClick="{{b.pick}}" aria-pressed="{{b.on}}" style="{{b.cardStyle}}">
+<div style="height: 210px; width: 100%; border-radius: 18px; background: linear-gradient(175deg, #e8eeff 0%, #efe6ff 100%); display: flex; align-items: flex-end; justify-content: center; overflow: hidden;">
+<svg width="120" height="200" viewBox="0 0 120 200" aria-hidden="true"><path d="{{b.body}}" fill="{{skinHex}}"></path><path d="{{b.kit}}" fill="#1f8f84"></path><path d="{{b.shorts}}" fill="#2a3142"></path></svg>
+</div>
+<span style="font-size: 15px; font-weight: 800;">{{b.label}}</span>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 15px; font-weight: 800;">Complexion</span>
+<div style="display: flex; gap: 12px;">
+<sc-for list="{{skinOpts}}" as="k" hint-placeholder-count="3">
+<button type="button" onClick="{{k.pick}}" aria-label="{{k.name}}" aria-pressed="{{k.on}}" style="{{k.style}}"></button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; gap: 10px; align-items: center; padding: 12px 14px; border-radius: 16px; background: #ffffff; border: 1px solid rgba(14,27,61,0.08); font-size: 13px; color: #4d5671; line-height: 1.45;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a4fe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"></path></svg>
+<span>Hair, outfits and gear are in the Character Studio. More unlocks as you level up.</span>
+</div>
+</sc-if>
+
+<sc-if value="{{isPlan}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 22px 20px; border-radius: 28px; background: linear-gradient(150deg, #4866f6 0%, #8936e8 100%); color: #ffffff;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; opacity: 0.85;">YOUR PLAN IS READY</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 26px; line-height: 1.12; letter-spacing: -0.03em;">{{planTitle}}</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 6px;">
+<sc-for list="{{planTags}}" as="t" hint-placeholder-count="4">
+<span style="padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.18); font-size: 12px; font-weight: 700;">{{t.label}}</span>
+</sc-for>
+</div>
+<sc-if value="{{hasEstimate}}" hint-placeholder-val="{{false}}">
+<div style="padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.14); font-size: 13.5px; line-height: 1.45;">{{estimate}}</div>
+</sc-if>
+</div>
+<sc-if value="{{noSportPrograms}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; background: #fff4e5; color: #6b3d00; font-size: 13.5px; line-height: 1.45;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b86e00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8v5M12 16h.01"></path></svg>
+<span>{{noSportProgramsText}}</span>
+</div>
+</sc-if>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<span style="font-size: 16px; font-weight: 800; font-family: 'Sora', sans-serif;">This week</span>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<sc-for list="{{weekPlan}}" as="w" hint-placeholder-count="7">
+<div style="{{w.rowStyle}}">
+<span style="width: 34px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: #8790a7;">{{w.d}}</span>
+<div style="{{w.badge}}">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{w.icon}}"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; min-width: 0; flex-grow: 1;">
+<span style="font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{w.name}}</span>
+<span style="font-size: 12px; color: #8790a7;">{{w.sub}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; align-items: baseline; justify-content: space-between;">
+<span style="font-size: 16px; font-weight: 800; font-family: 'Sora', sans-serif;">For you</span>
+<span style="font-size: 12.5px; font-weight: 700; color: #1554e6;">In the Library</span>
+</div>
+<sc-for list="{{forYou}}" as="f" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 18px; background: #ffffff; border: 1px solid rgba(14,27,61,0.08);">
+<div style="{{f.badge}}">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{f.icon}}"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0; flex-grow: 1;">
+<span style="font-size: 14px; font-weight: 700;">{{f.name}}</span>
+<span style="font-size: 12px; color: #4d5671;">{{f.why}}</span>
+</div>
+<span style="font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 999px; background: #e8eeff; color: #1554e6; flex-shrink: 0;">{{f.match}}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{isDiy}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #5a4fe8;">YOU'RE IN</div>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.03em;">{{diyTitle}}</h2>
+<p style="margin: 0; font-size: 15px; color: #4d5671; line-height: 1.5;">Your week starts empty. Add sessions from the Library, community programs or your own, any time. Want a plan later? Tap Build my plan in Settings and it takes two minutes.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<sc-for list="{{diyCards}}" as="c" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 20px; background: #ffffff; border: 1px solid rgba(14,27,61,0.08);">
+<div style="{{c.badge}}">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+<span style="font-size: 15px; font-weight: 700;">{{c.label}}</span>
+<span style="font-size: 12.5px; color: #4d5671;">{{c.sub}}</span>
+</div>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8790a7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+</div>
+</sc-for>
+</div>
+</sc-if>
+
+</div>
+
+<div style="flex-shrink: 0; padding: 12px 20px 34px; display: flex; flex-direction: column; gap: 6px; background: linear-gradient(180deg, rgba(243,245,250,0) 0%, #f3f5fa 30%);">
+<button type="button" onClick="{{next}}" style="{{ctaStyle}}">{{ctaLabel}}</button>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"startStep":{"editor":"enum","options":["welcome","path","about","sport","extras","goal","schedule","equip","character","plan","diy"],"default":"welcome"},"prefill":{"editor":"boolean","default":false},"quick":{"editor":"boolean","default":false},"$preview":{"width":390,"height":844}}'>
+// Two flows chosen on the first screen after Get started. Quick start keeps
+// the essentials (name + character) and drops everything plan-related.
+var FULL = ['welcome', 'path', 'about', 'sport', 'extras', 'goal', 'schedule', 'equip', 'character', 'plan'];
+var QUICK = ['welcome', 'path', 'about', 'character', 'diy'];
+var IC = {
+  gym: 'M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12',
+  run: 'M14 4.5a1.5 1.5 0 1 0 0 .01M9 21l2.5-6 3 2.5V21M7 12l3.5-3.5 3 1 2.5 3.5M5.5 9.5L9 8',
+  afl: 'M5 19C3 13 11 3 19 5c2 6-6 16-14 14zM9 15l6-6M10.5 12.5l1.5 1.5M12.5 10.5l1.5 1.5',
+  soccer: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7.5l3.8 2.8-1.4 4.5H9.6L8.2 10.3zM12 3v4.5M21 10.3l-5.2 0M3 10.3h5.2M9.6 14.8 7 19.5M14.4 14.8l2.6 4.7',
+  ride: 'M5.5 17.5a3.5 3.5 0 1 0 0-.01M18.5 17.5a3.5 3.5 0 1 0 0-.01M5.5 17.5L9 10h6l3.5 7.5M12 17.5L9 10M14 6h3',
+  swim: 'M3 17c2 0 2 1.5 4.5 1.5S10 17 12 17s2 1.5 4.5 1.5S19 17 21 17M7 13l4-4 3 3 3-2M16 5a1.5 1.5 0 1 0 0 .01',
+  basketball: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3v18M5.6 5.6c3 3 3 9.8 0 12.8M18.4 5.6c-3 3-3 9.8 0 12.8',
+  tennis: 'M10 3a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM14.5 13.5L21 20M5 6.5c3 1 5.5 3.5 6.5 6.5',
+  boxing: 'M7 4h7a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4H9l-2-2V4zM7 18h9v3H7z',
+  golf: 'M12 18V3l7 3.5L12 10M8 21a4 1.6 0 0 0 8 0',
+  pilates: 'M12 4a1.5 1.5 0 1 0 0 .01M4 20h16M7 16l5-4 5 4M12 12V7.5',
+  yoga: 'M12 4a1.5 1.5 0 1 0 0 .01M12 8v6M6 10l6 2 6-2M8 20l4-6 4 6',
+  hiit: 'M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-3 2-4 2-7 1 1 2 2 3 4 0-3 0-5 0-7z',
+  hybrid: 'M13 2L4 14h7l-1 8 9-12h-7z',
+  general: 'M3 12h4l3-8 4 16 3-8h4',
+  rest: 'M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z',
+  muscle: 'M4 15c2-6 5-8 8-8 2 0 3 1 3 3l-3 1 2 2c3 0 5 1 6 3-4 4-12 4-16-1z',
+  heart: 'M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z',
+  trophy: 'M8 4h8v5a4 4 0 0 1-8 0zM5 5h3v3a3 3 0 0 1-3-3zM19 5h-3v3a3 3 0 0 0 3-3zM12 13v4M8 21h8M9 17h6',
+  home: 'M4 11l8-7 8 7v9H4zM10 20v-5h4v5',
+  tree: 'M12 3l6 9h-4l4 6H6l4-6H6zM12 18v3',
+  travel: 'M3 9h18v11H3zM8 9V5h8v4'
+};
+var SPORTS = [
+  ['gym', 'Gym & strength'], ['run', 'Running'], ['afl', 'AFL'], ['soccer', 'Soccer'], ['ride', 'Cycling'], ['swim', 'Swimming'],
+  ['basketball', 'Basketball'], ['tennis', 'Tennis'], ['boxing', 'Boxing'], ['golf', 'Golf'], ['pilates', 'Pilates'], ['yoga', 'Yoga & mobility'],
+  ['hiit', 'HIIT'], ['hybrid', 'Hybrid / HYROX'], ['general', 'General fitness']
+];
+var COLORS = { gym: '#d4425c', run: '#0f8f5c', afl: '#c84a1c', soccer: '#1554e6', ride: '#1554e6', swim: '#6344d8', basketball: '#c1830f', tennis: '#0f95a5', boxing: '#d4425c', golf: '#0f8f5c', pilates: '#a43fb5', yoga: '#0f95a5', hiit: '#c1830f', hybrid: '#6344d8', general: '#0f95a5', rest: '#8790a7' };
+var GOALS = [
+  ['strength', 'Get stronger', 'Lift more, move better', 'gym'],
+  ['muscle', 'Build muscle', 'Size and shape', 'muscle'],
+  ['fat', 'Lose fat', 'Training plus a sensible deficit', 'hiit'],
+  ['endurance', 'Go further, go faster', 'Fitness, pace and stamina', 'heart'],
+  ['mobility', 'Move better', 'Flexibility, posture, fewer niggles', 'yoga'],
+  ['general', 'Feel fitter overall', 'A bit of everything', 'general'],
+  ['sport', 'Perform in my sport', 'Speed, power and match fitness', 'trophy']
+];
+// Sport-specific measurable targets. kind 'run' uses the real running engine.
+var TARGETS = {
+  run: [['first5k', 'First 5K', null], ['5k25', 'Break 25:00 5K', { m: 5000, t: '25:00', cur: '30:00' }], ['5k20', 'Break 20:00 5K', { m: 5000, t: '20:00', cur: '23:00' }], ['10k50', '10K under 50:00', { m: 10000, t: '50:00', cur: '55:00' }], ['half', 'Half under 2:00:00', { m: 21097.5, t: '2:00:00', cur: '2:15:00' }]],
+  afl: [['2km', '2km time trial', { m: 2000, t: '7:30', cur: '8:15', afl: true }], ['rsa', 'Repeat-sprint fitness', null], ['preseason', 'Pre-season ready', null]],
+  gym: [['bench', 'Bench my bodyweight', null], ['squat', 'Squat 100kg', null], ['pullup', 'First pull-up', null], ['10pu', '10 pull-ups', null]],
+  soccer: [['beep', 'Beep test level 10', null], ['sprint', 'Faster 30m sprint', null], ['preseason', 'Pre-season ready', null]],
+  _: [['bench', 'Hit a benchmark', null], ['event', 'Get event-ready', null]]
+};
+// Weekly sessions per main sport. EVERY name here is the exact name of a
+// program that exists in the Library today (src/data/library/*.json) -
+// no invented sessions. AFL has no programs yet, so its week uses real
+// field-sport programs until the AFL research lands.
+var WEEKS = {
+  gym: [['5/3/1 Boring But Big – Day 1 (Overhead Press)', 'gym'], ['5/3/1 Boring But Big – Day 2 (Deadlift)', 'gym'], ['5/3/1 Boring But Big – Day 3 (Bench Press)', 'gym'], ['5/3/1 Boring But Big – Day 4 (Squat)', 'gym'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Kettlebell Express', 'gym']],
+  run: [['Somax Easy Run & Strides', 'run'], ['Somax Runner\'s Strength', 'gym'], ['Somax Tempo Run', 'run'], ['4x4 Interval Training', 'run'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Track 800s', 'run']],
+  afl: [['Somax Soccer Speed & Power', 'soccer'], ['Somax Strength Foundations', 'gym'], ['4x4 Interval Training', 'run'], ['Somax Runner\'s Strength', 'gym'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Tempo Run', 'run']],
+  soccer: [['FIFA 11+ Injury Prevention Warm-up (Level 1)', 'soccer'], ['Somax Soccer Speed & Power', 'soccer'], ['Somax Strength Foundations', 'gym'], ['4x4 Interval Training', 'run'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Runner\'s Strength', 'gym']],
+  ride: [['Somax Indoor Endurance Ride', 'ride'], ['British Cycling 2x20 Sweet Spot', 'ride'], ['Somax Strength Foundations', 'gym'], ['British Cycling 20-Minute Turbo Session', 'ride'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Cycling VO2 Intervals', 'ride']],
+  swim: [['Somax Swim Endurance Builder', 'swim'], ['USMS 30-min Swim – Technique Tune-Up', 'swim'], ['Somax Strength Foundations', 'gym'], ['USMS 30-min Swim – The Quick Hit', 'swim'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Swim Confidence Builder', 'swim']],
+  basketball: [['Somax Basketball Jump & Agility', 'basketball'], ['Somax Strength Foundations', 'gym'], ['4x4 Interval Training', 'run'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Kettlebell Express', 'gym'], ['Somax Runner\'s Strength', 'gym']],
+  tennis: [['Somax Tennis Footwork & Rotational Power', 'tennis'], ['USTA Tennis Dynamic Warm-up', 'tennis'], ['Somax Strength Foundations', 'gym'], ['4x4 Interval Training', 'run'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Kettlebell Express', 'gym']],
+  boxing: [['Somax Boxing Conditioning', 'boxing'], ['Basic Boxing Training Routine', 'boxing'], ['Somax Strength Foundations', 'gym'], ['Boxing Metabolic Conditioning', 'boxing'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Easy Run & Strides', 'run']],
+  golf: [['Somax Golf Mobility & Rotation', 'golf'], ['Somax Strength Foundations', 'gym'], ['Somax Brisk Walk & Hills', 'general'], ['5-Minute Golf Warm-up', 'golf'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Kettlebell Express', 'gym']],
+  pilates: [['Somax Pilates Core Foundations', 'pilates'], ['Classical Mat Pilates – First Fifteen', 'pilates'], ['Somax Brisk Walk & Hills', 'general'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Strength Foundations', 'gym'], ['Somax Deep Flexibility Flow', 'yoga']],
+  yoga: [['Somax Mobility Reset 15', 'yoga'], ['Sun Salutation (Surya Namaskar)', 'yoga'], ['NHS Gentle Flexibility Routine', 'yoga'], ['Somax Brisk Walk & Hills', 'general'], ['Somax Deep Flexibility Flow', 'yoga'], ['Somax Pilates Core Foundations', 'pilates']],
+  hiit: [['Somax Dumbbell Fat-Loss Circuit', 'hiit'], ['Somax Low-Impact HIIT 20', 'hiit'], ['Somax Strength Foundations', 'gym'], ['The 7-Minute Workout', 'hiit'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Advanced Engine Metcon', 'hiit']],
+  hybrid: [['Somax Hybrid Starter', 'hybrid'], ['Somax Strength Foundations', 'gym'], ['4x4 Interval Training', 'run'], ['Somax Kettlebell Express', 'gym'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Hybrid Race Prep', 'hybrid']],
+  _: [['Somax Strength Foundations', 'gym'], ['Somax Low-Impact HIIT 20', 'hiit'], ['Somax Mobility Reset 15', 'yoga'], ['Somax Brisk Walk & Hills', 'general'], ['Somax Kettlebell Express', 'gym'], ['Somax Dumbbell Fat-Loss Circuit', 'hiit']]
+};
+var FORYOU = {
+  gym: [['5/3/1 Boring But Big – Day 1 (Overhead Press)', 'Intermediate strength, 4-day series', 'gym', '96%'], ['Somax Upper Builder', 'Pairs with your muscle goal', 'gym', '91%'], ['Somax Mobility Reset 15', 'Recovery days, 15 min', 'yoga', '84%']],
+  run: [['Somax Tempo Run', 'Your 5K target pace work', 'run', '97%'], ['Somax Runner\'s Strength', 'Fewer niggles, stronger finish', 'gym', '92%'], ['4x4 Interval Training', 'VO2 sessions for speed', 'run', '88%']],
+  afl: [['Somax Soccer Speed & Power', 'Acceleration for field sports', 'soccer', '89%'], ['Somax Strength Foundations', 'Lower + upper strength base', 'gym', '86%'], ['4x4 Interval Training', 'Aerobic engine for 4 quarters', 'run', '84%']],
+  soccer: [['FIFA 11+ Injury Prevention Warm-up (Level 1)', 'Cuts injury risk ~30%', 'soccer', '98%'], ['Somax Soccer Speed & Power', 'Faster over the first 10m', 'soccer', '95%'], ['4x4 Interval Training', 'Match fitness', 'run', '87%']],
+  _: [['Somax Strength Foundations', 'Matches your level and kit', 'gym', '90%'], ['Somax Low-Impact HIIT 20', 'Short and joint-friendly', 'hiit', '86%'], ['Somax Mobility Reset 15', 'Daily 15-minute reset', 'yoga', '82%']]
+};
+// An extra sport's weekly session = that sport's first real Library program.
+function extraSession(key) { var w = WEEKS[key] || WEEKS._; return w[0]; }
+var DAYNAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+function parseT(s) {
+  var p = String(s || '').trim().split(':').map(Number);
+  if (!p.length || p.some(function (x) { return !isFinite(x); })) return null;
+  var v = p.reduce(function (a, x) { return a * 60 + x; }, 0);
+  return v > 0 ? v : null;
+}
+function fmtT(sec) {
+  sec = Math.round(sec); var h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), r = sec % 60;
+  return h ? h + ':' + String(m).padStart(2, '0') + ':' + String(r).padStart(2, '0') : m + ':' + String(r).padStart(2, '0');
+}
+// Daniels/Gilbert VDOT + the running playbook's gain table (same as src/lib/plans/running.ts).
+function vdot(m, sec) { var t = sec / 60, v = m / t; return (-4.6 + 0.182258 * v + 0.000104 * v * v) / (0.8 + 0.1894393 * Math.exp(-0.012778 * t) + 0.2989558 * Math.exp(-0.1932605 * t)); }
+function gain(v) { var g = [[30, .5], [35, .4], [42, .25], [50, .18], [58, .1], [99, .05]]; for (var i = 0; i < g.length; i++) if (v < g[i][0]) return g[i][1]; return .05; }
+function mult(d) { return { 2: .75, 3: .85, 4: 1, 5: 1.1, 6: 1.15 }[d] || 1; }
+function simWeeks(a, b, d, s) { var w = 0; while (a < b && w < 200) { a += gain(a) * mult(d) * (s || 1); w++; } return w; }
+function simV(a, n, d, s) { for (var i = 0; i < n; i++) a += gain(a) * mult(d) * (s || 1); return a; }
+function timeFor(m, v) { var lo = 60, hi = 36000; for (var i = 0; i < 60; i++) { var mid = (lo + hi) / 2; if (vdot(m, mid) > v) lo = mid; else hi = mid; } return (lo + hi) / 2; }
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var pre = props.prefill === true || props.prefill === 'true';
+    this.state = {
+      stepName: props.startStep || 'welcome',
+      quick: props.quick === true || props.quick === 'true' || props.startStep === 'diy' ? true : pre ? false : null,
+      base: pre ? 'male' : 'female', skin: pre ? 1 : 0,
+      name: pre ? 'Ant' : '', age: pre ? '34' : '', height: pre ? '181' : '', weight: pre ? '82' : '',
+      sport: pre ? 'afl' : null, extras: pre ? ['gym', 'run'] : [],
+      goals: pre ? ['sport', 'endurance'] : [], targetId: pre ? '2km' : null,
+      current: pre ? '8:15' : '', target: pre ? '7:30' : '',
+      level: pre ? 'intermediate' : null, days: 4, len: '45', place: pre ? 'gym' : null, kit: pre ? ['Barbell', 'Dumbbells', 'Running track'] : []
+    };
+  }
+  set(patch) { this.setState(patch); }
+  renderVals() {
+    var s = this.state, self = this;
+    var stepName = s.stepName;
+    var flow = s.quick ? QUICK : FULL;
+    var idx = Math.max(0, flow.indexOf(stepName));
+    var flowSteps = flow.length - 1;
+    var sportKey = s.sport || 'gym';
+    var sportLabel = (SPORTS.find(function (x) { return x[0] === sportKey; }) || ['', 'your sport'])[1];
+    var accent = '#5a4fe8';
+
+    var tile = function (on) {
+      return 'display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 96px; padding: 12px 6px; border-radius: 20px; cursor: pointer; font-family: inherit; color: #0a1224; ' +
+        (on ? 'background: #ffffff; border: 2px solid ' + accent + '; box-shadow: 0 10px 24px -14px rgba(90,79,232,0.7);' : 'background: #ffffff; border: 2px solid rgba(14,27,61,0.06);');
+    };
+    var chip = function (on) {
+      return 'display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; ' +
+        (on ? 'background: #0a1224; color: #ffffff; border: 1px solid #0a1224;' : 'background: #ffffff; color: #0a1224; border: 1px solid rgba(14,27,61,0.14);');
+    };
+    var card = function (on) {
+      return 'display: flex; align-items: center; gap: 14px; width: 100%; padding: 14px 16px; border-radius: 20px; cursor: pointer; font-family: inherit; color: #0a1224; ' +
+        (on ? 'background: #ffffff; border: 2px solid ' + accent + ';' : 'background: #ffffff; border: 2px solid rgba(14,27,61,0.06);');
+    };
+    var iconBox = function (key, on, size) {
+      var c = COLORS[key] || accent; size = size || 44;
+      return 'width: ' + size + 'px; height: ' + size + 'px; border-radius: ' + Math.round(size * 0.32) + 'px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; ' +
+        (on ? 'background: ' + c + '; color: #ffffff;' : 'background: ' + c + '1a; color: ' + c + ';');
+    };
+
+    // Goal target + estimate
+    var targets = TARGETS[sportKey] || TARGETS._;
+    var tgt = targets.find(function (t) { return t[0] === s.targetId; });
+    var spec = tgt && tgt[2];
+    var estimate = '';
+    if (spec) {
+      var cur = parseT(s.current), want = parseT(s.target);
+      if (cur && want && cur > want) {
+        var vc = vdot(spec.m, cur), vt = vdot(spec.m, want), max = 16;
+        var wk = simWeeks(vc, vt, s.days) + 1;
+        if (wk > max) {
+          var ms = Math.ceil(timeFor(spec.m, simV(vc, max - 1, s.days, 0.7)) / 30) * 30;
+          estimate = fmtT(want) + ' is a big jump from ' + fmtT(cur) + ', so block 1 takes you to ' + fmtT(ms) + ' in ' + max + ' weeks. Log a time trial and block 2 picks up from there.';
+        } else {
+          estimate = 'About ' + Math.max(spec.afl ? 6 : 6, wk) + ' weeks at ' + s.days + ' days a week to go from ' + fmtT(cur) + ' to ' + fmtT(want) + '. Paces update every time you log a time.';
+        }
+      } else if (cur && want) {
+        estimate = 'You are already there - set a faster target.';
+      }
+    } else if (tgt) {
+      estimate = 'We will add a benchmark test to week 1 and set your plan length from the result.';
+    }
+
+    // Week plan: spread days across Mon-Sun like the app does.
+    var sessions = WEEKS[sportKey] || WEEKS._;
+    var slots = [];
+    for (var i = 0; i < s.days; i++) { var sl = Math.round((i * 7) / s.days); while (slots.indexOf(sl) >= 0) sl = (sl + 1) % 7; slots.push(sl); }
+    slots.sort(function (a, b) { return a - b; });
+    var extraIdx = 0;
+    var weekPlan = DAYNAMES.map(function (d, di) {
+      var k = slots.indexOf(di);
+      if (k < 0) return { d: d, name: 'Rest & recover', sub: 'Steps, water, sleep', icon: IC.rest, badge: iconBox('rest', false, 34), rowStyle: 'display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 16px; background: transparent; border: 1px dashed rgba(14,27,61,0.12);' };
+      var ses = sessions[k % sessions.length];
+      // swap one session a week for each extra sport
+      if (s.extras.length && k === s.days - 1) { var ex = s.extras[extraIdx++ % s.extras.length]; ses = extraSession(ex); }
+      return { d: d, name: ses[0], sub: s.len + ' min · ' + (s.level || 'intermediate'), icon: IC[ses[1]] || IC.general, badge: iconBox(ses[1], true, 34), rowStyle: 'display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 16px; background: #ffffff; border: 1px solid rgba(14,27,61,0.08);' };
+    });
+
+    var levelData = [['beginner', 'Beginner', 'New, or back after a long break', 1], ['intermediate', 'Intermediate', 'Training regularly for 6+ months', 2], ['advanced', 'Advanced', 'Years in, chasing small gains', 3]];
+    var bar = function (h, on) { return 'width: 6px; height: ' + h + 'px; border-radius: 3px; background: ' + (on ? accent : 'rgba(14,27,61,0.12)') + ';'; };
+
+    var valid = {
+      welcome: true, path: s.quick !== null, about: s.name.trim().length > 1 && !!s.age, sport: !!s.sport, extras: true, goal: s.goals.length > 0,
+      schedule: !!s.level, equip: !!s.place, character: true, plan: true, diy: true
+    }[stepName];
+
+    var planTags = [sportLabel, (s.level || 'intermediate').replace(/^./, function (c) { return c.toUpperCase(); }), s.days + ' days', s.len + ' min'];
+
+    return {
+      isWelcome: stepName === 'welcome', inFlow: stepName !== 'welcome',
+      isAbout: stepName === 'about', isSport: stepName === 'sport', isExtras: stepName === 'extras', isGoal: stepName === 'goal',
+      isSchedule: stepName === 'schedule', isEquip: stepName === 'equip', isCharacter: stepName === 'character', isPlan: stepName === 'plan', isDiy: stepName === 'diy', isPath: stepName === 'path',
+      characterLead: s.quick ? 'Pick a base and skin tone. This is you on the leaderboard and in the feed.' : 'Pick a base and skin tone. Your athlete trains for ' + sportLabel + ' and levels up as you log.',
+      skinHex: ['#e8bd98', '#b57c50', '#6b4429'][s.skin],
+      skinOpts: [['Light', '#e8bd98'], ['Medium', '#b57c50'], ['Dark', '#6b4429']].map(function (k, i) {
+        var on = s.skin === i;
+        return { name: k[0], on: on, pick: function () { self.set({ skin: i }); }, style: 'width: 48px; height: 48px; border-radius: 50%; cursor: pointer; background: ' + k[1] + '; border: none; ' + (on ? 'box-shadow: 0 0 0 3px #f3f5fa, 0 0 0 5px ' + accent + ';' : 'box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);') };
+      }),
+      baseCards: [
+        ['female', 'Feminine', 'M60 14a15 15 0 1 1 0 .1zM46 44h28l10 48-7 2-7-30-1 40 3 82h-12l-4-70-4 70H40l3-82-1-40-7 30-7-2z', 'M44 46h32l4 26-6 2-2-12v34H48V62l-2 12-6-2z', 'M46 96h28l2 22H63l-3-12-3 12H44z'],
+        ['male', 'Masculine', 'M60 12a16 16 0 1 1 0 .1zM40 44h40l14 50-8 3-9-32-1 40 3 81H66l-6-72-6 72H43l3-81-1-40-9 32-8-3z', 'M40 46h40l6 30-7 2-3-14v38H44V64l-3 14-7-2z', 'M44 102h32l2 26H64l-4-14-4 14H42z']
+      ].map(function (b) {
+        var on = s.base === b[0];
+        return { label: b[1], body: b[2], kit: b[3], shorts: b[4], on: on, pick: function () { self.set({ base: b[0] }); }, cardStyle: 'display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 10px 10px 14px; border-radius: 24px; cursor: pointer; font-family: inherit; color: #0a1224; ' + (on ? 'background: #ffffff; border: 2px solid ' + accent + ';' : 'background: #ffffff; border: 2px solid rgba(14,27,61,0.06);') };
+      }),
+      diyTitle: (s.name ? s.name + ', build' : 'Build') + ' your own path',
+      pathCards: [
+        [false, 'Build my plan', 'About 2 min', 'Tell us your sport, goal and schedule. We build your week, set targets and pick programs for you.', ['Sport', 'Goal', 'Level & week', 'Kit', 'Character'], 'trophy', 'hybrid'],
+        [true, 'Quick start', 'Under 1 min', 'Just the essentials. Then explore programs, plans, meals and the community and build your own path.', ['Name', 'Character'], 'hybrid', 'run']
+      ].map(function (p) {
+        var on = s.quick === p[0];
+        return {
+          label: p[1], time: p[2], sub: p[3], stepsText: p[4].join('  ·  '), icon: IC[p[5]], badge: iconBox(p[6], on, 46), on: on,
+          cardStyle: 'display: flex; flex-direction: column; gap: 10px; width: 100%; padding: 16px; border-radius: 24px; cursor: pointer; font-family: inherit; color: #0a1224; ' + (on ? 'background: #ffffff; border: 2px solid ' + accent + '; box-shadow: 0 14px 30px -18px rgba(90,79,232,0.7);' : 'background: #ffffff; border: 2px solid rgba(14,27,61,0.06);'),
+          check: 'width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; ' + (on ? 'background: ' + accent + '; box-shadow: inset 0 0 0 5px #ffffff, 0 0 0 2px ' + accent + ';' : 'border: 2px solid rgba(14,27,61,0.16);'),
+          pick: function () { self.setState({ quick: p[0] }); }
+        };
+      }),
+      diyCards: [
+        ['Programs', 'Somax, credited and community programs', 'gym', 'gym'],
+        ['Goal plans', 'Adaptive plans, e.g. break 25:00 for 5K', 'run', 'run'],
+        ['Meals', 'Recipes by goal, meal and diet', 'hiit', 'hiit'],
+        ['Community', 'What other Somax members are sharing', 'hybrid', 'hybrid']
+      ].map(function (c) { return { label: c[0], sub: c[1], icon: IC[c[2]], badge: iconBox(c[3], false, 44) }; }),
+      stepLabel: idx + '/' + flowSteps,
+      progress: flow.slice(1).map(function (_, i) { return { style: 'flex-grow: 1; height: 5px; border-radius: 3px; background: ' + (i < idx ? 'linear-gradient(90deg, #4866f6, #8936e8)' : 'rgba(14,27,61,0.1)') + ';' }; }),
+      welcomeIcons: ['afl', 'run', 'gym', 'soccer', 'swim', 'tennis', 'pilates', 'ride'].map(function (k) { return { d: IC[k] }; }),
+      next: function () { if (!valid || idx >= flowSteps) return; self.setState({ stepName: flow[idx + 1] }); },
+      back: function () { self.setState({ stepName: flow[Math.max(0, idx - 1)] }); },
+      ctaLabel: stepName === 'diy' ? 'Take me in' : stepName === 'plan' ? 'Start training' : stepName === 'extras' ? (s.extras.length ? 'Continue' : 'Skip for now') : 'Continue',
+      ctaStyle: 'width: 100%; height: 56px; border: none; border-radius: 18px; font-family: Sora, sans-serif; font-weight: 700; font-size: 16px; cursor: pointer; color: #ffffff; ' +
+        (valid ? 'background: linear-gradient(100deg, #4866f6, #8936e8); box-shadow: 0 14px 28px -14px rgba(137,54,232,0.8);' : 'background: linear-gradient(100deg, #4866f6, #8936e8); opacity: 0.4;'),
+      name: s.name, age: s.age, height: s.height, weight: s.weight,
+      onName: function (e) { self.set({ name: e.target.value }); }, onAge: function (e) { self.set({ age: e.target.value }); },
+      onHeight: function (e) { self.set({ height: e.target.value }); }, onWeight: function (e) { self.set({ weight: e.target.value }); },
+      mainSportLabel: sportLabel,
+      sportTiles: SPORTS.map(function (x) {
+        var on = s.sport === x[0];
+        return { label: x[1], d: IC[x[0]], on: on, tileStyle: tile(on), iconWrap: iconBox(x[0], on, 44), pick: function () { self.set({ sport: x[0], extras: s.extras.filter(function (e) { return e !== x[0]; }), targetId: null, current: '', target: '' }); } };
+      }),
+      extraChips: SPORTS.filter(function (x) { return x[0] !== s.sport; }).map(function (x) {
+        var on = s.extras.indexOf(x[0]) >= 0;
+        return { label: x[1], d: IC[x[0]], on: on, chipStyle: chip(on), toggle: function () { self.set({ extras: on ? s.extras.filter(function (e) { return e !== x[0]; }) : s.extras.concat([x[0]]).slice(-3) }); } };
+      }),
+      goalCards: GOALS.map(function (g) {
+        var on = s.goals.indexOf(g[0]) >= 0;
+        return {
+          label: g[1], sub: g[2], d: IC[g[3]], on: on, cardStyle: card(on), iconWrap: iconBox(g[3] === 'muscle' ? 'gym' : g[3] === 'heart' ? 'run' : g[3] === 'trophy' ? 'hybrid' : g[3], on, 40),
+          check: 'width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; ' + (on ? 'background: ' + accent + '; box-shadow: inset 0 0 0 5px #ffffff, 0 0 0 2px ' + accent + ';' : 'border: 2px solid rgba(14,27,61,0.16);'),
+          toggle: function () { self.set({ goals: on ? s.goals.filter(function (x) { return x !== g[0]; }) : s.goals.concat([g[0]]).slice(-2) }); }
+        };
+      }),
+      targetChips: targets.map(function (t) {
+        var on = s.targetId === t[0];
+        return { label: t[1], on: on, chipStyle: chip(on), pick: function () { self.set(on ? { targetId: null, current: '', target: '' } : { targetId: t[0], current: t[2] ? t[2].cur : '', target: t[2] ? t[2].t : '' }); } };
+      }),
+      showTimes: !!spec,
+      currentLabel: spec && spec.afl ? 'Your current 2km' : 'Your current time', currentPh: spec ? spec.cur : '', targetPh: spec ? spec.t : '',
+      current: s.current, target: s.target,
+      onCurrent: function (e) { self.set({ current: e.target.value }); }, onTarget: function (e) { self.set({ target: e.target.value }); },
+      hasEstimate: !!estimate, estimate: estimate,
+      levelCards: levelData.map(function (l) {
+        var on = s.level === l[0];
+        return { label: l[1], sub: l[2], on: on, cardStyle: card(on), bar1: bar(8, l[3] >= 1), bar2: bar(14, l[3] >= 2), bar3: bar(20, l[3] >= 3), pick: function () { self.set({ level: l[0] }); } };
+      }),
+      days: s.days,
+      dayOpts: [2, 3, 4, 5, 6].map(function (n) {
+        var on = s.days === n;
+        return { n: n, on: on, pick: function () { self.set({ days: n }); }, style: 'height: 48px; border-radius: 14px; font-family: Sora, sans-serif; font-weight: 700; font-size: 16px; cursor: pointer; ' + (on ? 'background: #0a1224; color: #ffffff; border: none;' : 'background: #ffffff; color: #0a1224; border: 1px solid rgba(14,27,61,0.12);') };
+      }),
+      lenOpts: ['20', '30', '45', '60+'].map(function (n) {
+        var on = s.len === n;
+        return { n: n + "'", on: on, pick: function () { self.set({ len: n }); }, style: 'height: 44px; border-radius: 14px; font-family: inherit; font-weight: 700; font-size: 14px; cursor: pointer; ' + (on ? 'background: #0a1224; color: #ffffff; border: none;' : 'background: #ffffff; color: #0a1224; border: 1px solid rgba(14,27,61,0.12);') };
+      }),
+      weekPreview: DAYNAMES.map(function (d, di) {
+        var on = slots.indexOf(di) >= 0;
+        return { d: d.slice(0, 1), dot: 'width: 30px; height: 30px; border-radius: 10px; ' + (on ? 'background: linear-gradient(150deg, #4866f6, #8936e8);' : 'background: #f0f3f9; border: 1px dashed rgba(14,27,61,0.14);') };
+      }),
+      placeCards: [['gym', 'Gym', 'Full equipment', 'gym'], ['home', 'At home', 'Dumbbells, bands or nothing', 'home'], ['outdoor', 'Outdoors', 'Ovals, tracks, parks', 'tree'], ['mix', 'A mix', 'Gym some days, home others', 'travel']].map(function (p) {
+        var on = s.place === p[0];
+        return { label: p[1], sub: p[2], d: IC[p[3]], on: on, pick: function () { self.set({ place: p[0] }); }, cardStyle: 'display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 16px; border-radius: 20px; cursor: pointer; font-family: inherit; text-align: left; ' + (on ? 'background: #ffffff; border: 2px solid ' + accent + '; color: ' + accent + ';' : 'background: #ffffff; border: 2px solid rgba(14,27,61,0.06); color: #0a1224;') };
+      }),
+      kitChips: ['Barbell', 'Dumbbells', 'Kettlebell', 'Bands', 'Pull-up bar', 'Bike / trainer', 'Pool', 'Running track'].map(function (k) {
+        var on = s.kit.indexOf(k) >= 0;
+        return { label: k, on: on, chipStyle: chip(on), toggle: function () { self.set({ kit: on ? s.kit.filter(function (x) { return x !== k; }) : s.kit.concat([k]) }); } };
+      }),
+      planTitle: (s.name ? s.name + ', your ' : 'Your ') + sportLabel + ' week',
+      noSportPrograms: sportKey === 'afl',
+      noSportProgramsText: 'AFL-specific programs are on the way. Until then your week uses Library programs built for field sports: speed, repeat efforts, strength and recovery.',
+      planTags: planTags.map(function (t) { return { label: t }; }),
+      weekPlan: weekPlan,
+      forYou: (FORYOU[sportKey] || FORYOU._).map(function (f) { return { name: f[0], why: f[1], icon: IC[f[2]], badge: iconBox(f[2], true, 40), match: f[3] }; })
+    };
+  }
+}
+</script>
+</body>
+</html>
