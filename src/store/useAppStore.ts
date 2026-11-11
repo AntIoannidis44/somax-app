@@ -7,7 +7,7 @@ import { CHALLENGE_DEFS, MAX_ACTIVE_CHALLENGES, activeChallengeCount, defaultCha
 import { statBumpFor } from '../data/workouts';
 import { defaultCharacter } from '../lib/character';
 import { HYDRATION_TARGET_ML, STEP_GOAL, STEP_GOAL_XP, buildTodayGoals, generateWeekPlan, reviseWeekPlanFrom, todayPlanIndex } from '../lib/schedule';
-import { getWorkout } from '../lib/customWorkouts';
+import { getWorkout, registerPlanWorkouts } from '../lib/customWorkouts';
 import { expandSets, setKey } from '../lib/workoutSets';
 import { dailyCapForLevel, MAX_LEVEL, levelFromXP } from '../lib/xp';
 import type { PostWorkout } from '../lib/social';
@@ -19,6 +19,9 @@ import type {
   HealthMetrics,
   HealthWorkoutSummary,
   OnboardingDraft,
+  PlanDay,
+  ProfileSetup,
+  WorkoutDef,
   PlayTab,
   PostComposerSeed,
   Route,
@@ -69,6 +72,29 @@ function todayISO(): string {
 // date - the league period boundary.
 export function monthStartOf(dateISO: string): string {
   return `${dateISO.slice(0, 7)}-01`;
+}
+
+// The redesigned setup still fills the original profile fields, so every
+// screen that reads goal/focus/experience/availability keeps working.
+const GOAL_LABEL: Record<string, string> = {
+  strength: 'Build strength',
+  muscle: 'Muscle gain',
+  'fat-loss': 'Lose fat',
+  endurance: 'Endurance',
+  'general-fitness': 'General fitness',
+  mobility: 'General fitness',
+  'sport-performance': 'Aerobic fitness',
+};
+function legacyProfileFields(setup: ProfileSetup) {
+  const focus: TrainingFocus =
+    setup.sport === 'run' ? 'running' : setup.sport === 'swim' ? 'swim' : setup.sport === 'ride' ? 'ride' : ['afl', 'soccer', 'basketball', 'tennis', 'boxing', 'hybrid'].includes(setup.sport) ? 'hybrid' : 'gym';
+  return {
+    goal: [...new Set(setup.goals.map((g) => GOAL_LABEL[g]).filter(Boolean))],
+    focus,
+    experience: setup.level === 'beginner' ? 'Beginner' : setup.level === 'advanced' ? 'Advanced' : 'Intermediate',
+    availability: String(setup.days),
+    equipment: setup.place === 'gym' ? ['Full gym'] : setup.kit.length ? setup.kit : ['Bodyweight only'],
+  };
 }
 
 function defaultAppState(): AppState {
@@ -189,6 +215,13 @@ interface Actions {
   onbNext: () => void;
   onbBack: () => void;
   finishOnboarding: () => void;
+  // Redesigned onboarding: setup from the new steps + the week built from
+  // the Library (null for Quick start = empty week, build your own path).
+  finishOnboardingV2: (setup: ProfileSetup, built: { weekPlan: PlanDay[]; workouts: Record<string, WorkoutDef> } | null) => void;
+  // Existing users updating sport/goal/etc.: rebuilds the week from today on.
+  applyTrainingSetup: (setup: ProfileSetup, built: { weekPlan: PlanDay[]; workouts: Record<string, WorkoutDef> } | null) => void;
+  setProfileSetupOpen: (open: boolean) => void;
+  dismissSetupPrompt: () => void;
 
   toggleProfileGoal: (goal: string) => void;
   setProfileAvailability: (days: string) => void;
@@ -412,6 +445,57 @@ export const useAppStore = create<Store>()(
         );
         get().showToast(`Welcome to Somax, ${d.name.trim().split(' ')[0] || 'Athlete'}!`);
       },
+
+      finishOnboardingV2: (setup, built) => {
+        const d = get().onbDraft;
+        const legacy = legacyProfileFields(setup);
+        const weekPlan: PlanDay[] = built?.weekPlan ?? new Array(7).fill(null).map(() => ({ type: 'rest' as const }));
+        set(
+          produce((s) => {
+            s.profile = {
+              name: d.name.trim(),
+              age: d.age,
+              height: d.height,
+              weight: d.weight,
+              ...legacy,
+              program: { name: setup.mode === 'quick' ? 'Your own path' : `${legacy.experience} · Week 1` },
+              setup,
+            };
+            s.character = d.character || defaultCharacter('female');
+            s.planWorkouts = built?.workouts ?? {};
+            s.weekPlan = weekPlan;
+            s.today = { forDay: s.simDay, goals: buildTodayGoals(weekPlan), dayHadCompletion: false, xpEarnedToday: 0 };
+            s.onboarded = true;
+            s.history.unshift({ type: 'system', label: 'Profile created', xp: 0, day: s.simDay, at: new Date().toISOString() });
+          }),
+        );
+        get().showToast(`Welcome to Somax, ${d.name.trim().split(' ')[0] || 'Athlete'}!`);
+      },
+      applyTrainingSetup: (setup, built) => {
+        const fromIdx = todayPlanIndex();
+        set(
+          produce((s) => {
+            if (!s.profile) return;
+            Object.assign(s.profile, legacyProfileFields(setup), { setup });
+            if (built) {
+              // Days already gone this week stay as they were - only today on changes.
+              s.weekPlan = [...s.weekPlan.slice(0, fromIdx), ...built.weekPlan.slice(fromIdx)];
+              const keep: Record<string, WorkoutDef> = {};
+              for (const p of s.weekPlan) if (p.key && (s.planWorkouts?.[p.key] || built.workouts[p.key])) keep[p.key] = built.workouts[p.key] ?? s.planWorkouts![p.key];
+              s.planWorkouts = keep;
+              const oldGoals = s.today.goals;
+              s.today.goals = buildTodayGoals(s.weekPlan).map((g: (typeof oldGoals)[number]) => {
+                const prev = oldGoals.find((o: (typeof oldGoals)[number]) => o.id === g.id);
+                return prev ? { ...g, done: prev.done } : g;
+              });
+            }
+            s.profileSetupOpen = false;
+          }),
+        );
+        get().showToast(built ? 'Your week has been rebuilt' : 'Training profile updated');
+      },
+      setProfileSetupOpen: (open) => set({ profileSetupOpen: open }),
+      dismissSetupPrompt: () => set({ setupPromptDismissed: true }),
 
       toggleProfileGoal: (goal) =>
         set(
@@ -1243,3 +1327,10 @@ function checkAchievements() {
     }
   });
 }
+
+// Keep getWorkout() able to resolve Library programs scheduled into the
+// week (keys "lib:<id>") - on startup, rehydrate, cloud hydrate and edits.
+registerPlanWorkouts(useAppStore.getState().planWorkouts);
+useAppStore.subscribe((s, prev) => {
+  if (s.planWorkouts !== prev.planWorkouts) registerPlanWorkouts(s.planWorkouts);
+});

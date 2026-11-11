@@ -99,6 +99,24 @@ export interface Profile {
   availability: string;
   equipment: string[];
   program: { name: string };
+  // Set by the redesigned onboarding (Nov 2026) or "Update your training
+  // profile". Absent on older profiles - they get an opt-in prompt card.
+  setup?: ProfileSetup;
+}
+
+export interface ProfileSetup {
+  // 'plan' = Build my plan; 'quick' = Quick start (build your own path).
+  mode: 'plan' | 'quick';
+  // ONB_SPORTS ids (src/lib/plans/weekBuilder.ts).
+  sport: string;
+  extraSports: string[];
+  // Library goal ids (strength, muscle, fat-loss, ...).
+  goals: string[];
+  level: 'beginner' | 'intermediate' | 'advanced';
+  days: number;
+  sessionMinutes: number;
+  place: 'gym' | 'home' | 'outdoor' | 'mix';
+  kit: string[];
 }
 
 export interface Stats {
@@ -345,6 +363,12 @@ export type PlayTab = 'challenges' | 'league' | 'achv';
 
 export interface AppState {
   onboarded: boolean;
+  // Snapshots of Library programs scheduled into weekPlan (keys "lib:<id>"),
+  // so they resolve offline/on any device - see registerPlanWorkouts.
+  planWorkouts?: Record<string, WorkoutDef>;
+  // Existing users: the "Update your training profile" flow is open.
+  profileSetupOpen?: boolean;
+  setupPromptDismissed?: boolean;
   onbStep: number;
   onbDraft: OnboardingDraft;
   character: CharacterConfig | null;

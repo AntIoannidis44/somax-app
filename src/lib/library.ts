@@ -174,13 +174,18 @@ async function fetchRemote(kind: LibraryKind): Promise<LibraryItem[]> {
   return data as LibraryItem[];
 }
 
-export async function loadLibrary(kind: LibraryKind): Promise<LibraryItem[]> {
-  const [curated, remote] = await Promise.all([
-    import('../data/library').then((m) => (kind === 'program' ? m.CURATED_PROGRAMS : m.CURATED_MEALS) as LibraryItem[]),
-    fetchRemote(kind),
-  ]);
-  // Remote first (newest community shares on top); a remote curated row
-  // with the same id as a bundled one replaces it.
+// Bundled curated items - local, no network, so the list can paint at once.
+export function loadCurated(kind: LibraryKind): Promise<LibraryItem[]> {
+  return import('../data/library').then((m) => (kind === 'program' ? m.CURATED_PROGRAMS : m.CURATED_MEALS) as LibraryItem[]);
+}
+
+// Community/remote items, merged on top once they arrive. A remote row with
+// the same id as a bundled one replaces it.
+export async function loadRemote(kind: LibraryKind): Promise<LibraryItem[]> {
+  return fetchRemote(kind);
+}
+
+export function mergeLibrary(curated: LibraryItem[], remote: LibraryItem[]): LibraryItem[] {
   const remoteIds = new Set(remote.map((r) => r.id));
   return [...remote, ...curated.filter((c) => !remoteIds.has(c.id))];
 }

@@ -5,7 +5,6 @@ import { AboutModal } from './components/layout/AboutModal';
 import { DeviceShell } from './components/layout/DeviceShell';
 import { LoadingSpinner } from './components/layout/LoadingSpinner';
 import { AuthScreen } from './components/auth/AuthScreen';
-import { OnboardingFlow } from './components/onboarding/OnboardingFlow';
 import { HomeScreen } from './components/home/HomeScreen';
 
 // Code-split: everything below is one tap away from Home, not part of the
@@ -14,6 +13,9 @@ import { HomeScreen } from './components/home/HomeScreen';
 // "chunk larger than 500kB" warning. Each import() becomes its own chunk,
 // fetched (from the bundle already shipped with the app, so effectively
 // instant - no network involved) only the first time its screen is shown.
+// Redesigned onboarding (also the existing-user "Update your training
+// profile" flow) - its own chunk; it pulls in the Library and plan engines.
+const OnboardingV2 = lazy(() => import('./components/onboarding/v2/OnboardingV2').then((m) => ({ default: m.OnboardingV2 })));
 const TrainScreen = lazy(() => import('./components/train/TrainScreen').then((m) => ({ default: m.TrainScreen })));
 const WorkoutScreen = lazy(() => import('./components/train/WorkoutScreen').then((m) => ({ default: m.WorkoutScreen })));
 const PlayScreen = lazy(() => import('./components/play/PlayScreen').then((m) => ({ default: m.PlayScreen })));
@@ -66,8 +68,10 @@ function CurrentScreen() {
   const viewingComposer = useAppStore((s) => s.viewingComposer);
   const viewingSessionDetail = useAppStore((s) => s.viewingSessionDetail);
   const route = useAppStore((s) => s.route);
+  const profileSetupOpen = useAppStore((s) => s.profileSetupOpen);
 
-  if (!onboarded) return <OnboardingFlow />;
+  if (!onboarded) return <OnboardingV2 />;
+  if (profileSetupOpen) return <OnboardingV2 mode="update" />;
   if (viewingWorkout) return <WorkoutScreen />;
   if (viewingCharacter) return <CharacterStudioScreen />;
   if (viewingGoals) return <GoalsScreen />;

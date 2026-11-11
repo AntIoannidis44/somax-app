@@ -8,6 +8,8 @@ import { estimateFoodText } from '../../lib/foodText';
 import { requestSpeechPermission, speechToTextAvailableOnPlatform, startVoiceListening, stopVoiceListening } from '../../lib/speechToText';
 import { FoodSearchOverlay } from './FoodSearchOverlay';
 import { FavoritesOverlay } from './FavoritesOverlay';
+import { LibraryScreenLazy } from '../library/LazyLibrary';
+import type { LibraryMeal } from '../../lib/library';
 import { fetchUserRecipes, type UserRecipe } from '../../lib/recipes';
 import {
   deleteFavoriteMeal,
@@ -65,6 +67,7 @@ interface AddFoodSheetProps {
 export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodSheetProps) {
   const userId = useUserId();
   const [meal, setMeal] = useState<MealId>(initialMeal);
+  const [libraryOpen, setLibraryOpen] = useState(false);
   const [name, setName] = useState('');
   const [serving, setServing] = useState('');
   const [quantity, setQuantity] = useState(1);
@@ -193,6 +196,23 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
       source: 'manual',
       imageUrl: recipe.image_url,
     }]);
+    reset();
+  }
+
+  // One serving of a Meal Library recipe, logged to the meal being added to.
+  function handleAddLibraryMeal(m: LibraryMeal) {
+    onSave([{
+      meal,
+      name: m.name,
+      serving: '1 serving',
+      proteinG: m.content.proteinG,
+      carbsG: m.content.carbsG,
+      fatG: m.content.fatG,
+      quantity: 1,
+      source: 'manual',
+      imageUrl: m.content.imageUrl ?? null,
+    }]);
+    setLibraryOpen(false);
     reset();
   }
 
@@ -476,6 +496,18 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
             &#9733; See all favourites &amp; saved recipes
           </button>
         </>
+      )}
+      <button type="button" className="btn btn-ghost add-food-library-btn" onClick={() => setLibraryOpen(true)}>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v15H6.5A2.5 2.5 0 0 0 4 20.5 2.5 2.5 0 0 0 6.5 23H20" /></svg>
+        Browse the Meal Library
+      </button>
+      {libraryOpen && (
+        <LibraryScreenLazy
+          open
+          mode="nutrition"
+          logTo={{ label: MEALS.find((m) => m.id === meal)!.label, onLog: handleAddLibraryMeal }}
+          onClose={() => setLibraryOpen(false)}
+        />
       )}
       <FavoritesOverlay
         open={favoritesExpanded}

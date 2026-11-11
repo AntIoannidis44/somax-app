@@ -1,22 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { LibraryScreenLazy, usePrefetchLibrary } from '../library/LazyLibrary';
 import { Icon } from '../Icon';
 import { TypeIconBadge } from '../TypeIconBadge';
 import { WeekStrip } from './WeekStrip';
-import { WORKOUTS } from '../../data/workouts';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
 import { healthAvailableOnPlatform, getWorkoutRoute } from '../../lib/health';
-import { getWorkout, useMyWorkouts, deleteWorkout } from '../../lib/customWorkouts';
+import { getWorkout, useMyWorkouts, deleteWorkout, saveWorkout } from '../../lib/customWorkouts';
+import { recordLibrarySave, type LibraryProgram } from '../../lib/library';
+
+const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 import { WEEKDAY_LABELS, isWorkoutDone, todayPlan, todayPlanIndex } from '../../lib/schedule';
 import { formatTime } from '../../lib/format';
 import { categoryForActivityName, workoutTypeById } from '../../data/workoutTypes';
 import { ShareSessionButton } from './ShareSessionButton';
 import { ShareProgramSheet } from './ShareProgramSheet';
 import { Modal } from '../layout/Modal';
-import { LibraryScreen } from '../library/LibraryScreen';
 import { exerciseMeta } from '../../data/workouts';
 import type { PostWorkout } from '../../lib/social';
 import type { HealthWorkoutSummary } from '../../types';
+
 
 // Shared by "Share with a friend" and "Post to feed" - both need the exact
 // same real session data (a route only makes sense for one specific
@@ -128,7 +131,40 @@ function DayRecap({ sim, dayName, onNavigate }: { sim: number; dayName: string; 
   );
 }
 
+// Existing users (no training setup yet) and Quick start users get an
+// opt-in way into the plan builder; their current week is untouched until
+// they finish it.
+function SetupPromptCard() {
+  const setup = useAppStore((s) => s.profile?.setup);
+  const dismissed = useAppStore((s) => s.setupPromptDismissed);
+  const open = useAppStore((s) => s.setProfileSetupOpen);
+  const dismiss = useAppStore((s) => s.dismissSetupPrompt);
+  if (setup?.mode === 'plan') return null;
+  if (!setup && dismissed) return null;
+  return (
+    <div className="setup-card">
+      <b>{setup ? 'Build my plan' : 'Train for your sport'}</b>
+      <p>
+        {setup
+          ? 'Tell us your sport, goal and schedule and we will build your week from the Library. About 2 minutes.'
+          : 'New: pick your sport and goal (AFL to Pilates) and we will build your week from the Library. Your current week stays until you finish.'}
+      </p>
+      <div className="setup-card-actions">
+        <button type="button" className="go" onClick={() => open(true)}>
+          {setup ? 'Build my plan' : 'Set it up'}
+        </button>
+        {!setup && (
+          <button type="button" className="later" onClick={dismiss}>
+            Not now
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function TrainScreen() {
+  usePrefetchLibrary();
   const simDay = useAppStore((s) => s.simDay);
   const history = useAppStore((s) => s.history);
   const weekPlan = useAppStore((s) => s.weekPlan);
@@ -156,10 +192,38 @@ export function TrainScreen() {
   const todayIdx = todayPlanIndex();
   const todayWorkout = plan.type === 'train' && plan.key ? getWorkout(plan.key) : undefined;
 
-  const pickerOptions = [
-    ...Object.entries(WORKOUTS).map(([key, w]) => ({ key, name: w.name })),
-    ...myPrograms.map((w) => ({ key: w.id, name: w.name })),
-  ];
+  // Swap sources: your own saved workouts, or the Library (the built-in
+  // presets live there under By Somax).
+  const myOptions = myPrograms.map((w) => ({ key: w.id, name: w.name }));
+  // Collapsible "Swap for" groups; reset each time a day sheet opens, with
+  // the group holding that day's current workout opened so its tick shows.
+  const [swapOpen, setSwapOpen] = useState<Set<'mine'>>(new Set());
+  const [libraryPickDay, setLibraryPickDay] = useState<number | null>(null);
+  useEffect(() => {
+    if (sheetDay === null) return;
+    const key = weekPlan[sheetDay]?.type === 'train' ? weekPlan[sheetDay].key : undefined;
+    setSwapOpen(new Set(key && myOptions.some((o) => o.key === key) ? (['mine'] as const) : []));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sheetDay]);
+
+  // "Use for <day>" from the Library: reuse the user's existing copy of the
+  // program if they already have it, otherwise add it to My programs first.
+  async function pickFromLibrary(day: number, program: LibraryProgram) {
+    if (!userId) return;
+    const existing = myPrograms.find((w) => w.name === program.name && w.exercises.length === program.content.exercises.length);
+    const id =
+      existing?.id ??
+      (await saveWorkout(userId, { name: program.name, duration: program.duration ?? '', exercises: program.content.exercises, category: program.category }));
+    if (!id) {
+      showToast('Could not add that program');
+      return;
+    }
+    if (!existing) void recordLibrarySave(program.id, 'program');
+    pickDay(day, id);
+    setLibraryPickDay(null);
+    setSheetDay(null);
+    showToast(`${DAY_NAMES[day]}: ${program.name}`);
+  }
 
   function pickDay(i: number, key: string | null) {
     setDayWorkout(i, key);
@@ -253,20 +317,57 @@ export function TrainScreen() {
             {p.type === 'watch' && <Icon name="check" className="tick" />}
           </button>
         )}
-        {pickerOptions.map((opt) => {
-          const ow = getWorkout(opt.key);
-          const on = p.type === 'train' && p.key === opt.key;
-          return (
-            <button key={opt.key} className={`sheet-opt${on ? ' on' : ''}`} onClick={() => chooseForDay(() => pickDay(i, opt.key))}>
-              <TypeIconBadge category={ow?.category} />
-              <div>
-                <div className="t">{opt.name}</div>
-                {ow && <div className="s">{ow.duration} · {ow.exercises.length} exercise{ow.exercises.length === 1 ? '' : 's'}</div>}
-              </div>
-              {on && <Icon name="check" className="tick" />}
-            </button>
-          );
-        })}
+        {(
+          [
+            { id: 'mine', label: 'My workouts', options: myOptions },
+          ] as const
+        ).map((g) =>
+          g.options.length === 0 ? null : (
+            <div key={g.id}>
+              <button
+                type="button"
+                className={`swap-group${swapOpen.has(g.id) ? ' open' : ''}`}
+                onClick={() =>
+                  setSwapOpen((prev) => {
+                    const next = new Set(prev);
+                    if (next.has(g.id)) next.delete(g.id);
+                    else next.add(g.id);
+                    return next;
+                  })
+                }
+              >
+                <span className="swap-group-t">{g.label}</span>
+                <span className="swap-group-n">{g.options.length}</span>
+                <Icon name="chevron" className="swap-group-chev" />
+              </button>
+              {swapOpen.has(g.id) &&
+                g.options.map((opt) => {
+                  const ow = getWorkout(opt.key);
+                  const on = p.type === 'train' && p.key === opt.key;
+                  return (
+                    <button key={opt.key} className={`sheet-opt${on ? ' on' : ''}`} onClick={() => chooseForDay(() => pickDay(i, opt.key))}>
+                      <TypeIconBadge category={ow?.category} />
+                      <div>
+                        <div className="t">{opt.name}</div>
+                        {ow && <div className="s">{ow.duration} · {ow.exercises.length} exercise{ow.exercises.length === 1 ? '' : 's'}</div>}
+                      </div>
+                      {on && <Icon name="check" className="tick" />}
+                    </button>
+                  );
+                })}
+            </div>
+          ),
+        )}
+        <button className="sheet-opt" onClick={() => setLibraryPickDay(i)}>
+          <div className="type-icon-badge" style={{ width: 34, height: 34, background: 'linear-gradient(140deg, var(--hero-1), var(--hero-2))' }}>
+            <Icon name="layers" />
+          </div>
+          <div>
+            <div className="t">Browse the Library</div>
+            <div className="s">Programs by level, sport and goal</div>
+          </div>
+          <Icon name="chevron" className="tick" />
+        </button>
       </>
     );
   }
@@ -279,6 +380,7 @@ export function TrainScreen() {
 
   return (
     <>
+      <SetupPromptCard />
       <WeekStrip onSelect={(i) => setSheetDay(i)} />
       <div className={`weekcard${weekOpen ? ' open' : ''}`}>
         <button className="wc-top" onClick={() => setWeekOpen((o) => !o)}>
@@ -544,7 +646,15 @@ export function TrainScreen() {
         </span>
         <Icon name="chevron" />
       </button>
-      <LibraryScreen open={libraryOpen} mode="training" onClose={() => setLibraryOpen(false)} />
+      {libraryOpen && <LibraryScreenLazy open mode="training" onClose={() => setLibraryOpen(false)} />}
+      {libraryPickDay !== null && (
+        <LibraryScreenLazy
+          open
+          mode="training"
+          pickFor={{ label: libraryPickDay === todayIdx ? 'today' : DAY_NAMES[libraryPickDay], onPick: (prog) => void pickFromLibrary(libraryPickDay, prog) }}
+          onClose={() => setLibraryPickDay(null)}
+        />
+      )}
       {progMenu && (
         <Modal open onClose={() => setProgMenu(null)} title={progMenu.name}>
           <div style={{ display: 'grid', gap: 8 }}>

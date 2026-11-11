@@ -63,7 +63,16 @@ export function useMyWorkouts(): CustomWorkout[] {
 // or one of the user's own custom_workouts rows (shared-link imports create
 // a real copy via saveWorkout, see shareLinks.ts), never a stranger's id.
 export function getWorkout(key: string): WorkoutDef | undefined {
-  return WORKOUTS[key] || myWorkoutsCache.find((w) => w.id === key);
+  return WORKOUTS[key] || myWorkoutsCache.find((w) => w.id === key) || planWorkouts[key];
+}
+
+// Library programs scheduled into the week (keys "lib:<id>") carry their
+// own snapshot in the store's `planWorkouts`, synced with the rest of the
+// state - registered here so getWorkout resolves them synchronously like a
+// built-in, offline and on any device, without copying them into My programs.
+let planWorkouts: Record<string, WorkoutDef> = {};
+export function registerPlanWorkouts(defs: Record<string, WorkoutDef> | undefined) {
+  planWorkouts = defs ?? {};
 }
 
 export interface WorkoutDraft {

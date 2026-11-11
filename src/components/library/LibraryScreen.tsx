@@ -9,6 +9,7 @@ import { saveWorkout } from '../../lib/customWorkouts';
 import { saveUserRecipe } from '../../lib/recipes';
 import type { IconName } from '../../data/icons';
 import { PlansTab } from './PlansTab';
+import { rankForYou } from '../../lib/plans/weekBuilder';
 import {
   DAYS_FILTERS,
   LIFESTYLES,
@@ -20,7 +21,9 @@ import {
   SPORTS,
   creditLine,
   labelFor,
-  loadLibrary,
+  loadCurated,
+  loadRemote,
+  mergeLibrary,
   myLibraryItemIds,
   removeMyLibraryItem,
   fetchSaveCounts,
@@ -33,6 +36,9 @@ import {
 } from '../../lib/library';
 
 type GroupBy = 'popular' | 'level' | 'sport' | 'goal';
+
+const GROUP_PREVIEW = 8;
+const SHOW_ALL_UNDER = 20;
 type SourceFilter = 'all' | LibrarySource;
 
 const SOURCE_FILTERS: { id: SourceFilter; label: string }[] = [
@@ -106,7 +112,7 @@ function SavesBadge({ count }: { count: number }) {
   );
 }
 
-function ItemCard({ item, saves, onOpen }: { item: LibraryItem; saves: number; onOpen: () => void }) {
+function ItemCard({ item, saves, onOpen, fit }: { item: LibraryItem; saves: number; onOpen: () => void; fit?: number }) {
   const meta =
     item.kind === 'program'
       ? [item.content.daysPerWeek ? `${item.content.daysPerWeek}x/week` : null, item.duration, `${item.content.exercises.length} exercises`, item.content.series && item.content.day ? `Day ${item.content.day}${item.content.daysInSeries ? ` of ${item.content.daysInSeries}` : ''}` : null]
@@ -123,6 +129,7 @@ function ItemCard({ item, saves, onOpen }: { item: LibraryItem; saves: number; o
       <div className="lib-card-main">
         <div className="lib-card-top">
           <div className="lib-card-name">{item.name}</div>
+          {fit !== undefined && <span className="lib-fit">{fit}%</span>}
           <SavesBadge count={saves} />
         </div>
         <div className="lib-card-credit">{creditLine(item)}</div>
@@ -138,7 +145,7 @@ function ItemCard({ item, saves, onOpen }: { item: LibraryItem; saves: number; o
   );
 }
 
-function ProgramDetail({ item, mine, saves, onSaved, onClose, onRemoved }: { item: LibraryProgram; mine: boolean; saves: number; onSaved: () => void; onClose: () => void; onRemoved: () => void }) {
+function ProgramDetail({ item, mine, saves, onSaved, onClose, onRemoved, pickFor }: { item: LibraryProgram; mine: boolean; saves: number; onSaved: () => void; onClose: () => void; onRemoved: () => void; pickFor?: { label: string; onPick: (program: LibraryProgram) => void } }) {
   const userId = useUserId();
   const showToast = useAppStore((s) => s.showToast);
   const [busy, setBusy] = useState(false);
@@ -218,7 +225,12 @@ function ProgramDetail({ item, mine, saves, onSaved, onClose, onRemoved }: { ite
           );
         })}
       </div>
-      <button className="btn btn-primary" disabled={busy} onClick={add}>
+      {pickFor && (
+        <button className="btn btn-primary" onClick={() => pickFor.onPick(item)}>
+          <Icon name="calendar" style={{ width: 15, height: 15 }} /> Use for {pickFor.label}
+        </button>
+      )}
+      <button className={`btn ${pickFor ? 'btn-ghost' : 'btn-primary'}`} disabled={busy} onClick={add}>
         <Icon name="plus" style={{ width: 15, height: 15 }} /> {busy ? 'Adding…' : 'Add to my programs'}
       </button>
       {mine && (
@@ -230,7 +242,7 @@ function ProgramDetail({ item, mine, saves, onSaved, onClose, onRemoved }: { ite
   );
 }
 
-function MealDetail({ item, mine, saves, onSaved, onClose, onRemoved }: { item: LibraryMeal; mine: boolean; saves: number; onSaved: () => void; onClose: () => void; onRemoved: () => void }) {
+function MealDetail({ item, mine, saves, onSaved, onClose, onRemoved, logTo }: { item: LibraryMeal; mine: boolean; saves: number; onSaved: () => void; onClose: () => void; onRemoved: () => void; logTo?: { label: string; onLog: (meal: LibraryMeal) => void } }) {
   const userId = useUserId();
   const showToast = useAppStore((s) => s.showToast);
   const [busy, setBusy] = useState(false);
@@ -334,8 +346,13 @@ function MealDetail({ item, mine, saves, onSaved, onClose, onRemoved }: { item: 
           </div>
         </>
       )}
-      <button className="btn btn-primary" disabled={busy} onClick={save}>
-        <Icon name="plus" style={{ width: 15, height: 15 }} /> {busy ? 'Saving…' : 'Save to My Recipes'}
+      {logTo && (
+        <button className="btn btn-primary" onClick={() => { void recordLibrarySave(item.id, 'meal'); logTo.onLog(item); }}>
+          <Icon name="plus" style={{ width: 15, height: 15 }} /> Add to {logTo.label}
+        </button>
+      )}
+      <button className={`btn ${logTo ? 'btn-ghost' : 'btn-primary'}`} disabled={busy} onClick={save}>
+        <Icon name={logTo ? 'heart' : 'plus'} style={{ width: 15, height: 15 }} /> {busy ? 'Saving…' : 'Save to My Recipes'}
       </button>
       {mine && (
         <button className="btn btn-ghost" style={{ marginTop: 8, color: 'var(--danger)' }} onClick={remove}>
@@ -399,10 +416,18 @@ function groupOrder(by: GroupBy, kind: LibraryKind): string[] {
 }
 
 // 'training' (Train tab): Programs + Plans. 'nutrition' (Nutrition tab): meals only.
-export function LibraryScreen({ open, mode, onClose }: { open: boolean; mode: 'training' | 'nutrition'; onClose: () => void }) {
+// logTo: opened from the Log food sheet - a meal's detail page gets an
+// "Add to <meal>" button that logs one serving straight away.
+// pickFor: opened from a day's "Swap for" sheet - a program's detail page
+// gets a "Use for <day>" button that puts it on that day.
+export function LibraryScreen({ open, mode, onClose, logTo, pickFor }: { open: boolean; mode: 'training' | 'nutrition'; onClose: () => void; logTo?: { label: string; onLog: (meal: LibraryMeal) => void }; pickFor?: { label: string; onPick: (program: LibraryProgram) => void } }) {
   const initialKind: LibraryKind = mode === 'nutrition' ? 'meal' : 'program';
   const [kind, setKind] = useState<LibraryKind>(initialKind);
-  const [plans, setPlans] = useState(false);
+  // Train's library opens on For you; the nutrition one is meals only.
+  const [tab, setTab] = useState<'foryou' | 'programs' | 'plans'>(mode === 'training' ? 'foryou' : 'programs');
+  const plans = tab === 'plans';
+  const profileSetup = useAppStore((s) => s.profile?.setup);
+  const setProfileSetupOpen = useAppStore((s) => s.setProfileSetupOpen);
   const [items, setItems] = useState<LibraryItem[] | null>(null);
   const [mine, setMine] = useState<Set<string>>(new Set());
   const [saves, setSaves] = useState<Map<string, number>>(new Map());
@@ -418,23 +443,37 @@ export function LibraryScreen({ open, mode, onClose }: { open: boolean; mode: 't
   const [showFilters, setShowFilters] = useState(false);
   const [detail, setDetail] = useState<LibraryItem | null>(null);
   const [reloadTick, setReloadTick] = useState(0);
+  // Sections open on their first few cards - drawing all 80+ at once was
+  // the bulk of the open time at 6x CPU throttle.
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     if (!open) return;
     setKind(initialKind);
-    setPlans(false);
+    setTab(mode === 'training' ? 'foryou' : 'programs');
   }, [open, initialKind]);
 
   useEffect(() => {
     if (!open) return;
     let cancelled = false;
     setItems(null);
-    Promise.all([loadLibrary(kind), myLibraryItemIds(), fetchSaveCounts(kind)]).then(([list, ids, counts]) => {
+    // Paint the bundled items straight away; network extras (community
+    // shares, my shares, save counts) merge in when they land, so a slow
+    // connection never holds up the list.
+    let curated: LibraryItem[] = [];
+    let remote: LibraryItem[] = [];
+    loadCurated(kind).then((c) => {
       if (cancelled) return;
-      setItems(list);
-      setMine(ids);
-      setSaves(counts);
+      curated = c;
+      setItems(mergeLibrary(curated, remote));
     });
+    loadRemote(kind).then((r) => {
+      if (cancelled || r.length === 0) return;
+      remote = r;
+      setItems(mergeLibrary(curated, remote));
+    });
+    myLibraryItemIds().then((ids) => !cancelled && setMine(ids));
+    fetchSaveCounts(kind).then((counts) => !cancelled && setSaves(counts));
     return () => {
       cancelled = true;
     };
@@ -501,6 +540,9 @@ export function LibraryScreen({ open, mode, onClose }: { open: boolean; mode: 't
             allLabel: kind === 'program' ? 'All sports' : 'All meals',
           };
 
+  // A short result (a narrow filter or a search) just shows everything.
+  const showAll = filtered.length <= SHOW_ALL_UNDER || query.trim() !== '';
+
   if (!open) return null;
 
   return createPortal(
@@ -512,17 +554,54 @@ export function LibraryScreen({ open, mode, onClose }: { open: boolean; mode: 't
         <div style={{ fontWeight: 700, fontSize: 15, flex: 1 }}>{mode === 'nutrition' ? 'Meal Library' : 'Library'}</div>
         {mode === 'training' && (
           <div className="scope">
-            <button className={!plans ? 'on' : ''} onClick={() => setPlans(false)}>
+            <button className={tab === 'foryou' ? 'on' : ''} onClick={() => setTab('foryou')}>
+              For you
+            </button>
+            <button className={tab === 'programs' ? 'on' : ''} onClick={() => setTab('programs')}>
               Programs
             </button>
-            <button className={plans ? 'on' : ''} onClick={() => setPlans(true)}>
+            <button className={plans ? 'on' : ''} onClick={() => setTab('plans')}>
               Plans
             </button>
           </div>
         )}
       </div>
       <div className="macro-search-results">
-        {plans ? <PlansTab /> : <>
+        {tab === 'foryou' ? (
+          profileSetup?.mode === 'plan' ? (
+            <>
+              <p className="lib-desc" style={{ marginTop: 10 }}>
+                Ranked for your {profileSetup.level} {profileSetup.days}-day week: sport, goals, level, kit and session length.
+              </p>
+              {items === null && <div className="macro-search-hint">Loading…</div>}
+              <div className="lib-list">
+                {rankForYou(
+                  (items ?? []).filter((it): it is LibraryProgram => it.kind === 'program'),
+                  profileSetup,
+                )
+                  .slice(0, 20)
+                  .map(({ item, fit }) => (
+                    <ItemCard key={item.id} item={item} fit={fit} saves={saves.get(item.id) ?? 0} onOpen={() => setDetail(item)} />
+                  ))}
+              </div>
+            </>
+          ) : (
+            <div className="lib-know" style={{ marginTop: 12 }}>
+              <div className="lib-know-h"><Icon name="trophy" /> Picks made for you</div>
+              <p>Tell us your sport, goal, level and kit and we'll rank every program for you, and build your week from them. Takes about two minutes.</p>
+              <button
+                className="btn btn-primary"
+                style={{ marginTop: 12 }}
+                onClick={() => {
+                  onClose();
+                  setProfileSetupOpen(true);
+                }}
+              >
+                Build my plan
+              </button>
+            </div>
+          )
+        ) : plans ? <PlansTab /> : <>
         <div className="lib-search-row">
           <div className="lib-search">
             <Icon name="search" />
@@ -589,20 +668,25 @@ export function LibraryScreen({ open, mode, onClose }: { open: boolean; mode: 't
               {groupLabel(key, groupBy, kind)} <span className="lib-count">{list.length}</span>
             </div>
             <div className="lib-list">
-              {list.map((it) => (
+              {(showAll || expanded.has(`${groupBy}:${key}`) ? list : list.slice(0, GROUP_PREVIEW)).map((it) => (
                 <ItemCard key={`${key}-${it.id}`} item={it} saves={saves.get(it.id) ?? 0} onOpen={() => setDetail(it)} />
               ))}
             </div>
+            {!showAll && !expanded.has(`${groupBy}:${key}`) && list.length > GROUP_PREVIEW && (
+              <button className="lib-more" onClick={() => setExpanded((e) => new Set(e).add(`${groupBy}:${key}`))}>
+                Show all {list.length}
+              </button>
+            )}
           </div>
         ))}
         </>}
       </div>
 
       {detail?.kind === 'program' && (
-        <ProgramDetail item={detail} mine={mine.has(detail.id)} saves={saves.get(detail.id) ?? 0} onSaved={() => setSaves((m) => new Map(m).set(detail.id, (m.get(detail.id) ?? 0) + 1))} onClose={() => setDetail(null)} onRemoved={() => { setDetail(null); setReloadTick((t) => t + 1); }} />
+        <ProgramDetail pickFor={pickFor} item={detail} mine={mine.has(detail.id)} saves={saves.get(detail.id) ?? 0} onSaved={() => setSaves((m) => new Map(m).set(detail.id, (m.get(detail.id) ?? 0) + 1))} onClose={() => setDetail(null)} onRemoved={() => { setDetail(null); setReloadTick((t) => t + 1); }} />
       )}
       {detail?.kind === 'meal' && (
-        <MealDetail item={detail} mine={mine.has(detail.id)} saves={saves.get(detail.id) ?? 0} onSaved={() => setSaves((m) => new Map(m).set(detail.id, (m.get(detail.id) ?? 0) + 1))} onClose={() => setDetail(null)} onRemoved={() => { setDetail(null); setReloadTick((t) => t + 1); }} />
+        <MealDetail logTo={logTo} item={detail} mine={mine.has(detail.id)} saves={saves.get(detail.id) ?? 0} onSaved={() => setSaves((m) => new Map(m).set(detail.id, (m.get(detail.id) ?? 0) + 1))} onClose={() => setDetail(null)} onRemoved={() => { setDetail(null); setReloadTick((t) => t + 1); }} />
       )}
     </div>,
     document.body,

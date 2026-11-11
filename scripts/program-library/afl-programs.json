@@ -1,0 +1,3554 @@
+[
+  {
+    "id": "footyfirst-level-1",
+    "name": "FootyFirst Level 1 (Weeks 1-4)",
+    "series": "FootyFirst",
+    "day": 1,
+    "daysInSeries": 5,
+    "category": "other",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "The AFL-endorsed leg-injury prevention routine for community footy, level 1: a 5-minute group warm-up, then hamstring, groin and hip strength and a balance/landing/side-stepping drill.",
+    "whoItsFor": "Community Australian football players (senior and older junior) who want fewer hamstring, groin, knee and ankle injuries. Done on the footy ground with a partner and a ball.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do it at the start of every club training session, at least twice a week, through pre-season and in-season.",
+      "Warm-up about 5 minutes, then the strength and landing work about 15 minutes, in the order listed.",
+      "Stay on a level for about 4 weeks (8 sessions) and only move up when every exercise is done with good technique.",
+      "Stop any exercise that hurts and drop back a level; follow it with your normal kicking/handball warm-up."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst warm-up: jog (20 m lane)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: side-to-side run (feet don't cross)",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: carioca/grapevine with high knees",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: backward running with high feet",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: butt kicks",
+        "sets": 2,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: hands to ground (4 touches per 20 m)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "Calf stretch, straight leg (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Calf stretch, bent knee (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Hip rotation (knee circles)",
+        "sets": 1,
+        "reps": "4/leg"
+      },
+      {
+        "name": "Leg swings forward/back",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Leg swings across body",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Walking lunge",
+        "sets": 1,
+        "reps": "8 total"
+      },
+      {
+        "name": "Hamstring lower (partner-held Nordic, fall slowly)",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Ball squeeze, knees bent (2-2-2 tempo, 5 s rest)",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Ball squeeze, legs straight (2-2-2 tempo, 5 s rest)",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Side plank with arm raise (2-2-2 tempo)",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Single-leg balance, handball with partner 3 m apart",
+        "sets": 1,
+        "reps": "12/leg"
+      },
+      {
+        "name": "Single-leg shallow squat (solo, partners 3 m apart)",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Single-leg shallow squat (hands on partner's shoulders)",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Single-leg shallow squat after receiving a handball",
+        "sets": 1,
+        "reps": "6/leg"
+      }
+    ],
+    "credit": "FootyFirst - NoGAPS research team (Federation Uni/Monash/Griffith) with the AFL",
+    "sourceUrl": "https://cove.army.gov.au/sites/default/files/2022-05/AFL%20Footy%20First.pdf",
+    "sourceNote": "Free community-football injury-prevention manual (FootyFirst, NoGAPS project, NHMRC-funded with the AFL and partners; endorsed by the AFL Medical Officers, Physiotherapists and Sports Science associations). Read from the full 48-page manual hosted publicly on the Australian Army's CoVE site; no copyright/reproduction wording found in the text layer. Only exercise names, sets, reps, tempos and distances recorded; descriptions are ours.",
+    "verified": true
+  },
+  {
+    "id": "footyfirst-level-2",
+    "name": "FootyFirst Level 2 (Weeks 5-8)",
+    "series": "FootyFirst",
+    "day": 2,
+    "daysInSeries": 5,
+    "category": "other",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "The AFL-endorsed leg-injury prevention routine for community footy, level 2: a 5-minute group warm-up, then hamstring, groin and hip strength and a balance/landing/side-stepping drill.",
+    "whoItsFor": "Community Australian football players (senior and older junior) who want fewer hamstring, groin, knee and ankle injuries. Done on the footy ground with a partner and a ball.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do it at the start of every club training session, at least twice a week, through pre-season and in-season.",
+      "Warm-up about 5 minutes, then the strength and landing work about 15 minutes, in the order listed.",
+      "Stay on a level for about 4 weeks (8 sessions) and only move up when every exercise is done with good technique.",
+      "Stop any exercise that hurts and drop back a level; follow it with your normal kicking/handball warm-up."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst warm-up: jog (20 m lane)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: side-to-side run (feet don't cross)",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: carioca/grapevine with high knees",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: backward running with high feet",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: butt kicks",
+        "sets": 2,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: hands to ground (4 touches per 20 m)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "Calf stretch, straight leg (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Calf stretch, bent knee (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Hip rotation (knee circles)",
+        "sets": 1,
+        "reps": "4/leg"
+      },
+      {
+        "name": "Leg swings forward/back",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Leg swings across body",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Walking lunge",
+        "sets": 1,
+        "reps": "8 total"
+      },
+      {
+        "name": "Hamstring lower (partner-held Nordic)",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Side-lying leg lift, bottom leg (2-2-2 tempo)",
+        "sets": 3,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Side plank lift and lower hips (2-2 tempo, 5 s between sets)",
+        "sets": 2,
+        "reps": "5/side"
+      },
+      {
+        "name": "Jump forward and land on one leg (alternate legs)",
+        "sets": 1,
+        "reps": "20 (10/leg)"
+      },
+      {
+        "name": "Jump backward and land on one leg (alternate legs)",
+        "sets": 1,
+        "reps": "20 (10/leg)"
+      }
+    ],
+    "credit": "FootyFirst - NoGAPS research team (Federation Uni/Monash/Griffith) with the AFL",
+    "sourceUrl": "https://cove.army.gov.au/sites/default/files/2022-05/AFL%20Footy%20First.pdf",
+    "sourceNote": "Free community-football injury-prevention manual (FootyFirst, NoGAPS project, NHMRC-funded with the AFL and partners; endorsed by the AFL Medical Officers, Physiotherapists and Sports Science associations). Read from the full 48-page manual hosted publicly on the Australian Army's CoVE site; no copyright/reproduction wording found in the text layer. Only exercise names, sets, reps, tempos and distances recorded; descriptions are ours.",
+    "verified": true
+  },
+  {
+    "id": "footyfirst-level-3",
+    "name": "FootyFirst Level 3 (Weeks 9-12)",
+    "series": "FootyFirst",
+    "day": 3,
+    "daysInSeries": 5,
+    "category": "other",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "The AFL-endorsed leg-injury prevention routine for community footy, level 3: a 5-minute group warm-up, then hamstring, groin and hip strength and a balance/landing/side-stepping drill.",
+    "whoItsFor": "Community Australian football players (senior and older junior) who want fewer hamstring, groin, knee and ankle injuries. Done on the footy ground with a partner and a ball.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do it at the start of every club training session, at least twice a week, through pre-season and in-season.",
+      "Warm-up about 5 minutes, then the strength and landing work about 15 minutes, in the order listed.",
+      "Stay on a level for about 4 weeks (8 sessions) and only move up when every exercise is done with good technique.",
+      "Stop any exercise that hurts and drop back a level; follow it with your normal kicking/handball warm-up."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst warm-up: jog (20 m lane)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: side-to-side run (feet don't cross)",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: carioca/grapevine with high knees",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: backward running with high feet",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: butt kicks",
+        "sets": 2,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: hands to ground (4 touches per 20 m)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "Calf stretch, straight leg (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Calf stretch, bent knee (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Hip rotation (knee circles)",
+        "sets": 1,
+        "reps": "4/leg"
+      },
+      {
+        "name": "Leg swings forward/back",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Leg swings across body",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Walking lunge",
+        "sets": 1,
+        "reps": "8 total"
+      },
+      {
+        "name": "Hamstring lower (partner-held Nordic)",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Running man single-leg squat (2-2 tempo, 10 s between sets)",
+        "sets": 2,
+        "reps": "15/leg"
+      },
+      {
+        "name": "Side plank side-to-side (front-side-front-side, 1 s holds)",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Single-leg jump forward and back, arms up as if marking",
+        "sets": 2,
+        "reps": "20 (10 fwd, 10 back), start each leg"
+      },
+      {
+        "name": "Run forward (3-step run-up), jump and land on the other leg",
+        "sets": 1,
+        "reps": "20 (10/leg)"
+      }
+    ],
+    "credit": "FootyFirst - NoGAPS research team (Federation Uni/Monash/Griffith) with the AFL",
+    "sourceUrl": "https://cove.army.gov.au/sites/default/files/2022-05/AFL%20Footy%20First.pdf",
+    "sourceNote": "Free community-football injury-prevention manual (FootyFirst, NoGAPS project, NHMRC-funded with the AFL and partners; endorsed by the AFL Medical Officers, Physiotherapists and Sports Science associations). Read from the full 48-page manual hosted publicly on the Australian Army's CoVE site; no copyright/reproduction wording found in the text layer. Only exercise names, sets, reps, tempos and distances recorded; descriptions are ours.",
+    "verified": true
+  },
+  {
+    "id": "footyfirst-level-4",
+    "name": "FootyFirst Level 4 (Weeks 13-16)",
+    "series": "FootyFirst",
+    "day": 4,
+    "daysInSeries": 5,
+    "category": "other",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "The AFL-endorsed leg-injury prevention routine for community footy, level 4: a 5-minute group warm-up, then hamstring, groin and hip strength and a balance/landing/side-stepping drill.",
+    "whoItsFor": "Community Australian football players (senior and older junior) who want fewer hamstring, groin, knee and ankle injuries. Done on the footy ground with a partner and a ball.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do it at the start of every club training session, at least twice a week, through pre-season and in-season.",
+      "Warm-up about 5 minutes, then the strength and landing work about 15 minutes, in the order listed.",
+      "Stay on a level for about 4 weeks (8 sessions) and only move up when every exercise is done with good technique.",
+      "Stop any exercise that hurts and drop back a level; follow it with your normal kicking/handball warm-up."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst warm-up: jog (20 m lane)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: side-to-side run (feet don't cross)",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: carioca/grapevine with high knees",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: backward running with high feet",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: butt kicks",
+        "sets": 2,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: hands to ground (4 touches per 20 m)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "Calf stretch, straight leg (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Calf stretch, bent knee (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Hip rotation (knee circles)",
+        "sets": 1,
+        "reps": "4/leg"
+      },
+      {
+        "name": "Leg swings forward/back",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Leg swings across body",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Walking lunge",
+        "sets": 1,
+        "reps": "8 total"
+      },
+      {
+        "name": "Hamstring lower (partner-held Nordic)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Ball squeeze with legs lifted to 90/90 (2-2-2 tempo, 3 s rest)",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Side plank with arm and top-leg lift (5 s hold, 3 s rest)",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Run (3 steps), jump 45 degrees to the side and land",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Pre-planned side-step at 45 degrees (cut 2 m before marker 10 m away)",
+        "sets": 1,
+        "reps": "20 (10/side)"
+      }
+    ],
+    "credit": "FootyFirst - NoGAPS research team (Federation Uni/Monash/Griffith) with the AFL",
+    "sourceUrl": "https://cove.army.gov.au/sites/default/files/2022-05/AFL%20Footy%20First.pdf",
+    "sourceNote": "Free community-football injury-prevention manual (FootyFirst, NoGAPS project, NHMRC-funded with the AFL and partners; endorsed by the AFL Medical Officers, Physiotherapists and Sports Science associations). Read from the full 48-page manual hosted publicly on the Australian Army's CoVE site; no copyright/reproduction wording found in the text layer. Only exercise names, sets, reps, tempos and distances recorded; descriptions are ours.",
+    "verified": true
+  },
+  {
+    "id": "footyfirst-level-5",
+    "name": "FootyFirst Level 5 (Weeks 17+)",
+    "series": "FootyFirst",
+    "day": 5,
+    "daysInSeries": 5,
+    "category": "other",
+    "level": "advanced",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "The AFL-endorsed leg-injury prevention routine for community footy, level 5: a 5-minute group warm-up, then hamstring, groin and hip strength and a balance/landing/side-stepping drill.",
+    "whoItsFor": "Community Australian football players (senior and older junior) who want fewer hamstring, groin, knee and ankle injuries. Done on the footy ground with a partner and a ball.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do it at the start of every club training session, at least twice a week, through pre-season and in-season.",
+      "Warm-up about 5 minutes, then the strength and landing work about 15 minutes, in the order listed.",
+      "Stay on a level for about 4 weeks (8 sessions) and only move up when every exercise is done with good technique.",
+      "Stop any exercise that hurts and drop back a level; follow it with your normal kicking/handball warm-up."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst warm-up: jog (20 m lane)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: side-to-side run (feet don't cross)",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: carioca/grapevine with high knees",
+        "sets": 2,
+        "reps": "1 lane each side",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: backward running with high feet",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: butt kicks",
+        "sets": 2,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "FootyFirst warm-up: hands to ground (4 touches per 20 m)",
+        "sets": 1,
+        "reps": "1 lane",
+        "weight": "jogging pace",
+        "group": "WU"
+      },
+      {
+        "name": "Calf stretch, straight leg (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Calf stretch, bent knee (dynamic)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Hip rotation (knee circles)",
+        "sets": 1,
+        "reps": "4/leg"
+      },
+      {
+        "name": "Leg swings forward/back",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Leg swings across body",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Walking lunge",
+        "sets": 1,
+        "reps": "8 total"
+      },
+      {
+        "name": "Hamstring lower (partner-held Nordic)",
+        "sets": 2,
+        "reps": "12"
+      },
+      {
+        "name": "Body lift (partner holds top ankle; Copenhagen-style, 2 s phases)",
+        "sets": 3,
+        "reps": "5/leg (build from 3)"
+      },
+      {
+        "name": "Side plank side-to-side with leg lift (5 s holds)",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Run (3-5 steps), jump, land and run on 5 m; coach adds a ball to mark",
+        "sets": 1,
+        "reps": "16 (8/leg)"
+      },
+      {
+        "name": "Unanticipated side-step: react to attacker 10 m away",
+        "sets": 1,
+        "reps": "16 side-steps as defender"
+      }
+    ],
+    "credit": "FootyFirst - NoGAPS research team (Federation Uni/Monash/Griffith) with the AFL",
+    "sourceUrl": "https://cove.army.gov.au/sites/default/files/2022-05/AFL%20Footy%20First.pdf",
+    "sourceNote": "Free community-football injury-prevention manual (FootyFirst, NoGAPS project, NHMRC-funded with the AFL and partners; endorsed by the AFL Medical Officers, Physiotherapists and Sports Science associations). Read from the full 48-page manual hosted publicly on the Australian Army's CoVE site; no copyright/reproduction wording found in the text layer. Only exercise names, sets, reps, tempos and distances recorded; descriptions are ours.",
+    "verified": true
+  },
+  {
+    "id": "prep-to-play-warm-up-option-a",
+    "name": "Prep to Play Dynamic Warm-up (Option A)",
+    "series": "Prep to Play Warm-up",
+    "day": 1,
+    "daysInSeries": 2,
+    "category": "other",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "The AFL's 10-minute knee and head-injury reduction warm-up for women and girls, all 8 activities at the easiest option: deceleration, cutting, landing, contact, sprinting and balance.",
+    "whoItsFor": "Women and girls (14+) playing community Australian football, and any player who wants a warm-up that trains landing and change of direction. Needs 16 cones and a partner.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do all 8 activities at the start of every training session and every game (about 10 minutes).",
+      "Pick option A, B or C per activity; aim to work up to C, and use A/B for variety or when sore.",
+      "On match day do only this warm-up; at training follow it with contact skills and the 3 strength activities.",
+      "Benefits come with doing it every session; movement quality improves in 3-4 weeks, strength in 6-8 weeks at 2-3 sessions a week."
+    ],
+    "exercises": [
+      {
+        "name": "Jog at least 200 m + hamstring sweep",
+        "sets": 1,
+        "reps": "x5 each side"
+      },
+      {
+        "name": "Stutter step at each cone (3 s fast feet)",
+        "sets": 1,
+        "reps": "repeat x2"
+      },
+      {
+        "name": "45-degree zig-zag cuts",
+        "sets": 1,
+        "reps": "repeat x2"
+      },
+      {
+        "name": "Dot the i (jump forward then straight up)",
+        "sets": 1,
+        "reps": "repeat x10"
+      },
+      {
+        "name": "Partner push (double-leg jump, bumped in the air)",
+        "sets": 1,
+        "reps": "x5 each side"
+      },
+      {
+        "name": "Partner bump/check",
+        "sets": 1,
+        "reps": "x5 each side"
+      },
+      {
+        "name": "Sprints 30 m, build to 80-90% top speed",
+        "sets": 1,
+        "reps": "repeat x2-3",
+        "weight": "80-90% top speed",
+        "distance": "30m"
+      },
+      {
+        "name": "Single-leg balance, handball with partner",
+        "sets": 1,
+        "reps": "1 min each side"
+      }
+    ],
+    "credit": "AFL & La Trobe University (Prep to Play)",
+    "sourceUrl": "https://play.afl/sites/default/files/2023-10/AFLW%20Prep%20to%20Play%20-%20Dynamic%20Warm%20Up%20Program%20%28Poster%29.pdf",
+    "sourceNote": "Free official AFL/La Trobe poster on play.afl (coach.afl). Doses read from the poster image itself (rendered and checked), cross-checked with the Player Manual. No reproduction wording on the poster; only names and doses recorded, descriptions are ours. Videos at coach.afl/female-football.",
+    "verified": true
+  },
+  {
+    "id": "prep-to-play-warm-up-option-c",
+    "name": "Prep to Play Dynamic Warm-up (Option C)",
+    "series": "Prep to Play Warm-up",
+    "day": 2,
+    "daysInSeries": 2,
+    "category": "other",
+    "level": "advanced",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "The AFL's 10-minute knee and head-injury reduction warm-up for women and girls, all 8 activities at the hardest option: deceleration, cutting, landing, contact, sprinting and balance.",
+    "whoItsFor": "Women and girls (14+) playing community Australian football, and any player who wants a warm-up that trains landing and change of direction. Needs 16 cones and a partner.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do all 8 activities at the start of every training session and every game (about 10 minutes).",
+      "Pick option A, B or C per activity; aim to work up to C, and use A/B for variety or when sore.",
+      "On match day do only this warm-up; at training follow it with contact skills and the 3 strength activities.",
+      "Benefits come with doing it every session; movement quality improves in 3-4 weeks, strength in 6-8 weeks at 2-3 sessions a week."
+    ],
+    "exercises": [
+      {
+        "name": "Jog at least 200 m + open/close gate",
+        "sets": 1,
+        "reps": "x5 each side"
+      },
+      {
+        "name": "Forward 2 cones, backward 1",
+        "sets": 1,
+        "reps": "repeat x2"
+      },
+      {
+        "name": "Partner zig-zag with contact, compete for ball",
+        "sets": 1,
+        "reps": "repeat x2"
+      },
+      {
+        "name": "Hops forward as far as you can",
+        "sets": 1,
+        "reps": "repeat x10 each side"
+      },
+      {
+        "name": "Running partner push with 90-degree twist",
+        "sets": 1,
+        "reps": "x5 each side"
+      },
+      {
+        "name": "Falling/rolling technique",
+        "sets": 1,
+        "reps": "x3-5 each side"
+      },
+      {
+        "name": "Sprints 30 m, build to 80-90% top speed (race from lying)",
+        "sets": 1,
+        "reps": "repeat x2-3",
+        "weight": "80-90% top speed",
+        "distance": "30m"
+      },
+      {
+        "name": "Single-leg balance, handball with partner",
+        "sets": 1,
+        "reps": "1 min each side"
+      }
+    ],
+    "credit": "AFL & La Trobe University (Prep to Play)",
+    "sourceUrl": "https://play.afl/sites/default/files/2023-10/AFLW%20Prep%20to%20Play%20-%20Dynamic%20Warm%20Up%20Program%20%28Poster%29.pdf",
+    "sourceNote": "Free official AFL/La Trobe poster on play.afl (coach.afl). Doses read from the poster image itself (rendered and checked), cross-checked with the Player Manual. No reproduction wording on the poster; only names and doses recorded, descriptions are ours. Videos at coach.afl/female-football.",
+    "verified": true
+  },
+  {
+    "id": "prep-to-play-strength-option-a",
+    "name": "Prep to Play Strength Program (Option A)",
+    "series": "Prep to Play Strength",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "bodyweight",
+      "partner"
+    ],
+    "description": "Three no-equipment strength activities from the AFL's Prep to Play program (lower limb, hamstring/glute, core/hip), option A.",
+    "whoItsFor": "Female community footballers and juniors 14+ (and anyone else) wanting a 10-minute leg, hamstring and groin strength routine at every training.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient",
+      "home"
+    ],
+    "howToRun": [
+      "Do one activity from each of the 3 groups, about 10 minutes, before, during or after every training session.",
+      "Choose A, B or C per group; aim to progress to C.",
+      "Some soreness 24-48 h after is expected; if soreness stops you training, see a physio.",
+      "Replaces static stretching or a cool-down lap (SMA recommendation)."
+    ],
+    "exercises": [
+      {
+        "name": "Lunges",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Single-leg glute bridge",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Front plank or wheelbarrow hold",
+        "sets": 2,
+        "reps": "30-60s"
+      }
+    ],
+    "credit": "AFL & La Trobe University (Prep to Play)",
+    "sourceUrl": "https://play.afl/sites/default/files/2023-10/AFLW%20Prep%20to%20Play%20-%20Strength%20Program%20%28Poster%29.pdf",
+    "sourceNote": "Free official AFL/La Trobe poster on play.afl (coach.afl). Doses read from the poster image itself (rendered and checked), cross-checked with the Player Manual. No reproduction wording on the poster; only names and doses recorded, descriptions are ours. Videos at coach.afl/female-football.",
+    "verified": true
+  },
+  {
+    "id": "prep-to-play-strength-option-b",
+    "name": "Prep to Play Strength Program (Option B)",
+    "series": "Prep to Play Strength",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "bodyweight",
+      "partner",
+      "bench"
+    ],
+    "description": "Three no-equipment strength activities from the AFL's Prep to Play program (lower limb, hamstring/glute, core/hip), option B.",
+    "whoItsFor": "Female community footballers and juniors 14+ (and anyone else) wanting a 10-minute leg, hamstring and groin strength routine at every training.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient",
+      "home"
+    ],
+    "howToRun": [
+      "Do one activity from each of the 3 groups, about 10 minutes, before, during or after every training session.",
+      "Choose A, B or C per group; aim to progress to C.",
+      "Some soreness 24-48 h after is expected; if soreness stops you training, see a physio.",
+      "Replaces static stretching or a cool-down lap (SMA recommendation)."
+    ],
+    "exercises": [
+      {
+        "name": "Clockface (mini squat, tap 12-3-6-9)",
+        "sets": 3,
+        "reps": "1 round/side"
+      },
+      {
+        "name": "Single-leg hamstring bridge (foot on bench/ball)",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Side plank",
+        "sets": 2,
+        "reps": "30-60s/side"
+      }
+    ],
+    "credit": "AFL & La Trobe University (Prep to Play)",
+    "sourceUrl": "https://play.afl/sites/default/files/2023-10/AFLW%20Prep%20to%20Play%20-%20Strength%20Program%20%28Poster%29.pdf",
+    "sourceNote": "Free official AFL/La Trobe poster on play.afl (coach.afl). Doses read from the poster image itself (rendered and checked), cross-checked with the Player Manual. No reproduction wording on the poster; only names and doses recorded, descriptions are ours. Videos at coach.afl/female-football.",
+    "verified": true
+  },
+  {
+    "id": "prep-to-play-strength-option-c",
+    "name": "Prep to Play Strength Program (Option C)",
+    "series": "Prep to Play Strength",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "bodyweight",
+      "partner"
+    ],
+    "description": "Three no-equipment strength activities from the AFL's Prep to Play program (lower limb, hamstring/glute, core/hip), option C.",
+    "whoItsFor": "Female community footballers and juniors 14+ (and anyone else) wanting a 10-minute leg, hamstring and groin strength routine at every training.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient",
+      "home"
+    ],
+    "howToRun": [
+      "Do one activity from each of the 3 groups, about 10 minutes, before, during or after every training session.",
+      "Choose A, B or C per group; aim to progress to C.",
+      "Some soreness 24-48 h after is expected; if soreness stops you training, see a physio.",
+      "Replaces static stretching or a cool-down lap (SMA recommendation)."
+    ],
+    "exercises": [
+      {
+        "name": "Reverse Nordic",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Nordic hamstring lowers",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Copenhagen groin (modified at knee or full at ankle)",
+        "sets": 2,
+        "reps": "10/side"
+      }
+    ],
+    "credit": "AFL & La Trobe University (Prep to Play)",
+    "sourceUrl": "https://play.afl/sites/default/files/2023-10/AFLW%20Prep%20to%20Play%20-%20Strength%20Program%20%28Poster%29.pdf",
+    "sourceNote": "Free official AFL/La Trobe poster on play.afl (coach.afl). Doses read from the poster image itself (rendered and checked), cross-checked with the Player Manual. No reproduction wording on the poster; only names and doses recorded, descriptions are ours. Videos at coach.afl/female-football.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-off-season-day-1",
+    "name": "Musashi AFL Off-Season - Sport-Specific Strength Day 1",
+    "series": "Musashi AFL Off-Season",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Day 1 of the free 3-day Musashi AFL off-season plan ('Sport-Specific Strength'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple off-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Paced jog",
+        "sets": 1,
+        "reps": "15 min"
+      },
+      {
+        "name": "Tibialis raises",
+        "sets": 3,
+        "reps": "25"
+      },
+      {
+        "name": "Half squat",
+        "sets": 4,
+        "reps": "8"
+      },
+      {
+        "name": "Forward lunge",
+        "sets": 4,
+        "reps": "8"
+      },
+      {
+        "name": "Reverse lunge knee drive",
+        "sets": 3,
+        "reps": "12"
+      },
+      {
+        "name": "Paced jog",
+        "sets": 1,
+        "reps": "15 min"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/off-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-off-season-day-2",
+    "name": "Musashi AFL Off-Season - Sport-Specific Strength Day 2",
+    "series": "Musashi AFL Off-Season",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "resistance band",
+      "bench"
+    ],
+    "description": "Day 2 of the free 3-day Musashi AFL off-season plan ('Sport-Specific Strength'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple off-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Glute bridge bench press",
+        "sets": 5,
+        "reps": "12"
+      },
+      {
+        "name": "Banded single-arm press (left)",
+        "sets": 3,
+        "reps": "6"
+      },
+      {
+        "name": "Banded single-arm press (right)",
+        "sets": 3,
+        "reps": "6"
+      },
+      {
+        "name": "Single-arm plank (left)",
+        "sets": 3,
+        "reps": "30s"
+      },
+      {
+        "name": "Single-arm plank (right)",
+        "sets": 3,
+        "reps": "30s"
+      },
+      {
+        "name": "Push-ups",
+        "sets": 3,
+        "reps": "AMAP"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/off-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-off-season-day-3",
+    "name": "Musashi AFL Off-Season - Sport-Specific Strength Day 3",
+    "series": "Musashi AFL Off-Season",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "barbell",
+      "resistance band"
+    ],
+    "description": "Day 3 of the free 3-day Musashi AFL off-season plan ('Sport-Specific Strength'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple off-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Trap bar or barbell deadlift",
+        "sets": 5,
+        "reps": "12"
+      },
+      {
+        "name": "Banded rows",
+        "sets": 4,
+        "reps": "8"
+      },
+      {
+        "name": "Step-back banded row",
+        "sets": 3,
+        "reps": "8"
+      },
+      {
+        "name": "Single-leg shoulder press (left)",
+        "sets": 2,
+        "reps": "6"
+      },
+      {
+        "name": "Single-leg shoulder press (right)",
+        "sets": 2,
+        "reps": "6"
+      },
+      {
+        "name": "Upright row",
+        "sets": 3,
+        "reps": "8"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/off-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-pre-season-day-1",
+    "name": "Musashi AFL Pre-Season - Power & Explosiveness Day 1",
+    "series": "Musashi AFL Pre-Season",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "plyo box"
+    ],
+    "description": "Day 1 of the free 3-day Musashi AFL pre-season plan ('Power & Explosiveness'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple pre-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Split squat",
+        "sets": 5,
+        "reps": "8"
+      },
+      {
+        "name": "Kneeling sprint start (left)",
+        "sets": 3,
+        "reps": "3"
+      },
+      {
+        "name": "Kneeling sprint start (right)",
+        "sets": 3,
+        "reps": "3"
+      },
+      {
+        "name": "Lateral skater deceleration",
+        "sets": 3,
+        "reps": "30s"
+      },
+      {
+        "name": "Triple high-knee skater",
+        "sets": 3,
+        "reps": "30s"
+      },
+      {
+        "name": "Box jumps",
+        "sets": 3,
+        "reps": "6"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/pre-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out. The web page shows 4 reps for the right-side kneeling sprint start; the PDF shows 3 - we used the PDF.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-pre-season-day-2",
+    "name": "Musashi AFL Pre-Season - Power & Explosiveness Day 2",
+    "series": "Musashi AFL Pre-Season",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "medicine ball",
+      "bench"
+    ],
+    "description": "Day 2 of the free 3-day Musashi AFL pre-season plan ('Power & Explosiveness'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple pre-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Rotational med ball slams",
+        "sets": 3,
+        "reps": "6"
+      },
+      {
+        "name": "Glute bridge bench press",
+        "sets": 5,
+        "reps": "8"
+      },
+      {
+        "name": "Plyo bench push-ups",
+        "sets": 2,
+        "reps": "6"
+      },
+      {
+        "name": "Kneeling med ball throw (left)",
+        "sets": 3,
+        "reps": "6"
+      },
+      {
+        "name": "Kneeling med ball throw (right)",
+        "sets": 3,
+        "reps": "6"
+      },
+      {
+        "name": "Med ball push-ups, swap hands",
+        "sets": 3,
+        "reps": "AMAP"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/pre-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-pre-season-day-3",
+    "name": "Musashi AFL Pre-Season - Power & Explosiveness Day 3",
+    "series": "Musashi AFL Pre-Season",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "bench"
+    ],
+    "description": "Day 3 of the free 3-day Musashi AFL pre-season plan ('Power & Explosiveness'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple pre-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Single-leg deadlift (left)",
+        "sets": 4,
+        "reps": "6"
+      },
+      {
+        "name": "Single-leg deadlift (right)",
+        "sets": 4,
+        "reps": "6"
+      },
+      {
+        "name": "Skater ball slam",
+        "sets": 3,
+        "reps": "30s"
+      },
+      {
+        "name": "Glute bridge bench press",
+        "sets": 3,
+        "reps": "12"
+      },
+      {
+        "name": "Glute bridge pullover",
+        "sets": 3,
+        "reps": "12"
+      },
+      {
+        "name": "Bulgarian jumps",
+        "sets": 3,
+        "reps": "6"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/pre-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-in-season-day-1",
+    "name": "Musashi AFL In-Season - Endurance & Movement Day 1",
+    "series": "Musashi AFL In-Season",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Day 1 of the free 3-day Musashi AFL in-season plan ('Endurance & Movement'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple in-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Jog",
+        "sets": 1,
+        "reps": "15 min"
+      },
+      {
+        "name": "Run",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Jog",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Run",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Jog",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Run",
+        "sets": 1,
+        "reps": "1 min"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/during-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-in-season-day-2",
+    "name": "Musashi AFL In-Season - Endurance & Movement Day 2",
+    "series": "Musashi AFL In-Season",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "plyo box",
+      "pull-up bar"
+    ],
+    "description": "Day 2 of the free 3-day Musashi AFL in-season plan ('Endurance & Movement'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple in-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Box jumps",
+        "sets": 3,
+        "reps": "3"
+      },
+      {
+        "name": "Zercher squats",
+        "sets": 4,
+        "reps": "5"
+      },
+      {
+        "name": "Chin-ups",
+        "sets": 4,
+        "reps": "AMAP"
+      },
+      {
+        "name": "Bulgarian jumps side to side",
+        "sets": 3,
+        "reps": "6"
+      },
+      {
+        "name": "Step-up jumps",
+        "sets": 3,
+        "reps": "4"
+      },
+      {
+        "name": "Burpee side shuffle",
+        "sets": 3,
+        "reps": "1 min"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/during-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out.",
+    "verified": true
+  },
+  {
+    "id": "musashi-afl-in-season-day-3",
+    "name": "Musashi AFL In-Season - Endurance & Movement Day 3",
+    "series": "Musashi AFL In-Season",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "kettlebell",
+      "weight plate"
+    ],
+    "description": "Day 3 of the free 3-day Musashi AFL in-season plan ('Endurance & Movement'), built to sit between club training and games.",
+    "whoItsFor": "Footballers wanting a simple in-season gym/field block to add to club training. Some days need a gym (bar, bands, medicine ball, box).",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Rotate Days 1-3 across the week around club training, with at least a day between the hardest sessions.",
+      "Musashi says to adjust sets/reps and add position-specific exercises once you're used to the program.",
+      "AMAP = as many as possible with good form.",
+      "Keep it away from the day before a game in-season."
+    ],
+    "exercises": [
+      {
+        "name": "Fast feet on plate",
+        "sets": 3,
+        "reps": "30s"
+      },
+      {
+        "name": "Side-to-side plate agility",
+        "sets": 3,
+        "reps": "30s"
+      },
+      {
+        "name": "Hip switches",
+        "sets": 3,
+        "reps": "1 min"
+      },
+      {
+        "name": "Lunge kettlebell under-swings (left)",
+        "sets": 3,
+        "reps": "12"
+      },
+      {
+        "name": "Lunge kettlebell under-swings (right)",
+        "sets": 3,
+        "reps": "12"
+      },
+      {
+        "name": "Burpee side roll",
+        "sets": 4,
+        "reps": "1 min"
+      }
+    ],
+    "credit": "Musashi Performance Lab (Musashi Nutrition)",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0528/3718/7753/files/Muashi_Sports_Training_Program_AFL.pdf",
+    "sourceNote": "Free 'Download PDF' from Musashi's AFL training-program pages (PDF opened without a login; the pages also advertise a members-only area). Day 1 checked against https://musashi.com/pages/during-season-afl-training-program; Days 2-3 assigned from the PDF's goal headings (the PDF's phase column order doesn't match the web pages, so we followed the pages). No named author. Site footer '(c) 1987-2026 Musashi Nutrition'; no reproduction terms found. Commercial brand content: facts only, link out.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-strength-series-a",
+    "name": "Rob Jackson's Strength Series A",
+    "series": "Rob Jackson's Strength Series",
+    "day": 1,
+    "daysInSeries": 2,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "dumbbells",
+      "slider"
+    ],
+    "description": "Session A of a short, 8-week, three-exercise strength series from the AFL umpires' high-performance manager, aimed at running, throwing and bouncing strength.",
+    "whoItsFor": "Footy umpires and players who want the minimum effective gym dose alongside a heavy running load. Needs a basic gym.",
+    "lifestyle": [
+      "full-gym",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Alternate A and B, 1-2 strength sessions a week (Play AFL training-year guidance).",
+      "Weeks 1-2 start light with more reps; sets go up and reps come down every 2 weeks to week 8.",
+      "Add load as reps drop; keep 1-2 reps in reserve.",
+      "Leave at least a day before your hardest running session or game."
+    ],
+    "exercises": [
+      {
+        "name": "Goblet squat with heel raise (wk 3-4 3x10, wk 5-6 3x8, wk 7-8 3x6)",
+        "sets": 2,
+        "reps": "15",
+        "weight": "weeks 1-2 dose shown"
+      },
+      {
+        "name": "Sliding leg curl (wk 3-4 3x6, wk 5-6 3x8, wk 7-8 3x10)",
+        "sets": 2,
+        "reps": "5",
+        "weight": "weeks 1-2 dose shown"
+      },
+      {
+        "name": "Walking lunge (wk 3-4 3x10/leg, wk 5-6 3x8/leg, wk 7-8 3x6/leg)",
+        "sets": 2,
+        "reps": "15/leg",
+        "weight": "weeks 1-2 dose shown"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-08/Rob%20Jacksons%20Strength%20Series%20AB.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-strength-series-b",
+    "name": "Rob Jackson's Strength Series B",
+    "series": "Rob Jackson's Strength Series",
+    "day": 2,
+    "daysInSeries": 2,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "trap bar",
+      "barbell",
+      "bench",
+      "step"
+    ],
+    "description": "Session B of a short, 8-week, three-exercise strength series from the AFL umpires' high-performance manager, aimed at running, throwing and bouncing strength.",
+    "whoItsFor": "Footy umpires and players who want the minimum effective gym dose alongside a heavy running load. Needs a basic gym.",
+    "lifestyle": [
+      "full-gym",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Alternate A and B, 1-2 strength sessions a week (Play AFL training-year guidance).",
+      "Weeks 1-2 start light with more reps; sets go up and reps come down every 2 weeks to week 8.",
+      "Add load as reps drop; keep 1-2 reps in reserve.",
+      "Leave at least a day before your hardest running session or game."
+    ],
+    "exercises": [
+      {
+        "name": "Trap bar deadlift (wk 3-4 3x8, wk 5-6 3x6, wk 7-8 4x4)",
+        "sets": 2,
+        "reps": "10",
+        "weight": "weeks 1-2 dose shown"
+      },
+      {
+        "name": "B-stance hip thrust (wk 3-4 3x10/side, wk 5-6 3x8/side, wk 7-8 3x6/side)",
+        "sets": 2,
+        "reps": "10/side",
+        "weight": "weeks 1-2 dose shown"
+      },
+      {
+        "name": "Patrick step-downs (wk 3-4 3x10/side, wk 5-6 3x8/side, wk 7-8 3x6/side)",
+        "sets": 2,
+        "reps": "10/side",
+        "weight": "weeks 1-2 dose shown"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-08/Rob%20Jacksons%20Strength%20Series%20AB.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-body-armour-a",
+    "name": "Rob Jackson's Body Armour Series A",
+    "series": "Rob Jackson's Body Armour Series",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Body Armour A: two short circuits targeting the most common running-injury sites (groin, hamstring, calf, hips), done straight after track work.",
+    "whoItsFor": "Footballers and umpires doing lots of running who want a bodyweight 'prehab' circuit after their run. Grass or gym floor.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient",
+      "home"
+    ],
+    "howToRun": [
+      "Do it after track work: circuit 1 twice through, then circuit 2 twice through.",
+      "Move from series A to B to C as the static holds and single-leg work feel controlled.",
+      "Copenhagen holds are 15-20 seconds a side; stop if groin pain is sharp.",
+      "2 sessions a week fits most pre-season running programs."
+    ],
+    "exercises": [
+      {
+        "name": "Split squat with 2 s pause",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "A1"
+      },
+      {
+        "name": "Short-lever static Copenhagen",
+        "sets": 2,
+        "reps": "15-20s/side",
+        "group": "A1"
+      },
+      {
+        "name": "Single-leg 90/90 hip extension from floor",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "A1"
+      },
+      {
+        "name": "Bear crawl rotations",
+        "sets": 2,
+        "reps": "5 each way",
+        "group": "A1"
+      },
+      {
+        "name": "Supported Cossack squat",
+        "sets": 2,
+        "reps": "5/side",
+        "group": "A2"
+      },
+      {
+        "name": "Two-leg calf raise",
+        "sets": 2,
+        "reps": "12-15",
+        "group": "A2"
+      },
+      {
+        "name": "Hamstring walkouts",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "A2"
+      },
+      {
+        "name": "Static inchworm",
+        "sets": 2,
+        "reps": "5 out/back",
+        "group": "A2"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-08/Rob%20Jacksons%20Body%20Armour%20Series.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-body-armour-b",
+    "name": "Rob Jackson's Body Armour Series B",
+    "series": "Rob Jackson's Body Armour Series",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "bench"
+    ],
+    "description": "Body Armour B: two short circuits targeting the most common running-injury sites (groin, hamstring, calf, hips), done straight after track work.",
+    "whoItsFor": "Footballers and umpires doing lots of running who want a bodyweight 'prehab' circuit after their run. Grass or gym floor.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient",
+      "home"
+    ],
+    "howToRun": [
+      "Do it after track work: circuit 1 twice through, then circuit 2 twice through.",
+      "Move from series A to B to C as the static holds and single-leg work feel controlled.",
+      "Copenhagen holds are 15-20 seconds a side; stop if groin pain is sharp.",
+      "2 sessions a week fits most pre-season running programs."
+    ],
+    "exercises": [
+      {
+        "name": "Static split squat with calf raise",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "B1"
+      },
+      {
+        "name": "Long-lever static Copenhagen",
+        "sets": 2,
+        "reps": "15-20s/side",
+        "group": "B1"
+      },
+      {
+        "name": "Single-leg 90/90 hip extension from bench",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "B1"
+      },
+      {
+        "name": "Bear crawl rotations",
+        "sets": 2,
+        "reps": "5 each way",
+        "group": "B1"
+      },
+      {
+        "name": "Non-supported Cossack squat",
+        "sets": 2,
+        "reps": "5/side",
+        "group": "B2"
+      },
+      {
+        "name": "Single-leg calf raise",
+        "sets": 2,
+        "reps": "12-15",
+        "group": "B2"
+      },
+      {
+        "name": "Hamstring walkouts",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "B2"
+      },
+      {
+        "name": "Dynamic inchworm",
+        "sets": 2,
+        "reps": "5 out/back",
+        "group": "B2"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-08/Rob%20Jacksons%20Body%20Armour%20Series.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-body-armour-c",
+    "name": "Rob Jackson's Body Armour Series C",
+    "series": "Rob Jackson's Body Armour Series",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "bench"
+    ],
+    "description": "Body Armour C: two short circuits targeting the most common running-injury sites (groin, hamstring, calf, hips), done straight after track work.",
+    "whoItsFor": "Footballers and umpires doing lots of running who want a bodyweight 'prehab' circuit after their run. Grass or gym floor.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient",
+      "home"
+    ],
+    "howToRun": [
+      "Do it after track work: circuit 1 twice through, then circuit 2 twice through.",
+      "Move from series A to B to C as the static holds and single-leg work feel controlled.",
+      "Copenhagen holds are 15-20 seconds a side; stop if groin pain is sharp.",
+      "2 sessions a week fits most pre-season running programs."
+    ],
+    "exercises": [
+      {
+        "name": "Static split squat with calf raise",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "C1"
+      },
+      {
+        "name": "Long-lever static Copenhagen",
+        "sets": 2,
+        "reps": "15-20s/side",
+        "group": "C1"
+      },
+      {
+        "name": "Single-leg 90/90 hip extension from bench",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "C1"
+      },
+      {
+        "name": "Bear crawl rotations",
+        "sets": 2,
+        "reps": "5 each way",
+        "group": "C1"
+      },
+      {
+        "name": "Non-supported Cossack squat",
+        "sets": 2,
+        "reps": "5/side",
+        "group": "C2"
+      },
+      {
+        "name": "Sprinter calf raise",
+        "sets": 2,
+        "reps": "12-15",
+        "group": "C2"
+      },
+      {
+        "name": "Hamstring walkouts with end switches",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "C2"
+      },
+      {
+        "name": "Dynamic inchworm",
+        "sets": 2,
+        "reps": "5 out/back",
+        "group": "C2"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-08/Rob%20Jacksons%20Body%20Armour%20Series.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-body-weight-flush",
+    "name": "Rob Jackson's Body Weight Flush Recovery",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 15,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "An easy active-recovery mobility walk-through: five 10 m crawling, squatting and lunging patterns that open the hips and lower back.",
+    "whoItsFor": "Players and umpires the day after a game or hard session who want to move without adding fatigue.",
+    "lifestyle": [
+      "outdoor",
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Use on recovery days (e.g. the day after the game).",
+      "It's not meant to be hard; move smoothly through range.",
+      "Repeat the whole sequence 1-3 times depending on how you feel.",
+      "Range improves quickly with regular use."
+    ],
+    "exercises": [
+      {
+        "name": "Duck walk",
+        "sets": 1,
+        "reps": "10 m up and back"
+      },
+      {
+        "name": "Lateral squat and reach walk",
+        "sets": 1,
+        "reps": "10 m left, 10 m right"
+      },
+      {
+        "name": "Reverse duck walk",
+        "sets": 1,
+        "reps": "10 m up and back"
+      },
+      {
+        "name": "Inchworm to push-up",
+        "sets": 1,
+        "reps": "10 m up and back"
+      },
+      {
+        "name": "Deep squat and rotate walk",
+        "sets": 1,
+        "reps": "10 m up and back"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-08/RobJacksons%20Body%20Weight%20Flush%20Recovery.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-movement-prep-t1",
+    "name": "Rob Jackson's Movement Prep + T1 Running Drills",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "cones"
+    ],
+    "description": "A pre-training mobility/activation sequence (option 1) followed by the T1 running-drill series that finishes with build-up strides and flying 10 m sprints.",
+    "whoItsFor": "Players and umpires who want a structured warm-up before speed or running sessions. Needs a 40 m strip of grass.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Do before running or speed sessions.",
+      "Mobility first, then drills over 10-30 m with the stated return (jog, shuffle or carioca).",
+      "Strides build 60-70-80%; the flying 10 m is the only near-max effort.",
+      "Swap to option 2 or T2 drills for variety."
+    ],
+    "exercises": [
+      {
+        "name": "Prone belly breaths",
+        "sets": 1,
+        "reps": "10 each"
+      },
+      {
+        "name": "Single-leg glute bridge",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Prone Y-W",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Hip flexor pulses",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "90-90 reach through",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Cat-camel",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Lateral rocks",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "World's greatest stretch",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Knee hug + arabesque",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Skipping / lateral skip / high-knee skip",
+        "sets": 1,
+        "reps": "30 each"
+      },
+      {
+        "name": "Calf pump",
+        "sets": 1,
+        "reps": "1",
+        "distance": "10m"
+      },
+      {
+        "name": "Pogo forwards (lateral shuffle return)",
+        "sets": 1,
+        "reps": "1",
+        "distance": "10m"
+      },
+      {
+        "name": "Pogo backwards (lateral shuffle return)",
+        "sets": 1,
+        "reps": "1",
+        "distance": "10m"
+      },
+      {
+        "name": "Split pogo (carioca return)",
+        "sets": 1,
+        "reps": "1",
+        "distance": "10m"
+      },
+      {
+        "name": "A-skip (carioca return)",
+        "sets": 1,
+        "reps": "1",
+        "distance": "10m"
+      },
+      {
+        "name": "Ankle dribble (backward jog return)",
+        "sets": 1,
+        "reps": "1",
+        "distance": "10m"
+      },
+      {
+        "name": "Ankle-calf dribble",
+        "sets": 1,
+        "reps": "1",
+        "distance": "20m"
+      },
+      {
+        "name": "Ankle-calf-knee dribble",
+        "sets": 1,
+        "reps": "1",
+        "distance": "30m"
+      },
+      {
+        "name": "Dribble transition (speed focus)",
+        "sets": 1,
+        "reps": "1",
+        "distance": "30m"
+      },
+      {
+        "name": "Build-up strides",
+        "sets": 3,
+        "reps": "1",
+        "weight": "60-70-80%",
+        "distance": "40m"
+      },
+      {
+        "name": "30-40 m build-up, flying 10 m sprint + decel",
+        "sets": 2,
+        "reps": "1",
+        "weight": "max over the flying 10 m",
+        "distance": "10m"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-02/Movement%20Preparation%20%2B%20Extras%20%28Rob%20Jackson%29.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-strength-maintenance-level-1",
+    "name": "Rob Jackson's Strength Maintenance Level 1",
+    "series": "Rob Jackson's Strength Maintenance",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Level 1 of a no-equipment strength-maintenance circuit for legs, trunk and shoulders, done for 3 rounds.",
+    "whoItsFor": "Players and umpires without gym access (travel, lockdown, home) who need to hold strength for running, jumping and contact.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2 sessions a week, 3 rounds of the circuit.",
+      "Option 1: 10 reps per exercise, adding 1-2 reps every second session up to 20; holds start at 20 s, adding 5 s every second session up to 45 s.",
+      "Option 2: 20 s per exercise in rotation, adding 5 s every second session.",
+      "Move up a level when you reach 20 reps / 45 s holds."
+    ],
+    "exercises": [
+      {
+        "name": "Isometric lunge",
+        "sets": 3,
+        "reps": "20s"
+      },
+      {
+        "name": "Spiderman lunge",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Y-W glides",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Plank",
+        "sets": 3,
+        "reps": "20s"
+      },
+      {
+        "name": "Hamstring holds",
+        "sets": 3,
+        "reps": "20s"
+      },
+      {
+        "name": "Bent-knee curl-up",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Side plank",
+        "sets": 3,
+        "reps": "20s"
+      },
+      {
+        "name": "Bird dog (elbows)",
+        "sets": 3,
+        "reps": "10"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-02/Movement%20Preparation%20%2B%20Extras%20%28Rob%20Jackson%29.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-strength-maintenance-level-2",
+    "name": "Rob Jackson's Strength Maintenance Level 2",
+    "series": "Rob Jackson's Strength Maintenance",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Level 2 of a no-equipment strength-maintenance circuit for legs, trunk and shoulders, done for 3 rounds.",
+    "whoItsFor": "Players and umpires without gym access (travel, lockdown, home) who need to hold strength for running, jumping and contact.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2 sessions a week, 3 rounds of the circuit.",
+      "Option 1: 10 reps per exercise, adding 1-2 reps every second session up to 20; holds start at 20 s, adding 5 s every second session up to 45 s.",
+      "Option 2: 20 s per exercise in rotation, adding 5 s every second session.",
+      "Move up a level when you reach 20 reps / 45 s holds."
+    ],
+    "exercises": [
+      {
+        "name": "Reverse lunge",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Isometric lateral lunge",
+        "sets": 3,
+        "reps": "20s"
+      },
+      {
+        "name": "Scapula push-up",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Plank rocks",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Single-leg hamstring holds",
+        "sets": 3,
+        "reps": "20s"
+      },
+      {
+        "name": "Hollow hold",
+        "sets": 3,
+        "reps": "20s"
+      },
+      {
+        "name": "Side plank hip lifts",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Bird dog (hands)",
+        "sets": 3,
+        "reps": "10"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-02/Movement%20Preparation%20%2B%20Extras%20%28Rob%20Jackson%29.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "rob-jackson-strength-maintenance-level-3",
+    "name": "Rob Jackson's Strength Maintenance Level 3",
+    "series": "Rob Jackson's Strength Maintenance",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Level 3 of a no-equipment strength-maintenance circuit for legs, trunk and shoulders, done for 3 rounds.",
+    "whoItsFor": "Players and umpires without gym access (travel, lockdown, home) who need to hold strength for running, jumping and contact.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2 sessions a week, 3 rounds of the circuit.",
+      "Option 1: 10 reps per exercise, adding 1-2 reps every second session up to 20; holds start at 20 s, adding 5 s every second session up to 45 s.",
+      "Option 2: 20 s per exercise in rotation, adding 5 s every second session.",
+      "Move up a level when you reach 20 reps / 45 s holds."
+    ],
+    "exercises": [
+      {
+        "name": "Sprinter lunge",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Lateral lunge",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Push-up",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Plank up-downs",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Hamstring switches",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Dead bug",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Side plank leg lifts",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Bear dog",
+        "sets": 3,
+        "reps": "10"
+      }
+    ],
+    "credit": "Rob Jackson (AFL Umpires High Performance Manager) via Play AFL",
+    "sourceUrl": "https://play.afl/sites/default/files/2024-02/Movement%20Preparation%20%2B%20Extras%20%28Rob%20Jackson%29.pdf",
+    "sourceNote": "Free resource on Play AFL's Community Umpire Training page, written for field/boundary umpires (whose running loads are footy-like). Read from the PDF text; no reproduction wording found. Facts only, descriptions ours.",
+    "verified": true
+  },
+  {
+    "id": "somax-afl-preseason-aerobic-base",
+    "name": "Somax AFL Pre-season Aerobic Base",
+    "category": "run",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "endurance",
+      "sport-performance",
+      "general-fitness"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 40,
+    "equipment": [
+      "bodyweight",
+      "cones"
+    ],
+    "description": "Easy running plus short run/jog surges to build the aerobic engine you need before club pre-season gets hard.",
+    "whoItsFor": "Community players coming back from the off-season (or new to footy) who can jog 15-20 minutes and want to turn up to pre-season fit.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "3 runs a week on non-consecutive days (e.g. Mon/Wed/Sat), 4-8 weeks before club pre-season.",
+      "Jog parts are conversational; 'run' parts are comfortably hard, not sprints.",
+      "Add 2-3 minutes of easy running a week; every 4th week cut the session by a third.",
+      "Do a 2 km time trial at the start and after 6 weeks to track progress."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst-style warm-up (jog, side-to-side, carioca, butt kicks, leg swings, lunges)",
+        "sets": 1,
+        "reps": "6 min"
+      },
+      {
+        "name": "Easy jog",
+        "sets": 1,
+        "reps": "12 min",
+        "weight": "conversational"
+      },
+      {
+        "name": "Run (comfortably hard)",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Jog recovery",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Run",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Jog recovery",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Run",
+        "sets": 1,
+        "reps": "1 min"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Strides",
+        "sets": 4,
+        "reps": "1",
+        "weight": "70-80%",
+        "distance": "60m"
+      },
+      {
+        "name": "Prep to Play strength: lunges + glute bridge + plank",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "musashi-afl-in-season-day-1",
+      "footyfirst-level-1",
+      "prep-to-play-strength-option-a"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-2km-time-trial-builder",
+    "name": "Somax AFL 2km Time-Trial Builder",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "cones"
+    ],
+    "description": "Goal-pace 400s and a weekly tempo run to knock time off your club's 2 km time trial.",
+    "whoItsFor": "Players with a current 2 km time of roughly 7:00-9:30 who want to hit a pre-season time-trial target. Needs a 400 m track or measured oval lap.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Week: this interval session + a 20-25 min tempo run (comfortably hard) + one easy 30-40 min run.",
+      "Run the 400s at goal 2 km pace (goal time / 5); rest 60-90 s standing or walking.",
+      "Add one 400 every week up to 10, then retest the 2 km; set new paces from the result.",
+      "Keep at least 48 h between this session and a hard club session or game."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst-style warm-up (jog, side-to-side, carioca, butt kicks, leg swings, lunges)",
+        "sets": 1,
+        "reps": "6 min"
+      },
+      {
+        "name": "400 m repeats at goal 2km pace",
+        "sets": 6,
+        "reps": "1",
+        "weight": "goal 2km pace",
+        "distance": "400m"
+      },
+      {
+        "name": "Walk/stand recovery",
+        "sets": 6,
+        "reps": "60-90s"
+      },
+      {
+        "name": "Strides",
+        "sets": 4,
+        "reps": "1",
+        "weight": "80%",
+        "distance": "100m"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Body Armour circuit (Copenhagen hold, calf raise, hamstring walkouts)",
+        "sets": 2,
+        "reps": "1 round"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "rob-jackson-body-armour-a",
+      "footyfirst-level-1",
+      "musashi-afl-in-season-day-1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-repeat-sprint-conditioning",
+    "name": "Somax AFL Repeat-Sprint Conditioning",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 40,
+    "equipment": [
+      "cones"
+    ],
+    "description": "Short sprints on short rest plus 15:15 intervals - the stop-start fitness you need to keep presenting at contests late in the last quarter.",
+    "whoItsFor": "Sub-elite and keen community players in mid-to-late pre-season who already have an aerobic base.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2 sessions a week in pre-season, never on consecutive days and not within 48 h of a game.",
+      "Sprints start every 20 s (sprint 30 m, jog back); stop the set if you're more than ~5% slower than your first rep.",
+      "Rest 4 min between sets; build from 2 to 3 sets over 4 weeks.",
+      "In-season, drop to 1 set or let club training cover it."
+    ],
+    "exercises": [
+      {
+        "name": "Rob Jackson T1 running drills + build-up strides",
+        "sets": 1,
+        "reps": "12 min"
+      },
+      {
+        "name": "Repeat sprints, start every 20 s (jog back)",
+        "sets": 2,
+        "reps": "6",
+        "weight": "max",
+        "distance": "30m"
+      },
+      {
+        "name": "Rest between sets",
+        "sets": 2,
+        "reps": "4 min"
+      },
+      {
+        "name": "15 s run / 15 s walk intervals",
+        "sets": 2,
+        "reps": "8",
+        "weight": "~90% effort"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "rob-jackson-movement-prep-t1",
+      "prep-to-play-warm-up-option-a"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-speed-agility",
+    "name": "Somax AFL Speed & Agility",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "First-step acceleration, flying speed and safe side-stepping - pre-planned, then reacting to an opponent.",
+    "whoItsFor": "Midfielders, small forwards and defenders (15+) who want to win the first few metres to the ball. Needs a partner and some cones.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "2 sessions a week in pre-season; 1 in-season at MD-4 or MD-3 (e.g. Tuesday for a Saturday game).",
+      "Every sprint is max effort with full recovery (walk back + 60-90 s); quality over volume.",
+      "Plant the foot close to your midline, trunk upright, knee bent when side-stepping.",
+      "Only do the reactive drill once the pre-planned side-step looks clean."
+    ],
+    "exercises": [
+      {
+        "name": "Rob Jackson T1 running drills",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Kneeling sprint start",
+        "sets": 6,
+        "reps": "1",
+        "weight": "max",
+        "distance": "10m"
+      },
+      {
+        "name": "Flying sprint after 30 m build-up",
+        "sets": 4,
+        "reps": "1",
+        "weight": "max",
+        "distance": "10m"
+      },
+      {
+        "name": "5 m cone change-of-direction pattern (left then right turns)",
+        "sets": 3,
+        "reps": "1/side",
+        "weight": "30 s rest"
+      },
+      {
+        "name": "Pre-planned 45-degree side-step",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Reactive side-step vs partner (defender)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Lateral skater deceleration",
+        "sets": 3,
+        "reps": "30s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "rob-jackson-movement-prep-t1",
+      "musashi-afl-pre-season-day-1",
+      "footyfirst-level-4",
+      "footyfirst-level-5"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-lower-body-strength-power",
+    "name": "Somax AFL Lower-Body Strength & Power",
+    "category": "gym",
+    "level": "advanced",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance",
+      "muscle"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 60,
+    "equipment": [
+      "trap bar",
+      "barbell",
+      "plyo box",
+      "dumbbells",
+      "bench",
+      "slider"
+    ],
+    "description": "Heavy hinge and single-leg strength paired with jumps, plus Nordics and Copenhagens to protect hamstrings and groins.",
+    "whoItsFor": "Experienced lifters playing sub-elite or senior footy (VFL/SANFL/WAFL level or strong local leagues) in off- and pre-season.",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "2 sessions a week off/pre-season (e.g. Mon/Thu), 1 in-season at MD-4/MD-3.",
+      "Heavy sets at about RPE 8 (2 reps in reserve); add load when all reps feel solid.",
+      "Jumps are low-rep and fully recovered; stop when height drops.",
+      "Never in the 48 h before a game."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst-style warm-up (jog, side-to-side, carioca, butt kicks, leg swings, lunges)",
+        "sets": 1,
+        "reps": "6 min"
+      },
+      {
+        "name": "Box jump (step down)",
+        "sets": 4,
+        "reps": "3"
+      },
+      {
+        "name": "Trap bar deadlift",
+        "sets": 4,
+        "reps": "4-6",
+        "weight": "RPE 8"
+      },
+      {
+        "name": "Rear-foot-elevated split squat",
+        "sets": 3,
+        "reps": "6/leg",
+        "weight": "RPE 8",
+        "group": "A"
+      },
+      {
+        "name": "Lateral bound (stick landing)",
+        "sets": 3,
+        "reps": "4/side",
+        "group": "A"
+      },
+      {
+        "name": "B-stance hip thrust",
+        "sets": 3,
+        "reps": "8/side",
+        "group": "B"
+      },
+      {
+        "name": "Nordic hamstring lower",
+        "sets": 3,
+        "reps": "5",
+        "group": "B"
+      },
+      {
+        "name": "Long-lever Copenhagen (dynamic)",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Single-leg calf raise",
+        "sets": 3,
+        "reps": "12"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "rob-jackson-strength-series-b",
+      "musashi-afl-pre-season-day-1",
+      "prep-to-play-strength-option-c",
+      "footyfirst-level-5"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-upper-body-contact-strength",
+    "name": "Somax AFL Upper-Body & Contact Strength",
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "muscle",
+      "sport-performance"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 50,
+    "equipment": [
+      "barbell",
+      "bench",
+      "pull-up bar",
+      "dumbbells",
+      "medicine ball",
+      "resistance band",
+      "partner"
+    ],
+    "description": "Pressing, pulling and rotational power to win contests, plus safe tackling and falling technique.",
+    "whoItsFor": "Senior and older-junior (16+) players who want to be harder to tackle and stronger over the ball.",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "2 sessions a week off/pre-season, 1 in-season; pair with the lower-body day or run it on its own.",
+      "Main lifts at RPE 7-8; add reps before load.",
+      "Tackling breakdown and falling practice are technique work - controlled, with a partner of similar size.",
+      "Under-16s: skip the barbell work and use push-ups, rows and the contact drills."
+    ],
+    "exercises": [
+      {
+        "name": "Band pull-aparts + shoulder circles",
+        "sets": 2,
+        "reps": "15"
+      },
+      {
+        "name": "Bench press",
+        "sets": 4,
+        "reps": "6",
+        "weight": "RPE 8",
+        "group": "A"
+      },
+      {
+        "name": "Chin-ups",
+        "sets": 4,
+        "reps": "6-8",
+        "group": "A"
+      },
+      {
+        "name": "Half-kneeling single-arm dumbbell press",
+        "sets": 3,
+        "reps": "8/side",
+        "group": "B"
+      },
+      {
+        "name": "Single-arm dumbbell row",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "B"
+      },
+      {
+        "name": "Plyo push-up",
+        "sets": 3,
+        "reps": "5"
+      },
+      {
+        "name": "Rotational med ball slam",
+        "sets": 3,
+        "reps": "6/side"
+      },
+      {
+        "name": "Wheelbarrow hold or front plank",
+        "sets": 2,
+        "reps": "30-60s"
+      },
+      {
+        "name": "Tackling breakdown with partner",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Falling/rolling technique",
+        "sets": 1,
+        "reps": "3-5/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "musashi-afl-pre-season-day-2",
+      "musashi-afl-off-season-day-2",
+      "prep-to-play-warm-up-option-c",
+      "prep-to-play-strength-option-a"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-in-season-maintenance",
+    "name": "Somax AFL In-Season Maintenance (1 day)",
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 40,
+    "equipment": [
+      "trap bar",
+      "bench",
+      "pull-up bar",
+      "plyo box",
+      "partner"
+    ],
+    "description": "One compact full-body session a week to hold your pre-season strength and power through a Saturday-game season.",
+    "whoItsFor": "Players training 2 nights a week with their club plus a Saturday game who have time for one extra gym visit.",
+    "lifestyle": [
+      "full-gym",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Once a week at MD-4 or MD-3 (Tuesday/Wednesday for a Saturday game), ideally before or after the lighter club session.",
+      "Keep the weights heavy but the sets few - leave 2-3 reps in reserve and never grind.",
+      "Skip it in a bye week only if you're carrying soreness; otherwise keep it - one session a week is what holds strength.",
+      "No new exercises mid-season (soreness costs games)."
+    ],
+    "exercises": [
+      {
+        "name": "FootyFirst-style warm-up (jog, side-to-side, carioca, butt kicks, leg swings, lunges)",
+        "sets": 1,
+        "reps": "6 min"
+      },
+      {
+        "name": "Box jump",
+        "sets": 3,
+        "reps": "3"
+      },
+      {
+        "name": "Trap bar deadlift",
+        "sets": 3,
+        "reps": "4",
+        "weight": "about 85% / RPE 7-8"
+      },
+      {
+        "name": "Split squat",
+        "sets": 2,
+        "reps": "6/leg",
+        "group": "A"
+      },
+      {
+        "name": "Chin-ups",
+        "sets": 3,
+        "reps": "5",
+        "group": "A"
+      },
+      {
+        "name": "Bench press or push-up",
+        "sets": 3,
+        "reps": "6",
+        "group": "B"
+      },
+      {
+        "name": "Nordic hamstring lower",
+        "sets": 2,
+        "reps": "5",
+        "group": "B"
+      },
+      {
+        "name": "Copenhagen groin (modified or full)",
+        "sets": 2,
+        "reps": "10/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "rob-jackson-strength-series-b",
+      "prep-to-play-strength-option-c",
+      "musashi-afl-off-season-day-3"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-game-day-recovery",
+    "name": "Somax AFL Game-Day Recovery (MD+1)",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "The day-after-the-game session: easy cardio, a bodyweight mobility 'flush' and a quick body check.",
+    "whoItsFor": "Any player the day after a game (Sunday for a Saturday game) - no gym needed; a pool or bike is a bonus.",
+    "lifestyle": [
+      "home",
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do it the day after the game; keep everything easy (could hold a conversation the whole time).",
+      "Pick a walk, swim or bike ride for the cardio part.",
+      "Rehydrate, eat well, aim for 8 hours' sleep, and skip alcohol to help recovery.",
+      "Any sharp pain, a head knock or swelling: get it checked before the next training."
+    ],
+    "exercises": [
+      {
+        "name": "Easy walk, swim or bike",
+        "sets": 1,
+        "reps": "15-20 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Duck walk",
+        "sets": 1,
+        "reps": "10 m up and back"
+      },
+      {
+        "name": "Lateral squat and reach walk",
+        "sets": 1,
+        "reps": "10 m each way"
+      },
+      {
+        "name": "Reverse duck walk",
+        "sets": 1,
+        "reps": "10 m up and back"
+      },
+      {
+        "name": "Inchworm to push-up",
+        "sets": 1,
+        "reps": "10 m up and back"
+      },
+      {
+        "name": "Deep squat and rotate walk",
+        "sets": 1,
+        "reps": "10 m up and back"
+      },
+      {
+        "name": "90-90 reach through",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Glute bridge hold",
+        "sets": 1,
+        "reps": "30s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "rob-jackson-body-weight-flush",
+      "rob-jackson-movement-prep-t1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-hamstring-groin-bulletproofing",
+    "name": "Somax AFL Hamstring & Groin Bulletproofing",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "afl",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "partner",
+      "ball",
+      "slider"
+    ],
+    "description": "Nordics, Copenhagens and friends - the strength work with the best evidence for keeping footballers' hamstrings and groins on the park.",
+    "whoItsFor": "Players with a history of hamstring or groin trouble, or anyone heading into a running-heavy pre-season. Needs a partner (or a heavy anchor) and a mat.",
+    "lifestyle": [
+      "outdoor",
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Pre-season: 2-3 times a week; in-season: once a week, early in the week (not MD-1 or MD-2).",
+      "Nordics: progress the reps the FootyFirst way - 1x6, 2x5, 2x8, 2x10, 2x12 - roughly every 4 weeks.",
+      "Copenhagen: start short-lever (partner holds the knee), move to long-lever (ankle) when 2x10/side is easy.",
+      "Expect some soreness for the first 2 weeks; sharp pain means stop and see a physio."
+    ],
+    "exercises": [
+      {
+        "name": "Nordic hamstring lower",
+        "sets": 2,
+        "reps": "5-8"
+      },
+      {
+        "name": "Sliding leg curl",
+        "sets": 3,
+        "reps": "6-8"
+      },
+      {
+        "name": "Single-leg 90/90 hip extension",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Ball squeeze, knees bent (2-2-2 tempo)",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Copenhagen groin (short then long lever)",
+        "sets": 2,
+        "reps": "6-10/side"
+      },
+      {
+        "name": "Reverse Nordic",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Hamstring walkouts",
+        "sets": 2,
+        "reps": "10/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "footyfirst-level-3",
+      "prep-to-play-strength-option-c",
+      "rob-jackson-body-armour-b",
+      "rob-jackson-strength-series-a"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-aflw-knee-smart-warm-up",
+    "name": "Somax AFLW Knee-Smart Warm-up (Prep to Play style)",
+    "category": "other",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "sport-performance",
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "cones",
+      "ball",
+      "partner"
+    ],
+    "description": "A 10-minute warm-up plus 5 minutes of strength that drills the landing, deceleration and cutting positions linked to ACL injuries in women's footy.",
+    "whoItsFor": "Women and girls 14+ playing community or school footy, especially those new to the game. Coaches can run it for the whole team.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Every training and every game (game day: warm-up part only).",
+      "Land in an athletic stance: knees in line with hips and toes, bend at hips and knees, quiet feet.",
+      "Decelerate with short quick steps; plant the outside foot and push off when cutting.",
+      "Start with the easiest version of each drill and progress every 2-3 weeks; the official Prep to Play posters are the reference."
+    ],
+    "exercises": [
+      {
+        "name": "Jog at least 200 m + leg swings",
+        "sets": 1,
+        "reps": "x5 each side"
+      },
+      {
+        "name": "One-leg stop (decelerate to athletic stance)",
+        "sets": 1,
+        "reps": "1 each side"
+      },
+      {
+        "name": "Partner zig-zag, no contact (race)",
+        "sets": 2,
+        "reps": "1"
+      },
+      {
+        "name": "Bounding",
+        "sets": 1,
+        "reps": "10 each side"
+      },
+      {
+        "name": "Running partner push (bumped in the air)",
+        "sets": 1,
+        "reps": "5 each side"
+      },
+      {
+        "name": "Tackling breakdown",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Build-up sprints",
+        "sets": 2,
+        "reps": "1",
+        "weight": "80-90%",
+        "distance": "30m"
+      },
+      {
+        "name": "Single-leg balance + handball",
+        "sets": 1,
+        "reps": "1 min/side"
+      },
+      {
+        "name": "Single-leg glute bridge",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Side plank",
+        "sets": 2,
+        "reps": "30-60s/side"
+      },
+      {
+        "name": "Clockface",
+        "sets": 3,
+        "reps": "1 round/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "prep-to-play-warm-up-option-a",
+      "prep-to-play-warm-up-option-c",
+      "prep-to-play-strength-option-b"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-junior-afl-fundamentals",
+    "name": "Somax Junior AFL Fundamentals",
+    "category": "other",
+    "level": "beginner",
+    "sport": "afl",
+    "goals": [
+      "general-fitness",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "cones",
+      "ball",
+      "bodyweight"
+    ],
+    "description": "Fun, skill-first athletic development for young footballers: running technique, safe landing and falling, bodyweight strength and kick-handball games.",
+    "whoItsFor": "Junior footballers about 10-15 (with a parent or coach) who want to get fitter and more coordinated without adult-style training.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Up to 2 extra sessions a week on top of club training; keep at least one full rest day.",
+      "Bodyweight only - no maximal lifting; technique first, effort second.",
+      "AFL Junior Rules: ideally no more than 2 games a week and 25 games a season across club, school and talent teams.",
+      "Finish with a game; if it stops being fun, do less."
+    ],
+    "exercises": [
+      {
+        "name": "Tag/chasey warm-up game",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Single-leg balance + handball with partner",
+        "sets": 1,
+        "reps": "12/leg"
+      },
+      {
+        "name": "Single-leg shallow squat (hands on partner's shoulders)",
+        "sets": 1,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Jump forward, land on one leg and stick",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Falling/rolling technique on grass",
+        "sets": 1,
+        "reps": "3/side"
+      },
+      {
+        "name": "Sprint technique: build-ups",
+        "sets": 4,
+        "reps": "1",
+        "weight": "80%",
+        "distance": "20m"
+      },
+      {
+        "name": "Side plank",
+        "sets": 2,
+        "reps": "15-20s/side"
+      },
+      {
+        "name": "Hamstring lower (gentle, partner-held)",
+        "sets": 1,
+        "reps": "4-6"
+      },
+      {
+        "name": "Kick-and-handball circuit / small-sided game",
+        "sets": 1,
+        "reps": "15 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "footyfirst-level-1",
+      "footyfirst-level-2",
+      "prep-to-play-warm-up-option-c"
+    ],
+    "verified": false
+  },
+  {
+    "id": "somax-afl-advanced-preseason-running",
+    "name": "Somax AFL Advanced Pre-season Running",
+    "category": "run",
+    "level": "advanced",
+    "sport": "afl",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 60,
+    "equipment": [
+      "cones"
+    ],
+    "description": "Threshold kilometres, 200 m repeats and fast build-ups in one session - the high-speed running dose of a serious footy pre-season.",
+    "whoItsFor": "Sub-elite and top local-league players (2 km roughly under 7:15 for men / 8:15 for women) chasing a big pre-season.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Once a week, plus one easy run and one repeat-sprint or speed session; not within 48 h of club match-sim or a practice match.",
+      "Threshold kms at about 2 km TT pace + 10-15 s per km; 200s fast but repeatable (all within ~2 s of each other).",
+      "Every 4th week drop the 200s to 2 sets.",
+      "Pair with Body Armour or the Hamstring & Groin session afterwards."
+    ],
+    "exercises": [
+      {
+        "name": "Rob Jackson movement prep + T1 drills",
+        "sets": 1,
+        "reps": "15 min"
+      },
+      {
+        "name": "Threshold 1 km",
+        "sets": 3,
+        "reps": "1",
+        "weight": "2km TT pace +10-15 s/km",
+        "distance": "1000m"
+      },
+      {
+        "name": "Jog recovery between kms",
+        "sets": 3,
+        "reps": "2 min"
+      },
+      {
+        "name": "200 m repeats (60 s rest; 3 min between sets of 4)",
+        "sets": 3,
+        "reps": "4",
+        "weight": "about 90%",
+        "distance": "200m"
+      },
+      {
+        "name": "Build-up to max",
+        "sets": 4,
+        "reps": "1",
+        "weight": "max",
+        "distance": "40m"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "rob-jackson-movement-prep-t1",
+      "rob-jackson-body-armour-c",
+      "musashi-afl-in-season-day-1"
+    ],
+    "verified": false
+  }
+]

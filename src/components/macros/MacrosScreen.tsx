@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { LibraryScreenLazy, usePrefetchLibrary } from '../library/LazyLibrary';
 import { useUserId } from '../../lib/useSession';
 import { useGoals } from '../../lib/useGoals';
 import { useAppStore } from '../../store/useAppStore';
@@ -7,7 +8,6 @@ import { AddFoodSheet } from './AddFoodSheet';
 import { EditFoodEntrySheet } from './EditFoodEntrySheet';
 import { MacroGoalsSheet } from './MacroGoalsSheet';
 import { MyRecipesScreen } from '../community/MyRecipesScreen';
-import { LibraryScreen } from '../library/LibraryScreen';
 import { Icon } from '../Icon';
 import { ShareRecipeSheet } from '../community/ShareRecipeSheet';
 import type { RecipeToShare } from '../../lib/recipePosts';
@@ -31,6 +31,7 @@ import {
   type NutritionGoals,
 } from './macros';
 
+
 const MEALS: { id: MealId; label: string; color: string; icon: string }[] = [
   { id: 'breakfast', label: 'Breakfast', color: '#e0a53c', icon: '<path d="M5 12a7 7 0 0 1 14 0"/><path d="M4 12h16v1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-1Z"/><path d="M8 19h8"/>' },
   { id: 'lunch', label: 'Lunch', color: '#0f8f5c', icon: '<path d="M4 9h16l-1.2 9.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>' },
@@ -45,6 +46,7 @@ function fmt(n: number): string {
 }
 
 export function MacrosScreen() {
+  usePrefetchLibrary();
   const userId = useUserId();
   const { weightGoal, latestWeight, loaded: goalsLoaded } = useGoals();
   const openGoals = useAppStore((s) => s.openGoals);
@@ -458,7 +460,7 @@ export function MacrosScreen() {
         </span>
         <Icon name="chevron" />
       </button>
-      <LibraryScreen open={libraryOpen} mode="nutrition" onClose={() => setLibraryOpen(false)} />
+      {libraryOpen && <LibraryScreenLazy open mode="nutrition" onClose={() => setLibraryOpen(false)} />}
 
       <AddFoodSheet
         open={addSheetMeal !== null}

@@ -662,6 +662,13 @@ button.day-pill{ font:inherit; color:inherit; }
 .modal-sheet::before{ display:none; }
 .modal-sheet{ min-height:46%; padding-top:0; display:flex; flex-direction:column; overscroll-behavior:contain; transition: translate 420ms var(--ease-out), height 320ms var(--ease-out), max-height 320ms var(--ease-out); }
 .modal-sheet.expanded{ height:92%; max-height:92%; }
+/* Structural guard for EVERY sheet: .modal-sheet is a height-capped flex
+   column that scrolls (overflow-y:auto). Without this, any direct child
+   that clips or scrolls itself (overflow != visible) gets min-height 0 and
+   is squashed instead of the sheet scrolling - this collapsed the Log food
+   favourite chips into a thin blue strip and flattened the Add to Library
+   form (both 2026-11-12). Content never shrinks; the sheet scrolls. */
+.modal-sheet > *{ flex-shrink:0; }
 .modal-grab{ flex-shrink:0; display:flex; justify-content:center; padding:10px 0 12px; margin:0 -20px; touch-action:none; cursor:grab; }
 .modal-grab span{ width:40px; height:5px; border-radius:3px; background: var(--line-2); }
 .modal-head{ touch-action:none; }
@@ -1010,3 +1017,135 @@ button.day-pill{ font:inherit; color:inherit; }
 .lib-detail{ padding-bottom:calc(40px + env(safe-area-inset-bottom, 0px)); }
 .lib-detail > .btn{ margin-top:16px; }
 .lib-detail > .card + .btn{ margin-top:20px; }
+.lib-more{ display:block; width:100%; margin:-2px 0 10px; padding:10px; border-radius:14px; border:1px dashed var(--line-2); background:none; color:var(--accent); font:inherit; font-size:13px; font-weight:700; cursor:pointer; }
+.add-food-library-btn{ margin-bottom:14px; }
+/* Day sheet "Swap for" collapsible groups (Train) */
+.swap-group{ display:flex; align-items:center; gap:8px; width:100%; padding:12px 14px; margin:0 0 8px; border-radius:16px; border:1px solid var(--line); background:var(--surface); color:var(--text); font:inherit; cursor:pointer; text-align:left; }
+.swap-group-t{ flex:1; font-weight:700; font-size:14px; }
+.swap-group-n{ font-family:var(--font-mono); font-size:12px; font-weight:700; color:var(--text-faint); background:var(--surface-2); border-radius:999px; padding:2px 8px; }
+.swap-group-chev{ width:14px; height:14px; color:var(--text-faint); transition:transform .2s; }
+.swap-group.open .swap-group-chev{ transform:rotate(90deg); }
+
+/* ---------- Onboarding v2 (onb2-* only; design/onboarding-redesign) ---------- */
+.onb2{ position:fixed; inset:0; z-index:140; display:flex; flex-direction:column; background:var(--bg); color:var(--text); padding-top:env(safe-area-inset-top, 0px); }
+.onb2 h1, .onb2 h2{ font-family:var(--font-display); letter-spacing:-.03em; margin:0; }
+.onb2 h2{ font-size:28px; line-height:1.12; margin:6px 0 6px; }
+.onb2-kicker{ font-family:var(--font-mono); font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--hero-2); }
+.onb2-lead{ margin:0 0 16px; font-size:15px; line-height:1.5; color:var(--text-dim); }
+.onb2-top{ flex-shrink:0; display:flex; align-items:center; gap:12px; padding:14px 20px 8px; }
+.onb2-back{ width:40px; height:40px; border-radius:50%; border:1px solid var(--line-2); background:var(--surface); display:grid; place-items:center; color:var(--text-dim); cursor:pointer; flex-shrink:0; }
+.onb2-back svg{ width:18px; height:18px; }
+.onb2-progress{ flex:1; display:flex; gap:5px; }
+.onb2-progress i{ flex:1; height:5px; border-radius:3px; background:var(--surface-3); }
+.onb2-progress i.on{ background:linear-gradient(90deg, var(--hero-1), var(--hero-2)); }
+.onb2-count{ font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--text-faint); min-width:34px; text-align:right; }
+.onb2-body{ flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:8px 20px 20px; display:flex; flex-direction:column; }
+.onb2-foot{ flex-shrink:0; padding:12px 20px calc(16px + env(safe-area-inset-bottom, 0px)); }
+.onb2-cta{ width:100%; height:56px; border:none; border-radius:18px; color:#fff; font-family:var(--font-display); font-weight:700; font-size:16px; cursor:pointer; background:linear-gradient(100deg, var(--hero-1), var(--hero-2)); box-shadow:0 14px 28px -14px color-mix(in srgb, var(--hero-2) 80%, transparent); }
+.onb2-cta:disabled{ opacity:.4; box-shadow:none; }
+.onb2-ic{ width:44px; height:44px; border-radius:14px; display:grid; place-items:center; flex-shrink:0; background:color-mix(in srgb, var(--c, var(--hero-2)) 12%, transparent); color:var(--c, var(--hero-2)); }
+.onb2-ic svg{ width:22px; height:22px; }
+.onb2-ic.soft{ --c: var(--accent); }
+.onb2-radio{ width:22px; height:22px; border-radius:50%; flex-shrink:0; border:2px solid var(--line-2); }
+.on > .onb2-radio, .on .onb2-path-top .onb2-radio{ border-color:var(--hero-2); background:var(--hero-2); box-shadow:inset 0 0 0 4px var(--surface); }
+/* welcome */
+.onb2-welcome{ justify-content:space-between; padding:calc(56px + env(safe-area-inset-top, 0px)) 28px calc(28px + env(safe-area-inset-bottom, 0px)); color:#fff; background:linear-gradient(160deg, var(--hero-1) 0%, #6a4cf0 45%, var(--hero-2) 100%); }
+.onb2-brand{ font-family:var(--font-display); font-weight:800; font-size:15px; letter-spacing:.32em; }
+.onb2-welcome-mid{ display:flex; flex-direction:column; gap:16px; }
+.onb2-welcome-icons{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; margin-bottom:8px; }
+.onb2-welcome-icons span{ height:60px; border-radius:20px; background:rgba(255,255,255,.14); display:grid; place-items:center; }
+.onb2-welcome-icons svg{ width:24px; height:24px; color:#fff; }
+.onb2-welcome h1{ font-size:36px; line-height:1.08; font-weight:800; }
+.onb2-welcome p{ margin:0; font-size:16px; line-height:1.5; opacity:.9; }
+.onb2-welcome-cta{ width:100%; height:56px; border:none; border-radius:18px; background:#fff; color:#3b2fd6; font-family:var(--font-display); font-weight:700; font-size:16px; cursor:pointer; }
+/* path choice */
+.onb2-path{ display:flex; flex-direction:column; gap:10px; width:100%; padding:16px; margin-bottom:12px; border-radius:24px; border:2px solid var(--line); background:var(--surface); color:var(--text); font:inherit; text-align:left; cursor:pointer; }
+.onb2-path.on{ border-color:var(--hero-2); box-shadow:0 14px 30px -18px color-mix(in srgb, var(--hero-2) 70%, transparent); }
+.onb2-path-top{ display:flex; align-items:center; gap:12px; }
+.onb2-path-t{ flex:1; display:flex; flex-direction:column; gap:2px; }
+.onb2-path-t b{ font-family:var(--font-display); font-size:17px; letter-spacing:-.02em; }
+.onb2-path-t small{ font-family:var(--font-mono); font-size:11.5px; font-weight:600; color:var(--text-faint); }
+.onb2-path.on .onb2-ic{ background:var(--hero-2); color:#fff; }
+.onb2-path-sub{ font-size:13.5px; line-height:1.45; color:var(--text-dim); }
+.onb2-path-steps{ padding:8px 12px; border-radius:12px; background:var(--surface-2); font-size:12px; font-weight:700; color:var(--text-dim); }
+/* fields */
+.onb2-field{ display:flex; flex-direction:column; gap:6px; font-size:13px; font-weight:700; color:var(--text-dim); margin-bottom:12px; min-width:0; }
+.onb2-field input{ height:52px; border-radius:16px; border:1px solid var(--line-2); background:var(--surface); padding:0 14px; font:inherit; font-size:16px; font-weight:500; color:var(--text); min-width:0; box-sizing:border-box; width:100%; }
+.onb2-field.mono input{ font-family:var(--font-mono); background:var(--surface-2); height:48px; }
+.onb2-row3{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; }
+.onb2-row2{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; }
+/* sport grid */
+.onb2-sports{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; }
+.onb2-sport{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; min-height:96px; padding:12px 6px; border-radius:20px; border:2px solid var(--line); background:var(--surface); color:var(--text); font:inherit; font-size:12.5px; font-weight:700; line-height:1.2; text-align:center; cursor:pointer; }
+.onb2-sport.on{ border-color:var(--hero-2); box-shadow:0 10px 24px -14px color-mix(in srgb, var(--hero-2) 70%, transparent); }
+.onb2-sport.on .onb2-ic{ background:var(--c); color:#fff; }
+/* chips */
+.onb2-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px; }
+.onb2-chip{ display:inline-flex; align-items:center; gap:6px; height:40px; padding:0 14px; border-radius:999px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font:inherit; font-size:13.5px; font-weight:700; cursor:pointer; }
+.onb2-chip svg{ width:16px; height:16px; }
+.onb2-chip.on{ background:var(--text); color:var(--bg); border-color:var(--text); }
+/* cards */
+.onb2-list{ display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
+.onb2-card{ display:flex; align-items:center; gap:14px; width:100%; padding:14px 16px; border-radius:20px; border:2px solid var(--line); background:var(--surface); color:var(--text); font:inherit; text-align:left; cursor:pointer; }
+.onb2-card.on{ border-color:var(--hero-2); }
+.onb2-card.on .onb2-ic{ background:var(--c, var(--hero-2)); color:#fff; }
+.onb2-card .onb2-ic{ width:40px; height:40px; border-radius:13px; }
+.onb2-card-t{ flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; }
+.onb2-card-t b{ font-size:15px; font-weight:700; }
+.onb2-card-t small{ font-size:12.5px; color:var(--text-dim); line-height:1.35; }
+.onb2-bars{ display:flex; align-items:flex-end; gap:3px; height:22px; flex-shrink:0; }
+.onb2-bars i{ width:6px; border-radius:3px; background:var(--surface-3); }
+.onb2-bars i.on{ background:var(--hero-2); }
+.onb2-sub{ display:flex; align-items:baseline; justify-content:space-between; margin:14px 0 10px; font-size:15px; font-weight:800; }
+.onb2-sub span{ font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--hero-2); }
+.onb2-seg{ display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:8px; }
+.onb2-seg button{ height:48px; border-radius:14px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:var(--font-display); font-weight:700; font-size:16px; cursor:pointer; }
+.onb2-seg button.on{ background:var(--text); color:var(--bg); border-color:var(--text); }
+/* target */
+.onb2-target{ margin-top:6px; padding:16px; border-radius:22px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--sh-2); display:flex; flex-direction:column; gap:10px; }
+.onb2-target-h{ display:flex; align-items:center; gap:8px; font-size:15px; font-weight:800; }
+.onb2-target-h svg{ width:18px; height:18px; color:var(--hero-2); }
+.onb2-target-h span{ margin-left:auto; font-size:12px; font-weight:700; color:var(--text-faint); }
+.onb2-target .onb2-field{ margin-bottom:0; }
+.onb2-estimate{ padding:12px 14px; border-radius:16px; background:color-mix(in srgb, var(--hero-2) 10%, transparent); font-size:13.5px; line-height:1.45; }
+/* place */
+.onb2-places{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; }
+.onb2-place{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; padding:16px; border-radius:20px; border:2px solid var(--line); background:var(--surface); color:var(--text); font:inherit; text-align:left; cursor:pointer; }
+.onb2-place svg{ width:24px; height:24px; }
+.onb2-place b{ font-size:14.5px; }
+.onb2-place small{ font-size:12px; color:var(--text-dim); line-height:1.35; }
+.onb2-place.on{ border-color:var(--hero-2); color:var(--hero-2); }
+/* character: reuse the existing step's markup inside the new shell */
+.onb2-character h2{ font-size:28px; }
+.onb2-character .lead{ color:var(--text-dim); font-size:15px; line-height:1.5; margin:0 0 16px; }
+/* plan */
+.onb2-hero{ display:flex; flex-direction:column; gap:10px; padding:22px 20px; border-radius:28px; color:#fff; background:linear-gradient(150deg, var(--hero-1), var(--hero-2)); margin-bottom:6px; }
+.onb2-hero .onb2-kicker{ color:#fff; opacity:.85; }
+.onb2-hero h2{ font-size:26px; margin:0; }
+.onb2-tags{ display:flex; flex-wrap:wrap; gap:6px; }
+.onb2-tags span{ padding:5px 10px; border-radius:999px; background:rgba(255,255,255,.18); font-size:12px; font-weight:700; text-transform:capitalize; }
+.onb2-hero-note{ padding:12px 14px; border-radius:16px; background:rgba(255,255,255,.14); font-size:13.5px; line-height:1.45; }
+.onb2-day{ display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:16px; background:var(--surface); border:1px solid var(--line); }
+.onb2-day .onb2-card-t b{ font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.onb2-day .onb2-card-t small{ text-transform:none; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.onb2-day.rest{ background:transparent; border-style:dashed; }
+.onb2-day-d{ width:34px; font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--text-faint); flex-shrink:0; }
+.onb2-rest-ic{ width:32px; height:32px; border-radius:10px; display:grid; place-items:center; background:var(--surface-2); color:var(--text-faint); flex-shrink:0; }
+.onb2-rest-ic svg{ width:16px; height:16px; }
+.onb2-fit{ font-size:11px; font-weight:800; padding:3px 8px; border-radius:999px; background:var(--accent-soft); color:var(--accent); flex-shrink:0; }
+.onb2-week-strip{ display:none; }
+.lib-fit{ flex-shrink:0; font-size:11px; font-weight:800; padding:2px 7px; border-radius:999px; background:var(--accent-soft); color:var(--accent); }
+.setup-card{ display:flex; flex-direction:column; gap:10px; padding:16px; margin:0 0 14px; border-radius:22px; color:#fff; background:linear-gradient(150deg, var(--hero-1), var(--hero-2)); box-shadow:var(--sh-2); }
+.setup-card b{ font-family:var(--font-display); font-size:17px; letter-spacing:-.02em; }
+.setup-card p{ margin:0; font-size:13.5px; line-height:1.45; opacity:.9; }
+.setup-card-actions{ display:flex; gap:8px; }
+.setup-card-actions button{ height:42px; padding:0 16px; border-radius:14px; border:none; font:inherit; font-weight:700; font-size:14px; cursor:pointer; }
+.setup-card-actions .go{ background:#fff; color:#3b2fd6; }
+.setup-card-actions .later{ background:rgba(255,255,255,.16); color:#fff; }
+/* The reused CharacterStep grid is 1fr 1fr, which grows to the 3D render's
+   intrinsic width and pushed the second base card off-screen here. Scoped
+   to onb2 so the old .base-grid users are untouched. */
+.onb2-character{ min-width:0; }
+.onb2-character .base-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+.onb2-character .base-opt{ min-width:0; }
+.onb2-character .base-art img{ max-width:100%; object-fit:contain; }
