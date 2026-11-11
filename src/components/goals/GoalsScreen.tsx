@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { Modal } from '../layout/Modal';
-import { ChipGroup } from '../onboarding/ChipGroup';
-import { GOALS } from '../onboarding/steps/Goal';
-import { DAYS } from '../onboarding/steps/Experience';
-import { FOCUS_OPTIONS } from '../onboarding/steps/Focus';
+import { TrainingProfileEditor } from '../profile/TrainingProfileEditor';
 import { useAppStore } from '../../store/useAppStore';
 import { useGoals } from '../../lib/useGoals';
 import { abandonGoal, logWeight, scanScalePhoto } from '../../lib/weightGoals';
@@ -74,10 +71,7 @@ export function GoalsScreen() {
   const profile = useAppStore((s) => s.profile)!;
   const showToast = useAppStore((s) => s.showToast);
   const awardWeightGoalXP = useAppStore((s) => s.awardWeightGoalXP);
-  const toggleProfileGoal = useAppStore((s) => s.toggleProfileGoal);
-  const setProfileAvailability = useAppStore((s) => s.setProfileAvailability);
-  const setProfileFocus = useAppStore((s) => s.setProfileFocus);
-  const reviseWeekPlan = useAppStore((s) => s.reviseWeekPlan);
+  const goalsScrollTo = useAppStore((s) => s.goalsScrollTo);
   const { userId, weightGoal, weightLogs, latestWeight, fitnessGoals, count, loaded, reload, setWeightLogs } = useGoals();
 
   const [adding, setAdding] = useState(false);
@@ -87,14 +81,12 @@ export function GoalsScreen() {
   const [saving, setSaving] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  // Snapshot of the training prefs when the screen opened, so "Revise this
-  // week's program" only shows once something actually changed.
-  const [snapshot, setSnapshot] = useState(() => ({ goal: [...profile.goal], availability: profile.availability, focus: profile.focus }));
-  const prefsChanged =
-    profile.availability !== snapshot.availability ||
-    profile.focus !== snapshot.focus ||
-    profile.goal.length !== snapshot.goal.length ||
-    profile.goal.some((g) => !snapshot.goal.includes(g));
+  // Opened from For you / the Train card: jump straight to the editor.
+  useEffect(() => {
+    if (goalsScrollTo !== 'training') return;
+    useAppStore.setState({ goalsScrollTo: null });
+    requestAnimationFrame(() => document.getElementById('training-profile')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  }, [goalsScrollTo]);
 
   // The review photo's object URL is a browser handle - revoke it whenever
   // the review closes, however that happens.
@@ -214,37 +206,11 @@ export function GoalsScreen() {
       </button>
       <input ref={fileRef} type="file" accept="image/*" capture="environment" style={{ display: 'none' }} onChange={handleFile} />
 
-      <div className="section-label">
-        Training schedule
-        <span className="sl-note">Shapes your weekly program</span>
+      <div className="section-label" id="training-profile">
+        Training profile
+        <span className="sl-note">Builds your week and For you</span>
       </div>
-      <div className="card">
-        <div className="setting-title" style={{ fontWeight: 700, marginBottom: 10 }}>Training focus</div>
-        <ChipGroup options={GOALS} value={profile.goal} onSelect={toggleProfileGoal} />
-        <div className="setting-title" style={{ fontWeight: 700, margin: '18px 0 10px' }}>Training type</div>
-        <ChipGroup
-          options={FOCUS_OPTIONS.map((f) => f.name)}
-          value={FOCUS_OPTIONS.find((f) => f.id === profile.focus)?.name || ''}
-          onSelect={(name) => setProfileFocus(FOCUS_OPTIONS.find((f) => f.name === name)!.id)}
-        />
-        <div className="setting-title" style={{ fontWeight: 700, margin: '18px 0 10px' }}>Days per week</div>
-        <ChipGroup options={DAYS} value={profile.availability} onSelect={setProfileAvailability} />
-      </div>
-      <div className="banner" style={{ marginTop: 12 }}>
-        <Icon name="info" />
-        <span>Changing these rebuilds this week's plan. If you train from your own custom program, it stays as it is.</span>
-      </div>
-      {prefsChanged && (
-        <button
-          className="btn btn-primary"
-          onClick={() => {
-            reviseWeekPlan();
-            setSnapshot({ goal: [...profile.goal], availability: profile.availability, focus: profile.focus });
-          }}
-        >
-          <Icon name="rotate" style={{ width: 16, height: 16 }} /> Revise this week's program
-        </button>
-      )}
+      <TrainingProfileEditor />
 
       {adding && userId && (
         <AddGoalSheet

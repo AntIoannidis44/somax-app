@@ -93,7 +93,7 @@ function legacyProfileFields(setup: ProfileSetup) {
     focus,
     experience: setup.level === 'beginner' ? 'Beginner' : setup.level === 'advanced' ? 'Advanced' : 'Intermediate',
     availability: String(setup.days),
-    equipment: setup.place === 'gym' ? ['Full gym'] : setup.kit.length ? setup.kit : ['Bodyweight only'],
+    equipment: (setup.places ?? [setup.place]).some((p) => p === 'gym' || p === 'mix') ? ['Full gym'] : setup.kit.length ? setup.kit : ['Bodyweight only'],
   };
 }
 
@@ -180,6 +180,9 @@ interface Actions {
   openCharacterStudio: () => void;
   closeCharacterStudio: () => void;
   openGoals: () => void;
+  // Opens Goals & schedule scrolled to the Training profile editor (For you / Train card).
+  openTrainingProfile: () => void;
+  openForYou: () => void;
   closeGoals: () => void;
   openMacros: () => void;
   closeMacros: () => void;
@@ -357,6 +360,8 @@ export const useAppStore = create<Store>()(
       openCharacterStudio: () => set({ viewingCharacter: true, route: 'profile' }),
       closeCharacterStudio: () => set({ viewingCharacter: false }),
       openGoals: () => set({ viewingGoals: true, route: 'profile' }),
+      openTrainingProfile: () => set({ viewingGoals: true, route: 'profile', goalsScrollTo: 'training', viewingWorkout: null }),
+      openForYou: () => set({ viewingGoals: false, route: 'train', openLibraryTab: 'foryou' }),
       closeGoals: () => set({ viewingGoals: false }),
       openMacros: () => set({ viewingMacros: true, route: 'profile' }),
       closeMacros: () => set({ viewingMacros: false }),
@@ -492,7 +497,7 @@ export const useAppStore = create<Store>()(
             s.profileSetupOpen = false;
           }),
         );
-        get().showToast(built ? 'Your week has been rebuilt' : 'Training profile updated');
+        get().showToast(built ? 'Your week has been rebuilt' : 'Training profile saved - check For you');
       },
       setProfileSetupOpen: (open) => set({ profileSetupOpen: open }),
       dismissSetupPrompt: () => set({ setupPromptDismissed: true }),

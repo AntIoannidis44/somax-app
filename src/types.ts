@@ -115,7 +115,10 @@ export interface ProfileSetup {
   level: 'beginner' | 'intermediate' | 'advanced';
   days: number;
   sessionMinutes: number;
+  // Legacy single choice (build 48); kept in step with `places` for older code/data.
   place: 'gym' | 'home' | 'outdoor' | 'mix';
+  // Where you train - any of gym/home/outdoor. Absent on build-48 profiles.
+  places?: ('gym' | 'home' | 'outdoor')[];
   kit: string[];
 }
 
@@ -369,6 +372,10 @@ export interface AppState {
   // Existing users: the "Update your training profile" flow is open.
   profileSetupOpen?: boolean;
   setupPromptDismissed?: boolean;
+  // One-shot: Goals screen scrolls to this section when it opens.
+  goalsScrollTo?: 'training' | null;
+  // One-shot: Train opens the Library on this tab ("View For you" after saving a profile).
+  openLibraryTab?: 'foryou' | null;
   onbStep: number;
   onbDraft: OnboardingDraft;
   character: CharacterConfig | null;

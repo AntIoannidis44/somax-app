@@ -66,25 +66,46 @@ export interface TrainingSetup {
   days: number;
   sessionMinutes: number;
   place: TrainPlace;
+  places?: ('gym' | 'home' | 'outdoor')[];
   kit: string[];
 }
 
 const LEVEL_RANK: Record<LibraryLevel, number> = { beginner: 0, intermediate: 1, advanced: 2 };
-const HOME_KIT = new Set(['bodyweight', 'dumbbells', 'dumbbell', 'bands', 'band', 'kettlebell', 'mat', 'none', 'pull-up bar', 'chair', 'step']);
 
 function minutesOf(p: LibraryProgram): number {
   return p.content.sessionMinutes ?? (parseInt(p.duration ?? '', 10) || 40);
 }
 
+// Multi-select places (newer setups), falling back to the old single
+// choice - 'mix' meant gym some days, home others.
+export function placesOf(s: { place: TrainPlace; places?: ('gym' | 'home' | 'outdoor')[] }): ('gym' | 'home' | 'outdoor')[] {
+  if (s.places?.length) return s.places;
+  return s.place === 'mix' ? ['gym', 'home'] : [s.place];
+}
+
+// Single-value summary of a multi-select, for the legacy `place` field.
+export function legacyPlace(places: ('gym' | 'home' | 'outdoor')[]): TrainPlace {
+  return places.length === 1 ? places[0] : 'mix';
+}
+
 // Can this program be done where (and with what) the person trains?
+// Gym covers anything; at home / outdoors every piece of kit the program
+// lists has to be something they said they have (bodyweight always counts).
+const ALWAYS_HAVE = ['bodyweight', 'none', 'mat', 'chair', 'step', 'floor', 'towel', 'wall'];
+const OUTDOOR_HAVE = ['track', 'oval', 'field', 'park', 'hill', 'outdoor', 'road', 'grass', 'cones'];
 function fitsPlace(p: LibraryProgram, s: TrainingSetup): boolean {
-  if (s.place === 'gym' || s.place === 'mix') return true;
-  const life = p.content.lifestyle ?? [];
-  if (life.includes('home') || life.includes('minimal-equipment') || life.includes('outdoor')) return true;
-  const kit = new Set([...s.kit.map((k) => k.toLowerCase()), 'bodyweight', 'none', 'mat']);
-  const needs = p.tags.map((t) => t.toLowerCase());
-  if (needs.length === 0) return true;
-  return needs.every((t) => kit.has(t) || (HOME_KIT.has(t) && kit.has(t)) || t === 'bodyweight');
+  const places = placesOf(s);
+  if (places.includes('gym')) return true;
+  const have = [
+    ...ALWAYS_HAVE,
+    ...s.kit.map((k) => k.toLowerCase().replace(' / trainer', '').replace('running ', '')),
+    ...(places.includes('outdoor') ? OUTDOOR_HAVE : []),
+  ];
+  const owns = (tag: string) => {
+    const t = tag.toLowerCase();
+    return have.some((h) => t.includes(h) || h.includes(t.replace(/s$/, '')));
+  };
+  return p.tags.every(owns);
 }
 
 export function scoreProgram(p: LibraryProgram, s: TrainingSetup): number {
@@ -175,7 +196,10 @@ export function buildWeek(programs: LibraryProgram[], s: TrainingSetup): BuiltWe
 
   const used = new Set<string>();
   const seriesQueue: LibraryProgram[] = [];
-  const pick = (list: LibraryProgram[]): LibraryProgram | undefined => list.find((p) => !used.has(p.id)) ?? list[0];
+  // Prefer a new program you can actually do; if there isn't one, repeat
+  // one you can do before ever falling back to one you can't.
+  const pick = (list: LibraryProgram[]): LibraryProgram | undefined =>
+    list.find((p) => !used.has(p.id) && fitsPlace(p, s)) ?? list.find((p) => fitsPlace(p, s)) ?? list.find((p) => !used.has(p.id)) ?? list[0];
 
   const chosen: LibraryProgram[] = roles.map((role) => {
     let list: LibraryProgram[];

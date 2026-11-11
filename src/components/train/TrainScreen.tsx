@@ -137,21 +137,21 @@ function DayRecap({ sim, dayName, onNavigate }: { sim: number; dayName: string; 
 function SetupPromptCard() {
   const setup = useAppStore((s) => s.profile?.setup);
   const dismissed = useAppStore((s) => s.setupPromptDismissed);
-  const open = useAppStore((s) => s.setProfileSetupOpen);
+  const openTrainingProfile = useAppStore((s) => s.openTrainingProfile);
   const dismiss = useAppStore((s) => s.dismissSetupPrompt);
   if (setup?.mode === 'plan') return null;
   if (!setup && dismissed) return null;
   return (
     <div className="setup-card">
-      <b>{setup ? 'Build my plan' : 'Train for your sport'}</b>
+      <b>Train for your sport</b>
       <p>
         {setup
-          ? 'Tell us your sport, goal and schedule and we will build your week from the Library. About 2 minutes.'
-          : 'New: pick your sport and goal (AFL to Pilates) and we will build your week from the Library. Your current week stays until you finish.'}
+          ? 'Set your sport, goals and schedule in your training profile and we will build your week from the Library and fill For you.'
+          : 'New: set your sport and goals (AFL to Pilates) in your training profile and we will build your week from the Library. Your current week stays until you save.'}
       </p>
       <div className="setup-card-actions">
-        <button type="button" className="go" onClick={() => open(true)}>
-          {setup ? 'Build my plan' : 'Set it up'}
+        <button type="button" className="go" onClick={openTrainingProfile}>
+          Update training profile
         </button>
         {!setup && (
           <button type="button" className="later" onClick={dismiss}>
@@ -187,6 +187,14 @@ export function TrainScreen() {
   const [progMenu, setProgMenu] = useState<(typeof myPrograms)[number] | null>(null);
   const [sharingProg, setSharingProg] = useState<(typeof myPrograms)[number] | null>(null);
   const [libraryOpen, setLibraryOpen] = useState(false);
+  const [libraryTab, setLibraryTab] = useState<'programs' | 'foryou'>('programs');
+  const openLibraryTab = useAppStore((s) => s.openLibraryTab);
+  useEffect(() => {
+    if (openLibraryTab !== 'foryou') return;
+    useAppStore.setState({ openLibraryTab: null });
+    setLibraryTab('foryou');
+    setLibraryOpen(true);
+  }, [openLibraryTab]);
 
   const plan = todayPlan(weekPlan);
   const todayIdx = todayPlanIndex();
@@ -646,7 +654,17 @@ export function TrainScreen() {
         </span>
         <Icon name="chevron" />
       </button>
-      {libraryOpen && <LibraryScreenLazy open mode="training" onClose={() => setLibraryOpen(false)} />}
+      {libraryOpen && (
+        <LibraryScreenLazy
+          open
+          mode="training"
+          initialTab={libraryTab}
+          onClose={() => {
+            setLibraryOpen(false);
+            setLibraryTab('programs');
+          }}
+        />
+      )}
       {libraryPickDay !== null && (
         <LibraryScreenLazy
           open

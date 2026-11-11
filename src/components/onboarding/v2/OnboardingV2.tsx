@@ -5,7 +5,7 @@ import { TypeIconBadge } from '../../TypeIconBadge';
 import { CharacterStep } from '../steps/CharacterStep';
 import { useAppStore } from '../../../store/useAppStore';
 import { loadCurated, type LibraryProgram } from '../../../lib/library';
-import { ONB_GOALS, buildWeek, onbSport, rankForYou, sportsWithPrograms, type TrainPlace, type TrainingSetup } from '../../../lib/plans/weekBuilder';
+import { ONB_GOALS, buildWeek, legacyPlace, onbSport, placesOf, rankForYou, sportsWithPrograms, type TrainingSetup } from '../../../lib/plans/weekBuilder';
 import { buildRunPlan, fmtTime, parseTime, type RunDistanceId } from '../../../lib/plans/running';
 import { startPlan } from '../../../lib/plans/activePlan';
 import type { ProfileSetup } from '../../../types';
@@ -31,11 +31,10 @@ const RUN_TARGETS: { id: string; label: string; distance: RunDistanceId; target:
   { id: 'half2h', label: 'Half under 2:00:00', distance: 'half', target: '2:00:00', cur: '2:15:00' },
 ];
 const KIT = ['Barbell', 'Dumbbells', 'Kettlebell', 'Bands', 'Pull-up bar', 'Bike / trainer', 'Pool', 'Running track'];
-const PLACES: { id: TrainPlace; label: string; sub: string; icon: Parameters<typeof Icon>[0]['name'] }[] = [
+const PLACES: { id: 'gym' | 'home' | 'outdoor'; label: string; sub: string; icon: Parameters<typeof Icon>[0]['name'] }[] = [
   { id: 'gym', label: 'Gym', sub: 'Full equipment', icon: 'dumbbell' },
   { id: 'home', label: 'At home', sub: 'Dumbbells, bands or nothing', icon: 'home' },
   { id: 'outdoor', label: 'Outdoors', sub: 'Ovals, tracks, parks', icon: 'run' },
-  { id: 'mix', label: 'A mix', sub: 'Gym some days, home others', icon: 'shuffle' },
 ];
 const LEVELS: { id: ProfileSetup['level']; label: string; sub: string; bars: number }[] = [
   { id: 'beginner', label: 'Beginner', sub: 'New, or back after a long break', bars: 1 },
@@ -69,7 +68,7 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
   const [level, setLevel] = useState<ProfileSetup['level'] | null>(prev?.level ?? null);
   const [days, setDays] = useState(prev?.days ?? 4);
   const [len, setLen] = useState(prev?.sessionMinutes ?? 45);
-  const [place, setPlace] = useState<TrainPlace | null>(prev?.place ?? null);
+  const [places, setPlaces] = useState<('gym' | 'home' | 'outdoor')[]>(prev ? placesOf(prev) : []);
   const [kit, setKit] = useState<string[]>(prev?.kit ?? []);
   const [programs, setPrograms] = useState<LibraryProgram[] | null>(null);
 
@@ -87,8 +86,8 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
   const sportLabel = onbSport(sport)?.label ?? 'your sport';
 
   const setup: TrainingSetup | null =
-    sport && level && place ? { sport, extraSports: extras, goals, level, days, sessionMinutes: len, place, kit } : null;
-  const built = useMemo(() => (programs && setup && !quick ? buildWeek(programs, setup) : null), [programs, quick, setup?.sport, extras.join(), goals.join(), level, days, len, place, kit.join()]); // eslint-disable-line react-hooks/exhaustive-deps
+    sport && level && places.length ? { sport, extraSports: extras, goals, level, days, sessionMinutes: len, place: legacyPlace(places), places, kit } : null;
+  const built = useMemo(() => (programs && setup && !quick ? buildWeek(programs, setup) : null), [programs, quick, setup?.sport, extras.join(), goals.join(), level, days, len, places.join(), kit.join()]); // eslint-disable-line react-hooks/exhaustive-deps
   const forYou = useMemo(() => (programs && setup ? rankForYou(programs, setup).slice(0, 3) : []), [built]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const runTarget = sport === 'run' ? RUN_TARGETS.find((t) => t.id === targetId) : undefined;
@@ -116,7 +115,7 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
     extras: true,
     goal: goals.length > 0,
     week: !!level,
-    place: !!place,
+    place: places.length > 0,
     character: !!draft.character,
     plan: true,
     diy: true,
@@ -408,10 +407,16 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
           <>
             <Kicker>Where you train</Kicker>
             <h2>Where will you train?</h2>
-            <p className="onb2-lead">We only suggest programs you can actually do.</p>
+            <p className="onb2-lead">Pick all that apply. We only suggest programs you can actually do.</p>
             <div className="onb2-places">
               {PLACES.map((p) => (
-                <button key={p.id} type="button" className={`onb2-place${place === p.id ? ' on' : ''}`} aria-pressed={place === p.id} onClick={() => setPlace(p.id)}>
+                <button
+                  key={p.id}
+                  type="button"
+                  className={`onb2-place${places.includes(p.id) ? ' on' : ''}`}
+                  aria-pressed={places.includes(p.id)}
+                  onClick={() => setPlaces((cur) => (cur.includes(p.id) ? cur.filter((x) => x !== p.id) : [...cur, p.id]))}
+                >
                   <Icon name={p.icon} />
                   <b>{p.label}</b>
                   <small>{p.sub}</small>
@@ -517,7 +522,7 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
             <Kicker>You're in</Kicker>
             <h2>{draft.name ? `${draft.name.split(' ')[0]}, build` : 'Build'} your own path</h2>
             <p className="onb2-lead">
-              Your week starts empty. Add sessions from the Library, community programs or your own, any time. Want a plan later? Tap Build my plan on Train and it takes two minutes.
+              Your week starts empty. Add sessions from the Library, community programs or your own, any time. Want a plan later? Set your training profile in Profile and we'll build your week and fill For you.
             </p>
             <div className="onb2-list">
               {(

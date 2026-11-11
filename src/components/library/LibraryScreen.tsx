@@ -420,14 +420,14 @@ function groupOrder(by: GroupBy, kind: LibraryKind): string[] {
 // "Add to <meal>" button that logs one serving straight away.
 // pickFor: opened from a day's "Swap for" sheet - a program's detail page
 // gets a "Use for <day>" button that puts it on that day.
-export function LibraryScreen({ open, mode, onClose, logTo, pickFor }: { open: boolean; mode: 'training' | 'nutrition'; onClose: () => void; logTo?: { label: string; onLog: (meal: LibraryMeal) => void }; pickFor?: { label: string; onPick: (program: LibraryProgram) => void } }) {
+export function LibraryScreen({ open, mode, onClose, logTo, pickFor, initialTab = 'programs' }: { open: boolean; mode: 'training' | 'nutrition'; onClose: () => void; initialTab?: 'programs' | 'plans' | 'foryou'; logTo?: { label: string; onLog: (meal: LibraryMeal) => void }; pickFor?: { label: string; onPick: (program: LibraryProgram) => void } }) {
   const initialKind: LibraryKind = mode === 'nutrition' ? 'meal' : 'program';
   const [kind, setKind] = useState<LibraryKind>(initialKind);
   // Train's library opens on For you; the nutrition one is meals only.
-  const [tab, setTab] = useState<'foryou' | 'programs' | 'plans'>(mode === 'training' ? 'foryou' : 'programs');
+  const [tab, setTab] = useState<'foryou' | 'programs' | 'plans'>(initialTab);
   const plans = tab === 'plans';
   const profileSetup = useAppStore((s) => s.profile?.setup);
-  const setProfileSetupOpen = useAppStore((s) => s.setProfileSetupOpen);
+  const openTrainingProfile = useAppStore((s) => s.openTrainingProfile);
   const [items, setItems] = useState<LibraryItem[] | null>(null);
   const [mine, setMine] = useState<Set<string>>(new Set());
   const [saves, setSaves] = useState<Map<string, number>>(new Map());
@@ -450,7 +450,7 @@ export function LibraryScreen({ open, mode, onClose, logTo, pickFor }: { open: b
   useEffect(() => {
     if (!open) return;
     setKind(initialKind);
-    setTab(mode === 'training' ? 'foryou' : 'programs');
+    setTab(initialTab);
   }, [open, initialKind]);
 
   useEffect(() => {
@@ -554,14 +554,14 @@ export function LibraryScreen({ open, mode, onClose, logTo, pickFor }: { open: b
         <div style={{ fontWeight: 700, fontSize: 15, flex: 1 }}>{mode === 'nutrition' ? 'Meal Library' : 'Library'}</div>
         {mode === 'training' && (
           <div className="scope">
-            <button className={tab === 'foryou' ? 'on' : ''} onClick={() => setTab('foryou')}>
-              For you
-            </button>
             <button className={tab === 'programs' ? 'on' : ''} onClick={() => setTab('programs')}>
               Programs
             </button>
             <button className={plans ? 'on' : ''} onClick={() => setTab('plans')}>
               Plans
+            </button>
+            <button className={tab === 'foryou' ? 'on' : ''} onClick={() => setTab('foryou')}>
+              For you
             </button>
           </div>
         )}
@@ -570,6 +570,20 @@ export function LibraryScreen({ open, mode, onClose, logTo, pickFor }: { open: b
         {tab === 'foryou' ? (
           profileSetup?.mode === 'plan' ? (
             <>
+              <button
+                type="button"
+                className="lib-foryou-banner"
+                onClick={() => {
+                  onClose();
+                  openTrainingProfile();
+                }}
+              >
+                <Icon name="rotate" />
+                <span>
+                  Goals or training changed? Update your training profile for better-matched programs.
+                </span>
+                <b>Update</b>
+              </button>
               <p className="lib-desc" style={{ marginTop: 10 }}>
                 Ranked for your {profileSetup.level} {profileSetup.days}-day week: sport, goals, level, kit and session length.
               </p>
@@ -586,18 +600,18 @@ export function LibraryScreen({ open, mode, onClose, logTo, pickFor }: { open: b
               </div>
             </>
           ) : (
-            <div className="lib-know" style={{ marginTop: 12 }}>
-              <div className="lib-know-h"><Icon name="trophy" /> Picks made for you</div>
-              <p>Tell us your sport, goal, level and kit and we'll rank every program for you, and build your week from them. Takes about two minutes.</p>
+            <div className="lib-foryou-empty">
+              <Icon name="trophy" />
+              <b>Nothing here yet</b>
+              <span>For you suggests programs from your training profile: your sport, goals, level, days and kit.</span>
               <button
                 className="btn btn-primary"
-                style={{ marginTop: 12 }}
                 onClick={() => {
                   onClose();
-                  setProfileSetupOpen(true);
+                  openTrainingProfile();
                 }}
               >
-                Build my plan
+                Update training profile
               </button>
             </div>
           )

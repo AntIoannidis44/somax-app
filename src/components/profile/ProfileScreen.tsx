@@ -14,6 +14,7 @@ import { useUserId } from '../../lib/useSession';
 import { uploadProfilePhoto, removeProfilePhoto } from '../../lib/profilePhoto';
 import { countUnlocked, nextUnlock, tierFor, unlockItemName, wearUnlocked } from '../../lib/character';
 import { first, initials } from '../../lib/format';
+import { onbSport } from '../../lib/plans/weekBuilder';
 
 export function ProfileScreen() {
   const profile = useAppStore((s) => s.profile)!;
@@ -21,6 +22,7 @@ export function ProfileScreen() {
   const character = useAppStore((s) => s.character);
   const openCharacterStudio = useAppStore((s) => s.openCharacterStudio);
   const openGoals = useAppStore((s) => s.openGoals);
+  const openTrainingProfile = useAppStore((s) => s.openTrainingProfile);
   const openMacros = useAppStore((s) => s.openMacros);
   const resetDemo = useAppStore((s) => s.resetDemo);
   const prestige = useAppStore((s) => s.prestige);
@@ -209,6 +211,20 @@ export function ProfileScreen() {
           Character studio
         </button>
       </div>
+      <button type="button" className="tp-summary" style={{ marginTop: 14 }} onClick={openTrainingProfile}>
+        <span className="set-ic">
+          <Icon name="dumbbell" />
+        </span>
+        <span style={{ flex: 1, minWidth: 0 }}>
+          <b>Training profile</b>
+          <small>
+            {profile.setup?.mode === 'plan'
+              ? `${onbSport(profile.setup.sport)?.label ?? profile.setup.sport} · ${profile.setup.level[0].toUpperCase()}${profile.setup.level.slice(1)} · ${profile.setup.days} days`
+              : 'Set your sport and goals to build your week'}
+          </small>
+        </span>
+        <Icon name="chevron" style={{ width: 16, height: 16, color: 'var(--text-faint)' }} />
+      </button>
 
       <div className="section-label">Character</div>
       <div className="char-card" style={{ ['--t1' as string]: tier.c1, ['--t2' as string]: tier.c2 }} onClick={openCharacterStudio}>
