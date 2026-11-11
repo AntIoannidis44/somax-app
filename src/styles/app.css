@@ -964,13 +964,13 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 /* ---------- modal ---------- */
 .modal-overlay{
     position:fixed; inset:0; background: rgba(5,10,26,.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-    /* Must outrank every full-screen page overlay (.macro-search-overlay,
-       z-index:120 - My Recipes, Recipe Detail, Food Search, Favorites,
-       New/Import Recipe), or a Modal opened from on top of one of those
-       screens (e.g. ShareRecipeSheet) renders fully hidden behind its
-       opaque background - the sheet is technically open, just invisible,
-       which looked exactly like tapping Share "did nothing". A modal/sheet
-       is always the topmost thing the user is actively interacting with. */
+    /* Same z-index as .macro-search-overlay (see that rule's comment) -
+       a Modal opened from on top of one of those full-screen pages (e.g.
+       ShareRecipeSheet from My Recipes) and one of those pages opened from
+       on top of a Modal (e.g. FavoritesOverlay/FoodSearchOverlay from
+       inside AddFoodSheet) both need to win, depending on which opened
+       more recently - matching the two and relying on DOM mount order is
+       what makes both directions work, not a fixed ranking between them. */
     z-index:150; display:flex; align-items:flex-start; justify-content:center;
     /* Anchored near the top, clear of the nav bar/notch, not vertically
        centered - centering let it drift lower on a tall screen and look
@@ -1689,8 +1689,17 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .mono{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; }
 
 /* ---------- macro: full-screen food search ---------- */
+/* Same z-index as .modal-overlay (see that rule's comment) - both are
+   "whatever full-screen/sheet layer is currently topmost", and either one
+   can legitimately need to sit above the other depending on which opened
+   more recently (e.g. ShareRecipeSheet opens from on top of this; but this
+   also opens from on top of a .modal-overlay sheet, like FavoritesOverlay/
+   FoodSearchOverlay from inside AddFoodSheet). A fixed ranking between the
+   two can only ever satisfy one direction - matching them and letting
+   normal DOM mount order (last opened = last appended = painted on top)
+   decide is what's actually correct in both directions. */
 .macro-search-overlay{
-  position:fixed; inset:0; z-index:120; background:var(--bg);
+  position:fixed; inset:0; z-index:150; background:var(--bg);
   display:flex; flex-direction:column;
   padding-top:env(safe-area-inset-top, 0px); padding-bottom:env(safe-area-inset-bottom, 0px);
 }
