@@ -209,9 +209,9 @@ add(id="hyrox-race-simulation", name="HYROX Race Simulation (Open)", category="f
 
 # ---------------------------------------------------------- FIFA 11+
 F_URL = "https://www.wakemed.org/sites/default/files/pdf/Ortho/fifa%20basic%20warm%20up%20exercises.pdf"
-add(id="fifa-11-plus-warm-up", name="FIFA 11+ Injury Prevention Warm-up (Level 1)", category="other", level="beginner", sport="football",
+add(id="fifa-11-plus-warm-up", name="FIFA 11+ Injury Prevention Warm-up (Level 1)", category="other", level="beginner", sport="soccer",
     goals=["sport-performance", "general-fitness", "mobility"], duration="20 min", daysPerWeek=2, equipment=["bodyweight", "cones", "ball"],
-    description="The 20-minute football warm-up developed with FIFA's medical centre to cut injury risk: running drills, then strength, balance and jumps, then faster running. Before matches do only the running parts.",
+    description="The 20-minute soccer warm-up developed with FIFA's medical centre to cut injury risk: running drills, then strength, balance and jumps, then faster running. Before matches do only the running parts.",
     exercises=[E("Running – straight ahead (cone course)", 2, "1 course"), E("Running – hip out", 2, "1 course"),
                E("Running – hip in", 2, "1 course"), E("Running – circling partner", 2, "1 course"),
                E("Running – shoulder contact jumps", 2, "1 course"), E("Running – quick forwards & backwards", 2, "1 course"),
@@ -458,7 +458,7 @@ META = {
          "Scale early simulations to half distances/reps, building to the full race.",
          "Practise transitions and pacing: the runs should feel controlled, not all-out.",
          "Allow 2-3 easy days afterwards."]),
-    "fifa-11-plus": (2, "Footballers of all ages and levels, including youth and amateur teams, who want to reduce knee, ankle and hamstring injuries.",
+    "fifa-11-plus": (2, "Soccer players of all ages and levels, including youth and amateur teams, who want to reduce knee, ankle and hamstring injuries.",
         ["outdoor", "minimal-equipment"],
         ["Do it at the start of every training session, at least twice a week.",
          "Before matches do only the running parts (Parts 1 and 3).",

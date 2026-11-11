@@ -1986,11 +1986,11 @@
     "verified": false
   },
   {
-    "id": "somax-footballers-speed-power",
-    "name": "Somax Footballer's Speed & Power",
+    "id": "somax-soccer-speed-power",
+    "name": "Somax Soccer Speed & Power",
     "category": "other",
     "level": "intermediate",
-    "sport": "football",
+    "sport": "soccer",
     "goals": [
       "sport-performance",
       "strength"
@@ -2004,7 +2004,7 @@
       "bodyweight"
     ],
     "description": "Acceleration, change of direction and lower-body power, built on a FIFA 11+-style warm-up to keep hamstrings and knees healthy.",
-    "whoItsFor": "Amateur and youth footballers (14+) who want to be quicker over the first 10 metres and stronger in duels, off a pitch or field.",
+    "whoItsFor": "Amateur and youth soccer players (14+) who want to be quicker over the first 10 metres and stronger in duels, off a pitch or field.",
     "lifestyle": [
       "outdoor",
       "minimal-equipment"

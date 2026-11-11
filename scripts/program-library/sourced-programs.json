@@ -1789,7 +1789,7 @@
     "name": "FIFA 11+ Injury Prevention Warm-up (Level 1)",
     "category": "other",
     "level": "beginner",
-    "sport": "football",
+    "sport": "soccer",
     "goals": [
       "sport-performance",
       "general-fitness",
@@ -1802,7 +1802,7 @@
       "cones",
       "ball"
     ],
-    "description": "The 20-minute football warm-up developed with FIFA's medical centre to cut injury risk: running drills, then strength, balance and jumps, then faster running. Before matches do only the running parts.",
+    "description": "The 20-minute soccer warm-up developed with FIFA's medical centre to cut injury risk: running drills, then strength, balance and jumps, then faster running. Before matches do only the running parts.",
     "exercises": [
       {
         "name": "Running – straight ahead (cone course)",
@@ -1886,7 +1886,7 @@
     "sourceUrl": "https://www.wakemed.org/sites/default/files/pdf/Ortho/fifa%20basic%20warm%20up%20exercises.pdf",
     "sourceNote": "Freely distributed injury-prevention programme; read from WakeMed Sports Medicine's reproduction of the F-MARC 11+ poster. Credit F-MARC/FIFA.",
     "verified": true,
-    "whoItsFor": "Footballers of all ages and levels, including youth and amateur teams, who want to reduce knee, ankle and hamstring injuries.",
+    "whoItsFor": "Soccer players of all ages and levels, including youth and amateur teams, who want to reduce knee, ankle and hamstring injuries.",
     "lifestyle": [
       "outdoor",
       "minimal-equipment"

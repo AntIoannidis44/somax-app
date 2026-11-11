@@ -1,7 +1,7 @@
 import json, sys, collections
 D = sys.argv[1]
 CAT={"gym","fitness","run","walk","ride","swim","other"}; LV={"beginner","intermediate","advanced"}
-SP={"strength-training","bodybuilding","powerlifting","running","cycling","swimming","calisthenics","hiit","pilates","yoga-mobility","football","basketball","tennis","boxing","golf","hybrid","general"}
+SP={"strength-training","bodybuilding","powerlifting","running","cycling","swimming","calisthenics","hiit","pilates","yoga-mobility","soccer","afl","basketball","tennis","boxing","golf","hybrid","general"}
 GO={"strength","muscle","fat-loss","endurance","mobility","general-fitness","sport-performance"}
 LS={"busy","home","travel","minimal-equipment","full-gym","outdoor","older-adults","time-efficient"}
 EXK={"name","sets","reps","weight","distance","group"}

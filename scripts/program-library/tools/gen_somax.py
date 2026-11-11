@@ -351,10 +351,10 @@ add("somax-swim-endurance-builder", "Somax Swim Endurance Builder", "swim", "int
     ["usms-quick-hit-swim", "usms-beginner-breathe-swim"])
 
 # ============================================================== SPORT SPECIFIC
-add("somax-footballers-speed-power", "Somax Footballer's Speed & Power", "other", "intermediate", "football", ["sport-performance", "strength"], 50, 2,
+add("somax-soccer-speed-power", "Somax Soccer Speed & Power", "other", "intermediate", "soccer", ["sport-performance", "strength"], 50, 2,
     ["cones", "dumbbells", "bodyweight"],
     "Acceleration, change of direction and lower-body power, built on a FIFA 11+-style warm-up to keep hamstrings and knees healthy.",
-    "Amateur and youth footballers (14+) who want to be quicker over the first 10 metres and stronger in duels, off a pitch or field.",
+    "Amateur and youth soccer players (14+) who want to be quicker over the first 10 metres and stronger in duels, off a pitch or field.",
     ["outdoor", "minimal-equipment"],
     ["2 sessions a week in-season, not within 48h before a match.",
      "Sprints are maximal with full recovery (walk back + 60s); stop if speed drops.",

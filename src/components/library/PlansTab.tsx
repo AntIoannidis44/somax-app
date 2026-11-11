@@ -34,7 +34,7 @@ const COMING = [
   { label: 'Strength', sub: 'Squat, bench, deadlift and pull-up goals', cat: 'gym' },
   { label: 'Cycling', sub: 'FTP and distance goals', cat: 'ride' },
   { label: 'Swimming', sub: 'Swim further, swim faster', cat: 'swim' },
-  { label: 'Sport performance', sub: 'Football, basketball, tennis, boxing, golf', cat: 'fitness' },
+  { label: 'Sport performance', sub: 'AFL, soccer, basketball, tennis, boxing, golf', cat: 'fitness' },
   { label: 'Fat loss & general fitness', sub: 'Training + nutrition goals', cat: 'fitness' },
   { label: 'Pilates & mobility', sub: 'Core, flexibility and posture', cat: 'pilates' },
 ];
