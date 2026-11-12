@@ -1,0 +1,819 @@
+[
+  {
+    "id": "efh-tuna-avocado-salad",
+    "name": "Tuna, Bean & Avocado Salad",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein",
+      "low-carb",
+      "gluten-free"
+    ],
+    "prepMinutes": 10,
+    "servings": 4,
+    "kcal": 257,
+    "proteinG": 22.6,
+    "carbsG": 10.8,
+    "fatG": 7.0,
+    "ingredients": [
+      {
+        "name": "tinned tuna in spring water, drained",
+        "amount": "1 x 315g tin"
+      },
+      {
+        "name": "tinned cannellini or butter beans, drained",
+        "amount": "1 x 300g tin"
+      },
+      {
+        "name": "tomato, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "avocado, peeled, stoned and chopped",
+        "amount": "1"
+      },
+      {
+        "name": "lemon juice (dressing)",
+        "amount": "½ lemon"
+      },
+      {
+        "name": "grated lemon rind (dressing)",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "basil, chopped (dressing)",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "low-fat natural yoghurt (dressing)",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "cracked black pepper (dressing)",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Gently fold the tuna, beans, tomato and avocado together in a bowl.",
+      "Mix the dressing ingredients in a small bowl and pour over."
+    ],
+    "description": "A 10-minute tuna, white bean and avocado salad with a lemony yoghurt dressing.",
+    "whoItsFor": "Anyone wanting a fast, high-protein lunch with healthy fats.",
+    "tips": [
+      "Stuff into pita, pile onto a jacket potato or serve in a wholemeal roll.",
+      "Keeps a day in the fridge - add the avocado just before eating if prepping ahead."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/tuna-and-avocado-salad",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml. Note: the published energy (1074 kJ) is higher than its published macros imply (about 210 kcal by 4/4/9); macros kept as published.",
+    "verified": true
+  },
+  {
+    "id": "efh-chicken-vegie-pie",
+    "name": "Chicken & Vegie Filo Pie",
+    "mealType": "dinner",
+    "level": "intermediate",
+    "goals": [
+      "muscle",
+      "endurance"
+    ],
+    "diet": [
+      "high-protein"
+    ],
+    "prepMinutes": 50,
+    "servings": 4,
+    "kcal": 546,
+    "proteinG": 41.7,
+    "carbsG": 67.2,
+    "fatG": 7.8,
+    "ingredients": [
+      {
+        "name": "small chicken breasts, skin removed",
+        "amount": "4"
+      },
+      {
+        "name": "chicken stock",
+        "amount": "2 cups (500ml)"
+      },
+      {
+        "name": "dry sherry or white wine (optional)",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "bay leaf or bouquet garni sachet",
+        "amount": "1"
+      },
+      {
+        "name": "mixed vegetables (carrot, cauliflower, leek, cabbage, asparagus, baby corn, peas)",
+        "amount": "700g"
+      },
+      {
+        "name": "cornflour",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "low-fat milk",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "chopped mixed herbs (or 1 tsp dried)",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "cracked black pepper",
+        "amount": "to taste"
+      },
+      {
+        "name": "filo pastry sheets",
+        "amount": "6"
+      },
+      {
+        "name": "olive or canola oil spray",
+        "amount": "as needed"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C.",
+      "Gently poach the chicken in the stock, sherry and bay leaf in a covered pan for 15-20 minutes.",
+      "Add the bite-sized vegetables, cover and cook 5 minutes more; discard the bay leaf.",
+      "Move the chicken and veg to a deep pie dish; thicken the pan juices with the cornflour mixed into the milk, add herbs and pepper, and pour over.",
+      "Layer the filo, spraying every second sheet, lay it scrunched over the top, spray and bake until crisp and golden."
+    ],
+    "description": "A big, lean chicken and vegetable pie under a crisp filo lid instead of buttery pastry.",
+    "whoItsFor": "Lifters and endurance athletes wanting a hearty, 40g-protein comfort dinner.",
+    "tips": [
+      "Brush the filo with egg white instead of oil to cut the fat further.",
+      "Skip the pastry and serve it as a casserole with rice or mash."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/chicken-and-vegie-pie",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  },
+  {
+    "id": "efh-easy-beef-hotpot",
+    "name": "Easy Beef Hotpot",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "strength",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free"
+    ],
+    "prepMinutes": 135,
+    "servings": 6,
+    "kcal": 414,
+    "proteinG": 50.4,
+    "carbsG": 16.9,
+    "fatG": 17.8,
+    "ingredients": [
+      {
+        "name": "chuck or blade steak, cubed",
+        "amount": "1kg"
+      },
+      {
+        "name": "plain flour",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "paprika",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "tinned crushed tomatoes",
+        "amount": "1 x 425g tin"
+      },
+      {
+        "name": "medium onions, sliced",
+        "amount": "2"
+      },
+      {
+        "name": "garlic clove, crushed",
+        "amount": "1"
+      },
+      {
+        "name": "celery sticks, sliced",
+        "amount": "2"
+      },
+      {
+        "name": "large carrots, thickly sliced",
+        "amount": "2"
+      },
+      {
+        "name": "turnip, in large chunks",
+        "amount": "1"
+      },
+      {
+        "name": "medium potatoes, in large chunks",
+        "amount": "3"
+      },
+      {
+        "name": "red wine or stock",
+        "amount": "1 cup (250ml)"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 180°C.",
+      "Shake the beef with the flour and paprika in a bag, then tip into a heavy casserole dish.",
+      "Add everything else and stir.",
+      "Press baking paper onto the surface, put the lid on tightly and bake for 2 hours without lifting the lid.",
+      "Check tenderness and seasoning, giving it longer if needed."
+    ],
+    "description": "A no-fuss, oven-braised beef and root vegetable hotpot - everything into one pot.",
+    "whoItsFor": "Strength athletes wanting a 50g-protein, iron-rich winter dinner.",
+    "tips": [
+      "Serve with mashed potato and steamed greens.",
+      "Even better the next day - make it on the weekend for weeknight dinners."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/easy-beef-hotpot",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  },
+  {
+    "id": "efh-fast-fish-medley",
+    "name": "Fast Fish & Rice Medley",
+    "mealType": "dinner",
+    "level": "beginner",
+    "goals": [
+      "endurance",
+      "muscle"
+    ],
+    "diet": [
+      "high-protein",
+      "dairy-free",
+      "gluten-free"
+    ],
+    "prepMinutes": 32,
+    "servings": 4,
+    "kcal": 382,
+    "proteinG": 33.7,
+    "carbsG": 43.3,
+    "fatG": 4.8,
+    "ingredients": [
+      {
+        "name": "rice, uncooked",
+        "amount": "1 cup"
+      },
+      {
+        "name": "olive oil",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "small onion, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "garlic clove, crushed",
+        "amount": "1"
+      },
+      {
+        "name": "tinned chopped tomatoes with herbs",
+        "amount": "1 x 425g tin"
+      },
+      {
+        "name": "fresh red chilli, seeded and chopped",
+        "amount": "1"
+      },
+      {
+        "name": "red or white wine (optional)",
+        "amount": "⅓ cup"
+      },
+      {
+        "name": "medium red capsicum, chopped small",
+        "amount": "1"
+      },
+      {
+        "name": "frozen peas",
+        "amount": "1 cup"
+      },
+      {
+        "name": "white fish fillets, in small pieces",
+        "amount": "350g"
+      },
+      {
+        "name": "scallops (optional)",
+        "amount": "100g"
+      },
+      {
+        "name": "English spinach, washed and chopped",
+        "amount": "1 bunch"
+      }
+    ],
+    "steps": [
+      "Cook the rice as per the packet.",
+      "Soften the onion and garlic in the oil, then add the tomatoes, chilli and wine and simmer 5 minutes.",
+      "Stir in the rice, capsicum, peas, fish and scallops, cover and cook 5 minutes until the fish is done.",
+      "Fold through the spinach until wilted."
+    ],
+    "description": "A one-pan Australian Government recipe of fish, rice, tomato and vegetables - ready in about half an hour.",
+    "whoItsFor": "Endurance athletes and lifters wanting a lean, carb-and-protein dinner.",
+    "tips": [
+      "Frozen fish works fine; prawns can replace the scallops.",
+      "Check the tinned tomatoes are gluten-free if you need strict gluten-free."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/fast-fish-medley",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  },
+  {
+    "id": "efh-vegie-lasagne",
+    "name": "Pumpkin, Spinach & Ricotta Lasagne",
+    "mealType": "dinner",
+    "level": "intermediate",
+    "goals": [
+      "muscle",
+      "general-fitness"
+    ],
+    "diet": [
+      "vegetarian",
+      "high-protein"
+    ],
+    "prepMinutes": 55,
+    "servings": 6,
+    "kcal": 517,
+    "proteinG": 32.1,
+    "carbsG": 49.4,
+    "fatG": 18.2,
+    "ingredients": [
+      {
+        "name": "pumpkin or sweet potato, peeled and sliced",
+        "amount": "500g"
+      },
+      {
+        "name": "English spinach or young silverbeet, washed and sliced",
+        "amount": "2 bunches"
+      },
+      {
+        "name": "reduced-fat ricotta",
+        "amount": "500g"
+      },
+      {
+        "name": "spring onions, sliced",
+        "amount": "6"
+      },
+      {
+        "name": "parsley, chopped",
+        "amount": "½ cup"
+      },
+      {
+        "name": "instant lasagne sheets, softened in hot water",
+        "amount": "12"
+      },
+      {
+        "name": "tomato pasta sauce",
+        "amount": "1 x 425g jar"
+      },
+      {
+        "name": "eggs (topping)",
+        "amount": "2"
+      },
+      {
+        "name": "plain flour (topping)",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "low-fat milk (topping)",
+        "amount": "2 cups (500ml)"
+      },
+      {
+        "name": "pepper and ground nutmeg (topping)",
+        "amount": "to taste"
+      },
+      {
+        "name": "grated parmesan or romano (topping)",
+        "amount": "½ cup"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 180°C. Steam the pumpkin for 3 minutes and cool; wilt the spinach in boiling water and drain well.",
+      "Mix the spinach with the ricotta, spring onion and parsley.",
+      "In a 33 x 23cm dish, layer 3 lasagne sheets with a third each of the pumpkin, sauce and ricotta mix; repeat twice and finish with lasagne.",
+      "For the topping, mix the eggs and flour smooth, whisk in the milk and stir over heat until thick, season and pour over.",
+      "Sprinkle with cheese and bake 30 minutes until golden."
+    ],
+    "description": "A vegetarian lasagne layered with pumpkin, spinach and ricotta under a light egg-milk topping.",
+    "whoItsFor": "Vegetarians wanting a 32g-protein dinner that feeds a family.",
+    "tips": [
+      "Add a tin of lentils to the layers for even more protein and fibre.",
+      "Cut into squares and freeze individually for quick lunches."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/vegie-lasagne",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  },
+  {
+    "id": "efh-vegie-lentil-soup",
+    "name": "Vegie Lentil Soup",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "general-fitness"
+    ],
+    "diet": [],
+    "prepMinutes": 45,
+    "servings": 4,
+    "kcal": 123,
+    "proteinG": 10.4,
+    "carbsG": 16.1,
+    "fatG": 0.8,
+    "ingredients": [
+      {
+        "name": "onion, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "garlic clove, crushed",
+        "amount": "1"
+      },
+      {
+        "name": "carrot, diced",
+        "amount": "1"
+      },
+      {
+        "name": "potato, diced",
+        "amount": "1"
+      },
+      {
+        "name": "parsnip, peeled and diced",
+        "amount": "1"
+      },
+      {
+        "name": "celery stick, diced",
+        "amount": "1"
+      },
+      {
+        "name": "red lentils",
+        "amount": "125g"
+      },
+      {
+        "name": "chicken stock or water",
+        "amount": "6 cups (1.5L)"
+      },
+      {
+        "name": "tomato paste",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "parsley sprigs, chopped",
+        "amount": "2-3"
+      }
+    ],
+    "steps": [
+      "Soften the onion and garlic in a splash of water in a large pot.",
+      "Add the carrot, potato, parsnip and celery and cook 5 minutes.",
+      "Stir in the lentils, stock and tomato paste, bring to the boil, cover and simmer 30-35 minutes, stirring occasionally.",
+      "Stir in the parsley once the lentils and veg are tender."
+    ],
+    "description": "A big-volume, almost fat-free red lentil and root vegetable soup.",
+    "whoItsFor": "People cutting who want a filling, low-calorie lunch with plant protein.",
+    "tips": [
+      "Vegan if you use water or vegetable stock instead of chicken stock.",
+      "Add a wholegrain roll to make it a more complete meal."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/vegie-lentil-soup",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  },
+  {
+    "id": "efh-hearty-minestrone",
+    "name": "Hearty Minestrone Soup",
+    "mealType": "lunch",
+    "level": "beginner",
+    "goals": [
+      "fat-loss",
+      "general-fitness"
+    ],
+    "diet": [
+      "dairy-free"
+    ],
+    "prepMinutes": 35,
+    "servings": 6,
+    "kcal": 143,
+    "proteinG": 10.1,
+    "carbsG": 20.7,
+    "fatG": 0.7,
+    "ingredients": [
+      {
+        "name": "medium brown onion, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "garlic clove, crushed",
+        "amount": "1"
+      },
+      {
+        "name": "tinned crushed tomatoes",
+        "amount": "1 x 425g tin"
+      },
+      {
+        "name": "carrot, peeled and diced",
+        "amount": "1"
+      },
+      {
+        "name": "celery sticks, sliced",
+        "amount": "2"
+      },
+      {
+        "name": "large parsnip, peeled and diced",
+        "amount": "1"
+      },
+      {
+        "name": "tomato paste",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "bay leaf",
+        "amount": "1"
+      },
+      {
+        "name": "beef stock",
+        "amount": "4 cups (1L)"
+      },
+      {
+        "name": "water",
+        "amount": "2 cups (500ml)"
+      },
+      {
+        "name": "small pasta",
+        "amount": "½ cup"
+      },
+      {
+        "name": "Brussels sprouts, finely sliced (or 1 cup sliced cabbage)",
+        "amount": "6"
+      },
+      {
+        "name": "tinned four-bean mix, rinsed and drained",
+        "amount": "1 x 300g tin"
+      }
+    ],
+    "steps": [
+      "Soften the onion and garlic in a little water in a large pot.",
+      "Add the tomatoes, carrot, celery, parsnip, tomato paste, bay leaf, stock and water and bring to the boil.",
+      "Add the pasta and simmer 15 minutes until tender.",
+      "Add the sprouts and beans and cook 5 minutes more."
+    ],
+    "description": "A chunky Italian vegetable, bean and pasta soup with almost no fat.",
+    "whoItsFor": "Anyone wanting a filling, low-calorie lunch with 10g protein per bowl.",
+    "tips": [
+      "Swap the beans for lentils or butter beans, and the sprouts for spinach or peas.",
+      "Use vegetable stock to make it vegetarian."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/hearty-minestrone-soup",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  },
+  {
+    "id": "efh-vegie-curry",
+    "name": "Vegie Curry with Rice",
+    "mealType": "dinner",
+    "level": "intermediate",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "diet": [
+      "dairy-free",
+      "gluten-free"
+    ],
+    "prepMinutes": 70,
+    "servings": 6,
+    "kcal": 434,
+    "proteinG": 10.2,
+    "carbsG": 66.2,
+    "fatG": 12.3,
+    "ingredients": [
+      {
+        "name": "rice, uncooked",
+        "amount": "2 cups"
+      },
+      {
+        "name": "eggplant, cut into thick slices",
+        "amount": "1"
+      },
+      {
+        "name": "salt (for the eggplant)",
+        "amount": "to sprinkle"
+      },
+      {
+        "name": "olive oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "garlic cloves, crushed",
+        "amount": "2"
+      },
+      {
+        "name": "small piece ginger, peeled and sliced",
+        "amount": "1"
+      },
+      {
+        "name": "large onion, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "red or green curry paste, to taste",
+        "amount": "2-3 tbsp"
+      },
+      {
+        "name": "potatoes, peeled and cubed",
+        "amount": "2"
+      },
+      {
+        "name": "carrots, peeled and cubed",
+        "amount": "2"
+      },
+      {
+        "name": "butternut pumpkin, peeled and cubed",
+        "amount": "½"
+      },
+      {
+        "name": "red or green capsicum, chopped",
+        "amount": "1"
+      },
+      {
+        "name": "cauliflower or broccoli florets, or green beans",
+        "amount": "1 cup"
+      },
+      {
+        "name": "tinned chopped tomatoes",
+        "amount": "1 x 425g tin"
+      },
+      {
+        "name": "reduced-fat coconut milk",
+        "amount": "1 cup (250ml)"
+      },
+      {
+        "name": "chopped herbs (e.g. basil)",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Cook the rice. Salt the eggplant slices, leave 30 minutes, rinse, pat dry and cube.",
+      "Gently soften the garlic, ginger and onion in the oil in a large saucepan, then stir in the curry paste over low heat.",
+      "Add all the vegetables and tomatoes, cover, bring to the boil and simmer 20-40 minutes until tender.",
+      "Stir in the coconut milk for 5 minutes, then the herbs, and serve with the rice."
+    ],
+    "description": "A big, mild coconut vegetable curry with pumpkin, potato and eggplant, served with rice.",
+    "whoItsFor": "Endurance athletes wanting a carb-heavy, plant-based dinner before big training days.",
+    "tips": [
+      "Add a tin of chickpeas to lift the protein to a more useful level.",
+      "Many curry pastes contain shrimp - check the label if you need it vegetarian."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/vegie-curry",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  },
+  {
+    "id": "efh-carrot-parsnip-muffins",
+    "name": "Savoury Carrot & Parsnip Muffins",
+    "mealType": "snack",
+    "level": "beginner",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "diet": [
+      "vegetarian"
+    ],
+    "prepMinutes": 40,
+    "servings": 12,
+    "kcal": 143,
+    "proteinG": 5.3,
+    "carbsG": 17.6,
+    "fatG": 5.2,
+    "ingredients": [
+      {
+        "name": "olive or canola oil spray",
+        "amount": "as needed"
+      },
+      {
+        "name": "wholemeal self-raising flour",
+        "amount": "1 cup"
+      },
+      {
+        "name": "white self-raising flour",
+        "amount": "¾ cup"
+      },
+      {
+        "name": "paprika or curry powder",
+        "amount": "¼ tsp"
+      },
+      {
+        "name": "large carrot, peeled and grated",
+        "amount": "1"
+      },
+      {
+        "name": "parsnip, peeled and grated",
+        "amount": "1"
+      },
+      {
+        "name": "grated parmesan",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "parsley or basil, chopped",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "eggs, beaten",
+        "amount": "2"
+      },
+      {
+        "name": "oil",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "low-fat milk",
+        "amount": "1 cup (250ml)"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 190°C and spray a 12-hole muffin tray.",
+      "Sift the flours into a bowl (tip the husks back in), add the spice and fold in the carrot, parsnip, cheese and herbs.",
+      "Mix the eggs, oil and milk and stir lightly into the dry mix - don't over-mix.",
+      "Spoon into the tray and bake 25 minutes until golden and firm.",
+      "Cool on a rack."
+    ],
+    "description": "Savoury wholemeal muffins packed with grated carrot, parsnip and herbs.",
+    "whoItsFor": "Anyone wanting a lunchbox or pre-training snack that isn't sweet.",
+    "tips": [
+      "They freeze well - microwave from frozen for a warm snack.",
+      "Serve with cottage cheese or labneh to add protein."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/carrot-and-parsnip-muffins",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  },
+  {
+    "id": "efh-banana-parcels",
+    "name": "BBQ Banana Parcels with Orange Yoghurt",
+    "mealType": "snack",
+    "level": "beginner",
+    "goals": [
+      "endurance"
+    ],
+    "diet": [
+      "vegetarian",
+      "gluten-free"
+    ],
+    "prepMinutes": 10,
+    "servings": 4,
+    "kcal": 122,
+    "proteinG": 3.8,
+    "carbsG": 23.4,
+    "fatG": 0.7,
+    "ingredients": [
+      {
+        "name": "bananas, peeled and halved lengthways",
+        "amount": "4"
+      },
+      {
+        "name": "pulp of 1 large passionfruit",
+        "amount": "1"
+      },
+      {
+        "name": "large strawberries",
+        "amount": "4"
+      },
+      {
+        "name": "low-fat natural yoghurt",
+        "amount": "½ cup (125g)"
+      },
+      {
+        "name": "orange rind",
+        "amount": "½ orange"
+      }
+    ],
+    "steps": [
+      "Heat the barbecue and fold four squares of foil to double thickness.",
+      "Put a banana in the middle of each, add half the passionfruit and fold the edges to seal.",
+      "Barbecue 5 minutes, then open and top with sliced strawberry and the rest of the passionfruit.",
+      "Serve with the yoghurt mixed with orange rind."
+    ],
+    "description": "Warm barbecued banana parcels with passionfruit, strawberries and orange-zest yoghurt.",
+    "whoItsFor": "Endurance athletes after an easy, fruity carb snack or a light dessert.",
+    "tips": [
+      "Use Greek yoghurt to add more protein.",
+      "No barbecue? Bake the parcels at 200°C for about 10 minutes."
+    ],
+    "credit": "Eat For Health (NHMRC, Australian Government)",
+    "sourceUrl": "https://www.eatforhealth.gov.au/eating-well/healthy-recipes/banana-parcels",
+    "sourceNote": "Eat For Health recipe (National Health and Medical Research Council, Australian Government). (c) Commonwealth of Australia; the site's copyright statement licenses its content under CC BY 4.0 (the recipe page itself is not separately CC-marked). Required attribution for adapted material: 'Based on material provided by the National Health and Medical Research Council'. Ingredient list copied as facts; method rewritten in Somax's own words. Nutrition per serving as published (energy converted from kJ). Australian measures: 1 cup = 250ml, 1 tbsp = 20ml.",
+    "verified": true
+  }
+]

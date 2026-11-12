@@ -1,0 +1,2842 @@
+[
+ {
+  "id": "x-gym-strengthlog-beginner-strength-a",
+  "name": "StrengthLog Beginner Strength – Workout A",
+  "series": "StrengthLog Beginner Strength Training Program",
+  "day": 1,
+  "daysInSeries": 2,
+  "category": "gym",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "muscle",
+   "general-fitness"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 50,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "cables",
+   "machines"
+  ],
+  "description": "Squat, overhead press and barbell rows, then triceps, hamstrings and abs. A balanced full-body session that alternates with Workout B.",
+  "whoItsFor": "New lifters in a commercial gym who want a simple two-workout plan that mixes the big barbell lifts with a few machine and isolation moves. About 45-50 minutes, two or three times a week.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Alternate A and B: A-B-A one week, B-A-B the next, with a rest day between sessions (or just A and B if you can only train twice).",
+   "Work in the rep range: when every set hits the top number, add the smallest step of weight and drop back to the bottom of the range.",
+   "Rest about 2-3 minutes on squats, deadlifts and presses and 1-2 minutes on the smaller exercises.",
+   "Don't stress if a lift doesn't go up every session. After 3-6 months, move on to an intermediate plan such as an upper/lower split."
+  ],
+  "exercises": [
+   {
+    "name": "Back Squat",
+    "sets": 3,
+    "reps": "6-8"
+   },
+   {
+    "name": "Overhead Press",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Barbell Row",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Triceps Pushdown",
+    "sets": 2,
+    "reps": "8-10"
+   },
+   {
+    "name": "Seated Leg Curl",
+    "sets": 2,
+    "reps": "8-10"
+   },
+   {
+    "name": "Crunch or Hanging Knee Raise",
+    "sets": 2,
+    "reps": "10-12"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-strength-training-program/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-beginner-strength-b",
+  "name": "StrengthLog Beginner Strength – Workout B",
+  "series": "StrengthLog Beginner Strength Training Program",
+  "day": 2,
+  "daysInSeries": 2,
+  "category": "gym",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "muscle",
+   "general-fitness"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 50,
+  "equipment": [
+   "barbell",
+   "bench",
+   "cables",
+   "machines"
+  ],
+  "description": "Deadlifts, bench press and pulldowns, with curls, leg extensions and calf raises to round it out.",
+  "whoItsFor": "New lifters in a commercial gym who want a simple two-workout plan that mixes the big barbell lifts with a few machine and isolation moves. About 45-50 minutes, two or three times a week.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Alternate A and B: A-B-A one week, B-A-B the next, with a rest day between sessions (or just A and B if you can only train twice).",
+   "Work in the rep range: when every set hits the top number, add the smallest step of weight and drop back to the bottom of the range.",
+   "Rest about 2-3 minutes on squats, deadlifts and presses and 1-2 minutes on the smaller exercises.",
+   "Don't stress if a lift doesn't go up every session. After 3-6 months, move on to an intermediate plan such as an upper/lower split."
+  ],
+  "exercises": [
+   {
+    "name": "Deadlift",
+    "sets": 3,
+    "reps": "5-6"
+   },
+   {
+    "name": "Bench Press",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Lat Pulldown",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Barbell Curl",
+    "sets": 2,
+    "reps": "8-10"
+   },
+   {
+    "name": "Leg Extension",
+    "sets": 2,
+    "reps": "8-10"
+   },
+   {
+    "name": "Standing Calf Raise",
+    "sets": 2,
+    "reps": "10-12"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-strength-training-program/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-beginner-dumbbell-a",
+  "name": "StrengthLog Beginner Dumbbell – Workout A",
+  "series": "StrengthLog Beginner Dumbbell Program",
+  "day": 1,
+  "daysInSeries": 2,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "muscle",
+   "general-fitness"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 30,
+  "equipment": [
+   "dumbbells"
+  ],
+  "description": "Three moves that cover legs, chest and back with just dumbbells: goblet squats, a chest press and rows.",
+  "whoItsFor": "Beginners training at home or in a small gym with a few pairs of dumbbells. Three short sessions a week, about 30 minutes each.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Alternate A and B three times a week (A-B-A, then B-A-B), ideally with a rest day between.",
+   "Double progression: build up to 3 x 10 on every exercise, then move to the next heaviest pair and start again at fewer reps.",
+   "Rest 1-2 minutes between sets.",
+   "No bench? Do the chest press on the floor. When your heaviest dumbbells are easy for 3 x 10, slow the lowering down or move to a gym plan."
+  ],
+  "exercises": [
+   {
+    "name": "Goblet Squat",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Dumbbell Chest Press (floor press if no bench)",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "One-arm Dumbbell Row",
+    "sets": 3,
+    "reps": "10/arm"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-dumbbell-program/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-beginner-dumbbell-b",
+  "name": "StrengthLog Beginner Dumbbell – Workout B",
+  "series": "StrengthLog Beginner Dumbbell Program",
+  "day": 2,
+  "daysInSeries": 2,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "muscle",
+   "general-fitness"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 30,
+  "equipment": [
+   "dumbbells"
+  ],
+  "description": "The second dumbbell session: a hip hinge, a single-leg move and an overhead press.",
+  "whoItsFor": "Beginners training at home or in a small gym with a few pairs of dumbbells. Three short sessions a week, about 30 minutes each.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Alternate A and B three times a week (A-B-A, then B-A-B), ideally with a rest day between.",
+   "Double progression: build up to 3 x 10 on every exercise, then move to the next heaviest pair and start again at fewer reps.",
+   "Rest 1-2 minutes between sets.",
+   "No bench? Do the chest press on the floor. When your heaviest dumbbells are easy for 3 x 10, slow the lowering down or move to a gym plan."
+  ],
+  "exercises": [
+   {
+    "name": "Dumbbell Romanian Deadlift",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Reverse Dumbbell Lunge",
+    "sets": 3,
+    "reps": "10/leg"
+   },
+   {
+    "name": "Dumbbell Shoulder Press",
+    "sets": 3,
+    "reps": "10"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-dumbbell-program/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-beginner-machine-a",
+  "name": "StrengthLog Beginner Machine – Workout A",
+  "series": "StrengthLog Beginner Machine Program",
+  "day": 1,
+  "daysInSeries": 2,
+  "category": "gym",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "general-fitness",
+   "muscle"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 40,
+  "equipment": [
+   "machines"
+  ],
+  "description": "Leg press, leg extensions, a chest press, seated rows and a machine crunch. Every exercise is on a guided machine.",
+  "whoItsFor": "Anyone nervous about free weights, or wanting the lowest-skill start possible. Twice a week on gym machines, about 40 minutes.",
+  "lifestyle": [
+   "full-gym",
+   "busy"
+  ],
+  "howToRun": [
+   "Do A and B once each per week with 3-4 days between them (for example Monday and Thursday).",
+   "Start light enough to get every rep; add a small step (about 2.5kg) each session you complete all sets of 10.",
+   "If you miss reps, stay at that weight until you get them all.",
+   "Rest 1-2 minutes between sets. After a couple of months, add a third day or move to a free-weight beginner plan."
+  ],
+  "exercises": [
+   {
+    "name": "Leg Press",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Leg Extension",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Machine Chest Press",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Seated Machine Row",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Machine Crunch",
+    "sets": 3,
+    "reps": "10"
+   }
+  ],
+  "credit": "Daniel Richter (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-machine-program/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-beginner-machine-b",
+  "name": "StrengthLog Beginner Machine – Workout B",
+  "series": "StrengthLog Beginner Machine Program",
+  "day": 2,
+  "daysInSeries": 2,
+  "category": "gym",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "general-fitness",
+   "muscle"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 40,
+  "equipment": [
+   "machines",
+   "cables"
+  ],
+  "description": "Leg press again, leg curls, a machine shoulder press, lat pulldowns and back extensions.",
+  "whoItsFor": "Anyone nervous about free weights, or wanting the lowest-skill start possible. Twice a week on gym machines, about 40 minutes.",
+  "lifestyle": [
+   "full-gym",
+   "busy"
+  ],
+  "howToRun": [
+   "Do A and B once each per week with 3-4 days between them (for example Monday and Thursday).",
+   "Start light enough to get every rep; add a small step (about 2.5kg) each session you complete all sets of 10.",
+   "If you miss reps, stay at that weight until you get them all.",
+   "Rest 1-2 minutes between sets. After a couple of months, add a third day or move to a free-weight beginner plan."
+  ],
+  "exercises": [
+   {
+    "name": "Leg Press",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Seated Leg Curl",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Machine Shoulder Press",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Lat Pulldown",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Back Extension",
+    "sets": 3,
+    "reps": "10"
+   }
+  ],
+  "credit": "Daniel Richter (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-machine-program/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-full-body-2x-a",
+  "name": "StrengthLog Full Body 2x/Week – Workout A",
+  "series": "StrengthLog Full Body 2x/Week",
+  "day": 1,
+  "daysInSeries": 2,
+  "category": "gym",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "muscle"
+  ],
+  "duration": "60 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 60,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "bench"
+  ],
+  "description": "Four barbell lifts: squats, bench press, Romanian deadlifts and rows. All 3 sets of 5-10.",
+  "whoItsFor": "Beginners who can only lift twice a week, and experienced lifters who are short on time or coming back from a break and want to hold on to strength.",
+  "lifestyle": [
+   "full-gym",
+   "busy"
+  ],
+  "howToRun": [
+   "Two sessions a week, alternating A and B, with at least two days between them.",
+   "Start with weights you can lift for 3 x 10 with good form, stopping about one rep short of failure. Add 2.5kg each time you hit 3 x 10.",
+   "When 3 x 10 stops moving (often after a month or two), switch to 3 x 5 and keep adding 2.5kg whenever you complete all sets.",
+   "Rest 2-3 minutes between sets, up to 5 for very hard ones. Short on time? Drop the Romanian deadlift (A) or front squat (B)."
+  ],
+  "exercises": [
+   {
+    "name": "Back Squat",
+    "sets": 3,
+    "reps": "5-10"
+   },
+   {
+    "name": "Bench Press",
+    "sets": 3,
+    "reps": "5-10"
+   },
+   {
+    "name": "Romanian Deadlift",
+    "sets": 3,
+    "reps": "5-10"
+   },
+   {
+    "name": "Barbell Row",
+    "sets": 3,
+    "reps": "5-10"
+   }
+  ],
+  "credit": "Daniel Richter (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/strengthlogs-full-body-workout-2x-week/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-full-body-2x-b",
+  "name": "StrengthLog Full Body 2x/Week – Workout B",
+  "series": "StrengthLog Full Body 2x/Week",
+  "day": 2,
+  "daysInSeries": 2,
+  "category": "gym",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "muscle"
+  ],
+  "duration": "60 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 60,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "cables"
+  ],
+  "description": "Deadlifts, overhead press, front squats and lat pulldowns. The second of two weekly sessions.",
+  "whoItsFor": "Beginners who can only lift twice a week, and experienced lifters who are short on time or coming back from a break and want to hold on to strength.",
+  "lifestyle": [
+   "full-gym",
+   "busy"
+  ],
+  "howToRun": [
+   "Two sessions a week, alternating A and B, with at least two days between them.",
+   "Start with weights you can lift for 3 x 10 with good form, stopping about one rep short of failure. Add 2.5kg each time you hit 3 x 10.",
+   "When 3 x 10 stops moving (often after a month or two), switch to 3 x 5 and keep adding 2.5kg whenever you complete all sets.",
+   "Rest 2-3 minutes between sets, up to 5 for very hard ones. Short on time? Drop the Romanian deadlift (A) or front squat (B)."
+  ],
+  "exercises": [
+   {
+    "name": "Deadlift",
+    "sets": 3,
+    "reps": "5-10"
+   },
+   {
+    "name": "Overhead Press",
+    "sets": 3,
+    "reps": "5-10"
+   },
+   {
+    "name": "Front Squat",
+    "sets": 3,
+    "reps": "5-10"
+   },
+   {
+    "name": "Lat Pulldown",
+    "sets": 3,
+    "reps": "5-10"
+   }
+  ],
+  "credit": "Daniel Richter (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/strengthlogs-full-body-workout-2x-week/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-full-body-3x-1",
+  "name": "StrengthLog Full Body 3x/Week – Workout 1",
+  "series": "StrengthLog Full Body 3x/Week",
+  "day": 1,
+  "daysInSeries": 3,
+  "category": "gym",
+  "level": "intermediate",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "duration": "70 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 70,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "bench",
+   "pull-up bar"
+  ],
+  "description": "The heavy day: squats, bench, rows and presses in ramping sets of 8-6-4, then RDLs, close-grip bench, curls and leg raises.",
+  "whoItsFor": "Intermediate and advanced lifters who like full-body training and want both size and strength. Not a first program: you should already know the main lifts.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Three sessions a week on non-consecutive days, in order 1-2-3. With only two days, keep Workout 1 and add 2 or 3.",
+   "Where reps are written like 8, 6, 4, add weight each set. Make the last rep of each set hard but not a grind.",
+   "Add weight once you hit the target reps two sessions in a row. If you recover well after the first month, add a set per exercise.",
+   "Rest as long as you need on the heavy lifts (2-4 min) and 1-2 minutes on the isolation work."
+  ],
+  "exercises": [
+   {
+    "name": "Back Squat",
+    "sets": 4,
+    "reps": "8, 6, 4, 4",
+    "weight": "add weight on sets 2 and 4"
+   },
+   {
+    "name": "Bench Press",
+    "sets": 3,
+    "reps": "8, 6, 4",
+    "weight": "add weight every set"
+   },
+   {
+    "name": "Barbell Row",
+    "sets": 3,
+    "reps": "8, 6, 4",
+    "weight": "add weight every set"
+   },
+   {
+    "name": "Overhead Press",
+    "sets": 3,
+    "reps": "8, 6, 4",
+    "weight": "add weight every set"
+   },
+   {
+    "name": "Romanian Deadlift",
+    "sets": 2,
+    "reps": "8, 6",
+    "weight": "add weight on set 2"
+   },
+   {
+    "name": "Close-grip Bench Press",
+    "sets": 2,
+    "reps": "8"
+   },
+   {
+    "name": "Barbell Curl",
+    "sets": 2,
+    "reps": "8, 6",
+    "weight": "add weight on set 2"
+   },
+   {
+    "name": "Hanging Leg Raise",
+    "sets": 3,
+    "reps": "max"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/strengthlogs-full-body-hypertrophy/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-full-body-3x-2",
+  "name": "StrengthLog Full Body 3x/Week – Workout 2",
+  "series": "StrengthLog Full Body 3x/Week",
+  "day": 2,
+  "daysInSeries": 3,
+  "category": "gym",
+  "level": "intermediate",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "duration": "70 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 70,
+  "equipment": [
+   "barbell",
+   "bench",
+   "dumbbells",
+   "machines",
+   "cables"
+  ],
+  "description": "A moderate day built on deadlifts, then sets of 10 for incline bench, pulldowns, leg press, shoulders and arms.",
+  "whoItsFor": "Intermediate and advanced lifters who like full-body training and want both size and strength. Not a first program: you should already know the main lifts.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Three sessions a week on non-consecutive days, in order 1-2-3. With only two days, keep Workout 1 and add 2 or 3.",
+   "Where reps are written like 8, 6, 4, add weight each set. Make the last rep of each set hard but not a grind.",
+   "Add weight once you hit the target reps two sessions in a row. If you recover well after the first month, add a set per exercise.",
+   "Rest as long as you need on the heavy lifts (2-4 min) and 1-2 minutes on the isolation work."
+  ],
+  "exercises": [
+   {
+    "name": "Deadlift",
+    "sets": 3,
+    "reps": "8, 6, 6",
+    "weight": "add weight on set 2"
+   },
+   {
+    "name": "Incline Bench Press",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Lat Pulldown (overhand)",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Leg Press",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Lying Leg Curl",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Dumbbell Shoulder Press",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Barbell Lying Triceps Extension",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Hammer Curl",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Cable Crunch",
+    "sets": 2,
+    "reps": "10"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/strengthlogs-full-body-hypertrophy/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-full-body-3x-3",
+  "name": "StrengthLog Full Body 3x/Week – Workout 3",
+  "series": "StrengthLog Full Body 3x/Week",
+  "day": 3,
+  "daysInSeries": 3,
+  "category": "gym",
+  "level": "intermediate",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle"
+  ],
+  "duration": "65 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 65,
+  "equipment": [
+   "barbell",
+   "dumbbells",
+   "cables",
+   "machines",
+   "bench"
+  ],
+  "description": "The lighter pump day: lunges, flyes, rows, laterals and arms for 12-15 reps, finishing with ab rollouts and a plank.",
+  "whoItsFor": "Intermediate and advanced lifters who like full-body training and want both size and strength. Not a first program: you should already know the main lifts.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Three sessions a week on non-consecutive days, in order 1-2-3. With only two days, keep Workout 1 and add 2 or 3.",
+   "Where reps are written like 8, 6, 4, add weight each set. Make the last rep of each set hard but not a grind.",
+   "Add weight once you hit the target reps two sessions in a row. If you recover well after the first month, add a set per exercise.",
+   "Rest as long as you need on the heavy lifts (2-4 min) and 1-2 minutes on the isolation work."
+  ],
+  "exercises": [
+   {
+    "name": "Barbell Lunge",
+    "sets": 3,
+    "reps": "12/leg"
+   },
+   {
+    "name": "Leg Extension",
+    "sets": 2,
+    "reps": "15"
+   },
+   {
+    "name": "Standing Cable Chest Fly",
+    "sets": 3,
+    "reps": "12"
+   },
+   {
+    "name": "One-arm Dumbbell Row",
+    "sets": 3,
+    "reps": "12/arm"
+   },
+   {
+    "name": "Lying Leg Curl",
+    "sets": 3,
+    "reps": "15, 12, 12",
+    "weight": "add weight on set 2"
+   },
+   {
+    "name": "Dumbbell Lateral Raise",
+    "sets": 3,
+    "reps": "12"
+   },
+   {
+    "name": "Triceps Pushdown",
+    "sets": 3,
+    "reps": "12"
+   },
+   {
+    "name": "Barbell Preacher Curl",
+    "sets": 3,
+    "reps": "12"
+   },
+   {
+    "name": "Kneeling Ab Wheel Roll-out",
+    "sets": 2,
+    "reps": "max"
+   },
+   {
+    "name": "Plank",
+    "sets": 1,
+    "reps": "max time"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/strengthlogs-full-body-hypertrophy/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-bodybuilding-beginners-a",
+  "name": "StrengthLog Bodybuilding for Beginners – Workout A",
+  "series": "StrengthLog Bodybuilding for Beginners",
+  "day": 1,
+  "daysInSeries": 2,
+  "category": "gym",
+  "level": "beginner",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle"
+  ],
+  "duration": "60 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 60,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "bench",
+   "dumbbells",
+   "cables"
+  ],
+  "description": "Squats, RDLs, bench and pulldowns, then shoulders, arms and abs. Everything is in the 8-10 rep range.",
+  "whoItsFor": "Beginners whose main goal is building muscle and changing how they look. Three full-body gym sessions a week of about an hour.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Alternate A and B three times a week, with a rest day between sessions. A two-day week of one A and one B also works.",
+   "Double progression: build every set up to 10 reps, then add the smallest weight step and go back to 8.",
+   "Rest about 2 minutes on the compound lifts and 60-90 seconds on isolation exercises. The calf raises are optional.",
+   "Stay on it for at least 2-3 months before moving to an intermediate split. Add sets slowly, not all at once."
+  ],
+  "exercises": [
+   {
+    "name": "Back Squat",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Romanian Deadlift",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Bench Press",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Lat Pulldown",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Seated Dumbbell Shoulder Press",
+    "sets": 2,
+    "reps": "8-10"
+   },
+   {
+    "name": "Dumbbell Curl",
+    "sets": 2,
+    "reps": "8-10"
+   },
+   {
+    "name": "Triceps Pushdown",
+    "sets": 2,
+    "reps": "8-10"
+   },
+   {
+    "name": "Hanging Knee Raise",
+    "sets": 2,
+    "reps": "max"
+   },
+   {
+    "name": "Standing Calf Raise (optional)",
+    "sets": 3,
+    "reps": "8-10"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-bodybuilding-program/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-bodybuilding-beginners-b",
+  "name": "StrengthLog Bodybuilding for Beginners – Workout B",
+  "series": "StrengthLog Bodybuilding for Beginners",
+  "day": 2,
+  "daysInSeries": 2,
+  "category": "gym",
+  "level": "beginner",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle"
+  ],
+  "duration": "55 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 55,
+  "equipment": [
+   "barbell",
+   "bench",
+   "machines",
+   "dumbbells"
+  ],
+  "description": "Leg extensions and curls, close-grip bench, barbell rows, lateral raises, curls and crunches.",
+  "whoItsFor": "Beginners whose main goal is building muscle and changing how they look. Three full-body gym sessions a week of about an hour.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Alternate A and B three times a week, with a rest day between sessions. A two-day week of one A and one B also works.",
+   "Double progression: build every set up to 10 reps, then add the smallest weight step and go back to 8.",
+   "Rest about 2 minutes on the compound lifts and 60-90 seconds on isolation exercises. The calf raises are optional.",
+   "Stay on it for at least 2-3 months before moving to an intermediate split. Add sets slowly, not all at once."
+  ],
+  "exercises": [
+   {
+    "name": "Leg Extension",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Leg Curl",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Close-grip Bench Press",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Barbell Row",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Dumbbell Lateral Raise",
+    "sets": 3,
+    "reps": "8-10"
+   },
+   {
+    "name": "Barbell Curl",
+    "sets": 2,
+    "reps": "8-10"
+   },
+   {
+    "name": "Crunch",
+    "sets": 2,
+    "reps": "15-20"
+   },
+   {
+    "name": "Standing Calf Raise (optional)",
+    "sets": 3,
+    "reps": "8-10"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-bodybuilding-program/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-seniors-gym",
+  "name": "StrengthLog Strength for Seniors – Gym",
+  "category": "gym",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "general-fitness",
+   "muscle"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 45,
+  "equipment": [
+   "machines",
+   "cables",
+   "dumbbells"
+  ],
+  "description": "Ten machine-based exercises covering every major muscle group, done for 1-3 easy-to-moderate sets of 10-12.",
+  "whoItsFor": "Older adults (roughly 60+) starting strength training in a gym, or getting back into it, who want safe, guided machines.",
+  "lifestyle": [
+   "older-adults",
+   "full-gym"
+  ],
+  "howToRun": [
+   "Two full-body sessions a week for the first month (e.g. Mon and Thu), then add a third if you feel good. Keep a rest day between sessions.",
+   "Start with 1 set of each exercise. Go to 2 sets after a few weeks to a couple of months, and later up to 3.",
+   "Stay in 10-12 reps. When you reach 12 on every set, make it a little harder (more weight or a harder version) and build back up.",
+   "Finish each set feeling you could do a couple more reps; going to failure isn't needed. Check with your doctor first if you have a health condition."
+  ],
+  "exercises": [
+   {
+    "name": "Leg Press",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Lying or Seated Leg Curl",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Machine Row or Lat Pulldown",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Machine Chest Press",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Machine Shoulder Press",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Machine or Dumbbell Biceps Curl",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Triceps Pushdown",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Standing Calf Raise or Heel Raise",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Crunch or Machine Crunch",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Floor or Machine Back Extension",
+    "sets": 3,
+    "reps": "10-12"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/strengthlogs-training-program-for-seniors/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out. Sets shown as 3 = the target; start with 1.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-seniors-home",
+  "name": "StrengthLog Strength for Seniors – Home",
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "general-fitness",
+   "mobility"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 30,
+  "equipment": [
+   "bodyweight",
+   "step",
+   "chair"
+  ],
+  "description": "The equipment-free version: wall or kneeling push-ups, squats, step-ups and simple core and hip work.",
+  "whoItsFor": "Older adults who'd rather train at home with just their body weight, a wall and a step.",
+  "lifestyle": [
+   "older-adults",
+   "home",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Two full-body sessions a week for the first month (e.g. Mon and Thu), then add a third if you feel good. Keep a rest day between sessions.",
+   "Start with 1 set of each exercise. Go to 2 sets after a few weeks to a couple of months, and later up to 3.",
+   "Stay in 10-12 reps. When you reach 12 on every set, make it a little harder (more weight or a harder version) and build back up.",
+   "Finish each set feeling you could do a couple more reps; going to failure isn't needed. Check with your doctor first if you have a health condition."
+  ],
+  "exercises": [
+   {
+    "name": "Wall or Kneeling Push-up",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Air Squat or Lunge",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Crunch or Kneeling Plank",
+    "sets": 3,
+    "reps": "10-12 or 30s"
+   },
+   {
+    "name": "Step-up or Glute Bridge",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Oblique Crunch or Kneeling Side Plank",
+    "sets": 3,
+    "reps": "10-12 or 30s"
+   },
+   {
+    "name": "Heel Raise",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Side Lunge",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Clamshell or Fire Hydrant",
+    "sets": 3,
+    "reps": "10-12/side"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/strengthlogs-training-program-for-seniors/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out. Sets shown as 3 = the target; start with 1.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-no-equipment-a",
+  "name": "StrengthLog No-Equipment Beginner – Workout A",
+  "series": "StrengthLog Beginner Strength Training Without Equipment",
+  "day": 1,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "calisthenics",
+  "goals": [
+   "strength",
+   "general-fitness"
+  ],
+  "duration": "20 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 20,
+  "equipment": [
+   "bodyweight"
+  ],
+  "description": "Half squats, kneeling incline push-ups, inverted rows and crunches.",
+  "whoItsFor": "True beginners, or people returning after a long break, who want to start strength training at home with no equipment. Sessions are short and gentle.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Three sessions a week on alternate days: A on Monday, B on Wednesday, C on Friday.",
+   "Aim for the listed reps. Once they feel manageable, add reps or a set, or do the same work in less time.",
+   "Then move to harder versions: half squats to full squats, kneeling incline push-ups to full push-ups, and so on.",
+   "For inverted rows, use a sturdy table or a low bar. Rest about 60-90 seconds between sets."
+  ],
+  "exercises": [
+   {
+    "name": "Half Air Squat",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Kneeling Incline Push-up",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Inverted Row (under a sturdy table)",
+    "sets": 2,
+    "reps": "max"
+   },
+   {
+    "name": "Crunch",
+    "sets": 2,
+    "reps": "15"
+   }
+  ],
+  "credit": "Sandrine Quignaudon (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-strength-training-program-without-equipment/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-no-equipment-b",
+  "name": "StrengthLog No-Equipment Beginner – Workout B",
+  "series": "StrengthLog Beginner Strength Training Without Equipment",
+  "day": 2,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "calisthenics",
+  "goals": [
+   "strength",
+   "general-fitness"
+  ],
+  "duration": "20 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 20,
+  "equipment": [
+   "bodyweight",
+   "step"
+  ],
+  "description": "Step-ups, shallow lunges, kneeling incline push-ups and glute bridges.",
+  "whoItsFor": "True beginners, or people returning after a long break, who want to start strength training at home with no equipment. Sessions are short and gentle.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Three sessions a week on alternate days: A on Monday, B on Wednesday, C on Friday.",
+   "Aim for the listed reps. Once they feel manageable, add reps or a set, or do the same work in less time.",
+   "Then move to harder versions: half squats to full squats, kneeling incline push-ups to full push-ups, and so on.",
+   "For inverted rows, use a sturdy table or a low bar. Rest about 60-90 seconds between sets."
+  ],
+  "exercises": [
+   {
+    "name": "Step-up",
+    "sets": 2,
+    "reps": "10/leg"
+   },
+   {
+    "name": "Shallow Lunge",
+    "sets": 2,
+    "reps": "10/leg"
+   },
+   {
+    "name": "Kneeling Incline Push-up",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Glute Bridge",
+    "sets": 2,
+    "reps": "10"
+   }
+  ],
+  "credit": "Sandrine Quignaudon (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-strength-training-program-without-equipment/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-no-equipment-c",
+  "name": "StrengthLog No-Equipment Beginner – Workout C",
+  "series": "StrengthLog Beginner Strength Training Without Equipment",
+  "day": 3,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "calisthenics",
+  "goals": [
+   "strength",
+   "general-fitness"
+  ],
+  "duration": "20 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 20,
+  "equipment": [
+   "bodyweight",
+   "chair"
+  ],
+  "description": "Half squats, inverted rows, bench dips and a kneeling plank.",
+  "whoItsFor": "True beginners, or people returning after a long break, who want to start strength training at home with no equipment. Sessions are short and gentle.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Three sessions a week on alternate days: A on Monday, B on Wednesday, C on Friday.",
+   "Aim for the listed reps. Once they feel manageable, add reps or a set, or do the same work in less time.",
+   "Then move to harder versions: half squats to full squats, kneeling incline push-ups to full push-ups, and so on.",
+   "For inverted rows, use a sturdy table or a low bar. Rest about 60-90 seconds between sets."
+  ],
+  "exercises": [
+   {
+    "name": "Half Air Squat",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Inverted Row (under a sturdy table)",
+    "sets": 2,
+    "reps": "max"
+   },
+   {
+    "name": "Bench Dip (chair or bench)",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Kneeling Plank",
+    "sets": 1,
+    "reps": "max time"
+   }
+  ],
+  "credit": "Sandrine Quignaudon (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/beginner-strength-training-program-without-equipment/",
+  "sourceNote": "© StrengthLog. Free program published in full in the article (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-calisthenics-beginner-1",
+  "name": "StrengthLog Beginner Calisthenics – Workout 1",
+  "series": "StrengthLog Beginner Calisthenics",
+  "day": 1,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "calisthenics",
+  "goals": [
+   "strength",
+   "muscle",
+   "general-fitness"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 40,
+  "equipment": [
+   "bodyweight",
+   "pull-up bar"
+  ],
+  "description": "Push-ups, pull-ups or rows, squats, lunges and hanging leg raises.",
+  "whoItsFor": "Beginners who want to build strength with body weight and a pull-up bar, at home or in a park. Three sessions a week of about 40 minutes.",
+  "lifestyle": [
+   "home",
+   "outdoor",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Train three days a week with a rest day between (e.g. Mon/Wed/Fri). If you can only do two, pick any two workouts.",
+   "No pull-up yet? Use inverted rows for the pull-up sets and keep practising.",
+   "Progress by adding reps, then harder versions (incline to full push-ups, assisted to full dips), slower lowering, or a weight vest.",
+   "Once you can do more than 12-15 good reps of a move, make it harder. Rest 1-2 minutes between sets."
+  ],
+  "exercises": [
+   {
+    "name": "Push-up",
+    "sets": 4,
+    "reps": "8-15"
+   },
+   {
+    "name": "Pull-up or Inverted Row",
+    "sets": 4,
+    "reps": "max (rows 8-15)"
+   },
+   {
+    "name": "Bodyweight Squat",
+    "sets": 3,
+    "reps": "20-25"
+   },
+   {
+    "name": "Lunge",
+    "sets": 3,
+    "reps": "10-12/leg"
+   },
+   {
+    "name": "Hanging Leg Raise",
+    "sets": 3,
+    "reps": "12-15"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/calisthenics-workout-plan/",
+  "sourceNote": "© StrengthLog. Beginner plan shown in the article as a one-week snapshot (progression is in the app) (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out. The intermediate plan is premium and was not used.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-calisthenics-beginner-2",
+  "name": "StrengthLog Beginner Calisthenics – Workout 2",
+  "series": "StrengthLog Beginner Calisthenics",
+  "day": 2,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "calisthenics",
+  "goals": [
+   "strength",
+   "muscle",
+   "general-fitness"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 40,
+  "equipment": [
+   "bodyweight",
+   "pull-up bar",
+   "dip bars",
+   "box"
+  ],
+  "description": "Dips, pull-ups or rows, step-ups, box jumps and a plank.",
+  "whoItsFor": "Beginners who want to build strength with body weight and a pull-up bar, at home or in a park. Three sessions a week of about 40 minutes.",
+  "lifestyle": [
+   "home",
+   "outdoor",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Train three days a week with a rest day between (e.g. Mon/Wed/Fri). If you can only do two, pick any two workouts.",
+   "No pull-up yet? Use inverted rows for the pull-up sets and keep practising.",
+   "Progress by adding reps, then harder versions (incline to full push-ups, assisted to full dips), slower lowering, or a weight vest.",
+   "Once you can do more than 12-15 good reps of a move, make it harder. Rest 1-2 minutes between sets."
+  ],
+  "exercises": [
+   {
+    "name": "Dip",
+    "sets": 4,
+    "reps": "8-15"
+   },
+   {
+    "name": "Pull-up or Inverted Row",
+    "sets": 4,
+    "reps": "max (rows 8-15)"
+   },
+   {
+    "name": "Step-up",
+    "sets": 3,
+    "reps": "20-25"
+   },
+   {
+    "name": "Box Jump",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Plank",
+    "sets": 3,
+    "reps": "45-60s"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/calisthenics-workout-plan/",
+  "sourceNote": "© StrengthLog. Beginner plan shown in the article as a one-week snapshot (progression is in the app) (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out. The intermediate plan is premium and was not used.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-strengthlog-calisthenics-beginner-3",
+  "name": "StrengthLog Beginner Calisthenics – Workout 3",
+  "series": "StrengthLog Beginner Calisthenics",
+  "day": 3,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "calisthenics",
+  "goals": [
+   "strength",
+   "muscle",
+   "general-fitness"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 40,
+  "equipment": [
+   "bodyweight",
+   "pull-up bar",
+   "bench"
+  ],
+  "description": "Bulgarian split squats, max push-ups, pull-ups or rows, glute bridges and core twists.",
+  "whoItsFor": "Beginners who want to build strength with body weight and a pull-up bar, at home or in a park. Three sessions a week of about 40 minutes.",
+  "lifestyle": [
+   "home",
+   "outdoor",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Train three days a week with a rest day between (e.g. Mon/Wed/Fri). If you can only do two, pick any two workouts.",
+   "No pull-up yet? Use inverted rows for the pull-up sets and keep practising.",
+   "Progress by adding reps, then harder versions (incline to full push-ups, assisted to full dips), slower lowering, or a weight vest.",
+   "Once you can do more than 12-15 good reps of a move, make it harder. Rest 1-2 minutes between sets."
+  ],
+  "exercises": [
+   {
+    "name": "Bulgarian Split Squat",
+    "sets": 4,
+    "reps": "8-15/leg"
+   },
+   {
+    "name": "Push-up",
+    "sets": 4,
+    "reps": "max"
+   },
+   {
+    "name": "Pull-up or Inverted Row",
+    "sets": 3,
+    "reps": "max (rows 8-15)"
+   },
+   {
+    "name": "Glute Bridge",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Core Twist",
+    "sets": 3,
+    "reps": "12-15/side"
+   }
+  ],
+  "credit": "Andreas Abelsson (StrengthLog)",
+  "sourceUrl": "https://www.strengthlog.com/calisthenics-workout-plan/",
+  "sourceNote": "© StrengthLog. Beginner plan shown in the article as a one-week snapshot (progression is in the app) (also free in the StrengthLog app). No reuse licence stated, so only exercises/sets/reps are recorded; descriptions are our own. Keep the credit and link out. The intermediate plan is premium and was not used.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-dumbbell-stopgap-ppl-push",
+  "name": "Dumbbell Stopgap PPL – Push",
+  "series": "Dumbbell Stopgap PPL",
+  "day": 1,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 6,
+  "sessionMinutes": 40,
+  "equipment": [
+   "dumbbells",
+   "bench"
+  ],
+  "description": "Chest press, incline flyes, Arnold presses and overhead triceps extensions, all with dumbbells.",
+  "whoItsFor": "Home lifters with adjustable dumbbells, a bench and a pull-up bar who want a push/pull/legs split. Best once the basics are learnt.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Run Push/Pull/Legs twice a week with one rest day, or Push/Pull/Legs/Rest on a rolling four-day cycle if you need more recovery.",
+   "Do 3 sets of as many reps as you can, up to 12. When all three sets reach 12, go to the next dumbbell.",
+   "If an exercise stalls for three sessions in a row, drop two weight steps and work back up. Rest about 90 seconds between sets.",
+   "Can't do a pull-up yet? Do slow negatives. When goblet squats outgrow your heaviest dumbbell, switch to Bulgarian split squats."
+  ],
+  "exercises": [
+   {
+    "name": "Dumbbell Chest Press",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Incline Dumbbell Fly (flat if no incline)",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Arnold Press",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Overhead Dumbbell Triceps Extension",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Hanging Leg Raise (every other workout)",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   }
+  ],
+  "credit": "u/gregariousHermit (r/Fitness, archived on The Fitness Wiki)",
+  "sourceUrl": "https://thefitness.wiki/reddit-archive/dumbbell-stopgap-ppl/",
+  "sourceNote": "Free community routine archived on The Fitness Wiki; no copyright or reproduction notice. Only exercises, sets and reps recorded.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-dumbbell-stopgap-ppl-pull",
+  "name": "Dumbbell Stopgap PPL – Pull",
+  "series": "Dumbbell Stopgap PPL",
+  "day": 2,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 6,
+  "sessionMinutes": 40,
+  "equipment": [
+   "dumbbells",
+   "pull-up bar"
+  ],
+  "description": "Pull-ups, bent-over rows, reverse flyes, shrugs and curls.",
+  "whoItsFor": "Home lifters with adjustable dumbbells, a bench and a pull-up bar who want a push/pull/legs split. Best once the basics are learnt.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Run Push/Pull/Legs twice a week with one rest day, or Push/Pull/Legs/Rest on a rolling four-day cycle if you need more recovery.",
+   "Do 3 sets of as many reps as you can, up to 12. When all three sets reach 12, go to the next dumbbell.",
+   "If an exercise stalls for three sessions in a row, drop two weight steps and work back up. Rest about 90 seconds between sets.",
+   "Can't do a pull-up yet? Do slow negatives. When goblet squats outgrow your heaviest dumbbell, switch to Bulgarian split squats."
+  ],
+  "exercises": [
+   {
+    "name": "Pull-up (negatives if needed)",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Dumbbell Bent-over Row",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Dumbbell Reverse Fly",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Dumbbell Shrug",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Dumbbell Biceps Curl",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Hanging Leg Raise (every other workout)",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   }
+  ],
+  "credit": "u/gregariousHermit (r/Fitness, archived on The Fitness Wiki)",
+  "sourceUrl": "https://thefitness.wiki/reddit-archive/dumbbell-stopgap-ppl/",
+  "sourceNote": "Free community routine archived on The Fitness Wiki; no copyright or reproduction notice. Only exercises, sets and reps recorded.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-dumbbell-stopgap-ppl-legs",
+  "name": "Dumbbell Stopgap PPL – Legs",
+  "series": "Dumbbell Stopgap PPL",
+  "day": 3,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 6,
+  "sessionMinutes": 40,
+  "equipment": [
+   "dumbbells"
+  ],
+  "description": "Goblet squats, lunges, single-leg deadlifts and calf raises.",
+  "whoItsFor": "Home lifters with adjustable dumbbells, a bench and a pull-up bar who want a push/pull/legs split. Best once the basics are learnt.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Run Push/Pull/Legs twice a week with one rest day, or Push/Pull/Legs/Rest on a rolling four-day cycle if you need more recovery.",
+   "Do 3 sets of as many reps as you can, up to 12. When all three sets reach 12, go to the next dumbbell.",
+   "If an exercise stalls for three sessions in a row, drop two weight steps and work back up. Rest about 90 seconds between sets.",
+   "Can't do a pull-up yet? Do slow negatives. When goblet squats outgrow your heaviest dumbbell, switch to Bulgarian split squats."
+  ],
+  "exercises": [
+   {
+    "name": "Goblet Squat",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Dumbbell Lunge",
+    "sets": 3,
+    "reps": "max (up to 12)/leg"
+   },
+   {
+    "name": "Single-leg Dumbbell Deadlift",
+    "sets": 3,
+    "reps": "max (up to 12)/leg"
+   },
+   {
+    "name": "Dumbbell Calf Raise",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   },
+   {
+    "name": "Hanging Leg Raise (every other workout)",
+    "sets": 3,
+    "reps": "max (up to 12)"
+   }
+  ],
+  "credit": "u/gregariousHermit (r/Fitness, archived on The Fitness Wiki)",
+  "sourceUrl": "https://thefitness.wiki/reddit-archive/dumbbell-stopgap-ppl/",
+  "sourceNote": "Free community routine archived on The Fitness Wiki; no copyright or reproduction notice. Only exercises, sets and reps recorded.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-wendler-monolith-mon",
+  "name": "Building the Monolith – Monday",
+  "series": "Building the Monolith",
+  "day": 1,
+  "daysInSeries": 3,
+  "category": "gym",
+  "level": "intermediate",
+  "sport": "strength-training",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "duration": "75 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 75,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "pull-up bar",
+   "dip bars",
+   "cables or bands"
+  ],
+  "description": "Week 1: squat 5 x 5 at 90% after two ramp sets, press with an AMRAP back-off, then 100 chins, 100 face pulls and up to 200 dips.",
+  "whoItsFor": "Intermediate lifters who know their training maxes and want a hard, high-volume 6-week block for size and strength. Three lifting days plus 3-4 conditioning sessions.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Lift Mon/Wed/Fri and do 3-4 short conditioning sessions (sled pushes, weighted-vest walks or bike) on the other days.",
+   "Set training maxes at about 85% of your best, then follow the article's 6-week percentage table (week 1 shown here).",
+   "Squat, press and deadlift/bench are the must-dos. Chins, dips, face pulls, curls and shrugs can be done in any set/rep split to hit the totals.",
+   "Eat plenty: it's a size block. Read the full article before starting and take a lighter week afterwards."
+  ],
+  "exercises": [
+   {
+    "name": "Back Squat",
+    "sets": 7,
+    "reps": "5",
+    "weight": "70%, 80%, then 5 x 5 at 90% TM (week 1)"
+   },
+   {
+    "name": "Overhead Press",
+    "sets": 4,
+    "reps": "5, 5, 5, max",
+    "weight": "70/80/90% TM, then max reps at 70%"
+   },
+   {
+    "name": "Chin-up",
+    "sets": 1,
+    "reps": "100 total"
+   },
+   {
+    "name": "Face Pull or Band Pull-apart",
+    "sets": 1,
+    "reps": "100 total"
+   },
+   {
+    "name": "Dip",
+    "sets": 1,
+    "reps": "100-200 total"
+   }
+  ],
+  "credit": "Jim Wendler",
+  "sourceUrl": "https://jimwendler.com/blogs/jimwendler-com/101078918-building-the-monolith-5-3-1-for-size",
+  "sourceNote": "Free article on jimwendler.com (© JimWendler.com; 5/3/1 is Jim Wendler's brand). Week-1 sets/reps recorded only; the 6-week percentage table, conditioning and diet guidance are in the article and the 5/3/1 Forever book. Keep credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-wendler-monolith-wed",
+  "name": "Building the Monolith – Wednesday",
+  "series": "Building the Monolith",
+  "day": 2,
+  "daysInSeries": 3,
+  "category": "gym",
+  "level": "intermediate",
+  "sport": "strength-training",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "duration": "70 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 70,
+  "equipment": [
+   "barbell",
+   "bench",
+   "dumbbells"
+  ],
+  "description": "Week 1: deadlifts up to 3 x 5 at 90%, bench 5 x 5 at 90%, heavy dumbbell rows and 100 curls.",
+  "whoItsFor": "Intermediate lifters who know their training maxes and want a hard, high-volume 6-week block for size and strength. Three lifting days plus 3-4 conditioning sessions.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Lift Mon/Wed/Fri and do 3-4 short conditioning sessions (sled pushes, weighted-vest walks or bike) on the other days.",
+   "Set training maxes at about 85% of your best, then follow the article's 6-week percentage table (week 1 shown here).",
+   "Squat, press and deadlift/bench are the must-dos. Chins, dips, face pulls, curls and shrugs can be done in any set/rep split to hit the totals.",
+   "Eat plenty: it's a size block. Read the full article before starting and take a lighter week afterwards."
+  ],
+  "exercises": [
+   {
+    "name": "Deadlift",
+    "sets": 5,
+    "reps": "5",
+    "weight": "70%, 80%, then 3 x 5 at 90% TM (week 1)"
+   },
+   {
+    "name": "Bench Press",
+    "sets": 7,
+    "reps": "5",
+    "weight": "70%, 80%, then 5 x 5 at 90% TM"
+   },
+   {
+    "name": "Dumbbell Row",
+    "sets": 5,
+    "reps": "10-20"
+   },
+   {
+    "name": "Curl (any)",
+    "sets": 1,
+    "reps": "100 total"
+   }
+  ],
+  "credit": "Jim Wendler",
+  "sourceUrl": "https://jimwendler.com/blogs/jimwendler-com/101078918-building-the-monolith-5-3-1-for-size",
+  "sourceNote": "Free article on jimwendler.com (© JimWendler.com; 5/3/1 is Jim Wendler's brand). Week-1 sets/reps recorded only; the 6-week percentage table, conditioning and diet guidance are in the article and the 5/3/1 Forever book. Keep credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-wendler-monolith-fri",
+  "name": "Building the Monolith – Friday",
+  "series": "Building the Monolith",
+  "day": 3,
+  "daysInSeries": 3,
+  "category": "gym",
+  "level": "intermediate",
+  "sport": "strength-training",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "duration": "75 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 75,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "pull-up bar",
+   "cables or bands"
+  ],
+  "description": "Week 1: squat with a 20-rep finishing set, 10 x 5 presses at 70%, weighted chins, face pulls and 100 shrugs.",
+  "whoItsFor": "Intermediate lifters who know their training maxes and want a hard, high-volume 6-week block for size and strength. Three lifting days plus 3-4 conditioning sessions.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Lift Mon/Wed/Fri and do 3-4 short conditioning sessions (sled pushes, weighted-vest walks or bike) on the other days.",
+   "Set training maxes at about 85% of your best, then follow the article's 6-week percentage table (week 1 shown here).",
+   "Squat, press and deadlift/bench are the must-dos. Chins, dips, face pulls, curls and shrugs can be done in any set/rep split to hit the totals.",
+   "Eat plenty: it's a size block. Read the full article before starting and take a lighter week afterwards."
+  ],
+  "exercises": [
+   {
+    "name": "Back Squat",
+    "sets": 3,
+    "reps": "5",
+    "weight": "70/80/90% TM"
+   },
+   {
+    "name": "Back Squat (20-rep set)",
+    "sets": 1,
+    "reps": "20",
+    "weight": "45% TM (week 1)"
+   },
+   {
+    "name": "Overhead Press",
+    "sets": 10,
+    "reps": "5",
+    "weight": "70% TM (week 1)"
+   },
+   {
+    "name": "Weighted Chin-up",
+    "sets": 5,
+    "reps": "5"
+   },
+   {
+    "name": "Face Pull or Band Pull-apart",
+    "sets": 1,
+    "reps": "100 total"
+   },
+   {
+    "name": "Shrug",
+    "sets": 1,
+    "reps": "100 total"
+   }
+  ],
+  "credit": "Jim Wendler",
+  "sourceUrl": "https://jimwendler.com/blogs/jimwendler-com/101078918-building-the-monolith-5-3-1-for-size",
+  "sourceNote": "Free article on jimwendler.com (© JimWendler.com; 5/3/1 is Jim Wendler's brand). Week-1 sets/reps recorded only; the 6-week percentage table, conditioning and diet guidance are in the article and the 5/3/1 Forever book. Keep credit and link out.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-phat-upper-power",
+  "name": "PHAT – Upper Body Power",
+  "series": "PHAT (Power Hypertrophy Adaptive Training)",
+  "day": 1,
+  "daysInSeries": 5,
+  "category": "gym",
+  "level": "advanced",
+  "sport": "bodybuilding",
+  "goals": [
+   "strength",
+   "muscle"
+  ],
+  "duration": "75 min",
+  "daysPerWeek": 5,
+  "sessionMinutes": 75,
+  "equipment": [
+   "barbell",
+   "dumbbells",
+   "pull-up bar",
+   "dip bars",
+   "bench",
+   "squat rack"
+  ],
+  "description": "Heavy rows and dumbbell presses for 3-5 reps, then weighted pull-ups, dips, presses and arms for 6-10.",
+  "whoItsFor": "Advanced lifters with solid technique and good recovery who want a five-day power + hypertrophy split. Not for beginners.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Mon Upper Power, Tue Lower Power, Wed rest, Thu Back & Shoulders, Fri Lower Hypertrophy, Sat Chest & Arms, Sun rest.",
+   "Power days: rest as long as needed (up to 5-6 min) between heavy sets. Speed sets: 65-70% of your 3-5RM, moved fast, under 90 seconds rest. Hypertrophy work: 1-2 min rest.",
+   "Stop 1-2 reps short of failure for the first few weeks; later, take only the last set or two of an exercise to failure. Rotate the power movements every 2-3 weeks.",
+   "Take 1-3 lighter weeks at 60-70% of normal loads every 6-12 weeks. Newer lifters can cut one assistance exercise per day."
+  ],
+  "exercises": [
+   {
+    "name": "Bent-over or Pendlay Row",
+    "sets": 3,
+    "reps": "3-5"
+   },
+   {
+    "name": "Weighted Pull-up",
+    "sets": 2,
+    "reps": "6-10"
+   },
+   {
+    "name": "Rack Chin",
+    "sets": 2,
+    "reps": "6-10"
+   },
+   {
+    "name": "Flat Dumbbell Press",
+    "sets": 3,
+    "reps": "3-5"
+   },
+   {
+    "name": "Weighted Dip",
+    "sets": 2,
+    "reps": "6-10"
+   },
+   {
+    "name": "Seated Dumbbell Shoulder Press",
+    "sets": 3,
+    "reps": "6-10"
+   },
+   {
+    "name": "Cambered Bar Curl",
+    "sets": 3,
+    "reps": "6-10"
+   },
+   {
+    "name": "Skull Crusher",
+    "sets": 3,
+    "reps": "6-10"
+   }
+  ],
+  "credit": "Dr Layne Norton (via Simply Shredded)",
+  "sourceUrl": "http://simplyshredded.com/mega-feature-layne-norton-training-series-full-powerhypertrophy-routine-updated-2011.html",
+  "sourceNote": "Free feature article on Simplyshredded.com (© Simplyshredded.com; no reproduction terms stated). Exercises, sets and reps recorded only; read the article for the full rationale.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-phat-lower-power",
+  "name": "PHAT – Lower Body Power",
+  "series": "PHAT (Power Hypertrophy Adaptive Training)",
+  "day": 2,
+  "daysInSeries": 5,
+  "category": "gym",
+  "level": "advanced",
+  "sport": "bodybuilding",
+  "goals": [
+   "strength",
+   "muscle"
+  ],
+  "duration": "70 min",
+  "daysPerWeek": 5,
+  "sessionMinutes": 70,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "machines"
+  ],
+  "description": "Heavy squats for 3-5, then hack squats, leg extensions, stiff-legged deadlifts, leg curls and calves.",
+  "whoItsFor": "Advanced lifters with solid technique and good recovery who want a five-day power + hypertrophy split. Not for beginners.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Mon Upper Power, Tue Lower Power, Wed rest, Thu Back & Shoulders, Fri Lower Hypertrophy, Sat Chest & Arms, Sun rest.",
+   "Power days: rest as long as needed (up to 5-6 min) between heavy sets. Speed sets: 65-70% of your 3-5RM, moved fast, under 90 seconds rest. Hypertrophy work: 1-2 min rest.",
+   "Stop 1-2 reps short of failure for the first few weeks; later, take only the last set or two of an exercise to failure. Rotate the power movements every 2-3 weeks.",
+   "Take 1-3 lighter weeks at 60-70% of normal loads every 6-12 weeks. Newer lifters can cut one assistance exercise per day."
+  ],
+  "exercises": [
+   {
+    "name": "Back Squat",
+    "sets": 3,
+    "reps": "3-5"
+   },
+   {
+    "name": "Hack Squat",
+    "sets": 2,
+    "reps": "6-10"
+   },
+   {
+    "name": "Leg Extension",
+    "sets": 2,
+    "reps": "6-10"
+   },
+   {
+    "name": "Stiff-legged Deadlift",
+    "sets": 3,
+    "reps": "5-8"
+   },
+   {
+    "name": "Glute-ham Raise or Lying Leg Curl",
+    "sets": 2,
+    "reps": "6-10"
+   },
+   {
+    "name": "Standing Calf Raise",
+    "sets": 3,
+    "reps": "6-10"
+   },
+   {
+    "name": "Seated Calf Raise",
+    "sets": 2,
+    "reps": "6-10"
+   }
+  ],
+  "credit": "Dr Layne Norton (via Simply Shredded)",
+  "sourceUrl": "http://simplyshredded.com/mega-feature-layne-norton-training-series-full-powerhypertrophy-routine-updated-2011.html",
+  "sourceNote": "Free feature article on Simplyshredded.com (© Simplyshredded.com; no reproduction terms stated). Exercises, sets and reps recorded only; read the article for the full rationale.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-phat-back-shoulders-hypertrophy",
+  "name": "PHAT – Back & Shoulders Hypertrophy",
+  "series": "PHAT (Power Hypertrophy Adaptive Training)",
+  "day": 3,
+  "daysInSeries": 5,
+  "category": "gym",
+  "level": "advanced",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle"
+  ],
+  "duration": "70 min",
+  "daysPerWeek": 5,
+  "sessionMinutes": 70,
+  "equipment": [
+   "barbell",
+   "cables",
+   "dumbbells",
+   "bench",
+   "pull-up bar"
+  ],
+  "description": "Fast speed rows, then high-volume back and shoulder work for 8-20 reps.",
+  "whoItsFor": "Advanced lifters with solid technique and good recovery who want a five-day power + hypertrophy split. Not for beginners.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Mon Upper Power, Tue Lower Power, Wed rest, Thu Back & Shoulders, Fri Lower Hypertrophy, Sat Chest & Arms, Sun rest.",
+   "Power days: rest as long as needed (up to 5-6 min) between heavy sets. Speed sets: 65-70% of your 3-5RM, moved fast, under 90 seconds rest. Hypertrophy work: 1-2 min rest.",
+   "Stop 1-2 reps short of failure for the first few weeks; later, take only the last set or two of an exercise to failure. Rotate the power movements every 2-3 weeks.",
+   "Take 1-3 lighter weeks at 60-70% of normal loads every 6-12 weeks. Newer lifters can cut one assistance exercise per day."
+  ],
+  "exercises": [
+   {
+    "name": "Barbell Row – speed work",
+    "sets": 6,
+    "reps": "3",
+    "weight": "65-70% of 3-5RM"
+   },
+   {
+    "name": "Rack Chin",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "Seated Cable Row",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "Incline-braced Dumbbell Row or Shrug",
+    "sets": 2,
+    "reps": "12-15"
+   },
+   {
+    "name": "Close-grip Pulldown",
+    "sets": 2,
+    "reps": "15-20"
+   },
+   {
+    "name": "Seated Dumbbell Press",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "Upright Row",
+    "sets": 2,
+    "reps": "12-15"
+   },
+   {
+    "name": "Side Lateral Raise (dumbbell or cable)",
+    "sets": 3,
+    "reps": "12-20"
+   }
+  ],
+  "credit": "Dr Layne Norton (via Simply Shredded)",
+  "sourceUrl": "http://simplyshredded.com/mega-feature-layne-norton-training-series-full-powerhypertrophy-routine-updated-2011.html",
+  "sourceNote": "Free feature article on Simplyshredded.com (© Simplyshredded.com; no reproduction terms stated). Exercises, sets and reps recorded only; read the article for the full rationale.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-phat-lower-hypertrophy",
+  "name": "PHAT – Lower Body Hypertrophy",
+  "series": "PHAT (Power Hypertrophy Adaptive Training)",
+  "day": 4,
+  "daysInSeries": 5,
+  "category": "gym",
+  "level": "advanced",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle"
+  ],
+  "duration": "75 min",
+  "daysPerWeek": 5,
+  "sessionMinutes": 75,
+  "equipment": [
+   "barbell",
+   "squat rack",
+   "machines"
+  ],
+  "description": "Speed squats, then hack squats, leg press, extensions, RDLs, two kinds of leg curl and two calf raises.",
+  "whoItsFor": "Advanced lifters with solid technique and good recovery who want a five-day power + hypertrophy split. Not for beginners.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Mon Upper Power, Tue Lower Power, Wed rest, Thu Back & Shoulders, Fri Lower Hypertrophy, Sat Chest & Arms, Sun rest.",
+   "Power days: rest as long as needed (up to 5-6 min) between heavy sets. Speed sets: 65-70% of your 3-5RM, moved fast, under 90 seconds rest. Hypertrophy work: 1-2 min rest.",
+   "Stop 1-2 reps short of failure for the first few weeks; later, take only the last set or two of an exercise to failure. Rotate the power movements every 2-3 weeks.",
+   "Take 1-3 lighter weeks at 60-70% of normal loads every 6-12 weeks. Newer lifters can cut one assistance exercise per day."
+  ],
+  "exercises": [
+   {
+    "name": "Back Squat – speed work",
+    "sets": 6,
+    "reps": "3",
+    "weight": "65-70% of 3-5RM"
+   },
+   {
+    "name": "Hack Squat",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "Leg Press",
+    "sets": 2,
+    "reps": "12-15"
+   },
+   {
+    "name": "Leg Extension",
+    "sets": 3,
+    "reps": "15-20"
+   },
+   {
+    "name": "Romanian Deadlift",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "Lying Leg Curl",
+    "sets": 2,
+    "reps": "12-15"
+   },
+   {
+    "name": "Seated Leg Curl",
+    "sets": 2,
+    "reps": "15-20"
+   },
+   {
+    "name": "Donkey Calf Raise",
+    "sets": 4,
+    "reps": "10-15"
+   },
+   {
+    "name": "Seated Calf Raise",
+    "sets": 3,
+    "reps": "15-20"
+   }
+  ],
+  "credit": "Dr Layne Norton (via Simply Shredded)",
+  "sourceUrl": "http://simplyshredded.com/mega-feature-layne-norton-training-series-full-powerhypertrophy-routine-updated-2011.html",
+  "sourceNote": "Free feature article on Simplyshredded.com (© Simplyshredded.com; no reproduction terms stated). Exercises, sets and reps recorded only; read the article for the full rationale.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-phat-chest-arms-hypertrophy",
+  "name": "PHAT – Chest & Arms Hypertrophy",
+  "series": "PHAT (Power Hypertrophy Adaptive Training)",
+  "day": 5,
+  "daysInSeries": 5,
+  "category": "gym",
+  "level": "advanced",
+  "sport": "bodybuilding",
+  "goals": [
+   "muscle"
+  ],
+  "duration": "75 min",
+  "daysPerWeek": 5,
+  "sessionMinutes": 75,
+  "equipment": [
+   "dumbbells",
+   "bench",
+   "machines",
+   "cables",
+   "barbell"
+  ],
+  "description": "Speed dumbbell presses, then chest, biceps and triceps volume for 8-20 reps.",
+  "whoItsFor": "Advanced lifters with solid technique and good recovery who want a five-day power + hypertrophy split. Not for beginners.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Mon Upper Power, Tue Lower Power, Wed rest, Thu Back & Shoulders, Fri Lower Hypertrophy, Sat Chest & Arms, Sun rest.",
+   "Power days: rest as long as needed (up to 5-6 min) between heavy sets. Speed sets: 65-70% of your 3-5RM, moved fast, under 90 seconds rest. Hypertrophy work: 1-2 min rest.",
+   "Stop 1-2 reps short of failure for the first few weeks; later, take only the last set or two of an exercise to failure. Rotate the power movements every 2-3 weeks.",
+   "Take 1-3 lighter weeks at 60-70% of normal loads every 6-12 weeks. Newer lifters can cut one assistance exercise per day."
+  ],
+  "exercises": [
+   {
+    "name": "Flat Dumbbell Press – speed work",
+    "sets": 6,
+    "reps": "3",
+    "weight": "65-70% of 3-5RM"
+   },
+   {
+    "name": "Incline Dumbbell Press",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "Machine Chest Press",
+    "sets": 3,
+    "reps": "12-15"
+   },
+   {
+    "name": "Incline Cable Fly",
+    "sets": 2,
+    "reps": "15-20"
+   },
+   {
+    "name": "Cambered Bar Preacher Curl",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "Dumbbell Concentration Curl",
+    "sets": 2,
+    "reps": "12-15"
+   },
+   {
+    "name": "Incline Spider Curl",
+    "sets": 2,
+    "reps": "15-20"
+   },
+   {
+    "name": "Seated Cambered Bar Triceps Extension",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "Rope Pressdown",
+    "sets": 2,
+    "reps": "12-15"
+   },
+   {
+    "name": "Cable Kickback",
+    "sets": 2,
+    "reps": "15-20"
+   }
+  ],
+  "credit": "Dr Layne Norton (via Simply Shredded)",
+  "sourceUrl": "http://simplyshredded.com/mega-feature-layne-norton-training-series-full-powerhypertrophy-routine-updated-2011.html",
+  "sourceNote": "Free feature article on Simplyshredded.com (© Simplyshredded.com; no reproduction terms stated). Exercises, sets and reps recorded only; read the article for the full rationale.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-growing-stronger-part-1",
+  "name": "Growing Stronger – Part I: Getting Started",
+  "series": "Growing Stronger (Tufts/CDC)",
+  "day": 1,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "general-fitness",
+   "mobility"
+  ],
+  "duration": "25 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 25,
+  "equipment": [
+   "bodyweight",
+   "chair"
+  ],
+  "description": "Weeks 1-2: four gentle bodyweight exercises (chair squats, wall push-ups, toe stands, finger marching) to build a base.",
+  "whoItsFor": "Older adults, including people with arthritis or low bone density, starting strength training at home. Needs a sturdy chair, and from Part II light dumbbells, ankle weights and a step.",
+  "lifestyle": [
+   "older-adults",
+   "home",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Two or three sessions a week on non-consecutive days. Start every session with a 5-minute walk and finish with the stretches.",
+   "Lift to a count of 2-4 and lower to a count of 4, breathing throughout. Do 2 sets of 10 with 1-2 minutes' rest.",
+   "Part I for 2 weeks, then Part II for 4 weeks, then Part III from week 7. When you can do more than 10 good reps, go up to the next weight.",
+   "Check with your doctor before starting if you have a health condition, and see the book for how to do each exercise."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up walk",
+    "sets": 1,
+    "reps": "5 min"
+   },
+   {
+    "name": "Chair Squat",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Wall Push-up",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Toe Stand",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Finger Marching",
+    "sets": 1,
+    "reps": "3 each movement"
+   },
+   {
+    "name": "Cool-down stretches: chest & arms, hamstrings, quadriceps, neck & back",
+    "sets": 1,
+    "reps": "hold each 20-30s"
+   }
+  ],
+  "credit": "Tufts University & CDC (Seguin, Epping, Buchner, Bloch, Nelson) – Growing Stronger",
+  "sourceUrl": "https://stacks.cdc.gov/view/cdc/11447",
+  "sourceNote": "Growing Stronger: Strength Training for Older Adults (© 2002 Tufts University; CDC Stacks lists it as public domain). The book says it may be freely distributed without permission provided the authors and Tufts are credited and the content isn't changed. We record the exercise list, sets and reps only and point to the original for the instructions.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-growing-stronger-part-2",
+  "name": "Growing Stronger – Part II: Stepping Up",
+  "series": "Growing Stronger (Tufts/CDC)",
+  "day": 2,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "general-fitness"
+  ],
+  "duration": "35 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 35,
+  "equipment": [
+   "chair",
+   "dumbbells",
+   "ankle weights",
+   "step"
+  ],
+  "description": "Weeks 3-6: adds dumbbell curls and presses, step-ups and side hip raises to the Part I moves.",
+  "whoItsFor": "Older adults, including people with arthritis or low bone density, starting strength training at home. Needs a sturdy chair, and from Part II light dumbbells, ankle weights and a step.",
+  "lifestyle": [
+   "older-adults",
+   "home",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Two or three sessions a week on non-consecutive days. Start every session with a 5-minute walk and finish with the stretches.",
+   "Lift to a count of 2-4 and lower to a count of 4, breathing throughout. Do 2 sets of 10 with 1-2 minutes' rest.",
+   "Part I for 2 weeks, then Part II for 4 weeks, then Part III from week 7. When you can do more than 10 good reps, go up to the next weight.",
+   "Check with your doctor before starting if you have a health condition, and see the book for how to do each exercise."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up walk",
+    "sets": 1,
+    "reps": "5 min"
+   },
+   {
+    "name": "Chair Squat",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Wall Push-up",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Toe Stand",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Finger Marching",
+    "sets": 1,
+    "reps": "3 each movement"
+   },
+   {
+    "name": "Dumbbell Biceps Curl",
+    "sets": 2,
+    "reps": "10",
+    "weight": "start ~1-2.5kg"
+   },
+   {
+    "name": "Step-up",
+    "sets": 2,
+    "reps": "10/leg"
+   },
+   {
+    "name": "Dumbbell Overhead Press",
+    "sets": 2,
+    "reps": "10",
+    "weight": "start ~1-2.5kg"
+   },
+   {
+    "name": "Side Hip Raise",
+    "sets": 2,
+    "reps": "10/leg",
+    "weight": "ankle weights optional, 0.5-1.5kg"
+   },
+   {
+    "name": "Cool-down stretches: chest & arms, hamstrings, quadriceps, neck & back",
+    "sets": 1,
+    "reps": "hold each 20-30s"
+   }
+  ],
+  "credit": "Tufts University & CDC (Seguin, Epping, Buchner, Bloch, Nelson) – Growing Stronger",
+  "sourceUrl": "https://stacks.cdc.gov/view/cdc/11447",
+  "sourceNote": "Growing Stronger: Strength Training for Older Adults (© 2002 Tufts University; CDC Stacks lists it as public domain). The book says it may be freely distributed without permission provided the authors and Tufts are credited and the content isn't changed. We record the exercise list, sets and reps only and point to the original for the instructions.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-growing-stronger-part-3",
+  "name": "Growing Stronger – Part III: Full Program",
+  "series": "Growing Stronger (Tufts/CDC)",
+  "day": 3,
+  "daysInSeries": 3,
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "general-fitness",
+   "mobility"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 45,
+  "equipment": [
+   "chair",
+   "dumbbells",
+   "ankle weights",
+   "step"
+  ],
+  "description": "Week 7 onwards: the full 12-exercise routine, adding knee extensions, knee curls, pelvic tilts and back extensions.",
+  "whoItsFor": "Older adults, including people with arthritis or low bone density, starting strength training at home. Needs a sturdy chair, and from Part II light dumbbells, ankle weights and a step.",
+  "lifestyle": [
+   "older-adults",
+   "home",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Two or three sessions a week on non-consecutive days. Start every session with a 5-minute walk and finish with the stretches.",
+   "Lift to a count of 2-4 and lower to a count of 4, breathing throughout. Do 2 sets of 10 with 1-2 minutes' rest.",
+   "Part I for 2 weeks, then Part II for 4 weeks, then Part III from week 7. When you can do more than 10 good reps, go up to the next weight.",
+   "Check with your doctor before starting if you have a health condition, and see the book for how to do each exercise."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up walk",
+    "sets": 1,
+    "reps": "5 min"
+   },
+   {
+    "name": "Chair Squat",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Wall Push-up",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Toe Stand",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Finger Marching",
+    "sets": 1,
+    "reps": "3 each movement"
+   },
+   {
+    "name": "Dumbbell Biceps Curl",
+    "sets": 2,
+    "reps": "10",
+    "weight": "start ~1-2.5kg"
+   },
+   {
+    "name": "Step-up",
+    "sets": 2,
+    "reps": "10/leg"
+   },
+   {
+    "name": "Dumbbell Overhead Press",
+    "sets": 2,
+    "reps": "10",
+    "weight": "start ~1-2.5kg"
+   },
+   {
+    "name": "Side Hip Raise",
+    "sets": 2,
+    "reps": "10/leg",
+    "weight": "ankle weights optional, 0.5-1.5kg"
+   },
+   {
+    "name": "Knee Extension (seated)",
+    "sets": 2,
+    "reps": "10/leg",
+    "weight": "ankle weights 0.5-1.5kg to start"
+   },
+   {
+    "name": "Knee Curl (standing)",
+    "sets": 2,
+    "reps": "10/leg",
+    "weight": "ankle weights"
+   },
+   {
+    "name": "Pelvic Tilt",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Floor Back Extension",
+    "sets": 2,
+    "reps": "10/side"
+   },
+   {
+    "name": "Cool-down stretches: chest & arms, hamstrings, quadriceps, neck & back",
+    "sets": 1,
+    "reps": "hold each 20-30s"
+   }
+  ],
+  "credit": "Tufts University & CDC (Seguin, Epping, Buchner, Bloch, Nelson) – Growing Stronger",
+  "sourceUrl": "https://stacks.cdc.gov/view/cdc/11447",
+  "sourceNote": "Growing Stronger: Strength Training for Older Adults (© 2002 Tufts University; CDC Stacks lists it as public domain). The book says it may be freely distributed without permission provided the authors and Tufts are credited and the content isn't changed. We record the exercise list, sets and reps only and point to the original for the instructions.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-army-prt-strength-mobility",
+  "name": "Army PRT – Strength & Mobility Session",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "calisthenics",
+  "goals": [
+   "strength",
+   "endurance",
+   "mobility",
+   "general-fitness"
+  ],
+  "duration": "55 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 55,
+  "equipment": [
+   "bodyweight",
+   "pull-up bar"
+  ],
+  "description": "A full US Army PRT strength session (schedule session 6-2): preparation drill, Four for the Core, Conditioning Drills 1 and 2, Climbing Drill 1, push-up/sit-up drill and the recovery drill.",
+  "whoItsFor": "People who like structured, military-style bodyweight training outdoors, and anyone preparing for a defence or emergency-services fitness test. Needs a pull-up bar.",
+  "lifestyle": [
+   "outdoor",
+   "minimal-equipment"
+  ],
+  "howToRun": [
+   "Run it two or three times a week, alternating with running days. Do every drill in the order listed.",
+   "Move at a controlled, moderate cadence. Precision beats speed: stop a set rather than lose form.",
+   "Start at 5 reps per exercise. Build towards 10, but never go past 10; for more work, repeat the whole drill.",
+   "If you can't do the pull-ups yet, use a spotter or band and work towards 5 clean reps of each Climbing Drill exercise."
+  ],
+  "exercises": [
+   {
+    "name": "Preparation Drill: bend and reach, rear lunge, high jumper, rower, squat bender, windmill, forward lunge, prone row, bent-leg body twist, push-up",
+    "sets": 1,
+    "reps": "5 each"
+   },
+   {
+    "name": "Four for the Core: Bent-leg Raise",
+    "sets": 1,
+    "reps": "60s",
+    "group": "4C"
+   },
+   {
+    "name": "Four for the Core: Side Bridge",
+    "sets": 1,
+    "reps": "60s",
+    "group": "4C"
+   },
+   {
+    "name": "Four for the Core: Back Bridge",
+    "sets": 1,
+    "reps": "60s",
+    "group": "4C"
+   },
+   {
+    "name": "Four for the Core: Quadraplex",
+    "sets": 1,
+    "reps": "60s",
+    "group": "4C"
+   },
+   {
+    "name": "CD1: Power Jump",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD1"
+   },
+   {
+    "name": "CD1: V-up",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD1"
+   },
+   {
+    "name": "CD1: Mountain Climber",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD1"
+   },
+   {
+    "name": "CD1: Leg Tuck and Twist",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD1"
+   },
+   {
+    "name": "CD1: Single-leg Push-up",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD1"
+   },
+   {
+    "name": "CD2: Turn and Lunge",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD2"
+   },
+   {
+    "name": "CD2: Supine Bicycle",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD2"
+   },
+   {
+    "name": "CD2: Half Jacks",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD2"
+   },
+   {
+    "name": "CD2: Swimmer",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD2"
+   },
+   {
+    "name": "CD2: 8-count Push-up",
+    "sets": 1,
+    "reps": "5",
+    "group": "CD2"
+   },
+   {
+    "name": "CL1: Straight-arm Pull",
+    "sets": 1,
+    "reps": "5",
+    "group": "CL1"
+   },
+   {
+    "name": "CL1: Heel Hook",
+    "sets": 1,
+    "reps": "5",
+    "group": "CL1"
+   },
+   {
+    "name": "CL1: Pull-up",
+    "sets": 1,
+    "reps": "5",
+    "group": "CL1"
+   },
+   {
+    "name": "CL1: Leg Tuck",
+    "sets": 1,
+    "reps": "5",
+    "group": "CL1"
+   },
+   {
+    "name": "CL1: Alternating-grip Pull-up",
+    "sets": 1,
+    "reps": "5",
+    "group": "CL1"
+   },
+   {
+    "name": "Push-up / Sit-up Drill: Push-up",
+    "sets": 2,
+    "reps": "60s",
+    "group": "PSD"
+   },
+   {
+    "name": "Push-up / Sit-up Drill: Sit-up",
+    "sets": 2,
+    "reps": "60s",
+    "group": "PSD"
+   },
+   {
+    "name": "Recovery Drill: overhead arm pull, rear lunge, extend and flex, thigh stretch, single-leg over",
+    "sets": 1,
+    "reps": "20s each"
+   }
+  ],
+  "credit": "U.S. Army – FM 7-22 Army Physical Readiness Training (2012)",
+  "sourceUrl": "https://armyrotc.siu.edu/_common/documents/fm-7-22.pdf",
+  "sourceNote": "US Government field manual: 'Approved for public release; distribution is unlimited.' Read from a university ROTC copy of FM 7-22 (Oct 2012). Chapters 1-6 were superseded by FM 7-22 Holistic Health & Fitness (2020); the drills themselves continue in ATP 7-22.02. No endorsement by the U.S. Army is implied.",
+  "verified": true
+ },
+ {
+  "id": "x-gym-army-strength-training-circuit",
+  "name": "Army PRT – Strength Training Circuit",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "strength-training",
+  "goals": [
+   "strength",
+   "endurance",
+   "general-fitness"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 45,
+  "equipment": [
+   "kettlebell",
+   "pull-up bar"
+  ],
+  "description": "The US Army's 10-station kettlebell and climbing-bar circuit: 60 seconds per station for 2-3 rounds, moving between stations as active recovery.",
+  "whoItsFor": "Intermediate exercisers with a kettlebell or two and a bar to hang from, who want a full-body strength and work-capacity circuit outdoors.",
+  "lifestyle": [
+   "outdoor",
+   "minimal-equipment",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Start with the Army preparation drill (or your own 10-minute dynamic warm-up) and finish with a few minutes of stretching.",
+   "Work 60 seconds at each station in order, then jog or do a movement drill (side shuffles, high knees) on the way to the next station.",
+   "Do 2 rounds to begin with and build to 3. Pick a kettlebell you can move with good form for the whole 60 seconds.",
+   "The manual gives a heavier and a lighter kettlebell for each station (shown in kg below). Move up when the lighter one stays smooth for the full 60 seconds."
+  ],
+  "exercises": [
+   {
+    "name": "Station 1: Sumo Squat",
+    "sets": 3,
+    "reps": "60s",
+    "weight": "~22kg or ~11kg"
+   },
+   {
+    "name": "Station 2: Straight-leg Deadlift",
+    "sets": 3,
+    "reps": "60s",
+    "weight": "~18kg or ~11kg"
+   },
+   {
+    "name": "Station 3: Forward Lunge",
+    "sets": 3,
+    "reps": "60s",
+    "weight": "~9kg or ~4.5kg"
+   },
+   {
+    "name": "Station 4: 8-count Step-up",
+    "sets": 3,
+    "reps": "60s",
+    "weight": "~13.5kg or ~7kg"
+   },
+   {
+    "name": "Station 5: Pull-up or Straight-arm Pull",
+    "sets": 3,
+    "reps": "60s"
+   },
+   {
+    "name": "Station 6: Supine Chest Press",
+    "sets": 3,
+    "reps": "60s",
+    "weight": "~18kg or ~7kg"
+   },
+   {
+    "name": "Station 7: Bent-over Row",
+    "sets": 3,
+    "reps": "60s",
+    "weight": "~9kg or ~4.5kg"
+   },
+   {
+    "name": "Station 8: Overhead Push Press",
+    "sets": 3,
+    "reps": "60s",
+    "weight": "~13.5kg or ~7kg"
+   },
+   {
+    "name": "Station 9: Supine Body Twist",
+    "sets": 3,
+    "reps": "60s",
+    "weight": "~11kg or ~4.5kg"
+   },
+   {
+    "name": "Station 10: Leg Tuck",
+    "sets": 3,
+    "reps": "60s"
+   }
+  ],
+  "credit": "U.S. Army – FM 7-22 Army Physical Readiness Training (2012)",
+  "sourceUrl": "https://armyrotc.siu.edu/_common/documents/fm-7-22.pdf",
+  "sourceNote": "US Government field manual: 'Approved for public release; distribution is unlimited.' Read from a university ROTC copy of FM 7-22 (Oct 2012). Chapters 1-6 were superseded by FM 7-22 Holistic Health & Fitness (2020); the drills themselves continue in ATP 7-22.02. No endorsement by the U.S. Army is implied. Kettlebell weights converted from the manual's pounds (e.g. 50/25 lb).",
+  "verified": true
+ }
+]

@@ -38,3 +38,10 @@ ios/App/App/public
 ios/**/xcuserdata
 ios/**/*.xcuserstate
 ios/DerivedData
+
+# AIS recipes (CC BY-NC-ND) - held, local only, not redistributed. See scripts/program-library/RELEASE-CHECKS.md
+scripts/program-library/meals/held/ais-sports-nutrition-meals.json
+scripts/program-library/tools/ais_recipes_parsed.json
+scripts/program-library/tools/parse_ais_recipes.py
+scripts/program-library/tools/gen_sports_nutrition_meals.py
+scripts/program-library/tools/validate_sports_nutrition_meals.py

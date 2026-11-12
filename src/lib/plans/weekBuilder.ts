@@ -89,23 +89,71 @@ export function legacyPlace(places: ('gym' | 'home' | 'outdoor')[]): TrainPlace 
 }
 
 // Can this program be done where (and with what) the person trains?
-// Gym covers anything; at home / outdoors every piece of kit the program
-// lists has to be something they said they have (bodyweight always counts).
-const ALWAYS_HAVE = ['bodyweight', 'none', 'mat', 'chair', 'step', 'floor', 'towel', 'wall'];
-const OUTDOOR_HAVE = ['track', 'oval', 'field', 'park', 'hill', 'outdoor', 'road', 'grass', 'cones'];
-function fitsPlace(p: LibraryProgram, s: TrainingSetup): boolean {
+// Every equipment tag is translated to one requirement (or nothing, for
+// everyday/optional items); the program fits only if the person has all of
+// them - from where they train, the kit they ticked, or their sports
+// (a swimmer has a pool, a golfer has clubs). Unknown kit counts as gym kit,
+// so nobody is sent a session they can't do.
+type Need = 'gym' | 'barbell' | 'dumbbells' | 'kettlebell' | 'bands' | 'pullup' | 'bike' | 'pool' | 'rower' | 'treadmill' | 'rope' | 'medball' | 'outdoor' | 'golf' | 'boxing' | 'ball';
+
+const RULES: [RegExp, Need | null][] = [
+  [/optional|^none\b/, null],
+  [/^(bodyweight|floor|wall|chair|step|stairs?|stair|towel|folded towel|partner|.*buddy.*|water bottles?|\d(-\d)? bottles|bottles|snacks|food|repair kit|lights|cadence sensor|race kit|wetsuit.*|timer|stopwatch|.*shoes|.*watch|heart rate.*|hr monitor|helmet|backpack.*|luggage|stable support|daypack|hydration pack|.*swim cap|goggles|cap|pillows?|bolster|bed|blanket|strap|slider|yoga blocks?|book|mat|yoga mat|exercise mat|cushion|small ball|pilates ball|small pilates ball|light weights|tins|cans)$/, null],
+  [/open.?water|beach|organised venue|pool|kickboard|pull buoy|fins|paddles|pace clock|snorkel|lane|beeper/, 'pool'],
+  [/bike|trainer|rollers|spin|ergometer|power meter|bike erg/, 'bike'],
+  [/row(er|ing)/, 'rower'],
+  [/treadmill/, 'treadmill'],
+  [/jump rope|skipping/, 'rope'],
+  [/medicine ball|wall ball|med ball/, 'medball'],
+  [/kettlebell/, 'kettlebell'],
+  [/dumbbell/, 'dumbbells'],
+  [/barbell|trap bar|plates|ez.?bar/, 'barbell'],
+  [/band/, 'bands'],
+  [/pull-?up|chin-?up|rings|dip bar|dip station|parallettes|trx/, 'pullup'],
+  [/golf|alignment stick|speed training stick|clubs?$/, 'golf'],
+  [/sandbag|bench|\brack\b|squat rack|power rack|cable|machine|sled|box|landmine|smith|leg press|foam roller|ab wheel|ski ?erg|assault|air bike|tyre|battle rope|dip belt|weight vest|ankle weights|cardio machine|lat pulldown|gym/, 'gym'],
+  [/heavy bag|speed bag|double-end bag|punch|boxing|gloves|mitts|pads|wraps/, 'boxing'],
+  [/ball|racquet|racket|hoop|court/, 'ball'],
+  [/track|measured route|running route|run loop|oval|field|park|hill|road|grass|cones|trail|outdoor/, 'outdoor'],
+];
+
+// One requirement per alternative: "treadmill or running route" is met by
+// either; null means nothing special is needed.
+export function needFor(tag: string): Need | null {
+  const t = tag.toLowerCase().trim();
+  for (const [re, need] of RULES) if (re.test(t)) return need;
+  return 'gym';
+}
+export function alternativesFor(tag: string): (Need | null)[] {
+  if (/optional/i.test(tag)) return [null];
+  const parts = tag.split(/\s+or\s+|,\s*|\s*\/\s*/).map((x) => x.replace(/[()]/g, ' ').trim()).filter(Boolean);
+  return (parts.length > 1 ? parts : [tag]).map(needFor);
+}
+
+const KIT_NEED: Record<string, Need> = {
+  Barbell: 'barbell', Dumbbells: 'dumbbells', Kettlebell: 'kettlebell', Bands: 'bands', 'Pull-up bar': 'pullup',
+  'Bike / trainer': 'bike', Pool: 'pool', 'Running track': 'outdoor', Rower: 'rower', Treadmill: 'treadmill',
+  'Skipping rope': 'rope', 'Medicine ball': 'medball',
+};
+const GYM_HAS: Need[] = ['gym', 'barbell', 'dumbbells', 'kettlebell', 'bands', 'pullup', 'bike', 'rower', 'treadmill', 'rope', 'medball'];
+const SPORT_HAS: Record<string, Need[]> = {
+  swim: ['pool'], ride: ['bike'], golf: ['golf', 'outdoor'], boxing: ['boxing', 'rope'], run: ['outdoor'],
+  afl: ['ball', 'outdoor'], soccer: ['ball', 'outdoor'], basketball: ['ball'], tennis: ['ball', 'outdoor'], hybrid: ['outdoor'],
+};
+
+function hasSet(s: TrainingSetup): Set<Need> {
   const places = placesOf(s);
-  if (places.includes('gym')) return true;
-  const have = [
-    ...ALWAYS_HAVE,
-    ...s.kit.map((k) => k.toLowerCase().replace(' / trainer', '').replace('running ', '')),
-    ...(places.includes('outdoor') ? OUTDOOR_HAVE : []),
-  ];
-  const owns = (tag: string) => {
-    const t = tag.toLowerCase();
-    return have.some((h) => t.includes(h) || h.includes(t.replace(/s$/, '')));
-  };
-  return p.tags.every(owns);
+  const have = new Set<Need>();
+  if (places.includes('gym')) GYM_HAS.forEach((n) => have.add(n));
+  if (places.includes('outdoor')) have.add('outdoor');
+  s.kit.forEach((k) => KIT_NEED[k] && have.add(KIT_NEED[k]));
+  [s.sport, ...s.extraSports].forEach((sp) => (SPORT_HAS[sp] ?? []).forEach((n) => have.add(n)));
+  return have;
+}
+
+function fitsPlace(p: LibraryProgram, s: TrainingSetup): boolean {
+  const have = hasSet(s);
+  return p.tags.every((tag) => alternativesFor(tag).some((need) => need === null || have.has(need)));
 }
 
 export function scoreProgram(p: LibraryProgram, s: TrainingSetup): number {

@@ -1,0 +1,4799 @@
+[
+ {
+  "id": "x-end-somax-cyc-first-ride-30",
+  "name": "Somax First Ride 30",
+  "category": "ride",
+  "level": "beginner",
+  "sport": "cycling",
+  "goals": [
+   "general-fitness",
+   "endurance",
+   "fat-loss"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 30,
+  "equipment": [
+   "bike",
+   "indoor trainer, spin bike or gym bike"
+  ],
+  "description": "Your first structured ride: 20 easy minutes with short cadence lifts so you learn to pedal smoothly without pushing hard.",
+  "whoItsFor": "Complete beginners or anyone returning to exercise who wants a gentle, low-impact start on a trainer or gym bike.",
+  "lifestyle": [
+   "home",
+   "full-gym",
+   "busy",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "3 times a week on non-consecutive days.",
+   "Easy = you can hold a full conversation (Zone 1-2, under 75% FTP).",
+   "Add 5 minutes to the steady block each week until you reach 45 minutes.",
+   "Then move to Somax First Intervals 40 or the Somax Indoor Endurance Ride."
+  ],
+  "exercises": [
+   {
+    "name": "Easy spin, light gear",
+    "sets": 1,
+    "reps": "5 min",
+    "weight": "Z1, 80-90 rpm"
+   },
+   {
+    "name": "Steady, conversational",
+    "sets": 4,
+    "reps": "4 min 30s",
+    "weight": "Z2 (56-75% FTP)",
+    "group": "A"
+   },
+   {
+    "name": "Cadence lift - same gear, spin faster",
+    "sets": 4,
+    "reps": "30s",
+    "weight": "95-100 rpm",
+    "group": "A"
+   },
+   {
+    "name": "Easy cool-down",
+    "sets": 1,
+    "reps": "5 min",
+    "weight": "Z1"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-zone-build",
+   "british-cycling-20-min-warm-up"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-first-intervals-40",
+  "name": "Somax First Intervals 40",
+  "category": "ride",
+  "level": "beginner",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 40,
+  "equipment": [
+   "bike",
+   "indoor trainer, spin bike or gym bike"
+  ],
+  "description": "Five 2-minute 'comfortably hard' efforts with equal easy recovery - the gentlest way into interval training.",
+  "whoItsFor": "Beginners who can ride 30-45 minutes easily and want their first harder session of the week.",
+  "lifestyle": [
+   "home",
+   "full-gym",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week, after at least 4 weeks of easy riding.",
+   "Efforts = Zone 3 / RPE 6: you can speak in short sentences only.",
+   "Progress to 5 x 3 minutes, then 4 x 5 minutes over 4-6 weeks.",
+   "Next step: British Cycling Tempo Intervals or Sweet-Spot Intervals."
+  ],
+  "exercises": [
+   {
+    "name": "Easy spin building gradually",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "Comfortably hard effort",
+    "sets": 5,
+    "reps": "2 min",
+    "weight": "Z3 / RPE 6, 85-95 rpm",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 5,
+    "reps": "2 min",
+    "weight": "Z1",
+    "group": "A"
+   },
+   {
+    "name": "Cool-down, easy spin",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "<55% FTP"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-tempo-intervals",
+   "x-end-cuk-harder-efforts-3x5"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-outdoor-easy-explorer",
+  "name": "Somax Outdoor Easy Explorer Ride",
+  "category": "ride",
+  "level": "beginner",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "duration": "60 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 60,
+  "equipment": [
+   "bike",
+   "helmet",
+   "water bottle",
+   "lights"
+  ],
+  "description": "A relaxed hour outside that builds base fitness and the basic skills: gear changes before hills, drinking on the move and smooth braking.",
+  "whoItsFor": "New riders getting comfortable on the road or bike paths, building towards longer weekend rides.",
+  "lifestyle": [
+   "outdoor"
+  ],
+  "howToRun": [
+   "1-2 times a week, ideally on quiet roads or shared paths.",
+   "Keep it conversational the whole way, including up hills - use your easiest gears.",
+   "Add about 10km a week to your longest ride, as Cycling UK's plan does.",
+   "Check tyres, brakes and lights before every ride."
+  ],
+  "exercises": [
+   {
+    "name": "Easy rolling on the flat",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "Conversational riding",
+    "sets": 1,
+    "reps": "40 min",
+    "weight": "Z2 / talk test"
+   },
+   {
+    "name": "Skill: shift to an easier gear before each climb",
+    "sets": 1,
+    "reps": "every hill"
+   },
+   {
+    "name": "Skill: drink on the move",
+    "sets": 4,
+    "reps": "every 10-15 min"
+   },
+   {
+    "name": "Easy spin home",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "Z1"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-cuk-steady-session",
+   "x-end-cuk-harder-efforts-3x5"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-recovery-spin-30",
+  "name": "Somax Recovery Spin 30",
+  "category": "ride",
+  "level": "beginner",
+  "sport": "cycling",
+  "goals": [
+   "mobility",
+   "endurance"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 30,
+  "equipment": [
+   "bike",
+   "indoor trainer or gym bike"
+  ],
+  "description": "A truly easy spin the day after a hard session or long ride, with a few smooth high-cadence minutes to flush the legs.",
+  "whoItsFor": "Riders of any level on a recovery day; also suits older riders and anyone with heavy legs.",
+  "lifestyle": [
+   "home",
+   "full-gym",
+   "time-efficient",
+   "older-adults"
+  ],
+  "howToRun": [
+   "The day after your hardest session of the week.",
+   "Never above Zone 1 (under 55% FTP) - it should feel almost too easy.",
+   "Skip it and rest if you're unwell or very tired.",
+   "Pairs well with Somax Cyclist Mobility 15 afterwards."
+  ],
+  "exercises": [
+   {
+    "name": "Very easy spin",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "Z1, 85-95 rpm"
+   },
+   {
+    "name": "Smooth high cadence, light gear",
+    "sets": 4,
+    "reps": "1 min",
+    "weight": "100-105 rpm",
+    "group": "A"
+   },
+   {
+    "name": "Very easy spin",
+    "sets": 4,
+    "reps": "2 min",
+    "weight": "Z1",
+    "group": "A"
+   },
+   {
+    "name": "Very easy spin",
+    "sets": 1,
+    "reps": "8 min",
+    "weight": "Z1"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-spin-out",
+   "x-end-bc-leg-speed"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-gym-spin-45",
+  "name": "Somax Gym Spin Bike 45",
+  "category": "ride",
+  "level": "beginner",
+  "sport": "cycling",
+  "goals": [
+   "fat-loss",
+   "endurance",
+   "general-fitness"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 45,
+  "equipment": [
+   "spin bike or gym bike"
+  ],
+  "description": "A structured spin-class style session for a gym bike using effort (RPE) instead of power: seated climbs, cadence surges and a standing finish.",
+  "whoItsFor": "Gym members who want a cycling workout without a power meter or class timetable.",
+  "lifestyle": [
+   "full-gym",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "2 times a week, not on consecutive days.",
+   "RPE scale: 3 easy, 5 steady, 7 hard but controlled, 8-9 very hard.",
+   "Adjust the resistance knob to hit the RPE, not someone else's numbers.",
+   "Stand up only on a heavy resistance so the pedals don't spin away from you."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up, light resistance",
+    "sets": 1,
+    "reps": "8 min",
+    "weight": "RPE 3 building to 5"
+   },
+   {
+    "name": "Seated climb, heavy resistance",
+    "sets": 3,
+    "reps": "3 min",
+    "weight": "RPE 7, 65-75 rpm",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 3,
+    "reps": "2 min",
+    "weight": "RPE 3",
+    "group": "A"
+   },
+   {
+    "name": "Cadence surge, light-moderate resistance",
+    "sets": 6,
+    "reps": "30s",
+    "weight": "RPE 8, 100-110 rpm",
+    "group": "B"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 6,
+    "reps": "30s",
+    "weight": "RPE 3",
+    "group": "B"
+   },
+   {
+    "name": "Standing climb, heavy resistance",
+    "sets": 2,
+    "reps": "2 min",
+    "weight": "RPE 7-8",
+    "group": "C"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 2,
+    "reps": "2 min",
+    "weight": "RPE 3",
+    "group": "C"
+   },
+   {
+    "name": "Cool-down",
+    "sets": 1,
+    "reps": "6 min",
+    "weight": "RPE 2-3"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-big-gear-low-cadence",
+   "x-end-bc-leg-speed",
+   "x-end-cuk-harder-efforts-3x5"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-gentle-ride-older-adults",
+  "name": "Somax Gentle Ride for Strong Hearts",
+  "category": "ride",
+  "level": "beginner",
+  "sport": "cycling",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 30,
+  "equipment": [
+   "upright or recumbent exercise bike"
+  ],
+  "description": "A gentle 30 minutes on a stationary bike with four short 'brisk' blocks, plus seated stretches. Joint-friendly and easy to fit in.",
+  "whoItsFor": "Older adults or anyone managing joint pain who wants safe, low-impact cardio at home or the gym.",
+  "lifestyle": [
+   "older-adults",
+   "home",
+   "full-gym",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "3 times a week; check with your GP first if you've been inactive or have a heart condition.",
+   "Brisk = breathing harder but you can still talk in sentences; ease off if you feel dizzy or have chest pain.",
+   "A recumbent bike is fine if getting on and off an upright is hard.",
+   "Add a minute to each brisk block every 2 weeks."
+  ],
+  "exercises": [
+   {
+    "name": "Easy pedalling",
+    "sets": 1,
+    "reps": "8 min",
+    "weight": "can chat"
+   },
+   {
+    "name": "Brisk pedalling",
+    "sets": 4,
+    "reps": "2 min",
+    "weight": "short sentences",
+    "group": "A"
+   },
+   {
+    "name": "Easy pedalling",
+    "sets": 4,
+    "reps": "2 min",
+    "weight": "can chat",
+    "group": "A"
+   },
+   {
+    "name": "Easy pedalling",
+    "sets": 1,
+    "reps": "6 min"
+   },
+   {
+    "name": "Seated stretches - calves, hamstrings, chest",
+    "sets": 1,
+    "reps": "3 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-cuk-harder-efforts-3x5",
+   "x-end-bc-zone-build",
+   "nhs-flexibility-exercises"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-sweet-spot-45",
+  "name": "Somax Sweet Spot 45 Express",
+  "category": "ride",
+  "level": "intermediate",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 45,
+  "equipment": [
+   "bike",
+   "smart trainer or power meter"
+  ],
+  "description": "Two 12-minute sweet-spot efforts in 45 minutes - the most FTP-building bang for your buck on a busy day.",
+  "whoItsFor": "Time-poor riders with an FTP who can only train indoors for 45 minutes midweek.",
+  "lifestyle": [
+   "home",
+   "busy",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "1-2 times a week with an easy day between.",
+   "Sweet spot = 88-94% FTP; it should feel 'comfortably hard', not a race.",
+   "Progress to 2 x 15, then 2 x 18 minutes, before moving to the British Cycling 2 x 20.",
+   "Retest FTP every 6-8 weeks."
+  ],
+  "exercises": [
+   {
+    "name": "Easy, building",
+    "sets": 1,
+    "reps": "7 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "High-cadence spin-up",
+    "sets": 3,
+    "reps": "1 min",
+    "weight": "100-110 rpm, Z3"
+   },
+   {
+    "name": "Sweet-spot effort",
+    "sets": 2,
+    "reps": "12 min",
+    "weight": "88-94% FTP, 85-95 rpm",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 1,
+    "reps": "4 min",
+    "weight": "<55% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Cool-down",
+    "sets": 1,
+    "reps": "7 min",
+    "weight": "<55% FTP"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-3x10-sweet-spot",
+   "british-cycling-2x20-sweet-spot",
+   "x-end-bc-sweet-spot-intervals"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-threshold-4x8",
+  "name": "Somax Threshold 4 x 8",
+  "category": "ride",
+  "level": "intermediate",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "65 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 65,
+  "equipment": [
+   "bike",
+   "smart trainer or power meter"
+  ],
+  "description": "Four 8-minute efforts right at threshold with 4 minutes recovery - the core session for raising FTP.",
+  "whoItsFor": "Intermediate riders with a recent FTP who have done several weeks of sweet-spot work.",
+  "lifestyle": [
+   "home"
+  ],
+  "howToRun": [
+   "Once a week in a build phase; keep the day before and after easy.",
+   "Threshold = 95-100% FTP; pace evenly and keep cadence 85-95 rpm.",
+   "If power drops more than 5% in the last rep, stop there.",
+   "Progress to 4 x 10, then 3 x 15 (Somax Threshold 3 x 15)."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up, building",
+    "sets": 1,
+    "reps": "12 min",
+    "weight": "Z1-Z3"
+   },
+   {
+    "name": "Threshold effort",
+    "sets": 4,
+    "reps": "8 min",
+    "weight": "95-100% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 3,
+    "reps": "4 min",
+    "weight": "<55% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Cool-down, easy spin",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "<55% FTP"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-pyramid-intervals-1",
+   "x-end-cts-20-min-ftp-test",
+   "x-end-bc-3x10-sweet-spot"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-threshold-3x15",
+  "name": "Somax Threshold 3 x 15",
+  "category": "ride",
+  "level": "advanced",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "85 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 85,
+  "equipment": [
+   "bike",
+   "smart trainer or power meter"
+  ],
+  "description": "Three 15-minute threshold blocks with 5 minutes easy - long, steady time at FTP for time trials, triathlon and climbing.",
+  "whoItsFor": "Advanced riders and triathletes in a build phase who can already complete 4 x 10 at threshold.",
+  "lifestyle": [
+   "home"
+  ],
+  "howToRun": [
+   "Once a week at most.",
+   "Ride at 95-100% FTP; time triallists can use race position for the middle block.",
+   "Fuel: a bottle with carbohydrate (30-60g) for sessions this long.",
+   "Retest FTP after 6 weeks; then progress to 2 x 20 at threshold."
+  ],
+  "exercises": [
+   {
+    "name": "British Cycling 20-min warm-up (or 15 min easy building to tempo)",
+    "sets": 1,
+    "reps": "20 min"
+   },
+   {
+    "name": "Threshold effort",
+    "sets": 3,
+    "reps": "15 min",
+    "weight": "95-100% FTP, 85-95 rpm",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 2,
+    "reps": "5 min",
+    "weight": "<55% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Cool-down, easy spin",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "<55% FTP"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-under-over",
+   "british-cycling-2x20-sweet-spot",
+   "x-end-cts-20-min-ftp-test"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-first-vo2-6x2",
+  "name": "Somax First VO2 6 x 2",
+  "category": "ride",
+  "level": "intermediate",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "bike",
+   "smart trainer, power meter or HR monitor"
+  ],
+  "description": "Six 2-minute hard efforts with equal recovery: a short, manageable introduction to VO2max work in 45 minutes.",
+  "whoItsFor": "Intermediate riders who have done tempo and sweet-spot work and want to start lifting their top end.",
+  "lifestyle": [
+   "home",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week; never two hard days in a row.",
+   "Efforts at 106-115% FTP (or RPE 8-9; heart rate will lag in the first rep).",
+   "Progress to 5 x 3 (British Cycling Improvers VO2), then 5 x 4.",
+   "Not for the first 4 weeks of training if you're new."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up, building",
+    "sets": 1,
+    "reps": "12 min",
+    "weight": "Z1-Z3"
+   },
+   {
+    "name": "High-cadence spin-up",
+    "sets": 2,
+    "reps": "1 min",
+    "weight": "105-110 rpm"
+   },
+   {
+    "name": "VO2 effort",
+    "sets": 6,
+    "reps": "2 min",
+    "weight": "106-115% FTP, 95+ rpm",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 6,
+    "reps": "2 min",
+    "weight": "<55% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Cool-down",
+    "sets": 1,
+    "reps": "7 min",
+    "weight": "<55% FTP"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-improvers-vo2",
+   "ntnu-4x4-intervals"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-vo2-30-30s",
+  "name": "Somax VO2 30/30s",
+  "category": "ride",
+  "level": "advanced",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "55 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 55,
+  "equipment": [
+   "bike",
+   "smart trainer or power meter"
+  ],
+  "description": "Two sets of 10 x 30 seconds hard / 30 seconds easy: lots of time near VO2max with less suffering than long reps.",
+  "whoItsFor": "Advanced riders and racers in a build phase who want a VO2 session that's different from long 4-5 minute reps.",
+  "lifestyle": [
+   "home",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week; alternate weeks with longer VO2 reps.",
+   "Hard = 120% FTP; easy = 50% FTP. Keep the hard reps even rather than sprinting.",
+   "Add a third set once two feel controlled.",
+   "Stop if power drops more than 10%."
+  ],
+  "exercises": [
+   {
+    "name": "British Cycling 20-min warm-up (or 15 min easy building to tempo)",
+    "sets": 1,
+    "reps": "20 min"
+   },
+   {
+    "name": "Hard",
+    "sets": 2,
+    "reps": "10 x 30s",
+    "weight": "120% FTP, 100+ rpm",
+    "group": "A"
+   },
+   {
+    "name": "Easy between reps",
+    "sets": 2,
+    "reps": "10 x 30s",
+    "weight": "50% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin between sets",
+    "sets": 1,
+    "reps": "5 min",
+    "weight": "<55% FTP"
+   },
+   {
+    "name": "Cool-down, easy spin",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "<55% FTP"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-20-40s",
+   "x-end-bc-ramped-vo2"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-time-crunched-30",
+  "name": "Somax Time-Crunched 30",
+  "category": "ride",
+  "level": "intermediate",
+  "sport": "cycling",
+  "goals": [
+   "fat-loss",
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 30,
+  "equipment": [
+   "bike",
+   "indoor trainer or spin bike"
+  ],
+  "description": "Ten 1-minute hard efforts with 1 minute easy, in 30 minutes total - a full workout when there's no time for more.",
+  "whoItsFor": "Busy riders who can only squeeze in half an hour but still want a quality session.",
+  "lifestyle": [
+   "home",
+   "full-gym",
+   "busy",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Up to twice a week, never on consecutive days.",
+   "Hard = 110-120% FTP or RPE 8: hard but repeatable for all ten.",
+   "Easy minutes really are easy (<55% FTP).",
+   "Pair with longer easy rides at the weekend for base fitness."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up, building",
+    "sets": 1,
+    "reps": "7 min",
+    "weight": "Z1-Z3"
+   },
+   {
+    "name": "Hard effort",
+    "sets": 10,
+    "reps": "1 min",
+    "weight": "110-120% FTP / RPE 8",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 10,
+    "reps": "1 min",
+    "weight": "<55% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Cool-down",
+    "sets": 1,
+    "reps": "3 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-improvers-vo2",
+   "x-end-bc-20-40s",
+   "ntnu-4x4-intervals"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-hill-repeats",
+  "name": "Somax Outdoor Hill Repeats",
+  "category": "ride",
+  "level": "intermediate",
+  "sport": "cycling",
+  "goals": [
+   "strength",
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "70 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 70,
+  "equipment": [
+   "bike",
+   "helmet",
+   "water bottle"
+  ],
+  "description": "Six 3-minute climbs on a steady hill, mixing seated and standing, with a roll-down recovery each time.",
+  "whoItsFor": "Riders preparing for hilly sportives or club rides who have a 3-5% hill of 1km or so nearby.",
+  "lifestyle": [
+   "outdoor"
+  ],
+  "howToRun": [
+   "Once a week; choose a quiet hill with a safe place to turn.",
+   "Climb at threshold effort (Zone 4 / RPE 7-8): steady, not a sprint.",
+   "Ride the first 2 minutes seated at 70-80 rpm, then stand for the last minute.",
+   "Roll back down easily and start again when breathing settles (3-4 min)."
+  ],
+  "exercises": [
+   {
+    "name": "Easy ride to the hill",
+    "sets": 1,
+    "reps": "15 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "Hill climb - 2 min seated, 1 min standing",
+    "sets": 6,
+    "reps": "3 min",
+    "weight": "Z4 / RPE 7-8",
+    "group": "A"
+   },
+   {
+    "name": "Roll down and recover",
+    "sets": 6,
+    "reps": "3-4 min",
+    "weight": "Z1",
+    "group": "A"
+   },
+   {
+    "name": "Easy ride home",
+    "sets": 1,
+    "reps": "15 min",
+    "weight": "Z1-Z2"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-big-gear-low-cadence",
+   "x-end-cuk-harder-efforts-2x10"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-sprint-starts",
+  "name": "Somax Outdoor Sprint Starts",
+  "category": "ride",
+  "level": "advanced",
+  "sport": "cycling",
+  "goals": [
+   "sport-performance",
+   "strength"
+  ],
+  "duration": "65 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 65,
+  "equipment": [
+   "bike",
+   "helmet"
+  ],
+  "description": "Short maximal sprints from a slow rolling start, then longer sprints from speed, with full recovery between.",
+  "whoItsFor": "Racers and crit riders who need a stronger jump and acceleration.",
+  "lifestyle": [
+   "outdoor"
+  ],
+  "howToRun": [
+   "Once a week in the pre-season or race season; only on a closed circuit or very quiet, straight road.",
+   "Jump out of the saddle for the first 6-8 seconds, then sit and spin it out.",
+   "Take the full 4-5 minutes between sprints - quality over quantity.",
+   "Stop the session when your peak speed drops noticeably."
+  ],
+  "exercises": [
+   {
+    "name": "Easy ride with 3 short accelerations",
+    "sets": 1,
+    "reps": "20 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "Sprint from rolling ~15 km/h, mid gear",
+    "sets": 6,
+    "reps": "12s",
+    "weight": "max",
+    "group": "A"
+   },
+   {
+    "name": "Easy recovery",
+    "sets": 6,
+    "reps": "4 min",
+    "weight": "Z1",
+    "group": "A"
+   },
+   {
+    "name": "Sprint from ~30 km/h, bigger gear",
+    "sets": 3,
+    "reps": "20s",
+    "weight": "max",
+    "group": "B"
+   },
+   {
+    "name": "Easy recovery",
+    "sets": 3,
+    "reps": "5 min",
+    "weight": "Z1",
+    "group": "B"
+   },
+   {
+    "name": "Easy ride home",
+    "sets": 1,
+    "reps": "10 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-geared-sprint-pyramid",
+   "x-end-bc-russian-steps",
+   "x-end-bc-neuromuscular-intervals"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-endurance-90-tempo",
+  "name": "Somax Endurance Ride 90 + Tempo Finish",
+  "category": "ride",
+  "level": "intermediate",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "fat-loss"
+  ],
+  "duration": "90 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 90,
+  "equipment": [
+   "bike",
+   "helmet",
+   "2 bottles",
+   "snacks"
+  ],
+  "description": "A 90-minute aerobic ride with a 15-minute tempo block near the end, practising eating and drinking on the bike.",
+  "whoItsFor": "Intermediate riders building towards 60-100km rides or sportives.",
+  "lifestyle": [
+   "outdoor"
+  ],
+  "howToRun": [
+   "Once a week, usually at the weekend.",
+   "Zone 2 = 56-75% FTP or conversational; tempo = 76-90% FTP, short sentences.",
+   "Eat 30-60g of carbohydrate per hour from the first 30 minutes; drink to thirst.",
+   "Add 15 minutes of Zone 2 every 1-2 weeks; drop back every 4th week."
+  ],
+  "exercises": [
+   {
+    "name": "Easy start",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "Endurance riding",
+    "sets": 1,
+    "reps": "50 min",
+    "weight": "Z2"
+   },
+   {
+    "name": "Fuel and drink",
+    "sets": 3,
+    "reps": "every 20 min"
+   },
+   {
+    "name": "Tempo block",
+    "sets": 1,
+    "reps": "15 min",
+    "weight": "Z3 (76-90% FTP)"
+   },
+   {
+    "name": "Easy spin home",
+    "sets": 1,
+    "reps": "15 min",
+    "weight": "Z1-Z2"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-cuk-steady-session",
+   "x-end-bc-tempo-intervals"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-long-ride-3h",
+  "name": "Somax Advanced Long Ride",
+  "category": "ride",
+  "level": "advanced",
+  "sport": "cycling",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "180 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 180,
+  "equipment": [
+   "bike",
+   "helmet",
+   "2-3 bottles",
+   "food",
+   "repair kit"
+  ],
+  "description": "Three hours of endurance riding with three 20-minute tempo/sweet-spot blocks - the classic long ride for 100km+ events.",
+  "whoItsFor": "Advanced riders and long-course triathletes preparing for 100-160km sportives or half/full-distance events.",
+  "lifestyle": [
+   "outdoor"
+  ],
+  "howToRun": [
+   "Once a week; plan a route with few stops and a café option.",
+   "Blocks at 80-90% FTP; everything else Zone 2.",
+   "Fuel 60-90g carbohydrate per hour; practise your race-day food.",
+   "Increase by no more than 30 minutes every 2 weeks; take a lighter week every 4th week."
+  ],
+  "exercises": [
+   {
+    "name": "Easy start",
+    "sets": 1,
+    "reps": "20 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "Endurance riding",
+    "sets": 1,
+    "reps": "40 min",
+    "weight": "Z2"
+   },
+   {
+    "name": "Tempo/sweet-spot block",
+    "sets": 3,
+    "reps": "20 min",
+    "weight": "80-90% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Endurance riding between blocks",
+    "sets": 2,
+    "reps": "20 min",
+    "weight": "Z2",
+    "group": "A"
+   },
+   {
+    "name": "Endurance riding",
+    "sets": 1,
+    "reps": "20 min",
+    "weight": "Z2"
+   },
+   {
+    "name": "Easy spin home",
+    "sets": 1,
+    "reps": "20 min",
+    "weight": "Z1"
+   },
+   {
+    "name": "Fuel: carbohydrate",
+    "sets": 6,
+    "reps": "every 30 min",
+    "weight": "60-90 g/h"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-cuk-steady-session",
+   "british-cycling-2x20-sweet-spot",
+   "x-end-bc-3x10-sweet-spot"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-cadence-skills-45",
+  "name": "Somax Pedalling Skills 45",
+  "category": "ride",
+  "level": "intermediate",
+  "sport": "cycling",
+  "goals": [
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "bike",
+   "indoor trainer"
+  ],
+  "description": "Single-leg pedalling, high-cadence spin-ups and low-cadence torque blocks to build a smoother, stronger pedal stroke.",
+  "whoItsFor": "Riders who bounce at high cadence, mash at low cadence, or want a technical session on an easy week.",
+  "lifestyle": [
+   "home"
+  ],
+  "howToRun": [
+   "Once a week, any time of year; not on the road (single-leg drills need a trainer).",
+   "Single-leg: unclip one foot and rest it on a stool; light gear, focus on pulling through the bottom.",
+   "Spin-ups: build cadence until you start to bounce, then back off 5 rpm.",
+   "Low-cadence blocks stay seated and smooth; skip them with knee pain."
+  ],
+  "exercises": [
+   {
+    "name": "Easy spin",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "Single-leg pedalling, each leg",
+    "sets": 4,
+    "reps": "1 min/leg",
+    "weight": "light gear",
+    "group": "A"
+   },
+   {
+    "name": "Both legs, easy",
+    "sets": 4,
+    "reps": "1 min",
+    "group": "A"
+   },
+   {
+    "name": "Spin-up to max smooth cadence",
+    "sets": 5,
+    "reps": "1 min",
+    "weight": "light gear, 110-120 rpm",
+    "group": "B"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 5,
+    "reps": "1 min",
+    "group": "B"
+   },
+   {
+    "name": "Seated low-cadence torque",
+    "sets": 3,
+    "reps": "3 min",
+    "weight": "Z3, 60 rpm",
+    "group": "C"
+   },
+   {
+    "name": "Easy spin",
+    "sets": 3,
+    "reps": "2 min",
+    "group": "C"
+   },
+   {
+    "name": "Cool-down",
+    "sets": 1,
+    "reps": "4 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-leg-speed",
+   "x-end-bc-big-gear-low-cadence",
+   "x-end-bc-spin-out"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-strength-gym",
+  "name": "Somax Cyclist Gym Strength",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "cycling",
+  "goals": [
+   "strength",
+   "sport-performance"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 50,
+  "equipment": [
+   "barbell or dumbbells",
+   "bench or box",
+   "cable or band"
+  ],
+  "description": "Leg, hip and trunk strength for cyclists: squats, hinges, single-leg work and anti-rotation core.",
+  "whoItsFor": "Road, gravel and indoor riders who want more power on climbs and fewer niggles, training 2 times a week in a gym.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "2 times a week in the off-season, once a week in season; not the day before hard rides.",
+   "Leave 2-3 reps in reserve; add load when you hit the top of the rep range on all sets.",
+   "Rest 2 minutes on squats and deadlifts, 60-90s on the rest.",
+   "Keep it 48 hours away from your hardest bike session where possible."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy bike",
+    "sets": 1,
+    "reps": "5 min"
+   },
+   {
+    "name": "Goblet squat (warm-up sets)",
+    "sets": 2,
+    "reps": "8"
+   },
+   {
+    "name": "Back squat or goblet squat",
+    "sets": 4,
+    "reps": "6-8"
+   },
+   {
+    "name": "Romanian deadlift",
+    "sets": 3,
+    "reps": "8"
+   },
+   {
+    "name": "Bulgarian split squat",
+    "sets": 3,
+    "reps": "8/leg"
+   },
+   {
+    "name": "Step-up to bench",
+    "sets": 3,
+    "reps": "10/leg"
+   },
+   {
+    "name": "Single-leg calf raise",
+    "sets": 3,
+    "reps": "12/leg",
+    "group": "A"
+   },
+   {
+    "name": "Pallof press",
+    "sets": 3,
+    "reps": "10/side",
+    "group": "A"
+   },
+   {
+    "name": "Side plank",
+    "sets": 3,
+    "reps": "30s/side",
+    "group": "B"
+   },
+   {
+    "name": "Dead bug",
+    "sets": 3,
+    "reps": "8/side",
+    "group": "B"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-big-gear-low-cadence",
+   "x-end-usms-dry-freestyle-strength-power",
+   "stronglifts-5x5-workout-a"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-strength-home",
+  "name": "Somax Cyclist Home Strength",
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "cycling",
+  "goals": [
+   "strength",
+   "general-fitness"
+  ],
+  "duration": "25 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 25,
+  "equipment": [
+   "none (a step or stair)"
+  ],
+  "description": "A no-equipment circuit for riders: squats, split squats, single-leg bridges, step-ups and core holds.",
+  "whoItsFor": "Beginner and busy riders who want to start strength work at home in under half an hour.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment",
+   "busy",
+   "time-efficient",
+   "travel"
+  ],
+  "howToRun": [
+   "2 times a week on easy-ride or rest days.",
+   "3 rounds; rest 60s between rounds.",
+   "Make it harder by slowing the lowering phase to 3 seconds or holding a backpack.",
+   "Graduate to Somax Cyclist Gym Strength when 3 rounds feel easy."
+  ],
+  "exercises": [
+   {
+    "name": "Bodyweight squat",
+    "sets": 3,
+    "reps": "15",
+    "group": "A"
+   },
+   {
+    "name": "Split squat",
+    "sets": 3,
+    "reps": "10/leg",
+    "group": "A"
+   },
+   {
+    "name": "Single-leg glute bridge",
+    "sets": 3,
+    "reps": "10/leg",
+    "group": "A"
+   },
+   {
+    "name": "Step-up on a stair",
+    "sets": 3,
+    "reps": "12/leg",
+    "group": "A"
+   },
+   {
+    "name": "Wall sit",
+    "sets": 3,
+    "reps": "30-45s",
+    "group": "A"
+   },
+   {
+    "name": "Side plank",
+    "sets": 3,
+    "reps": "20-30s/side",
+    "group": "A"
+   },
+   {
+    "name": "Bird dog",
+    "sets": 3,
+    "reps": "8/side",
+    "group": "A"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "nhs-home-strength-exercises",
+   "x-end-usms-dry-band-home"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-mobility-15",
+  "name": "Somax Cyclist Mobility 15",
+  "category": "other",
+  "level": "beginner",
+  "sport": "cycling",
+  "goals": [
+   "mobility"
+  ],
+  "duration": "15 min",
+  "daysPerWeek": 3,
+  "sessionMinutes": 15,
+  "equipment": [
+   "mat"
+  ],
+  "description": "Fifteen minutes to undo hours in the saddle: hip flexors, glutes, hamstrings, upper back and chest.",
+  "whoItsFor": "Any cyclist with tight hips, a stiff back or desk-and-bike posture.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment",
+   "time-efficient",
+   "travel",
+   "older-adults"
+  ],
+  "howToRun": [
+   "After rides or on rest days, 3+ times a week.",
+   "Move slowly; stretch to mild tension, never pain.",
+   "Breathe out as you ease into each position.",
+   "Hold static stretches for the full time each side."
+  ],
+  "exercises": [
+   {
+    "name": "Cat/cow",
+    "sets": 1,
+    "reps": "10"
+   },
+   {
+    "name": "Half-kneeling hip flexor stretch",
+    "sets": 2,
+    "reps": "45s/side"
+   },
+   {
+    "name": "Figure-4 glute stretch (lying)",
+    "sets": 2,
+    "reps": "45s/side"
+   },
+   {
+    "name": "Supine hamstring floss with strap or towel",
+    "sets": 2,
+    "reps": "10/side"
+   },
+   {
+    "name": "Open-book thoracic rotation",
+    "sets": 2,
+    "reps": "8/side"
+   },
+   {
+    "name": "Doorway chest stretch",
+    "sets": 2,
+    "reps": "30s"
+   },
+   {
+    "name": "Wall calf stretch",
+    "sets": 2,
+    "reps": "30s/side"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usms-dry-recovery-mobility",
+   "nhs-flexibility-exercises"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-cyc-power-gym-advanced",
+  "name": "Somax Cyclist Power Gym",
+  "category": "fitness",
+  "level": "advanced",
+  "sport": "cycling",
+  "goals": [
+   "strength",
+   "sport-performance"
+  ],
+  "duration": "60 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 60,
+  "equipment": [
+   "trap bar or barbell",
+   "box",
+   "squat rack",
+   "dumbbells"
+  ],
+  "description": "Heavy, low-rep strength plus jumps to build the force behind sprints and steep climbs.",
+  "whoItsFor": "Experienced lifters who race or sprint and already do regular gym strength work.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once a week in the pre-season (twice in the off-season); at least 48h before key bike sessions.",
+   "Lift heavy with perfect form: 1-2 reps in reserve, rest 2-3 minutes.",
+   "Jumps are about height and speed - step down, don't rebound.",
+   "Drop to 2 sets during race weeks."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy bike + leg swings",
+    "sets": 1,
+    "reps": "8 min"
+   },
+   {
+    "name": "Box jump (step down)",
+    "sets": 4,
+    "reps": "3"
+   },
+   {
+    "name": "Trap-bar deadlift",
+    "sets": 4,
+    "reps": "4"
+   },
+   {
+    "name": "Back squat",
+    "sets": 4,
+    "reps": "5"
+   },
+   {
+    "name": "Single-leg Romanian deadlift",
+    "sets": 3,
+    "reps": "6/leg"
+   },
+   {
+    "name": "Rear-foot-elevated split squat",
+    "sets": 3,
+    "reps": "6/leg"
+   },
+   {
+    "name": "Landmine rotation or cable chop",
+    "sets": 3,
+    "reps": "6/side"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-neuromuscular-intervals",
+   "x-end-bc-big-gear-low-cadence",
+   "wendler-bbb-day-4"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-lap-builder-1",
+  "name": "Somax Lap Builder - Stage 1 (50s)",
+  "series": "Somax Lap Builder",
+  "day": 1,
+  "daysInSeries": 4,
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "duration": "25 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 25,
+  "equipment": [
+   "pool",
+   "kickboard"
+  ],
+  "description": "Join two lengths together: eight 50m swims with rest, plus easy kick. 600m.",
+  "whoItsFor": "Adults who can swim at least a length but not yet 400m without stopping - the step after Somax Swim Confidence Builder.",
+  "lifestyle": [
+   "time-efficient",
+   "busy"
+  ],
+  "howToRun": [
+   "2-3 swims a week; repeat a stage until it feels comfortable, then move on.",
+   "Rest at the wall as long as you need - finishing every length matters more than speed.",
+   "Breathe out steadily underwater; roll your head to breathe rather than lifting it.",
+   "Once Stage 4 is easy, try the CSS Test or Somax CSS Starter 50s."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim, any stroke (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Freestyle or choice (rest 30-40s)",
+    "sets": 8,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Kick with board (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "usms-quick-hit-swim",
+   "x-end-serpentine-distance-builder"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-lap-builder-2",
+  "name": "Somax Lap Builder - Stage 2 (75s)",
+  "series": "Somax Lap Builder",
+  "day": 2,
+  "daysInSeries": 4,
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 30,
+  "equipment": [
+   "pool",
+   "kickboard",
+   "pull buoy"
+  ],
+  "description": "Three-length swims and a 200m warm-up you can break if needed. 850m.",
+  "whoItsFor": "Adults who can swim at least a length but not yet 400m without stopping - the step after Somax Swim Confidence Builder.",
+  "lifestyle": [
+   "time-efficient",
+   "busy"
+  ],
+  "howToRun": [
+   "2-3 swims a week; repeat a stage until it feels comfortable, then move on.",
+   "Rest at the wall as long as you need - finishing every length matters more than speed.",
+   "Breathe out steadily underwater; roll your head to breathe rather than lifting it.",
+   "Once Stage 4 is easy, try the CSS Test or Somax CSS Starter 50s."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim, stop at walls if needed",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   },
+   {
+    "name": "Freestyle or choice (rest 30s)",
+    "sets": 6,
+    "reps": "1",
+    "distance": "75m"
+   },
+   {
+    "name": "Alternate kick with board / pull with buoy (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-serpentine-distance-builder",
+   "x-end-usms-steady-cruise"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-lap-builder-3",
+  "name": "Somax Lap Builder - Stage 3 (100s & 200)",
+  "series": "Somax Lap Builder",
+  "day": 3,
+  "daysInSeries": 4,
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "fat-loss"
+  ],
+  "duration": "35 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 35,
+  "equipment": [
+   "pool"
+  ],
+  "description": "Four 100m swims, then your first non-stop 200m. 1,000m.",
+  "whoItsFor": "Adults who can swim at least a length but not yet 400m without stopping - the step after Somax Swim Confidence Builder.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "2-3 swims a week; repeat a stage until it feels comfortable, then move on.",
+   "Rest at the wall as long as you need - finishing every length matters more than speed.",
+   "Breathe out steadily underwater; roll your head to breathe rather than lifting it.",
+   "Once Stage 4 is easy, try the CSS Test or Somax CSS Starter 50s."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   },
+   {
+    "name": "Freestyle (rest 30s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Continuous freestyle, slow and relaxed",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   },
+   {
+    "name": "Backstroke or choice, easy (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "100m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-serpentine-distance-builder",
+   "usms-beginner-breathe-swim"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-lap-builder-4",
+  "name": "Somax Lap Builder - Stage 4 (400 Non-Stop)",
+  "series": "Somax Lap Builder",
+  "day": 4,
+  "daysInSeries": 4,
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "duration": "35 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 35,
+  "equipment": [
+   "pool"
+  ],
+  "description": "The milestone: 400m without stopping, at any pace, with drills and an easy finish. 1,000m.",
+  "whoItsFor": "Adults who can swim at least a length but not yet 400m without stopping - the step after Somax Swim Confidence Builder.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "2-3 swims a week; repeat a stage until it feels comfortable, then move on.",
+   "Rest at the wall as long as you need - finishing every length matters more than speed.",
+   "Breathe out steadily underwater; roll your head to breathe rather than lifting it.",
+   "Once Stage 4 is easy, try the CSS Test or Somax CSS Starter 50s."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   },
+   {
+    "name": "Continuous swim, slow and steady - 16 lengths",
+    "sets": 1,
+    "reps": "1",
+    "distance": "400m"
+   },
+   {
+    "name": "Drill/swim by 25 - catch-up or kick on side (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-serpentine-build-set",
+   "x-end-serpentine-distance-builder"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-breathing-rotation",
+  "name": "Somax Freestyle Breathing & Rotation",
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 30,
+  "equipment": [
+   "pool",
+   "fins (optional)"
+  ],
+  "description": "Drills that fix the two big beginner problems - lifting the head to breathe and swimming flat - with swims between to lock it in. 900m.",
+  "whoItsFor": "Beginner and returning swimmers who get breathless quickly or can only breathe to one side.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "1-2 times a week alongside your other swims.",
+   "Short fins make the drills easier while you learn them.",
+   "Keep one goggle in the water when you breathe - 'half a face'.",
+   "Aim to breathe every 3 strokes on the swims; every 2 is fine if you need it."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Kick on side, bottom arm extended - switch sides each length (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Six-arm switch: 6 kicks on side, 1 stroke, roll to other side (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Freestyle, breathe every 3 (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Catch-up drill (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Freestyle, smooth and long (rest 20s)",
+    "sets": 2,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Easy backstroke",
+    "sets": 1,
+    "reps": "1",
+    "distance": "100m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-serpentine-big-step-pyramid",
+   "usms-technique-tune-up-swim"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-kick-body-position",
+  "name": "Somax Kick & Body Position",
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 30,
+  "equipment": [
+   "pool",
+   "kickboard",
+   "fins (optional)"
+  ],
+  "description": "Streamline push-offs, kick on front, side and back, and short swims to get your hips up and your kick from the hips. 800m.",
+  "whoItsFor": "Swimmers whose legs sink, who kick from the knees, or who tire quickly from kicking.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week as a technique session.",
+   "Kick from the hips with loose ankles; small, fast kicks beat big ones.",
+   "Press your chest gently down to lift your hips.",
+   "Fins are fine for the drills; take them off for the swims."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Streamline push-off and glide, then swim easy (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Kick with board, hips high (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Kick on back, arms by sides (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Kick on side, bottom arm extended (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Freestyle, focus on a quiet, steady kick (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "100m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usms-improve-your-stroke",
+   "x-end-serpentine-big-step-pyramid"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-breaststroke-technique",
+  "name": "Somax Breaststroke Technique",
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 30,
+  "equipment": [
+   "pool",
+   "kickboard",
+   "pull buoy"
+  ],
+  "description": "Timing drills for breaststroke - kick on your front and back, pull with a buoy, and 'pull, breathe, kick, glide' swims. 750m.",
+  "whoItsFor": "Swimmers who rely on breaststroke and want it smoother and less tiring, or who want a second stroke.",
+  "lifestyle": [
+   "time-efficient",
+   "older-adults"
+  ],
+  "howToRun": [
+   "Once a week; skip the kick sets if you have knee pain.",
+   "Glide for a count of 2 in streamline after each kick.",
+   "Heels to bottom, feet turned out, then snap them together.",
+   "Count strokes per length and try to lower it by 1-2."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim, any stroke",
+    "sets": 1,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Breaststroke kick with board (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Breaststroke kick on back, arms by sides (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Breaststroke arms with pull buoy (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "2 kicks, 1 pull drill (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Breaststroke, pull-breathe-kick-glide, count strokes (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy freestyle or backstroke",
+    "sets": 1,
+    "reps": "1",
+    "distance": "50m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-msq-39-aerobic-free",
+   "x-end-usms-try-new-things"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-catch-pull",
+  "name": "Somax Catch & Pull Technique",
+  "category": "swim",
+  "level": "intermediate",
+  "sport": "swimming",
+  "goals": [
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 40,
+  "equipment": [
+   "pool",
+   "pull buoy"
+  ],
+  "description": "Sculling, clenched-fist and chicken-wing drills plus stroke-count swims for a stronger catch and longer stroke. 1,500m.",
+  "whoItsFor": "Regular lap swimmers who feel they 'slip' through the water or take lots of strokes per length.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week as your technique swim.",
+   "Keep elbows high and fingertips pointing down early in the stroke.",
+   "Count strokes on the swims; aim for 1-2 fewer per length without slowing.",
+   "Use the drills in warm-ups for your other sessions."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   },
+   {
+    "name": "Front scull, legs on buoy (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Clenched-fist freestyle / normal by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Chicken wing (thumb to armpit) / normal by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Single-arm freestyle, alternate arms by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Freestyle, count strokes, hold the count (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-serpentine-big-step-pyramid",
+   "x-end-usms-mile-stroke-efficiency",
+   "usms-technique-tune-up-swim"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-css-starter-50s",
+  "name": "Somax CSS Starter 50s",
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "35 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 35,
+  "equipment": [
+   "pool",
+   "pace clock"
+  ],
+  "description": "Your first pace-based set: 12 x 50m just slower than CSS with short rest. Teaches even pacing on the clock. 1,100m.",
+  "whoItsFor": "Newer swimmers who can swim 400m continuously and have just done a CSS test.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week.",
+   "Target = CSS +3s per 100m (so CSS/2 + 1.5s per 50m); e.g. CSS 2:10/100m -> 1:06-1:07 per 50m.",
+   "If you can't hold the time, add 5s rest rather than slowing down.",
+   "When all 12 feel steady, move to Somax CSS 10 x 100."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   },
+   {
+    "name": "Drill/swim by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Freestyle at CSS +3s/100m (rest 20s)",
+    "sets": 12,
+    "reps": "1",
+    "weight": "CSS +3s/100m",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-swimsmooth-css-test",
+   "x-end-swimsmooth-goldilocks"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-css-10x100",
+  "name": "Somax CSS 10 x 100",
+  "category": "swim",
+  "level": "intermediate",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "pool",
+   "pace clock"
+  ],
+  "description": "The bread-and-butter threshold set: 10 x 100m at CSS pace on 15 seconds rest. 1,800m.",
+  "whoItsFor": "Swimmers and triathletes with a CSS time who want one key fitness set a week.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week; retest CSS every 4-6 weeks.",
+   "Hold CSS pace exactly - the first rep should feel too easy.",
+   "If you miss pace by more than 2s on two reps, take 10s extra rest.",
+   "Progress: 12 x 100, then 8 x 150, then Goldilocks Papa Bear."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "400m"
+   },
+   {
+    "name": "Drill/swim by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Build 1-4 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Freestyle at CSS pace (rest 15s)",
+    "sets": 10,
+    "reps": "1",
+    "weight": "CSS",
+    "distance": "100m"
+   },
+   {
+    "name": "Easy kick with board",
+    "sets": 1,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-swimsmooth-goldilocks",
+   "x-end-swimsmooth-css-test",
+   "x-end-usms-masters-test-set"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-css-300s",
+  "name": "Somax CSS Threshold 300s",
+  "category": "swim",
+  "level": "advanced",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "55 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 55,
+  "equipment": [
+   "pool",
+   "pace clock",
+   "pull buoy"
+  ],
+  "description": "Five 300s a touch slower than CSS on short rest - long threshold reps for distance swimmers and triathletes. 2,700m.",
+  "whoItsFor": "Strong swimmers and triathletes comfortable with 2,500m+ who are building towards 1.5-3.8km events.",
+  "lifestyle": [],
+  "howToRun": [
+   "Once a week in a build phase.",
+   "Target CSS +2s/100m; even splits from the first rep.",
+   "Swim the 3rd rep with a pull buoy if your kick fades.",
+   "Progress to 6 x 300, then 4 x 400 at CSS +2s."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "400m"
+   },
+   {
+    "name": "Kick/drill/swim by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "75m"
+   },
+   {
+    "name": "Build to CSS pace (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Freestyle at CSS +2s/100m (rest 20s)",
+    "sets": 5,
+    "reps": "1",
+    "weight": "CSS +2s/100m",
+    "distance": "300m"
+   },
+   {
+    "name": "Easy kick",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-swimsmooth-goldilocks",
+   "x-end-msq-51-heart-rate-300s",
+   "x-end-serpentine-5x400-broken"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-css-speed-50s",
+  "name": "Somax Above-CSS Speed 50s",
+  "category": "swim",
+  "level": "advanced",
+  "sport": "swimming",
+  "goals": [
+   "sport-performance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "pool",
+   "pace clock",
+   "fins (optional)"
+  ],
+  "description": "Twelve fast 50s a few seconds quicker than CSS with generous rest, then a steady 400 to finish. 2,100m.",
+  "whoItsFor": "Advanced swimmers who need more top-end speed for race starts, surges and sprint triathlons.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week at most; keep it apart from your CSS 100s day.",
+   "Target CSS -2 to -3s per 100m (a guide only - hold form first).",
+   "Full 30s rest: these should be fast and smooth, not desperate.",
+   "Stop the set if your stroke falls apart."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "400m"
+   },
+   {
+    "name": "Drill/swim by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Freestyle at CSS -2 to -3s/100m (rest 30s)",
+    "sets": 12,
+    "reps": "1",
+    "weight": "CSS -2 to -3s/100m",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Steady freestyle",
+    "sets": 1,
+    "reps": "1",
+    "weight": "CSS +6s/100m",
+    "distance": "400m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-swimsmooth-css-test",
+   "x-end-usms-2000-speed-development",
+   "x-end-msq-55-ins-and-outs"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-steady-400s",
+  "name": "Somax Steady 400s",
+  "category": "swim",
+  "level": "advanced",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "fat-loss"
+  ],
+  "duration": "60 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 60,
+  "equipment": [
+   "pool",
+   "pull buoy",
+   "paddles (optional)"
+  ],
+  "description": "Four aerobic 400s at steady pace (CSS +6s/100m), alternating swim and pull - endurance without the threshold sting. 2,400m.",
+  "whoItsFor": "Advanced swimmers and long-course triathletes building aerobic volume.",
+  "lifestyle": [],
+  "howToRun": [
+   "Once a week as your long aerobic swim.",
+   "Steady = CSS +6s/100m: you could keep going much longer.",
+   "Reps 2 and 4 with a pull buoy (paddles optional) to work the upper body.",
+   "Add a fifth 400 when four feel easy."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   },
+   {
+    "name": "Drill/swim by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Freestyle swim (rest 30s)",
+    "sets": 2,
+    "reps": "1",
+    "weight": "CSS +6s/100m",
+    "distance": "400m",
+    "group": "A"
+   },
+   {
+    "name": "Freestyle pull (rest 30s)",
+    "sets": 2,
+    "reps": "1",
+    "weight": "CSS +6s/100m",
+    "distance": "400m",
+    "group": "A"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-swimsmooth-goldilocks",
+   "x-end-serpentine-5x400-broken",
+   "x-end-msq-56-fins-paddles-200s"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-1500-builder",
+  "name": "Somax 1,500m Continuous Builder",
+  "category": "swim",
+  "level": "intermediate",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "fat-loss"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "pool"
+  ],
+  "description": "Build to swimming 1.5km without stopping: three 500s with short rest that become one continuous swim. 2,000m.",
+  "whoItsFor": "Swimmers who can do 1km continuously and are aiming for an Olympic-distance triathlon or a 1.5km ocean swim.",
+  "lifestyle": [],
+  "howToRun": [
+   "Once a week.",
+   "Week 1-2: 3 x 500 with 30s rest. Week 3-4: 2 x 750. Week 5+: 1,500 straight.",
+   "Steady pace (CSS +6-8s/100m); you should finish feeling you could do more.",
+   "Count lengths with a lap counter or by 100s on the clock."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim, mixed strokes",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   },
+   {
+    "name": "Steady freestyle (rest 30s) - combine as you progress",
+    "sets": 3,
+    "reps": "1",
+    "weight": "CSS +6-8s/100m",
+    "distance": "500m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-serpentine-build-set",
+   "x-end-usms-2000-building-endurance"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-lunchtime-20",
+  "name": "Somax Lunchtime Swim 20",
+  "category": "swim",
+  "level": "intermediate",
+  "sport": "swimming",
+  "goals": [
+   "endurance",
+   "fat-loss"
+  ],
+  "duration": "20 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 20,
+  "equipment": [
+   "pool"
+  ],
+  "description": "In and out in 20 minutes: a short warm-up, 10 x 50m alternating easy and strong, and a quick swim-down. 900m.",
+  "whoItsFor": "Busy swimmers with a short lunch break who still want a purposeful session.",
+  "lifestyle": [
+   "busy",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "2-3 times a week.",
+   "Odd 50s easy, even 50s strong (about CSS pace).",
+   "Keep rest to 15 seconds; the whole session fits in 20 minutes.",
+   "Add a 100m to the warm-up and two more 50s when you have 25 minutes."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   },
+   {
+    "name": "Odds easy, evens strong (rest 15s)",
+    "sets": 10,
+    "reps": "1",
+    "weight": "evens ~CSS",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "usms-quick-hit-swim",
+   "x-end-usms-steady-cruise"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-pull-strength",
+  "name": "Somax Pull & Paddles Strength",
+  "category": "swim",
+  "level": "intermediate",
+  "sport": "swimming",
+  "goals": [
+   "strength",
+   "endurance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "pool",
+   "pull buoy",
+   "paddles"
+  ],
+  "description": "Upper-body strength-endurance in the water: descending pull reps with and without paddles, then easy kick. 2,000m.",
+  "whoItsFor": "Intermediate swimmers wanting a stronger pull, including triathletes who swim in wetsuits.",
+  "lifestyle": [],
+  "howToRun": [
+   "Once a week; build paddle use gradually to protect your shoulders.",
+   "Use small paddles and stop if your shoulder hurts.",
+   "Focus on a high elbow and pushing water back, not down.",
+   "Swap paddles for fists-closed swimming if you have no paddles."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   },
+   {
+    "name": "Pull, no paddles (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Pull with paddles (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Pull with paddles, strong (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Swim, no equipment, feel the catch (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy kick with board",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-msq-52-pull-im-paddles",
+   "x-end-usms-abs-stay-tight"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-open-water-skills-pool",
+  "name": "Somax Open-Water Skills in the Pool",
+  "category": "swim",
+  "level": "intermediate",
+  "sport": "swimming",
+  "goals": [
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "pool",
+   "buddy (for drafting)"
+  ],
+  "description": "Practise sighting, deep-water starts, turning without a wall and swimming close to others - before you need them in open water. 1,600m.",
+  "whoItsFor": "Pool swimmers preparing for a first triathlon, ocean swim or open-water event.",
+  "lifestyle": [],
+  "howToRun": [
+   "Once a week in the 6-8 weeks before an event.",
+   "Sight by lifting just your eyes ('crocodile eyes') then rolling to breathe.",
+   "Deep-water starts: begin from treading water mid-lane, not a push-off.",
+   "Check your pool's rules before practising starts or drafting with others."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   },
+   {
+    "name": "Sight every 6 strokes on a target at the end (rest 15s)",
+    "sets": 6,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Deep-water start: tread 10s then sprint 10 strokes, easy to the end (rest 20s)",
+    "sets": 6,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Swim without touching the walls - open turn mid-pool (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Draft on a buddy's feet, swap leader each 100 (rest 20s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usms-mile-race-simulator",
+   "x-end-usa-swimming-ow-kase-ladder",
+   "x-end-usms-ow-sprint-recovery"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-first-open-water",
+  "name": "Somax First Open-Water Swim",
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "duration": "35 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 35,
+  "equipment": [
+   "patrolled beach or organised venue",
+   "bright swim cap",
+   "goggles",
+   "wetsuit if water is cold",
+   "swim buddy"
+  ],
+  "description": "A calm first session outside the pool: acclimatise, short swims parallel to shore and simple sighting, finishing with 10 minutes continuous.",
+  "whoItsFor": "Swimmers who can swim 400m continuously in a pool and want to try the ocean, a lake or a harbour pool.",
+  "lifestyle": [
+   "outdoor"
+  ],
+  "howToRun": [
+   "Only between the flags at a patrolled beach, or at an organised open-water session - never alone.",
+   "Enter slowly; let your breathing settle before you swim (cold water shock passes in 1-2 minutes).",
+   "Swim parallel to the shore in water you can stand in; stop and float on your back if you feel anxious.",
+   "Get out if you feel cold, tired or conditions change. Check surf and water-quality reports first."
+  ],
+  "exercises": [
+   {
+    "name": "Wade in and acclimatise - splash face, blow bubbles",
+    "sets": 1,
+    "reps": "3-5 min"
+   },
+   {
+    "name": "Swim parallel to shore, then stand or float",
+    "sets": 5,
+    "reps": "1 min swim / 1 min rest"
+   },
+   {
+    "name": "Sighting: lift eyes to a landmark every 6-8 strokes",
+    "sets": 4,
+    "reps": "1 min"
+   },
+   {
+    "name": "Continuous easy swim between two markers",
+    "sets": 1,
+    "reps": "10 min"
+   },
+   {
+    "name": "Easy float and wade out",
+    "sets": 1,
+    "reps": "2 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usa-swimming-ow-kase-ladder",
+   "x-end-usms-ow-sprint-recovery"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-open-water-race-prep",
+  "name": "Somax Open-Water Race Prep",
+  "category": "swim",
+  "level": "advanced",
+  "sport": "swimming",
+  "goals": [
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 50,
+  "equipment": [
+   "supervised open-water venue",
+   "wetsuit (if needed)",
+   "bright swim cap",
+   "waterproof watch"
+  ],
+  "description": "Race-pace blocks with sighting, fast starts and a steady finish in open water - for ocean swims and triathlons.",
+  "whoItsFor": "Experienced open-water swimmers 2-6 weeks out from an ocean swim or triathlon.",
+  "lifestyle": [
+   "outdoor"
+  ],
+  "howToRun": [
+   "Once a week at a supervised venue or with a squad.",
+   "Race pace blocks: sight every 6 strokes; breathe both sides if you can.",
+   "Fast starts mimic the first 200m of a race: hard for 20 strokes, then settle.",
+   "Practise wetsuit-on swimming if you'll race in one."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "10 min"
+   },
+   {
+    "name": "Race pace with sighting every 6 strokes",
+    "sets": 6,
+    "reps": "3 min",
+    "weight": "race effort",
+    "group": "A"
+   },
+   {
+    "name": "Easy swim",
+    "sets": 6,
+    "reps": "1 min",
+    "group": "A"
+   },
+   {
+    "name": "Fast start: 20 strokes hard, then settle to race pace",
+    "sets": 4,
+    "reps": "1 min",
+    "group": "B"
+   },
+   {
+    "name": "Easy",
+    "sets": 4,
+    "reps": "1 min",
+    "group": "B"
+   },
+   {
+    "name": "Steady swim, practise drafting if in a group",
+    "sets": 1,
+    "reps": "8 min"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "3 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usa-swimming-ow-gemmell",
+   "x-end-usms-ow-sprint-recovery",
+   "x-end-usms-mile-race-simulator"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-sprint-tri-prep",
+  "name": "Somax Sprint Triathlon Swim Prep",
+  "category": "swim",
+  "level": "intermediate",
+  "sport": "swimming",
+  "goals": [
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "pool",
+   "pace clock"
+  ],
+  "description": "Race-specific pool work for a 750m triathlon swim: fast starts, sighting practice and race-pace 250s. 1,900m.",
+  "whoItsFor": "Triathletes training for a sprint (750m) or super-sprint (400m) swim leg.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week in the 6-8 weeks before your race.",
+   "Race pace is about CSS +2-3s/100m for a 750m.",
+   "Lift your eyes to sight on the end wall every 6 strokes in the 250s.",
+   "Super-sprint racers: do 3 x 150 instead of 3 x 250."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   },
+   {
+    "name": "Drill/swim by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Fast first 25, steady second 25 - race start (rest 20s)",
+    "sets": 8,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Race pace, sight every 6 strokes (rest 20s)",
+    "sets": 3,
+    "reps": "1",
+    "weight": "CSS +2-3s/100m",
+    "distance": "250m"
+   },
+   {
+    "name": "Easy kick",
+    "sets": 1,
+    "reps": "1",
+    "distance": "100m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-msq-37-triathlete",
+   "x-end-swimsmooth-goldilocks",
+   "x-end-usms-mile-race-simulator"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-speed-turns",
+  "name": "Somax Speed 25s & Turns",
+  "category": "swim",
+  "level": "advanced",
+  "sport": "swimming",
+  "goals": [
+   "sport-performance"
+  ],
+  "duration": "45 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 45,
+  "equipment": [
+   "pool",
+   "fins (optional)"
+  ],
+  "description": "Fast 25s, turn practice from mid-pool and build 50s - sharpening speed and walls. 2,000m.",
+  "whoItsFor": "Advanced pool swimmers and masters competitors who want faster starts, turns and top speed.",
+  "lifestyle": [
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week; keep the rest long so every rep is fast.",
+   "Push off in a tight streamline with 3-5 dolphin or flutter kicks before breaking out.",
+   "Turns: approach fast, tuck tight, push off on your side.",
+   "Never do breath-holding challenges - breathe whenever you need to."
+  ],
+  "exercises": [
+   {
+    "name": "Easy swim",
+    "sets": 1,
+    "reps": "1",
+    "distance": "400m"
+   },
+   {
+    "name": "Kick/drill/swim by 25 (rest 15s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "75m"
+   },
+   {
+    "name": "Fast from a push (rest 40s)",
+    "sets": 8,
+    "reps": "1",
+    "weight": "max, good form",
+    "distance": "25m"
+   },
+   {
+    "name": "From mid-pool: fast into the wall, turn, fast to mid-pool (rest 30s)",
+    "sets": 8,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Easy pull",
+    "sets": 1,
+    "reps": "1",
+    "distance": "300m"
+   },
+   {
+    "name": "Build each 50 to fast (rest 20s)",
+    "sets": 6,
+    "reps": "1",
+    "distance": "50m"
+   },
+   {
+    "name": "Easy swim-down",
+    "sets": 1,
+    "reps": "1",
+    "distance": "200m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-msq-35-sprints",
+   "x-end-msq-55-ins-and-outs",
+   "x-end-usms-2000-speed-development"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-easy-lengths-joints",
+  "name": "Somax Easy Lengths for Joints",
+  "category": "swim",
+  "level": "beginner",
+  "sport": "swimming",
+  "goals": [
+   "general-fitness",
+   "mobility"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 30,
+  "equipment": [
+   "pool (with a shallow end)",
+   "kickboard"
+  ],
+  "description": "Water walking, mixed easy strokes and gentle kick with plenty of rest - a joint-friendly way to stay active. About 500m plus walking.",
+  "whoItsFor": "Older adults, people with arthritis or back pain, and anyone easing back into exercise.",
+  "lifestyle": [
+   "older-adults",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "2-3 times a week; warm water pools are ideal.",
+   "Rest as long as you like between lengths; nothing should hurt.",
+   "Any stroke counts - backstroke is often kindest on the neck.",
+   "Finish with gentle stretches holding the pool edge."
+  ],
+  "exercises": [
+   {
+    "name": "Water walking in the shallow end (forwards, sideways)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "width or 10m"
+   },
+   {
+    "name": "Easy swim, any stroke (rest 30-45s)",
+    "sets": 8,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Gentle kick with board (rest 30s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Easy backstroke or breaststroke (rest 30s)",
+    "sets": 4,
+    "reps": "1",
+    "distance": "25m"
+   },
+   {
+    "name": "Poolside stretches - calves, hamstrings, shoulders",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usms-mixed-stroke-mini",
+   "nhs-flexibility-exercises"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-gym-strength",
+  "name": "Somax Swimmer's Gym Strength",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "swimming",
+  "goals": [
+   "strength",
+   "sport-performance"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 50,
+  "equipment": [
+   "cable machine or band",
+   "dumbbells",
+   "pull-up bar or lat pulldown"
+  ],
+  "description": "Pulling strength, shoulder health and legs for push-offs: pull-ups, rows, external rotation, squats and core.",
+  "whoItsFor": "Lap swimmers and triathletes who want a stronger pull and healthier shoulders from 2 gym sessions a week.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "2 times a week, ideally after an easy swim or on a non-swim day.",
+   "Leave 2-3 reps in reserve; prioritise form over load.",
+   "Rest 90s on the big lifts, 45-60s on the shoulder and core work.",
+   "Drop to 1 session a week in race weeks."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: band pull-aparts + arm circles",
+    "sets": 2,
+    "reps": "15"
+   },
+   {
+    "name": "Pull-up or lat pulldown",
+    "sets": 4,
+    "reps": "6-8"
+   },
+   {
+    "name": "Single-arm dumbbell row",
+    "sets": 3,
+    "reps": "10/side"
+   },
+   {
+    "name": "Goblet squat",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Romanian deadlift",
+    "sets": 3,
+    "reps": "8"
+   },
+   {
+    "name": "Cable or band external rotation",
+    "sets": 3,
+    "reps": "12/side",
+    "group": "A"
+   },
+   {
+    "name": "Prone Y-T-W raises",
+    "sets": 2,
+    "reps": "8 each",
+    "group": "A"
+   },
+   {
+    "name": "Pallof press",
+    "sets": 3,
+    "reps": "10/side",
+    "group": "B"
+   },
+   {
+    "name": "Dead bug",
+    "sets": 3,
+    "reps": "8/side",
+    "group": "B"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usms-dry-upper-body",
+   "x-end-usms-dry-freestyle-strength-power",
+   "x-end-usms-dry-band-home"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-swim-power-dryland-advanced",
+  "name": "Somax Swimmer's Power Dryland",
+  "category": "fitness",
+  "level": "advanced",
+  "sport": "swimming",
+  "goals": [
+   "strength",
+   "sport-performance"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 50,
+  "equipment": [
+   "pull-up bar",
+   "medicine ball",
+   "box",
+   "dumbbells",
+   "band"
+  ],
+  "description": "Explosive dryland for starts, turns and a powerful pull: weighted pull-ups, med-ball throws, jumps and rotational core.",
+  "whoItsFor": "Advanced and masters competitive swimmers with a solid strength base.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once a week in the build-up to competition, 48h before key swims.",
+   "Move fast on throws and jumps; rest fully (90s) so every rep is quality.",
+   "Weighted pull-ups only once you can do 10 strict bodyweight reps.",
+   "Finish with band external rotations to look after your shoulders."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: band pull-aparts, streamline squats",
+    "sets": 2,
+    "reps": "10"
+   },
+   {
+    "name": "Box jump (streamline arms, step down)",
+    "sets": 4,
+    "reps": "3"
+   },
+   {
+    "name": "Medicine-ball slam",
+    "sets": 4,
+    "reps": "6"
+   },
+   {
+    "name": "Weighted pull-up",
+    "sets": 4,
+    "reps": "4-6"
+   },
+   {
+    "name": "Rear-foot-elevated split squat",
+    "sets": 3,
+    "reps": "6/leg"
+   },
+   {
+    "name": "Medicine-ball rotational throw to wall",
+    "sets": 3,
+    "reps": "6/side"
+   },
+   {
+    "name": "Band external rotation",
+    "sets": 2,
+    "reps": "15/side"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usms-dry-freestyle-strength-power",
+   "x-end-usms-dry-band-home"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-station-technique",
+  "name": "Somax HYROX Station Technique",
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "hybrid",
+  "goals": [
+   "general-fitness",
+   "strength",
+   "endurance"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 50,
+  "equipment": [
+   "ski erg",
+   "sled",
+   "rower",
+   "kettlebells",
+   "sandbag",
+   "wall ball"
+  ],
+  "description": "Learn all eight HYROX stations at light loads, with short reps and full rest, before you start training them hard.",
+  "whoItsFor": "First-timers signing up for HYROX who have never pushed a sled or done wall balls.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Do this 2-4 times before any hard station work.",
+   "Use 50-60% of race weight; this session is about technique and standards.",
+   "Learn the official movement standards (wall ball depth and target, burpee broad jump rules) from hyrox.com.",
+   "A gym sled feels different from race turf - expect race day to feel heavier."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy row + bodyweight squats",
+    "sets": 1,
+    "reps": "6 min"
+   },
+   {
+    "name": "SkiErg - long arms, hip hinge",
+    "sets": 3,
+    "reps": "1",
+    "weight": "easy-moderate",
+    "distance": "250m"
+   },
+   {
+    "name": "Sled push - low hips, short fast steps",
+    "sets": 4,
+    "reps": "1",
+    "weight": "50-60% of Open: 152/102kg",
+    "distance": "12.5m"
+   },
+   {
+    "name": "Sled pull - hand over hand, walk back",
+    "sets": 4,
+    "reps": "1",
+    "weight": "50-60% of Open: 103/78kg",
+    "distance": "12.5m"
+   },
+   {
+    "name": "Burpee broad jump - chest to floor, jump forward",
+    "sets": 3,
+    "reps": "5"
+   },
+   {
+    "name": "Row - legs, hips, arms",
+    "sets": 3,
+    "reps": "1",
+    "weight": "easy-moderate",
+    "distance": "250m"
+   },
+   {
+    "name": "Farmers carry",
+    "sets": 3,
+    "reps": "1",
+    "weight": "2 x 16/12kg",
+    "distance": "50m"
+   },
+   {
+    "name": "Sandbag lunge - back knee touches",
+    "sets": 3,
+    "reps": "1",
+    "weight": "10/6kg",
+    "distance": "10m"
+   },
+   {
+    "name": "Wall balls - full squat, hit the target",
+    "sets": 3,
+    "reps": "10",
+    "weight": "6/4kg"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "hyrox-race-simulation",
+   "x-end-dearden-partner-bbj-carry",
+   "x-end-dearden-row-wallball-amrap"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-station-strength",
+  "name": "Somax HYROX Station Strength",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "strength",
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "55 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 55,
+  "equipment": [
+   "sled",
+   "kettlebells",
+   "sandbag",
+   "wall ball"
+  ],
+  "description": "Quality station work with full rest: sled pushes, farmers carries, sandbag lunges, wall balls and burpee broad jumps.",
+  "whoItsFor": "Intermediate HYROX athletes who can do every station and want stronger, more efficient stations.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once a week; 48h away from your hardest run.",
+   "Build from 70% to race weight over 4-5 weeks; rest 90s-2 min between sets.",
+   "Wall balls in sets you can finish unbroken; note how many you can do.",
+   "Pair with Somax Compromised Run Primer later in the week."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: row + walking lunges + inchworms",
+    "sets": 1,
+    "reps": "8 min"
+   },
+   {
+    "name": "Sled push",
+    "sets": 4,
+    "reps": "1",
+    "weight": "Open: 152/102kg incl. sled",
+    "distance": "50m"
+   },
+   {
+    "name": "Farmers carry",
+    "sets": 3,
+    "reps": "1",
+    "weight": "Open: 2 x 24/16kg",
+    "distance": "100m"
+   },
+   {
+    "name": "Sandbag walking lunge",
+    "sets": 3,
+    "reps": "1",
+    "weight": "Open: 20/10kg",
+    "distance": "30m"
+   },
+   {
+    "name": "Wall balls",
+    "sets": 3,
+    "reps": "30",
+    "weight": "Open: 6/4kg"
+   },
+   {
+    "name": "Burpee broad jump",
+    "sets": 2,
+    "reps": "1",
+    "distance": "20m"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "hyrox-race-simulation",
+   "x-end-dearden-3x15-amrap",
+   "x-end-dearden-partner-bbj-carry"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-compromised-run-primer",
+  "name": "Somax Compromised Run Primer",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "sport-performance",
+   "fat-loss"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 50,
+  "equipment": [
+   "treadmill or running route",
+   "wall ball",
+   "sandbag",
+   "rower"
+  ],
+  "description": "Six 500m runs straight off a station - wall balls, lunges or row - to teach your legs to run tired.",
+  "whoItsFor": "HYROX athletes who can run 5km comfortably and have trained each station.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once a week, 6-12 weeks out.",
+   "Run at goal race pace - controlled, not a sprint; HR around 85-90% max is normal.",
+   "1 minute rest after each round; progress to 1km runs (Somax Hybrid Race Prep).",
+   "Station loads at race weight once you're comfortable."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy jog + drills",
+    "sets": 1,
+    "reps": "10 min"
+   },
+   {
+    "name": "Run",
+    "sets": 6,
+    "reps": "1",
+    "weight": "goal race pace",
+    "distance": "500m",
+    "group": "A"
+   },
+   {
+    "name": "Station rotating: 20 wall balls / 20m sandbag lunges / 250m row",
+    "sets": 6,
+    "reps": "1",
+    "weight": "race weight",
+    "group": "A"
+   },
+   {
+    "name": "Rest",
+    "sets": 6,
+    "reps": "1 min",
+    "group": "A"
+   },
+   {
+    "name": "Easy jog cool-down",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "hyrox-race-simulation",
+   "x-end-dearden-shuttle-10-rounds"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-run-erg-intervals",
+  "name": "Somax Run + Erg Intervals",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "55 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 55,
+  "equipment": [
+   "treadmill or track",
+   "ski erg",
+   "rower"
+  ],
+  "description": "Race-pace 1km runs followed by hard SkiErg and row 500s - the engine that powers a good HYROX time.",
+  "whoItsFor": "HYROX athletes building aerobic capacity who can run 1km repeats at goal pace.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once a week; keep other runs that week easy.",
+   "1km runs at race pace (~80% effort, 85-90% HRmax), 90s rest.",
+   "Erg 500s strong but not all-out; don't over-pull the row.",
+   "Build from 3 to 5 x 1km over 6 weeks."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy jog + strides",
+    "sets": 1,
+    "reps": "10 min"
+   },
+   {
+    "name": "Run",
+    "sets": 4,
+    "reps": "1",
+    "weight": "race pace, 85-90% HRmax",
+    "distance": "1km",
+    "group": "A"
+   },
+   {
+    "name": "Rest",
+    "sets": 4,
+    "reps": "90s",
+    "group": "A"
+   },
+   {
+    "name": "SkiErg",
+    "sets": 2,
+    "reps": "1",
+    "weight": "strong",
+    "distance": "500m",
+    "group": "B"
+   },
+   {
+    "name": "Row",
+    "sets": 2,
+    "reps": "1",
+    "weight": "strong",
+    "distance": "500m",
+    "group": "B"
+   },
+   {
+    "name": "Rest",
+    "sets": 4,
+    "reps": "1 min",
+    "group": "B"
+   },
+   {
+    "name": "Easy jog or row cool-down",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "hyrox-race-simulation",
+   "ntnu-4x4-intervals",
+   "x-end-dearden-45-min-amrap"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-half-simulation",
+  "name": "Somax HYROX Half Simulation",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "60 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 60,
+  "equipment": [
+   "ski erg",
+   "sled",
+   "rower",
+   "kettlebells",
+   "sandbag",
+   "wall ball"
+  ],
+  "description": "Four 1km runs, each followed by one station, at controlled race effort - choose the first or second half of the race.",
+  "whoItsFor": "Intermediate HYROX athletes 4-8 weeks out who haven't yet done a full simulation.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Every 2-3 weeks, alternating first half and second half.",
+   "Stations at 70-100% race weight depending on how far out you are.",
+   "Practise transitions: walk briskly in, start the station straight away.",
+   "Record split times and compare next time."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy jog + station prep",
+    "sets": 1,
+    "reps": "10 min"
+   },
+   {
+    "name": "Run",
+    "sets": 4,
+    "reps": "1",
+    "weight": "race effort",
+    "distance": "1km",
+    "group": "A"
+   },
+   {
+    "name": "First half: SkiErg 1000m / sled push 50m / sled pull 50m / burpee broad jump 80m - or second half: row 1000m / farmers 200m / lunges 100m / wall balls 100",
+    "sets": 4,
+    "reps": "1 station",
+    "weight": "70-100% race weight",
+    "group": "A"
+   },
+   {
+    "name": "Easy cool-down + stretch",
+    "sets": 1,
+    "reps": "8 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "hyrox-race-simulation"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-wall-ball-lunge-endurance",
+  "name": "Somax Wall Ball & Lunge Endurance",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "strength",
+   "sport-performance"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 40,
+  "equipment": [
+   "wall ball",
+   "sandbag",
+   "rower or bike"
+  ],
+  "description": "An EMOM and a 'chunked' finish for the two stations that wreck most race times: sandbag lunges and wall balls.",
+  "whoItsFor": "HYROX athletes whose legs fade at the end of a race.",
+  "lifestyle": [
+   "full-gym",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Once a week, not before a hard run day.",
+   "EMOM: finish the work with 20-30s to spare; scale reps if not.",
+   "Finisher: break 50 wall balls into planned sets (e.g. 15-15-10-10) and stick to the plan.",
+   "Use race weights once 2 EMOM rounds feel controlled."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy row + goblet squats",
+    "sets": 1,
+    "reps": "6 min"
+   },
+   {
+    "name": "EMOM odd minutes: wall balls",
+    "sets": 10,
+    "reps": "15",
+    "weight": "Open: 6/4kg",
+    "group": "A"
+   },
+   {
+    "name": "EMOM even minutes: sandbag walking lunge",
+    "sets": 10,
+    "reps": "1",
+    "weight": "Open: 20/10kg",
+    "distance": "10m",
+    "group": "A"
+   },
+   {
+    "name": "Easy row or bike",
+    "sets": 1,
+    "reps": "3 min"
+   },
+   {
+    "name": "Wall balls for time in planned sets",
+    "sets": 1,
+    "reps": "50"
+   },
+   {
+    "name": "Cool-down stretch: quads, hips, calves",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "hyrox-race-simulation",
+   "x-end-dearden-row-wallball-amrap",
+   "x-end-dearden-partner-bbj-carry"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-no-sled-gym",
+  "name": "Somax Hybrid at a Basic Gym (No Sled)",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "strength",
+   "fat-loss"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 50,
+  "equipment": [
+   "treadmill",
+   "dumbbells",
+   "kettlebell",
+   "rower or bike"
+  ],
+  "description": "HYROX-style rounds with smart swaps for gyms with no sled or SkiErg: motor-off treadmill pushes, heavy carries and dumbbell work.",
+  "whoItsFor": "People training for hybrid races at a standard commercial gym.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once a week alongside easy running.",
+   "Motor-off treadmill push: hands on the rails, drive the belt with your legs (a common sled substitute).",
+   "Rest 90s between rounds; keep runs at steady race pace.",
+   "Do one real sled session every few weeks if you can access one."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy jog + mobility",
+    "sets": 1,
+    "reps": "8 min"
+   },
+   {
+    "name": "Run (treadmill)",
+    "sets": 5,
+    "reps": "1",
+    "weight": "race pace",
+    "distance": "800m",
+    "group": "A"
+   },
+   {
+    "name": "Motor-off treadmill push",
+    "sets": 5,
+    "reps": "30s",
+    "weight": "hard",
+    "group": "A"
+   },
+   {
+    "name": "Heavy dumbbell farmers carry",
+    "sets": 5,
+    "reps": "1",
+    "weight": "2 x 22.5/15kg",
+    "distance": "50m",
+    "group": "A"
+   },
+   {
+    "name": "Dumbbell thruster (wall-ball substitute)",
+    "sets": 5,
+    "reps": "15",
+    "weight": "2 x 10/7.5kg",
+    "group": "A"
+   },
+   {
+    "name": "Row or bike",
+    "sets": 5,
+    "reps": "1",
+    "weight": "strong",
+    "distance": "250m",
+    "group": "A"
+   },
+   {
+    "name": "Cool-down stretch",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-dearden-45-min-amrap",
+   "hyrox-race-simulation",
+   "x-end-dearden-shuttle-10-rounds"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-home-starter",
+  "name": "Somax Home Hybrid Starter",
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "hybrid",
+  "goals": [
+   "general-fitness",
+   "fat-loss",
+   "endurance"
+  ],
+  "duration": "40 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 40,
+  "equipment": [
+   "running shoes",
+   "backpack with books or water bottles"
+  ],
+  "description": "Run-and-station rounds you can do from your front door: short runs, backpack squats and lunges, step-back burpees and planks.",
+  "whoItsFor": "Beginners curious about hybrid fitness who don't have gym access, or anyone training at home or travelling.",
+  "lifestyle": [
+   "home",
+   "minimal-equipment",
+   "outdoor",
+   "travel"
+  ],
+  "howToRun": [
+   "2 times a week; you should be able to jog 15-20 minutes first.",
+   "Runs at a steady 6/10 effort; walk if you need to.",
+   "Rest 1 minute between rounds; start with 3 rounds and build to 5.",
+   "When 5 rounds feel easy, try Somax Hybrid Starter at the gym."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: brisk walk then easy jog",
+    "sets": 1,
+    "reps": "5 min"
+   },
+   {
+    "name": "Run",
+    "sets": 5,
+    "reps": "1",
+    "weight": "steady 6/10",
+    "distance": "400m",
+    "group": "A"
+   },
+   {
+    "name": "Backpack squat",
+    "sets": 5,
+    "reps": "15",
+    "weight": "5-8kg backpack",
+    "group": "A"
+   },
+   {
+    "name": "Step-back burpee (no jump)",
+    "sets": 5,
+    "reps": "8",
+    "group": "A"
+   },
+   {
+    "name": "Backpack reverse lunge",
+    "sets": 5,
+    "reps": "10/leg",
+    "group": "A"
+   },
+   {
+    "name": "Plank",
+    "sets": 5,
+    "reps": "30s",
+    "group": "A"
+   },
+   {
+    "name": "Walk + stretch",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-dearden-shuttle-10-rounds",
+   "nhs-home-strength-exercises"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-threshold-runs-wall-balls",
+  "name": "Somax Hybrid Threshold Runs + 100 Wall Balls",
+  "category": "fitness",
+  "level": "advanced",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "70 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 70,
+  "equipment": [
+   "running route or treadmill",
+   "wall ball"
+  ],
+  "description": "Five 2km runs a little faster than race pace, then 100 wall balls for time on tired legs.",
+  "whoItsFor": "Advanced HYROX athletes chasing a faster finish time who run 25km+ a week.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once a week in the build phase; keep the next day easy.",
+   "2km reps at threshold (comfortably hard, just faster than HYROX race pace); 2 min jog/walk recovery.",
+   "Go straight from the last run to the wall balls, as in the race.",
+   "Log your wall-ball time and break pattern."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: easy jog + drills + strides",
+    "sets": 1,
+    "reps": "12 min"
+   },
+   {
+    "name": "Run",
+    "sets": 5,
+    "reps": "1",
+    "weight": "threshold, slightly faster than race pace",
+    "distance": "2km",
+    "group": "A"
+   },
+   {
+    "name": "Jog/walk recovery",
+    "sets": 4,
+    "reps": "2 min",
+    "group": "A"
+   },
+   {
+    "name": "Wall balls for time",
+    "sets": 1,
+    "reps": "100",
+    "weight": "Open: 6/4kg"
+   },
+   {
+    "name": "Easy jog cool-down",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-dearden-3x15-amrap",
+   "hyrox-race-simulation",
+   "ntnu-4x4-intervals"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-race-week-opener",
+  "name": "Somax Hybrid Race-Week Opener",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "30 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 30,
+  "equipment": [
+   "running route or treadmill",
+   "wall ball",
+   "rower or ski erg"
+  ],
+  "description": "A short, sharp session 2-3 days before race day: a few race-pace runs and station touches to feel fresh, not tired.",
+  "whoItsFor": "Anyone in the final week before a HYROX or hybrid race.",
+  "lifestyle": [
+   "full-gym",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "Do it 2-3 days before the race; otherwise rest or easy movement.",
+   "Race pace on the runs, but stop well short of fatigue.",
+   "Rehearse your transitions and pacing plan.",
+   "Eat, sleep and hydrate well all week (hyrox.com advice)."
+  ],
+  "exercises": [
+   {
+    "name": "Easy jog",
+    "sets": 1,
+    "reps": "10 min"
+   },
+   {
+    "name": "Run",
+    "sets": 4,
+    "reps": "1",
+    "weight": "race pace",
+    "distance": "500m",
+    "group": "A"
+   },
+   {
+    "name": "Wall balls",
+    "sets": 4,
+    "reps": "10",
+    "weight": "race weight",
+    "group": "A"
+   },
+   {
+    "name": "Easy walk",
+    "sets": 4,
+    "reps": "1 min",
+    "group": "A"
+   },
+   {
+    "name": "Erg, relaxed",
+    "sets": 1,
+    "reps": "1",
+    "distance": "500m"
+   },
+   {
+    "name": "Strides",
+    "sets": 4,
+    "reps": "15s"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "hyrox-race-simulation",
+   "x-end-dearden-row-wallball-amrap"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-strength-foundations",
+  "name": "Somax Hybrid Strength Foundations",
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "hybrid",
+  "goals": [
+   "strength",
+   "general-fitness"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 50,
+  "equipment": [
+   "dumbbells",
+   "kettlebell",
+   "TRX or rings",
+   "mat"
+  ],
+  "description": "Whole-body strength for hybrid racing: squats, hinges, lunges, push-ups, rows and loaded carries to build grip and trunk strength.",
+  "whoItsFor": "Beginners who want to get strong enough to train HYROX stations safely.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "2 times a week for 6-8 weeks before station-heavy training.",
+   "Leave 2-3 reps in reserve; add load when all sets hit the top of the range.",
+   "Rest 60-90s between sets.",
+   "Then move to Somax HYROX Station Strength."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up: row + bodyweight squats + inchworms",
+    "sets": 1,
+    "reps": "6 min"
+   },
+   {
+    "name": "Goblet squat",
+    "sets": 3,
+    "reps": "10-12"
+   },
+   {
+    "name": "Kettlebell deadlift",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Dumbbell walking lunge",
+    "sets": 3,
+    "reps": "10/leg"
+   },
+   {
+    "name": "Push-up (knees or incline OK)",
+    "sets": 3,
+    "reps": "8-12"
+   },
+   {
+    "name": "TRX or ring row",
+    "sets": 3,
+    "reps": "10"
+   },
+   {
+    "name": "Farmers carry",
+    "sets": 4,
+    "reps": "1",
+    "weight": "moderate-heavy",
+    "distance": "40m"
+   },
+   {
+    "name": "Plank",
+    "sets": 3,
+    "reps": "30-45s"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "rfitness-basic-beginner-a",
+   "x-end-dearden-zpress-row-emom",
+   "hyrox-race-simulation"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-recovery-mobility",
+  "name": "Somax Hybrid Recovery Flow",
+  "category": "other",
+  "level": "beginner",
+  "sport": "hybrid",
+  "goals": [
+   "mobility"
+  ],
+  "duration": "20 min",
+  "daysPerWeek": 2,
+  "sessionMinutes": 20,
+  "equipment": [
+   "mat",
+   "foam roller (optional)",
+   "bike or rower (optional)"
+  ],
+  "description": "An easy spin and mobility flow for the day after racing or a hard hybrid session: hips, quads, calves and upper back.",
+  "whoItsFor": "Hybrid and HYROX athletes of any level on recovery days.",
+  "lifestyle": [
+   "home",
+   "full-gym",
+   "minimal-equipment",
+   "time-efficient"
+  ],
+  "howToRun": [
+   "The day after a hard session or race.",
+   "Keep the spin genuinely easy - just get the blood moving.",
+   "Hold stretches to mild tension; breathe slowly.",
+   "Add foam rolling on quads and calves if you have a roller."
+  ],
+  "exercises": [
+   {
+    "name": "Easy bike or row",
+    "sets": 1,
+    "reps": "8 min",
+    "weight": "very easy"
+   },
+   {
+    "name": "Couch stretch (quads/hip flexors)",
+    "sets": 2,
+    "reps": "45s/side"
+   },
+   {
+    "name": "World's greatest stretch",
+    "sets": 2,
+    "reps": "5/side"
+   },
+   {
+    "name": "90/90 hip switches",
+    "sets": 2,
+    "reps": "8/side"
+   },
+   {
+    "name": "Wall calf stretch",
+    "sets": 2,
+    "reps": "30s/side"
+   },
+   {
+    "name": "Open-book thoracic rotation",
+    "sets": 2,
+    "reps": "8/side"
+   },
+   {
+    "name": "Child's pose with side reach",
+    "sets": 1,
+    "reps": "60s"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usms-dry-recovery-mobility",
+   "nhs-flexibility-exercises"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-first-brick",
+  "name": "Somax First Brick (Bike to Run)",
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 50,
+  "equipment": [
+   "bike (trainer or outdoors)",
+   "running shoes"
+  ],
+  "description": "A gentle bike-to-run: 30 easy minutes on the bike, a quick change, then 10-15 minutes of easy running so you learn how 'jelly legs' feel.",
+  "whoItsFor": "Beginners training for a first sprint or super-sprint triathlon or duathlon who can ride 30 min and run 10 min continuously.",
+  "lifestyle": [
+   "home",
+   "outdoor"
+  ],
+  "howToRun": [
+   "Once every 1-2 weeks in the 6-8 weeks before your race.",
+   "Both legs easy (Zone 2); walk breaks on the run are fine.",
+   "Lay out your run kit before you start so the change takes under 3 minutes.",
+   "Increase the run by 5 minutes every 2 weeks."
+  ],
+  "exercises": [
+   {
+    "name": "Bike, easy",
+    "sets": 1,
+    "reps": "30 min",
+    "weight": "Z2 / conversational"
+   },
+   {
+    "name": "Transition - shoes, helmet off",
+    "sets": 1,
+    "reps": "under 3 min"
+   },
+   {
+    "name": "Run, easy - walk breaks OK",
+    "sets": 1,
+    "reps": "10-15 min",
+    "weight": "Z2"
+   },
+   {
+    "name": "Walk + stretch calves and quads",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-cuk-steady-session",
+   "nhs-couch-to-5k-week-5-run-3"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-race-pace-brick",
+  "name": "Somax Race-Pace Brick",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "75 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 75,
+  "equipment": [
+   "bike (trainer or outdoors)",
+   "running shoes",
+   "power meter or HR monitor (optional)"
+  ],
+  "description": "Three race-effort bike blocks, a fast transition, then a run that settles in before building to race pace.",
+  "whoItsFor": "Sprint and Olympic-distance triathletes 4-10 weeks out.",
+  "lifestyle": [
+   "home",
+   "outdoor"
+  ],
+  "howToRun": [
+   "Every 1-2 weeks in the build phase.",
+   "Bike blocks at race effort: ~88-95% FTP for sprint, 85-90% for Olympic.",
+   "Run the first 10 minutes easy, then build to race pace; don't chase pace off the bike.",
+   "Fuel and drink as you would on race day."
+  ],
+  "exercises": [
+   {
+    "name": "Bike, easy building",
+    "sets": 1,
+    "reps": "15 min",
+    "weight": "Z1-Z2"
+   },
+   {
+    "name": "Bike at race effort",
+    "sets": 3,
+    "reps": "8 min",
+    "weight": "88-95% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Bike, easy",
+    "sets": 3,
+    "reps": "3 min",
+    "weight": "Z1",
+    "group": "A"
+   },
+   {
+    "name": "Bike, easy spin",
+    "sets": 1,
+    "reps": "3 min"
+   },
+   {
+    "name": "Transition",
+    "sets": 1,
+    "reps": "under 3 min"
+   },
+   {
+    "name": "Run, easy-steady",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "Z2"
+   },
+   {
+    "name": "Run, build to race pace",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "race pace"
+   },
+   {
+    "name": "Easy jog/walk",
+    "sets": 1,
+    "reps": "3 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-cuk-harder-efforts-2x10",
+   "x-end-bc-3x10-sweet-spot"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-brick-repeats",
+  "name": "Somax Brick Repeats",
+  "category": "fitness",
+  "level": "advanced",
+  "sport": "hybrid",
+  "goals": [
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "80 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 80,
+  "equipment": [
+   "bike on trainer",
+   "treadmill or run loop next to the bike",
+   "power meter or HR monitor"
+  ],
+  "description": "Four rounds of 10 minutes hard on the bike straight into a 1.5km race-pace run - transitions and run legs, over and over.",
+  "whoItsFor": "Advanced triathletes and duathletes sharpening for a race.",
+  "lifestyle": [
+   "home",
+   "outdoor"
+  ],
+  "howToRun": [
+   "Once every 2 weeks in the last 6 weeks before a race; not in race week.",
+   "Bike at race effort (90-95% FTP); run at goal 5-10km race pace.",
+   "Set up a mini transition area; time every change.",
+   "2 minutes easy between rounds; stop if run form falls apart."
+  ],
+  "exercises": [
+   {
+    "name": "Bike warm-up, building",
+    "sets": 1,
+    "reps": "15 min",
+    "weight": "Z1-Z3"
+   },
+   {
+    "name": "Bike at race effort",
+    "sets": 4,
+    "reps": "10 min",
+    "weight": "90-95% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Transition",
+    "sets": 4,
+    "reps": "fast",
+    "group": "A"
+   },
+   {
+    "name": "Run at race pace",
+    "sets": 4,
+    "reps": "1",
+    "weight": "goal race pace",
+    "distance": "1.5km",
+    "group": "A"
+   },
+   {
+    "name": "Easy walk/spin",
+    "sets": 3,
+    "reps": "2 min",
+    "group": "A"
+   },
+   {
+    "name": "Easy spin cool-down",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-bc-under-over",
+   "x-end-bc-3x10-sweet-spot",
+   "x-end-cuk-harder-efforts-2x10"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-gym-triathlon",
+  "name": "Somax Gym Triathlon",
+  "category": "fitness",
+  "level": "beginner",
+  "sport": "hybrid",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "duration": "50 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 50,
+  "equipment": [
+   "pool",
+   "gym bike",
+   "treadmill"
+  ],
+  "description": "Swim, bike and run in one gym visit: 400m in the pool, 20 minutes on the bike and 10 minutes on the treadmill.",
+  "whoItsFor": "Beginners curious about triathlon, or anyone with a gym that has a pool who wants a fun, varied session.",
+  "lifestyle": [
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once every 1-2 weeks.",
+   "All three legs at an easy-steady effort (Zone 2).",
+   "Move between areas promptly but safely - dry off before the bike.",
+   "Build to 750m / 30 min / 20 min over 6-8 weeks for a sprint-distance feel."
+  ],
+  "exercises": [
+   {
+    "name": "Swim, any stroke, rest at walls if needed",
+    "sets": 1,
+    "reps": "1",
+    "weight": "easy-steady",
+    "distance": "400m"
+   },
+   {
+    "name": "Change",
+    "sets": 1,
+    "reps": "5 min"
+   },
+   {
+    "name": "Gym bike",
+    "sets": 1,
+    "reps": "20 min",
+    "weight": "Z2, 85-95 rpm"
+   },
+   {
+    "name": "Treadmill run (walk breaks OK)",
+    "sets": 1,
+    "reps": "10 min",
+    "weight": "Z2"
+   },
+   {
+    "name": "Walk + stretch",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-serpentine-distance-builder",
+   "x-end-cuk-steady-session",
+   "nhs-couch-to-5k-week-5-run-3"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-sprint-tri-rehearsal",
+  "name": "Somax Sprint Triathlon Dress Rehearsal",
+  "category": "fitness",
+  "level": "advanced",
+  "sport": "hybrid",
+  "goals": [
+   "sport-performance",
+   "endurance"
+  ],
+  "duration": "90 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 90,
+  "equipment": [
+   "pool or supervised open water",
+   "bike",
+   "running shoes",
+   "race kit"
+  ],
+  "description": "A full sprint-distance rehearsal - 750m swim, 20km bike, 5km run - at controlled race effort, with real transitions.",
+  "whoItsFor": "Advanced triathletes 2-4 weeks before a sprint race (or intermediates as a 'longer brick' at easier effort).",
+  "lifestyle": [
+   "outdoor",
+   "full-gym"
+  ],
+  "howToRun": [
+   "Once, 2-4 weeks before your race; then ease off.",
+   "Swim at race pace (CSS +2-3s/100m); bike at 88-95% FTP; run at goal pace for the last 3km.",
+   "Use exactly the kit, food and drink you'll race with.",
+   "Open-water swims only at a supervised venue."
+  ],
+  "exercises": [
+   {
+    "name": "Swim, race pace",
+    "sets": 1,
+    "reps": "1",
+    "weight": "CSS +2-3s/100m",
+    "distance": "750m"
+   },
+   {
+    "name": "Transition 1",
+    "sets": 1,
+    "reps": "fast"
+   },
+   {
+    "name": "Bike",
+    "sets": 1,
+    "reps": "1",
+    "weight": "88-95% FTP",
+    "distance": "20km"
+   },
+   {
+    "name": "Transition 2",
+    "sets": 1,
+    "reps": "fast"
+   },
+   {
+    "name": "Run - first km steady, then race pace",
+    "sets": 1,
+    "reps": "1",
+    "weight": "race pace",
+    "distance": "5km"
+   },
+   {
+    "name": "Easy walk + stretch",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-usms-mile-race-simulator",
+   "x-end-bc-3x10-sweet-spot",
+   "hyrox-race-simulation"
+  ],
+  "verified": false
+ },
+ {
+  "id": "x-end-somax-hyb-duathlon-run-bike-run",
+  "name": "Somax Duathlon Run-Bike-Run",
+  "category": "fitness",
+  "level": "intermediate",
+  "sport": "hybrid",
+  "goals": [
+   "endurance",
+   "sport-performance"
+  ],
+  "duration": "70 min",
+  "daysPerWeek": 1,
+  "sessionMinutes": 70,
+  "equipment": [
+   "running shoes",
+   "bike (trainer or outdoors)"
+  ],
+  "description": "Run, bike, run: a steady 2.5km, 30 minutes on the bike with three race-effort blocks, then a second 2.5km on tired legs.",
+  "whoItsFor": "Duathletes and triathletes who want to practise both transitions.",
+  "lifestyle": [
+   "outdoor",
+   "home"
+  ],
+  "howToRun": [
+   "Every 2 weeks in the 8 weeks before a duathlon.",
+   "Run 1 steady (Zone 3), not race pace; run 2 aim for the same pace.",
+   "Bike blocks at 88-94% FTP; easy spin between.",
+   "Keep transitions under 2 minutes each."
+  ],
+  "exercises": [
+   {
+    "name": "Warm-up jog",
+    "sets": 1,
+    "reps": "5 min"
+   },
+   {
+    "name": "Run 1, steady",
+    "sets": 1,
+    "reps": "1",
+    "weight": "Z3",
+    "distance": "2.5km"
+   },
+   {
+    "name": "Transition",
+    "sets": 1,
+    "reps": "under 2 min"
+   },
+   {
+    "name": "Bike, easy",
+    "sets": 1,
+    "reps": "6 min",
+    "weight": "Z2"
+   },
+   {
+    "name": "Bike at race effort",
+    "sets": 3,
+    "reps": "5 min",
+    "weight": "88-94% FTP",
+    "group": "A"
+   },
+   {
+    "name": "Bike, easy",
+    "sets": 3,
+    "reps": "3 min",
+    "weight": "Z1",
+    "group": "A"
+   },
+   {
+    "name": "Transition",
+    "sets": 1,
+    "reps": "under 2 min"
+   },
+   {
+    "name": "Run 2, steady to race pace",
+    "sets": 1,
+    "reps": "1",
+    "weight": "Z3-Z4",
+    "distance": "2.5km"
+   },
+   {
+    "name": "Easy walk",
+    "sets": 1,
+    "reps": "5 min"
+   }
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Original Somax program.",
+  "basedOn": [
+   "x-end-cuk-harder-efforts-3x5",
+   "x-end-bc-sweet-spot-intervals"
+  ],
+  "verified": false
+ }
+]

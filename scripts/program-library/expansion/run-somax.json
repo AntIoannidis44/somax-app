@@ -1,0 +1,2434 @@
+[
+  {
+    "id": "x-run-somax-recovery-run",
+    "name": "Somax Recovery Run 25",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A genuinely slow 25-minute run the day after a hard session - the slow end of easy, nothing more.",
+    "whoItsFor": "Runners doing 5-6 days a week who need an extra day of mileage without extra fatigue.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Only use the day after a workout or long run, never before one.",
+      "Run at the slow end of your easy range - slower than feels necessary.",
+      "Flat route, soft surface if you have one; walk breaks are fine.",
+      "If legs still feel heavy after 10 minutes, cut it to 15 or walk instead."
+    ],
+    "exercises": [
+      {
+        "name": "Very easy run",
+        "sets": 1,
+        "reps": "25 min",
+        "weight": "slow end of easy - you could sing"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kieser-jog-strides",
+      "x-run-nhs-c25k-week-7"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-easy-aerobic-45",
+    "name": "Somax Easy Aerobic 45",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "The bread-and-butter run: 45 steady minutes at a fully conversational pace to build your aerobic engine.",
+    "whoItsFor": "Runners who can run 30+ minutes and want the easy run that should make up most of their week.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "At least 80% of your weekly running time should feel like this.",
+      "Talk test: full sentences the whole way. Heart rate roughly 65-75% of max.",
+      "Grow it by 5 minutes at a time, keeping weekly increases around 5-10%.",
+      "Hot day? Run by effort, not pace, and slow down."
+    ],
+    "exercises": [
+      {
+        "name": "Easy run",
+        "sets": 1,
+        "reps": "45 min",
+        "weight": "easy, conversational (e.g. 6:07-6:52/km for a 25:00 5K)"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-long-run-walk-breaks",
+      "x-run-dinneen-long-run-pickup"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-first-long-run-60",
+    "name": "Somax First Long Run 60",
+    "category": "run",
+    "level": "beginner",
+    "sport": "running",
+    "goals": [
+      "endurance"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 60,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Your first hour on your feet: 60 minutes easy, with an optional 1-minute walk every 10 minutes.",
+    "whoItsFor": "Couch to 5K graduates moving towards 10 km or a first half marathon.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Once a week, on a day with rest or easy activity after it.",
+      "Planned walk breaks are smart, not cheating - they keep the pace honest.",
+      "Grow your long run by about 5-10 minutes a week, cutting back every third week.",
+      "Keep it under a third of your weekly running time."
+    ],
+    "exercises": [
+      {
+        "name": "Easy run",
+        "sets": 6,
+        "reps": "9 min",
+        "weight": "easy, conversational (e.g. 6:07-6:52/km for a 25:00 5K)",
+        "group": "A"
+      },
+      {
+        "name": "Walk break (optional)",
+        "sets": 5,
+        "reps": "1 min",
+        "group": "A"
+      },
+      {
+        "name": "Easy run or walk",
+        "sets": 1,
+        "reps": "1 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-long-run-walk-breaks",
+      "x-run-nhs-c25k-week-7"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-long-run-90",
+    "name": "Somax Long Run 90 with Fuel Practice",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance"
+    ],
+    "duration": "90 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 90,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A 90-minute easy long run (about 14-18 km) with a gel or sports drink every 30-40 minutes to train your gut.",
+    "whoItsFor": "Half-marathon and marathon runners in the build phase.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Long run = no more than 25-30% of weekly km and no more than 150 minutes.",
+      "Easy pace throughout; it's time on feet that counts.",
+      "Practise the fuel and drink you'll use on race day (aim ~30-60 g carbohydrate per hour).",
+      "Every third or fourth week, cut it back by about a quarter."
+    ],
+    "exercises": [
+      {
+        "name": "Easy long run",
+        "sets": 3,
+        "reps": "30 min",
+        "weight": "easy, conversational (e.g. 6:07-6:52/km for a 25:00 5K)",
+        "group": "A"
+      },
+      {
+        "name": "Fuel: gel or sports drink (while running)",
+        "sets": 2,
+        "reps": "1",
+        "group": "A"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kellie-angel-lsd-32km",
+      "x-run-dinneen-long-run-pickup"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-hot-day-easy-run",
+    "name": "Somax Hot-Day Easy Run",
+    "category": "run",
+    "level": "beginner",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "An Aussie-summer version of your easy run: early or late, shorter, run by effort with planned drink stops.",
+    "whoItsFor": "Any runner training through summer heat and humidity.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Go before 7 am or after sunset; shaded or coastal routes help.",
+      "Run by feel - expect to be 20-60 s/km slower than usual. That's fine.",
+      "Drink before you go and carry water; stop at the halfway drink.",
+      "Stop and get into shade if you feel dizzy, sick or stop sweating."
+    ],
+    "exercises": [
+      {
+        "name": "Brisk walk warm-up",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Easy run (by effort, not pace)",
+        "sets": 2,
+        "reps": "10 min",
+        "weight": "easy - full sentences",
+        "group": "A"
+      },
+      {
+        "name": "Drink + shade stop",
+        "sets": 1,
+        "reps": "1-2 min",
+        "group": "A"
+      },
+      {
+        "name": "Walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-nhs-c25k-week-7",
+      "x-run-unimelb-z5k-week-7-run-3"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-treadmill-easy",
+    "name": "Somax Treadmill Easy Run",
+    "category": "run",
+    "level": "beginner",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "treadmill"
+    ],
+    "description": "A 30-minute easy treadmill run at 1% incline, bookended by walks - the indoor version of your easy day.",
+    "whoItsFor": "New runners, gym-goers, shift workers and anyone dodging rain, dark or heat.",
+    "lifestyle": [
+      "full-gym",
+      "busy",
+      "travel"
+    ],
+    "howToRun": [
+      "Set incline to 1% to mimic outdoor effort.",
+      "Pick a speed you can talk at - most beginners run 7-9 km/h.",
+      "Look ahead, not down, and don't hold the rails.",
+      "Graduate from Couch to 5K? This is your treadmill easy day."
+    ],
+    "exercises": [
+      {
+        "name": "Walk warm-up (5-6 km/h)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Easy run, 1% incline",
+        "sets": 1,
+        "reps": "25 min",
+        "weight": "conversational speed (often 7-9 km/h)"
+      },
+      {
+        "name": "Walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-nhs-c25k-week-7",
+      "x-run-unimelb-z5k-week-7-run-3"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-treadmill-intervals",
+    "name": "Somax Treadmill 6 x 2 min",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance",
+      "fat-loss"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 35,
+    "equipment": [
+      "treadmill"
+    ],
+    "description": "Six 2-minute efforts at 5K effort with 2-minute walk/jog recoveries - easy to control on a treadmill.",
+    "whoItsFor": "Runners who can run 30 minutes continuously and want a first interval session indoors.",
+    "lifestyle": [
+      "full-gym",
+      "time-efficient",
+      "busy",
+      "travel"
+    ],
+    "howToRun": [
+      "Incline 1%. Effort speed = what you could hold for about 5 km.",
+      "Straddle the belt or drop to a walk/jog for recovery - don't jump off at speed.",
+      "Once a week; keep the other runs easy.",
+      "When all six feel strong, add 0.5 km/h to the efforts."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up, 1% incline",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Effort",
+        "sets": 6,
+        "reps": "2 min",
+        "weight": "5K effort",
+        "group": "A"
+      },
+      {
+        "name": "Walk/jog recovery",
+        "sets": 6,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "3 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-6x2min",
+      "x-run-kellie-angel-8x2min-fartlek"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-treadmill-hill-pyramid",
+    "name": "Somax Treadmill Hill Pyramid",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "strength",
+      "endurance",
+      "fat-loss"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 40,
+    "equipment": [
+      "treadmill"
+    ],
+    "description": "Steady running while the incline climbs 2-4-6-8% and back down, two minutes at each step.",
+    "whoItsFor": "Runners without hills nearby - great prep for City2Surf's Heartbreak Hill or a hilly trail race.",
+    "lifestyle": [
+      "full-gym",
+      "busy",
+      "travel"
+    ],
+    "howToRun": [
+      "Keep the speed steady and let effort rise with the incline.",
+      "If you can't hold form at 8%, drop the speed rather than grabbing the rails.",
+      "Once a week in place of a hill session.",
+      "Progress by adding a second pyramid or a 10% step."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up, 1% incline",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Run at 2% incline",
+        "sets": 2,
+        "reps": "2 min",
+        "weight": "steady"
+      },
+      {
+        "name": "Run at 4% incline",
+        "sets": 2,
+        "reps": "2 min",
+        "weight": "steady"
+      },
+      {
+        "name": "Run at 6% incline",
+        "sets": 2,
+        "reps": "2 min",
+        "weight": "steady"
+      },
+      {
+        "name": "Run at 8% incline",
+        "sets": 1,
+        "reps": "2 min",
+        "weight": "steady - strong"
+      },
+      {
+        "name": "Easy jog, 1% incline",
+        "sets": 1,
+        "reps": "4 min"
+      },
+      {
+        "name": "Walk cool-down",
+        "sets": 1,
+        "reps": "4 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-440-hill-repeats",
+      "x-run-kellie-angel-60s-hill-repeats"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-treadmill-threshold",
+    "name": "Somax Treadmill 2 x 15 min Threshold",
+    "category": "run",
+    "level": "advanced",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 50,
+    "equipment": [
+      "treadmill"
+    ],
+    "description": "Two 15-minute threshold blocks with a 3-minute jog - precise pacing for half-marathon and 10K runners.",
+    "whoItsFor": "Experienced runners (30+ km/week) who want a controlled tempo indoors.",
+    "lifestyle": [
+      "full-gym",
+      "travel"
+    ],
+    "howToRun": [
+      "Threshold = comfortably hard, the pace you could race for about an hour.",
+      "Set the speed from your threshold pace (e.g. 5:16/km = 11.4 km/h) at 1% incline.",
+      "Keep threshold work under ~10% of weekly km.",
+      "Too hard to finish block 2? You set the speed too high - drop 0.3 km/h next time."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up, 1% incline",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Threshold block",
+        "sets": 2,
+        "reps": "15 min",
+        "weight": "threshold - comfortably hard (e.g. 5:16/km for a 25:00 5K)",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog recovery",
+        "sets": 1,
+        "reps": "3 min",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "7 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kieser-3x10-tempo",
+      "x-run-kieser-tempo-ladder"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-trail-run-walk",
+    "name": "Somax Trail Starter Run-Walk",
+    "category": "run",
+    "level": "beginner",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 40,
+    "equipment": [
+      "trail shoes"
+    ],
+    "description": "A time-based trail outing: run the flats and gentle downs, power-hike every climb.",
+    "whoItsFor": "Road runners and bushwalkers trying trail running for the first time.",
+    "lifestyle": [
+      "outdoor"
+    ],
+    "howToRun": [
+      "Run by time, not distance - trail kilometres are slower.",
+      "Walk every hill you can't run while talking. Short, quick steps on descents.",
+      "Tell someone your route, carry water and a phone, and pick a well-marked loop.",
+      "Watch for roots, rocks and snakes in warmer months."
+    ],
+    "exercises": [
+      {
+        "name": "Brisk walk warm-up",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Easy trail running (flats + gentle downs)",
+        "sets": 1,
+        "reps": "25 min",
+        "weight": "easy, conversational"
+      },
+      {
+        "name": "Power-hike every climb (within the 25 min)",
+        "sets": 1,
+        "reps": "as needed",
+        "weight": "hands on thighs on steep bits"
+      },
+      {
+        "name": "Walk cool-down + calf stretch",
+        "sets": 1,
+        "reps": "10 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kieser-walk-jog-run-fartlek",
+      "x-run-unimelb-z5k-week-6-run-2"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-trail-hills-technique",
+    "name": "Somax Trail Climb & Descend",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "strength",
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 60,
+    "equipment": [
+      "trail shoes"
+    ],
+    "description": "Uphill power-hiking reps plus downhill technique reps on a trail, inside an easy 60-minute run.",
+    "whoItsFor": "Trail runners training for 10-25 km events with real climbing.",
+    "lifestyle": [
+      "outdoor"
+    ],
+    "howToRun": [
+      "Find a 200-400 m trail climb with a runnable descent.",
+      "Climbs: alternate 1 rep running, 1 rep power-hiking - learn which is faster for you.",
+      "Descents: light quick feet, eyes 3-4 m ahead, arms out for balance. Controlled, not reckless.",
+      "Once a week; leave a day of easy running or rest after it."
+    ],
+    "exercises": [
+      {
+        "name": "Easy trail run warm-up",
+        "sets": 1,
+        "reps": "15 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Climb (alternate run / power-hike)",
+        "sets": 6,
+        "reps": "1",
+        "weight": "strong",
+        "distance": "200-400 m",
+        "group": "A"
+      },
+      {
+        "name": "Descent technique (easy, quick feet)",
+        "sets": 6,
+        "reps": "1",
+        "weight": "controlled",
+        "distance": "200-400 m",
+        "group": "A"
+      },
+      {
+        "name": "Easy trail run cool-down",
+        "sets": 1,
+        "reps": "15 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kellie-angel-u-shaped-hills",
+      "x-run-pat-carroll-15-hill-reps"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-trail-long-run",
+    "name": "Somax Trail Time-on-Feet Long Run",
+    "category": "run",
+    "level": "advanced",
+    "sport": "running",
+    "goals": [
+      "endurance"
+    ],
+    "duration": "150 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 150,
+    "equipment": [
+      "trail shoes",
+      "hydration pack"
+    ],
+    "description": "Two to two-and-a-half hours on trails, mixing easy running and power-hiking, with fuel every 30-45 minutes.",
+    "whoItsFor": "Experienced trail runners preparing for 30-50 km or ultra events.",
+    "lifestyle": [
+      "outdoor"
+    ],
+    "howToRun": [
+      "Measure in time, not km. Keep it easy - power-hike anything steep.",
+      "Eat and drink from the first 30 minutes (~30-60 g carbs/hour); carry enough water for the conditions.",
+      "Carry a phone, first-aid/snake bandage and a jacket; tell someone your route and finish time.",
+      "Keep long runs to about 150 minutes unless you're in a specific ultra block with a coach."
+    ],
+    "exercises": [
+      {
+        "name": "Easy trail running + power-hiking",
+        "sets": 5,
+        "reps": "30 min",
+        "weight": "easy, conversational",
+        "group": "A"
+      },
+      {
+        "name": "Fuel + drink (while moving)",
+        "sets": 4,
+        "reps": "1",
+        "group": "A"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kellie-angel-surge-hills",
+      "x-run-kellie-angel-lsd-32km"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-cruise-intervals",
+    "name": "Somax Cruise Intervals 4 x 1 km",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Four 1 km reps at threshold pace with 60-second jogs - the 'little and often' way to raise your threshold.",
+    "whoItsFor": "Intermediate runners training for 10K to half marathon.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Threshold = comfortably hard - not a race. You should finish wanting one more.",
+      "Recoveries are short (about 1 minute per 5 of running) - jog, don't stop.",
+      "Progress to 5-6 x 1 km, then 3-4 x 1.6 km, keeping it under ~10% of weekly km.",
+      "No more than one threshold session a week alongside one other quality day."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Leg swings + walking lunges",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Threshold rep",
+        "sets": 4,
+        "reps": "1",
+        "weight": "threshold - comfortably hard (e.g. 5:16/km for a 25:00 5K)",
+        "distance": "1 km",
+        "group": "A"
+      },
+      {
+        "name": "Jog recovery",
+        "sets": 3,
+        "reps": "60s",
+        "weight": "easy",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kieser-3x10-tempo",
+      "x-run-pat-carroll-5x1km"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-progression-run",
+    "name": "Somax Progression Run 40",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 40,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Forty minutes in thirds: easy, then steady, then a final 10-13 minutes at threshold.",
+    "whoItsFor": "Runners who like a single continuous run that finishes strong.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Start slower than you think; the finish is the workout.",
+      "Steady = marathon-ish effort; final third = threshold, comfortably hard.",
+      "Counts as a quality day - don't put it next to intervals or a long run.",
+      "Progress to 50 minutes or make the final third the last 15 minutes."
+    ],
+    "exercises": [
+      {
+        "name": "Easy",
+        "sets": 1,
+        "reps": "14 min",
+        "weight": "easy, conversational (e.g. 6:07-6:52/km for a 25:00 5K)"
+      },
+      {
+        "name": "Steady",
+        "sets": 1,
+        "reps": "13 min",
+        "weight": "steady - marathon effort"
+      },
+      {
+        "name": "Threshold finish",
+        "sets": 1,
+        "reps": "13 min",
+        "weight": "threshold - comfortably hard (e.g. 5:16/km for a 25:00 5K)"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kellie-angel-progressive-run",
+      "x-run-dinneen-long-run-pickup"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-200s-speed",
+    "name": "Somax 10 x 200 m Speed",
+    "category": "run",
+    "level": "advanced",
+    "sport": "running",
+    "goals": [
+      "sport-performance",
+      "endurance"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 40,
+    "equipment": [
+      "track or measured route"
+    ],
+    "description": "Ten fast-but-relaxed 200 m reps at mile pace with full 200 m jog recoveries to sharpen speed and form.",
+    "whoItsFor": "Advanced 5K-10K runners in the peak phase who want top-end speed without heavy fatigue.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Repetition pace = about your mile race pace. Smooth, tall and relaxed.",
+      "Recovery is long on purpose (2-3x the rep time) - jog the full 200 m.",
+      "Keep R-pace volume under ~5% of weekly km.",
+      "Every rep the same time; if form breaks, stop the set."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Leg swings + walking lunges",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Strides (walk back)",
+        "sets": 4,
+        "reps": "20s",
+        "weight": "fast, relaxed"
+      },
+      {
+        "name": "200 m rep",
+        "sets": 10,
+        "reps": "1",
+        "weight": "repetition - about mile race pace, fast and relaxed (e.g. 4:36/km for a 25:00 5K)",
+        "distance": "200 m",
+        "group": "A"
+      },
+      {
+        "name": "Jog recovery",
+        "sets": 10,
+        "reps": "1",
+        "weight": "easy",
+        "distance": "200 m",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kieser-6x400-5k-pace",
+      "x-run-440-10x400"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-track-ladder",
+    "name": "Somax Track Ladder 1200-400",
+    "category": "run",
+    "level": "advanced",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "55 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 55,
+    "equipment": [
+      "track or measured route"
+    ],
+    "description": "A 5K-specific descending ladder: 1200, 1000, 800, 600 and 400 m at interval pace, getting slightly quicker as reps shorten.",
+    "whoItsFor": "Advanced runners sharpening for a 5K or parkrun PB.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "1200-800 at interval pace; 600 and 400 a touch faster.",
+      "Jog recovery about equal to 2/3 of the rep time.",
+      "Total 4 km of quality - within the ~8% weekly cap only if you run 50+ km/week; otherwise drop the 1200.",
+      "Don't race the first rep; the 400 should be the fastest."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Leg swings + walking lunges",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Strides (walk back)",
+        "sets": 4,
+        "reps": "20s",
+        "weight": "fast, relaxed"
+      },
+      {
+        "name": "1200 m",
+        "sets": 1,
+        "reps": "1",
+        "weight": "interval - about 3K-5K race pace (e.g. 4:51/km for a 25:00 5K)",
+        "distance": "1200 m"
+      },
+      {
+        "name": "1000 m",
+        "sets": 1,
+        "reps": "1",
+        "weight": "interval - about 3K-5K race pace (e.g. 4:51/km for a 25:00 5K)",
+        "distance": "1000 m"
+      },
+      {
+        "name": "800 m",
+        "sets": 1,
+        "reps": "1",
+        "weight": "interval - about 3K-5K race pace (e.g. 4:51/km for a 25:00 5K)",
+        "distance": "800 m"
+      },
+      {
+        "name": "600 m",
+        "sets": 1,
+        "reps": "1",
+        "weight": "slightly faster than interval pace",
+        "distance": "600 m"
+      },
+      {
+        "name": "400 m",
+        "sets": 1,
+        "reps": "1",
+        "weight": "slightly faster than interval pace",
+        "distance": "400 m"
+      },
+      {
+        "name": "Jog recovery between reps",
+        "sets": 4,
+        "reps": "2-3 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-5x1km",
+      "x-run-kieser-6x400-5k-pace"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-over-unders",
+    "name": "Somax Over-Unders",
+    "category": "run",
+    "level": "advanced",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 50,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Three continuous blocks that surge above and settle just below threshold - teaches you to recover while still running fast.",
+    "whoItsFor": "Advanced half-marathon and 10K runners in the build phase.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Each block: 2 min just under threshold, 1 min at 10K-5K effort, repeated 3 times without stopping.",
+      "3 minutes' easy jog between blocks.",
+      "Hard session - easy days either side.",
+      "Start with 2 blocks if threshold work is new."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Leg swings + walking lunges",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Under: just below threshold",
+        "sets": 9,
+        "reps": "2 min",
+        "weight": "steady-hard, just under T",
+        "group": "A"
+      },
+      {
+        "name": "Over: 10K-5K effort",
+        "sets": 9,
+        "reps": "1 min",
+        "weight": "10K-5K effort",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog between blocks (3 blocks of 3 rounds)",
+        "sets": 2,
+        "reps": "3 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-kieser-tempo-ladder",
+      "x-run-kellie-angel-8x2min-fartlek"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-hill-sprints",
+    "name": "Somax Easy Run + Hill Sprints",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A 25-minute easy run finished with eight 10-second all-out hill sprints and full walk-back recovery.",
+    "whoItsFor": "Intermediate runners wanting power and better running economy with almost no fatigue cost.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Steep-ish hill; sprint 10 seconds at near-max effort, tall posture, powerful arms.",
+      "Walk back down and rest fully (about 90 seconds) - these are about power, not fitness.",
+      "Start with 4-6 sprints; build to 8-10.",
+      "Do them on an easy day, not before a workout."
+    ],
+    "exercises": [
+      {
+        "name": "Easy run",
+        "sets": 1,
+        "reps": "25 min",
+        "weight": "easy, conversational (e.g. 6:07-6:52/km for a 25:00 5K)"
+      },
+      {
+        "name": "Hill sprint",
+        "sets": 8,
+        "reps": "10s",
+        "weight": "near-max, steep hill"
+      },
+      {
+        "name": "Walk-back recovery",
+        "sets": 8,
+        "reps": "~90s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-15-hill-reps",
+      "x-run-dinneen-8x1min-hills"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-drills-strides",
+    "name": "Somax Form Drills & Strides",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "sport-performance",
+      "mobility"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Running drills (A-skips, B-skips, high knees, butt kicks, carioca) then six strides - better form in half an hour.",
+    "whoItsFor": "Runners who want smoother, more efficient form; ideal before a workout or on an easy day.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Drills over 20-30 m each, walking back as recovery.",
+      "Quality over speed - tall posture, quick feet, relaxed shoulders.",
+      "Strides build to about 90% then float to a stop.",
+      "Twice a week; replaces strides on an easy day."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      },
+      {
+        "name": "A-skips",
+        "sets": 2,
+        "reps": "1",
+        "distance": "20-30 m"
+      },
+      {
+        "name": "B-skips",
+        "sets": 2,
+        "reps": "1",
+        "distance": "20-30 m"
+      },
+      {
+        "name": "High knees",
+        "sets": 2,
+        "reps": "1",
+        "distance": "20-30 m"
+      },
+      {
+        "name": "Butt kicks",
+        "sets": 2,
+        "reps": "1",
+        "distance": "20-30 m"
+      },
+      {
+        "name": "Carioca (each way)",
+        "sets": 2,
+        "reps": "1",
+        "distance": "20-30 m"
+      },
+      {
+        "name": "Strides (walk back)",
+        "sets": 6,
+        "reps": "1",
+        "weight": "build to ~90%, relaxed",
+        "distance": "80-100 m"
+      },
+      {
+        "name": "Easy jog",
+        "sets": 1,
+        "reps": "5 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-440-dynamic-warm-up",
+      "x-run-dinneen-strides-session"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-lunchtime-20",
+    "name": "Somax Lunchtime 20 with Pick-ups",
+    "category": "run",
+    "level": "beginner",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "general-fitness",
+      "fat-loss"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Twenty minutes door-to-door: easy running with six 30-second pick-ups to keep it lively.",
+    "whoItsFor": "Busy runners who can run 20-30 minutes continuously and only have a lunch break.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "busy",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Pick-ups are brisk, not sprints - about 5K effort.",
+      "Recover with easy running between them.",
+      "Fine on 2-3 days a week; keep one longer easy run on the weekend.",
+      "No time to shower? Drop the pick-ups and keep it easy."
+    ],
+    "exercises": [
+      {
+        "name": "Easy run",
+        "sets": 1,
+        "reps": "5 min",
+        "weight": "easy, conversational (e.g. 6:07-6:52/km for a 25:00 5K)"
+      },
+      {
+        "name": "Pick-up",
+        "sets": 6,
+        "reps": "30s",
+        "weight": "5K effort",
+        "group": "A"
+      },
+      {
+        "name": "Easy run",
+        "sets": 6,
+        "reps": "90s",
+        "weight": "easy",
+        "group": "A"
+      },
+      {
+        "name": "Easy run",
+        "sets": 1,
+        "reps": "3 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-15x30-30",
+      "x-run-unimelb-z5k-week-6-run-1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-5k-time-trial",
+    "name": "Somax 5K Benchmark Time Trial",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 50,
+    "equipment": [
+      "track or measured route"
+    ],
+    "description": "A full warm-up then a 5 km time trial (or parkrun) to set your training paces. Repeat every 4-6 weeks.",
+    "whoItsFor": "Any runner who can run 5 km continuously and wants accurate paces for their plan.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Flat, accurately measured route or a parkrun. Rested legs - easy days beforehand.",
+      "Start at a pace you can hold, then push the last kilometre.",
+      "Enter your time in Somax to update your easy, threshold and interval paces.",
+      "Retest every 4-6 weeks; in between, paces rise by no more than about 1 VDOT."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Leg swings + walking lunges",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Strides (walk back)",
+        "sets": 4,
+        "reps": "20s",
+        "weight": "fast, relaxed"
+      },
+      {
+        "name": "5 km time trial",
+        "sets": 1,
+        "reps": "1",
+        "weight": "race effort, even pace",
+        "distance": "5 km"
+      },
+      {
+        "name": "Easy jog / walk cool-down",
+        "sets": 1,
+        "reps": "10 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-3km-time-trial",
+      "x-run-dinneen-15min-plus-1min-reps"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-half-marathon-pace",
+    "name": "Somax 3 x 3 km Half-Marathon Pace",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "70 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 70,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Three 3 km reps at goal half-marathon pace with 2-minute jogs - lock in race rhythm.",
+    "whoItsFor": "Intermediate half-marathoners in the last 6-8 weeks before race day.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Goal pace only - faster is not better here.",
+      "Jog the 2-minute recoveries.",
+      "Progress to 2 x 5 km, then 8 km continuous at goal pace two to three weeks out.",
+      "Use race shoes and fuel to rehearse."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Leg swings + walking lunges",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Half-marathon pace rep",
+        "sets": 3,
+        "reps": "1",
+        "weight": "goal half-marathon pace (e.g. 5:27/km for a 1:55 half)",
+        "distance": "3 km",
+        "group": "A"
+      },
+      {
+        "name": "Jog recovery",
+        "sets": 2,
+        "reps": "2 min",
+        "weight": "easy",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog cool-down",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "easy"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-long-run-hmp-finish",
+      "x-run-dinneen-4x8min-race-pace"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-return-to-running",
+    "name": "Somax Return-to-Running 4:1",
+    "category": "run",
+    "level": "beginner",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Five rounds of a 4-minute easy run and 1-minute walk - a safe first step back after 2+ weeks off.",
+    "whoItsFor": "Runners returning after illness, injury (cleared by a health professional), travel or a long break.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "Restart at about half to two-thirds of your old weekly volume.",
+      "Pain that changes how you run = stop and walk; if it persists, see a physio.",
+      "When this feels easy three times, move to 30 minutes continuous, then rebuild.",
+      "Retest your 5K after 3-4 weeks before returning to old paces."
+    ],
+    "exercises": [
+      {
+        "name": "Brisk walk warm-up",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Easy run",
+        "sets": 5,
+        "reps": "4 min",
+        "weight": "easy, conversational",
+        "group": "A"
+      },
+      {
+        "name": "Walk",
+        "sets": 5,
+        "reps": "1 min",
+        "group": "A"
+      },
+      {
+        "name": "Walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-nhs-c25k-week-5-run-1",
+      "x-run-unimelb-z5k-week-5-run-2"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-masters-quality",
+    "name": "Somax Masters (50+) Quality Session",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 50,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A longer warm-up, six 2-minute efforts at 10K effort with generous 2-minute jog/walk recoveries, and a mobility cool-down.",
+    "whoItsFor": "Runners aged 50+ who want quality work with more recovery built in.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "older-adults"
+    ],
+    "howToRun": [
+      "One quality session a week; most other running easy, plus 2 strength sessions.",
+      "Warm up longer than you used to - 15 minutes plus drills.",
+      "If legs aren't recovered in 48 hours, cut to 4 efforts or add a rest day.",
+      "Strength training (Newcastle NHS physio routine or Somax runner strength) matters more with age."
+    ],
+    "exercises": [
+      {
+        "name": "Easy jog warm-up",
+        "sets": 1,
+        "reps": "15 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Leg swings + walking lunges",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Effort",
+        "sets": 6,
+        "reps": "2 min",
+        "weight": "10K effort",
+        "group": "A"
+      },
+      {
+        "name": "Jog/walk recovery",
+        "sets": 6,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Easy jog",
+        "sets": 1,
+        "reps": "5 min",
+        "weight": "easy"
+      },
+      {
+        "name": "Calf, hip flexor and hamstring stretches",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-pat-carroll-6x2min",
+      "x-run-newcastle-nhs-runner-strength"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-runner-plyo-power",
+    "name": "Somax Runner Plyo Power",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "running",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight",
+      "step or box"
+    ],
+    "description": "Bodyweight plyometrics for springier running: pogos, skips for height, bounds, single-leg hops and step-up drives.",
+    "whoItsFor": "Advanced runners with a solid strength base and no current lower-limb injury.",
+    "lifestyle": [
+      "home",
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Twice a week on easy days, never the day before a workout.",
+      "Quality over quantity: full recovery (60-90 s) between sets, stop when contacts get slow or heavy.",
+      "Soft grass or a sprung floor - not concrete.",
+      "Must be able to do 20 single-leg calf raises and 10 single-leg squats to a box first."
+    ],
+    "exercises": [
+      {
+        "name": "Skipping warm-up + leg swings",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Pogo jumps (stiff ankles)",
+        "sets": 3,
+        "reps": "20"
+      },
+      {
+        "name": "Skips for height",
+        "sets": 3,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Bounding",
+        "sets": 3,
+        "reps": "1",
+        "distance": "20-30 m"
+      },
+      {
+        "name": "Single-leg hop in place",
+        "sets": 3,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Box/step drive (explosive step-up)",
+        "sets": 3,
+        "reps": "6/leg"
+      },
+      {
+        "name": "Lateral skater hop",
+        "sets": 3,
+        "reps": "8/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-newcastle-nhs-runner-strength",
+      "x-run-440-dynamic-warm-up"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-calf-achilles",
+    "name": "Somax Calf & Achilles Bulletproofing",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "running",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "bodyweight",
+      "step or box"
+    ],
+    "description": "Fifteen minutes of calf and Achilles strength - straight and bent-knee raises, slow lowers off a step and an isometric hold.",
+    "whoItsFor": "Runners increasing mileage or prone to calf strains and Achilles niggles.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Three times a week, after an easy run or on a rest day.",
+      "Lower slowly (3 seconds) every rep; hold a rail for balance.",
+      "Mild discomfort (up to 3/10) that settles by next morning is OK; sharp pain isn't.",
+      "Add a backpack with books when 3 x 15 single-leg raises feel easy."
+    ],
+    "exercises": [
+      {
+        "name": "Single-leg calf raise (straight knee) on step",
+        "sets": 3,
+        "reps": "12-15/leg",
+        "weight": "3 s lower"
+      },
+      {
+        "name": "Single-leg calf raise (bent knee) on step",
+        "sets": 3,
+        "reps": "12-15/leg",
+        "weight": "3 s lower"
+      },
+      {
+        "name": "Slow heel drop off step (up on two, down on one)",
+        "sets": 2,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Isometric calf raise hold (mid-range)",
+        "sets": 3,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Tibialis raise (back against wall)",
+        "sets": 2,
+        "reps": "15"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-newcastle-nhs-runner-strength",
+      "x-run-nhs-knee-exercises-runners"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-runner-mobility-15",
+    "name": "Somax Runner's Mobility 15",
+    "category": "other",
+    "level": "beginner",
+    "sport": "running",
+    "goals": [
+      "mobility"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 15,
+    "equipment": [
+      "bodyweight",
+      "mat"
+    ],
+    "description": "A 15-minute post-run mobility flow for runners' tight spots: ankles, calves, hips, hamstrings and upper back.",
+    "whoItsFor": "Any runner who feels stiff after runs or sits a lot during the day.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy",
+      "travel"
+    ],
+    "howToRun": [
+      "Best straight after a run or in the evening.",
+      "Hold stretches 30 seconds (60 if you're 65+), breathe slowly, no bouncing.",
+      "Mild stretch only - never pain.",
+      "Do it 3-5 days a week; noticeable range gains usually take about 6 weeks."
+    ],
+    "exercises": [
+      {
+        "name": "Knee-to-wall ankle mobilisation",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Calf stretch (straight + bent knee)",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Half-kneeling hip flexor stretch",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "90/90 hip switches",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Supine hamstring stretch (strap or towel)",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Figure-4 glute stretch",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Open-book thoracic rotation",
+        "sets": 2,
+        "reps": "8/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-newcastle-nhs-runner-strength",
+      "nhs-flexibility-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-treadmill-incline-walk",
+    "name": "Somax Treadmill Incline Walk",
+    "category": "walk",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 35,
+    "equipment": [
+      "treadmill"
+    ],
+    "description": "A steady uphill treadmill walk - high calorie burn and low impact, with the incline doing the work.",
+    "whoItsFor": "People wanting fat loss and fitness without running, or runners on a low-impact day.",
+    "lifestyle": [
+      "full-gym",
+      "busy",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Hands off the rails - holding on cuts the effort a lot.",
+      "Breathing hard but able to speak in short sentences.",
+      "Start at 5% incline; add 1% a week up to about 10-12%.",
+      "3-4 times a week alongside 2 strength days for best fat-loss results."
+    ],
+    "exercises": [
+      {
+        "name": "Flat walk warm-up (5 km/h)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Incline walk",
+        "sets": 1,
+        "reps": "25 min",
+        "weight": "6-10% incline, 5-5.5 km/h, breathing hard"
+      },
+      {
+        "name": "Flat walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-wirral-advanced-brisk-walk",
+      "x-run-nhlbi-walking-week-12"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-lunchtime-power-walk",
+    "name": "Somax Lunchtime Power Walk 20",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A brisk 20-minute walk with three 1-minute power bursts - fits in a lunch break, no change of clothes needed.",
+    "whoItsFor": "Office workers and busy parents who want to get to 150 minutes a week a few minutes at a time.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "busy",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Most days of the week - it adds 100 minutes towards the 150-minute weekly target.",
+      "Brisk = you can talk but not sing; power bursts = short phrases only.",
+      "Swing your arms and take quicker, not longer, steps.",
+      "Raise your daily steps by about 2,000 at a time, aiming for 7,000+."
+    ],
+    "exercises": [
+      {
+        "name": "Easy walk",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Brisk walk",
+        "sets": 3,
+        "reps": "4 min",
+        "weight": "talk, not sing",
+        "group": "A"
+      },
+      {
+        "name": "Power walk",
+        "sets": 3,
+        "reps": "1 min",
+        "weight": "short phrases only",
+        "group": "A"
+      },
+      {
+        "name": "Easy walk",
+        "sets": 1,
+        "reps": "2 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-nhlbi-walking-week-12",
+      "x-run-shinshu-interval-walking"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-stair-walk",
+    "name": "Somax Stair Climb Session",
+    "category": "walk",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "strength"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "stairs or step"
+    ],
+    "description": "Walking intervals on a staircase or step: climb steadily, walk down carefully, repeat - great for legs and lungs.",
+    "whoItsFor": "Apartment dwellers, office workers with a stairwell, or anyone with a local stair climb.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Hold the rail on the way down and step carefully.",
+      "Climb at a pace where you're puffing but in control.",
+      "No stairs? Step-ups on a sturdy step (20-30 cm) work too.",
+      "Not suitable if you have balance problems - choose a flat walk instead."
+    ],
+    "exercises": [
+      {
+        "name": "Flat walk warm-up",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Climb stairs (2-4 flights / step-ups 2 min)",
+        "sets": 8,
+        "reps": "1",
+        "weight": "puffing, steady",
+        "group": "A"
+      },
+      {
+        "name": "Walk down carefully / easy walk",
+        "sets": 8,
+        "reps": "1-2 min",
+        "group": "A"
+      },
+      {
+        "name": "Flat walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-wirral-advanced-brisk-walk",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-older-walk-balance",
+    "name": "Somax Walk & Balance (60+)",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "mobility",
+      "strength"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight",
+      "chair"
+    ],
+    "description": "A 20-minute comfortable walk followed by 10 minutes of balance and leg strength at the kitchen bench.",
+    "whoItsFor": "Adults 60+ who walk already and want to stay steady on their feet. Walking alone doesn't prevent falls - this adds what's missing.",
+    "lifestyle": [
+      "older-adults",
+      "home",
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Three days a week with a rest day between; walk on other days too.",
+      "Always have the bench or a sturdy chair within reach for balance work.",
+      "Progress balance by touching the bench less, then not at all.",
+      "Any fall in the past year? Check with your GP first and keep a hand on support."
+    ],
+    "exercises": [
+      {
+        "name": "Comfortable walk",
+        "sets": 1,
+        "reps": "20 min",
+        "weight": "can chat the whole way"
+      },
+      {
+        "name": "Sit to stand (chair)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Heel-to-toe walk along the bench",
+        "sets": 2,
+        "reps": "10 steps"
+      },
+      {
+        "name": "Sideways walking along the bench",
+        "sets": 2,
+        "reps": "10 steps each way"
+      },
+      {
+        "name": "Single-leg stand (hold bench)",
+        "sets": 2,
+        "reps": "10-30s/leg"
+      },
+      {
+        "name": "Calf raise (hold bench)",
+        "sets": 2,
+        "reps": "10"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-wirral-beginner-walk-week-1",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-older-walking-snacks",
+    "name": "Somax 3 x 10 Walking Snacks (Supported)",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "endurance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Three 10-minute walks spread through the day, each finished with one simple balance drill at the bench.",
+    "whoItsFor": "Older or deconditioned adults who find a 30-minute walk too much in one go.",
+    "lifestyle": [
+      "older-adults",
+      "home",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "Split the day: e.g. after breakfast, lunch and dinner.",
+      "Usual comfortable pace; use your walking aid if you have one.",
+      "Do the balance drill holding the bench every time.",
+      "When 10 minutes feels easy, make one walk 15 minutes, then 20."
+    ],
+    "exercises": [
+      {
+        "name": "Walk (morning)",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "comfortable"
+      },
+      {
+        "name": "Balance: heel-to-toe stand, hold bench",
+        "sets": 1,
+        "reps": "10s each side"
+      },
+      {
+        "name": "Walk (midday)",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "comfortable"
+      },
+      {
+        "name": "Balance: sideways walking along the bench",
+        "sets": 1,
+        "reps": "10 steps each way"
+      },
+      {
+        "name": "Walk (evening)",
+        "sets": 1,
+        "reps": "10 min",
+        "weight": "comfortable"
+      },
+      {
+        "name": "Balance: single-leg stand, hold bench",
+        "sets": 1,
+        "reps": "10s/leg"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-nhlbi-walking-week-1",
+      "x-run-wirral-beginner-walk-week-1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-bushwalk-prep",
+    "name": "Somax Bushwalk Prep Hike",
+    "category": "walk",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "endurance",
+      "strength",
+      "fat-loss"
+    ],
+    "duration": "90 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 90,
+    "equipment": [
+      "daypack",
+      "walking shoes"
+    ],
+    "description": "A 90-minute hilly walk carrying a light daypack - builds the legs and stamina for day hikes and multi-day walks.",
+    "whoItsFor": "Walkers training for bushwalks like the Overland Track, Larapinta or a big day hike.",
+    "lifestyle": [
+      "outdoor"
+    ],
+    "howToRun": [
+      "Once a week; start with 3-4 kg in the pack and add 1 kg a week to about 8-10 kg.",
+      "Pick a route with real climbs; short steps uphill, poles help on the descents.",
+      "Carry water, snacks, a phone and sun protection; tell someone your route.",
+      "Build towards 2-3 hours if your goal hike is a long day."
+    ],
+    "exercises": [
+      {
+        "name": "Easy walk warm-up",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Hilly walk with daypack",
+        "sets": 1,
+        "reps": "70 min",
+        "weight": "steady - can talk in sentences, harder on climbs"
+      },
+      {
+        "name": "Easy walk cool-down + calf/hip stretches",
+        "sets": 1,
+        "reps": "10 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-wirral-advanced-long-walk",
+      "x-run-kellie-angel-surge-hills"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-ruck-walk",
+    "name": "Somax Ruck Walk 45",
+    "category": "walk",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "endurance",
+      "fat-loss"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "backpack with weight"
+    ],
+    "description": "A brisk 45-minute walk with a weighted backpack - more work for legs, back and heart without running.",
+    "whoItsFor": "Fit walkers who want a tougher low-impact session; useful for hikers and tradies alike.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Start with 5 kg high and tight on your back; add 1-2 kg a week, keeping it under ~15% of bodyweight.",
+      "Walk tall - don't lean forward; shorten your stride if needed.",
+      "Twice a week, not on back-to-back days.",
+      "Skip it if you have back or knee pain."
+    ],
+    "exercises": [
+      {
+        "name": "Unloaded walk warm-up",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Weighted ruck walk",
+        "sets": 1,
+        "reps": "35 min",
+        "weight": "brisk, 5-10 kg pack"
+      },
+      {
+        "name": "Unloaded walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-wirral-advanced-brisk-walk",
+      "x-run-nhlbi-walking-week-12"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-walk-to-jog-bridge",
+    "name": "Somax Walk-to-Jog Bridge",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Brisk walking with eight 30-second gentle jogs - the bridge between a walking plan and Couch to 5K.",
+    "whoItsFor": "Walkers who can walk briskly for 30 minutes and want to try jogging gently.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "Three times a week, rest days between.",
+      "Jog so slowly you could almost walk faster - that's right.",
+      "When all eight feel comfortable twice, start Couch to 5K Week 1.",
+      "Sore joints? Stay with brisk walking another week."
+    ],
+    "exercises": [
+      {
+        "name": "Brisk walk warm-up",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Gentle jog",
+        "sets": 8,
+        "reps": "30s",
+        "weight": "very easy",
+        "group": "A"
+      },
+      {
+        "name": "Brisk walk",
+        "sets": 8,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-nhlbi-walking-week-12",
+      "nhs-couch-to-5k-week-1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-parkrun-walk",
+    "name": "Somax 5 km Power Walk (parkrun pace)",
+    "category": "walk",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "55 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 55,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A brisk 5 km walk aiming for 9-10 minutes per km - perfect practice for walking a Saturday parkrun.",
+    "whoItsFor": "Regular walkers who want a measurable goal and a weekly community event.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Time yourself - aim to knock 15-30 s off each month.",
+      "Quick, short steps and a strong arm swing; stay tall.",
+      "Brisk = breathing harder, short sentences.",
+      "parkrun welcomes walkers - many finish in 45-60 minutes."
+    ],
+    "exercises": [
+      {
+        "name": "Easy walk warm-up",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Power walk",
+        "sets": 1,
+        "reps": "1",
+        "weight": "brisk, about 9-10 min/km",
+        "distance": "5 km"
+      },
+      {
+        "name": "Walk cool-down",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-wirral-advanced-brisk-walk",
+      "x-run-nhlbi-walking-week-12"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-run-somax-weekend-long-walk",
+    "name": "Somax Weekend Long Walk 60",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 60,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "One relaxed hour of walking at a comfortable pace - the walking equivalent of a runner's long run.",
+    "whoItsFor": "Walkers who have built up to 30-40 minutes and want one longer walk each weekend.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Once a week; keep weekday walks shorter and brisker.",
+      "Comfortable pace - you can chat the whole way. Coastal paths, parks and rail trails are ideal.",
+      "Grow from 45 to 60 minutes, then towards 75-90 minutes.",
+      "Bring water and a hat in summer."
+    ],
+    "exercises": [
+      {
+        "name": "Easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Comfortable walk",
+        "sets": 1,
+        "reps": "50 min",
+        "weight": "can chat the whole way"
+      },
+      {
+        "name": "Easy walk + calf stretch",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-run-wirral-advanced-long-walk",
+      "x-run-nhlbi-walking-week-12"
+    ],
+    "verified": false
+  }
+]

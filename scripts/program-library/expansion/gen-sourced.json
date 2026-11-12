@@ -1,0 +1,1267 @@
+[
+  {
+    "id": "x-gen-nhs-balance-exercises",
+    "name": "NHS Balance Exercises",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "mobility"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 10,
+    "equipment": [
+      "bodyweight",
+      "wall",
+      "step"
+    ],
+    "description": "Five short balance drills from the NHS older-adult series: side-stepping, a grapevine, heel-to-toe walking, a supported one-leg stand and a step-up.",
+    "whoItsFor": "Older adults and anyone who feels a bit unsteady and wants to build balance safely at home, next to a wall or sturdy chair.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "At least twice a week, alongside the NHS strength, sitting and flexibility routines.",
+      "Always do these next to a wall or stable chair you can grab.",
+      "Build the reps up slowly; smaller grapevine steps and moving away from the wall make it harder.",
+      "If you've had a fall in the last year, check with your GP before starting."
+    ],
+    "exercises": [
+      {
+        "name": "Sideways Walking",
+        "sets": 1,
+        "reps": "10 steps each way"
+      },
+      {
+        "name": "Simple Grapevine",
+        "sets": 1,
+        "reps": "5 cross-steps/side"
+      },
+      {
+        "name": "Heel-to-toe Walk (fingers on wall if needed)",
+        "sets": 1,
+        "reps": "5+ steps"
+      },
+      {
+        "name": "One-leg Stand (fingertips on wall)",
+        "sets": 3,
+        "reps": "5-10s hold/side"
+      },
+      {
+        "name": "Step-up (rail or wall nearby)",
+        "sets": 1,
+        "reps": "up to 5/leg"
+      }
+    ],
+    "credit": "NHS",
+    "sourceUrl": "https://www.nhs.uk/live-well/exercise/strength-and-flexibility-exercises/balance-exercises/",
+    "sourceNote": "Free NHS guidance (© Crown copyright; no reproduction restriction on the page). Exercise names, reps and holds only; descriptions are ours. Credit and link to NHS.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-nhs-sitting-exercises",
+    "name": "NHS Sitting Exercises",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 10,
+    "equipment": [
+      "chair"
+    ],
+    "description": "A gentle seated routine from the NHS: chest stretch, upper-body twist, hip marching, ankle stretches and neck rotations, all from a sturdy chair.",
+    "whoItsFor": "People with limited mobility, older adults, and desk workers who want a gentle seated reset they can do without standing up.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "busy",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "At least twice a week; at a desk you can do it daily.",
+      "Use a solid chair without wheels or arms, and sit upright away from the backrest.",
+      "Move only as far as is comfortable and build the reps up over time.",
+      "If you haven't exercised for a while or are unsure it suits you, check with your GP first."
+    ],
+    "exercises": [
+      {
+        "name": "Chest Stretch (seated)",
+        "sets": 5,
+        "reps": "5-10s hold"
+      },
+      {
+        "name": "Upper-body Twist (seated)",
+        "sets": 5,
+        "reps": "5s hold/side"
+      },
+      {
+        "name": "Hip Marching (seated)",
+        "sets": 1,
+        "reps": "5/leg"
+      },
+      {
+        "name": "Ankle Stretch (point and flex, leg raised)",
+        "sets": 2,
+        "reps": "5/foot"
+      },
+      {
+        "name": "Neck Rotation (seated)",
+        "sets": 3,
+        "reps": "5s hold/side"
+      }
+    ],
+    "credit": "NHS",
+    "sourceUrl": "https://www.nhs.uk/live-well/exercise/strength-and-flexibility-exercises/sitting-exercises/",
+    "sourceNote": "Free NHS guidance (© Crown copyright; no reproduction restriction on the page). Exercise names, reps and holds only; descriptions are ours. Credit and link to NHS.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-nhs-warm-up",
+    "name": "NHS 6-Minute Warm-up",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "mobility"
+    ],
+    "duration": "6 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 6,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "The NHS's simple warm-up routine of marching, heel digs, knee lifts, shoulder rolls and shallow knee bends, taking at least 6 minutes.",
+    "whoItsFor": "Anyone about to exercise who wants a quick, quiet warm-up to raise their heart rate and loosen the joints first.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do it before any workout or brisk walk.",
+      "Keep the movements smooth and build the pace gradually.",
+      "Keep the knee bends shallow (no more than about 10 cm).",
+      "Go straight into your main session afterwards so you don't cool down."
+    ],
+    "exercises": [
+      {
+        "name": "March on the Spot (then forwards/backwards, pumping arms)",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Heel Digs",
+        "sets": 1,
+        "reps": "60 in 60s"
+      },
+      {
+        "name": "Knee Lifts",
+        "sets": 1,
+        "reps": "30 in 30s"
+      },
+      {
+        "name": "Shoulder Rolls while marching (5 forward, 5 back)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Knee Bends (lower no more than 10 cm)",
+        "sets": 1,
+        "reps": "10"
+      }
+    ],
+    "credit": "NHS",
+    "sourceUrl": "https://www.nhs.uk/live-well/exercise/how-to-warm-up-before-exercising/",
+    "sourceNote": "Free NHS guidance (© Crown copyright; no reproduction restriction on the page). Exercise names, reps and holds only; descriptions are ours. Credit and link to NHS.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-nhs-post-exercise-stretches",
+    "name": "NHS Post-exercise Stretches",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "5 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 5,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A five-minute NHS cool-down covering the buttocks, hamstrings, inner thighs, calves and thighs, each held 15-20 seconds.",
+    "whoItsFor": "Anyone finishing a walk, run or workout who wants a short, simple lower-body cool-down.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Do it straight after exercise while you're still warm.",
+      "Hold each stretch for 15-20 seconds without bouncing.",
+      "Stretch to mild tension, never pain.",
+      "Spend longer on any area that feels tight."
+    ],
+    "exercises": [
+      {
+        "name": "Buttock Stretch",
+        "sets": 1,
+        "reps": "15-20s/leg"
+      },
+      {
+        "name": "Hamstring Stretch",
+        "sets": 1,
+        "reps": "15-20s/leg"
+      },
+      {
+        "name": "Inner Thigh Stretch",
+        "sets": 1,
+        "reps": "15-20s"
+      },
+      {
+        "name": "Calf Stretch",
+        "sets": 1,
+        "reps": "15-20s/leg"
+      },
+      {
+        "name": "Thigh Stretch",
+        "sets": 1,
+        "reps": "15-20s/side"
+      }
+    ],
+    "credit": "NHS",
+    "sourceUrl": "https://www.nhs.uk/live-well/exercise/how-to-stretch-after-exercising/",
+    "sourceNote": "Free NHS guidance (© Crown copyright; no reproduction restriction on the page). Exercise names, reps and holds only; descriptions are ours. Credit and link to NHS.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-growing-stronger-part-1",
+    "name": "Growing Stronger - Part I (Weeks 1-2)",
+    "series": "Growing Stronger",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "chair",
+      "wall"
+    ],
+    "description": "The gentle bodyweight start of the Tufts/CDC strength program for older adults: chair squats, wall push-ups, toe stands and finger marching, with a walk to warm up and four stretches to finish.",
+    "whoItsFor": "Older adults new to strength training who want a research-built program they can start at home with just a chair and a wall.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Three non-consecutive days a week (e.g. Mon/Wed/Fri) for at least 2 weeks.",
+      "Lower slowly to a count of 4 and rise to a count of 2-4; pillows on the chair make the squat easier.",
+      "Rest about 1 minute between sets (1-2 min in Part III); breathe throughout and never hold your breath.",
+      "After 2 weeks, move on to Part II."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: 5-minute walk (or bike/rower)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Squat to Chair (4 counts down, 2 up)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Wall Push-up (4 counts down, 4 up)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Toe Stand (hold 2-4s at top)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Finger Marching (3 movements, ~10s hold each)",
+        "sets": 3,
+        "reps": "1 sequence"
+      },
+      {
+        "name": "Cool-down: Chest and Arm Stretch",
+        "sets": 2,
+        "reps": "20-30s"
+      },
+      {
+        "name": "Cool-down: Hamstring/Calf Stretch (hands on chair)",
+        "sets": 2,
+        "reps": "20-30s"
+      },
+      {
+        "name": "Cool-down: Quadriceps Stretch (hold chair)",
+        "sets": 1,
+        "reps": "20-30s/leg"
+      },
+      {
+        "name": "Cool-down: Neck, Upper Back and Shoulder Stretch",
+        "sets": 2,
+        "reps": "20-30s"
+      }
+    ],
+    "credit": "Seguin, Epping, Buchner, Bloch & Nelson - Tufts University & CDC (Growing Stronger, 2002)",
+    "sourceUrl": "https://www.cdc.gov/physicalactivity/downloads/growing_stronger.pdf",
+    "sourceNote": "Read from the full CDC-hosted PDF (text layer). The book states it was produced for free distribution without permission, provided the authors and Tufts University are credited and the content is not changed; CDC Stacks lists it as public domain. We store only exercise names, sets, reps, tempo and holds. Weights converted from pounds (2-3 lb dumbbells, 1-3 lb ankle weights) to kg.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-growing-stronger-part-2",
+    "name": "Growing Stronger - Part II (Weeks 3-6)",
+    "series": "Growing Stronger",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 40,
+    "equipment": [
+      "chair",
+      "wall",
+      "dumbbells",
+      "step"
+    ],
+    "description": "Part II adds light dumbbells and stairs: biceps curls, step-ups, overhead presses and side hip raises on top of the Part I exercises.",
+    "whoItsFor": "Older adults who have done Part I for two weeks and are ready to add light dumbbells.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Two or three times a week for 4 weeks, keeping a rest day between.",
+      "Start with 1-1.5 kg dumbbells; the right weight lets you do 10 reps and no more in good form.",
+      "Reassess after each week; go heavier when you can do more than 10 reps well. Rest about 1 minute between sets (1-2 min in Part III); breathe throughout and never hold your breath.",
+      "After 4 weeks of Parts I and II, move on to Part III."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: 5-minute walk (or bike/rower)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Squat to Chair (4 counts down, 2 up)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Wall Push-up (4 counts down, 4 up)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Toe Stand (hold 2-4s at top)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Finger Marching (3 movements, ~10s hold each)",
+        "sets": 3,
+        "reps": "1 sequence"
+      },
+      {
+        "name": "Biceps Curl (2 up, 4 down)",
+        "sets": 2,
+        "reps": "10",
+        "weight": "start 1-1.5 kg"
+      },
+      {
+        "name": "Step-up (stairs, hold handrail)",
+        "sets": 2,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Overhead Press (2 up, 4 down)",
+        "sets": 2,
+        "reps": "10",
+        "weight": "start 1-1.5 kg"
+      },
+      {
+        "name": "Side Hip Raise (behind chair)",
+        "sets": 2,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Grip Squeeze with a ball (optional, hold 3-5s)",
+        "sets": 2,
+        "reps": "10/hand"
+      },
+      {
+        "name": "Cool-down: Chest and Arm Stretch",
+        "sets": 2,
+        "reps": "20-30s"
+      },
+      {
+        "name": "Cool-down: Hamstring/Calf Stretch (hands on chair)",
+        "sets": 2,
+        "reps": "20-30s"
+      },
+      {
+        "name": "Cool-down: Quadriceps Stretch (hold chair)",
+        "sets": 1,
+        "reps": "20-30s/leg"
+      },
+      {
+        "name": "Cool-down: Neck, Upper Back and Shoulder Stretch",
+        "sets": 2,
+        "reps": "20-30s"
+      }
+    ],
+    "credit": "Seguin, Epping, Buchner, Bloch & Nelson - Tufts University & CDC (Growing Stronger, 2002)",
+    "sourceUrl": "https://www.cdc.gov/physicalactivity/downloads/growing_stronger.pdf",
+    "sourceNote": "Read from the full CDC-hosted PDF (text layer). The book states it was produced for free distribution without permission, provided the authors and Tufts University are credited and the content is not changed; CDC Stacks lists it as public domain. We store only exercise names, sets, reps, tempo and holds. Weights converted from pounds (2-3 lb dumbbells, 1-3 lb ankle weights) to kg.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-growing-stronger-part-3",
+    "name": "Growing Stronger - Part III (Weeks 7+)",
+    "series": "Growing Stronger",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 50,
+    "equipment": [
+      "chair",
+      "wall",
+      "dumbbells",
+      "step",
+      "ankle weights",
+      "mat"
+    ],
+    "description": "The full 12-exercise program: Parts I and II plus ankle-weight knee extensions and curls, pelvic tilts and floor back extensions.",
+    "whoItsFor": "Older adults who have completed Parts I and II and want the complete long-term strength program.",
+    "lifestyle": [
+      "home",
+      "older-adults"
+    ],
+    "howToRun": [
+      "Two or three non-consecutive days a week, ongoing.",
+      "Do the knee extension and knee curl together, and the pelvic tilt and back extension together.",
+      "Start ankle weights at 0.5-1.5 kg; progress when 10 reps feel easy. Never walk or jog wearing ankle weights.",
+      "Rest about 1 minute between sets (1-2 min in Part III); breathe throughout and never hold your breath."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: 5-minute walk (or bike/rower)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Squat to Chair (4 counts down, 2 up)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Wall Push-up (4 counts down, 4 up)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Toe Stand (hold 2-4s at top)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Finger Marching (3 movements, ~10s hold each)",
+        "sets": 3,
+        "reps": "1 sequence"
+      },
+      {
+        "name": "Biceps Curl (2 up, 4 down)",
+        "sets": 2,
+        "reps": "10",
+        "weight": "start 1-1.5 kg"
+      },
+      {
+        "name": "Step-up (stairs, hold handrail)",
+        "sets": 2,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Overhead Press (2 up, 4 down)",
+        "sets": 2,
+        "reps": "10",
+        "weight": "start 1-1.5 kg"
+      },
+      {
+        "name": "Side Hip Raise (behind chair)",
+        "sets": 2,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Grip Squeeze with a ball (optional, hold 3-5s)",
+        "sets": 2,
+        "reps": "10/hand"
+      },
+      {
+        "name": "Knee Extension (seated, ankle weights)",
+        "sets": 2,
+        "reps": "10/leg",
+        "weight": "start 0.5-1.5 kg"
+      },
+      {
+        "name": "Knee Curl (standing, ankle weights)",
+        "sets": 2,
+        "reps": "10/leg",
+        "weight": "start 0.5-1.5 kg"
+      },
+      {
+        "name": "Pelvic Tilt (lying)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Floor Back Extension (opposite arm and leg)",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Cool-down: Chest and Arm Stretch",
+        "sets": 2,
+        "reps": "20-30s"
+      },
+      {
+        "name": "Cool-down: Hamstring/Calf Stretch (hands on chair)",
+        "sets": 2,
+        "reps": "20-30s"
+      },
+      {
+        "name": "Cool-down: Quadriceps Stretch (hold chair)",
+        "sets": 1,
+        "reps": "20-30s/leg"
+      },
+      {
+        "name": "Cool-down: Neck, Upper Back and Shoulder Stretch",
+        "sets": 2,
+        "reps": "20-30s"
+      }
+    ],
+    "credit": "Seguin, Epping, Buchner, Bloch & Nelson - Tufts University & CDC (Growing Stronger, 2002)",
+    "sourceUrl": "https://www.cdc.gov/physicalactivity/downloads/growing_stronger.pdf",
+    "sourceNote": "Read from the full CDC-hosted PDF (text layer). The book states it was produced for free distribution without permission, provided the authors and Tufts University are credited and the content is not changed; CDC Stacks lists it as public domain. We store only exercise names, sets, reps, tempo and holds. Weights converted from pounds (2-3 lb dumbbells, 1-3 lb ankle weights) to kg.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-safe-exercise-at-home-level-2",
+    "name": "Safe Exercise at Home - Level 2 Program",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "strength",
+      "mobility"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 15,
+    "equipment": [
+      "chair",
+      "stable support"
+    ],
+    "description": "The free example program from Australia's Safe Exercise at Home site (Level 2 - Moderate): stepping to targets, calf raises, sit-to-stands and a semi-tandem balance hold, plus hourly activity breaks.",
+    "whoItsFor": "Older Australians at a moderate level who want a short physio-designed strength and balance routine at home, with a kitchen bench or sturdy support nearby.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Little and often works best: most days of the week, plus a 5-minute activity break every hour.",
+      "Keep a stable support (kitchen bench, table) within reach; use hand support whenever you feel unsteady.",
+      "Harder: use less hand support, a lower chair, or bigger steps; easier: a higher chair or hands to help.",
+      "If you've had two or more falls in the past year, start at Level 1 and talk to your doctor or physio."
+    ],
+    "exercises": [
+      {
+        "name": "Stepping to Targets (hand support nearby, alternate legs)",
+        "sets": 1,
+        "reps": "practise each leg"
+      },
+      {
+        "name": "Bilateral Calf Raise (holding support)",
+        "sets": 1,
+        "reps": "10-15"
+      },
+      {
+        "name": "Sit-to-Stand (narrow base, weight even on both feet)",
+        "sets": 1,
+        "reps": "10-15"
+      },
+      {
+        "name": "Semi-tandem Stance (support nearby)",
+        "sets": 3,
+        "reps": "up to 30s each foot forward"
+      },
+      {
+        "name": "Activity Break (walk around the house)",
+        "sets": 1,
+        "reps": "5 min every hour"
+      }
+    ],
+    "credit": "Safe Exercise at Home (Australian physiotherapists; endorsed by the Australian Physiotherapy Association)",
+    "sourceUrl": "https://www.safeexerciseathome.org.au/level-2-exercises",
+    "sourceNote": "Free site and example-program PDF read 2026-11-13; no copyright or reproduction terms stated. The PDF's exercises and images are credited to physiotherapyexercises.com (used with permission); we store names and reps only, no images. Activity-break dose is from the Level 2 page.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-royal-womens-postnatal-recovery",
+    "name": "Royal Women's Postnatal Recovery Exercises",
+    "category": "other",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 7,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "The Royal Women's Hospital physiotherapy routine for after birth: pelvic floor long holds and quick squeezes, a deep abdominal hold, and gentle walking that builds towards 30 minutes a day.",
+    "whoItsFor": "New mums in the days and weeks after birth (vaginal or caesarean) who want the hospital physio basics before any return to harder exercise.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Pelvic floor and deep abdominal exercises 3 times a day; they can start 1-2 days after birth if they don't increase pain.",
+      "Breathe normally and keep your bottom, thighs and upper tummy relaxed; build holds from 2-3s towards 10s.",
+      "Walk gently as comfort allows, gradually building distance and speed towards 30 minutes a day.",
+      "Avoid weights, sit-ups, running and other strenuous or high-impact exercise for the first 12 weeks, and lift nothing heavier than your baby for 6 weeks. Report any leaking to your midwife, physio or doctor."
+    ],
+    "exercises": [
+      {
+        "name": "Pelvic Floor Long Hold (5s rest between)",
+        "sets": 1,
+        "reps": "10 x 2-3s hold, building to 10 x 10s"
+      },
+      {
+        "name": "Pelvic Floor Quick Squeeze (1s)",
+        "sets": 1,
+        "reps": "10-20"
+      },
+      {
+        "name": "Deep Abdominal Hold (lying knees bent, or on hands and knees)",
+        "sets": 1,
+        "reps": "6-10 x 3-5s hold"
+      },
+      {
+        "name": "Functional Brace (pelvic floor squeeze when coughing, sneezing or lifting)",
+        "sets": 1,
+        "reps": "as needed"
+      },
+      {
+        "name": "Gentle Walk",
+        "sets": 1,
+        "reps": "as comfortable, building to 30 min"
+      }
+    ],
+    "credit": "The Royal Women's Hospital (Victoria) Physiotherapy Department",
+    "sourceUrl": "https://www.thewomens.org.au/images/uploads/fact-sheets/Improving-your-recovery-after-birth-240219.pdf",
+    "sourceNote": "Free patient fact sheet (© The Royal Women's Hospital 2013-2019; general-information disclaimer, no reproduction restriction). Read from the PDF text layer. Timeline cross-checked against Better Health Channel (Vic) 'Postnatal exercise' page.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-nhs-scotland-hotel-room-circuit",
+    "name": "Hotel Room Circuit (NHS Scotland)",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "strength",
+      "endurance"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 50,
+    "equipment": [
+      "bodyweight",
+      "chair",
+      "luggage",
+      "stairs"
+    ],
+    "description": "A minimal-equipment circuit from an NHS lower-limb rehab group, built for holidays and working away: planks, luggage deadlifts and rows, step-ups, dips, push-ups, 20/10 burpee and mountain-climber blocks, wall squats and stair runs.",
+    "whoItsFor": "Fit travellers who want a long, hard full-body session in a hotel room using a chair, the bed, a suitcase and the stairs.",
+    "lifestyle": [
+      "travel",
+      "minimal-equipment",
+      "home"
+    ],
+    "howToRun": [
+      "Up to 3 times a week while away; it is long, so trim exercises on short days.",
+      "Warm up first with a slow jog outside or jumping jacks.",
+      "Hold planks and wall squats for as long as you can with good form; split the flutter-kick minute with 10s rests if needed.",
+      "Choose incline push-ups if decline push-ups are too hard; stop anything that hurts."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: slow jog or jumping jacks",
+        "sets": 1,
+        "reps": "until warm"
+      },
+      {
+        "name": "Plank (max hold)",
+        "sets": 3,
+        "reps": "max"
+      },
+      {
+        "name": "Single-leg Deadlift holding luggage",
+        "sets": 1,
+        "reps": "10-15"
+      },
+      {
+        "name": "Contralateral Limb Raise (lying face down, 10s hold)",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Superman / Bird Dog on hands and knees (10s hold)",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Flutter Kicks",
+        "sets": 1,
+        "reps": "60s"
+      },
+      {
+        "name": "Step-up onto bed or chair",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Mountain Climber (20s on / 10s off)",
+        "sets": 8,
+        "reps": "20s"
+      },
+      {
+        "name": "Triceps Dip (chair, bath or bed edge)",
+        "sets": 3,
+        "reps": "6-8"
+      },
+      {
+        "name": "Incline Push-up (or Decline Push-up, 5 x 10)",
+        "sets": 3,
+        "reps": "10-15"
+      },
+      {
+        "name": "Luggage Row",
+        "sets": 3,
+        "reps": "15/side"
+      },
+      {
+        "name": "Single-leg Prisoner Squat from bed or chair",
+        "sets": 3,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Plank Saw",
+        "sets": 1,
+        "reps": "30s"
+      },
+      {
+        "name": "Burpee (20s on / 10s off)",
+        "sets": 8,
+        "reps": "20s"
+      },
+      {
+        "name": "Plank to Push-up",
+        "sets": 3,
+        "reps": "10"
+      },
+      {
+        "name": "Wall Squat",
+        "sets": 3,
+        "reps": "30-60s"
+      },
+      {
+        "name": "Stair Run (1-2 flights up, walk or jog down)",
+        "sets": 10,
+        "reps": "1 climb"
+      }
+    ],
+    "credit": "Becky Dunphy & Tyler Spencer (NHS Scotland Right Decision Service)",
+    "sourceUrl": "https://rightdecisions.scot.nhs.uk/media/1guhiwn5/hotel-room-circuit-with-minimal-equipment.pdf",
+    "sourceNote": "Free NHS Scotland PDF (created July 2019) read from its text layer; no copyright or reproduction wording. The source gives no reps for the step-ups or plank saw, so '10/leg' and '30s' are Somax placeholders; stair runs are 10-15 in the source (we list 10). Names and doses only.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-interval-walking-training",
+    "name": "Interval Walking Training (3 min fast / 3 min slow)",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "endurance",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "The Japanese interval-walking protocol: alternate 3 minutes of slow walking with 3 minutes of fast walking, 5 or more times. In 63-year-olds over 5 months it raised thigh strength and aerobic fitness more than steady walking.",
+    "whoItsFor": "Middle-aged and older adults who walk already and want more benefit from the same time, with no running.",
+    "lifestyle": [
+      "outdoor",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "4 or more days a week.",
+      "Slow sections are an easy stroll; fast sections are a brisk, purposeful walk where talking gets hard.",
+      "Do at least 5 slow/fast pairs (30 minutes); you can add more pairs as you get fitter.",
+      "Check with your GP first if you have a heart condition or high blood pressure."
+    ],
+    "exercises": [
+      {
+        "name": "Slow Walk (~40% of peak walking capacity)",
+        "sets": 5,
+        "reps": "3 min",
+        "group": "A"
+      },
+      {
+        "name": "Fast Walk (above 70% of peak walking capacity)",
+        "sets": 5,
+        "reps": "3 min",
+        "group": "A"
+      }
+    ],
+    "credit": "Nemoto K, Gen-no H, Masuki S, Okazaki K, Nose H, Mayo Clin Proc 2007",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/17605959/",
+    "sourceNote": "Abstract read via the Europe PMC REST API on 2026-11-13. Protocol (5+ sets of 3 min at 40% / 3 min above 70% of peak aerobic capacity for walking, 4+ days/week, 5 months) taken from the abstract; talk-test wording is our interpretation.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-stair-climbing-snacks",
+    "name": "Stair-Climbing Exercise Snacks",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "5 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 5,
+    "equipment": [
+      "stairs"
+    ],
+    "description": "Three short bursts a day of climbing a 3-flight (60-step) stairwell briskly, spaced 1-4 hours apart. Sedentary young adults improved their aerobic fitness after 6 weeks.",
+    "whoItsFor": "Office workers and busy people with access to stairs who can't fit in a full workout but can take three 1-minute breaks a day.",
+    "lifestyle": [
+      "busy",
+      "time-efficient",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "3 days a week for 6 weeks (the study dose).",
+      "Climb the 3 flights vigorously (fast, breathing hard), then walk or take the lift down.",
+      "Leave 1-4 hours between bouts; it fits around meetings and breaks.",
+      "Use the handrail, and skip it if you have chest pain, dizziness or a heart condition without clearance."
+    ],
+    "exercises": [
+      {
+        "name": "Vigorous Stair Climb (3 flights, 60 steps)",
+        "sets": 3,
+        "reps": "1 climb, 1-4 h apart"
+      }
+    ],
+    "credit": "Jenkins EM, Nairn LN, Skelly LE, Little JP, Gibala MJ, Appl Physiol Nutr Metab 2019",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/30649897/",
+    "sourceNote": "Abstract read via the Europe PMC REST API on 2026-11-13.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-hood-10x1-intervals",
+    "name": "10 x 1-Minute Intervals (Hood/Gibala, sedentary adults)",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "exercise bike"
+    ],
+    "description": "The submaximal 'practical' HIIT model tested in sedentary middle-aged adults: ten 1-minute cycling efforts with 1 minute easy between. Six sessions over 2 weeks raised muscle oxidative capacity and insulin sensitivity by about 35%.",
+    "whoItsFor": "Previously inactive adults who now have a base of 20+ minutes' continuous cardio and want a proven, hard-but-not-all-out interval session.",
+    "lifestyle": [
+      "home",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "3 non-consecutive days a week (6 sessions over 2 weeks in the study).",
+      "Efforts are hard but steady (~80-95% of heart-rate reserve; only a few words possible), not sprints.",
+      "Keep pedalling easily during the 1-minute recoveries.",
+      "Only start once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy cycling (added by Somax; not stated in the abstract)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Hard Cycling Effort (~60% of peak power, ~80-95% HR reserve)",
+        "sets": 10,
+        "reps": "60s",
+        "group": "A"
+      },
+      {
+        "name": "Easy Recovery Cycling",
+        "sets": 10,
+        "reps": "60s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy cycling (added by Somax)",
+        "sets": 1,
+        "reps": "3-5 min"
+      }
+    ],
+    "credit": "Hood MS, Little JP, Tarnopolsky MA, Myslik F, Gibala MJ, Med Sci Sports Exerc 2011",
+    "sourceUrl": "https://europepmc.org/article/MED/21448086",
+    "sourceNote": "Abstract read via the Europe PMC REST API on 2026-11-13. Same 10 x 60 s model as Little et al. 2010/2011 and Gibala's GSSI SSE #139 review (also read). Warm-up/cool-down added by Somax.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-gillen-one-minute-workout",
+    "name": "The One-Minute Workout (3 x 20s sprints, 10 min)",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "exercise bike"
+    ],
+    "description": "Gibala's group's 10-minute sprint protocol: 2 minutes easy, three 20-second all-out sprints with 2 minutes easy between, 3 minutes cool-down. Over 12 weeks it improved VO2peak by 19%, the same as 45 minutes of moderate cycling.",
+    "whoItsFor": "Already-fit, health-cleared people who are very short of time and have a bike with adjustable resistance.",
+    "lifestyle": [
+      "home",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "3 sessions a week on non-consecutive days (12 weeks in the study).",
+      "Sprints are genuinely all-out against heavy resistance (about 5% of body mass on a lab bike).",
+      "Keep spinning very easily (~50 W) between sprints; don't stop dead.",
+      "Advanced only: build up from easier intervals first and get medical clearance if you have any heart risk."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy cycling (~50 W)",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "All-out Sprint",
+        "sets": 3,
+        "reps": "20s",
+        "weight": "resistance ~5% body mass",
+        "group": "A"
+      },
+      {
+        "name": "Easy Cycling between sprints (~50 W)",
+        "sets": 2,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy cycling (~50 W)",
+        "sets": 1,
+        "reps": "3 min"
+      }
+    ],
+    "credit": "Gillen JB, Martin BJ, MacInnis MJ, Skelly LE, Tarnopolsky MA, Gibala MJ, PLOS ONE 2016",
+    "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4846072/",
+    "sourceNote": "Full text read on PMC; open access under CC BY 4.0. Same protocol in overweight adults: Gillen et al. PLOS ONE 2014 (PMC4218754, CC BY).",
+    "verified": true
+  },
+  {
+    "id": "x-gen-wingate-sprint-intervals",
+    "name": "Wingate Sprint Intervals (4-7 x 30s)",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "exercise bike"
+    ],
+    "description": "The classic sprint-interval protocol: four to seven 30-second all-out cycling sprints with 4 minutes of recovery. Six sessions over 2 weeks doubled cycling endurance capacity in recreationally active people.",
+    "whoItsFor": "Fit, health-cleared people chasing a big fitness jump in a short block, with a bike that can take hard sprints.",
+    "lifestyle": [
+      "home",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "3 sessions a week with 1-2 rest days between (6 sessions over 2 weeks in the study).",
+      "Start at 4 sprints and add one per session or two, up to 7.",
+      "Each sprint is maximal from the first second; recover with very easy pedalling.",
+      "Very demanding: advanced users only, never on consecutive days, and stop for chest pain or dizziness."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy cycling (added by Somax; not stated in the abstract)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "All-out Sprint (Wingate)",
+        "sets": 4,
+        "reps": "30s (build to 7 sprints)",
+        "group": "A"
+      },
+      {
+        "name": "Recovery (very easy cycling)",
+        "sets": 4,
+        "reps": "4 min",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy cycling (added by Somax)",
+        "sets": 1,
+        "reps": "3-5 min"
+      }
+    ],
+    "credit": "Burgomaster KA, Hughes SC, Heigenhauser GJ, Bradwell SN, Gibala MJ, J Appl Physiol 2005",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/15705728/",
+    "sourceNote": "Abstract read via the Europe PMC REST API on 2026-11-13. Protocol also described in Gibala's GSSI SSE #139 (read). Warm-up/cool-down added by Somax.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-tabata-protocol",
+    "name": "Tabata Protocol (original 20s/10s)",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "exercise bike"
+    ],
+    "description": "The original Tabata study protocol: seven to eight 20-second efforts at about 170% of VO2max with 10 seconds' rest, to exhaustion. It raised both VO2max and anaerobic capacity in young, fit men.",
+    "whoItsFor": "Already very fit people who want the real Tabata stimulus. Most app 'Tabata' workouts are far easier than this.",
+    "lifestyle": [
+      "home",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "The study trained 5 days a week for 6 weeks in fit young men; Somax suggests 2-3 a week at most.",
+      "Each 20s effort is supramaximal - harder than you could hold for even a minute; stop when you can no longer hold the pace.",
+      "Rest is only 10 seconds: stay on the bike.",
+      "Advanced only, with no heart-health red flags."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy cycling (added by Somax; not stated in the abstract)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Supramaximal Effort (~170% VO2max)",
+        "sets": 8,
+        "reps": "20s (7-8 to exhaustion)",
+        "group": "A"
+      },
+      {
+        "name": "Rest",
+        "sets": 8,
+        "reps": "10s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy cycling (added by Somax)",
+        "sets": 1,
+        "reps": "3-5 min"
+      }
+    ],
+    "credit": "Tabata I, Nishimura K, Kouzaki M, Hirai Y, Ogita F, Miyachi M, Yamamoto K, Med Sci Sports Exerc 1996",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/8897392/",
+    "sourceNote": "Abstract read via the Europe PMC REST API on 2026-11-13. Mechanically braked cycle ergometer in the study. Warm-up/cool-down added by Somax.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-rehit-reduced-exertion",
+    "name": "REHIT - Reduced-Exertion HIIT (10 min)",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "exercise bike"
+    ],
+    "description": "A 10-minute session of easy cycling with just two short all-out sprints, building from 10s to 20s over 6 weeks. Sedentary adults rated it only 'somewhat hard' and still improved aerobic capacity by 12-15%.",
+    "whoItsFor": "Inactive adults who find classic HIIT too punishing and want the smallest effective dose on a stationary bike.",
+    "lifestyle": [
+      "home",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "3 sessions a week for 6 weeks.",
+      "Week 1: 10s sprints (just one in your first session); weeks 2-3: 15s; weeks 4-6: 20s.",
+      "Everything outside the two sprints is easy pedalling at light resistance.",
+      "You still need a 20-minute continuous cardio base and no heart-health red flags first."
+    ],
+    "exercises": [
+      {
+        "name": "Easy Cycling (light resistance, ~60 W), whole session",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "All-out Sprint within the 10 minutes",
+        "sets": 2,
+        "reps": "10s wk1 / 15s wk2-3 / 20s wk4-6"
+      }
+    ],
+    "credit": "Metcalfe RS, Babraj JA, Fawkner SG, Vollaard NB, Eur J Appl Physiol 2012",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22124524/",
+    "sourceNote": "Abstract read via the Europe PMC REST API on 2026-11-13. The abstract does not say where in the 10 minutes the sprints fall.",
+    "verified": true
+  },
+  {
+    "id": "x-gen-10-20-30-running",
+    "name": "10-20-30 Running Intervals",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "sport-performance",
+      "general-fitness"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "The 10-20-30 concept: repeat 30 seconds easy, 20 seconds moderate and 10 seconds near-sprint five times in a row (5 minutes), for 3-4 blocks with 2 minutes' recovery. Runners improved 5 km time and blood pressure on half their usual volume.",
+    "whoItsFor": "Runners who can already jog 30 minutes and want a time-efficient, fun interval session on a flat route or oval.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "2-3 times a week in place of other runs (frequency is a Somax suggestion; the study replaced all training for 7 weeks).",
+      "Easy = under 30% effort, moderate = under 60%, the 10s = over 90% (near flat-out).",
+      "Start with 3 blocks and build to 4.",
+      "Warm up with 10 minutes of easy jogging first."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy jog (added by Somax)",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "10-20-30 block: 30s easy jog / 20s moderate run / 10s near-sprint, x5",
+        "sets": 4,
+        "reps": "5 min (3-4 blocks)",
+        "group": "A"
+      },
+      {
+        "name": "Recovery between blocks",
+        "sets": 3,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy jog or walk",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Gunnarsson TP & Bangsbo J, J Appl Physiol 2012",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22556401/",
+    "sourceNote": "Abstract read via the Europe PMC REST API on 2026-11-13. Warm-up/cool-down added by Somax.",
+    "verified": true
+  }
+]

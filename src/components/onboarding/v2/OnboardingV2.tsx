@@ -30,7 +30,7 @@ const RUN_TARGETS: { id: string; label: string; distance: RunDistanceId; target:
   { id: '10k50', label: '10K under 50:00', distance: '10k', target: '50:00', cur: '55:00' },
   { id: 'half2h', label: 'Half under 2:00:00', distance: 'half', target: '2:00:00', cur: '2:15:00' },
 ];
-const KIT = ['Barbell', 'Dumbbells', 'Kettlebell', 'Bands', 'Pull-up bar', 'Bike / trainer', 'Pool', 'Running track'];
+const KIT = ['Barbell', 'Dumbbells', 'Kettlebell', 'Bands', 'Pull-up bar', 'Bike / trainer', 'Pool', 'Running track', 'Rower', 'Treadmill', 'Skipping rope', 'Medicine ball'];
 const PLACES: { id: 'gym' | 'home' | 'outdoor'; label: string; sub: string; icon: Parameters<typeof Icon>[0]['name'] }[] = [
   { id: 'gym', label: 'Gym', sub: 'Full equipment', icon: 'dumbbell' },
   { id: 'home', label: 'At home', sub: 'Dumbbells, bands or nothing', icon: 'home' },

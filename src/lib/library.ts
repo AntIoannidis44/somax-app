@@ -274,3 +274,16 @@ export async function recordLibrarySave(itemId: string, kind: LibraryKind): Prom
   if (error) console.warn('[library] recordSave:', error.message);
   return !error;
 }
+
+// Attribution some sources require to be shown with their content.
+export function requiredAttribution(item: LibraryItem): string | null {
+  const c = item.credit_name ?? '';
+  if (/\bNHS\b/.test(c)) return 'Information from the NHS website is licensed under the Open Government Licence v3.0.';
+  if (/NHLBI|National Heart, Lung/.test(c)) return 'Source: National Heart, Lung, and Blood Institute; National Institutes of Health; U.S. Department of Health and Human Services.';
+  return null;
+}
+
+// Swim sessions published in yards (US Masters Swimming) - say so plainly.
+export function usesYards(item: LibraryItem): boolean {
+  return item.kind === 'program' && item.content.exercises.some((e) => /\d\s*yd\b/.test(`${e.distance ?? ''} ${e.name}`));
+}

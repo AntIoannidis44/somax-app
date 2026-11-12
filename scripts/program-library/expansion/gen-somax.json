@@ -1,0 +1,5243 @@
+[
+  {
+    "id": "x-gen-somax-starter-intervals-bike",
+    "name": "Somax Starter Intervals (Bike 30/60)",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "22 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 22,
+    "equipment": [
+      "exercise bike"
+    ],
+    "description": "Your first proper interval session: six 30-second hard efforts with a full minute of easy pedalling after each. Hard but never all-out.",
+    "whoItsFor": "New interval trainers who can already ride or walk briskly for 20 minutes and want a safe first step into HIIT on a stationary bike.",
+    "lifestyle": [
+      "home",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Efforts are about 7-8/10: breathing hard, only a few words possible. Recoveries are easy spinning.",
+      "Progress one thing at a time each week: 6 -> 8 -> 10 efforts, then 30s -> 45s, then shorter recoveries.",
+      "When 10 x 45s feels controlled, move on to the 10 x 1-minute intervals."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy cycling, building gradually",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Hard Effort (7-8/10)",
+        "sets": 6,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Easy Spin",
+        "sets": 6,
+        "reps": "60s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy cycling",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-hood-10x1-intervals",
+      "x-gen-rehit-reduced-exertion"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-starter-hill-walk-intervals",
+    "name": "Somax Starter Hill-Walk Intervals",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Walk-based intervals for people who don't run: power-walk up a hill for 45 seconds, then stroll back down, eight times.",
+    "whoItsFor": "Walkers, larger bodies and anyone with cranky knees who want to lift their fitness without running or jumping.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "older-adults",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Uphill sections are a fast, driving walk with arms pumping (7/10); the walk back down is your recovery.",
+      "No hill? Use a flight of stairs, a ramp, or a treadmill incline of 6-10%.",
+      "Build from 6 to 10 climbs, then lengthen each climb to 60-90 seconds."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Power Walk Uphill (7/10)",
+        "sets": 8,
+        "reps": "45s",
+        "group": "A"
+      },
+      {
+        "name": "Easy Walk Back Down",
+        "sets": 8,
+        "reps": "90s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-interval-walking-training",
+      "nhs-wirral-walking-plan-medium-walk"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-band-intervals-15",
+    "name": "Somax Resistance Band Intervals 15",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "bands"
+    ],
+    "description": "A quick standing circuit with one resistance band: 30 seconds on, 30 seconds off, two rounds. It works the whole body and gets you breathing hard with no jumping.",
+    "whoItsFor": "Beginners with a band at home or in a suitcase who want a short, quiet session that mixes strength and cardio.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Work steadily for 30s at about 7/10, rest 30s, and rest 1 minute between rounds.",
+      "Shorten your grip on the band or step further away to make it harder.",
+      "Progress to 3 rounds, then to 40s on / 20s off."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Band Squat to Overhead Press",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Band Bent-over Row",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Fast March / Step-touch",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Band Chest Press (anchored behind)",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Band Pull-apart",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Standing Knee Drive (alternating)",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "x-gen-hood-10x1-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-step-cardio-intervals",
+    "name": "Somax Step Cardio Intervals",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "step"
+    ],
+    "description": "Low-impact intervals on a single step or the bottom stair: step-ups, toe taps and side step-overs for 40 seconds, then 40 seconds easy.",
+    "whoItsFor": "Beginners who want their heart rate up without jumping, and people in flats where noise matters.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Use a stable step 15-20 cm high; hold a rail or wall if you need balance.",
+      "40s at 7/10, then 40s of easy marching; 2 rounds, 1 minute rest between rounds.",
+      "Progress to 3 rounds or a slightly higher step - not both in the same week."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Alternating Step-up",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Easy March",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Fast Toe Taps on the Step",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Easy March",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Side Step-over (across the step)",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Easy March",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Step-up with Knee Drive",
+        "sets": 2,
+        "reps": "40s/side",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: gentle stretches (calf, thigh, chest), 20-30s holds",
+        "sets": 1,
+        "reps": "4 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-interval-walking-training",
+      "x-gen-growing-stronger-part-2",
+      "seven-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-dumbbell-hiit-starter-20",
+    "name": "Somax Dumbbell HIIT Starter 20",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "dumbbells"
+    ],
+    "description": "Light dumbbells, 30 seconds on and 30 off: squats, rows, presses and hinges in a gentle circuit that builds work capacity and strength together.",
+    "whoItsFor": "Beginners with a light pair of dumbbells (2-6 kg) who want a 20-minute home session they can grow into.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Pick dumbbells you could lift 15+ times; this is about smooth, continuous reps, not heavy lifting.",
+      "30s on / 30s off, 2 rounds with 1 minute rest between.",
+      "Progress to 3 rounds, then to the Somax Dumbbell Fat-Loss Circuit."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Goblet Squat",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Bent-over Row",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Shoulder Press",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Step-back Lunge (alternating)",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Punches (light)",
+        "sets": 2,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "nhs-home-strength-exercises",
+      "x-gen-hood-10x1-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-10-minute-kitchen-intervals",
+    "name": "Somax 10-Minute Kitchen Intervals",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A standing-only 10 minutes you can do while the kettle boils: 2 minutes' warm-up, five 30-second efforts with 30 seconds easy, and a short cool-down.",
+    "whoItsFor": "Busy parents and beginners who need something they can fit in anywhere, in work clothes, with no floor work.",
+    "lifestyle": [
+      "home",
+      "busy",
+      "time-efficient",
+      "minimal-equipment",
+      "travel"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Work at 7/10 for 30s, then march easily for 30s.",
+      "Use the kitchen bench for the incline push-ups.",
+      "Do it twice in a day (morning and evening) for a 20-minute total."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march, arm swings, hip circles",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Fast Bodyweight Squat",
+        "sets": 1,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Incline Push-up on Bench",
+        "sets": 1,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Step-back Lunge (alternating)",
+        "sets": 1,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Skater Step (no jump)",
+        "sets": 1,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Fast Feet March",
+        "sets": 1,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Easy March between efforts",
+        "sets": 5,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: slow march and calf stretch",
+        "sets": 1,
+        "reps": "2 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "x-gen-nhs-warm-up"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-hill-repeats-8x60",
+    "name": "Somax Hill Repeats 8 x 60s",
+    "category": "run",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "sport-performance"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Eight 60-second hard runs up a steady hill, walking or jogging back down to recover. Hills build aerobic power with less pounding than flat sprints.",
+    "whoItsFor": "Runners and joggers who can run 30 minutes continuously and want one hard session a week outdoors.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "1-2 times a week, with at least 48 hours between hard sessions.",
+      "Run up at 8/10 - strong and repeatable, the same pace on rep 8 as rep 1.",
+      "Walk or jog slowly back down; start the next rep when you reach the bottom.",
+      "Progress to 10 reps, then to 90-second hills."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy jog",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Leg swings (front/back and side)",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Walking lunge",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Uphill Run (8/10)",
+        "sets": 8,
+        "reps": "60s",
+        "group": "A"
+      },
+      {
+        "name": "Walk/Jog Back Down",
+        "sets": 8,
+        "reps": "90s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy jog or walk",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "ntnu-4x4-intervals",
+      "x-gen-hood-10x1-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-emom-20-bodyweight",
+    "name": "Somax EMOM 20 (Bodyweight)",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "28 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 28,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Every minute on the minute for 20 minutes: four rotating stations of squats, push-ups, lunges and a plank, with whatever's left of each minute as rest.",
+    "whoItsFor": "People who can do 8+ push-ups and want a structured, self-paced bodyweight session that's easy to track.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "3 non-consecutive days a week.",
+      "Start each station at the top of the minute; finish the reps and rest until the next minute starts.",
+      "If you can't finish with at least 15s spare, drop the reps for the next round.",
+      "Progress by adding 2 reps per station or a 6th round (24 minutes)."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Minute 1: Bodyweight Squat",
+        "sets": 5,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Minute 2: Push-up (knees or incline if needed)",
+        "sets": 5,
+        "reps": "8-10",
+        "group": "A"
+      },
+      {
+        "name": "Minute 3: Reverse Lunge (alternating)",
+        "sets": 5,
+        "reps": "12 total",
+        "group": "A"
+      },
+      {
+        "name": "Minute 4: Plank",
+        "sets": 5,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "bwf-recommended-routine"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-amrap-15-dumbbell",
+    "name": "Somax AMRAP 15 (Dumbbells)",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "dumbbells"
+    ],
+    "description": "As many rounds as possible in 15 minutes of goblet squats, push presses, rows and lunges. Log your rounds and try to beat them next time.",
+    "whoItsFor": "People who train at home with a pair of moderate dumbbells and like a score to chase.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Twice a week, with at least 2 days between.",
+      "Move continuously at a pace you can hold for 15 minutes - most people manage 4-6 rounds.",
+      "Rest only as needed; put the dumbbells down rather than letting form slip.",
+      "Write down your rounds + reps; beat them by a few reps next time, or go up a dumbbell size."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Goblet Squat",
+        "sets": 5,
+        "reps": "8",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Push Press",
+        "sets": 5,
+        "reps": "8",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Bent-over Row",
+        "sets": 5,
+        "reps": "8/arm",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Reverse Lunge (alternating)",
+        "sets": 5,
+        "reps": "10 total",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "strongfirst-simple-and-sinister"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-kettlebell-swing-emom",
+    "name": "Somax Kettlebell Swing EMOM 16",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "strength"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "kettlebell"
+    ],
+    "description": "Sixteen minutes alternating swings and goblet squats every minute - the kettlebell's classic fat-burning, posterior-chain-building combo.",
+    "whoItsFor": "People who already know how to hip-hinge and swing a kettlebell safely and want a short, sweaty session.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Twice a week, not on consecutive days.",
+      "Odd minutes: 15 swings. Even minutes: 8 goblet squats. Rest for the remainder of each minute.",
+      "Swings are a hip snap, not a squat or an arm lift; stop the set if your back takes over.",
+      "Progress to 20 swings, or a heavier bell once all 16 minutes feel smooth."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Kettlebell Deadlift (practice)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Odd Minutes: Two-hand Kettlebell Swing",
+        "sets": 8,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Even Minutes: Kettlebell Goblet Squat",
+        "sets": 8,
+        "reps": "8",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "strongfirst-simple-and-sinister",
+      "x-gen-hood-10x1-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-jump-rope-intervals",
+    "name": "Somax Jump Rope Intervals",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "sport-performance"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "jump rope"
+    ],
+    "description": "Three blocks of five 30-second skipping bursts with 30 seconds' rest, plus 2 minutes between blocks. Great for footwork, calves and fitness.",
+    "whoItsFor": "People who can already skip for a minute or two without tripping and want a portable cardio session.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Skip on a forgiving surface (wood, rubber, grass), staying light on the balls of your feet.",
+      "Work at 8/10; rest by walking around.",
+      "Progress to 40s on / 20s off, then add a fourth block."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Easy Skipping (warm-up)",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Fast Skipping",
+        "sets": 15,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Rest (walk around)",
+        "sets": 15,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Block break (every 5 rounds)",
+        "sets": 2,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Calf and Achilles Stretch",
+        "sets": 1,
+        "reps": "30s/leg"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "x-gen-hood-10x1-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-pyramid-bike-intervals",
+    "name": "Somax Pyramid Bike Intervals",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "fat-loss"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "exercise bike"
+    ],
+    "description": "Hard efforts climbing from 30 seconds to 2 minutes and back down again, each followed by the same time easy. Variety that keeps a bike session interesting.",
+    "whoItsFor": "Indoor-bike users who've done the starter intervals and want something longer and more varied.",
+    "lifestyle": [
+      "home",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Shorter efforts are harder (8/10); the 2-minute effort is strong but steady (7/10).",
+      "Recover with easy spinning for the same time as the effort just done.",
+      "Progress by adding a second 2-minute effort at the top of the pyramid."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy cycling, building gradually",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Hard 30s",
+        "sets": 1,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Hard 60s",
+        "sets": 1,
+        "reps": "60s",
+        "group": "A"
+      },
+      {
+        "name": "Hard 90s",
+        "sets": 1,
+        "reps": "90s",
+        "group": "A"
+      },
+      {
+        "name": "Hard 2 min",
+        "sets": 1,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Hard 90s",
+        "sets": 1,
+        "reps": "90s",
+        "group": "A"
+      },
+      {
+        "name": "Hard 60s",
+        "sets": 1,
+        "reps": "60s",
+        "group": "A"
+      },
+      {
+        "name": "Hard 30s",
+        "sets": 1,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Easy Spin after each effort (equal time)",
+        "sets": 7,
+        "reps": "equal to effort",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy cycling",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-hood-10x1-intervals",
+      "ntnu-4x4-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-40-20-bodyweight-circuit",
+    "name": "Somax 40/20 Bodyweight Circuit 25",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "general-fitness",
+      "endurance"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Eight moves, 40 seconds on and 20 off, two rounds - a step up from the 7-Minute Workout with longer work periods and jump options.",
+    "whoItsFor": "People who find the 7-Minute Workout comfortable and want a longer, harder no-equipment session at home or away.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "No more than 3 interval sessions a week, never on back-to-back days; walk or do strength on the other days.",
+      "40s at 8/10, 20s to transition; 1 minute between rounds.",
+      "Every jumping move has a no-jump option in brackets - use it on noisy floors or sore days.",
+      "Progress to 3 rounds."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Jump Squat (or fast squat)",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Push-up",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Mountain Climber",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Reverse Lunge to Knee Drive",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Plank Shoulder Taps",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Skater Jump (or skater step)",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Glute Bridge March",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Burpee (or step-back burpee)",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "x-gen-nhs-scotland-hotel-room-circuit"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-rower-250m-repeats",
+    "name": "Somax Rower 250 m Repeats",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "rower"
+    ],
+    "description": "Eight hard 250-metre pieces on the rower with 90 seconds of easy rowing between. Full-body, low-impact and kind to the knees.",
+    "whoItsFor": "Rower owners and gym-goers who know the basic stroke (legs, body, arms) and want a hard, joint-friendly session.",
+    "lifestyle": [
+      "home",
+      "full-gym",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Row each 250 m at 8/10 with a stroke rate of about 26-30; keep the split steady across all eight.",
+      "Recover with 90s of very light rowing.",
+      "Progress to 10 pieces, then cut the recovery to 60s."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy rowing, building",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Hard Row",
+        "sets": 8,
+        "reps": "1",
+        "distance": "250 m",
+        "group": "A"
+      },
+      {
+        "name": "Easy Row",
+        "sets": 8,
+        "reps": "90s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy rowing",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-hood-10x1-intervals",
+      "ntnu-4x4-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-hotel-band-hiit-20",
+    "name": "Somax Hotel Band HIIT 20",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bands",
+      "bodyweight"
+    ],
+    "description": "A suitcase-friendly 20 minutes: band strength moves paired with bodyweight cardio, 40 seconds on and 20 off.",
+    "whoItsFor": "Travellers and FIFO workers with a resistance band who want a hard session in a small room.",
+    "lifestyle": [
+      "travel",
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "No more than 3 interval sessions a week, never on back-to-back days; walk or do strength on the other days.",
+      "Anchor the band under your feet or in a closed door hinge (door closing towards you).",
+      "40s on / 20s off, 2 rounds, 1 minute between rounds.",
+      "Keep cardio moves low-impact if you're above other guests."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Band Squat to Press",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Fast Feet (quiet)",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Band Row (door anchor)",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Mountain Climber",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Band Romanian Deadlift",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Push-up",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Band Woodchop",
+        "sets": 2,
+        "reps": "20s/side",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "x-gen-nhs-scotland-hotel-room-circuit"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-stairwell-intervals",
+    "name": "Somax Stairwell Intervals",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "fat-loss",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "stairs",
+      "bodyweight"
+    ],
+    "description": "Eight brisk climbs of a 2-3 flight stairwell, walking down to recover, with a short strength set on the landing every second climb.",
+    "whoItsFor": "Office and apartment dwellers, and hotel guests, with a stairwell and 25 minutes.",
+    "lifestyle": [
+      "travel",
+      "busy",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Only start interval training once you can do 20 minutes of continuous moderate cardio and have no heart-health red flags (chest pain, dizziness, known heart condition).",
+      "Climb fast but in control (8/10), using the rail; always walk down.",
+      "After climbs 2, 4, 6 and 8 do the landing set, then walk down.",
+      "Progress to 10 climbs or take two steps at a time if you're steady."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy stair walk up and down",
+        "sets": 2,
+        "reps": "1 climb"
+      },
+      {
+        "name": "Brisk Stair Climb (2-3 flights)",
+        "sets": 8,
+        "reps": "1 climb",
+        "group": "A"
+      },
+      {
+        "name": "Walk Down (recovery)",
+        "sets": 8,
+        "reps": "1 descent",
+        "group": "A"
+      },
+      {
+        "name": "Landing: Incline Push-up on Rail or Step",
+        "sets": 4,
+        "reps": "10",
+        "group": "B"
+      },
+      {
+        "name": "Landing: Bodyweight Squat",
+        "sets": 4,
+        "reps": "15",
+        "group": "B"
+      },
+      {
+        "name": "Cool-down: calf and thigh stretch",
+        "sets": 1,
+        "reps": "3 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-stair-climbing-snacks",
+      "x-gen-nhs-scotland-hotel-room-circuit"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-dumbbell-complex-20",
+    "name": "Somax Dumbbell Complex 20",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "muscle"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "dumbbells"
+    ],
+    "description": "Five moves back-to-back without putting the dumbbells down - deadlift, row, hang clean, press, squat - then rest and repeat five times.",
+    "whoItsFor": "Home lifters with moderate dumbbells who want strength and conditioning in one short session.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Twice a week, 2+ days apart.",
+      "Choose a weight you can press 8 times; the press limits the whole complex.",
+      "Rest 90s between complexes; reduce to 60s as you get fitter.",
+      "Progress by adding a rep per move (to 8) before going heavier."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 5,
+        "reps": "6",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Bent-over Row",
+        "sets": 5,
+        "reps": "6",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Hang Clean",
+        "sets": 5,
+        "reps": "6",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Shoulder Press",
+        "sets": 5,
+        "reps": "6",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Front Squat",
+        "sets": 5,
+        "reps": "6",
+        "group": "A"
+      },
+      {
+        "name": "Rest between complexes",
+        "sets": 5,
+        "reps": "90s"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "strongfirst-simple-and-sinister",
+      "seven-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-quiet-apartment-hiit-30",
+    "name": "Somax Quiet Apartment HIIT 30",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "general-fitness",
+      "endurance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight",
+      "mat"
+    ],
+    "description": "A harder no-jump session for flats and sore joints: 40/20 low-impact moves, three rounds. Tough on the heart and lungs, silent on the floor.",
+    "whoItsFor": "People who've outgrown the Somax Low-Impact HIIT 20 but still can't (or don't want to) jump.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "No more than 3 interval sessions a week, never on back-to-back days; walk or do strength on the other days.",
+      "40s at 8/10, 20s rest; 1 minute between rounds.",
+      "Move fast but keep one foot on the floor at all times.",
+      "Progress to 45s on / 15s off."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Squat Pulse to Stand",
+        "sets": 3,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Plank Shoulder Taps",
+        "sets": 3,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Fast Step-back Lunge (alternating)",
+        "sets": 3,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Speed Skater Step (no jump)",
+        "sets": 3,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Bear Crawl Hold with Knee Taps",
+        "sets": 3,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "High-knee Power March",
+        "sets": 3,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "x-gen-hood-10x1-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-tabata-style-bodyweight",
+    "name": "Somax Tabata-Style Bodyweight (4 blocks)",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "sport-performance"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Four 4-minute blocks of 20 seconds flat out and 10 seconds rest, one move per block. Note: the original Tabata study used a supramaximal bike effort; this is a bodyweight take on the timing.",
+    "whoItsFor": "Already-fit people who train vigorously most weeks and want a brutal, short, equipment-free session.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Each block: 8 x (20s max effort / 10s rest). Rest 1 minute between blocks.",
+      "Keep form tidy - fewer good reps beat sloppy fast ones.",
+      "Max 2 a week; it doesn't replace your steady cardio and strength days."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Warm-up: 2 x 20s easy versions of each move",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Block 1: Burpee",
+        "sets": 8,
+        "reps": "20s on / 10s off",
+        "group": "A"
+      },
+      {
+        "name": "Block 2: Jump Squat",
+        "sets": 8,
+        "reps": "20s on / 10s off",
+        "group": "B"
+      },
+      {
+        "name": "Block 3: Mountain Climber",
+        "sets": 8,
+        "reps": "20s on / 10s off",
+        "group": "C"
+      },
+      {
+        "name": "Block 4: High Knees",
+        "sets": 8,
+        "reps": "20s on / 10s off",
+        "group": "D"
+      },
+      {
+        "name": "Rest between blocks",
+        "sets": 3,
+        "reps": "1 min"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-tabata-protocol",
+      "seven-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-30-30-run-intervals",
+    "name": "Somax 30/30 Run Intervals",
+    "category": "run",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "sport-performance",
+      "fat-loss"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 40,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Two sets of ten 30-second fast runs with 30 seconds' jog, separated by 3 minutes easy. A classic way to spend a lot of time near your max heart rate.",
+    "whoItsFor": "Experienced runners who can run 5 km comfortably and want a VO2-style session on a track, oval or flat path.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Fast reps are about your 3 km race pace (8-9/10); recoveries are a genuine slow jog, not a stop.",
+      "If the pace drops sharply before rep 8 of a set, end the set there.",
+      "Progress to 2 x 12, then 3 x 10."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy jog",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Leg swings (front/back and side)",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Walking lunge",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Strides (build to fast)",
+        "sets": 4,
+        "reps": "15s"
+      },
+      {
+        "name": "Fast Run",
+        "sets": 20,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Recovery Jog",
+        "sets": 20,
+        "reps": "30s",
+        "group": "A"
+      },
+      {
+        "name": "Easy Jog between sets",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Cool-down: easy jog",
+        "sets": 1,
+        "reps": "8 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "ntnu-4x4-intervals",
+      "x-gen-10-20-30-running"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-advanced-emom-30-dumbbell",
+    "name": "Somax Advanced EMOM 30 (Dumbbells)",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "endurance"
+    ],
+    "duration": "38 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 38,
+    "equipment": [
+      "dumbbells"
+    ],
+    "description": "Thirty minutes, three rotating stations - thrusters, renegade rows and burpees - ten rounds. Big volume, big engine.",
+    "whoItsFor": "Advanced home trainers with moderate-to-heavy dumbbells who are comfortable with thrusters and renegade rows.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Minute 1: thrusters. Minute 2: renegade rows. Minute 3: burpees. Repeat 10 times.",
+      "Aim to finish each station in 35-40s; scale reps down if you lose the rest window.",
+      "Twice a week at most, not on back-to-back days."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Minute 1: Dumbbell Thruster",
+        "sets": 10,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Minute 2: Renegade Row (each arm)",
+        "sets": 10,
+        "reps": "6/arm",
+        "group": "A"
+      },
+      {
+        "name": "Minute 3: Burpee",
+        "sets": 10,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "x-gen-tabata-protocol"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-advanced-amrap-20-bodyweight",
+    "name": "Somax Advanced AMRAP 20 (Bodyweight)",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Twenty minutes of as many rounds as possible: burpees, jump squats, mountain climbers and push-ups. Track your score month to month.",
+    "whoItsFor": "Fit people who want a no-equipment benchmark workout they can do anywhere.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Pace it: the first round should feel like 7/10, not 10/10. Most fit people manage 6-10 rounds.",
+      "Record rounds + reps and re-test every 4-6 weeks.",
+      "Twice a week at most."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Burpee",
+        "sets": 8,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Jump Squat",
+        "sets": 8,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Mountain Climber",
+        "sets": 8,
+        "reps": "20 total",
+        "group": "A"
+      },
+      {
+        "name": "Push-up",
+        "sets": 8,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "x-gen-nhs-scotland-hotel-room-circuit"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-hill-sprints-20s",
+    "name": "Somax Hill Sprints 20s",
+    "category": "run",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "sport-performance",
+      "endurance"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Six to ten 20-second all-out uphill sprints with a full 2-minute walk-back recovery. Builds speed and power with less hamstring risk than flat sprinting.",
+    "whoItsFor": "Fit runners, footy and team-sport players who want genuine sprint work outdoors.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Use a moderate hill (not steep), and sprint tall with a strong arm drive.",
+      "Walk back down and take the full 2 minutes - quality matters more than fatigue.",
+      "Start with 6 and add one sprint a week to 10."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy jog",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Leg swings (front/back and side)",
+        "sets": 1,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Walking lunge",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Build-up Strides",
+        "sets": 3,
+        "reps": "15s"
+      },
+      {
+        "name": "All-out Uphill Sprint",
+        "sets": 6,
+        "reps": "20s (build to 10)",
+        "group": "A"
+      },
+      {
+        "name": "Walk-back Recovery",
+        "sets": 6,
+        "reps": "2 min",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy jog",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-gillen-one-minute-workout",
+      "x-gen-wingate-sprint-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-dumbbell-chipper-30",
+    "name": "Somax Dumbbell Chipper 30",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "strength"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 35,
+    "equipment": [
+      "dumbbells"
+    ],
+    "description": "Work your way down a long list once - 50 squats, 40 lunges, 30 push presses, 20 renegade rows and 10 man-makers - for time.",
+    "whoItsFor": "Advanced trainers who like a one-off weekly test of grit and pacing.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Break each movement into sets that let you keep moving (e.g. 50 squats as 5 x 10).",
+      "Use moderate dumbbells you could press 12 times when fresh.",
+      "Once a week; write down your time and repeat in 4-6 weeks."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Goblet Squat",
+        "sets": 1,
+        "reps": "50"
+      },
+      {
+        "name": "Dumbbell Walking Lunge",
+        "sets": 1,
+        "reps": "40 total"
+      },
+      {
+        "name": "Dumbbell Push Press",
+        "sets": 1,
+        "reps": "30"
+      },
+      {
+        "name": "Renegade Row",
+        "sets": 1,
+        "reps": "20 total"
+      },
+      {
+        "name": "Dumbbell Man-maker",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "seven-minute-workout",
+      "strongfirst-simple-and-sinister"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-bike-sprints-10x15",
+    "name": "Somax Bike Sprints 10 x 15s",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "endurance",
+      "sport-performance",
+      "fat-loss"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "exercise bike"
+    ],
+    "description": "Ten 15-second hard sprints with 45 seconds of easy spinning - a 1:3 work-rest sprint session that sits between REHIT and Wingate in difficulty.",
+    "whoItsFor": "Fit bike users who've done the starter and 10 x 1-minute intervals and want short, sharp speed work.",
+    "lifestyle": [
+      "home",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Sprints are near-maximal against high resistance; recoveries are very easy.",
+      "If sprint power drops a lot before rep 8, stop there.",
+      "Progress to 12 sprints, then to 20s sprints with 60s easy."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy cycling, building gradually",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Near-max Sprint",
+        "sets": 10,
+        "reps": "15s",
+        "group": "A"
+      },
+      {
+        "name": "Easy Spin",
+        "sets": 10,
+        "reps": "45s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy cycling",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-rehit-reduced-exertion",
+      "x-gen-wingate-sprint-intervals",
+      "x-gen-gillen-one-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-advanced-strength-intervals-45",
+    "name": "Somax Advanced Strength + Intervals 45",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "hiit",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "endurance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "dumbbells",
+      "exercise bike"
+    ],
+    "description": "A complete 45-minute session: two dumbbell strength supersets, then 10 x 1-minute bike intervals to finish.",
+    "whoItsFor": "Advanced trainers with dumbbells and a bike at home who want strength and conditioning in one longer session.",
+    "lifestyle": [
+      "home",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Strength first while fresh: 3-4 sets of 8-10, resting 60-90s after each superset.",
+      "Then 10 x 1 min hard (8/10) / 1 min easy on the bike.",
+      "Twice a week, with an easy cardio or rest day between."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Front Squat",
+        "sets": 4,
+        "reps": "8-10",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Bench or Floor Press",
+        "sets": 4,
+        "reps": "8-10",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 4,
+        "reps": "8-10",
+        "group": "B"
+      },
+      {
+        "name": "One-arm Dumbbell Row",
+        "sets": 4,
+        "reps": "8-10/arm",
+        "group": "B"
+      },
+      {
+        "name": "Bike: Hard Effort",
+        "sets": 10,
+        "reps": "60s",
+        "group": "C"
+      },
+      {
+        "name": "Bike: Easy Spin",
+        "sets": 10,
+        "reps": "60s",
+        "group": "C"
+      },
+      {
+        "name": "Cool-down: easy cycling",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-hood-10x1-intervals",
+      "strongfirst-simple-and-sinister"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-first-walk-10",
+    "name": "Somax First Walk 10",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "endurance"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 10,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Where everyone can start: a 10-minute walk that finishes brisk. Ten brisk minutes a day already counts towards the 150 minutes a week adults need.",
+    "whoItsFor": "People starting from zero - after a long break, illness, or a mostly sitting life - who want a no-pressure first habit.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient",
+      "older-adults",
+      "busy"
+    ],
+    "howToRun": [
+      "Most days of the week; consistency beats distance.",
+      "Brisk means you can talk but couldn't sing.",
+      "Add 5 minutes of brisk walking a week until you reach 30 minutes, then try the Somax 3 x 10 Walking Day or a walking plan.",
+      "See your GP first if you've been inactive for a long time or have a medical condition."
+    ],
+    "exercises": [
+      {
+        "name": "Easy walk",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Brisk walk (talk, not sing)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Easy walk and calf stretch",
+        "sets": 1,
+        "reps": "2 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-nhs-warm-up",
+      "nhs-wirral-walking-plan-medium-walk"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-3x10-walking-day",
+    "name": "Somax 3 x 10 Walking Day",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "fat-loss",
+      "endurance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Three 10-minute brisk walks spread across the day - before work, at lunch and after dinner - for 30 minutes without finding a 30-minute gap.",
+    "whoItsFor": "Busy people and desk workers who can't block out a long session but can break up their sitting.",
+    "lifestyle": [
+      "busy",
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "5 days a week gets you to the 150-minute weekly guideline.",
+      "Each walk: 1-2 minutes easy, then brisk (talk, not sing) for the rest.",
+      "A walk after meals is a great time to fit one in.",
+      "When it's easy, make one of the three a 20-minute walk with a hill."
+    ],
+    "exercises": [
+      {
+        "name": "Walk 1 (morning): brisk",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Walk 2 (lunch): brisk",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Walk 3 (after dinner): brisk",
+        "sets": 1,
+        "reps": "10 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-wirral-walking-plan-medium-walk",
+      "x-gen-stair-climbing-snacks"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-from-zero-chair-strength-10",
+    "name": "Somax From-Zero Chair Strength 10",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 10,
+    "equipment": [
+      "chair",
+      "wall"
+    ],
+    "description": "Ten minutes, one chair, one wall: the first strength moves for people who've never trained - standing up, pushing, stepping and rising onto your toes.",
+    "whoItsFor": "Complete beginners, people returning after illness, and anyone nervous about the gym.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "older-adults"
+    ],
+    "howToRun": [
+      "2-3 days a week, not back-to-back.",
+      "Move slowly: about 3 seconds down and 2 up.",
+      "When you can do 2 sets of 12 of everything, move on to the Somax Fat-Loss Starter Week or Growing Stronger Part II.",
+      "Use your hands on the chair whenever you need to."
+    ],
+    "exercises": [
+      {
+        "name": "Sit-to-Stand (hands on thighs if needed)",
+        "sets": 2,
+        "reps": "8-12"
+      },
+      {
+        "name": "Wall Push-up",
+        "sets": 2,
+        "reps": "8-12"
+      },
+      {
+        "name": "Calf Raise holding chair back",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Seated Knee Lift (alternating)",
+        "sets": 2,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Standing Side Leg Lift holding chair",
+        "sets": 1,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Seated Chest Stretch",
+        "sets": 1,
+        "reps": "20s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "x-gen-growing-stronger-part-1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-band-full-body-25",
+    "name": "Somax Band Full Body 25",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness",
+      "muscle"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 25,
+    "equipment": [
+      "bands"
+    ],
+    "description": "A complete strength session with one long loop or tube band: squats, rows, presses, hinges and pull-aparts in straight sets.",
+    "whoItsFor": "Beginners at home or travelling who want proper strength training with almost no gear.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "2-3 non-consecutive days a week.",
+      "Choose a band tension where the last 2-3 reps of each set are hard but tidy.",
+      "Rest 45-60s between sets.",
+      "Progress with a stronger band, a shorter grip, or a slow 3-second lowering."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Band Squat",
+        "sets": 2,
+        "reps": "12-15"
+      },
+      {
+        "name": "Band Bent-over Row",
+        "sets": 2,
+        "reps": "12-15"
+      },
+      {
+        "name": "Band Chest Press (anchored behind)",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Band Romanian Deadlift",
+        "sets": 2,
+        "reps": "12-15"
+      },
+      {
+        "name": "Band Overhead Press",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Band Pull-apart",
+        "sets": 2,
+        "reps": "15"
+      },
+      {
+        "name": "Dead Bug",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "x-gen-growing-stronger-part-2"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-mat-core-posture-15",
+    "name": "Somax Mat Core & Posture 15",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "mobility",
+      "strength"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "mat"
+    ],
+    "description": "Fifteen minutes on the floor for a stronger trunk and better posture: dead bugs, bird dogs, bridges, side planks from the knees and back raises.",
+    "whoItsFor": "Beginners and desk workers with stiff backs who want gentle, spine-friendly core work.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "howToRun": [
+      "3 days a week, or daily as a short routine.",
+      "Move slowly and breathe out on the effort; stop anything that causes back pain.",
+      "Rest 30s between sets.",
+      "Progress to full side planks and longer holds, then the Somax Plank & Core Builder."
+    ],
+    "exercises": [
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Dead Bug",
+        "sets": 2,
+        "reps": "6/side"
+      },
+      {
+        "name": "Bird Dog (3s hold)",
+        "sets": 2,
+        "reps": "6/side"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 2,
+        "reps": "12"
+      },
+      {
+        "name": "Side Plank from Knees",
+        "sets": 2,
+        "reps": "15-20s/side"
+      },
+      {
+        "name": "Prone Y Raise",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "30s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-growing-stronger-part-3",
+      "nhs-flexibility-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-desk-reset-5",
+    "name": "Somax Desk Reset 5",
+    "category": "other",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "5 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 5,
+    "equipment": [
+      "chair"
+    ],
+    "description": "Five minutes at your desk to undo the hunch: shoulder rolls, chin tucks, twists, a standing hip-flexor stretch and calf raises.",
+    "whoItsFor": "Office and work-from-home desk workers who sit for hours and feel it in their neck, back and hips.",
+    "lifestyle": [
+      "busy",
+      "time-efficient",
+      "minimal-equipment",
+      "travel"
+    ],
+    "howToRun": [
+      "Once or twice every working day - e.g. mid-morning and mid-afternoon.",
+      "Set a reminder to stand up and move at least every 30-60 minutes as well.",
+      "Every move is gentle; nothing should hurt.",
+      "Pair it with a 3 x 10 Walking Day for a desk-worker week."
+    ],
+    "exercises": [
+      {
+        "name": "Shoulder Rolls (back and down)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Chin Tuck (2s hold)",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Seated Upper-body Twist",
+        "sets": 1,
+        "reps": "5s hold x3/side"
+      },
+      {
+        "name": "Standing Hip-flexor Stretch (hold desk)",
+        "sets": 1,
+        "reps": "20s/side"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "sets": 1,
+        "reps": "15"
+      },
+      {
+        "name": "Wrist and Forearm Stretch",
+        "sets": 1,
+        "reps": "15s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-nhs-sitting-exercises",
+      "nhs-flexibility-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-office-strength-snack-10",
+    "name": "Somax Office Strength Snack 10",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "chair"
+    ],
+    "description": "A 10-minute strength break in office clothes: sit-to-stands, desk push-ups, calf raises, a wall sit and a stair climb if you have one.",
+    "whoItsFor": "Desk workers who want to keep their legs and upper body strong without changing clothes or getting sweaty.",
+    "lifestyle": [
+      "busy",
+      "time-efficient",
+      "minimal-equipment",
+      "travel"
+    ],
+    "howToRun": [
+      "2-3 workdays a week, or swap one in for a coffee run.",
+      "2 rounds; rest 30-60s between rounds.",
+      "Use a stable desk (not a wheeled chair) for the push-ups.",
+      "Add a third round or a stair climb when it feels easy."
+    ],
+    "exercises": [
+      {
+        "name": "Sit-to-Stand from Office Chair (chair against desk)",
+        "sets": 2,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Desk Push-up",
+        "sets": 2,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Calf Raise",
+        "sets": 2,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Wall Sit",
+        "sets": 2,
+        "reps": "20-30s",
+        "group": "A"
+      },
+      {
+        "name": "Optional: Brisk Stair Climb",
+        "sets": 1,
+        "reps": "1-2 flights"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-stair-climbing-snacks",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-hotel-room-starter-15",
+    "name": "Somax Hotel Room Starter 15",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "bodyweight",
+      "chair"
+    ],
+    "description": "A gentle 15-minute hotel-room routine for beginners: squats to the bed edge, incline push-ups on the desk, bridges, step-backs and a plank.",
+    "whoItsFor": "Beginners who travel for work and want to keep a habit going on the road without a gym.",
+    "lifestyle": [
+      "travel",
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Every second day while travelling.",
+      "2 rounds, 30-60s rest between rounds.",
+      "Use the bed edge, desk or a sturdy chair - never a wheeled office chair.",
+      "When it's easy, step up to the Somax Hotel Room Full Body."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Squat to Bed Edge",
+        "sets": 2,
+        "reps": "10-12",
+        "group": "A"
+      },
+      {
+        "name": "Incline Push-up on Desk",
+        "sets": 2,
+        "reps": "8-10",
+        "group": "A"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 2,
+        "reps": "12",
+        "group": "A"
+      },
+      {
+        "name": "Reverse Lunge holding chair",
+        "sets": 2,
+        "reps": "6/leg",
+        "group": "A"
+      },
+      {
+        "name": "Plank (knees if needed)",
+        "sets": 2,
+        "reps": "20s",
+        "group": "A"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-nhs-scotland-hotel-room-circuit",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-travel-day-mobility-10",
+    "name": "Somax Travel Day Mobility 10",
+    "category": "other",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 10,
+    "equipment": [
+      "chair"
+    ],
+    "description": "Seated and aisle-friendly moves for long flights, drives and train trips: ankle pumps, knee hugs, twists, neck turns and calf raises.",
+    "whoItsFor": "Travellers on long-haul flights or road trips who want to stay loose and keep blood moving.",
+    "lifestyle": [
+      "travel",
+      "busy",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Do the seated part every hour or so on long trips; stand and do the calf raises when you can.",
+      "Drink water regularly and walk the aisle when the seatbelt sign is off.",
+      "Nothing should hurt; keep movements small in tight seats.",
+      "Seek urgent help for calf pain, swelling, chest pain or breathlessness during or after travel."
+    ],
+    "exercises": [
+      {
+        "name": "Seated Ankle Pumps",
+        "sets": 2,
+        "reps": "15"
+      },
+      {
+        "name": "Seated Ankle Circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Seated Knee Hug",
+        "sets": 1,
+        "reps": "5/leg (5s hold)"
+      },
+      {
+        "name": "Seated Upper-body Twist",
+        "sets": 1,
+        "reps": "5s hold x3/side"
+      },
+      {
+        "name": "Neck Rotation",
+        "sets": 1,
+        "reps": "3/side"
+      },
+      {
+        "name": "Shoulder Rolls",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Standing Calf Raise (aisle or galley)",
+        "sets": 2,
+        "reps": "15"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-nhs-sitting-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fitness-check-in",
+    "name": "Somax Fitness Check-in",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 25,
+    "equipment": [
+      "chair",
+      "mat"
+    ],
+    "description": "A simple re-test to run every 4 weeks: 30-second chair stand, max push-ups, plank hold, and how far you walk briskly in 10 minutes.",
+    "whoItsFor": "Anyone on a Somax plan who wants to see real progress beyond the scales.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "older-adults"
+    ],
+    "howToRun": [
+      "Once every 4 weeks, on a fresh day, same time of day.",
+      "Chair stand: armless chair (about 43 cm) against a wall, arms crossed; count full stands in 30s.",
+      "Push-ups: record whether full or from the knees, and use the same version each time. Plank: hold until form breaks.",
+      "Walk test: brisk 10 minutes on the same flat route; record distance from your watch or phone. Skip anything that hurts."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot, heel digs, knee lifts",
+        "sets": 1,
+        "reps": "4 min"
+      },
+      {
+        "name": "30-Second Chair Stand (count reps)",
+        "sets": 1,
+        "reps": "max in 30s"
+      },
+      {
+        "name": "Rest",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Push-up Test (full or knees, record which)",
+        "sets": 1,
+        "reps": "max reps"
+      },
+      {
+        "name": "Rest",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Front Plank Hold",
+        "sets": 1,
+        "reps": "max time"
+      },
+      {
+        "name": "10-Minute Brisk Walk (record distance)",
+        "sets": 1,
+        "reps": "10 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-growing-stronger-part-1",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-steady-feet-supported",
+    "name": "Somax Steady Feet (Supported Balance)",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "mobility",
+      "strength"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "stable support"
+    ],
+    "description": "A balance routine done entirely at the kitchen bench: narrowing your stance step by step, heel and toe raises, side-stepping and supported sit-to-stands.",
+    "whoItsFor": "Older adults who feel unsteady, have had a fall, or are just starting balance work - everything is done holding on.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "3 days a week (rest days between), plus short balance 'snacks' on other days.",
+      "Stand at a kitchen bench or solid table - never a chair that can move. Hold on with both hands, then one, then fingertips as you improve.",
+      "Only move on to the next stance when you can hold the current one steadily for 10 seconds.",
+      "If you've fallen in the past year, see your GP before starting and keep a support within reach at all times."
+    ],
+    "exercises": [
+      {
+        "name": "Feet-together Stand (hold bench)",
+        "sets": 3,
+        "reps": "10s"
+      },
+      {
+        "name": "Semi-tandem Stand (hold bench)",
+        "sets": 3,
+        "reps": "10s/side"
+      },
+      {
+        "name": "Tandem (heel-to-toe) Stand (hold bench)",
+        "sets": 2,
+        "reps": "10s/side"
+      },
+      {
+        "name": "Heel Raise (hold bench)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Toe Raise (hold bench)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Sideways Walking along the Bench",
+        "sets": 2,
+        "reps": "10 steps each way"
+      },
+      {
+        "name": "Sit-to-Stand (hands allowed)",
+        "sets": 2,
+        "reps": "5-8"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-nhs-balance-exercises",
+      "x-gen-safe-exercise-at-home-level-2",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-strong-legs-for-life",
+    "name": "Somax Strong Legs for Life",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "chair",
+      "step",
+      "ankle weights"
+    ],
+    "description": "Leg strength for independence: slow sit-to-stands, step-ups, ankle-weight knee extensions and hip raises, single-leg calf raises and a balance finish.",
+    "whoItsFor": "Older adults who can stand from a chair without their hands and want to keep doing stairs, gardening and getting up off the floor.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "3 non-consecutive days a week, plus walking on 2 other days.",
+      "Lift for 2-3 seconds, lower for 4-5 seconds; rest 1-2 minutes between sets.",
+      "Pick an ankle weight that allows 8-10 good reps; go heavier once 2 x 10 is comfortable.",
+      "Hold a rail or bench for step-ups and balance work; stop for dizziness, chest pain or pain that won't settle."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Slow Sit-to-Stand (no hands)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Step-up (rail nearby)",
+        "sets": 2,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Seated Knee Extension (ankle weights)",
+        "sets": 2,
+        "reps": "8-10/leg"
+      },
+      {
+        "name": "Standing Side Hip Raise (ankle weights, hold bench)",
+        "sets": 2,
+        "reps": "8-10/leg"
+      },
+      {
+        "name": "Single-leg Calf Raise (hold bench)",
+        "sets": 2,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Heel-to-toe Walk (wall nearby)",
+        "sets": 2,
+        "reps": "10 steps"
+      },
+      {
+        "name": "One-leg Stand (fingertips on bench)",
+        "sets": 2,
+        "reps": "10s/side"
+      },
+      {
+        "name": "Cool-down: gentle stretches (calf, thigh, chest), 20-30s holds",
+        "sets": 1,
+        "reps": "4 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-growing-stronger-part-3",
+      "x-gen-nhs-balance-exercises",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-active-agers-power-balance",
+    "name": "Somax Active Agers Power & Balance",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness",
+      "mobility"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 40,
+    "equipment": [
+      "dumbbells",
+      "chair",
+      "step"
+    ],
+    "description": "For fit, active older adults: goblet squats, fast sit-to-stands for power, step-ups, rows, push-ups, a carry, and harder balance drills without support.",
+    "whoItsFor": "Active over-60s who already walk 150+ minutes a week and find chair-based programs too easy.",
+    "lifestyle": [
+      "home",
+      "older-adults"
+    ],
+    "howToRun": [
+      "2-3 non-consecutive days a week.",
+      "Fast sit-to-stands: stand up as quickly as you safely can, sit down slowly - that's the power part.",
+      "Rest 60-90s between sets; reps should feel moderate-hard, never maximal.",
+      "Do the no-support balance drills near a wall or bench in case you need it."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: brisk march and arm swings",
+        "sets": 1,
+        "reps": "4 min"
+      },
+      {
+        "name": "Goblet Squat to Chair",
+        "sets": 2,
+        "reps": "10-15"
+      },
+      {
+        "name": "Fast Sit-to-Stand (power, slow lower)",
+        "sets": 2,
+        "reps": "6-8"
+      },
+      {
+        "name": "Step-up (rail nearby)",
+        "sets": 2,
+        "reps": "8-10/leg"
+      },
+      {
+        "name": "One-arm Dumbbell Row",
+        "sets": 2,
+        "reps": "10-12/arm"
+      },
+      {
+        "name": "Incline Push-up",
+        "sets": 2,
+        "reps": "10-15"
+      },
+      {
+        "name": "Farmer Carry (dumbbells)",
+        "sets": 2,
+        "reps": "30 m"
+      },
+      {
+        "name": "Grapevine",
+        "sets": 1,
+        "reps": "5 cross-steps/side"
+      },
+      {
+        "name": "Heel-to-toe Walk, no support",
+        "sets": 2,
+        "reps": "10 steps"
+      },
+      {
+        "name": "One-leg Stand with Head Turns",
+        "sets": 2,
+        "reps": "10-20s/side"
+      },
+      {
+        "name": "Cool-down: gentle stretches (calf, thigh, chest), 20-30s holds",
+        "sets": 1,
+        "reps": "4 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-growing-stronger-part-3",
+      "x-gen-nhs-balance-exercises",
+      "x-gen-interval-walking-training"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-seated-strength-bands",
+    "name": "Somax Seated Strength (Bands)",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "chair",
+      "bands"
+    ],
+    "description": "A complete strength session without standing: seated band rows, presses, leg presses and pull-aparts, plus marching and toe raises.",
+    "whoItsFor": "Older adults with poor balance, people recovering from illness or using a walking aid, and anyone who needs to stay seated.",
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "2-3 days a week, not back-to-back.",
+      "Sit tall on a solid chair without wheels, feet flat; use a light band to start.",
+      "Move slowly (2 seconds out, 3-4 back) and breathe out on the effort.",
+      "When 2 x 12 feels easy, use a firmer band or move on to Growing Stronger Part I."
+    ],
+    "exercises": [
+      {
+        "name": "Seated Marching",
+        "sets": 1,
+        "reps": "1 min"
+      },
+      {
+        "name": "Seated Band Row",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Seated Band Chest Press (band behind back)",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Seated Band Leg Press (band around foot)",
+        "sets": 2,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Seated Knee Extension (hold 2s)",
+        "sets": 2,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Seated Band Overhead Press",
+        "sets": 2,
+        "reps": "8-10"
+      },
+      {
+        "name": "Seated Band Pull-apart",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Seated Toe Raises",
+        "sets": 2,
+        "reps": "15"
+      },
+      {
+        "name": "Seated Chest Stretch",
+        "sets": 1,
+        "reps": "20s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-nhs-sitting-exercises",
+      "x-gen-growing-stronger-part-1",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-walk-and-balance",
+    "name": "Somax Walk & Balance",
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "endurance",
+      "mobility"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A 25-minute walk with three short balance stops at a fence, bench or rail - so your walking day also counts as a balance day.",
+    "whoItsFor": "Older adults who walk regularly and want to tick off balance practice at the same time.",
+    "lifestyle": [
+      "outdoor",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "2-3 days a week, on days you're not doing strength work.",
+      "Walk at a comfortable-to-brisk pace (talk, not sing); heel lands first, eyes ahead.",
+      "At each stop, hold the rail or bench for every balance drill.",
+      "Walking alone doesn't prevent falls - keep your strength and balance sessions going too."
+    ],
+    "exercises": [
+      {
+        "name": "Walk (comfortable)",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Stop 1: Heel Raises holding rail",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Walk (brisk)",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Stop 2: Semi-tandem Stand holding rail",
+        "sets": 1,
+        "reps": "10s/side"
+      },
+      {
+        "name": "Walk (brisk)",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Stop 3: One-leg Stand holding rail",
+        "sets": 1,
+        "reps": "5-10s/side"
+      },
+      {
+        "name": "Walk (easy) home",
+        "sets": 1,
+        "reps": "4 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-nhs-balance-exercises",
+      "x-gen-interval-walking-training",
+      "nhs-wirral-walking-plan-medium-walk"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-postnatal-gentle-start",
+    "name": "Somax Postnatal Gentle Start (0-6 weeks)",
+    "category": "other",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 7,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "The early weeks after birth: pelvic floor and deep tummy work a few times a day, gentle posture moves for feeding and carrying, and a pram walk that grows as you feel ready.",
+    "whoItsFor": "New mums in the first 6 weeks after birth (vaginal or caesarean) who want a gentle, physio-informed routine before their postnatal check.",
+    "lifestyle": [
+      "home",
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Pelvic floor and deep tummy holds 3 times a day; walk most days as comfort allows, starting with 5-10 minutes.",
+      "Breathe normally throughout; keep your bottom and upper tummy relaxed during pelvic floor work.",
+      "No crunches, planks, running, jumping or weights yet; lift nothing heavier than your baby.",
+      "Stop and see your GP or a women's health physio for pain, leaking, heavier or returning bright-red bleeding, or if anything feels wrong. Caesarean, complicated births and health conditions may need longer."
+    ],
+    "exercises": [
+      {
+        "name": "Pelvic Floor Long Hold (5s rest between)",
+        "sets": 1,
+        "reps": "10 x 3-10s"
+      },
+      {
+        "name": "Pelvic Floor Quick Squeeze",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Deep Tummy Hold (lying knees bent)",
+        "sets": 1,
+        "reps": "6-10 x 3-5s"
+      },
+      {
+        "name": "Seated Shoulder Rolls",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Seated Chest Stretch",
+        "sets": 1,
+        "reps": "20s x2"
+      },
+      {
+        "name": "Pram Walk (easy, building gradually)",
+        "sets": 1,
+        "reps": "5-20 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-royal-womens-postnatal-recovery",
+      "x-gen-nhs-sitting-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-postnatal-strength-return",
+    "name": "Somax Postnatal Strength Return (6+ weeks)",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight",
+      "bands",
+      "chair"
+    ],
+    "description": "After your 6-week check: gentle full-body strength with your pelvic floor switched on - bridges, sit-to-stands, wall push-ups, band rows, clams and bird dogs - plus a brisk walk.",
+    "whoItsFor": "Mums who have been cleared at their postnatal check and want to rebuild strength safely before any return to running or high-impact exercise.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "2-3 non-consecutive days a week, plus walking on other days towards 150 minutes a week.",
+      "Gently squeeze your pelvic floor and breathe out as you lift or push (the effort part of each rep).",
+      "Still no crunches, sit-ups, planks or impact until at least 12 weeks and a women's health physio says your pelvic floor and tummy are ready.",
+      "Stop for leaking, heaviness or dragging in the pelvis, back pain, or a tummy 'doming' down the middle, and get checked."
+    ],
+    "exercises": [
+      {
+        "name": "Pelvic Floor Long Hold",
+        "sets": 1,
+        "reps": "10 x 10s"
+      },
+      {
+        "name": "Glute Bridge (exhale and brace on the way up)",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Sit-to-Stand",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Wall Push-up",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Band Row (door anchor or seated)",
+        "sets": 2,
+        "reps": "12"
+      },
+      {
+        "name": "Side-lying Clam",
+        "sets": 2,
+        "reps": "12/side"
+      },
+      {
+        "name": "Bird Dog",
+        "sets": 2,
+        "reps": "6/side"
+      },
+      {
+        "name": "Brisk Walk (with or without pram)",
+        "sets": 1,
+        "reps": "15-20 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-royal-womens-postnatal-recovery",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-bodyweight-strength-30",
+    "name": "Somax Bodyweight Strength 30",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "muscle",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight",
+      "backpack"
+    ],
+    "description": "Proper strength work with no gym: push-ups, split squats, single-leg bridges, loaded-backpack rows and pike push-ups, in three straight sets.",
+    "whoItsFor": "People who've outgrown beginner circuits and want to get stronger at home with just their body and a backpack.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "3 non-consecutive days a week.",
+      "Pick the version of each move that makes 8-12 reps hard; leave 1-2 reps in reserve.",
+      "Rest 60-90s between sets.",
+      "Progress by slowing the lowering to 3s, adding backpack weight, or moving to harder versions (deficit push-ups, rear-foot-elevated split squats)."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Push-up",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "name": "Split Squat",
+        "sets": 3,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Single-leg Glute Bridge",
+        "sets": 3,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Backpack Bent-over Row (loaded with books)",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Pike Push-up",
+        "sets": 3,
+        "reps": "6-10"
+      },
+      {
+        "name": "Side Plank",
+        "sets": 2,
+        "reps": "20-30s/side"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "bwf-recommended-routine",
+      "nhs-home-strength-exercises"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-push-up-builder",
+    "name": "Somax Push-up Builder",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 15,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "A short add-on to grow your push-up number: four easy sets at about half your max, slow lowering reps, and a plank.",
+    "whoItsFor": "Anyone with a push-up goal (first full push-up, 10, 20 or more), whatever level they start from.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Add it to 2 sessions a week, 2+ days apart.",
+      "Choose the push-up level you can do at least 5 of (wall, bench, knees, full).",
+      "Main sets: about 50-60% of your current max, crisp and fast; re-test your max every 2 weeks.",
+      "When you hit 15 of your current level, move to the next harder level."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: arm circles and wall push-ups",
+        "sets": 1,
+        "reps": "1 min"
+      },
+      {
+        "name": "Push-up at your level",
+        "sets": 4,
+        "reps": "50-60% of max"
+      },
+      {
+        "name": "Slow Lowering Push-up (3s down)",
+        "sets": 2,
+        "reps": "3-5"
+      },
+      {
+        "name": "Plank",
+        "sets": 2,
+        "reps": "20-30s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "bwf-recommended-routine",
+      "x-gen-growing-stronger-part-1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-plank-core-builder",
+    "name": "Somax Plank & Core Builder",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat"
+    ],
+    "description": "Twenty minutes of harder trunk work: front and side planks, hollow holds, dead bugs with reach and slow mountain climbers.",
+    "whoItsFor": "People who've mastered the beginner core work and want a stronger, more stable midsection for lifting, running and sport.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "3 days a week.",
+      "Quality over time: end each hold when your hips sag or your lower back arches.",
+      "Rest 30-45s between sets.",
+      "Add 5s to each hold per week, up to 60s planks and 45s side planks."
+    ],
+    "exercises": [
+      {
+        "name": "Dead Bug with Reach",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Front Plank",
+        "sets": 3,
+        "reps": "30-45s"
+      },
+      {
+        "name": "Side Plank",
+        "sets": 2,
+        "reps": "20-30s/side"
+      },
+      {
+        "name": "Hollow Hold (tuck)",
+        "sets": 3,
+        "reps": "15-20s"
+      },
+      {
+        "name": "Slow Mountain Climber",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Glute Bridge Hold",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "30s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "bwf-recommended-routine",
+      "x-gen-growing-stronger-part-3"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-gym-cardio-circuit-45",
+    "name": "Somax Gym Cardio + Circuit 45",
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "fat-loss",
+      "strength"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "machines",
+      "cardio machine"
+    ],
+    "description": "A full gym hour in 45 minutes: steady cardio, a machine circuit for every major muscle, then a second cardio block.",
+    "whoItsFor": "Gym members who want an all-round fitness session without needing to plan, and who like machines over free weights.",
+    "lifestyle": [
+      "full-gym",
+      "busy"
+    ],
+    "howToRun": [
+      "3 days a week, with a rest day between.",
+      "Cardio blocks at a moderate effort (talk, not sing) on any machine you like.",
+      "Circuit: move station to station with ~30s between; 3 rounds, 12-15 reps at a weight that's hard by the last 2-3.",
+      "Progress the circuit weights first, then lengthen the cardio blocks to 15 minutes."
+    ],
+    "exercises": [
+      {
+        "name": "Bike, Cross-trainer or Incline Walk (moderate)",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Leg Press",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Chest Press Machine",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Seated Row Machine",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Leg Curl Machine",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Shoulder Press Machine",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Cable Woodchop",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "A"
+      },
+      {
+        "name": "Rower or Cross-trainer (moderate)",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "seven-minute-workout",
+      "ntnu-4x4-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-advanced-bodyweight-conditioning-45",
+    "name": "Somax Advanced Bodyweight Conditioning 45",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "general-fitness",
+      "strength",
+      "endurance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight",
+      "chair"
+    ],
+    "description": "Three 12-minute blocks for very fit people with no equipment: a strength block, a lower-body power block and an engine block.",
+    "whoItsFor": "Advanced trainers who want a long, varied session at home, outdoors or travelling.",
+    "lifestyle": [
+      "home",
+      "travel",
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Advanced only: you should already train hard regularly. Stop for chest pain, dizziness or a racing, irregular heartbeat.",
+      "Block A (strength): 4 rounds, rest 60s. Block B (power): 4 rounds, rest 60s. Block C (engine): continuous 12 minutes.",
+      "Leave a rep or two in reserve on the strength moves; save the all-out effort for block C.",
+      "2-3 times a week; swap one for an easy walk or run if you're feeling flat."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Decline Push-up (feet on chair)",
+        "sets": 4,
+        "reps": "10-15",
+        "group": "A"
+      },
+      {
+        "name": "Rear-foot-elevated Split Squat",
+        "sets": 4,
+        "reps": "8-10/leg",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Romanian Deadlift (bodyweight)",
+        "sets": 4,
+        "reps": "10/leg",
+        "group": "A"
+      },
+      {
+        "name": "Broad Jump (walk back)",
+        "sets": 4,
+        "reps": "5",
+        "group": "B"
+      },
+      {
+        "name": "Skater Jump",
+        "sets": 4,
+        "reps": "10 total",
+        "group": "B"
+      },
+      {
+        "name": "Lateral Lunge",
+        "sets": 4,
+        "reps": "8/side",
+        "group": "B"
+      },
+      {
+        "name": "Engine: Burpee",
+        "sets": 4,
+        "reps": "8",
+        "group": "C"
+      },
+      {
+        "name": "Engine: Mountain Climber",
+        "sets": 4,
+        "reps": "30 total",
+        "group": "C"
+      },
+      {
+        "name": "Engine: Squat Jump",
+        "sets": 4,
+        "reps": "12",
+        "group": "C"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "bwf-recommended-routine",
+      "x-gen-nhs-scotland-hotel-room-circuit",
+      "seven-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-advanced-dumbbell-strength-endurance-45",
+    "name": "Somax Advanced Dumbbell Strength-Endurance 45",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "muscle",
+      "endurance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "dumbbells",
+      "bench"
+    ],
+    "description": "Heavier dumbbell supersets for strength, then a 6-minute finisher of carries and swings. Built for experienced lifters training at home.",
+    "whoItsFor": "Experienced home lifters with heavier adjustable dumbbells and a bench.",
+    "lifestyle": [
+      "home"
+    ],
+    "howToRun": [
+      "3 days a week, 48 hours apart.",
+      "Supersets A and B: 4 sets of 6-10, resting 90s after each pair; add weight when you hit 10 on all sets.",
+      "Finisher: 3 rounds without rest, then stretch.",
+      "Deload every 5th week (half the sets)."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Bench Press",
+        "sets": 4,
+        "reps": "6-10",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Bulgarian Split Squat",
+        "sets": 4,
+        "reps": "6-10/leg",
+        "group": "A"
+      },
+      {
+        "name": "Chest-supported Dumbbell Row",
+        "sets": 4,
+        "reps": "8-10",
+        "group": "B"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 4,
+        "reps": "8-10",
+        "group": "B"
+      },
+      {
+        "name": "Finisher: Dumbbell Farmer Carry",
+        "sets": 3,
+        "reps": "40 m",
+        "group": "C"
+      },
+      {
+        "name": "Finisher: Single-dumbbell Swing",
+        "sets": 3,
+        "reps": "15",
+        "group": "C"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "strongfirst-simple-and-sinister",
+      "bwf-recommended-routine"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-weighted-ruck-60",
+    "name": "Somax Weighted Ruck 60",
+    "category": "walk",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "endurance",
+      "strength",
+      "fat-loss"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 60,
+    "equipment": [
+      "backpack"
+    ],
+    "description": "An hour's brisk walk with a loaded backpack and some hills - big calorie burn and leg and trunk strength with no running impact.",
+    "whoItsFor": "Fit walkers, hikers in training and anyone wanting a tough low-impact endurance session outdoors.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Once a week, in place of a long walk.",
+      "Start with 5-8 kg packed high and tight (water bottles or books in a towel); build by 1-2 kg a week, up to about 15% of body weight.",
+      "Walk briskly (talk in short sentences) and choose a route with hills.",
+      "Wear supportive shoes, carry water, and skip it if your back, knees or feet are sore."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Brisk Ruck (loaded backpack)",
+        "sets": 1,
+        "reps": "50 min",
+        "weight": "5-8 kg to start"
+      },
+      {
+        "name": "Cool-down: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-interval-walking-training",
+      "nhs-wirral-walking-plan-medium-walk"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-advanced-hotel-30",
+    "name": "Somax Advanced Hotel Workout 30",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "strength",
+      "general-fitness",
+      "endurance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight",
+      "chair"
+    ],
+    "description": "A hard 30-minute hotel session: bed-supported Bulgarian split squats, decline push-ups, single-leg deadlifts, chair dips and a burpee finisher.",
+    "whoItsFor": "Fit travellers who want to keep their strength up on long work trips with only the room furniture.",
+    "lifestyle": [
+      "travel",
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Every second day while away.",
+      "Supersets: 3-4 rounds of each pair, resting 60s after the pair.",
+      "Use the bed edge or a sturdy chair against the wall, never a wheeled chair.",
+      "Finish with the 5-minute finisher only if you have quiet floors or can do the no-jump option."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Bulgarian Split Squat (rear foot on bed)",
+        "sets": 4,
+        "reps": "8-12/leg",
+        "group": "A"
+      },
+      {
+        "name": "Decline Push-up (feet on bed)",
+        "sets": 4,
+        "reps": "8-15",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Romanian Deadlift (holding luggage)",
+        "sets": 3,
+        "reps": "10/leg",
+        "group": "B"
+      },
+      {
+        "name": "Chair Dip",
+        "sets": 3,
+        "reps": "10-15",
+        "group": "B"
+      },
+      {
+        "name": "Finisher: Burpee (or step-back burpee)",
+        "sets": 5,
+        "reps": "10 every minute"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-nhs-scotland-hotel-room-circuit",
+      "seven-minute-workout"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-starter-day-1",
+    "name": "Fat-Loss Starter Week - Day 1: Strength A + Walk",
+    "series": "Somax Fat-Loss Starter Week",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight",
+      "chair",
+      "bands"
+    ],
+    "description": "Day 1 of a 3-day beginner fat-loss week: one easy set of six full-body strength moves, then a 15-minute brisk walk.",
+    "whoItsFor": "Beginners doing less than 150 minutes of activity a week who want to lose fat with a plan that's realistic from day one.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "Do Day 1, 2 and 3 on non-consecutive days (e.g. Mon/Wed/Fri) and walk on other days if you can.",
+      "Food does most of the fat-loss work: aim for a modest deficit (about 0.5 kg a week), not a crash diet.",
+      "Strength: one set of 10-15 reps, light to moderate; add a second set after 2-3 weeks.",
+      "After 4-6 consistent weeks, move to the Fat-Loss Builder Week."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Squat to Chair",
+        "sets": 1,
+        "reps": "10-15"
+      },
+      {
+        "name": "Incline Push-up (bench or wall)",
+        "sets": 1,
+        "reps": "10-15"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 1,
+        "reps": "10-15"
+      },
+      {
+        "name": "Band Row",
+        "sets": 1,
+        "reps": "10-15"
+      },
+      {
+        "name": "Band or Water-bottle Overhead Press (seated)",
+        "sets": 1,
+        "reps": "10-15"
+      },
+      {
+        "name": "Dead Bug",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Brisk Walk (talk, not sing)",
+        "sets": 1,
+        "reps": "15 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "nhs-wirral-walking-plan-medium-walk",
+      "x-gen-growing-stronger-part-1"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-starter-day-2",
+    "name": "Fat-Loss Starter Week - Day 2: Brisk Walk 30",
+    "series": "Somax Fat-Loss Starter Week",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "walk",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Day 2: a 30-minute walk - 5 easy, 20 brisk, 5 easy. Steady cardio is the backbone of fat loss.",
+    "whoItsFor": "Beginners on the Fat-Loss Starter Week.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "Do it on a day between your two strength days.",
+      "Brisk = you can talk but couldn't sing.",
+      "Add 5 minutes to the brisk section every week or two until you reach 40 minutes.",
+      "Bike, swim or cross-trainer at the same effort all count instead."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Brisk Walk",
+        "sets": 1,
+        "reps": "20 min"
+      },
+      {
+        "name": "Cool-down: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-wirral-walking-plan-medium-walk",
+      "x-gen-interval-walking-training"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-starter-day-3",
+    "name": "Fat-Loss Starter Week - Day 3: Strength B + Walk",
+    "series": "Somax Fat-Loss Starter Week",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight",
+      "dumbbells"
+    ],
+    "description": "Day 3: a second full-body strength session with light dumbbells, then another 15-minute brisk walk.",
+    "whoItsFor": "Beginners on the Fat-Loss Starter Week with a light pair of dumbbells (2-6 kg).",
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "Leave at least a day after Day 1 so your muscles recover.",
+      "One or two sets of 10-15 reps; the last few reps should feel moderately hard.",
+      "Rest 60s between sets.",
+      "Log your weights - you should be able to go up a little every couple of weeks."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Goblet Squat",
+        "sets": 2,
+        "reps": "10-15"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 2,
+        "reps": "10-15"
+      },
+      {
+        "name": "One-arm Dumbbell Row",
+        "sets": 2,
+        "reps": "10-12/arm"
+      },
+      {
+        "name": "Incline Push-up",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Dumbbell Step-back Lunge (hold chair if needed)",
+        "sets": 1,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Bird Dog",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Brisk Walk",
+        "sets": 1,
+        "reps": "15 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "x-gen-growing-stronger-part-2"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-builder-day-1",
+    "name": "Fat-Loss Builder Week - Day 1: Dumbbell Strength A",
+    "series": "Somax Fat-Loss Builder Week",
+    "day": 1,
+    "daysInSeries": 4,
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "muscle"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 40,
+    "equipment": [
+      "dumbbells",
+      "bench"
+    ],
+    "description": "Day 1 of a 4-day intermediate fat-loss week: 3 sets of 8-12 on the big dumbbell lifts to hold on to muscle while you lose fat.",
+    "whoItsFor": "People already doing 150+ minutes of activity a week who want a structured strength + cardio fat-loss week.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "4 days: strength A, steady cardio, strength B, long walk - with rest or easy walking between.",
+      "3 sets of 8-12 at a moderate-hard effort (2 reps in reserve); rest 60-90s.",
+      "Keep the deficit modest; aim for 0.5-1 kg a week at most.",
+      "Re-test your waist and benchmarks every 4 weeks rather than weighing daily."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Goblet Squat",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "name": "Dumbbell Bench or Floor Press",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "name": "One-arm Dumbbell Row",
+        "sets": 3,
+        "reps": "8-12/arm"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "name": "Front Plank",
+        "sets": 2,
+        "reps": "30-40s"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "strongfirst-simple-and-sinister",
+      "x-gen-growing-stronger-part-3"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-builder-day-2",
+    "name": "Fat-Loss Builder Week - Day 2: Steady Cardio 40",
+    "series": "Somax Fat-Loss Builder Week",
+    "day": 2,
+    "daysInSeries": 4,
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "endurance"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 40,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Day 2: 40 minutes of steady, moderate cardio - brisk walk, easy jog, bike or swim.",
+    "whoItsFor": "People on the Fat-Loss Builder Week.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "busy"
+    ],
+    "howToRun": [
+      "Moderate effort the whole way: you can talk in sentences but not sing.",
+      "Any mode counts; running tends to help fat loss more than cycling in the research.",
+      "Add 5 minutes every fortnight up to 50 minutes.",
+      "If you're sore from Day 1, choose a flatter walk or the bike."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Brisk Walk / Easy Jog / Bike (moderate)",
+        "sets": 1,
+        "reps": "30 min"
+      },
+      {
+        "name": "Cool-down: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-wirral-walking-plan-medium-walk",
+      "nhs-couch-to-5k-week-9"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-builder-day-3",
+    "name": "Fat-Loss Builder Week - Day 3: Dumbbell Strength B",
+    "series": "Somax Fat-Loss Builder Week",
+    "day": 3,
+    "daysInSeries": 4,
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "muscle"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 40,
+    "equipment": [
+      "dumbbells"
+    ],
+    "description": "Day 3: the second strength day - lunges, push-ups, single-leg hinges, presses and side planks.",
+    "whoItsFor": "People on the Fat-Loss Builder Week.",
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "At least 48 hours after Day 1.",
+      "3 sets of 8-12; rest 60-90s.",
+      "Add a rep each week, then go up a dumbbell size when you hit 12 on all sets.",
+      "Keep a short walk after dinner on strength days if you can."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: bodyweight squat (easy)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Dumbbell Reverse Lunge",
+        "sets": 3,
+        "reps": "8-10/leg"
+      },
+      {
+        "name": "Push-up (or incline)",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "name": "Single-leg Dumbbell Romanian Deadlift",
+        "sets": 3,
+        "reps": "8/leg"
+      },
+      {
+        "name": "Dumbbell Shoulder Press",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "name": "Dumbbell Bent-over Row (both arms)",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Side Plank",
+        "sets": 2,
+        "reps": "20-30s/side"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-home-strength-exercises",
+      "x-gen-growing-stronger-part-3"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-builder-day-4",
+    "name": "Fat-Loss Builder Week - Day 4: Long Walk 55",
+    "series": "Somax Fat-Loss Builder Week",
+    "day": 4,
+    "daysInSeries": 4,
+    "category": "walk",
+    "level": "intermediate",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "endurance"
+    ],
+    "duration": "55 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 55,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Day 4: a long walk of 45-60 minutes with a few hills - the easiest way to push your week past 250 minutes.",
+    "whoItsFor": "People on the Fat-Loss Builder Week.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Weekends suit this one; walk with family or a friend.",
+      "Steady moderate pace, faster on the hills.",
+      "Build from 45 to 60 minutes over a few weeks.",
+      "A bushwalk or beach walk counts - take water and sun protection."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Continuous Walk with Hills (moderate)",
+        "sets": 1,
+        "reps": "45 min"
+      },
+      {
+        "name": "Cool-down: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-wirral-walking-plan-medium-walk",
+      "x-gen-interval-walking-training"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-accelerator-day-1",
+    "name": "Fat-Loss Accelerator Week - Day 1: Strength A",
+    "series": "Somax Fat-Loss Accelerator Week",
+    "day": 1,
+    "daysInSeries": 5,
+    "category": "gym",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "muscle"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 50,
+    "equipment": [
+      "dumbbells",
+      "bench",
+      "barbell",
+      "squat rack"
+    ],
+    "description": "Day 1 of a 5-day advanced fat-loss week: heavier compound lifts (4 x 6-10) to keep strength and muscle while dieting.",
+    "whoItsFor": "Experienced trainers already doing 250+ minutes a week with 2+ strength days who want to tighten up their fat loss.",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "5 days: strength A, intervals, strength B, steady cardio, long walk; 2 rest or easy days.",
+      "4 sets of 6-10 with 2 reps in reserve; rest 2 minutes on squats and presses.",
+      "In a deficit, aim to keep your weights steady - not to set records.",
+      "Cap loss at about 1 kg a week; if you're losing faster for 3 weeks, eat a little more."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: rower or bike",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Barbell Back Squat",
+        "sets": 4,
+        "reps": "6-8"
+      },
+      {
+        "name": "Dumbbell Bench Press",
+        "sets": 4,
+        "reps": "8-10"
+      },
+      {
+        "name": "Chest-supported Dumbbell Row",
+        "sets": 4,
+        "reps": "8-10"
+      },
+      {
+        "name": "Dumbbell Walking Lunge",
+        "sets": 3,
+        "reps": "10/leg"
+      },
+      {
+        "name": "Hanging Knee Raise or Dead Bug",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "name": "Cool-down stretch (calves, thighs, hips, chest)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "stronglifts-5x5-workout-a",
+      "x-gen-hood-10x1-intervals"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-accelerator-day-2",
+    "name": "Fat-Loss Accelerator Week - Day 2: Low-Impact Intervals",
+    "series": "Somax Fat-Loss Accelerator Week",
+    "day": 2,
+    "daysInSeries": 5,
+    "category": "walk",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "endurance"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 35,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Day 2: eight 60-second hard efforts of fast incline walking (hill or treadmill) with 90 seconds easy - hard on the lungs, easy on the joints.",
+    "whoItsFor": "People on the Fat-Loss Accelerator Week.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "howToRun": [
+      "Use a steep hill or a treadmill at 10-15% incline.",
+      "Efforts at 8/10 (only a few words possible); walk easy for 90s between.",
+      "A bike or rower at the same effort works too.",
+      "This is the week's only hard cardio day - keep the others moderate."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Fast Incline Walk (8/10)",
+        "sets": 8,
+        "reps": "60s",
+        "group": "A"
+      },
+      {
+        "name": "Easy Walk",
+        "sets": 8,
+        "reps": "90s",
+        "group": "A"
+      },
+      {
+        "name": "Cool-down: easy walk",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "x-gen-hood-10x1-intervals",
+      "x-gen-interval-walking-training"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-accelerator-day-3",
+    "name": "Fat-Loss Accelerator Week - Day 3: Strength B",
+    "series": "Somax Fat-Loss Accelerator Week",
+    "day": 3,
+    "daysInSeries": 5,
+    "category": "gym",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "strength",
+      "muscle"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 50,
+    "equipment": [
+      "barbell",
+      "dumbbells",
+      "pull-up bar"
+    ],
+    "description": "Day 3: hinge, pull and press - Romanian deadlifts, pull-ups, overhead presses and split squats.",
+    "whoItsFor": "People on the Fat-Loss Accelerator Week.",
+    "lifestyle": [
+      "full-gym"
+    ],
+    "howToRun": [
+      "At least 48 hours after Day 1.",
+      "4 sets of 6-10; rest 2 minutes on the barbell lifts.",
+      "Use bands or a machine for assisted pull-ups if needed.",
+      "Finish with a 10-minute easy walk or bike."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: rower or bike",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Barbell Romanian Deadlift",
+        "sets": 4,
+        "reps": "6-8"
+      },
+      {
+        "name": "Pull-up (or assisted)",
+        "sets": 4,
+        "reps": "6-10"
+      },
+      {
+        "name": "Standing Dumbbell Overhead Press",
+        "sets": 4,
+        "reps": "8-10"
+      },
+      {
+        "name": "Dumbbell Bulgarian Split Squat",
+        "sets": 3,
+        "reps": "8-10/leg"
+      },
+      {
+        "name": "Side Plank",
+        "sets": 2,
+        "reps": "30-45s/side"
+      },
+      {
+        "name": "Easy Walk or Bike",
+        "sets": 1,
+        "reps": "10 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "wendler-bbb-day-2",
+      "stronglifts-5x5-workout-b"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-accelerator-day-4",
+    "name": "Fat-Loss Accelerator Week - Day 4: Steady Cardio 45",
+    "series": "Somax Fat-Loss Accelerator Week",
+    "day": 4,
+    "daysInSeries": 5,
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "endurance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 45,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Day 4: 45 minutes of moderate cardio - a steady run, ride or swim.",
+    "whoItsFor": "People on the Fat-Loss Accelerator Week.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Conversational effort the whole way.",
+      "Running suits fat loss well; cycling and swimming are kinder if you're sore.",
+      "Don't turn it into a second interval day.",
+      "Hydrate well; heat and humidity raise the effort."
+    ],
+    "exercises": [
+      {
+        "name": "Warm-up: easy pace",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Steady Run / Ride / Swim (moderate)",
+        "sets": 1,
+        "reps": "35 min"
+      },
+      {
+        "name": "Cool-down: easy pace",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-couch-to-5k-week-9",
+      "x-gen-interval-walking-training"
+    ],
+    "verified": false
+  },
+  {
+    "id": "x-gen-somax-fat-loss-accelerator-day-5",
+    "name": "Fat-Loss Accelerator Week - Day 5: Long Hike 75",
+    "series": "Somax Fat-Loss Accelerator Week",
+    "day": 5,
+    "daysInSeries": 5,
+    "category": "walk",
+    "level": "advanced",
+    "sport": "general",
+    "goals": [
+      "fat-loss",
+      "endurance"
+    ],
+    "duration": "75 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 75,
+    "equipment": [
+      "bodyweight"
+    ],
+    "description": "Day 5: a 60-90 minute hike or long hilly walk - low-stress, high-volume movement that gets your week well past 250 minutes.",
+    "whoItsFor": "People on the Fat-Loss Accelerator Week.",
+    "lifestyle": [
+      "outdoor",
+      "minimal-equipment"
+    ],
+    "howToRun": [
+      "Weekend friendly; pick a bush track or a long coastal walk.",
+      "Moderate pace with short breaks; it should leave you pleasantly tired, not wrecked.",
+      "Take water, a snack and sun protection.",
+      "Swap for the Somax Weighted Ruck 60 once a fortnight for variety."
+    ],
+    "exercises": [
+      {
+        "name": "Hike or Hilly Walk (moderate)",
+        "sets": 1,
+        "reps": "75 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "basedOn": [
+      "nhs-wirral-walking-plan-medium-walk",
+      "x-gen-interval-walking-training"
+    ],
+    "verified": false
+  }
+]

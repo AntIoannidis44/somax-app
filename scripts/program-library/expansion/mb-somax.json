@@ -1,0 +1,5746 @@
+[
+  {
+    "id": "x-mb-somax-golf-back-care-10",
+    "name": "Somax Golfer's Back-Care 10",
+    "category": "other",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 10,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "time-efficient",
+      "minimal-equipment",
+      "busy"
+    ],
+    "whoItsFor": "Golfers who get a stiff or sore lower back after a round (with no red-flag symptoms) and want a short daily routine that moves the hips and upper back so the lower back doesn't have to.",
+    "howToRun": [
+      "Most days, and again the evening after a round.",
+      "Slow and controlled; stay in a comfortable range and breathe out on each effort.",
+      "Add 2 reps per exercise each week up to 15, then add the 90/90 hip switch from Somax Golf Hip Mobility 15.",
+      "Leg numbness or weakness, bladder or bowel changes, or night pain - see a doctor, don't train through it."
+    ],
+    "description": "Gentle knee rolls, bridges and bird-dogs for back comfort, plus open books and a hip-flexor stretch to free up the joints golf is meant to rotate through.",
+    "exercises": [
+      {
+        "name": "Pelvic Tilts",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Knee Rolls",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Glute Bridge (2s squeeze)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Bird-Dog",
+        "sets": 2,
+        "reps": "6/side"
+      },
+      {
+        "name": "Open Book (side-lying T-spine rotation)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Half-kneeling Hip Flexor Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "45s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-bhft-low-back-pain-exercises",
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "golfshake-5-minute-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-hip-mobility-15",
+    "name": "Somax Golf Hip Mobility 15",
+    "category": "other",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 4,
+    "sessionMinutes": 15,
+    "equipment": [
+      "mat",
+      "golf club"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "older-adults"
+    ],
+    "whoItsFor": "Golfers who struggle to turn into the trail hip or clear the lead hip - often desk workers - and want 15 minutes of hip rotation work at home.",
+    "howToRun": [
+      "3-5 times a week; it also works as a pre-range warm-up.",
+      "Move slowly and own the end of each range for 2 seconds; hip work should never pinch.",
+      "Re-check your hip turn every 4 weeks (e.g. the pelvic rotation test in golf posture).",
+      "Pair with Somax Thoracic Turn 10 if your upper-back rotation is also limited."
+    ],
+    "description": "Internal and external hip rotation in several positions, finishing with a golf-posture hip turn using the club across your hips.",
+    "exercises": [
+      {
+        "name": "90/90 Hip Switches",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "90/90 Hold with forward lean",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Seated Hip Internal Rotation Lifts",
+        "sets": 2,
+        "reps": "6/side"
+      },
+      {
+        "name": "Quadruped Hip CARs",
+        "sets": 1,
+        "reps": "4 each way/side"
+      },
+      {
+        "name": "Adductor Rock-backs",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Half-kneeling Hip Flexor Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Golf-posture Pelvic Turns (club across hips)",
+        "sets": 2,
+        "reps": "10/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "x-mb-gripp-golf-warm-up",
+      "golfshake-5-minute-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-thoracic-turn-10",
+    "name": "Somax Thoracic Turn 10",
+    "category": "other",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 10,
+    "equipment": [
+      "mat",
+      "golf club",
+      "foam roller"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "whoItsFor": "Golfers with a short or 'armsy' backswing who sit a lot and need more upper-back rotation and extension.",
+    "howToRun": [
+      "Daily or 5 times a week; 10 minutes is enough.",
+      "Keep the pelvis still in every drill - the aim is to turn the ribcage, not the lower back.",
+      "Exhale as you rotate and pause 2 seconds at the end.",
+      "Retest seated trunk rotation with a club across your chest every 4 weeks."
+    ],
+    "description": "Foam-roller extensions, open books, reach-backs and seated club rotations for a fuller shoulder turn without lower-back twisting.",
+    "exercises": [
+      {
+        "name": "T-spine Extension over Foam Roller",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Open Book",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Quadruped Reach-back (hand behind head)",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Thread the Needle",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Seated Rotation with club across chest",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Half-kneeling Rotation with club (hips still)",
+        "sets": 1,
+        "reps": "8/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-2-mobility-power",
+      "x-mb-gripp-golf-warm-up",
+      "sun-salutation-flow"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-post-round-recovery",
+    "name": "Somax Post-Round Recovery Stretch",
+    "category": "other",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "12 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 12,
+    "equipment": [
+      "mat",
+      "golf club"
+    ],
+    "lifestyle": [
+      "outdoor",
+      "older-adults",
+      "time-efficient",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Every golfer - especially older players - who stiffens up in the car or the clubhouse after 18 holes.",
+    "howToRun": [
+      "Within an hour of finishing, while you're still warm.",
+      "Hold static stretches 30 seconds (older golfers 30-60 seconds); breathe slowly.",
+      "Rotate both ways but spend a little extra time on the side you turn to less (usually the lead side).",
+      "Static stretching belongs after golf - before the round use a dynamic warm-up instead."
+    ],
+    "description": "Calf, hamstring, hip, trunk and shoulder stretches you can do beside the car or at home after a round.",
+    "exercises": [
+      {
+        "name": "Standing Calf Stretch (car or wall)",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Standing Hamstring Stretch (heel forward)",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Standing Figure-4 Glute Stretch (hold car or cart)",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Club-overhead Side Bend",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Standing Trunk Rotation with club",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Cross-body Shoulder Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Wrist Flexor & Extensor Stretch",
+        "sets": 1,
+        "reps": "20s each way/side"
+      },
+      {
+        "name": "Lying Knee Hugs (at home)",
+        "sets": 1,
+        "reps": "45s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-stretch-after-exercising",
+      "x-mb-gripp-golf-warm-up",
+      "x-mb-emory-ten-stretches-as-you-age"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-home-strength-a",
+    "name": "Somax Golf Home Strength - Day A",
+    "series": "Somax Golf Home Strength",
+    "day": 1,
+    "daysInSeries": 2,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bands",
+      "mat",
+      "dumbbells"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "Beginner golfers with no gym who want two short home strength sessions a week to swing more consistently and enjoy the back nine more.",
+    "howToRun": [
+      "Alternate Day A and Day B, two or three days a week with a rest day between.",
+      "Pick a band or dumbbell that leaves 2 reps in reserve; when every set hits the top of the range, go heavier.",
+      "Rest 45-60 seconds between rounds of each superset.",
+      "After 8-12 weeks move on to the Somax Golf Gym Strength series or the Utah Health program."
+    ],
+    "description": "Lower body, pulling and anti-rotation: squats, hinges, rows, Pallof presses and a side plank.",
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "8 each way"
+      },
+      {
+        "name": "Goblet Squat (dumbbell or backpack)",
+        "sets": 3,
+        "reps": "10-12",
+        "group": "A"
+      },
+      {
+        "name": "Band Row",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 3,
+        "reps": "10-12",
+        "group": "B"
+      },
+      {
+        "name": "Band Pallof Press",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "B"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 2,
+        "reps": "15"
+      },
+      {
+        "name": "Side Plank (knees or feet)",
+        "sets": 2,
+        "reps": "20-30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "x-mb-utah-golf-day-3-strength-balance",
+      "nhs-home-strength-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-home-strength-b",
+    "name": "Somax Golf Home Strength - Day B",
+    "series": "Somax Golf Home Strength",
+    "day": 2,
+    "daysInSeries": 2,
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "bands",
+      "mat",
+      "dumbbells"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "Beginner golfers with no gym who want two short home strength sessions a week to swing more consistently and enjoy the back nine more.",
+    "howToRun": [
+      "Alternate Day A and Day B, two or three days a week with a rest day between.",
+      "Pick a band or dumbbell that leaves 2 reps in reserve; when every set hits the top of the range, go heavier.",
+      "Rest 45-60 seconds between rounds of each superset.",
+      "After 8-12 weeks move on to the Somax Golf Gym Strength series or the Utah Health program."
+    ],
+    "description": "Single-leg strength, pressing and rotation: split squats, push-ups, band chops, bird-dogs and balance.",
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "8 each way"
+      },
+      {
+        "name": "Split Squat",
+        "sets": 3,
+        "reps": "8-10/side",
+        "group": "A"
+      },
+      {
+        "name": "Push-up (incline or floor)",
+        "sets": 3,
+        "reps": "8-12",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Romanian Deadlift (hand on wall)",
+        "sets": 3,
+        "reps": "8/side",
+        "group": "B"
+      },
+      {
+        "name": "Half-kneeling Band Chop",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "B"
+      },
+      {
+        "name": "Bird-Dog (2s hold)",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Single-leg Balance",
+        "sets": 2,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-3-strength-balance",
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "nhs-home-strength-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-senior-strength-balance",
+    "name": "Somax Senior Golfer Strength & Balance",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "strength",
+      "general-fitness",
+      "sport-performance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "chair",
+      "bands",
+      "golf club"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Golfers in their 60s, 70s and beyond who want to keep walking 18 holes, stay steady through the swing and get up off the green easily.",
+    "howToRun": [
+      "Three times a week on non-consecutive days, plus walking the course counts as your aerobic work.",
+      "Have a chair or bench beside you for balance drills; progress from holding on to fingertip support to hands-free.",
+      "Add reps before you add band tension; fast sit-to-stands should be quick up, slow down.",
+      "Had a fall in the last year, or dizziness? See your GP first and keep all balance work supported."
+    ],
+    "description": "Chair stands for leg power, band rows and chops for the swing muscles, plus heel-to-toe and single-leg balance.",
+    "exercises": [
+      {
+        "name": "March on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Sit-to-Stand (fast up, slow down)",
+        "sets": 3,
+        "reps": "8"
+      },
+      {
+        "name": "Band Row",
+        "sets": 3,
+        "reps": "12"
+      },
+      {
+        "name": "Step-ups onto low step (rail nearby)",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Wall Push-up",
+        "sets": 2,
+        "reps": "10-12"
+      },
+      {
+        "name": "Half-kneeling or Seated Band Chop",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Heel-to-toe Walk",
+        "sets": 2,
+        "reps": "10 steps"
+      },
+      {
+        "name": "Single-leg Stand (hold support if needed)",
+        "sets": 2,
+        "reps": "10-20s/side"
+      },
+      {
+        "name": "Club-assisted Trunk Rotation",
+        "sets": 1,
+        "reps": "8/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-gripp-golf-warm-up",
+      "x-mb-nhs-sitting-exercises",
+      "x-mb-emory-ten-stretches-as-you-age",
+      "x-mb-utah-golf-day-3-strength-balance"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-18-hole-stamina",
+    "name": "Somax 18-Hole Stamina Builder",
+    "category": "other",
+    "level": "beginner",
+    "sport": "golf",
+    "goals": [
+      "endurance",
+      "general-fitness"
+    ],
+    "duration": "40 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 40,
+    "equipment": [
+      "bodyweight",
+      "golf bag (optional)"
+    ],
+    "lifestyle": [
+      "outdoor",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Golfers who fade on the back nine or want to swap the cart for walking, and need to build walking stamina and leg endurance.",
+    "howToRun": [
+      "Three days a week; one of them can be a walked 9 holes instead.",
+      "Walk at a pace where you can talk but not sing; add 5 minutes to the walk each week up to 60.",
+      "Do the leg circuit straight after the walk, two rounds.",
+      "Carrying your bag? Build up with a light bag first and use both straps."
+    ],
+    "description": "A brisk hilly walk followed by a short leg and trunk circuit, so 4-5 hours on your feet feels easy.",
+    "exercises": [
+      {
+        "name": "Brisk walk (include hills or stairs)",
+        "sets": 1,
+        "reps": "25-30 min"
+      },
+      {
+        "name": "Walking Lunges",
+        "sets": 2,
+        "reps": "8/side",
+        "group": "A"
+      },
+      {
+        "name": "Calf Raises",
+        "sets": 2,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Squat to Chair",
+        "sets": 2,
+        "reps": "12",
+        "group": "A"
+      },
+      {
+        "name": "Standing Trunk Rotation",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "A"
+      },
+      {
+        "name": "Post-walk Calf and Hamstring Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-2-mobility-power",
+      "x-mb-nhs-stretch-after-exercising",
+      "x-mb-gripp-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-gym-strength-a",
+    "name": "Somax Golf Gym Strength - Day A Lower & Rotation",
+    "series": "Somax Golf Gym Strength",
+    "day": 1,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 50,
+    "equipment": [
+      "trap bar",
+      "dumbbells",
+      "cables",
+      "bench"
+    ],
+    "lifestyle": [
+      "full-gym"
+    ],
+    "whoItsFor": "Regular golfers with some gym experience who want an off-season 3-day strength block (8-10 weeks) to build the base for more clubhead speed.",
+    "howToRun": [
+      "Run Day A, B and C on three non-consecutive days for 8-10 weeks in the off-season.",
+      "Main lifts at RPE 7-8 (2-3 reps in reserve); add 2.5-5kg when all sets hit the top of the range.",
+      "Rest 2-3 minutes on main lifts, 60-90 seconds on accessories.",
+      "In season drop to 1-2 sessions a week and never the day before a competition round."
+    ],
+    "description": "Trap-bar deadlift, single-leg work and cable chops: hip strength and rotation in one session.",
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or brisk walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Warm-up: World's Greatest Stretch",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Warm-up: Bodyweight Squats",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Trap-bar Deadlift",
+        "sets": 4,
+        "reps": "5-6"
+      },
+      {
+        "name": "Rear-foot Elevated Split Squat",
+        "sets": 3,
+        "reps": "8/side"
+      },
+      {
+        "name": "Lateral Lunge",
+        "sets": 3,
+        "reps": "6/side",
+        "group": "A"
+      },
+      {
+        "name": "Half-kneeling Cable Chop",
+        "sets": 3,
+        "reps": "8/side",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Hip Thrust",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "B"
+      },
+      {
+        "name": "Pallof Press",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "B"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "x-mb-utah-golf-day-3-strength-balance",
+      "x-mb-peerj-youth-golf-phase-1-max-strength",
+      "stronglifts-5x5-workout-a"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-gym-strength-b",
+    "name": "Somax Golf Gym Strength - Day B Upper & Anti-Rotation",
+    "series": "Somax Golf Gym Strength",
+    "day": 2,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "50 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 50,
+    "equipment": [
+      "dumbbells",
+      "cables",
+      "landmine",
+      "bench"
+    ],
+    "lifestyle": [
+      "full-gym"
+    ],
+    "whoItsFor": "Regular golfers with some gym experience who want an off-season 3-day strength block (8-10 weeks) to build the base for more clubhead speed.",
+    "howToRun": [
+      "Run Day A, B and C on three non-consecutive days for 8-10 weeks in the off-season.",
+      "Main lifts at RPE 7-8 (2-3 reps in reserve); add weight when all sets hit the top of the range.",
+      "Rest 2 minutes on presses and rows, 60-90 seconds on accessories.",
+      "Shoulder or elbow pain on a lift: swap to a pain-free variation rather than pushing through."
+    ],
+    "description": "Pulling-biased upper body for shoulder balance, landmine pressing and anti-rotation core.",
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or brisk walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Warm-up: World's Greatest Stretch",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Warm-up: Bodyweight Squats",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Single-arm Dumbbell Row",
+        "sets": 4,
+        "reps": "8/side"
+      },
+      {
+        "name": "Half-kneeling Landmine Press",
+        "sets": 3,
+        "reps": "8/side"
+      },
+      {
+        "name": "Chin-up or Lat Pulldown",
+        "sets": 3,
+        "reps": "6-10",
+        "group": "A"
+      },
+      {
+        "name": "Dumbbell Bench Press",
+        "sets": 3,
+        "reps": "8-10",
+        "group": "A"
+      },
+      {
+        "name": "Face Pull",
+        "sets": 3,
+        "reps": "12-15",
+        "group": "B"
+      },
+      {
+        "name": "Split-stance Pallof Press",
+        "sets": 3,
+        "reps": "10/side",
+        "group": "B"
+      },
+      {
+        "name": "Farmer's Carry",
+        "sets": 3,
+        "reps": "30m"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "x-mb-utah-golf-day-3-strength-balance",
+      "x-mb-peerj-youth-golf-phase-1-max-strength"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-gym-strength-c",
+    "name": "Somax Golf Gym Strength - Day C Power & Single-Leg",
+    "series": "Somax Golf Gym Strength",
+    "day": 3,
+    "daysInSeries": 3,
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "medicine ball",
+      "dumbbells",
+      "plyo box",
+      "cables"
+    ],
+    "lifestyle": [
+      "full-gym"
+    ],
+    "whoItsFor": "Regular golfers with some gym experience who want an off-season 3-day strength block (8-10 weeks) to build the base for more clubhead speed.",
+    "howToRun": [
+      "Run Day A, B and C on three non-consecutive days for 8-10 weeks in the off-season.",
+      "Throws and jumps first while you're fresh: maximum intent, full rest (60-90s), stop if speed drops.",
+      "Throw from both sides with equal effort.",
+      "Keep the med ball light (2-4kg) - speed is the goal, not load."
+    ],
+    "description": "Jumps and rotational med-ball throws for speed, then goblet squats and single-leg RDLs.",
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or brisk walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Warm-up: World's Greatest Stretch",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Warm-up: Bodyweight Squats",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Box Jump (step down)",
+        "sets": 3,
+        "reps": "5"
+      },
+      {
+        "name": "Rotational Med-ball Scoop Toss",
+        "sets": 3,
+        "reps": "5/side",
+        "weight": "2-4kg"
+      },
+      {
+        "name": "Med-ball Shot-put Throw",
+        "sets": 3,
+        "reps": "4/side",
+        "weight": "2-4kg"
+      },
+      {
+        "name": "Goblet Squat",
+        "sets": 3,
+        "reps": "8-10",
+        "group": "A"
+      },
+      {
+        "name": "Single-leg Romanian Deadlift",
+        "sets": 3,
+        "reps": "8/side",
+        "group": "A"
+      },
+      {
+        "name": "Cable Lift (low to high)",
+        "sets": 3,
+        "reps": "8/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-2-mobility-power",
+      "x-mb-bliss-bodyweight-potentiated-golf-warm-up",
+      "x-mb-peerj-youth-golf-phase-2-explosive"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-rotational-power-home",
+    "name": "Somax Rotational Power at Home",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "sport-performance"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "medicine ball",
+      "bands",
+      "wall"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "Golfers with a solid strength base who want to add rotational speed using a med ball against a brick wall or into a garden.",
+    "howToRun": [
+      "Two sessions a week, at least 48 hours apart and not the day before a round.",
+      "Every rep is maximum intent; rest 60-90 seconds between sets so speed stays high.",
+      "Progress sets before ball weight (weeks 1-4: 3 sets, weeks 5-8: 4 sets), then deload a week.",
+      "Pass the Somax Golf Hip Mobility and Thoracic Turn routines first if rotation feels blocked."
+    ],
+    "description": "Split-stance, half-kneeling and full rotational med-ball throws plus band speed rotations, both sides.",
+    "exercises": [
+      {
+        "name": "Warm-up: march on the spot",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Warm-up: arm circles",
+        "sets": 1,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Warm-up: hip circles",
+        "sets": 1,
+        "reps": "8 each way"
+      },
+      {
+        "name": "Half-kneeling Med-ball Rotational Throw",
+        "sets": 3,
+        "reps": "5/side",
+        "weight": "2-3kg"
+      },
+      {
+        "name": "Split-stance Scoop Toss",
+        "sets": 3,
+        "reps": "5/side",
+        "weight": "2-3kg"
+      },
+      {
+        "name": "Step-behind Rotational Throw",
+        "sets": 3,
+        "reps": "4/side",
+        "weight": "2-3kg"
+      },
+      {
+        "name": "Band Speed Rotations (golf posture)",
+        "sets": 3,
+        "reps": "8/side"
+      },
+      {
+        "name": "Countermovement Jump",
+        "sets": 3,
+        "reps": "5"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-2-mobility-power",
+      "x-mb-bliss-bodyweight-potentiated-golf-warm-up",
+      "x-mb-peerj-youth-golf-phase-2-explosive",
+      "x-mb-togu-golf-core-weeks-2-4"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-clubhead-speed-session",
+    "name": "Somax Clubhead Speed Session",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "sport-performance"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 25,
+    "equipment": [
+      "golf club",
+      "light training club or alignment stick",
+      "medicine ball"
+    ],
+    "lifestyle": [
+      "outdoor",
+      "time-efficient"
+    ],
+    "whoItsFor": "Golfers who want more distance, have no current back or elbow pain and can already swing hard with good contact.",
+    "howToRun": [
+      "Up to three short sessions a week on the range or in the garden, with full rest between swings.",
+      "Swing from both sides: dominant side at full speed, non-dominant side to balance the body.",
+      "Measure with a radar or launch monitor every 4 weeks; track ball speed and strike, not just club speed.",
+      "Overspeed protocols are common practice but not proven on their own - keep the strength work going too."
+    ],
+    "description": "Jumps and med-ball throws to prime, then light, normal and heavy speed swings from both sides.",
+    "exercises": [
+      {
+        "name": "Dynamic warm-up (GRIPP or Somax hip/T-spine drills)",
+        "sets": 1,
+        "reps": "6 min"
+      },
+      {
+        "name": "Countermovement Jump",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Rotational Med-ball Throw",
+        "sets": 2,
+        "reps": "4/side",
+        "weight": "2-3kg"
+      },
+      {
+        "name": "Light-stick Speed Swings (dominant side)",
+        "sets": 3,
+        "reps": "5",
+        "group": "A"
+      },
+      {
+        "name": "Light-stick Speed Swings (non-dominant side)",
+        "sets": 3,
+        "reps": "5",
+        "group": "A"
+      },
+      {
+        "name": "Normal-club Speed Swings",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Heavy-club or Two-club Swings (smooth)",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Full-effort Drives with feedback",
+        "sets": 1,
+        "reps": "5"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-bliss-bodyweight-potentiated-golf-warm-up",
+      "x-mb-peerj-youth-golf-phase-3-golf-specific",
+      "x-mb-gripp-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-anti-rotation-core",
+    "name": "Somax Golf Anti-Rotation Core",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bands",
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "travel"
+    ],
+    "whoItsFor": "Golfers who lose their posture through impact or feel their lower back after hitting balls, and want a core session that trains resisting rotation.",
+    "howToRun": [
+      "Twice a week after mobility or strength work.",
+      "Brace like you're about to be nudged; nothing below the ribs should twist.",
+      "Rest 45 seconds between rounds; add a band or a second set when you hold every rep cleanly.",
+      "Progress kneeling to split stance to standing as each version becomes easy."
+    ],
+    "description": "Pallof presses in three stances, plank variations that resist twisting, and dead bugs.",
+    "exercises": [
+      {
+        "name": "Dead Bug",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Tall-kneeling Pallof Press",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "A"
+      },
+      {
+        "name": "Split-stance Pallof Press",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "A"
+      },
+      {
+        "name": "Standing Pallof Press with Overhead Raise",
+        "sets": 2,
+        "reps": "8/side",
+        "group": "A"
+      },
+      {
+        "name": "Plank Shoulder Taps (feet wide)",
+        "sets": 3,
+        "reps": "8/side",
+        "group": "B"
+      },
+      {
+        "name": "Side Plank",
+        "sets": 2,
+        "reps": "30s/side",
+        "group": "B"
+      },
+      {
+        "name": "Bird-Dog Row (band)",
+        "sets": 2,
+        "reps": "8/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-3-strength-balance",
+      "x-mb-togu-golf-core-week-1",
+      "x-mb-peerj-youth-golf-phase-2-explosive"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-balance-ground-force",
+    "name": "Somax Golf Balance & Ground Force",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "mat",
+      "bands",
+      "golf club",
+      "cushion (optional)"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Golfers who sway, lose balance in the finish or can't hold a single-leg stand for 30 seconds with eyes closed.",
+    "howToRun": [
+      "Twice a week, ideally after a short warm-up.",
+      "Single-leg moves: knee over second toe, hips level; use a wall for fingertip support at first.",
+      "Progress from eyes open, to eyes closed, to standing on a cushion.",
+      "Re-test the eyes-closed single-leg stand every 4 weeks."
+    ],
+    "description": "Single-leg balance, mini-band lateral work and lateral bounds to steady the weight shift and push off the ground.",
+    "exercises": [
+      {
+        "name": "Single-leg Stand (eyes open, then closed)",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Mini-band Lateral Walk",
+        "sets": 2,
+        "reps": "10 steps each way"
+      },
+      {
+        "name": "Single-leg RDL Reach",
+        "sets": 3,
+        "reps": "8/side"
+      },
+      {
+        "name": "Lateral Lunge to Balance",
+        "sets": 3,
+        "reps": "6/side"
+      },
+      {
+        "name": "Skater Bound (stick the landing)",
+        "sets": 3,
+        "reps": "5/side"
+      },
+      {
+        "name": "Finish-position Hold on lead leg (club)",
+        "sets": 2,
+        "reps": "20s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-3-strength-balance",
+      "x-mb-togu-golf-core-weeks-2-4",
+      "x-mb-bliss-bodyweight-potentiated-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-shoulder-elbow-wrist-care",
+    "name": "Somax Golf Shoulder, Elbow & Wrist Care",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "strength",
+      "mobility"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bands",
+      "dumbbells",
+      "wall"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "travel",
+      "time-efficient"
+    ],
+    "whoItsFor": "Golfers who hit a lot of balls, play on hard ground or mats, or have had niggly elbows or shoulders and want to build tissue tolerance.",
+    "howToRun": [
+      "Three times a week; light enough to do after golf.",
+      "Slow lowering (3 seconds) on wrist and forearm work.",
+      "Mild effort only - 2-3 reps in reserve every set.",
+      "Pain that lasts into the next day or a sore, swollen elbow needs a physio, not more sets."
+    ],
+    "description": "Rotator-cuff band work, scapular wall slides and slow wrist and forearm strengthening for the joints golf loads most.",
+    "exercises": [
+      {
+        "name": "Band External Rotation (elbow at side)",
+        "sets": 2,
+        "reps": "12-15/side"
+      },
+      {
+        "name": "Band Internal Rotation",
+        "sets": 2,
+        "reps": "12-15/side"
+      },
+      {
+        "name": "Scapular Wall Slides",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Band Pull-apart",
+        "sets": 2,
+        "reps": "15"
+      },
+      {
+        "name": "Wrist Curl (slow lower)",
+        "sets": 2,
+        "reps": "12-15",
+        "weight": "1-4kg"
+      },
+      {
+        "name": "Reverse Wrist Curl (slow lower)",
+        "sets": 2,
+        "reps": "12-15",
+        "weight": "1-4kg"
+      },
+      {
+        "name": "Forearm Rotation with hammer or dumbbell",
+        "sets": 2,
+        "reps": "10 each way"
+      },
+      {
+        "name": "Cross-body Shoulder Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "x-mb-gripp-golf-warm-up",
+      "x-mb-bliss-bodyweight-potentiated-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-in-season-maintenance",
+    "name": "Somax In-Season Golf Maintenance",
+    "category": "gym",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "35 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 35,
+    "equipment": [
+      "dumbbells",
+      "medicine ball",
+      "bands"
+    ],
+    "lifestyle": [
+      "full-gym",
+      "time-efficient",
+      "busy"
+    ],
+    "whoItsFor": "Golfers in the playing season who want to hold onto off-season strength and speed in one or two short sessions a week.",
+    "howToRun": [
+      "One or two sessions a week, never the day before a competition round.",
+      "Keep loads close to your off-season working weights but cut the sets - you should finish fresh.",
+      "Throws first, then strength, then a quick mobility finisher.",
+      "Back to 3 sessions a week in the off-season (Somax Golf Gym Strength)."
+    ],
+    "description": "A short full-body hit: med-ball throws, a squat, a hinge, a row and a press, then hips and T-spine mobility.",
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or brisk walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Rotational Med-ball Throw",
+        "sets": 2,
+        "reps": "5/side",
+        "weight": "2-4kg"
+      },
+      {
+        "name": "Goblet Squat",
+        "sets": 2,
+        "reps": "6-8"
+      },
+      {
+        "name": "Dumbbell Romanian Deadlift",
+        "sets": 2,
+        "reps": "6-8"
+      },
+      {
+        "name": "Single-arm Row",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Half-kneeling Press",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "90/90 Hip Switches",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Open Book",
+        "sets": 1,
+        "reps": "6/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "x-mb-utah-golf-day-2-mobility-power",
+      "x-mb-peerj-youth-golf-phase-1-max-strength"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-travel-hotel",
+    "name": "Somax Golf Trip Hotel Workout",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "golf",
+    "goals": [
+      "mobility",
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "bodyweight",
+      "bands"
+    ],
+    "lifestyle": [
+      "travel",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "whoItsFor": "Golfers on a golf trip or work travel who want to stay loose and strong between rounds with just a band in the suitcase.",
+    "howToRun": [
+      "On rest days or the evening after a round - keep it easy before early tee times.",
+      "Two rounds of the circuit, 45 seconds rest between rounds.",
+      "Finish with the mobility drills even if you skip the circuit.",
+      "Long flight or drive? Do the hip flexor stretch and open books as soon as you arrive."
+    ],
+    "description": "Hotel-room circuit of squats, split squats, band rows and presses, then hip and T-spine mobility.",
+    "exercises": [
+      {
+        "name": "Hotel-room warm-up: march + arm circles",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Bodyweight Squat",
+        "sets": 2,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Split Squat",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "A"
+      },
+      {
+        "name": "Band Row (door anchor)",
+        "sets": 2,
+        "reps": "15",
+        "group": "A"
+      },
+      {
+        "name": "Push-up",
+        "sets": 2,
+        "reps": "10",
+        "group": "A"
+      },
+      {
+        "name": "Band Pallof Press",
+        "sets": 2,
+        "reps": "10/side",
+        "group": "A"
+      },
+      {
+        "name": "90/90 Hip Switches",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Open Book",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Half-kneeling Hip Flexor Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-utah-golf-day-1-strength-mobility",
+      "x-mb-utah-golf-day-3-strength-balance",
+      "golfshake-5-minute-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-offseason-power-a",
+    "name": "Somax Golf Off-Season Power - Day A",
+    "series": "Somax Golf Off-Season Power",
+    "day": 1,
+    "daysInSeries": 2,
+    "category": "gym",
+    "level": "advanced",
+    "sport": "golf",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "60 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 60,
+    "equipment": [
+      "barbell",
+      "trap bar",
+      "medicine ball",
+      "plyo box",
+      "cables"
+    ],
+    "lifestyle": [
+      "full-gym"
+    ],
+    "whoItsFor": "Low-handicap or competitive golfers with a strength base (e.g. trap-bar deadlift around 1.5x bodyweight) chasing more clubhead speed in a 6-8 week off-season power block.",
+    "howToRun": [
+      "Two sessions a week (Day A and B) for 6-8 weeks after a strength block; deload every 4th week.",
+      "Contrast pairs: one heavy set, rest 60-90s, then the fast movement with maximum intent; full 3 minutes between pairs.",
+      "Throws and jumps stop as soon as speed drops.",
+      "Re-test driver clubhead speed every 4 weeks on the same radar."
+    ],
+    "description": "Heavy-to-fast contrast pairs: trap-bar deadlift into jumps, landmine press into rotational throws, then single-leg strength.",
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or brisk walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Warm-up: World's Greatest Stretch",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Warm-up: Bodyweight Squats",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Trap-bar Deadlift",
+        "sets": 4,
+        "reps": "3",
+        "weight": "~85% 1RM",
+        "group": "A"
+      },
+      {
+        "name": "Countermovement Jump",
+        "sets": 4,
+        "reps": "3",
+        "group": "A"
+      },
+      {
+        "name": "Landmine Rotational Press",
+        "sets": 3,
+        "reps": "5/side",
+        "group": "B"
+      },
+      {
+        "name": "Med-ball Step-behind Throw",
+        "sets": 3,
+        "reps": "4/side",
+        "weight": "3-4kg",
+        "group": "B"
+      },
+      {
+        "name": "Rear-foot Elevated Split Squat",
+        "sets": 3,
+        "reps": "6/side"
+      },
+      {
+        "name": "Cable Chop (fast)",
+        "sets": 3,
+        "reps": "6/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-peerj-youth-golf-phase-2-explosive",
+      "x-mb-peerj-youth-golf-phase-1-max-strength",
+      "x-mb-bliss-bodyweight-potentiated-golf-warm-up",
+      "x-mb-utah-golf-day-2-mobility-power"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-offseason-power-b",
+    "name": "Somax Golf Off-Season Power - Day B",
+    "series": "Somax Golf Off-Season Power",
+    "day": 2,
+    "daysInSeries": 2,
+    "category": "gym",
+    "level": "advanced",
+    "sport": "golf",
+    "goals": [
+      "sport-performance",
+      "strength"
+    ],
+    "duration": "55 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 55,
+    "equipment": [
+      "barbell",
+      "medicine ball",
+      "dumbbells",
+      "plyo box",
+      "cables"
+    ],
+    "lifestyle": [
+      "full-gym"
+    ],
+    "whoItsFor": "Low-handicap or competitive golfers with a strength base (e.g. trap-bar deadlift around 1.5x bodyweight) chasing more clubhead speed in a 6-8 week off-season power block.",
+    "howToRun": [
+      "Two sessions a week (Day A and B) for 6-8 weeks after a strength block; deload every 4th week.",
+      "Contrast pairs: one heavy set, rest 60-90s, then the fast movement with maximum intent; full 3 minutes between pairs.",
+      "Throws and jumps stop as soon as speed drops.",
+      "Re-test driver clubhead speed every 4 weeks on the same radar."
+    ],
+    "description": "Squat into broad jumps, bench into plyo push-ups, rotational throws and heavy pulls.",
+    "exercises": [
+      {
+        "name": "Warm-up: easy bike or brisk walk",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Warm-up: Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Warm-up: World's Greatest Stretch",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Warm-up: Bodyweight Squats",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Back or Front Squat",
+        "sets": 4,
+        "reps": "3",
+        "weight": "~85% 1RM",
+        "group": "A"
+      },
+      {
+        "name": "Broad Jump",
+        "sets": 4,
+        "reps": "3",
+        "group": "A"
+      },
+      {
+        "name": "Bench Press",
+        "sets": 3,
+        "reps": "4",
+        "weight": "~80% 1RM",
+        "group": "B"
+      },
+      {
+        "name": "Plyometric Push-up",
+        "sets": 3,
+        "reps": "5",
+        "group": "B"
+      },
+      {
+        "name": "Rotational Med-ball Scoop Toss",
+        "sets": 3,
+        "reps": "5/side",
+        "weight": "3-4kg"
+      },
+      {
+        "name": "Chest-supported Row",
+        "sets": 3,
+        "reps": "6-8"
+      },
+      {
+        "name": "Single-leg Hip Thrust",
+        "sets": 2,
+        "reps": "8/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-peerj-youth-golf-phase-2-explosive",
+      "x-mb-peerj-youth-golf-phase-1-max-strength",
+      "x-mb-bliss-bodyweight-potentiated-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-golf-advanced-speed-contrast",
+    "name": "Somax Advanced Speed Day",
+    "category": "other",
+    "level": "advanced",
+    "sport": "golf",
+    "goals": [
+      "sport-performance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "medicine ball",
+      "speed training sticks or light/heavy clubs",
+      "golf club"
+    ],
+    "lifestyle": [
+      "outdoor",
+      "time-efficient"
+    ],
+    "whoItsFor": "Advanced golfers already doing strength training who want a dedicated speed session in the 6-8 weeks before the season.",
+    "howToRun": [
+      "Two sessions a week, at least 48 hours apart and separate from heavy leg days.",
+      "Maximum intent, full rest (20-30s between swings, 2 minutes between sets).",
+      "Log club speed for each set; end the session if speed falls more than ~3% from your best.",
+      "In season, keep one short session a week; overspeed alone hasn't been proven to give lasting gains, so keep lifting."
+    ],
+    "description": "Jumps and heavy throws to potentiate, then heavy-normal-light speed swings from both sides and full-effort drives.",
+    "exercises": [
+      {
+        "name": "Dynamic warm-up and progressive swings",
+        "sets": 1,
+        "reps": "8 min"
+      },
+      {
+        "name": "Countermovement Jump",
+        "sets": 3,
+        "reps": "3"
+      },
+      {
+        "name": "Heavy Med-ball Rotational Throw",
+        "sets": 2,
+        "reps": "3/side",
+        "weight": "4-5kg"
+      },
+      {
+        "name": "Heavy-stick Swings (dominant side)",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Normal-stick Swings (dominant side)",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Light-stick Swings (dominant side)",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Light-stick Swings (non-dominant side)",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Full-effort Drives measured",
+        "sets": 1,
+        "reps": "5"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-bliss-bodyweight-potentiated-golf-warm-up",
+      "x-mb-peerj-youth-golf-phase-3-golf-specific",
+      "x-mb-peerj-youth-golf-phase-2-explosive"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-breath-neutral-15",
+    "name": "Somax Pilates Breath & Neutral 15",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "Complete beginners - including people who can't yet hold a 20-second plank or do a Roll Up - who want to learn the Pilates basics before a full class.",
+    "howToRun": [
+      "Three times a week for 2-4 weeks.",
+      "Learn the set-up: lateral rib breathing, neutral spine, shoulder blades down and relaxed, long neck.",
+      "Breathe out on the effort; quality matters more than reps.",
+      "When you can do every move with control, go to Somax Mat Pilates Beginner 20."
+    ],
+    "description": "The foundation layer of Pilates: breathing, pelvic neutral and imprint, small leg movements and gentle spine mobility.",
+    "exercises": [
+      {
+        "name": "Lateral Rib Breathing",
+        "sets": 1,
+        "reps": "8 breaths"
+      },
+      {
+        "name": "Pelvic Tilts (neutral to imprint)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Knee Folds (table top, one leg)",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Leg Slides",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Bent-knee Fall Out",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Bridge (articulating)",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Rest Position (child's pose)",
+        "sets": 1,
+        "reps": "30s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-lpt-physio-based-pilates",
+      "classical-mat-pilates-first-fifteen"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-mat-beginner-20",
+    "name": "Somax Mat Pilates Beginner 20",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "general-fitness",
+      "mobility"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "whoItsFor": "Beginners who have the basics and want a 20-minute mat session to build core endurance and flexibility at home.",
+    "howToRun": [
+      "Two or three times a week - the dose used in research that improved abdominal endurance and hamstring flexibility.",
+      "Move slowly, keep your lower back steady on the mat during abdominal work, and breathe out on effort.",
+      "Add 2 reps per exercise every couple of weeks, then lengthen levers (straighter legs).",
+      "Osteoporosis, pregnancy, a recent back injury or pelvic-floor symptoms? Skip rolling and deep curl-up moves and get a physio's OK first."
+    ],
+    "description": "A short mat sequence of modified classical moves: Hundred, half roll-back, leg circles, single-leg stretch, bridge, side kicks and swimming.",
+    "exercises": [
+      {
+        "name": "Breathing in table top",
+        "sets": 1,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Modified Hundred (legs table top, head down if needed)",
+        "sets": 1,
+        "reps": "50 pumps"
+      },
+      {
+        "name": "Half Roll-back",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Single Leg Circles (bent knee)",
+        "sets": 1,
+        "reps": "5 each way/leg"
+      },
+      {
+        "name": "Single Leg Stretch (head down)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Bridge with arm raise",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Side Kick Front/Back (small range)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Swimming Prep (opposite arm and leg)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Spine Stretch Forward",
+        "sets": 1,
+        "reps": "5"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-lpt-physio-based-pilates",
+      "classical-mat-pilates-first-fifteen"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-back-care-20",
+    "name": "Somax Back-Friendly Pilates 20",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "pillow or folded towel"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "People with everyday, non-specific back stiffness (cleared by a clinician if it's been going on a while) who want gentle, controlled Pilates to stay moving.",
+    "howToRun": [
+      "Two or three times a week; little and often beats one long session.",
+      "Stay in a comfortable range - mild discomfort that settles within 2 hours is OK.",
+      "Pilates is a good option for back pain but not proven better than other exercise - keep walking too.",
+      "Red flags (leg numbness or weakness, bladder or bowel changes, night pain) mean see a doctor first."
+    ],
+    "description": "No curl-ups or rolling: pelvic tilts, articulating bridges, cat-cow, bird-dog, clams, a gentle swan and spine stretch.",
+    "exercises": [
+      {
+        "name": "Pelvic Tilts",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Knee Rolls",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Bridge (articulating)",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Bird-Dog / Swimming Prep",
+        "sets": 2,
+        "reps": "6/side"
+      },
+      {
+        "name": "Side-lying Clam",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Swan Prep (prone chest lift)",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Seated Spine Stretch Forward",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "45s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-lpt-physio-based-pilates",
+      "x-mb-bhft-low-back-pain-exercises",
+      "classical-mat-pilates-first-fifteen"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-chair-older-adults-20",
+    "name": "Somax Chair Pilates for Older Adults",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "general-fitness",
+      "mobility",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "chair",
+      "small ball or cushion",
+      "bands"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Older adults, or anyone who finds getting down to the floor hard, who want Pilates-style core, posture-muscle and leg work from a chair.",
+    "howToRun": [
+      "Two or three times a week; it counts towards your strength days.",
+      "Sit tall on the front of a sturdy chair without wheels; feet flat.",
+      "Breathe out on the effort and keep shoulders relaxed away from the ears.",
+      "Add a standing sit-to-stand set when the seated moves feel easy."
+    ],
+    "description": "Seated breathing, spine curls and twists, ball squeezes, knee lifts, band rows and sit-to-stands.",
+    "exercises": [
+      {
+        "name": "Seated Lateral Breathing",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Seated Pelvic Tilts",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Seated Spine Curl (roll down and up)",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Seated Spine Twist",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Ball Squeeze between knees (5s)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Seated Knee Lift (tummy drawn in)",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Seated Band Row",
+        "sets": 2,
+        "reps": "12"
+      },
+      {
+        "name": "Seated Side Reach",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Sit-to-Stand",
+        "sets": 2,
+        "reps": "8"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-sitting-exercises",
+      "x-mb-lpt-physio-based-pilates",
+      "x-mb-emory-ten-stretches-as-you-age"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-pelvic-floor-friendly-core",
+    "name": "Somax Pelvic-Floor-Friendly Core",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "exercise ball (optional)",
+      "wall"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "People with (or at risk of) pelvic-floor symptoms - postnatal after clearance, around menopause or after prostate surgery - who still want core training.",
+    "howToRun": [
+      "Two or three times a week.",
+      "Lift your pelvic floor first, keep it lifted through the effort, then fully relax; never hold your breath or strain.",
+      "Start with 1-2 sets of 10; stop the set when your pelvic floor tires.",
+      "Skips crunches, the Hundred, double leg lowers and full planks on purpose. A women's or men's health physio can tailor it further."
+    ],
+    "description": "Core work that keeps pressure off the pelvic floor: supported leg extensions, knee sways, modified planks, wall push-ups, bridges and all-fours lifts.",
+    "exercises": [
+      {
+        "name": "Pelvic Floor Lift & Release",
+        "sets": 1,
+        "reps": "8 slow + 8 quick"
+      },
+      {
+        "name": "Supported Single Leg Extension",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Knees Side to Side (feet on ball or floor)",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Modified Plank on Knees",
+        "sets": 2,
+        "reps": "15-20s"
+      },
+      {
+        "name": "Wall Push-up",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Bridge",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Arm and Leg Lift on All Fours",
+        "sets": 2,
+        "reps": "6/side"
+      },
+      {
+        "name": "Side-lying Clam",
+        "sets": 1,
+        "reps": "10/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-lpt-physio-based-pilates",
+      "x-mb-bhft-low-back-pain-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-standing-15",
+    "name": "Somax Standing Pilates 15",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "general-fitness",
+      "mobility"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "chair"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient",
+      "travel"
+    ],
+    "whoItsFor": "Anyone who wants Pilates without lying on the floor - older adults, people short on space, or a quick session at work or in a hotel.",
+    "howToRun": [
+      "Three times a week, or as a break from sitting.",
+      "Stand tall with weight spread evenly between heels and toes; hold a chair if balance is shaky.",
+      "Breathe out on the effort and keep the pelvis level.",
+      "Progress by adding the arm movements and then trying single-leg moves without support."
+    ],
+    "description": "Standing footwork, knee bends, roll downs, toy soldier and single-leg balance from the NHS Pilates warm-up tradition.",
+    "exercises": [
+      {
+        "name": "Standing Alignment & Breathing",
+        "sets": 1,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Heel Raises with arm raise",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Knee Bends (mini squat) with arms forward",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Standing Roll Down",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Toy Soldier (alternating heel & arm)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Single Leg Bend (knee to hip height)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Standing Side Leg Lift (hold chair)",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Bow and Arrow Rotation",
+        "sets": 1,
+        "reps": "6/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-lpt-physio-based-pilates",
+      "x-mb-nhs-sitting-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-desk-break-15",
+    "name": "Somax Desk-Worker Pilates 15",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 15,
+    "equipment": [
+      "chair",
+      "mat"
+    ],
+    "lifestyle": [
+      "busy",
+      "time-efficient",
+      "minimal-equipment",
+      "home"
+    ],
+    "whoItsFor": "Office and home-office workers who sit most of the day and want a short Pilates session for the upper back, hips and core.",
+    "howToRun": [
+      "Most workdays - at lunch or straight after work.",
+      "Half seated, half on the mat; skip the mat moves if you're at the office.",
+      "Move with your breath and keep your shoulders away from your ears.",
+      "Feeling better at your desk is a fair goal; Pilates hasn't been shown to change posture itself."
+    ],
+    "description": "Seated spine mobility and shoulder-blade work, then a short mat block of bridges, swimming and the swan.",
+    "exercises": [
+      {
+        "name": "Seated Lateral Breathing",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Seated Spine Twist",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Seated Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Chin Tucks",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Seated Arm Openings (cactus)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Bridge (articulating)",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Swimming Prep",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Swan Prep",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Half-kneeling Hip Flexor Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-livelighter-office-worker-routine",
+      "x-mb-lpt-physio-based-pilates",
+      "x-mb-nhs-sitting-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-plank-builder-beginner",
+    "name": "Somax Plank Builder (Beginner)",
+    "category": "fitness",
+    "level": "beginner",
+    "sport": "pilates",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "12 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 12,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient",
+      "busy"
+    ],
+    "whoItsFor": "Beginners whose goal is core endurance - e.g. a 60-second plank - and who want a short add-on after a Pilates or walking session.",
+    "howToRun": [
+      "2-3 times a week, after a mat session or on its own.",
+      "Hold 60-70% of your current best plank, perfect form; stop when your hips sag or your back arches.",
+      "Add about 10% hold time per week for six weeks, then about 5%.",
+      "Milestones: 30s, then 60s, then 90s - re-test every 3-4 weeks."
+    ],
+    "description": "Front planks, side planks and leg-pull prep at a fraction of your max, with timed rests.",
+    "exercises": [
+      {
+        "name": "Dead Bug",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Forearm Plank (knees or feet)",
+        "sets": 3,
+        "reps": "60-70% of max hold",
+        "group": "A"
+      },
+      {
+        "name": "Side Plank (knees or feet)",
+        "sets": 2,
+        "reps": "half front-plank time/side",
+        "group": "A"
+      },
+      {
+        "name": "Leg Pull Front Prep (plank with leg lift)",
+        "sets": 2,
+        "reps": "5/side"
+      },
+      {
+        "name": "Rest between sets",
+        "sets": 3,
+        "reps": "45-60s"
+      },
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "45s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-lpt-physio-based-pilates",
+      "classical-mat-pilates-first-fifteen"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-mat-intermediate-30",
+    "name": "Somax Mat Pilates Intermediate 30",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "general-fitness",
+      "mobility",
+      "strength"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "People who can do the beginner mat moves and a few controlled Roll Ups and want a fuller 30-minute flowing session.",
+    "howToRun": [
+      "Two or three times a week; this is the 12-week block where research saw core endurance and flexibility gains.",
+      "Reps start at the bottom of each range; move up when the last rep looks like the first.",
+      "Flow from one move to the next with as little rest as possible.",
+      "Osteoporosis, pregnancy, a recent back injury or pelvic-floor symptoms? Skip rolling and deep curl-up moves and get a physio's OK first."
+    ],
+    "description": "The Hundred, Roll Up, the five-move abdominal series, Saw, side kicks, single-leg kicks and swan.",
+    "exercises": [
+      {
+        "name": "The Hundred (legs table top or 45 degrees)",
+        "sets": 1,
+        "reps": "100 pumps"
+      },
+      {
+        "name": "Roll Up",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Single Leg Circles",
+        "sets": 1,
+        "reps": "5 each way/leg"
+      },
+      {
+        "name": "Single Leg Stretch",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Double Leg Stretch",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Single Straight Leg Stretch",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Criss Cross",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Spine Stretch Forward",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Saw",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Side Kick Series (front/back, up/down, circles)",
+        "sets": 1,
+        "reps": "8 each/side"
+      },
+      {
+        "name": "Single Leg Kicks",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Swan",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Rest Position",
+        "sets": 1,
+        "reps": "30s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-lpt-physio-based-pilates"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-core-endurance-30",
+    "name": "Somax Pilates Core Endurance 30",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Intermediate Pilates users who want to build abdominal and trunk endurance - longer planks, steadier side planks, better control.",
+    "howToRun": [
+      "Two or three times a week, not on consecutive days.",
+      "Work in timed rounds: 40 seconds on, 20 seconds off, two rounds of each block.",
+      "Keep the ribs knitted and the pelvis level - end the set when form breaks, not the clock.",
+      "Re-test your plank every 3-4 weeks."
+    ],
+    "description": "Timed Pilates core blocks: Hundred, abdominal series, plank and leg-pull work, side-plank series and back extension.",
+    "exercises": [
+      {
+        "name": "The Hundred",
+        "sets": 1,
+        "reps": "100 pumps"
+      },
+      {
+        "name": "Single Leg Stretch",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Criss Cross",
+        "sets": 2,
+        "reps": "40s",
+        "group": "A"
+      },
+      {
+        "name": "Forearm Plank",
+        "sets": 2,
+        "reps": "40s",
+        "group": "B"
+      },
+      {
+        "name": "Leg Pull Front (alternating leg lift)",
+        "sets": 2,
+        "reps": "40s",
+        "group": "B"
+      },
+      {
+        "name": "Side Plank with hip dips",
+        "sets": 2,
+        "reps": "30s/side",
+        "group": "C"
+      },
+      {
+        "name": "Side Plank Leg Lift",
+        "sets": 2,
+        "reps": "20s/side",
+        "group": "C"
+      },
+      {
+        "name": "Swimming",
+        "sets": 2,
+        "reps": "40s"
+      },
+      {
+        "name": "Swan",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Rest Position",
+        "sets": 1,
+        "reps": "45s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-lpt-physio-based-pilates"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-glutes-side-kick-20",
+    "name": "Somax Pilates Glutes & Side Kick 20",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "mini band (optional)"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "Pilates users, runners and walkers who want stronger, more enduring hips and glutes from a short lying-down session.",
+    "howToRun": [
+      "Two or three times a week.",
+      "Keep the hips stacked and still - the leg moves, the pelvis doesn't.",
+      "Add a mini band above the knees once all reps feel controlled.",
+      "Swap sides in the middle of each block so both sides get the same work."
+    ],
+    "description": "Bridges, clams, side-lying leg series and prone heel squeezes for the glutes and outer hips.",
+    "exercises": [
+      {
+        "name": "Bridge with march",
+        "sets": 2,
+        "reps": "6/side"
+      },
+      {
+        "name": "Single-leg Bridge",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Clam (band optional)",
+        "sets": 2,
+        "reps": "12/side"
+      },
+      {
+        "name": "Side Kick Front/Back",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Side Lift and Lower",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Side Leg Circles",
+        "sets": 1,
+        "reps": "8 each way/side"
+      },
+      {
+        "name": "Inner Thigh Lift",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Prone Heel Squeeze",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Figure-4 Glute Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-lpt-physio-based-pilates",
+      "classical-mat-pilates-first-fifteen"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-spine-mobility-20",
+    "name": "Somax Pilates Spine Mobility 20",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "People who feel stiff through the back and want to move the spine through bending, extending, side-bending and twisting with control.",
+    "howToRun": [
+      "Two to four times a week; a good recovery day option.",
+      "Articulate one segment at a time and breathe into the stiff spots.",
+      "Never force range - smooth control is the point.",
+      "Osteoporosis, pregnancy, a recent back injury or pelvic-floor symptoms? Skip rolling and deep curl-up moves and get a physio's OK first."
+    ],
+    "description": "Roll downs, bridges, spine stretch, saw, spine twist, mermaid side bends, swan and cat-cow.",
+    "exercises": [
+      {
+        "name": "Standing Roll Down",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Bridge (articulating)",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Spine Stretch Forward",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Saw",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Spine Twist (seated)",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Mermaid Side Bend",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Swan",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Thread the Needle",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Rest Position",
+        "sets": 1,
+        "reps": "45s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-lpt-physio-based-pilates",
+      "sun-salutation-flow"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-band-reformer-free-30",
+    "name": "Somax Reformer-Free Band Pilates 30",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat",
+      "long resistance band"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "travel"
+    ],
+    "whoItsFor": "Reformer fans without studio access who want spring-style resistance at home using a long band.",
+    "howToRun": [
+      "Two or three times a week.",
+      "Pick a band that lets you control both the push and the return - the slow return is half the exercise.",
+      "Breathe out on the push, in on the return; keep the pelvis steady.",
+      "Swap to a stronger band when every set feels smooth."
+    ],
+    "description": "Band versions of reformer staples: footwork, leg circles, frog, rowing, chest expansion and hamstring curls, plus the Hundred.",
+    "exercises": [
+      {
+        "name": "Band Footwork (lying, band around feet)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Band Leg Circles",
+        "sets": 1,
+        "reps": "5 each way/leg"
+      },
+      {
+        "name": "Band Frog",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "The Hundred with band (arms pump against band)",
+        "sets": 1,
+        "reps": "100 pumps"
+      },
+      {
+        "name": "Seated Band Rowing",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Kneeling Chest Expansion (band anchored)",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Side-lying Band Leg Press",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Prone Band Hamstring Curl",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Band Mermaid Stretch",
+        "sets": 1,
+        "reps": "4/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-lpt-physio-based-pilates"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-small-ball-20",
+    "name": "Somax Small Ball Pilates 20",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "small pilates ball"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "Pilates users who want extra core and inner-thigh challenge and feedback using a soft 20-25cm ball.",
+    "howToRun": [
+      "Two or three times a week.",
+      "Squeeze the ball gently - enough to keep it, not so hard you grip with your neck.",
+      "Use the ball under your head or sacrum when you need support.",
+      "Progress by taking the support away or lengthening the levers."
+    ],
+    "description": "Ball squeezes in bridge and curl-up, supported roll-back, oblique curls, side-lying ball lifts and prone work.",
+    "exercises": [
+      {
+        "name": "Bridge with ball squeeze",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Curl-up with ball between knees",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Roll-back with ball behind lower back",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Oblique Curl (ball squeeze)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Single Leg Stretch (ball under sacrum)",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Side-lying Ball Lift (ball between ankles)",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Prone Ball Roll (swan prep)",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Seated Spine Twist (ball between knees)",
+        "sets": 1,
+        "reps": "5/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-lpt-physio-based-pilates"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-for-runners-25",
+    "name": "Somax Pilates for Runners",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "sport-performance",
+      "strength",
+      "mobility"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "mat",
+      "mini band"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Runners who want Pilates-style hip, glute and trunk control plus hip mobility to complement their running week.",
+    "howToRun": [
+      "Twice a week on easy-run or rest days, not before a hard session.",
+      "Focus on a level pelvis in all single-leg work.",
+      "Add the mini band once clams and side kicks feel easy.",
+      "Pair with the Somax Runner's Post-Run Stretch after your runs."
+    ],
+    "description": "Single-leg bridges, side kick series, swimming, standing balance and hip-flexor and hamstring mobility.",
+    "exercises": [
+      {
+        "name": "Single-leg Bridge",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Clam with mini band",
+        "sets": 2,
+        "reps": "12/side"
+      },
+      {
+        "name": "Side Kick Front/Back",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Swimming",
+        "sets": 2,
+        "reps": "20s"
+      },
+      {
+        "name": "Single Leg Stretch",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Standing Single-leg Balance with knee drive",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Spine Twist",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Half-kneeling Hip Flexor Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Lying Hamstring Stretch with band",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-lpt-physio-based-pilates",
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-nhs-stretch-after-exercising"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-for-golfers-20",
+    "name": "Somax Pilates for Golfers",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "golf club"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "Golfers who like Pilates and want a session focused on trunk control and rotation to complement golf.",
+    "howToRun": [
+      "Twice a week, away from your gym or speed days.",
+      "Keep the pelvis still in the rotation moves so the upper back does the turning.",
+      "Breathe out as you rotate.",
+      "Pair with Somax Golf Hip Mobility 15 if your hips are the stiffer link."
+    ],
+    "description": "Spine twists, saws, side-lying openings, side planks and swimming for rotation and anti-rotation control.",
+    "exercises": [
+      {
+        "name": "Breathing in table top",
+        "sets": 1,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Bridge (articulating)",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Criss Cross",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Side-lying Arm Opening",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Saw",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Spine Twist with club across shoulders",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Side Plank (knees or feet)",
+        "sets": 2,
+        "reps": "20s/side"
+      },
+      {
+        "name": "Swimming",
+        "sets": 1,
+        "reps": "20s"
+      },
+      {
+        "name": "Mermaid Side Bend",
+        "sets": 1,
+        "reps": "4/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-lpt-physio-based-pilates",
+      "x-mb-gripp-golf-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-full-mat-45",
+    "name": "Somax Full Mat Pilates 45",
+    "category": "fitness",
+    "level": "intermediate",
+    "sport": "pilates",
+    "goals": [
+      "general-fitness",
+      "mobility",
+      "strength"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Experienced mat Pilates users who want a complete 45-minute class at home with warm-up, full mat sequence and stretch.",
+    "howToRun": [
+      "Two or three times a week (max 3-4 Pilates sessions); fill other days with walking or cardio.",
+      "Flow through the order with control; rest only when form slips.",
+      "Skip any move you're not ready for rather than reshuffle the order.",
+      "Osteoporosis, pregnancy, a recent back injury or pelvic-floor symptoms? Skip rolling and deep curl-up moves and get a physio's OK first."
+    ],
+    "description": "Standing warm-up, the classical abdominal series, rolling, side kicks, teaser prep, back extension and a stretch to finish.",
+    "exercises": [
+      {
+        "name": "Standing Roll Down",
+        "sets": 1,
+        "reps": "4"
+      },
+      {
+        "name": "Pelvic Tilts and Bridge",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "The Hundred",
+        "sets": 1,
+        "reps": "100 pumps"
+      },
+      {
+        "name": "Roll Up",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Single Leg Circles",
+        "sets": 1,
+        "reps": "5 each way/leg"
+      },
+      {
+        "name": "Rolling Like a Ball",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Single Leg Stretch",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Double Leg Stretch",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Criss Cross",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Spine Stretch Forward",
+        "sets": 1,
+        "reps": "4"
+      },
+      {
+        "name": "Saw",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Side Kick Series",
+        "sets": 1,
+        "reps": "8 each/side"
+      },
+      {
+        "name": "Teaser Prep (one leg)",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Swimming",
+        "sets": 1,
+        "reps": "30s"
+      },
+      {
+        "name": "Swan",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Seal",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Child's Pose and Hamstring Stretch",
+        "sets": 1,
+        "reps": "2 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-lpt-physio-based-pilates"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-advanced-mat-45",
+    "name": "Somax Advanced Mat Pilates 45",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "pilates",
+    "goals": [
+      "strength",
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Advanced Pilates practitioners who complete the intermediate order with control and want the demanding classical material.",
+    "howToRun": [
+      "Two or three times a week (no more than four Pilates sessions).",
+      "Each rep is precise and controlled - drop to the intermediate version if momentum creeps in.",
+      "Warm up thoroughly; the Roll Over, Jackknife and Corkscrew load the neck and spine.",
+      "Not suitable with osteoporosis, neck problems or during pregnancy."
+    ],
+    "description": "Advanced classical mat work: Roll Over, Corkscrew, Teaser 1-3, Jackknife, Scissors and Bicycle, Shoulder Bridge, Control Balance and more.",
+    "exercises": [
+      {
+        "name": "The Hundred (legs low)",
+        "sets": 1,
+        "reps": "100 pumps"
+      },
+      {
+        "name": "Roll Up",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Roll Over",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Single Leg Circles",
+        "sets": 1,
+        "reps": "5 each way/leg"
+      },
+      {
+        "name": "Open Leg Rocker",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Corkscrew",
+        "sets": 1,
+        "reps": "3/side"
+      },
+      {
+        "name": "Saw",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "Swan Dive",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Double Leg Kicks",
+        "sets": 1,
+        "reps": "3/side"
+      },
+      {
+        "name": "Neck Pull",
+        "sets": 1,
+        "reps": "5"
+      },
+      {
+        "name": "Scissors",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Bicycle",
+        "sets": 1,
+        "reps": "5 each way"
+      },
+      {
+        "name": "Shoulder Bridge",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Spine Twist",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Jackknife",
+        "sets": 1,
+        "reps": "4"
+      },
+      {
+        "name": "Teaser 1-3",
+        "sets": 1,
+        "reps": "3 each"
+      },
+      {
+        "name": "Control Balance",
+        "sets": 1,
+        "reps": "3/side"
+      },
+      {
+        "name": "Push-up (Pilates)",
+        "sets": 1,
+        "reps": "3"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-advanced-core-power-30",
+    "name": "Somax Advanced Pilates Core Power 30",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "pilates",
+    "goals": [
+      "strength",
+      "sport-performance"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat",
+      "small pilates ball (optional)"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "Advanced Pilates users and athletes who want a hard, short core session built from Pilates' toughest abdominal and plank work.",
+    "howToRun": [
+      "Twice a week, not on consecutive days.",
+      "Two rounds; rest 60 seconds between rounds.",
+      "Stop each exercise at the first loss of control rather than chasing reps.",
+      "Not for anyone with current back pain, osteoporosis or pelvic-floor symptoms."
+    ],
+    "description": "Teaser variations, leg pull front and back, side bend, boomerang prep and hip twist.",
+    "exercises": [
+      {
+        "name": "Teaser (hold top 3s)",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Leg Pull Front",
+        "sets": 2,
+        "reps": "4/side"
+      },
+      {
+        "name": "Leg Pull Back",
+        "sets": 2,
+        "reps": "4/side"
+      },
+      {
+        "name": "Side Bend (Pilates star prep)",
+        "sets": 2,
+        "reps": "4/side"
+      },
+      {
+        "name": "Hip Twist with Stretched Arms",
+        "sets": 2,
+        "reps": "3 each way"
+      },
+      {
+        "name": "Boomerang Prep",
+        "sets": 2,
+        "reps": "4"
+      },
+      {
+        "name": "Double Leg Stretch (low levers)",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Swimming",
+        "sets": 2,
+        "reps": "40s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen"
+    ]
+  },
+  {
+    "id": "x-mb-somax-pilates-band-advanced-45",
+    "name": "Somax Reformer-Free Band Pilates 45 (Advanced)",
+    "category": "fitness",
+    "level": "advanced",
+    "sport": "pilates",
+    "goals": [
+      "strength",
+      "general-fitness"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "mat",
+      "long resistance band",
+      "heavy resistance band"
+    ],
+    "lifestyle": [
+      "home",
+      "travel"
+    ],
+    "whoItsFor": "Experienced reformer clients who want a tough, spring-style home session with bands when they can't get to the studio.",
+    "howToRun": [
+      "Two sessions a week alongside mat work.",
+      "Heavy band for leg work, lighter band for arms - control the return every rep.",
+      "Hold 2-3 seconds at the end of each long-lever move.",
+      "Anchor bands to something solid (closed door anchor or sturdy post) and check them for wear."
+    ],
+    "description": "Band versions of advanced reformer work: running footwork, long stretch series, knee stretches, semi-circle, rowing series, side splits and teaser with band.",
+    "exercises": [
+      {
+        "name": "Band Footwork (single leg)",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Band Running (alternating heels)",
+        "sets": 1,
+        "reps": "60s"
+      },
+      {
+        "name": "Long Stretch Plank with band press",
+        "sets": 2,
+        "reps": "6"
+      },
+      {
+        "name": "Knee Stretches (band behind, kneeling)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Band Semi-circle (bridge with band)",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Band Rowing Series",
+        "sets": 2,
+        "reps": "8 each"
+      },
+      {
+        "name": "Standing Side Splits with band",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Teaser with band",
+        "sets": 2,
+        "reps": "5"
+      },
+      {
+        "name": "Band Long Box Pulling Straps (prone)",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Band Mermaid",
+        "sets": 1,
+        "reps": "4/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "classical-mat-pilates-first-fifteen",
+      "x-mb-lpt-physio-based-pilates"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-morning-wake-up-10",
+    "name": "Somax Morning Wake-Up Flow 10",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 10,
+    "equipment": [
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "travel",
+      "time-efficient",
+      "busy",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Anyone who wakes up stiff and wants a 10-minute flow to move every joint before the day starts.",
+    "howToRun": [
+      "Most mornings, before breakfast or after a shower.",
+      "One breath per movement; slow the breath down as you go.",
+      "Use cat-cow instead of cobra if your back or wrists complain.",
+      "Add a round of Sun Salutation once this feels easy."
+    ],
+    "description": "Breathing, neck and shoulder rolls, cat-cow, low lunge, down dog and a gentle standing side stretch.",
+    "exercises": [
+      {
+        "name": "Seated Breathing",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Neck Half-circles",
+        "sets": 1,
+        "reps": "5 each way"
+      },
+      {
+        "name": "Shoulder Rolls",
+        "sets": 1,
+        "reps": "5 each way"
+      },
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Low Lunge with reach",
+        "sets": 1,
+        "reps": "4 breaths/side"
+      },
+      {
+        "name": "Downward Dog with pedalling",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Forward Fold (knees soft)",
+        "sets": 1,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Standing Side Stretch",
+        "sets": 1,
+        "reps": "3 breaths/side"
+      },
+      {
+        "name": "Mountain Pose",
+        "sets": 1,
+        "reps": "5 breaths"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow",
+      "nhs-flexibility-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-bedtime-wind-down-15",
+    "name": "Somax Bedtime Wind-Down 15",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 7,
+    "sessionMinutes": 15,
+    "equipment": [
+      "mat or bed",
+      "pillow"
+    ],
+    "lifestyle": [
+      "home",
+      "travel",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Anyone wanting a quiet, low-effort stretch and breathing routine to switch off in the evening.",
+    "howToRun": [
+      "Nightly, in dim light, 30-60 minutes before bed - it can be done on the bed.",
+      "Nothing should feel effortful; hold each position for slow breaths.",
+      "Breathe out a little longer than you breathe in.",
+      "Relaxing routines can help you unwind; persistent poor sleep is worth discussing with your GP."
+    ],
+    "description": "Floor or bed-based stretches with long exhales: child's pose, knees to chest, supine twist, figure-4, legs up the wall and body scan.",
+    "exercises": [
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "8 breaths"
+      },
+      {
+        "name": "Cat-Cow (slow)",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Knees to Chest",
+        "sets": 1,
+        "reps": "8 breaths"
+      },
+      {
+        "name": "Supine Twist",
+        "sets": 1,
+        "reps": "6 breaths/side"
+      },
+      {
+        "name": "Figure-4 Stretch (lying)",
+        "sets": 1,
+        "reps": "6 breaths/side"
+      },
+      {
+        "name": "Happy Baby or Reclined Butterfly",
+        "sets": 1,
+        "reps": "8 breaths"
+      },
+      {
+        "name": "Legs up the Wall",
+        "sets": 1,
+        "reps": "2-3 min"
+      },
+      {
+        "name": "Long-exhale Breathing (4 in, 6 out)",
+        "sets": 1,
+        "reps": "10 breaths"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-stretch-after-exercising",
+      "x-mb-emory-ten-stretches-as-you-age",
+      "sun-salutation-flow"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-desk-reset-10",
+    "name": "Somax Desk Reset 10",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 10,
+    "equipment": [
+      "chair",
+      "wall"
+    ],
+    "lifestyle": [
+      "busy",
+      "time-efficient",
+      "minimal-equipment",
+      "travel"
+    ],
+    "whoItsFor": "Desk workers who want a 10-minute standing-and-seated break to undo hours of sitting - a step up from a 5-minute chair stretch.",
+    "howToRun": [
+      "Once or twice per workday; set a reminder.",
+      "Stand up for the second half - the change of position matters as much as the stretch.",
+      "Move gently and keep breathing; no forcing.",
+      "Combine with standing or walking breaks every 30-60 minutes."
+    ],
+    "description": "Seated neck, shoulder and spine moves, then standing hip-flexor, chest and calf stretches and a wall angel.",
+    "exercises": [
+      {
+        "name": "Seated Neck Rotation",
+        "sets": 1,
+        "reps": "3/side"
+      },
+      {
+        "name": "Chin Tucks",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Seated Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Seated Twist",
+        "sets": 1,
+        "reps": "20s/side"
+      },
+      {
+        "name": "Seated Figure-4 Hip Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Standing Hip Flexor Stretch (split stance)",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Doorway Chest Stretch",
+        "sets": 1,
+        "reps": "30s"
+      },
+      {
+        "name": "Wall Angels",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Wall Calf Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-livelighter-office-worker-routine",
+      "x-mb-nhs-sitting-exercises",
+      "nhs-flexibility-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-chair-older-adults-20",
+    "name": "Somax Chair Yoga for Older Adults",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "chair"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Older adults and anyone with limited mobility who want a gentle yoga-style routine done entirely from (or holding) a chair.",
+    "howToRun": [
+      "Two or three times a week, on top of walking and strength work.",
+      "Hold stretches 30-60 seconds - older adults benefit from the longer holds.",
+      "Sit tall at the front of a sturdy chair without wheels; stand only for moves you feel steady in, holding the chair back.",
+      "Hip or back surgery? Check with your doctor before twists and forward bends."
+    ],
+    "description": "Seated breathing, arm raises, cat-cow, side bends, twists and hamstring stretch, then supported standing warrior and tree.",
+    "exercises": [
+      {
+        "name": "Seated Breathing",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Seated Arm Raises with breath",
+        "sets": 1,
+        "reps": "6"
+      },
+      {
+        "name": "Seated Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Seated Side Bend",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Seated Twist",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Seated Hamstring Stretch (heel forward)",
+        "sets": 1,
+        "reps": "30-60s/side"
+      },
+      {
+        "name": "Seated Ankle Circles",
+        "sets": 1,
+        "reps": "8 each way/side"
+      },
+      {
+        "name": "Supported Warrior 2 (hold chair back)",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Supported Tree Pose (toe down)",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Seated Rest with eyes closed",
+        "sets": 1,
+        "reps": "1 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-sitting-exercises",
+      "x-mb-emory-ten-stretches-as-you-age",
+      "nhs-flexibility-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-hips-hamstrings-beginner-20",
+    "name": "Somax Hips & Hamstrings 20",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "strap or towel",
+      "yoga block (optional)"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "busy"
+    ],
+    "whoItsFor": "Beginners who can't touch their toes or feel tight through the hips and hamstrings and want a plan that measurably improves it.",
+    "howToRun": [
+      "5 or more days a week - weekly stretching time matters most (aim for 5+ minutes per muscle group per week).",
+      "Hold 30 seconds per stretch to mild tightness, not pain; no bouncing.",
+      "Weeks 1-2: 2 holds each. Weeks 3-6: 3 holds or add a 5-second contract-relax.",
+      "Test your toe-touch (or sit-and-reach) every 2 weeks at the same time of day after a warm-up."
+    ],
+    "description": "Lying strap hamstring stretches, seated fold, figure-4, low lunge and calf stretch - the posterior-chain plan for touching your toes.",
+    "exercises": [
+      {
+        "name": "Gentle warm-up: march and leg swings",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Supine Hamstring Stretch with strap",
+        "sets": 2,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Hamstring Contract-Relax (press 5s, relax deeper)",
+        "sets": 2,
+        "reps": "1/leg"
+      },
+      {
+        "name": "Seated Forward Fold",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Figure-4 Glute Stretch",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Low Lunge Hip Flexor Stretch",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Wall Calf Stretch",
+        "sets": 1,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-stretch-after-exercising",
+      "x-mb-emory-ten-stretches-as-you-age",
+      "nhs-flexibility-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-neck-shoulders-10",
+    "name": "Somax Neck & Shoulder Release 10",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 10,
+    "equipment": [
+      "chair",
+      "towel",
+      "wall"
+    ],
+    "lifestyle": [
+      "busy",
+      "time-efficient",
+      "minimal-equipment",
+      "travel",
+      "home"
+    ],
+    "whoItsFor": "People who carry tension in the neck and shoulders from screens, driving or stress.",
+    "howToRun": [
+      "Daily or most days; also good as a mid-afternoon break.",
+      "Small, slow movements; never crank the neck.",
+      "Hold stretches 20-30 seconds and breathe into the area.",
+      "Pins and needles or pain down the arm - stop and get it checked."
+    ],
+    "description": "Gentle neck turns and tilts, chin tucks, shoulder rolls, towel shoulder stretch, thread the needle and wall slides.",
+    "exercises": [
+      {
+        "name": "Neck Rotation",
+        "sets": 1,
+        "reps": "3/side, 5s hold"
+      },
+      {
+        "name": "Neck Side Tilt",
+        "sets": 1,
+        "reps": "20s/side"
+      },
+      {
+        "name": "Chin Tucks",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Shoulder Rolls",
+        "sets": 1,
+        "reps": "8 each way"
+      },
+      {
+        "name": "Towel Shoulder & Upper-arm Stretch",
+        "sets": 1,
+        "reps": "20-30s/side"
+      },
+      {
+        "name": "Cross-body Shoulder Stretch",
+        "sets": 1,
+        "reps": "20-30s/side"
+      },
+      {
+        "name": "Thread the Needle",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Wall Slides",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Eagle Arms",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "nhs-flexibility-exercises",
+      "x-mb-emory-ten-stretches-as-you-age",
+      "x-mb-livelighter-office-worker-routine"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-runners-post-run-15",
+    "name": "Somax Runner's Post-Run Stretch 15",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "endurance"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 15,
+    "equipment": [
+      "mat",
+      "wall"
+    ],
+    "lifestyle": [
+      "home",
+      "outdoor",
+      "time-efficient",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Runners of any level who want a slightly longer post-run routine than a quick 5-minute cool-down, focused on calves, hamstrings, hips and quads.",
+    "howToRun": [
+      "After runs, once you've walked for a few minutes and your breathing has settled.",
+      "Hold 30 seconds per side; take two holds on whatever feels tightest.",
+      "Stretching hasn't been shown to prevent injuries - do it because it feels good and keeps range.",
+      "Add Somax Runner's Mobility 25 on a rest day for deeper work."
+    ],
+    "description": "Wall calf and soleus stretches, standing quad, lying hamstring, figure-4, low lunge, down dog and child's pose.",
+    "exercises": [
+      {
+        "name": "Wall Calf Stretch (straight knee)",
+        "sets": 1,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Wall Soleus Stretch (bent knee)",
+        "sets": 1,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Standing Quad Stretch",
+        "sets": 1,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Lying Hamstring Stretch",
+        "sets": 1,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Figure-4 Glute Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Low Lunge Hip Flexor Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Downward Dog",
+        "sets": 1,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "5 breaths"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-stretch-after-exercising",
+      "sun-salutation-flow",
+      "x-mb-emory-ten-stretches-as-you-age"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-lifters-warm-up-10",
+    "name": "Somax Lifter's Mobility Warm-Up 10",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "strength"
+    ],
+    "duration": "10 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 10,
+    "equipment": [
+      "mat",
+      "bands"
+    ],
+    "lifestyle": [
+      "full-gym",
+      "time-efficient",
+      "busy"
+    ],
+    "whoItsFor": "Gym-goers who want a quick dynamic routine before squats, deadlifts and presses instead of static stretching.",
+    "howToRun": [
+      "Before every lifting session, after 3-5 minutes on a bike or rower.",
+      "Dynamic only - move in and out of each position, no long holds before lifting.",
+      "Then do 2-3 light warm-up sets of your first lift.",
+      "Save long static stretching for after training or rest days."
+    ],
+    "description": "Cat-cow, world's greatest stretch, hip airplanes, goblet squat pry, band pull-aparts and dislocates, glute bridges.",
+    "exercises": [
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "World's Greatest Stretch",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "90/90 Hip Switches",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Goblet Squat Pry (light)",
+        "sets": 1,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Band Pull-apart",
+        "sets": 1,
+        "reps": "15"
+      },
+      {
+        "name": "Band Shoulder Dislocates",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": 1,
+        "reps": "12"
+      },
+      {
+        "name": "Inchworm to Down Dog",
+        "sets": 1,
+        "reps": "5"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow",
+      "stronglifts-5x5-workout-a",
+      "fifa-11-plus-warm-up"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-gentle-back-15",
+    "name": "Somax Gentle Back Mobility 15",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "15 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 15,
+    "equipment": [
+      "mat",
+      "pillow"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment",
+      "time-efficient"
+    ],
+    "whoItsFor": "People with an everyday stiff or achy lower back (no red-flag symptoms) who want a calm daily mobility routine.",
+    "howToRun": [
+      "Daily or most days - little and often.",
+      "Mild discomfort is fine; it shouldn't increase your symptoms afterwards.",
+      "Keep walking and doing normal activities - rest makes backs stiffer.",
+      "Leg numbness or weakness, bladder or bowel changes, or worsening pain: see a doctor."
+    ],
+    "description": "Knee rolls, pelvic tilts, knee hugs, bridges, cat-cow, child's pose with side reach, prone press-ups and standing side bends.",
+    "exercises": [
+      {
+        "name": "Pelvic Tilts",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Knee Rolls",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Single Knee Hug",
+        "sets": 1,
+        "reps": "20s/side"
+      },
+      {
+        "name": "Bridge",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Child's Pose with side reach",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Prone Press-up (to comfort)",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Standing Side Bend",
+        "sets": 1,
+        "reps": "5/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-bhft-low-back-pain-exercises",
+      "x-mb-emory-ten-stretches-as-you-age",
+      "nhs-flexibility-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-restorative-30",
+    "name": "Somax Restorative Yoga 30",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat",
+      "pillows or bolster",
+      "blanket",
+      "yoga blocks"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults"
+    ],
+    "whoItsFor": "Anyone who needs a calm, fully supported session - after a hard training week, a stressful day or as a gentle rest-day practice.",
+    "howToRun": [
+      "Once or twice a week, or on rest days.",
+      "Everything is propped so muscles can let go; you should feel almost no effort.",
+      "Stay 2-5 minutes in each shape with slow breathing.",
+      "Come out slowly, rolling to your side before sitting up."
+    ],
+    "description": "Long, propped holds: supported child's pose, reclined butterfly, supported bridge, side-lying twist, legs up the wall and rest.",
+    "exercises": [
+      {
+        "name": "Supported Child's Pose (bolster)",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Supported Reclined Butterfly",
+        "sets": 1,
+        "reps": "4 min"
+      },
+      {
+        "name": "Supported Bridge (block under sacrum)",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Side-lying Supported Twist",
+        "sets": 1,
+        "reps": "2 min/side"
+      },
+      {
+        "name": "Supported Forward Fold (seated)",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Legs up the Wall",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Final Relaxation (Savasana)",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow",
+      "x-mb-nhs-stretch-after-exercising"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-balance-mobility-older-25",
+    "name": "Somax Balance & Mobility for Older Adults",
+    "category": "other",
+    "level": "beginner",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 25,
+    "equipment": [
+      "chair",
+      "wall",
+      "mat"
+    ],
+    "lifestyle": [
+      "home",
+      "older-adults",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Over-60s who want to stay steady on their feet and keep their joints moving, mixing gentle yoga poses with balance drills.",
+    "howToRun": [
+      "Three times a week, plus walking on other days.",
+      "Always have a chair back or kitchen bench within reach for the balance moves.",
+      "Progress balance: two hands, one hand, fingertip, hands-free.",
+      "Fallen in the last 12 months or feel dizzy? See your GP first and keep balance work supported."
+    ],
+    "description": "Standing mountain and warrior poses, heel-toe stance and walking, one-leg stands, chair squats and long-hold stretches.",
+    "exercises": [
+      {
+        "name": "Mountain Pose with breathing",
+        "sets": 1,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Heel Raises (hold chair)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Chair Squat (sit-to-stand)",
+        "sets": 2,
+        "reps": "8"
+      },
+      {
+        "name": "Tandem Stance (heel-to-toe)",
+        "sets": 2,
+        "reps": "10s/side"
+      },
+      {
+        "name": "Heel-to-toe Walk",
+        "sets": 2,
+        "reps": "10 steps"
+      },
+      {
+        "name": "One-leg Stand (hold support)",
+        "sets": 2,
+        "reps": "10s/side"
+      },
+      {
+        "name": "Supported Warrior 1",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Standing Calf Stretch at wall",
+        "sets": 1,
+        "reps": "30-60s/side"
+      },
+      {
+        "name": "Seated Hamstring Stretch",
+        "sets": 1,
+        "reps": "30-60s/side"
+      },
+      {
+        "name": "Seated Chest Stretch",
+        "sets": 1,
+        "reps": "30s"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-emory-ten-stretches-as-you-age",
+      "x-mb-nhs-sitting-exercises",
+      "nhs-flexibility-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-runners-mobility-25",
+    "name": "Somax Runner's Mobility 25",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "sport-performance"
+    ],
+    "duration": "25 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 25,
+    "equipment": [
+      "mat",
+      "foam roller",
+      "wall"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Regular runners who want a rest-day session for ankle, hip and upper-back mobility that carries over to stride and posture on the run.",
+    "howToRun": [
+      "Twice a week on rest or easy days.",
+      "Dynamic drills first, then the longer holds.",
+      "Ankle rockers: knee tracks over the toes, heel stays down.",
+      "Track ankle range with the knee-to-wall test every 4 weeks."
+    ],
+    "description": "Ankle rockers, hip CARs, 90/90, couch stretch, pigeon, thoracic rotations and a hamstring flow.",
+    "exercises": [
+      {
+        "name": "Foam Roll Calves and Quads",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Knee-to-wall Ankle Rockers",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Standing Hip CARs",
+        "sets": 1,
+        "reps": "4 each way/side"
+      },
+      {
+        "name": "90/90 Hip Switches",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Couch Stretch (rear foot on wall)",
+        "sets": 1,
+        "reps": "45s/side"
+      },
+      {
+        "name": "Pigeon Pose",
+        "sets": 1,
+        "reps": "45s/side"
+      },
+      {
+        "name": "Open Book",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Pyramid Pose (hamstring)",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Lizard Lunge",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-stretch-after-exercising",
+      "sun-salutation-flow",
+      "x-mb-utah-golf-day-2-mobility-power"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-lifters-squat-depth-20",
+    "name": "Somax Lifter's Squat-Depth Mobility",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "kettlebell or dumbbell",
+      "wall",
+      "small plate"
+    ],
+    "lifestyle": [
+      "full-gym",
+      "home"
+    ],
+    "whoItsFor": "Lifters who can't squat to depth without heels lifting, knees caving or the back rounding, and want targeted ankle, hip and adductor work.",
+    "howToRun": [
+      "Three times a week - after training or as a standalone session.",
+      "Loaded stretches (goblet hold, Cossack) use light weight as a counterbalance, not a load.",
+      "Breathe into the bottom positions and spend time there.",
+      "Film your squat from the side every 4 weeks to see changes."
+    ],
+    "description": "Ankle rockers, adductor rock-backs, frog, Cossack squats, goblet squat holds, deep squat with reach and pigeon.",
+    "exercises": [
+      {
+        "name": "Knee-to-wall Ankle Rockers",
+        "sets": 2,
+        "reps": "10/side"
+      },
+      {
+        "name": "Adductor Rock-backs",
+        "sets": 2,
+        "reps": "8/side"
+      },
+      {
+        "name": "Frog Stretch",
+        "sets": 1,
+        "reps": "60s"
+      },
+      {
+        "name": "Cossack Squat (light counterweight)",
+        "sets": 3,
+        "reps": "5/side"
+      },
+      {
+        "name": "Goblet Squat Hold with pry",
+        "sets": 3,
+        "reps": "30s",
+        "weight": "light kettlebell"
+      },
+      {
+        "name": "Deep Squat with thoracic reach",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Pigeon Pose",
+        "sets": 1,
+        "reps": "45s/side"
+      },
+      {
+        "name": "Elevated-heel Squat (plate) for comparison",
+        "sets": 1,
+        "reps": "8"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "stronglifts-5x5-workout-a",
+      "sun-salutation-flow",
+      "x-mb-nhs-stretch-after-exercising"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-lifters-overhead-shoulders-20",
+    "name": "Somax Lifter's Overhead & Shoulder Mobility",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "strength"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "bands",
+      "foam roller",
+      "light dumbbell"
+    ],
+    "lifestyle": [
+      "full-gym",
+      "home"
+    ],
+    "whoItsFor": "Lifters whose lower back arches or elbows bend when pressing overhead, or who feel tight in the lats and chest.",
+    "howToRun": [
+      "Three times a week, after upper-body training or as a standalone.",
+      "Keep the ribs down in every overhead position - if the back arches, you've run out of shoulder range.",
+      "Hold the end of each stretch and breathe; add the strength drills only once range improves.",
+      "Shoulder pinching or clicking with pain - reduce range and get it assessed."
+    ],
+    "description": "T-spine extensions, lat and pec stretches, band dislocates, wall slides and a light overhead carry.",
+    "exercises": [
+      {
+        "name": "T-spine Extension over Foam Roller",
+        "sets": 1,
+        "reps": "10"
+      },
+      {
+        "name": "Open Book",
+        "sets": 1,
+        "reps": "8/side"
+      },
+      {
+        "name": "Kneeling Lat Stretch (elbows on bench)",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Doorway Pec Stretch",
+        "sets": 2,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Band Shoulder Dislocates",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Wall Slides (ribs down)",
+        "sets": 2,
+        "reps": "10"
+      },
+      {
+        "name": "Puppy Pose",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Half-kneeling Overhead Carry Hold (light)",
+        "sets": 2,
+        "reps": "20s/side"
+      },
+      {
+        "name": "Prone Y-T Raises",
+        "sets": 2,
+        "reps": "8 each"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "stronglifts-5x5-workout-a",
+      "nhs-flexibility-exercises",
+      "x-mb-emory-ten-stretches-as-you-age"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-vinyasa-flow-30",
+    "name": "Somax Vinyasa Flow 30",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness",
+      "strength"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat",
+      "yoga blocks"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "travel"
+    ],
+    "whoItsFor": "People with some yoga experience who want a flowing 30-minute practice for mobility, strength and focus.",
+    "howToRun": [
+      "Two or three times a week.",
+      "One breath, one movement; hold standing poses for 5 breaths.",
+      "Take child's pose whenever you need to - the breath leads, not the clock.",
+      "Use blocks under the hands in lunges and triangle if the floor feels far away."
+    ],
+    "description": "Sun Salutations, a warrior and triangle standing series, balance, then seated forward folds and twists.",
+    "exercises": [
+      {
+        "name": "Sun Salutation A",
+        "sets": 3,
+        "reps": "1 round"
+      },
+      {
+        "name": "Warrior 1",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Warrior 2",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Extended Side Angle",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Triangle Pose",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Tree Pose",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Chair Pose",
+        "sets": 2,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Low Lunge Twist",
+        "sets": 1,
+        "reps": "4 breaths/side"
+      },
+      {
+        "name": "Seated Forward Fold",
+        "sets": 1,
+        "reps": "8 breaths"
+      },
+      {
+        "name": "Seated Twist",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Savasana",
+        "sets": 1,
+        "reps": "3 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow",
+      "nhs-flexibility-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-hip-opener-30",
+    "name": "Somax Hip Opener Flow 30",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat",
+      "yoga blocks",
+      "strap"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "People who sit a lot, runners and lifters who want a deeper session for all directions of hip movement.",
+    "howToRun": [
+      "Two or three times a week.",
+      "Warm up with the flow before the long holds.",
+      "Use blocks under hips in pigeon and lizard so the lower back stays comfortable.",
+      "Knee pain in pigeon? Swap for figure-4 on your back."
+    ],
+    "description": "Low lunge, lizard, pigeon, frog, happy baby, reclined butterfly and 90/90, with a warm-up flow.",
+    "exercises": [
+      {
+        "name": "Sun Salutation (half rounds)",
+        "sets": 2,
+        "reps": "1 round"
+      },
+      {
+        "name": "Low Lunge",
+        "sets": 1,
+        "reps": "6 breaths/side"
+      },
+      {
+        "name": "Lizard Pose",
+        "sets": 1,
+        "reps": "6 breaths/side"
+      },
+      {
+        "name": "Pigeon Pose",
+        "sets": 1,
+        "reps": "8 breaths/side"
+      },
+      {
+        "name": "Frog Pose",
+        "sets": 1,
+        "reps": "8 breaths"
+      },
+      {
+        "name": "90/90 Hold with lean",
+        "sets": 1,
+        "reps": "6 breaths/side"
+      },
+      {
+        "name": "Garland Squat (Malasana)",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Happy Baby",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Reclined Butterfly",
+        "sets": 1,
+        "reps": "2 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow",
+      "x-mb-nhs-stretch-after-exercising",
+      "x-mb-emory-ten-stretches-as-you-age"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-hamstring-builder-20",
+    "name": "Somax Touch-Your-Toes Builder",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility"
+    ],
+    "duration": "20 min",
+    "daysPerWeek": 5,
+    "sessionMinutes": 20,
+    "equipment": [
+      "mat",
+      "strap",
+      "step"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "busy"
+    ],
+    "whoItsFor": "People who've done some stretching and want a focused 6-12 week plan to finally touch their toes or improve sit-and-reach.",
+    "howToRun": [
+      "5+ days a week; on busy days just do the 5-minute micro version (first three exercises).",
+      "Weeks 1-2: 2 x 30s holds. Weeks 3-6: 3 x 30s plus contract-relax. Weeks 7+: add the Jefferson curl with a light weight.",
+      "Mild tightness only - flexibility gains come from total weekly time, not intensity.",
+      "Measure every 2 weeks after warming up; expect visible change within about 6 weeks."
+    ],
+    "description": "Supine strap hamstring stretches with contract-relax, step hamstring stretch, ragdoll fold, pyramid and a light loaded stretch.",
+    "exercises": [
+      {
+        "name": "Supine Strap Hamstring Stretch",
+        "sets": 3,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Hamstring Contract-Relax (5s press, 20s stretch)",
+        "sets": 2,
+        "reps": "1/leg"
+      },
+      {
+        "name": "Standing Hamstring Stretch (heel on step)",
+        "sets": 2,
+        "reps": "30s/leg"
+      },
+      {
+        "name": "Ragdoll Forward Hang (knees soft)",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Pyramid Pose (blocks)",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Seated Forward Fold",
+        "sets": 2,
+        "reps": "30s"
+      },
+      {
+        "name": "Jefferson Curl (weeks 7+)",
+        "sets": 2,
+        "reps": "5",
+        "weight": "2-5kg"
+      },
+      {
+        "name": "Calf Stretch",
+        "sets": 1,
+        "reps": "30s/leg"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-stretch-after-exercising",
+      "x-mb-emory-ten-stretches-as-you-age",
+      "nhs-flexibility-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-strength-flow-45",
+    "name": "Somax Yoga Strength Flow 45",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "strength",
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "mat",
+      "yoga blocks"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Yoga practitioners who want more strength from their practice - longer holds, chaturangas, chair and warrior 3.",
+    "howToRun": [
+      "Two or three times a week; alternate with a gentler flow.",
+      "Hold strength poses 5-8 breaths and keep the breath smooth.",
+      "Lower chaturanga from the knees until you can keep a straight line from the toes.",
+      "Rest in child's pose between standing sequences as needed."
+    ],
+    "description": "Sun Salutation B rounds, warrior 3, chair twist, crescent lunge, plank-to-chaturanga, side plank, boat and bridge.",
+    "exercises": [
+      {
+        "name": "Sun Salutation A",
+        "sets": 2,
+        "reps": "1 round"
+      },
+      {
+        "name": "Sun Salutation B",
+        "sets": 3,
+        "reps": "1 round"
+      },
+      {
+        "name": "Crescent Lunge",
+        "sets": 1,
+        "reps": "6 breaths/side"
+      },
+      {
+        "name": "Warrior 3",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Chair Pose Twist",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Plank to Chaturanga",
+        "sets": 3,
+        "reps": "5"
+      },
+      {
+        "name": "Side Plank",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Boat Pose",
+        "sets": 3,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Bridge Pose",
+        "sets": 2,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Seated Twist and Forward Fold",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Savasana",
+        "sets": 1,
+        "reps": "4 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow",
+      "nhs-home-strength-exercises"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-active-recovery-30",
+    "name": "Somax Active Recovery Day 30",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 1,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat",
+      "foam roller"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "People training 4+ days a week who want a structured easy day that leaves them fresher rather than sitting still.",
+    "howToRun": [
+      "Once or twice a week on rest days.",
+      "Easy effort throughout - talk-test pace on the walk or bike.",
+      "Foam roll slowly; pause on tender spots but keep it below 6/10 discomfort.",
+      "Finish with the breathing - it's part of the session."
+    ],
+    "description": "Easy cardio, foam rolling, a mobility circuit and a short breathing finish.",
+    "exercises": [
+      {
+        "name": "Easy walk, bike or swim",
+        "sets": 1,
+        "reps": "10 min"
+      },
+      {
+        "name": "Foam Roll: calves, quads, glutes, upper back",
+        "sets": 1,
+        "reps": "5 min"
+      },
+      {
+        "name": "Cat-Cow",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "World's Greatest Stretch",
+        "sets": 1,
+        "reps": "4/side"
+      },
+      {
+        "name": "90/90 Hip Switches",
+        "sets": 1,
+        "reps": "6/side"
+      },
+      {
+        "name": "Thread the Needle",
+        "sets": 1,
+        "reps": "5/side"
+      },
+      {
+        "name": "Downward Dog with pedalling",
+        "sets": 1,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Supine Twist",
+        "sets": 1,
+        "reps": "45s/side"
+      },
+      {
+        "name": "Box Breathing (4-4-4-4)",
+        "sets": 1,
+        "reps": "2 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-nhs-stretch-after-exercising",
+      "sun-salutation-flow",
+      "x-mb-emory-ten-stretches-as-you-age"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-travel-mobility-12",
+    "name": "Somax Travel Mobility 12",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "general-fitness"
+    ],
+    "duration": "12 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 12,
+    "equipment": [
+      "bodyweight"
+    ],
+    "lifestyle": [
+      "travel",
+      "busy",
+      "time-efficient",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Frequent travellers who want to undo long flights, drives and hotel beds with no equipment at all.",
+    "howToRun": [
+      "On arrival and each morning of the trip.",
+      "Seated moves can be done on the plane or in the car (as a passenger).",
+      "Hold standing stretches 30 seconds; keep moving between them.",
+      "Long-haul flight? Do the ankle and calf moves every hour as well."
+    ],
+    "description": "Seated ankle pumps and twists, then standing hip-flexor, hamstring, chest and spine moves in a hotel room.",
+    "exercises": [
+      {
+        "name": "Seated Ankle Pumps",
+        "sets": 1,
+        "reps": "20"
+      },
+      {
+        "name": "Seated Knee Lifts",
+        "sets": 1,
+        "reps": "10/side"
+      },
+      {
+        "name": "Seated Twist",
+        "sets": 1,
+        "reps": "20s/side"
+      },
+      {
+        "name": "Standing Hip Flexor Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Standing Hamstring Stretch (heel on bed edge)",
+        "sets": 1,
+        "reps": "30s/side"
+      },
+      {
+        "name": "Doorway Chest Stretch",
+        "sets": 1,
+        "reps": "30s"
+      },
+      {
+        "name": "Standing Cat-Cow (hands on thighs)",
+        "sets": 1,
+        "reps": "8"
+      },
+      {
+        "name": "Deep Squat Hold (hold door frame)",
+        "sets": 1,
+        "reps": "30s"
+      },
+      {
+        "name": "Wall Calf Stretch",
+        "sets": 1,
+        "reps": "30s/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "x-mb-livelighter-office-worker-routine",
+      "x-mb-nhs-sitting-exercises",
+      "x-mb-nhs-stretch-after-exercising"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-yin-long-holds-45",
+    "name": "Somax Yin-Style Long Holds 45",
+    "category": "other",
+    "level": "intermediate",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 45,
+    "equipment": [
+      "mat",
+      "bolster or pillows",
+      "yoga blocks"
+    ],
+    "lifestyle": [
+      "home"
+    ],
+    "whoItsFor": "People who want deep, quiet flexibility work with long passive holds, on rest days or evenings.",
+    "howToRun": [
+      "Once or twice a week, ideally in the evening and not right before hard training.",
+      "Hold each shape 3-4 minutes at a gentle stretch, using props so you can stay relaxed.",
+      "Come out slowly and pause between poses.",
+      "Hypermobile joints? Keep holds shorter and avoid hanging at end range."
+    ],
+    "description": "Long-held floor poses for hips, spine and legs: butterfly, dragon, sphinx, caterpillar, twisted roots, shoelace and savasana.",
+    "exercises": [
+      {
+        "name": "Butterfly",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Dragon (low lunge)",
+        "sets": 1,
+        "reps": "3 min/side"
+      },
+      {
+        "name": "Sphinx",
+        "sets": 1,
+        "reps": "3 min"
+      },
+      {
+        "name": "Caterpillar (seated forward fold)",
+        "sets": 1,
+        "reps": "4 min"
+      },
+      {
+        "name": "Shoelace or Figure-4",
+        "sets": 1,
+        "reps": "3 min/side"
+      },
+      {
+        "name": "Twisted Roots (supine twist)",
+        "sets": 1,
+        "reps": "3 min/side"
+      },
+      {
+        "name": "Savasana",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow",
+      "x-mb-emory-ten-stretches-as-you-age"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-power-vinyasa-45",
+    "name": "Somax Power Vinyasa 45",
+    "category": "other",
+    "level": "advanced",
+    "sport": "yoga-mobility",
+    "goals": [
+      "strength",
+      "mobility",
+      "endurance"
+    ],
+    "duration": "45 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 45,
+    "equipment": [
+      "mat",
+      "yoga blocks"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment"
+    ],
+    "whoItsFor": "Experienced yoga practitioners who want a vigorous, heat-building flow with arm balances and strong standing work.",
+    "howToRun": [
+      "Two or three times a week; not on the same day as heavy lower-body lifting.",
+      "Continuous breath-led flow - aim to rest only in down dog.",
+      "Arm balances are optional; build them on the Arm Balance & Inversion Prep day first.",
+      "Hydrate and finish with a full savasana."
+    ],
+    "description": "Sun Salutation B rounds, a long standing sequence with half moon and revolved poses, crow pose, wheel and a cool-down.",
+    "exercises": [
+      {
+        "name": "Sun Salutation A",
+        "sets": 3,
+        "reps": "1 round"
+      },
+      {
+        "name": "Sun Salutation B",
+        "sets": 5,
+        "reps": "1 round"
+      },
+      {
+        "name": "Warrior 2 to Reverse Warrior flow",
+        "sets": 2,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Half Moon",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Revolved Triangle",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Revolved Chair",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Crow Pose",
+        "sets": 3,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Side Plank with top-leg lift",
+        "sets": 1,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Wheel or Bridge",
+        "sets": 3,
+        "reps": "5 breaths"
+      },
+      {
+        "name": "Seated Forward Fold",
+        "sets": 1,
+        "reps": "10 breaths"
+      },
+      {
+        "name": "Savasana",
+        "sets": 1,
+        "reps": "5 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-arm-balance-inversion-prep-30",
+    "name": "Somax Arm Balance & Inversion Prep",
+    "category": "other",
+    "level": "advanced",
+    "sport": "yoga-mobility",
+    "goals": [
+      "strength",
+      "mobility"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 2,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat",
+      "yoga blocks",
+      "wall"
+    ],
+    "lifestyle": [
+      "home"
+    ],
+    "whoItsFor": "Strong yoga practitioners who want a structured path to crow, side crow, forearm stand and handstand against a wall.",
+    "howToRun": [
+      "Twice a week, fresh, at the start of a practice.",
+      "Wrist warm-ups every time; stop if wrists ache.",
+      "Wall work only until you can hold the wall drills for 30 seconds with control.",
+      "Not for anyone with uncontrolled high blood pressure, glaucoma or recent neck or shoulder injury."
+    ],
+    "description": "Wrist prep, hollow body and pike compressions, crow and side-crow drills, dolphin and wall walks for inversions.",
+    "exercises": [
+      {
+        "name": "Wrist Warm-up Circuit",
+        "sets": 1,
+        "reps": "2 min"
+      },
+      {
+        "name": "Hollow Body Hold",
+        "sets": 3,
+        "reps": "20s"
+      },
+      {
+        "name": "Seated Pike Compression Lifts",
+        "sets": 3,
+        "reps": "8"
+      },
+      {
+        "name": "Crow Pose (blocks under feet)",
+        "sets": 4,
+        "reps": "10s"
+      },
+      {
+        "name": "Side Crow Prep (twisted squat)",
+        "sets": 2,
+        "reps": "5 breaths/side"
+      },
+      {
+        "name": "Dolphin Pose with walk-ins",
+        "sets": 3,
+        "reps": "6 breaths"
+      },
+      {
+        "name": "Wall Walk",
+        "sets": 3,
+        "reps": "3"
+      },
+      {
+        "name": "Chest-to-wall Handstand Hold",
+        "sets": 3,
+        "reps": "15-30s"
+      },
+      {
+        "name": "Child's Pose",
+        "sets": 1,
+        "reps": "1 min"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow"
+    ]
+  },
+  {
+    "id": "x-mb-somax-yoga-advanced-mobility-cars-30",
+    "name": "Somax Advanced Joint Control (CARs & End-Range)",
+    "category": "other",
+    "level": "advanced",
+    "sport": "yoga-mobility",
+    "goals": [
+      "mobility",
+      "strength"
+    ],
+    "duration": "30 min",
+    "daysPerWeek": 3,
+    "sessionMinutes": 30,
+    "equipment": [
+      "mat",
+      "yoga blocks",
+      "light dumbbells"
+    ],
+    "lifestyle": [
+      "home",
+      "minimal-equipment",
+      "full-gym"
+    ],
+    "whoItsFor": "Experienced trainees who already stretch regularly and want to own their end range with strength - complementing the Somax Deep Flexibility Flow.",
+    "howToRun": [
+      "Three times a week, at least one day apart.",
+      "CARs: the slowest, biggest circle you can make with zero compensation elsewhere.",
+      "End-range lifts: 5-second holds; if the limb can't lift, keep the isometric effort.",
+      "Pair with Somax Deep Flexibility Flow on alternate days for passive range."
+    ],
+    "description": "Controlled articular rotations for spine, hips and shoulders, end-range lift-offs, Cossack and Jefferson curls and loaded pigeon.",
+    "exercises": [
+      {
+        "name": "Spine CARs (cat-cow segmental)",
+        "sets": 1,
+        "reps": "3 slow"
+      },
+      {
+        "name": "Hip CARs (quadruped)",
+        "sets": 2,
+        "reps": "3 each way/side"
+      },
+      {
+        "name": "Shoulder CARs (standing)",
+        "sets": 2,
+        "reps": "3 each way/side"
+      },
+      {
+        "name": "90/90 Hip Lift-offs (5s hold)",
+        "sets": 3,
+        "reps": "5/side"
+      },
+      {
+        "name": "Seated Pancake Leg Lifts",
+        "sets": 3,
+        "reps": "8/side"
+      },
+      {
+        "name": "Cossack Squat",
+        "sets": 3,
+        "reps": "6/side",
+        "weight": "light"
+      },
+      {
+        "name": "Jefferson Curl",
+        "sets": 3,
+        "reps": "6",
+        "weight": "2-8kg"
+      },
+      {
+        "name": "Prone Y-T-W",
+        "sets": 2,
+        "reps": "6 each"
+      },
+      {
+        "name": "Pigeon with active lifts",
+        "sets": 2,
+        "reps": "6/side"
+      }
+    ],
+    "credit": "Somax",
+    "sourceUrl": "",
+    "sourceNote": "Original Somax program.",
+    "verified": false,
+    "basedOn": [
+      "sun-salutation-flow",
+      "x-mb-emory-ten-stretches-as-you-age"
+    ]
+  }
+]

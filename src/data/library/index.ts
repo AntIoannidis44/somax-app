@@ -7,6 +7,11 @@ import somaxMeals from './somax-meals.json';
 // AFL: credited public programs (FootyFirst, Prep to Play, Rob Jackson / Play AFL,
 // Musashi) plus Somax originals built on them - scripts/program-library/tools/gen_afl_programs.py.
 import aflPrograms from './afl-programs.json';
+// Expansion (Nov 2026): six research groups - credited public programs plus
+// Somax originals built from them. scripts/program-library/expansion + tools.
+const expansion = import.meta.glob<RawProgram[]>('./expansion/*.json', { eager: true, import: 'default' });
+// More meals: credited public-domain recipes and Somax originals (scripts/program-library/meals).
+const mealExpansion = import.meta.glob<RawMeal[]>('./meals/*.json', { eager: true, import: 'default' });
 
 // Curated library content, bundled with the app (this module is only
 // loaded the first time the Library opens - see loadCurated() in lib/library.ts).
@@ -123,6 +128,27 @@ function fromRawProgram(r: RawProgram, source: 'somax' | 'credited'): LibraryPro
   };
 }
 
+// Diet tags are only kept if the ingredients back them up - a guard over
+// every meal (any source, any future batch), because a coeliac or vegan
+// trusting a wrong tag is a real harm. Conservative on purpose: an
+// ingredient only escapes a rule if it names the safe version.
+const GLUTEN_RISK = /\b(oats?|oat milk|porridge|muesli|granola|wheat|flour|bread|breadcrumbs?|panko|roll|wrap|pita|tortilla|naan|bagel|crumpet|muffin|pasta|spaghetti|penne|fettuccine|macaroni|lasagne|couscous|bulgur|barley|freekeh|semolina|noodles?|soy sauce|stock|gravy|cereal|weet-?bix|crackers?|biscuits?|beer|malt|seitan|whey|protein powder|teriyaki|hoisin|oyster sauce|worcestershire)\b/;
+const GLUTEN_SAFE = /gluten[- ]free|\bgf\b|tamari|rice noodles?|rice paper|corn tortillas?|100% corn|rice crackers?|buckwheat/;
+const ANIMAL = /\b(chicken|beef|lamb|pork|turkey|bacon|ham|prosciutto|salami|mince|steak|fish|salmon|tuna|cod|prawns?|shrimp|sardines?|mackerel|anchov|egg|eggs|milk|yoghurt|yogurt|cheese|feta|ricotta|parmesan|butter|cream|whey|honey|gelatine?|mayonnaise|kefir|ghee|fish sauce|oyster sauce)\b/;
+const MEAT = /\b(chicken|beef|lamb|pork|turkey|bacon|ham|prosciutto|salami|mince|steak|fish|salmon|tuna|cod|prawns?|shrimp|sardines?|mackerel|anchov|gelatine?|fish sauce|oyster sauce|parmesan|pesto)\b/;
+const PLANT_ALT = /\b(soy|soya|oat|almond|coconut|rice|plant|vegan|pea|cashew)\s+(milk|yoghurt|yogurt|cheese|protein|cream|butter|mince)\b|vegetarian rennet|vegan|egg-?free|dairy-?free|peanut butter|nut butter|coconut cream/;
+
+function checkedDiet(diet: string[], ingredients: { name: string }[]): string[] {
+  const names = ingredients.map((i) => i.name.toLowerCase());
+  const risky = (re: RegExp, safe?: RegExp) => names.some((n) => re.test(n) && !(safe && safe.test(n)));
+  return diet.filter((d) => {
+    if (d === 'gluten-free') return !risky(GLUTEN_RISK, GLUTEN_SAFE);
+    if (d === 'vegan') return !risky(ANIMAL, PLANT_ALT);
+    if (d === 'vegetarian') return !risky(MEAT, /vegetarian|vegan|plant/);
+    return true;
+  });
+}
+
 function fromRawMeal(r: RawMeal, source: 'somax' | 'credited'): LibraryMeal {
   return {
     id: `${source}-${r.id}`,
@@ -131,7 +157,7 @@ function fromRawMeal(r: RawMeal, source: 'somax' | 'credited'): LibraryMeal {
     level: r.level,
     sport: null,
     goals: r.goals ?? [],
-    tags: r.diet ?? [],
+    tags: checkedDiet(r.diet ?? [], r.ingredients ?? []),
     category: r.mealType,
     duration: r.prepMinutes ? `${r.prepMinutes} min` : null,
     description: r.description,
@@ -159,9 +185,15 @@ export const CURATED_PROGRAMS: LibraryProgram[] = [
   ...(somaxPrograms as RawProgram[]).map((r) => fromRawProgram(r, 'somax')),
   ...(sourcedPrograms as RawProgram[]).map((r) => fromRawProgram(r, 'credited')),
   ...(aflPrograms as RawProgram[]).map((r) => fromRawProgram(r, r.credit === 'Somax' ? 'somax' : 'credited')),
+  ...Object.keys(expansion)
+    .sort()
+    .flatMap((k) => expansion[k].map((r) => fromRawProgram(r, r.credit === 'Somax' ? 'somax' : 'credited'))),
 ];
 
 export const CURATED_MEALS: LibraryMeal[] = [
   ...(somaxMeals as RawMeal[]).map((r) => fromRawMeal(r, 'somax')),
   ...(sourcedMeals as RawMeal[]).map((r) => fromRawMeal(r, 'credited')),
+  ...Object.keys(mealExpansion)
+    .sort()
+    .flatMap((k) => mealExpansion[k].map((r) => fromRawMeal(r, r.credit === 'Somax' ? 'somax' : 'credited'))),
 ];

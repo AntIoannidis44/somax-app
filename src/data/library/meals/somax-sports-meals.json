@@ -1,0 +1,6022 @@
+[
+ {
+  "id": "somax-sn-berry-crunch-biscuit-bowl",
+  "name": "Somax Berry Crunch Breakfast Bowl",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 396,
+  "proteinG": 28.4,
+  "carbsG": 62.3,
+  "fatG": 1.4,
+  "ingredients": [
+   {
+    "name": "wholegrain wheat breakfast biscuits (3)",
+    "amount": "45g"
+   },
+   {
+    "name": "skim milk",
+    "amount": "200ml"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "150g"
+   },
+   {
+    "name": "frozen mixed berries",
+    "amount": "100g"
+   },
+   {
+    "name": "honey",
+    "amount": "10g"
+   }
+  ],
+  "steps": [
+   "Crumble the wheat biscuits into a wide bowl.",
+   "Spoon the yoghurt down one side and pour the milk around it.",
+   "Scatter over the berries (straight from frozen is fine) and drizzle with honey."
+  ],
+  "description": "A crunchy, creamy bowl that lands ~30 g protein and plenty of easy carbs with zero cooking.",
+  "whoItsFor": "Morning trainers: eat it 1.5-2 hours before a session, or straight after an early one with a piece of fruit.",
+  "tips": [
+   "Light serve: use 2 biscuits and skip the honey - ~312 kcal, 26g protein, 44g carbs.",
+   "Frozen berries thaw into the yoghurt in 5 minutes and make a built-in sauce."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-smoky-bean-egg-wrap",
+  "name": "Somax Smoky Bean & Egg Breakfast Wrap",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 10,
+  "servings": 1,
+  "kcal": 518,
+  "proteinG": 36.5,
+  "carbsG": 47.1,
+  "fatG": 17.4,
+  "ingredients": [
+   {
+    "name": "wholemeal wrap (1 large)",
+    "amount": "65g"
+   },
+   {
+    "name": "eggs (2 large)",
+    "amount": "100g"
+   },
+   {
+    "name": "liquid egg whites",
+    "amount": "60ml"
+   },
+   {
+    "name": "canned black beans (drained)",
+    "amount": "80g"
+   },
+   {
+    "name": "tomato salsa (jar)",
+    "amount": "30g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "30g"
+   },
+   {
+    "name": "light tasty cheese (vegetarian rennet)",
+    "amount": "15g"
+   },
+   {
+    "name": "smoked paprika",
+    "amount": "1g"
+   }
+  ],
+  "steps": [
+   "Whisk the eggs, egg whites and smoked paprika.",
+   "Warm the black beans in a non-stick pan, push to one side and scramble the eggs alongside.",
+   "Lay spinach on the wrap, pile on beans and eggs, top with salsa and cheese.",
+   "Roll tightly and toast seam-side down for 1 minute."
+  ],
+  "description": "A hand-held hot breakfast with ~35 g protein from eggs and beans.",
+  "whoItsFor": "Lifters training later in the day: eat it 3+ hours before the gym or as the first meal after a morning session.",
+  "tips": [
+   "Light serve: use a small (40 g) wrap and halve the beans - ~396 kcal, 31g protein, 29g carbs.",
+   "Make 3 and freeze in foil; reheat from frozen in a sandwich press for 6-7 minutes."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-choc-banana-overnight-jar",
+  "name": "Somax Choc-Banana Overnight Oat Jar",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 535,
+  "proteinG": 36.5,
+  "carbsG": 62.2,
+  "fatG": 13.9,
+  "ingredients": [
+   {
+    "name": "rolled oats",
+    "amount": "50g"
+   },
+   {
+    "name": "calcium-fortified soy milk",
+    "amount": "200ml"
+   },
+   {
+    "name": "vanilla pea protein powder",
+    "amount": "25g"
+   },
+   {
+    "name": "cocoa powder",
+    "amount": "6g"
+   },
+   {
+    "name": "banana (1 small)",
+    "amount": "100g"
+   },
+   {
+    "name": "chia seeds",
+    "amount": "8g"
+   }
+  ],
+  "steps": [
+   "Mash half the banana in a jar.",
+   "Stir in oats, soy milk, pea protein, cocoa and chia until smooth.",
+   "Refrigerate overnight; slice the rest of the banana on top before eating."
+  ],
+  "description": "A dairy-free chocolate oat jar with ~32 g plant protein.",
+  "whoItsFor": "Early sessions and plant-based eaters: grab it 60-90 minutes before training or eat it on the commute after.",
+  "tips": [
+   "Light serve: halve the oats and banana - ~397 kcal, 33g protein, 37g carbs.",
+   "Line up 3 jars on Sunday night; they keep 3 days in the fridge."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-tofu-scramble-sourdough",
+  "name": "Somax Golden Tofu Scramble on Sourdough",
+  "mealType": "breakfast",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 15,
+  "servings": 1,
+  "kcal": 505,
+  "proteinG": 34.9,
+  "carbsG": 45.0,
+  "fatG": 19.6,
+  "ingredients": [
+   {
+    "name": "firm tofu",
+    "amount": "180g"
+   },
+   {
+    "name": "sourdough bread (2 slices)",
+    "amount": "80g"
+   },
+   {
+    "name": "mushrooms",
+    "amount": "70g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "40g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "80g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   },
+   {
+    "name": "ground turmeric & cumin",
+    "amount": "2g"
+   }
+  ],
+  "steps": [
+   "Brown the mushrooms in the oil over high heat for 3 minutes.",
+   "Crumble in the tofu with turmeric, cumin and a pinch of salt; cook 4 minutes until golden.",
+   "Fold through spinach and halved tomatoes until just wilted.",
+   "Pile onto toasted sourdough."
+  ],
+  "description": "A turmeric-gold vegan scramble that eats like a café brekkie.",
+  "whoItsFor": "Plant-based athletes: a big recovery breakfast within 1-2 hours of morning training.",
+  "tips": [
+   "Light serve: use 1 slice of sourdough - ~405 kcal, 31g protein, 26g carbs.",
+   "Press the tofu between paper towel for 5 minutes first - it browns rather than steams."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-smoked-salmon-bagel",
+  "name": "Somax Smoked Salmon & Whipped Cottage Bagel",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 401,
+  "proteinG": 32.7,
+  "carbsG": 48.1,
+  "fatG": 8.0,
+  "ingredients": [
+   {
+    "name": "plain bagel (1)",
+    "amount": "90g"
+   },
+   {
+    "name": "reduced-fat cottage cheese",
+    "amount": "80g"
+   },
+   {
+    "name": "smoked salmon",
+    "amount": "60g"
+   },
+   {
+    "name": "rocket",
+    "amount": "15g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "5ml"
+   },
+   {
+    "name": "capers",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Blitz or whisk the cottage cheese with lemon juice until smooth.",
+   "Toast the bagel halves.",
+   "Spread with whipped cottage, top with salmon, capers and rocket; finish with black pepper."
+  ],
+  "description": "Deli-style bagel with ~33 g protein and omega-3s.",
+  "whoItsFor": "Anyone after a filling post-training breakfast within 1-2 hours of a morning session.",
+  "tips": [
+   "Light serve: use half the bagel (one side) - ~284 kcal, 28g protein, 26g carbs.",
+   "Whipped cottage cheese is a high-protein swap for cream cheese at a fraction of the fat."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-mango-lassi-bowl",
+  "name": "Somax Mango Lassi Yoghurt Bowl",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 380,
+  "proteinG": 25.3,
+  "carbsG": 59.8,
+  "fatG": 3.9,
+  "ingredients": [
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "200g"
+   },
+   {
+    "name": "mango (fresh or frozen)",
+    "amount": "150g"
+   },
+   {
+    "name": "untoasted muesli",
+    "amount": "40g"
+   },
+   {
+    "name": "honey",
+    "amount": "8g"
+   },
+   {
+    "name": "ground cardamom",
+    "amount": "0.5g"
+   }
+  ],
+  "steps": [
+   "Blend half the mango with the yoghurt and cardamom until smooth.",
+   "Pour into a bowl and top with the remaining diced mango and muesli.",
+   "Drizzle with honey."
+  ],
+  "description": "All the flavour of a mango lassi as a spoonable bowl, ~25 g protein.",
+  "whoItsFor": "Morning runners and riders: 1-2 hours before an easy session, or as a cool recovery breakfast in summer.",
+  "tips": [
+   "Light serve: halve the mango and muesli - ~263 kcal, 23g protein, 37g carbs.",
+   "Frozen mango makes it thick like soft-serve."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-apple-cinnamon-baked-oats",
+  "name": "Somax Apple-Cinnamon Baked Oat Slice",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 40,
+  "servings": 4,
+  "kcal": 426,
+  "proteinG": 28.4,
+  "carbsG": 59.5,
+  "fatG": 7.8,
+  "ingredients": [
+   {
+    "name": "rolled oats",
+    "amount": "240g"
+   },
+   {
+    "name": "eggs (2 large)",
+    "amount": "100g"
+   },
+   {
+    "name": "skim milk",
+    "amount": "500ml"
+   },
+   {
+    "name": "apples (2, grated)",
+    "amount": "300g"
+   },
+   {
+    "name": "vanilla whey protein isolate",
+    "amount": "60g"
+   },
+   {
+    "name": "pure maple syrup",
+    "amount": "40g"
+   },
+   {
+    "name": "cinnamon",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Heat oven to 180C and line a 20 cm square tin.",
+   "Whisk eggs, milk, whey, maple and cinnamon; stir in oats and grated apple.",
+   "Pour into the tin and bake 30-35 minutes until set and golden.",
+   "Cool and cut into 4 big squares."
+  ],
+  "description": "A make-ahead breakfast slice: one square is ~29 g protein and 70 g carbs.",
+  "whoItsFor": "Busy athletes: reheat a square 2 hours before training, or eat it cold after a morning session.",
+  "tips": [
+   "Light serve: half a square with a piece of fruit - ~213 kcal, 14g protein, 30g carbs.",
+   "Keeps 4 days in the fridge or freeze squares individually."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-polenta-berry-porridge",
+  "name": "Somax Creamy Polenta Berry Porridge",
+  "mealType": "breakfast",
+  "level": "intermediate",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 10,
+  "servings": 1,
+  "kcal": 476,
+  "proteinG": 27.3,
+  "carbsG": 76.9,
+  "fatG": 5.6,
+  "ingredients": [
+   {
+    "name": "instant polenta (dry)",
+    "amount": "50g"
+   },
+   {
+    "name": "reduced-fat milk",
+    "amount": "300ml"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "120g"
+   },
+   {
+    "name": "blueberries",
+    "amount": "100g"
+   },
+   {
+    "name": "pure maple syrup",
+    "amount": "10g"
+   },
+   {
+    "name": "vanilla & cinnamon",
+    "amount": "1g"
+   }
+  ],
+  "steps": [
+   "Bring the milk to a simmer and whisk in the polenta.",
+   "Stir for 3-4 minutes until thick and creamy; add vanilla and cinnamon.",
+   "Top with Greek yoghurt, blueberries and maple."
+  ],
+  "description": "A gluten-free alternative to oats - silky, warm and carb-rich.",
+  "whoItsFor": "Gluten-free athletes: eat 2 hours before training or a morning race for steady, low-fibre fuel.",
+  "tips": [
+   "Light serve: halve the polenta - ~386 kcal, 25g protein, 58g carbs.",
+   "Polenta thickens more as it sits - loosen with a splash of milk."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-quinoa-banana-breakfast-pot",
+  "name": "Somax Vegan Quinoa Banana Breakfast Pot",
+  "mealType": "breakfast",
+  "level": "intermediate",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 547,
+  "proteinG": 35.3,
+  "carbsG": 62.4,
+  "fatG": 15.5,
+  "ingredients": [
+   {
+    "name": "quinoa (dry)",
+    "amount": "50g"
+   },
+   {
+    "name": "calcium-fortified soy milk",
+    "amount": "250ml"
+   },
+   {
+    "name": "banana",
+    "amount": "100g"
+   },
+   {
+    "name": "vanilla pea protein powder",
+    "amount": "20g"
+   },
+   {
+    "name": "pepitas",
+    "amount": "10g"
+   },
+   {
+    "name": "cinnamon",
+    "amount": "1g"
+   }
+  ],
+  "steps": [
+   "Rinse quinoa, then simmer in the soy milk with cinnamon for 15 minutes until tender.",
+   "Stir in pea protein off the heat (add a splash of water if thick).",
+   "Top with sliced banana and pepitas."
+  ],
+  "description": "Warm, nutty and fully plant-based with ~32 g protein.",
+  "whoItsFor": "Vegan athletes: a recovery breakfast within 1-2 hours of training, or 2-3 hours before.",
+  "tips": [
+   "Light serve: halve the quinoa and banana - ~410 kcal, 31g protein, 38g carbs.",
+   "Cook a triple batch of quinoa in milk and reheat portions all week."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-egg-potato-hash",
+  "name": "Somax Egg & Crispy Potato Breakfast Hash",
+  "mealType": "breakfast",
+  "level": "intermediate",
+  "goals": [
+   "strength",
+   "muscle"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 540,
+  "proteinG": 34.8,
+  "carbsG": 45.7,
+  "fatG": 22.1,
+  "ingredients": [
+   {
+    "name": "potatoes",
+    "amount": "250g"
+   },
+   {
+    "name": "eggs (3 large)",
+    "amount": "150g"
+   },
+   {
+    "name": "liquid egg whites",
+    "amount": "80ml"
+   },
+   {
+    "name": "red capsicum",
+    "amount": "80g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "40g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "15g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "7g"
+   }
+  ],
+  "steps": [
+   "Dice potatoes into 1.5 cm cubes and microwave 4 minutes to par-cook.",
+   "Fry in the oil with capsicum until crisp, 8-10 minutes.",
+   "Stir in spinach and spring onion, make wells and crack in the eggs; pour the whites around.",
+   "Cover and cook 3-4 minutes until the eggs are set."
+  ],
+  "description": "A one-pan hash with real crunch, gluten-free and dairy-free.",
+  "whoItsFor": "Strength athletes: a weekend recovery brunch 1-2 hours after a heavy session.",
+  "tips": [
+   "Light serve: halve the potato - ~444 kcal, 32g protein, 26g carbs.",
+   "Leftover cooked potatoes from dinner make this a 10-minute job."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-race-morning-toast-stack",
+  "name": "Somax Race-Morning Jam & Banana Toast Stack",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 565,
+  "proteinG": 19.1,
+  "carbsG": 105.1,
+  "fatG": 6.5,
+  "ingredients": [
+   {
+    "name": "white bread (3 slices)",
+    "amount": "105g"
+   },
+   {
+    "name": "strawberry jam",
+    "amount": "30g"
+   },
+   {
+    "name": "banana (1 medium)",
+    "amount": "120g"
+   },
+   {
+    "name": "reduced-fat milk (to drink or in coffee)",
+    "amount": "250ml"
+   }
+  ],
+  "steps": [
+   "Toast the bread and spread with jam.",
+   "Slice the banana over the top.",
+   "Have the milk as a drink or a milky coffee."
+  ],
+  "description": "Deliberately low-fibre, low-fat, high-carb fuel (~110 g carbs) that sits light in the stomach.",
+  "whoItsFor": "Race or game mornings: eat 2-3 hours before the start. Practise it on a long training day first.",
+  "tips": [
+   "Light serve: use 1.5 slices of toast, half the jam and half the banana - ~340 kcal, 14g protein, 59g carbs.",
+   "White bread here is intentional - less fibre means fewer gut issues mid-race."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-honey-rice-pudding-pot",
+  "name": "Somax Honey-Cinnamon Rice Pudding Pot",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "gluten-free"
+  ],
+  "prepMinutes": 10,
+  "servings": 1,
+  "kcal": 524,
+  "proteinG": 15.1,
+  "carbsG": 103.6,
+  "fatG": 6.7,
+  "ingredients": [
+   {
+    "name": "cooked white rice",
+    "amount": "200g"
+   },
+   {
+    "name": "reduced-fat milk",
+    "amount": "250ml"
+   },
+   {
+    "name": "honey",
+    "amount": "15g"
+   },
+   {
+    "name": "sultanas",
+    "amount": "20g"
+   },
+   {
+    "name": "cinnamon",
+    "amount": "1g"
+   }
+  ],
+  "steps": [
+   "Simmer the cooked rice in the milk for 6-8 minutes, stirring, until creamy.",
+   "Stir in honey and sultanas; dust with cinnamon.",
+   "Eat warm, or chill in a jar for the next morning."
+  ],
+  "description": "Comforting, gut-friendly carbs (~105 g) from leftover rice.",
+  "whoItsFor": "Endurance athletes: 2-3 hours before a race or long ride, or during a carb-loading day.",
+  "tips": [
+   "Light serve: halve the rice and sultanas - ~344 kcal, 12g protein, 64g carbs.",
+   "Cook extra rice the night before - cold-cooked rice works perfectly."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-english-muffin-egg-stack",
+  "name": "Somax Double Egg English Muffin",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 10,
+  "servings": 1,
+  "kcal": 347,
+  "proteinG": 28.3,
+  "carbsG": 32.6,
+  "fatG": 10.7,
+  "ingredients": [
+   {
+    "name": "English muffin (1)",
+    "amount": "70g"
+   },
+   {
+    "name": "egg (1 large)",
+    "amount": "50g"
+   },
+   {
+    "name": "liquid egg whites",
+    "amount": "80ml"
+   },
+   {
+    "name": "light tasty cheese (vegetarian rennet)",
+    "amount": "20g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "20g"
+   },
+   {
+    "name": "tomato",
+    "amount": "50g"
+   }
+  ],
+  "steps": [
+   "Pour egg whites into a lightly sprayed ring or small pan and cook until set; fry the whole egg alongside.",
+   "Toast the muffin and layer spinach, tomato, egg white, egg and cheese.",
+   "Close and press for 30 seconds so the cheese melts."
+  ],
+  "description": "A drive-thru-style muffin with ~29 g protein and about half the fat.",
+  "whoItsFor": "Anyone needing a quick recovery breakfast within an hour of training.",
+  "tips": [
+   "Light serve: use half the muffin open-face - ~266 kcal, 25g protein, 18g carbs.",
+   "Wrap in baking paper - it travels well to work."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-lemon-herb-chicken-rice",
+  "name": "Somax Lemon-Herb Chicken Rice Bowl",
+  "mealType": "lunch",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 555,
+  "proteinG": 41.4,
+  "carbsG": 77.3,
+  "fatG": 8.2,
+  "ingredients": [
+   {
+    "name": "skinless chicken breast",
+    "amount": "140g"
+   },
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "90g"
+   },
+   {
+    "name": "zucchini",
+    "amount": "100g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "80g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "parsley & oregano",
+    "amount": "10g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Cook the rice.",
+   "Toss chicken with lemon, oregano and half the oil; pan-cook 5-6 minutes each side.",
+   "Char sliced zucchini and tomatoes in the same pan.",
+   "Slice chicken over rice and veg; finish with parsley and extra lemon."
+  ],
+  "description": "Clean, simple and easy to digest - ~37 g protein, ~78 g carbs, low fat.",
+  "whoItsFor": "Eat as lunch 3-4 hours before an afternoon session or game.",
+  "tips": [
+   "Light serve: halve the rice - ~396 kcal, 38g protein, 42g carbs.",
+   "Cook 4 portions of chicken at once for grab-and-go lunches."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-tuna-lemon-penne",
+  "name": "Somax Lemony Tuna, Pea & Rocket Penne",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 15,
+  "servings": 1,
+  "kcal": 596,
+  "proteinG": 42.5,
+  "carbsG": 84.5,
+  "fatG": 8.2,
+  "ingredients": [
+   {
+    "name": "dried pasta",
+    "amount": "100g"
+   },
+   {
+    "name": "canned tuna in springwater (1 can, drained)",
+    "amount": "95g"
+   },
+   {
+    "name": "frozen peas",
+    "amount": "80g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "80g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "rocket",
+    "amount": "30g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   },
+   {
+    "name": "garlic",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Boil pasta; add peas for the last 2 minutes.",
+   "Meanwhile warm garlic and halved tomatoes in the oil.",
+   "Drain pasta and peas, toss with tomatoes, tuna, lemon juice and rocket."
+  ],
+  "description": "A 15-minute pantry pasta with ~40 g protein and ~85 g carbs.",
+  "whoItsFor": "Eat 3-4 hours before an evening session, or as a recovery dinner after one.",
+  "tips": [
+   "Light serve: halve the pasta - ~419 kcal, 36g protein, 49g carbs.",
+   "Add chilli flakes and lemon zest if you have them."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chicken-tomato-gnocchi",
+  "name": "Somax Chicken & Tomato Gnocchi",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 644,
+  "proteinG": 44.0,
+  "carbsG": 90.2,
+  "fatG": 10.2,
+  "ingredients": [
+   {
+    "name": "potato gnocchi (shelf)",
+    "amount": "250g"
+   },
+   {
+    "name": "skinless chicken breast",
+    "amount": "120g"
+   },
+   {
+    "name": "tomato passata",
+    "amount": "150g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "40g"
+   },
+   {
+    "name": "parmesan",
+    "amount": "10g"
+   },
+   {
+    "name": "garlic",
+    "amount": "5g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "4g"
+   }
+  ],
+  "steps": [
+   "Pan-fry diced chicken in the oil until cooked; add garlic for 30 seconds.",
+   "Pour in passata and simmer 5 minutes.",
+   "Boil gnocchi until they float, then toss into the sauce with spinach.",
+   "Finish with parmesan."
+  ],
+  "description": "Soft pillowy gnocchi in a light tomato sauce - ~100 g carbs, low fat.",
+  "whoItsFor": "A pre-game or pre-race dinner the night before, or 3-4 hours ahead of an evening game.",
+  "tips": [
+   "Light serve: use half the gnocchi - ~457 kcal, 40g protein, 50g carbs.",
+   "Shelf gnocchi cooks in 2 minutes - check the label for low fat."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-prawn-rice-noodle-salad",
+  "name": "Somax Prawn & Rice Noodle Herb Salad",
+  "mealType": "lunch",
+  "level": "intermediate",
+  "goals": [
+   "fat-loss",
+   "endurance"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 486,
+  "proteinG": 35.1,
+  "carbsG": 80.7,
+  "fatG": 2.0,
+  "ingredients": [
+   {
+    "name": "dried rice noodles",
+    "amount": "80g"
+   },
+   {
+    "name": "raw peeled prawns",
+    "amount": "150g"
+   },
+   {
+    "name": "cucumber",
+    "amount": "80g"
+   },
+   {
+    "name": "carrot",
+    "amount": "60g"
+   },
+   {
+    "name": "mint & coriander",
+    "amount": "15g"
+   },
+   {
+    "name": "lime juice",
+    "amount": "20ml"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "10ml"
+   },
+   {
+    "name": "honey",
+    "amount": "8g"
+   },
+   {
+    "name": "fresh chilli",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Soak or boil noodles per packet; rinse in cold water.",
+   "Cook prawns in a hot pan 2 minutes each side.",
+   "Shake lime, tamari, honey and chilli into a dressing.",
+   "Toss noodles, ribboned cucumber and carrot, herbs and prawns with the dressing."
+  ],
+  "description": "Fresh, zingy and gluten-free - ~32 g protein with barely any fat.",
+  "whoItsFor": "A light lunch 2-3 hours before afternoon training, or a summer recovery meal.",
+  "tips": [
+   "Light serve: halve the noodles - ~342 kcal, 33g protein, 48g carbs.",
+   "Use cooked prawns to make it a 10-minute desk lunch."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-pumpkin-ricotta-penne",
+  "name": "Somax Roast Pumpkin, Spinach & Ricotta Penne",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian"
+  ],
+  "prepMinutes": 35,
+  "servings": 1,
+  "kcal": 659,
+  "proteinG": 27.4,
+  "carbsG": 95.6,
+  "fatG": 17.4,
+  "ingredients": [
+   {
+    "name": "dried pasta",
+    "amount": "100g"
+   },
+   {
+    "name": "butternut pumpkin",
+    "amount": "200g"
+   },
+   {
+    "name": "light ricotta",
+    "amount": "80g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "40g"
+   },
+   {
+    "name": "pepitas",
+    "amount": "10g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   },
+   {
+    "name": "garlic",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Roast diced pumpkin with the oil at 200C for 25 minutes.",
+   "Cook pasta; reserve a splash of water.",
+   "Mash half the pumpkin with ricotta, garlic and pasta water into a sauce.",
+   "Toss pasta with sauce, remaining pumpkin and spinach; top with pepitas."
+  ],
+  "description": "Sweet roast pumpkin in a creamy ricotta sauce - vegetarian carb fuel.",
+  "whoItsFor": "Vegetarian endurance athletes: the dinner before a long session, or 3-4 hours before an evening one.",
+  "tips": [
+   "Light serve: halve the pasta - ~482 kcal, 21g protein, 60g carbs.",
+   "Roast a whole pumpkin on Sunday and this takes 12 minutes."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-tamari-tofu-pineapple-rice",
+  "name": "Somax Sticky Tamari Tofu & Pineapple Rice Bowl",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 665,
+  "proteinG": 33.7,
+  "carbsG": 93.5,
+  "fatG": 16.6,
+  "ingredients": [
+   {
+    "name": "firm tofu",
+    "amount": "180g"
+   },
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "80g"
+   },
+   {
+    "name": "pineapple",
+    "amount": "100g"
+   },
+   {
+    "name": "red capsicum",
+    "amount": "80g"
+   },
+   {
+    "name": "snow peas",
+    "amount": "60g"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "15ml"
+   },
+   {
+    "name": "pure maple syrup",
+    "amount": "10g"
+   },
+   {
+    "name": "sesame oil",
+    "amount": "3g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "10g"
+   }
+  ],
+  "steps": [
+   "Cook the rice.",
+   "Cube and pat dry the tofu; brown in a non-stick pan with sesame oil.",
+   "Add capsicum, snow peas and pineapple for 3 minutes.",
+   "Pour over tamari and maple and toss until sticky; serve over rice with spring onion."
+  ],
+  "description": "Sweet-salty glazed tofu that's vegan and gluten-free.",
+  "whoItsFor": "Plant-based athletes: dinner 3-4 hours before an evening session or as recovery 1-2 hours after.",
+  "tips": [
+   "Light serve: halve the rice - ~523 kcal, 31g protein, 62g carbs.",
+   "Swap tofu for chicken breast if you're not plant-based."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-cinnamon-fruit-toast-milk",
+  "name": "Somax Cinnamon Fruit Toast & Milk",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 306,
+  "proteinG": 14.4,
+  "carbsG": 55.7,
+  "fatG": 2.8,
+  "ingredients": [
+   {
+    "name": "fruit loaf (2 slices)",
+    "amount": "70g"
+   },
+   {
+    "name": "honey",
+    "amount": "8g"
+   },
+   {
+    "name": "cinnamon",
+    "amount": "0.5g"
+   },
+   {
+    "name": "skim milk",
+    "amount": "250ml"
+   }
+  ],
+  "steps": [
+   "Toast the fruit loaf.",
+   "Drizzle with honey and dust with cinnamon.",
+   "Drink the milk alongside."
+  ],
+  "description": "Hits the snack template: >=10 g protein and >=35 g carbs.",
+  "whoItsFor": "Eat 45-60 minutes before training, or as a recovery snack within 30 minutes after.",
+  "tips": [
+   "Light serve: one slice of toast - ~197 kcal, 12g protein, 34g carbs.",
+   "Iced or warm, the milk counts towards your fluid too."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-banana-date-oat-bars",
+  "name": "Somax Banana-Date Oat Bars",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "muscle"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "dairy-free"
+  ],
+  "prepMinutes": 35,
+  "servings": 8,
+  "kcal": 263,
+  "proteinG": 6.8,
+  "carbsG": 43.6,
+  "fatG": 6.4,
+  "ingredients": [
+   {
+    "name": "rolled oats",
+    "amount": "240g"
+   },
+   {
+    "name": "ripe bananas (3)",
+    "amount": "360g"
+   },
+   {
+    "name": "medjool dates (pitted)",
+    "amount": "120g"
+   },
+   {
+    "name": "natural peanut butter",
+    "amount": "60g"
+   },
+   {
+    "name": "sultanas",
+    "amount": "60g"
+   },
+   {
+    "name": "cinnamon",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Heat oven to 180C and line a slice tin.",
+   "Mash bananas; blitz or finely chop dates.",
+   "Mix bananas, dates, peanut butter, cinnamon, oats and sultanas.",
+   "Press into the tin, bake 25 minutes, cool fully and cut into 8 bars."
+  ],
+  "description": "No-added-sugar fuel bars sweetened with fruit - ~45 g carbs each.",
+  "whoItsFor": "Eat a bar 45-60 minutes before training, or pack them for long rides and tournament days.",
+  "tips": [
+   "Light serve: half a bar - ~132 kcal, 3g protein, 22g carbs.",
+   "Wrap individually and freeze; they thaw in your bag by the session."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-tropical-fruit-yoghurt-dip",
+  "name": "Somax Tropical Fruit Cup & Honey Yoghurt Dip",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "fat-loss"
+  ],
+  "diet": [
+   "vegetarian",
+   "gluten-free"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 234,
+  "proteinG": 12.3,
+  "carbsG": 44.5,
+  "fatG": 1.0,
+  "ingredients": [
+   {
+    "name": "pineapple",
+    "amount": "100g"
+   },
+   {
+    "name": "watermelon",
+    "amount": "150g"
+   },
+   {
+    "name": "kiwifruit (1)",
+    "amount": "80g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "100g"
+   },
+   {
+    "name": "honey",
+    "amount": "10g"
+   }
+  ],
+  "steps": [
+   "Cube the pineapple, watermelon and kiwi.",
+   "Stir honey through the yoghurt.",
+   "Dip fruit into yoghurt."
+  ],
+  "description": "Hydrating, juicy carbs with a protein dip.",
+  "whoItsFor": "Hot-weather sessions: 45-60 minutes before training, or as a cooling recovery snack.",
+  "tips": [
+   "Light serve: skip the pineapple - ~184 kcal, 12g protein, 33g carbs.",
+   "Watermelon is ~90% water - great when you're hot and not hungry."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-orange-coconut-cooler",
+  "name": "Somax Orange-Coconut Electrolyte Cooler",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 2,
+  "servings": 1,
+  "kcal": 152,
+  "proteinG": 3.2,
+  "carbsG": 33.0,
+  "fatG": 0.8,
+  "ingredients": [
+   {
+    "name": "orange juice",
+    "amount": "250ml"
+   },
+   {
+    "name": "coconut water",
+    "amount": "250ml"
+   },
+   {
+    "name": "salt (a small pinch)",
+    "amount": "0.5g"
+   },
+   {
+    "name": "water or ice",
+    "amount": "100ml"
+   }
+  ],
+  "steps": [
+   "Shake everything together in a bottle with ice.",
+   "Sip before and during long sessions."
+  ],
+  "description": "A homemade sports-drink alternative: ~33 g carbs plus a little sodium and potassium.",
+  "whoItsFor": "Sip in the hour before, and during, sessions over 60-90 minutes or in the heat.",
+  "tips": [
+   "Light serve: use half the juice and top up with water - ~100 kcal, 2g protein, 21g carbs.",
+   "Not a recovery meal on its own - add protein afterwards."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-choc-banana-recovery-shake",
+  "name": "Somax Choc-Banana Recovery Shake",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 337,
+  "proteinG": 30.5,
+  "carbsG": 49.8,
+  "fatG": 2.0,
+  "ingredients": [
+   {
+    "name": "skim milk",
+    "amount": "300ml"
+   },
+   {
+    "name": "banana",
+    "amount": "120g"
+   },
+   {
+    "name": "cocoa powder",
+    "amount": "8g"
+   },
+   {
+    "name": "vanilla whey protein isolate",
+    "amount": "20g"
+   },
+   {
+    "name": "honey",
+    "amount": "10g"
+   },
+   {
+    "name": "ice",
+    "amount": "50ml"
+   }
+  ],
+  "steps": [
+   "Add milk first, then everything else, to the blender.",
+   "Blend 30-45 seconds until smooth and frothy; drink straight away."
+  ],
+  "description": "Chocolate-milkshake taste with ~33 g protein and ~50 g carbs.",
+  "whoItsFor": "Drink within 30 minutes after training - ticks refuel, repair and rehydrate in one glass.",
+  "tips": [
+   "Light serve: use half a banana and skip the honey - ~253 kcal, 30g protein, 29g carbs.",
+   "Freeze peeled banana chunks for an extra-thick shake."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-mango-lime-vegan-smoothie",
+  "name": "Somax Mango-Lime Vegan Recovery Smoothie",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 428,
+  "proteinG": 33.5,
+  "carbsG": 48.8,
+  "fatG": 10.9,
+  "ingredients": [
+   {
+    "name": "calcium-fortified soy milk",
+    "amount": "300ml"
+   },
+   {
+    "name": "mango (fresh or frozen)",
+    "amount": "150g"
+   },
+   {
+    "name": "vanilla pea protein powder",
+    "amount": "25g"
+   },
+   {
+    "name": "rolled oats",
+    "amount": "20g"
+   },
+   {
+    "name": "lime juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "ice",
+    "amount": "50ml"
+   }
+  ],
+  "steps": [
+   "Add soy milk first, then the rest, to the blender.",
+   "Blend until thick and smooth; add a splash of water if too thick."
+  ],
+  "description": "A fully plant-based recovery smoothie with ~32 g protein.",
+  "whoItsFor": "Within 30 minutes after training for vegan and dairy-free athletes.",
+  "tips": [
+   "Light serve: halve the mango and skip the oats - ~308 kcal, 30g protein, 26g carbs.",
+   "Frozen mango cheeks are cheaper and blend thicker."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-strawberry-cheesecake-pot",
+  "name": "Somax Strawberry Cheesecake Recovery Pot",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 311,
+  "proteinG": 27.8,
+  "carbsG": 38.4,
+  "fatG": 4.4,
+  "ingredients": [
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "200g"
+   },
+   {
+    "name": "light ricotta",
+    "amount": "50g"
+   },
+   {
+    "name": "strawberries",
+    "amount": "100g"
+   },
+   {
+    "name": "wheat breakfast biscuit (1), crushed",
+    "amount": "15g"
+   },
+   {
+    "name": "honey",
+    "amount": "15g"
+   }
+  ],
+  "steps": [
+   "Whisk yoghurt, ricotta and half the honey until smooth.",
+   "Layer in a jar with sliced strawberries.",
+   "Top with crushed wheat biscuit and the remaining honey."
+  ],
+  "description": "Dessert-style recovery: ~29 g protein and ~37 g carbs.",
+  "whoItsFor": "Within 30 minutes after an evening session, or as a pre-bed snack.",
+  "tips": [
+   "Light serve: skip the honey - ~266 kcal, 28g protein, 26g carbs.",
+   "Make 2 at once; they keep 2 days (add the crumb just before eating)."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chicken-avo-recovery-roll",
+  "name": "Somax Chicken, Avo & Salad Recovery Roll",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 402,
+  "proteinG": 34.0,
+  "carbsG": 37.9,
+  "fatG": 10.8,
+  "ingredients": [
+   {
+    "name": "wholemeal roll (1)",
+    "amount": "80g"
+   },
+   {
+    "name": "cooked skinless chicken breast",
+    "amount": "80g"
+   },
+   {
+    "name": "avocado",
+    "amount": "25g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "20g"
+   },
+   {
+    "name": "tomato",
+    "amount": "50g"
+   }
+  ],
+  "steps": [
+   "Split the roll and smash avocado on both sides.",
+   "Fill with chicken, lettuce and sliced tomato; season with pepper."
+  ],
+  "description": "A sandwich-shop roll that does the recovery job - ~34 g protein.",
+  "whoItsFor": "Within 30 minutes of finishing training when a proper meal is 2+ hours away.",
+  "tips": [
+   "Light serve: use half the roll - ~298 kcal, 30g protein, 20g carbs.",
+   "Use leftover roast chicken or a rinsed BBQ chook breast."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-sweet-chilli-tuna-rice-cup",
+  "name": "Somax Sweet-Chilli Tuna Rice Cup",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "endurance"
+  ],
+  "diet": [
+   "high-protein"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 360,
+  "proteinG": 30.6,
+  "carbsG": 52.4,
+  "fatG": 3.5,
+  "ingredients": [
+   {
+    "name": "microwave rice (half a pouch)",
+    "amount": "125g"
+   },
+   {
+    "name": "canned tuna (1 can, drained)",
+    "amount": "95g"
+   },
+   {
+    "name": "corn kernels (canned or frozen)",
+    "amount": "40g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "20g"
+   },
+   {
+    "name": "sweet chilli sauce",
+    "amount": "10g"
+   }
+  ],
+  "steps": [
+   "Heat the rice for 60 seconds.",
+   "Stir yoghurt and sweet chilli together.",
+   "Top rice with tuna, corn and the sauce."
+  ],
+  "description": "A 3-minute bag-friendly recovery snack: ~30 g protein, ~54 g carbs.",
+  "whoItsFor": "Within 30 minutes after training, especially if you train again within 8 hours.",
+  "tips": [
+   "Light serve: use a quarter pouch of rice - ~267 kcal, 29g protein, 32g carbs.",
+   "Keep a rice pouch and a can of tuna in your locker."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-bean-cheese-toastie",
+  "name": "Somax Baked Bean & Cheese Toastie",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 7,
+  "servings": 1,
+  "kcal": 344,
+  "proteinG": 19.6,
+  "carbsG": 43.8,
+  "fatG": 7.0,
+  "ingredients": [
+   {
+    "name": "wholemeal bread (2 slices)",
+    "amount": "70g"
+   },
+   {
+    "name": "baked beans (half a can)",
+    "amount": "130g"
+   },
+   {
+    "name": "light tasty cheese (vegetarian rennet)",
+    "amount": "20g"
+   }
+  ],
+  "steps": [
+   "Fill bread with beans and cheese.",
+   "Toast in a sandwich press 4-5 minutes until sealed and golden."
+  ],
+  "description": "The cheapest recovery snack in the cupboard - ~20 g protein, ~44 g carbs.",
+  "whoItsFor": "Within 30-60 minutes after training, or as a quick lunch on light days.",
+  "tips": [
+   "Light serve: make it open-face on one slice - ~258 kcal, 16g protein, 29g carbs.",
+   "Let it rest a minute - the beans are lava-hot."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-vanilla-custard-berry-cup",
+  "name": "Somax Vanilla Custard & Berry Protein Cup",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 282,
+  "proteinG": 24.7,
+  "carbsG": 32.1,
+  "fatG": 3.9,
+  "ingredients": [
+   {
+    "name": "reduced-fat custard",
+    "amount": "150g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "100g"
+   },
+   {
+    "name": "vanilla whey protein isolate",
+    "amount": "10g"
+   },
+   {
+    "name": "frozen raspberries",
+    "amount": "80g"
+   }
+  ],
+  "steps": [
+   "Stir the whey into the yoghurt until smooth.",
+   "Layer with custard and raspberries."
+  ],
+  "description": "Tastes like dessert, recovers like a shake.",
+  "whoItsFor": "Within 30 minutes after an evening session or as a pre-bed snack.",
+  "tips": [
+   "Light serve: halve the custard - ~210 kcal, 22g protein, 20g carbs.",
+   "Use custard from the fridge aisle - no cooking needed."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-iced-coffee-protein-shake",
+  "name": "Somax Iced Coffee Protein Shake",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 365,
+  "proteinG": 35.6,
+  "carbsG": 48.8,
+  "fatG": 2.6,
+  "ingredients": [
+   {
+    "name": "skim milk",
+    "amount": "300ml"
+   },
+   {
+    "name": "vanilla whey protein isolate",
+    "amount": "25g"
+   },
+   {
+    "name": "cold brew coffee",
+    "amount": "100ml"
+   },
+   {
+    "name": "banana",
+    "amount": "100g"
+   },
+   {
+    "name": "rolled oats",
+    "amount": "20g"
+   },
+   {
+    "name": "ice",
+    "amount": "50ml"
+   }
+  ],
+  "steps": [
+   "Add milk, cold brew and whey to the blender, then banana, oats and ice.",
+   "Blend until frothy and pour over extra ice."
+  ],
+  "description": "Your coffee fix with ~36 g protein and ~48 g carbs.",
+  "whoItsFor": "Morning lifters: 45-60 minutes before training for a caffeine and carb boost, or as recovery straight after.",
+  "tips": [
+   "Light serve: skip the oats and use half the banana - ~245 kcal, 32g protein, 26g carbs.",
+   "Skip caffeine after 2 pm if it affects your sleep."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-vegan-choc-pb-shake",
+  "name": "Somax Vegan Choc-Peanut Recovery Shake",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 526,
+  "proteinG": 36.1,
+  "carbsG": 55.4,
+  "fatG": 17.2,
+  "ingredients": [
+   {
+    "name": "calcium-fortified soy milk",
+    "amount": "300ml"
+   },
+   {
+    "name": "banana",
+    "amount": "120g"
+   },
+   {
+    "name": "vanilla pea protein powder",
+    "amount": "25g"
+   },
+   {
+    "name": "natural peanut butter",
+    "amount": "15g"
+   },
+   {
+    "name": "cocoa powder",
+    "amount": "5g"
+   },
+   {
+    "name": "medjool dates (pitted)",
+    "amount": "20g"
+   },
+   {
+    "name": "ice",
+    "amount": "50ml"
+   }
+  ],
+  "steps": [
+   "Add soy milk first, then the remaining ingredients.",
+   "Blend until completely smooth."
+  ],
+  "description": "A thick plant-based shake with ~35 g protein - tastes like a choc-peanut bar.",
+  "whoItsFor": "Within 30 minutes after training for vegan athletes; also a good energy-dense extra for muscle gain.",
+  "tips": [
+   "Light serve: skip the dates and use half the banana - ~417 kcal, 35g protein, 30g carbs.",
+   "Soak dates in hot water for 5 minutes if your blender is basic."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-big-mango-carb-shake",
+  "name": "Somax Big Mango-Banana Carb Shake",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 475,
+  "proteinG": 17.0,
+  "carbsG": 95.0,
+  "fatG": 3.7,
+  "ingredients": [
+   {
+    "name": "skim milk",
+    "amount": "300ml"
+   },
+   {
+    "name": "mango (fresh or frozen)",
+    "amount": "150g"
+   },
+   {
+    "name": "banana",
+    "amount": "120g"
+   },
+   {
+    "name": "honey",
+    "amount": "20g"
+   },
+   {
+    "name": "rolled oats",
+    "amount": "30g"
+   }
+  ],
+  "steps": [
+   "Add milk first, then fruit, honey and oats.",
+   "Blend until smooth - add ice for a colder, thicker shake."
+  ],
+  "description": "~95 g carbs in a glass for when you can't face more food.",
+  "whoItsFor": "Carb-loading days, or within 30 minutes after a long session when you train again tomorrow.",
+  "tips": [
+   "Light serve: halve the mango and skip the honey - ~369 kcal, 16g protein, 68g carbs.",
+   "Add 20 g whey if you need it to double as recovery protein."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-kangaroo-sweet-potato-mash",
+  "name": "Somax Kangaroo with Sweet Potato Mash & Charred Greens",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 465,
+  "proteinG": 42.6,
+  "carbsG": 49.7,
+  "fatG": 7.3,
+  "ingredients": [
+   {
+    "name": "kangaroo fillet",
+    "amount": "150g"
+   },
+   {
+    "name": "sweet potato",
+    "amount": "250g"
+   },
+   {
+    "name": "broccoli or broccolini",
+    "amount": "120g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   },
+   {
+    "name": "garlic",
+    "amount": "5g"
+   },
+   {
+    "name": "skim milk",
+    "amount": "30ml"
+   }
+  ],
+  "steps": [
+   "Boil sweet potato chunks 12 minutes; mash with milk, salt and pepper.",
+   "Rub kangaroo with half the oil; sear 2-3 minutes each side (keep it medium-rare) and rest 5 minutes.",
+   "Char broccolini with garlic and the remaining oil.",
+   "Slice kangaroo over mash and greens."
+  ],
+  "description": "Lean, iron-rich Aussie red meat with ~40 g protein and under 10 g fat.",
+  "whoItsFor": "Dinner 1-2 hours after training - especially good for female athletes watching iron.",
+  "tips": [
+   "Light serve: halve the sweet potato - ~357 kcal, 41g protein, 28g carbs.",
+   "Kangaroo is very lean - don't cook past medium or it toughens."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-ginger-beef-hokkien",
+  "name": "Somax Ginger Beef & Hokkien Noodle Toss",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 15,
+  "servings": 1,
+  "kcal": 624,
+  "proteinG": 43.9,
+  "carbsG": 85.4,
+  "fatG": 11.8,
+  "ingredients": [
+   {
+    "name": "trimmed beef rump steak",
+    "amount": "130g"
+   },
+   {
+    "name": "hokkien noodles",
+    "amount": "200g"
+   },
+   {
+    "name": "frozen stir-fry vegetables",
+    "amount": "150g"
+   },
+   {
+    "name": "reduced-salt soy sauce",
+    "amount": "15ml"
+   },
+   {
+    "name": "honey",
+    "amount": "10g"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "8g"
+   },
+   {
+    "name": "garlic",
+    "amount": "5g"
+   },
+   {
+    "name": "sesame oil",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Slice beef thinly across the grain.",
+   "Sear beef in a hot wok with sesame oil for 2 minutes; remove.",
+   "Stir-fry veg with ginger and garlic for 3 minutes; add noodles loosened with hot water.",
+   "Return beef, add soy and honey and toss for 1 minute."
+  ],
+  "description": "Takeaway-style noodles with ~41 g protein and ~85 g carbs.",
+  "whoItsFor": "A recovery dinner within 1-2 hours of training.",
+  "tips": [
+   "Light serve: halve the noodles - ~459 kcal, 39g protein, 52g carbs.",
+   "Freeze the steak for 20 minutes - it slices paper-thin."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-moroccan-chicken-couscous",
+  "name": "Somax Moroccan-Spiced Chicken & Chickpea Couscous",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "endurance"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 606,
+  "proteinG": 47.9,
+  "carbsG": 74.6,
+  "fatG": 10.0,
+  "ingredients": [
+   {
+    "name": "skinless chicken breast",
+    "amount": "130g"
+   },
+   {
+    "name": "couscous (dry)",
+    "amount": "75g"
+   },
+   {
+    "name": "canned chickpeas (drained)",
+    "amount": "80g"
+   },
+   {
+    "name": "zucchini",
+    "amount": "100g"
+   },
+   {
+    "name": "red capsicum",
+    "amount": "80g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "parsley & mint",
+    "amount": "10g"
+   },
+   {
+    "name": "cumin, paprika & cinnamon",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Rub chicken with the spices and half the oil; pan-cook 5-6 minutes each side.",
+   "Pour boiling water over couscous (1:1), cover 5 minutes, fluff.",
+   "Char diced zucchini and capsicum, toss through couscous with chickpeas, lemon and herbs.",
+   "Top with sliced chicken."
+  ],
+  "description": "Warm-spiced, colourful and ~45 g protein.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training; leftovers are a great next-day lunch.",
+  "tips": [
+   "Light serve: halve the couscous - ~471 kcal, 43g protein, 48g carbs.",
+   "Couscous is ready in 5 minutes - the fastest carb in the pantry."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-salmon-poke-bowl",
+  "name": "Somax Salmon & Edamame Poke Bowl",
+  "mealType": "lunch",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 616,
+  "proteinG": 37.9,
+  "carbsG": 71.5,
+  "fatG": 18.1,
+  "ingredients": [
+   {
+    "name": "sashimi-grade salmon",
+    "amount": "110g"
+   },
+   {
+    "name": "sushi rice (dry)",
+    "amount": "80g"
+   },
+   {
+    "name": "frozen shelled edamame",
+    "amount": "60g"
+   },
+   {
+    "name": "cucumber",
+    "amount": "60g"
+   },
+   {
+    "name": "carrot",
+    "amount": "40g"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "10ml"
+   },
+   {
+    "name": "lime juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "nori (shredded)",
+    "amount": "2g"
+   }
+  ],
+  "steps": [
+   "Cook and cool the sushi rice; season with a little rice vinegar if you like.",
+   "Cube salmon and toss with tamari and lime.",
+   "Arrange rice, salmon, edamame, cucumber and carrot in a bowl; top with nori."
+  ],
+  "description": "Fresh, gluten-free and full of omega-3s.",
+  "whoItsFor": "A recovery lunch 1-2 hours after training, or 3+ hours before an afternoon session.",
+  "tips": [
+   "Light serve: halve the rice - ~474 kcal, 35g protein, 40g carbs.",
+   "Use cooked salmon or canned salmon if you can't get sashimi-grade."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-lamb-souvlaki-plate",
+  "name": "Somax Lamb Souvlaki Plate with Tzatziki",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "high-protein"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 487,
+  "proteinG": 43.5,
+  "carbsG": 54.2,
+  "fatG": 9.7,
+  "ingredients": [
+   {
+    "name": "trimmed lamb leg steak",
+    "amount": "130g"
+   },
+   {
+    "name": "pita bread (1 round)",
+    "amount": "80g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "70g"
+   },
+   {
+    "name": "cucumber",
+    "amount": "50g"
+   },
+   {
+    "name": "tomato",
+    "amount": "80g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "30g"
+   },
+   {
+    "name": "red onion",
+    "amount": "20g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "oregano & mint",
+    "amount": "5g"
+   },
+   {
+    "name": "garlic",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Cube lamb, toss with lemon, oregano and garlic; thread onto skewers.",
+   "Grill 8-10 minutes, turning.",
+   "Grate cucumber into the yoghurt with mint for a quick tzatziki.",
+   "Serve with warm pita, tomato, lettuce and onion."
+  ],
+  "description": "Greek takeaway done lean: ~41 g protein and lots of flavour.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training.",
+  "tips": [
+   "Light serve: use half a pita - ~377 kcal, 40g protein, 32g carbs.",
+   "Soak wooden skewers 10 minutes so they don't burn."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chicken-larb-rice-bowl",
+  "name": "Somax Chicken Larb Rice Bowl",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "fat-loss",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 463,
+  "proteinG": 39.5,
+  "carbsG": 62.0,
+  "fatG": 5.3,
+  "ingredients": [
+   {
+    "name": "lean chicken breast mince",
+    "amount": "150g"
+   },
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "70g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "60g"
+   },
+   {
+    "name": "cucumber",
+    "amount": "60g"
+   },
+   {
+    "name": "red onion",
+    "amount": "20g"
+   },
+   {
+    "name": "mint & coriander",
+    "amount": "15g"
+   },
+   {
+    "name": "lime juice",
+    "amount": "20ml"
+   },
+   {
+    "name": "fish sauce",
+    "amount": "10ml"
+   },
+   {
+    "name": "fresh chilli",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Cook the rice.",
+   "Cook chicken mince in a dry non-stick pan, breaking it up, 6-7 minutes.",
+   "Off the heat stir in lime, fish sauce, chilli, red onion and herbs.",
+   "Serve over rice with lettuce and cucumber."
+  ],
+  "description": "Hot-sour-fresh Thai flavours with ~38 g protein and almost no added fat.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training; easily scaled down for fat-loss days.",
+  "tips": [
+   "Light serve: halve the rice - ~339 kcal, 37g protein, 34g carbs.",
+   "Spoon the larb into lettuce cups for a lower-carb serve."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-pork-apple-slaw-potatoes",
+  "name": "Somax Pork Fillet, Apple Slaw & Crushed Potatoes",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 30,
+  "servings": 1,
+  "kcal": 508,
+  "proteinG": 43.7,
+  "carbsG": 56.7,
+  "fatG": 9.9,
+  "ingredients": [
+   {
+    "name": "pork fillet",
+    "amount": "150g"
+   },
+   {
+    "name": "potatoes",
+    "amount": "250g"
+   },
+   {
+    "name": "coleslaw mix (undressed)",
+    "amount": "100g"
+   },
+   {
+    "name": "apple",
+    "amount": "80g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "40g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   },
+   {
+    "name": "sage or thyme",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Boil potatoes 15 minutes, drain and lightly crush.",
+   "Season pork with herbs; sear in the oil then roast at 200C for 12-15 minutes. Rest 5 minutes.",
+   "Toss slaw and matchstick apple with yoghurt and lemon.",
+   "Slice pork and serve with potatoes and slaw."
+  ],
+  "description": "Pork and apple, lightened up - ~40 g protein, gluten-free.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training.",
+  "tips": [
+   "Light serve: halve the potatoes - ~412 kcal, 41g protein, 37g carbs.",
+   "Pork fillet is one of the leanest cuts - cook to just blush pink."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-barra-mango-tacos",
+  "name": "Somax Barramundi Tacos with Mango Salsa",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "fat-loss",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 399,
+  "proteinG": 38.6,
+  "carbsG": 51.0,
+  "fatG": 5.1,
+  "ingredients": [
+   {
+    "name": "barramundi or other white fish fillet",
+    "amount": "150g"
+   },
+   {
+    "name": "corn tortillas (3 small)",
+    "amount": "75g"
+   },
+   {
+    "name": "mango (fresh or frozen)",
+    "amount": "80g"
+   },
+   {
+    "name": "red cabbage (shredded)",
+    "amount": "60g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "40g"
+   },
+   {
+    "name": "lime juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "coriander",
+    "amount": "5g"
+   },
+   {
+    "name": "fresh chilli",
+    "amount": "3g"
+   },
+   {
+    "name": "smoked paprika",
+    "amount": "1g"
+   }
+  ],
+  "steps": [
+   "Dust fish with paprika and cook in a sprayed pan 3 minutes each side.",
+   "Dice mango with chilli, coriander and half the lime.",
+   "Mix yoghurt with remaining lime.",
+   "Warm tortillas and fill with cabbage, flaked fish, salsa and lime yoghurt."
+  ],
+  "description": "Taco night that's gluten-free and around 400 kcal.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training - light enough for fat-loss phases.",
+  "tips": [
+   "Light serve: use 2 tortillas - ~317 kcal, 36g protein, 34g carbs.",
+   "Check the tortilla label says 100% corn for gluten-free."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-tempeh-satay-bowl",
+  "name": "Somax Tempeh Satay Brown Rice Bowl",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 30,
+  "servings": 1,
+  "kcal": 615,
+  "proteinG": 33.8,
+  "carbsG": 78.8,
+  "fatG": 19.4,
+  "ingredients": [
+   {
+    "name": "tempeh",
+    "amount": "100g"
+   },
+   {
+    "name": "brown rice (dry)",
+    "amount": "75g"
+   },
+   {
+    "name": "broccoli or broccolini",
+    "amount": "100g"
+   },
+   {
+    "name": "carrot",
+    "amount": "60g"
+   },
+   {
+    "name": "natural peanut butter",
+    "amount": "12g"
+   },
+   {
+    "name": "reduced-salt soy sauce",
+    "amount": "10ml"
+   },
+   {
+    "name": "lime juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "pure maple syrup",
+    "amount": "5g"
+   },
+   {
+    "name": "water",
+    "amount": "30ml"
+   }
+  ],
+  "steps": [
+   "Cook the brown rice.",
+   "Slice tempeh and pan-fry in a sprayed pan until golden.",
+   "Whisk peanut butter, soy, lime, maple and warm water into a satay sauce.",
+   "Steam broccoli and carrot; assemble and pour over the sauce."
+  ],
+  "description": "Nutty plant-protein bowl with a 2-minute satay.",
+  "whoItsFor": "Vegan recovery dinner 1-2 hours after training.",
+  "tips": [
+   "Light serve: halve the rice - ~480 kcal, 31g protein, 50g carbs.",
+   "Steam tempeh for 5 minutes first to soften its bitterness."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-miso-salmon-udon",
+  "name": "Somax Miso Salmon & Udon Broth Bowl",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "endurance",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 550,
+  "proteinG": 35.2,
+  "carbsG": 60.5,
+  "fatG": 17.6,
+  "ingredients": [
+   {
+    "name": "salmon fillet",
+    "amount": "120g"
+   },
+   {
+    "name": "fresh udon noodles",
+    "amount": "200g"
+   },
+   {
+    "name": "bok choy",
+    "amount": "100g"
+   },
+   {
+    "name": "white miso paste",
+    "amount": "15g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "10g"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "5g"
+   },
+   {
+    "name": "water",
+    "amount": "400ml"
+   }
+  ],
+  "steps": [
+   "Bake or pan-cook salmon 8-10 minutes.",
+   "Simmer water with ginger; whisk in miso off the boil.",
+   "Add udon and bok choy for 2 minutes.",
+   "Ladle into a bowl, top with flaked salmon and spring onion."
+  ],
+  "description": "A warming broth bowl - fluid, sodium, carbs and protein in one.",
+  "whoItsFor": "Recovery dinner after cold or wet sessions; the broth helps you rehydrate.",
+  "tips": [
+   "Light serve: halve the udon - ~420 kcal, 32g protein, 33g carbs.",
+   "Never boil miso - it dulls the flavour."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-roo-bean-chilli",
+  "name": "Somax Kangaroo & Three-Bean Chilli (batch)",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "fat-loss"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 45,
+  "servings": 4,
+  "kcal": 649,
+  "proteinG": 45.9,
+  "carbsG": 90.0,
+  "fatG": 7.1,
+  "ingredients": [
+   {
+    "name": "kangaroo mince",
+    "amount": "500g"
+   },
+   {
+    "name": "canned red kidney beans (drained)",
+    "amount": "240g"
+   },
+   {
+    "name": "canned black beans (drained)",
+    "amount": "240g"
+   },
+   {
+    "name": "canned cannellini beans (drained)",
+    "amount": "160g"
+   },
+   {
+    "name": "canned diced tomatoes (2 cans)",
+    "amount": "800g"
+   },
+   {
+    "name": "brown onion",
+    "amount": "150g"
+   },
+   {
+    "name": "red capsicum",
+    "amount": "150g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "10g"
+   },
+   {
+    "name": "cumin, smoked paprika, chilli & oregano",
+    "amount": "10g"
+   },
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "280g"
+   }
+  ],
+  "steps": [
+   "Soften onion and capsicum in the oil; add spices for 1 minute.",
+   "Brown kangaroo mince.",
+   "Add tomatoes and beans; simmer 25 minutes until thick.",
+   "Cook rice and serve 1 cup chilli over each portion."
+  ],
+  "description": "Lean, fibre-rich chilli that freezes brilliantly - ~46 g protein a serve.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training; freeze portions for the week.",
+  "tips": [
+   "Light serve: halve the rice (or skip it) - ~525 kcal, 43g protein, 62g carbs.",
+   "Freezes for 3 months - label with date and portion."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-gochujang-beef-rice-bowls",
+  "name": "Somax Gochujang Beef Mince Rice Bowls (batch)",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 30,
+  "servings": 4,
+  "kcal": 606,
+  "proteinG": 41.0,
+  "carbsG": 77.0,
+  "fatG": 13.9,
+  "ingredients": [
+   {
+    "name": "lean beef mince (5% fat)",
+    "amount": "500g"
+   },
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "320g"
+   },
+   {
+    "name": "carrot",
+    "amount": "200g"
+   },
+   {
+    "name": "zucchini",
+    "amount": "200g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "120g"
+   },
+   {
+    "name": "gochujang chilli paste",
+    "amount": "40g"
+   },
+   {
+    "name": "reduced-salt soy sauce",
+    "amount": "20ml"
+   },
+   {
+    "name": "honey",
+    "amount": "15g"
+   },
+   {
+    "name": "sesame oil",
+    "amount": "5g"
+   },
+   {
+    "name": "garlic",
+    "amount": "10g"
+   },
+   {
+    "name": "eggs (4, to top)",
+    "amount": "200g"
+   }
+  ],
+  "steps": [
+   "Cook the rice.",
+   "Brown the mince with garlic; stir in gochujang, soy and honey and cook until sticky.",
+   "Stir-fry or steam julienned carrot and zucchini; wilt spinach.",
+   "Divide rice, veg and beef into 4 containers; top each with a fried or boiled egg."
+  ],
+  "description": "Bibimbap-inspired meal prep - ~43 g protein and big flavour.",
+  "whoItsFor": "Recovery dinner or lunch 1-2 hours after training; 4 meals in 30 minutes.",
+  "tips": [
+   "Light serve: halve the rice - ~464 kcal, 38g protein, 45g carbs.",
+   "Keeps 3 days in the fridge; add the egg fresh if you can."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-smoky-chicken-one-pan-rice",
+  "name": "Somax Smoky Chicken One-Pan Rice (batch)",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 40,
+  "servings": 4,
+  "kcal": 562,
+  "proteinG": 34.8,
+  "carbsG": 76.3,
+  "fatG": 12.1,
+  "ingredients": [
+   {
+    "name": "trimmed chicken thigh fillets",
+    "amount": "500g"
+   },
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "300g"
+   },
+   {
+    "name": "frozen peas, corn & carrot",
+    "amount": "400g"
+   },
+   {
+    "name": "reduced-salt chicken stock",
+    "amount": "750ml"
+   },
+   {
+    "name": "brown onion",
+    "amount": "150g"
+   },
+   {
+    "name": "canned diced tomatoes",
+    "amount": "200g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "10g"
+   },
+   {
+    "name": "smoked paprika & garlic powder",
+    "amount": "6g"
+   }
+  ],
+  "steps": [
+   "Brown chicken pieces in the oil with paprika; remove.",
+   "Soften onion, stir in rice to coat.",
+   "Add stock and tomatoes, nestle chicken back in, cover and simmer 18 minutes.",
+   "Stir through frozen veg, cover 5 minutes more."
+  ],
+  "description": "One pan, four dinners, under $5 a serve.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training; also great the night before a long session.",
+  "tips": [
+   "Light serve: halve the rice - ~429 kcal, 32g protein, 47g carbs.",
+   "Thigh is cheaper and stays juicy on reheating."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-aussie-recovery-burger",
+  "name": "Somax Post-Game Aussie Beetroot Burger & Wedges",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "high-protein"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 630,
+  "proteinG": 44.6,
+  "carbsG": 71.3,
+  "fatG": 16.7,
+  "ingredients": [
+   {
+    "name": "lean beef mince (5% fat)",
+    "amount": "140g"
+   },
+   {
+    "name": "burger bun (1)",
+    "amount": "70g"
+   },
+   {
+    "name": "canned sliced beetroot",
+    "amount": "40g"
+   },
+   {
+    "name": "light tasty cheese (vegetarian rennet)",
+    "amount": "15g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "20g"
+   },
+   {
+    "name": "tomato",
+    "amount": "50g"
+   },
+   {
+    "name": "red onion",
+    "amount": "15g"
+   },
+   {
+    "name": "barbecue sauce",
+    "amount": "15g"
+   },
+   {
+    "name": "potato wedges (oven-baked)",
+    "amount": "150g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Toss potato wedges with oil and bake at 220C for 25 minutes.",
+   "Shape mince into a thin patty; grill 3-4 minutes each side, add cheese at the end.",
+   "Toast bun and stack lettuce, tomato, beetroot, onion, patty and BBQ sauce."
+  ],
+  "description": "Proper burger and wedges after a game - ~40 g protein, reasonable fat.",
+  "whoItsFor": "Post-game dinner 1-2 hours after the final siren.",
+  "tips": [
+   "Light serve: skip the wedges - ~488 kcal, 42g protein, 48g carbs.",
+   "Beetroot makes it Aussie - and adds carbs and colour."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-creamy-tomato-chicken-rigatoni",
+  "name": "Somax Creamy Tomato Chicken Rigatoni",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "endurance"
+  ],
+  "diet": [
+   "high-protein"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 792,
+  "proteinG": 54.3,
+  "carbsG": 121.6,
+  "fatG": 8.0,
+  "ingredients": [
+   {
+    "name": "dried pasta",
+    "amount": "150g"
+   },
+   {
+    "name": "skinless chicken breast",
+    "amount": "110g"
+   },
+   {
+    "name": "tomato passata",
+    "amount": "200g"
+   },
+   {
+    "name": "light ricotta",
+    "amount": "50g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "40g"
+   },
+   {
+    "name": "garlic",
+    "amount": "5g"
+   },
+   {
+    "name": "basil",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Cook pasta.",
+   "Cook diced chicken in a sprayed pan, add garlic then passata; simmer 5 minutes.",
+   "Stir ricotta through for creaminess; add spinach to wilt.",
+   "Toss with pasta and basil."
+  ],
+  "description": "~125 g carbs with only ~10 g fat - built for carb loading.",
+  "whoItsFor": "The night before a race or long session, or 3-4 hours before a game.",
+  "tips": [
+   "Light serve: halve the pasta - ~525 kcal, 45g protein, 68g carbs.",
+   "For carb loading eat this alongside extra carb snacks - not extra fat."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chicken-udon-soup",
+  "name": "Somax Race-Eve Chicken Udon Soup",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "endurance"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 586,
+  "proteinG": 43.7,
+  "carbsG": 89.5,
+  "fatG": 3.7,
+  "ingredients": [
+   {
+    "name": "skinless chicken breast",
+    "amount": "120g"
+   },
+   {
+    "name": "fresh udon noodles",
+    "amount": "300g"
+   },
+   {
+    "name": "carrot",
+    "amount": "60g"
+   },
+   {
+    "name": "bok choy",
+    "amount": "80g"
+   },
+   {
+    "name": "reduced-salt chicken stock",
+    "amount": "400ml"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "5g"
+   },
+   {
+    "name": "reduced-salt soy sauce",
+    "amount": "10ml"
+   }
+  ],
+  "steps": [
+   "Simmer stock with ginger; poach chicken in it for 12 minutes, then shred.",
+   "Add carrot ribbons and udon for 3 minutes, then bok choy for 1.",
+   "Return chicken, season with soy."
+  ],
+  "description": "Brothy, salty and gentle on the gut - easy carbs the night before.",
+  "whoItsFor": "Race eve dinner or 3 hours before an evening event.",
+  "tips": [
+   "Light serve: use half the udon - ~392 kcal, 38g protein, 49g carbs.",
+   "The salty broth helps top up sodium before a hot race."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-honey-garlic-chicken-double-rice",
+  "name": "Somax Honey-Garlic Chicken & Double Rice",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "endurance"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 786,
+  "proteinG": 41.9,
+  "carbsG": 145.9,
+  "fatG": 2.9,
+  "ingredients": [
+   {
+    "name": "skinless chicken breast",
+    "amount": "120g"
+   },
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "150g"
+   },
+   {
+    "name": "reduced-salt soy sauce",
+    "amount": "15ml"
+   },
+   {
+    "name": "honey",
+    "amount": "25g"
+   },
+   {
+    "name": "garlic",
+    "amount": "6g"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "4g"
+   },
+   {
+    "name": "green beans",
+    "amount": "80g"
+   }
+  ],
+  "steps": [
+   "Cook the rice.",
+   "Pan-cook sliced chicken until golden.",
+   "Add garlic, ginger, soy and honey; bubble until glossy.",
+   "Steam green beans and serve everything over a big bed of rice."
+  ],
+  "description": "A deliberate carb-load plate: ~145 g carbs and only ~4 g fat.",
+  "whoItsFor": "Carb-loading days 1-2 days before a marathon, triathlon or long race.",
+  "tips": [
+   "Light serve: halve the rice and honey (an everyday serve) - ~481 kcal, 37g protein, 76g carbs.",
+   "Low fat and low fibre on purpose - stick to familiar food before race day."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-gf-beef-pho-bowl",
+  "name": "Somax Gluten-Free Beef Pho-Style Noodle Bowl",
+  "mealType": "dinner",
+  "level": "advanced",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 581,
+  "proteinG": 40.9,
+  "carbsG": 88.5,
+  "fatG": 6.4,
+  "ingredients": [
+   {
+    "name": "trimmed beef rump steak",
+    "amount": "120g"
+   },
+   {
+    "name": "dried rice noodles",
+    "amount": "100g"
+   },
+   {
+    "name": "gluten-free beef stock",
+    "amount": "500ml"
+   },
+   {
+    "name": "bean sprouts",
+    "amount": "50g"
+   },
+   {
+    "name": "bok choy",
+    "amount": "60g"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "10ml"
+   },
+   {
+    "name": "lime juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "Thai basil & coriander",
+    "amount": "10g"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "5g"
+   },
+   {
+    "name": "star anise & cinnamon stick",
+    "amount": "1g"
+   }
+  ],
+  "steps": [
+   "Simmer stock with ginger, star anise and cinnamon for 15 minutes; season with tamari.",
+   "Cook noodles and place in a deep bowl.",
+   "Slice beef paper-thin and lay raw over noodles with bok choy and sprouts.",
+   "Pour boiling broth over to cook the beef; finish with herbs and lime."
+  ],
+  "description": "Aromatic, hydrating and gluten-free with ~110 g carbs.",
+  "whoItsFor": "Endurance athletes: dinner the night before a long session, or a recovery meal after one.",
+  "tips": [
+   "Light serve: halve the noodles - ~401 kcal, 38g protein, 48g carbs.",
+   "The broth cooks the beef - slice it as thin as you can."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-jacket-potato-chilli-beans",
+  "name": "Somax Jacket Potato with Chilli Beans",
+  "mealType": "lunch",
+  "level": "beginner",
+  "goals": [
+   "general-fitness",
+   "muscle"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 15,
+  "servings": 1,
+  "kcal": 514,
+  "proteinG": 29.0,
+  "carbsG": 78.1,
+  "fatG": 4.4,
+  "ingredients": [
+   {
+    "name": "large potato (1)",
+    "amount": "350g"
+   },
+   {
+    "name": "canned red kidney beans (drained)",
+    "amount": "120g"
+   },
+   {
+    "name": "tomato salsa (jar)",
+    "amount": "60g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "80g"
+   },
+   {
+    "name": "light tasty cheese (vegetarian rennet)",
+    "amount": "15g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "10g"
+   }
+  ],
+  "steps": [
+   "Prick potato and microwave 8-10 minutes until soft (or bake 1 hour).",
+   "Warm beans with the salsa.",
+   "Split the potato, pile on beans, yoghurt, cheese and spring onion."
+  ],
+  "description": "Filling vegetarian comfort food for a few dollars.",
+  "whoItsFor": "Lunch or dinner 3-4 hours before training, or recovery 1-2 hours after.",
+  "tips": [
+   "Light serve: use a medium potato (half) - ~379 kcal, 25g protein, 51g carbs.",
+   "Greek yoghurt is a high-protein stand-in for sour cream."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-penne-pesto-chicken-salad",
+  "name": "Somax Pesto Chicken Pasta Salad",
+  "mealType": "lunch",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "endurance"
+  ],
+  "diet": [
+   "high-protein"
+  ],
+  "prepMinutes": 15,
+  "servings": 1,
+  "kcal": 670,
+  "proteinG": 52.5,
+  "carbsG": 76.2,
+  "fatG": 15.2,
+  "ingredients": [
+   {
+    "name": "dried pasta",
+    "amount": "100g"
+   },
+   {
+    "name": "cooked skinless chicken breast",
+    "amount": "120g"
+   },
+   {
+    "name": "basil pesto",
+    "amount": "20g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "100g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "30g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "10ml"
+   }
+  ],
+  "steps": [
+   "Cook pasta and rinse under cold water.",
+   "Toss with pesto and lemon juice.",
+   "Fold through chicken, halved tomatoes and spinach."
+  ],
+  "description": "A lunchbox pasta salad with ~50 g protein.",
+  "whoItsFor": "Lunch 3-4 hours before afternoon training, or a muscle-gain lunch on any day.",
+  "tips": [
+   "Light serve: halve the pasta - ~493 kcal, 46g protein, 41g carbs.",
+   "Make 3 for the week - keeps 3 days."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chicken-rice-paper-rolls",
+  "name": "Somax Chicken Rice Paper Rolls with Lime Dip",
+  "mealType": "lunch",
+  "level": "intermediate",
+  "goals": [
+   "fat-loss",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 425,
+  "proteinG": 37.1,
+  "carbsG": 56.4,
+  "fatG": 4.3,
+  "ingredients": [
+   {
+    "name": "rice paper sheets (4)",
+    "amount": "36g"
+   },
+   {
+    "name": "cooked skinless chicken breast",
+    "amount": "100g"
+   },
+   {
+    "name": "dried rice vermicelli",
+    "amount": "25g"
+   },
+   {
+    "name": "cucumber",
+    "amount": "50g"
+   },
+   {
+    "name": "carrot",
+    "amount": "50g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "30g"
+   },
+   {
+    "name": "mint",
+    "amount": "10g"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "10ml"
+   },
+   {
+    "name": "lime juice",
+    "amount": "15ml"
+   }
+  ],
+  "steps": [
+   "Soak vermicelli in boiling water 4 minutes; drain.",
+   "Dip one rice paper sheet in warm water for a few seconds.",
+   "Fill with lettuce, noodles, chicken, cucumber, carrot and mint; fold and roll tightly.",
+   "Mix tamari and lime for dipping."
+  ],
+  "description": "Fresh, crunchy and gluten-free - ~37 g protein for under 400 kcal.",
+  "whoItsFor": "A light lunch 2-3 hours before training, or a fat-loss-day recovery meal.",
+  "tips": [
+   "Light serve: skip the vermicelli - ~335 kcal, 36g protein, 36g carbs.",
+   "Cover rolls with a damp paper towel so they don't dry out."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-prawn-mango-salad-cups",
+  "name": "Somax Chilli-Lime Prawn & Mango Lettuce Cups",
+  "mealType": "lunch",
+  "level": "intermediate",
+  "goals": [
+   "fat-loss"
+  ],
+  "diet": [
+   "high-protein",
+   "low-carb",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 15,
+  "servings": 1,
+  "kcal": 294,
+  "proteinG": 36.3,
+  "carbsG": 18.5,
+  "fatG": 8.2,
+  "ingredients": [
+   {
+    "name": "raw peeled prawns",
+    "amount": "180g"
+   },
+   {
+    "name": "mango (fresh or frozen)",
+    "amount": "100g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "80g"
+   },
+   {
+    "name": "cucumber",
+    "amount": "60g"
+   },
+   {
+    "name": "avocado",
+    "amount": "30g"
+   },
+   {
+    "name": "lime juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "fresh chilli",
+    "amount": "5g"
+   },
+   {
+    "name": "coriander",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Cook prawns in a hot sprayed pan 2 minutes each side.",
+   "Dice mango, cucumber and avocado; toss with lime, chilli and coriander.",
+   "Spoon prawns and salsa into lettuce cups."
+  ],
+  "description": "Bright and summery, ~35 g protein for ~300 kcal.",
+  "whoItsFor": "Fat-loss phases: lunch on rest or skill days, or 1-2 hours after light training.",
+  "tips": [
+   "Light serve: skip the mango - ~234 kcal, 35g protein, 4g carbs.",
+   "On a hard training day add 1 cup cooked rice."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-greens-feta-egg-bake",
+  "name": "Somax Greens & Feta Egg Bake (batch)",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "fat-loss",
+   "muscle"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein",
+   "low-carb",
+   "gluten-free"
+  ],
+  "prepMinutes": 35,
+  "servings": 4,
+  "kcal": 246,
+  "proteinG": 26.8,
+  "carbsG": 4.2,
+  "fatG": 13.0,
+  "ingredients": [
+   {
+    "name": "eggs (8 large)",
+    "amount": "400g"
+   },
+   {
+    "name": "liquid egg whites",
+    "amount": "300ml"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "120g"
+   },
+   {
+    "name": "zucchini",
+    "amount": "200g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "200g"
+   },
+   {
+    "name": "reduced-fat feta (vegetarian rennet)",
+    "amount": "80g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "20g"
+   }
+  ],
+  "steps": [
+   "Heat oven to 180C and line a baking dish.",
+   "Grate zucchini and squeeze out the moisture.",
+   "Whisk eggs and whites; stir in zucchini, spinach, spring onion and crumbled feta.",
+   "Pour into dish, dot with halved tomatoes and bake 25 minutes. Cut into 4."
+  ],
+  "description": "Grab-and-go egg slices: ~25 g protein and ~4 g carbs each.",
+  "whoItsFor": "Fat-loss and rest days: breakfast or lunch, or add toast 2-3 hours before training.",
+  "tips": [
+   "Light serve: already light - pair with 1 slice of toast on training days (as written ~246 kcal, 27g protein, 4g carbs).",
+   "Keeps 4 days; reheat 40 seconds or eat cold."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-lemony-fish-greens-potatoes",
+  "name": "Somax Lemony Fish, Greens & Baby Potatoes",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "fat-loss",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 424,
+  "proteinG": 42.0,
+  "carbsG": 40.4,
+  "fatG": 8.5,
+  "ingredients": [
+   {
+    "name": "barramundi or other white fish fillet",
+    "amount": "170g"
+   },
+   {
+    "name": "baby potatoes",
+    "amount": "200g"
+   },
+   {
+    "name": "green beans",
+    "amount": "100g"
+   },
+   {
+    "name": "broccoli or broccolini",
+    "amount": "100g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   },
+   {
+    "name": "capers",
+    "amount": "10g"
+   },
+   {
+    "name": "dill or parsley",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Boil potatoes 15 minutes; add beans and broccoli for the last 3.",
+   "Pan-cook fish in the oil 3 minutes each side.",
+   "Finish with lemon, capers and herbs."
+  ],
+  "description": "A clean, simple plate: ~40 g protein, under 400 kcal.",
+  "whoItsFor": "A fat-loss-friendly dinner 1-2 hours after training, or on rest days.",
+  "tips": [
+   "Light serve: halve the potatoes - ~346 kcal, 40g protein, 25g carbs.",
+   "Frozen fish fillets are cheaper and cook from frozen in 8-10 minutes."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-turkey-lettuce-cups",
+  "name": "Somax Ginger Turkey Lettuce Cups",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "fat-loss",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 20,
+  "servings": 1,
+  "kcal": 415,
+  "proteinG": 36.2,
+  "carbsG": 42.4,
+  "fatG": 10.1,
+  "ingredients": [
+   {
+    "name": "lean turkey mince",
+    "amount": "140g"
+   },
+   {
+    "name": "brown rice (dry)",
+    "amount": "40g"
+   },
+   {
+    "name": "carrot",
+    "amount": "50g"
+   },
+   {
+    "name": "red capsicum",
+    "amount": "60g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "80g"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "12ml"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "5g"
+   },
+   {
+    "name": "garlic",
+    "amount": "5g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "10g"
+   }
+  ],
+  "steps": [
+   "Cook the brown rice.",
+   "Cook mince with ginger and garlic in a non-stick pan, breaking it up.",
+   "Add diced carrot and capsicum for 3 minutes; season with tamari.",
+   "Spoon rice and mince into lettuce cups; top with spring onion."
+  ],
+  "description": "Crunchy, savoury and gluten-free - ~34 g protein.",
+  "whoItsFor": "Fat-loss phases: dinner on lighter training days, 1-2 hours after the session.",
+  "tips": [
+   "Light serve: skip the rice - ~271 kcal, 33g protein, 12g carbs.",
+   "Double the mince and freeze half for another night."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-greek-chicken-salad-bowl",
+  "name": "Somax Greek Chicken & Chickpea Salad Bowl",
+  "mealType": "lunch",
+  "level": "beginner",
+  "goals": [
+   "fat-loss",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein",
+   "low-carb",
+   "gluten-free"
+  ],
+  "prepMinutes": 15,
+  "servings": 1,
+  "kcal": 446,
+  "proteinG": 47.7,
+  "carbsG": 22.0,
+  "fatG": 15.2,
+  "ingredients": [
+   {
+    "name": "cooked skinless chicken breast",
+    "amount": "110g"
+   },
+   {
+    "name": "canned chickpeas (drained)",
+    "amount": "100g"
+   },
+   {
+    "name": "cucumber",
+    "amount": "80g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "100g"
+   },
+   {
+    "name": "red onion",
+    "amount": "20g"
+   },
+   {
+    "name": "reduced-fat feta (vegetarian rennet)",
+    "amount": "25g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "50g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   },
+   {
+    "name": "oregano",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Chop the salad veg.",
+   "Toss with chickpeas, lemon, oil and oregano.",
+   "Top with sliced chicken and crumbled feta."
+  ],
+  "description": "A big crunchy bowl with ~48 g protein and fibre that keeps you full.",
+  "whoItsFor": "Fat-loss lunch on rest days or 3+ hours before training.",
+  "tips": [
+   "Light serve: halve the chickpeas - ~389 kcal, 45g protein, 15g carbs.",
+   "Pack dressing separately to keep it crisp until lunch."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-steak-rocket-pumpkin-salad",
+  "name": "Somax Steak, Roast Pumpkin & Rocket Salad",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "fat-loss",
+   "strength"
+  ],
+  "diet": [
+   "high-protein",
+   "low-carb",
+   "gluten-free"
+  ],
+  "prepMinutes": 30,
+  "servings": 1,
+  "kcal": 397,
+  "proteinG": 41.3,
+  "carbsG": 24.1,
+  "fatG": 14.6,
+  "ingredients": [
+   {
+    "name": "trimmed beef rump steak",
+    "amount": "150g"
+   },
+   {
+    "name": "butternut pumpkin",
+    "amount": "200g"
+   },
+   {
+    "name": "rocket",
+    "amount": "50g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "80g"
+   },
+   {
+    "name": "parmesan",
+    "amount": "10g"
+   },
+   {
+    "name": "balsamic vinegar",
+    "amount": "10ml"
+   },
+   {
+    "name": "olive oil",
+    "amount": "5g"
+   }
+  ],
+  "steps": [
+   "Roast pumpkin wedges at 200C for 25 minutes.",
+   "Sear steak 3 minutes each side; rest 5 minutes and slice.",
+   "Toss rocket and tomatoes with balsamic; top with pumpkin, steak and shaved parmesan."
+  ],
+  "description": "Pub-salad flavour with ~39 g protein and ~25 g carbs.",
+  "whoItsFor": "Fat-loss dinners on rest or skill days.",
+  "tips": [
+   "Light serve: halve the pumpkin - ~352 kcal, 40g protein, 15g carbs.",
+   "Add a small potato on heavy training days."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-lemongrass-tofu-noodle-soup",
+  "name": "Somax Lemongrass Tofu & Rice Noodle Soup",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "fat-loss",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 467,
+  "proteinG": 30.8,
+  "carbsG": 55.5,
+  "fatG": 12.5,
+  "ingredients": [
+   {
+    "name": "firm tofu",
+    "amount": "150g"
+   },
+   {
+    "name": "dried rice noodles",
+    "amount": "50g"
+   },
+   {
+    "name": "gluten-free vegetable stock",
+    "amount": "500ml"
+   },
+   {
+    "name": "bok choy",
+    "amount": "100g"
+   },
+   {
+    "name": "mushrooms",
+    "amount": "80g"
+   },
+   {
+    "name": "snow peas",
+    "amount": "50g"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "10ml"
+   },
+   {
+    "name": "lime juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "5g"
+   },
+   {
+    "name": "lemongrass, coriander & chilli",
+    "amount": "10g"
+   }
+  ],
+  "steps": [
+   "Simmer stock with bruised lemongrass and ginger for 10 minutes.",
+   "Add mushrooms and cubed tofu for 5 minutes.",
+   "Add noodles, bok choy and snow peas for 3 minutes.",
+   "Season with tamari and lime; top with coriander."
+  ],
+  "description": "A light, fragrant, fully vegan and gluten-free soup.",
+  "whoItsFor": "Lighter dinners on rest days or fat-loss phases; good 1-2 hours after evening training.",
+  "tips": [
+   "Light serve: skip the noodles - ~287 kcal, 28g protein, 15g carbs.",
+   "Check the stock label says gluten-free and vegan."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-roo-zucchini-noodle-bolognese",
+  "name": "Somax Kangaroo Bolognese with Zucchini & Spaghetti",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "fat-loss",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 30,
+  "servings": 1,
+  "kcal": 518,
+  "proteinG": 46.4,
+  "carbsG": 59.9,
+  "fatG": 9.0,
+  "ingredients": [
+   {
+    "name": "kangaroo mince",
+    "amount": "150g"
+   },
+   {
+    "name": "dried pasta",
+    "amount": "50g"
+   },
+   {
+    "name": "zucchini (spiralised)",
+    "amount": "150g"
+   },
+   {
+    "name": "tomato passata",
+    "amount": "200g"
+   },
+   {
+    "name": "brown onion",
+    "amount": "50g"
+   },
+   {
+    "name": "carrot",
+    "amount": "50g"
+   },
+   {
+    "name": "mushrooms",
+    "amount": "60g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "4g"
+   },
+   {
+    "name": "garlic",
+    "amount": "5g"
+   },
+   {
+    "name": "basil & oregano",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Soften onion, carrot and mushrooms in the oil; add garlic.",
+   "Brown the mince, add passata and herbs; simmer 15 minutes.",
+   "Cook spaghetti; add zucchini noodles to the pot for the last 30 seconds.",
+   "Drain and top with the bolognese."
+  ],
+  "description": "Half pasta, half zucchini: a full bowl at ~440 kcal and ~40 g protein.",
+  "whoItsFor": "Fat-loss dinner 1-2 hours after training.",
+  "tips": [
+   "Light serve: skip the spaghetti (all zucchini) - ~340 kcal, 40g protein, 24g carbs.",
+   "Kangaroo is ~2% fat - the leanest red mince you can buy."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chickpea-spinach-curry",
+  "name": "Somax Chickpea & Spinach Tomato Curry",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 25,
+  "servings": 2,
+  "kcal": 642,
+  "proteinG": 23.4,
+  "carbsG": 98.8,
+  "fatG": 11.4,
+  "ingredients": [
+   {
+    "name": "canned chickpeas (2 cans, drained)",
+    "amount": "400g"
+   },
+   {
+    "name": "canned diced tomatoes",
+    "amount": "400g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "120g"
+   },
+   {
+    "name": "brown onion",
+    "amount": "100g"
+   },
+   {
+    "name": "light coconut milk",
+    "amount": "100ml"
+   },
+   {
+    "name": "curry powder",
+    "amount": "10g"
+   },
+   {
+    "name": "garlic",
+    "amount": "10g"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "10g"
+   },
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "140g"
+   }
+  ],
+  "steps": [
+   "Cook the rice.",
+   "Soften onion in a splash of water, add garlic, ginger and curry powder for 1 minute.",
+   "Add tomatoes, chickpeas and coconut milk; simmer 15 minutes.",
+   "Stir through spinach and serve over rice."
+  ],
+  "description": "A cheap, vegan and gluten-free curry that's ready in 25 minutes.",
+  "whoItsFor": "Dinner 3-4 hours before training, or a recovery dinner 1-2 hours after (pair with a glass of soy milk to boost protein).",
+  "tips": [
+   "Light serve: halve the rice - ~517 kcal, 21g protein, 71g carbs.",
+   "Doubles easily and freezes well."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-black-bean-sweet-potato-tacos",
+  "name": "Somax Black Bean & Sweet Potato Tacos",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 30,
+  "servings": 1,
+  "kcal": 579,
+  "proteinG": 18.0,
+  "carbsG": 83.4,
+  "fatG": 14.4,
+  "ingredients": [
+   {
+    "name": "corn tortillas (3 small)",
+    "amount": "75g"
+   },
+   {
+    "name": "canned black beans (drained)",
+    "amount": "130g"
+   },
+   {
+    "name": "sweet potato",
+    "amount": "150g"
+   },
+   {
+    "name": "avocado",
+    "amount": "40g"
+   },
+   {
+    "name": "red cabbage (shredded)",
+    "amount": "50g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "60g"
+   },
+   {
+    "name": "lime juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "cumin & smoked paprika",
+    "amount": "2g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Toss diced sweet potato with oil and spices; roast at 210C for 20 minutes.",
+   "Warm and lightly mash the beans with lime.",
+   "Fill tortillas with beans, sweet potato, cabbage, tomato and avocado."
+  ],
+  "description": "Colourful vegan, gluten-free tacos.",
+  "whoItsFor": "Dinner 3-4 hours before training or recovery 1-2 hours after; add a soy milk smoothie for extra protein.",
+  "tips": [
+   "Light serve: use 2 tortillas and half the sweet potato - ~432 kcal, 15g protein, 54g carbs.",
+   "Swap black beans for kidney beans - whatever's in the cupboard."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chickpea-smash-sandwich",
+  "name": "Somax Lemon-Tahini Chickpea Smash Sandwich",
+  "mealType": "lunch",
+  "level": "beginner",
+  "goals": [
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "dairy-free"
+  ],
+  "prepMinutes": 10,
+  "servings": 1,
+  "kcal": 414,
+  "proteinG": 18.7,
+  "carbsG": 51.8,
+  "fatG": 11.0,
+  "ingredients": [
+   {
+    "name": "wholemeal bread (2 thick slices)",
+    "amount": "80g"
+   },
+   {
+    "name": "canned chickpeas (drained)",
+    "amount": "120g"
+   },
+   {
+    "name": "tahini",
+    "amount": "10g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "cucumber",
+    "amount": "40g"
+   },
+   {
+    "name": "rocket",
+    "amount": "20g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "10g"
+   }
+  ],
+  "steps": [
+   "Mash chickpeas with tahini, lemon, spring onion, salt and pepper.",
+   "Spread thickly on bread; top with cucumber and rocket."
+  ],
+  "description": "A vegan lunch that's cheaper than a café sandwich.",
+  "whoItsFor": "Lunch 3-4 hours before training.",
+  "tips": [
+   "Light serve: make it open-face on one slice - ~316 kcal, 15g protein, 35g carbs.",
+   "The mash keeps 3 days in the fridge."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-peanut-lime-noodles-edamame",
+  "name": "Somax Peanut-Lime Noodles with Edamame",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "dairy-free"
+  ],
+  "prepMinutes": 15,
+  "servings": 1,
+  "kcal": 594,
+  "proteinG": 28.1,
+  "carbsG": 78.1,
+  "fatG": 16.7,
+  "ingredients": [
+   {
+    "name": "dried wheat noodles",
+    "amount": "80g"
+   },
+   {
+    "name": "frozen shelled edamame",
+    "amount": "100g"
+   },
+   {
+    "name": "carrot",
+    "amount": "60g"
+   },
+   {
+    "name": "red cabbage (shredded)",
+    "amount": "80g"
+   },
+   {
+    "name": "natural peanut butter",
+    "amount": "20g"
+   },
+   {
+    "name": "reduced-salt soy sauce",
+    "amount": "10ml"
+   },
+   {
+    "name": "lime juice",
+    "amount": "15ml"
+   },
+   {
+    "name": "pure maple syrup",
+    "amount": "5g"
+   },
+   {
+    "name": "water",
+    "amount": "30ml"
+   }
+  ],
+  "steps": [
+   "Cook noodles; add edamame for the last 2 minutes.",
+   "Whisk peanut butter, soy, lime, maple and hot water.",
+   "Toss noodles and edamame with shredded carrot and cabbage and the sauce."
+  ],
+  "description": "Slurpy vegan noodles with ~28 g plant protein.",
+  "whoItsFor": "Dinner 3-4 hours before training, or recovery 1-2 hours after.",
+  "tips": [
+   "Light serve: halve the noodles - ~454 kcal, 24g protein, 49g carbs.",
+   "Eat warm or cold - it's a great lunchbox too."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-lentil-sweet-potato-tagine",
+  "name": "Somax Lentil & Sweet Potato Tagine with Couscous (batch)",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "dairy-free"
+  ],
+  "prepMinutes": 45,
+  "servings": 4,
+  "kcal": 633,
+  "proteinG": 25.9,
+  "carbsG": 109.5,
+  "fatG": 4.8,
+  "ingredients": [
+   {
+    "name": "canned brown lentils (2 x 400 g cans, drained)",
+    "amount": "800g"
+   },
+   {
+    "name": "sweet potato",
+    "amount": "600g"
+   },
+   {
+    "name": "canned diced tomatoes",
+    "amount": "400g"
+   },
+   {
+    "name": "brown onion",
+    "amount": "150g"
+   },
+   {
+    "name": "carrot",
+    "amount": "150g"
+   },
+   {
+    "name": "reduced-salt vegetable stock",
+    "amount": "400ml"
+   },
+   {
+    "name": "dried apricots",
+    "amount": "60g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "10g"
+   },
+   {
+    "name": "cumin, coriander, cinnamon & paprika",
+    "amount": "8g"
+   },
+   {
+    "name": "couscous (dry)",
+    "amount": "240g"
+   }
+  ],
+  "steps": [
+   "Soften onion and carrot in the oil; add spices.",
+   "Add sweet potato, tomatoes, stock and chopped apricots; simmer 20 minutes.",
+   "Stir in lentils for 5 minutes.",
+   "Serve each portion with couscous (made with boiling water)."
+  ],
+  "description": "Sweet-spiced vegan stew that feeds four for very little.",
+  "whoItsFor": "Dinner 3-4 hours before training, or the night before a long session; freeze extras.",
+  "tips": [
+   "Light serve: halve the couscous - ~525 kcal, 22g protein, 88g carbs.",
+   "Add a dollop of Greek yoghurt if you're not vegan."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-red-lentil-mushroom-ragu",
+  "name": "Somax Red Lentil & Mushroom Ragu (batch)",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "dairy-free"
+  ],
+  "prepMinutes": 40,
+  "servings": 4,
+  "kcal": 613,
+  "proteinG": 29.0,
+  "carbsG": 102.8,
+  "fatG": 5.5,
+  "ingredients": [
+   {
+    "name": "dried red lentils",
+    "amount": "200g"
+   },
+   {
+    "name": "mushrooms",
+    "amount": "300g"
+   },
+   {
+    "name": "canned diced tomatoes",
+    "amount": "800g"
+   },
+   {
+    "name": "brown onion",
+    "amount": "150g"
+   },
+   {
+    "name": "carrot",
+    "amount": "150g"
+   },
+   {
+    "name": "zucchini",
+    "amount": "150g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "10g"
+   },
+   {
+    "name": "garlic",
+    "amount": "10g"
+   },
+   {
+    "name": "oregano & basil",
+    "amount": "5g"
+   },
+   {
+    "name": "dried pasta",
+    "amount": "360g"
+   }
+  ],
+  "steps": [
+   "Soften onion, carrot and garlic in the oil; add finely chopped mushrooms and cook down 8 minutes.",
+   "Add rinsed lentils, tomatoes, grated zucchini and 300 ml water; simmer 20 minutes.",
+   "Cook pasta and serve topped with the ragu."
+  ],
+  "description": "Meaty-tasting plant ragu - ~30 g protein a serve.",
+  "whoItsFor": "Dinner the night before a long session or 3-4 hours before an evening game.",
+  "tips": [
+   "Light serve: halve the pasta - ~453 kcal, 23g protein, 71g carbs.",
+   "Vegan as written - add parmesan or a vegetarian-rennet hard cheese if you eat dairy."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-tournament-fuel-box",
+  "name": "Somax Tournament-Day Fuel Box",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 389,
+  "proteinG": 19.7,
+  "carbsG": 64.1,
+  "fatG": 5.5,
+  "ingredients": [
+   {
+    "name": "plain rice crackers",
+    "amount": "25g"
+   },
+   {
+    "name": "banana",
+    "amount": "120g"
+   },
+   {
+    "name": "light cheese stick",
+    "amount": "20g"
+   },
+   {
+    "name": "sultanas",
+    "amount": "20g"
+   },
+   {
+    "name": "Greek yoghurt pouch",
+    "amount": "100g"
+   }
+  ],
+  "steps": [
+   "Pack everything into a container (keep the yoghurt pouch cold).",
+   "Graze across the day between games."
+  ],
+  "description": "A grazing box that keeps carbs and protein ticking over across a long day.",
+  "whoItsFor": "Tournament or carnival days: eat across the gaps between games, starting 1 hour before your first.",
+  "tips": [
+   "Light serve: skip the sultanas and eat half the banana - ~275 kcal, 18g protein, 37g carbs.",
+   "Freeze the yoghurt pouch - it doubles as an ice brick."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-between-heats-sushi",
+  "name": "Somax Between-Heats Tuna Sushi Rolls",
+  "mealType": "snack",
+  "level": "advanced",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 30,
+  "servings": 1,
+  "kcal": 458,
+  "proteinG": 33.4,
+  "carbsG": 65.1,
+  "fatG": 5.7,
+  "ingredients": [
+   {
+    "name": "sushi rice (dry)",
+    "amount": "80g"
+   },
+   {
+    "name": "canned tuna (1 can, drained)",
+    "amount": "95g"
+   },
+   {
+    "name": "nori sheets (2)",
+    "amount": "6g"
+   },
+   {
+    "name": "cucumber",
+    "amount": "40g"
+   },
+   {
+    "name": "avocado",
+    "amount": "20g"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "10ml"
+   }
+  ],
+  "steps": [
+   "Cook sushi rice and cool to warm.",
+   "Spread rice over nori, leaving a strip at the top.",
+   "Lay tuna, cucumber and avocado along the bottom and roll tightly; slice.",
+   "Pack with tamari to dip."
+  ],
+  "description": "Homemade sushi - low fat, easy carbs, ~33 g protein.",
+  "whoItsFor": "Competition days: eat 1-2 hours before or between events; also a great school/work lunch.",
+  "tips": [
+   "Light serve: make one roll instead of two - ~316 kcal, 31g protein, 34g carbs.",
+   "Use a bamboo mat or baking paper to roll."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-pre-game-chicken-wrap",
+  "name": "Somax Pre-Game Chicken & Rice Wrap",
+  "mealType": "lunch",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 10,
+  "servings": 1,
+  "kcal": 548,
+  "proteinG": 37.3,
+  "carbsG": 75.8,
+  "fatG": 8.9,
+  "ingredients": [
+   {
+    "name": "wholemeal wrap (1 large)",
+    "amount": "65g"
+   },
+   {
+    "name": "cooked skinless chicken breast",
+    "amount": "90g"
+   },
+   {
+    "name": "cooked white rice",
+    "amount": "100g"
+   },
+   {
+    "name": "cos lettuce",
+    "amount": "30g"
+   },
+   {
+    "name": "carrot",
+    "amount": "40g"
+   },
+   {
+    "name": "sweet chilli sauce",
+    "amount": "15g"
+   }
+  ],
+  "steps": [
+   "Warm the rice.",
+   "Lay lettuce, rice, chicken and grated carrot along the wrap.",
+   "Drizzle with sweet chilli and roll."
+  ],
+  "description": "Carbs from the wrap AND the rice, with little fat - pre-game friendly.",
+  "whoItsFor": "Game days: eat 2-3 hours before warm-up.",
+  "tips": [
+   "Light serve: skip the rice - ~398 kcal, 35g protein, 44g carbs.",
+   "Wrap in foil - it's fine in a kit bag for a few hours if kept cool."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-cottage-berry-night-bowl",
+  "name": "Somax Cottage Cheese & Berry Night Bowl",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein",
+   "low-carb",
+   "gluten-free"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 346,
+  "proteinG": 37.1,
+  "carbsG": 20.1,
+  "fatG": 12.3,
+  "ingredients": [
+   {
+    "name": "reduced-fat cottage cheese",
+    "amount": "200g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "100g"
+   },
+   {
+    "name": "blueberries",
+    "amount": "80g"
+   },
+   {
+    "name": "walnuts",
+    "amount": "10g"
+   },
+   {
+    "name": "cinnamon",
+    "amount": "0.5g"
+   }
+  ],
+  "steps": [
+   "Stir cottage cheese and yoghurt together.",
+   "Top with blueberries, walnuts and cinnamon."
+  ],
+  "description": "~37 g slow-digesting dairy protein before bed.",
+  "whoItsFor": "Muscle-gain phases: 30-60 minutes before bed, especially after evening training.",
+  "tips": [
+   "Light serve: already light - skip the walnuts to trim further (as written ~346 kcal, 37g protein, 20g carbs).",
+   "Blitz the cottage cheese if you don't like the texture."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-homemade-mass-shake",
+  "name": "Somax Homemade Mass-Gainer Shake",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 834,
+  "proteinG": 51.6,
+  "carbsG": 90.2,
+  "fatG": 29.2,
+  "ingredients": [
+   {
+    "name": "full-cream milk",
+    "amount": "400ml"
+   },
+   {
+    "name": "rolled oats",
+    "amount": "50g"
+   },
+   {
+    "name": "banana",
+    "amount": "120g"
+   },
+   {
+    "name": "natural peanut butter",
+    "amount": "20g"
+   },
+   {
+    "name": "vanilla whey protein isolate",
+    "amount": "30g"
+   },
+   {
+    "name": "honey",
+    "amount": "15g"
+   }
+  ],
+  "steps": [
+   "Blitz oats to a powder first.",
+   "Add everything else and blend until smooth."
+  ],
+  "description": "~900 kcal in a glass - easier than another meal when you're struggling to eat enough.",
+  "whoItsFor": "Muscle-gain phases: between meals, or within 30 minutes after training.",
+  "tips": [
+   "Light serve: halve the oats and skip the honey - ~695 kcal, 48g protein, 63g carbs.",
+   "Drink half after training and half before bed if it's too much at once."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-salmon-herb-ricotta-potatoes",
+  "name": "Somax Baked Salmon, Herb Ricotta & Baby Potatoes",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 30,
+  "servings": 1,
+  "kcal": 576,
+  "proteinG": 42.1,
+  "carbsG": 46.5,
+  "fatG": 22.4,
+  "ingredients": [
+   {
+    "name": "salmon fillet",
+    "amount": "140g"
+   },
+   {
+    "name": "baby potatoes",
+    "amount": "250g"
+   },
+   {
+    "name": "light ricotta",
+    "amount": "50g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "dill & chives",
+    "amount": "5g"
+   },
+   {
+    "name": "green beans",
+    "amount": "100g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "40g"
+   }
+  ],
+  "steps": [
+   "Roast or boil potatoes until tender.",
+   "Bake salmon at 200C for 10-12 minutes.",
+   "Mix ricotta with lemon and herbs.",
+   "Serve salmon over potatoes and greens with a spoon of herb ricotta."
+  ],
+  "description": "Omega-3-rich dinner with ~40 g protein.",
+  "whoItsFor": "Dinner 1-2 hours after evening training - leaves room for a pre-bed snack in a gain phase.",
+  "tips": [
+   "Light serve: halve the potatoes - ~480 kcal, 40g protein, 27g carbs.",
+   "Salmon is higher in fat - pair it with lower-fat breakfasts and snacks."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-pb-yoghurt-apple-dip",
+  "name": "Somax PB Yoghurt Dip with Apple & Crackers",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 355,
+  "proteinG": 20.6,
+  "carbsG": 47.6,
+  "fatG": 8.6,
+  "ingredients": [
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "150g"
+   },
+   {
+    "name": "natural peanut butter",
+    "amount": "15g"
+   },
+   {
+    "name": "honey",
+    "amount": "5g"
+   },
+   {
+    "name": "apple (1)",
+    "amount": "150g"
+   },
+   {
+    "name": "plain rice crackers",
+    "amount": "20g"
+   }
+  ],
+  "steps": [
+   "Swirl peanut butter and honey through the yoghurt.",
+   "Slice apple and serve with crackers for dipping."
+  ],
+  "description": "Sweet-salty dip with ~22 g protein and ~45 g carbs.",
+  "whoItsFor": "An afternoon snack 60-90 minutes before training, or a recovery snack after.",
+  "tips": [
+   "Light serve: skip the crackers - ~275 kcal, 19g protein, 31g carbs.",
+   "Squeeze lemon on apple slices to stop browning in a lunchbox."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-roo-taco-sweet-potato-boats",
+  "name": "Somax Taco Kangaroo Sweet Potato Boats",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "fat-loss"
+  ],
+  "diet": [
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 35,
+  "servings": 1,
+  "kcal": 578,
+  "proteinG": 50.0,
+  "carbsG": 66.2,
+  "fatG": 7.2,
+  "ingredients": [
+   {
+    "name": "sweet potato (1 medium)",
+    "amount": "300g"
+   },
+   {
+    "name": "kangaroo mince",
+    "amount": "140g"
+   },
+   {
+    "name": "canned black beans (drained)",
+    "amount": "60g"
+   },
+   {
+    "name": "canned diced tomatoes",
+    "amount": "100g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "50g"
+   },
+   {
+    "name": "light tasty cheese (vegetarian rennet)",
+    "amount": "15g"
+   },
+   {
+    "name": "cumin, paprika & chilli",
+    "amount": "3g"
+   }
+  ],
+  "steps": [
+   "Halve sweet potato and microwave 8 minutes (or roast 40 minutes) until soft.",
+   "Brown mince with spices; add beans and tomatoes and simmer 8 minutes.",
+   "Scoop a little flesh from each half, fill with mince, top with cheese and grill 3 minutes.",
+   "Finish with yoghurt."
+  ],
+  "description": "Taco flavours in a sweet potato - gluten-free, ~45 g protein.",
+  "whoItsFor": "Dinner 1-2 hours after training.",
+  "tips": [
+   "Light serve: use half the sweet potato - ~450 kcal, 48g protein, 41g carbs.",
+   "Swap kangaroo for lean beef mince if it's easier to find."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-overnight-bircher-protein-muesli",
+  "name": "Somax Overnight Apple & Sultana Protein Muesli",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "muscle"
+  ],
+  "diet": [
+   "vegetarian"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 439,
+  "proteinG": 24.1,
+  "carbsG": 71.8,
+  "fatG": 4.9,
+  "ingredients": [
+   {
+    "name": "untoasted muesli",
+    "amount": "60g"
+   },
+   {
+    "name": "skim milk",
+    "amount": "150ml"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "120g"
+   },
+   {
+    "name": "apple (grated)",
+    "amount": "100g"
+   },
+   {
+    "name": "sultanas",
+    "amount": "15g"
+   },
+   {
+    "name": "cinnamon",
+    "amount": "0.5g"
+   }
+  ],
+  "steps": [
+   "Grate the apple into a jar.",
+   "Stir in muesli, milk, yoghurt, sultanas and cinnamon.",
+   "Refrigerate overnight and stir before eating."
+  ],
+  "description": "Soaked muesli that's ready when you wake: ~25 g protein, ~70 g carbs.",
+  "whoItsFor": "Early starters: 1-2 hours before a morning session, or after it on the go.",
+  "tips": [
+   "Light serve: halve the muesli and skip the sultanas - ~286 kcal, 21g protein, 43g carbs.",
+   "Grated apple keeps it fresh and sweet without added sugar."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chicken-pumpkin-quinoa-traybake",
+  "name": "Somax Harissa-Style Chicken & Pumpkin Quinoa Tray (batch)",
+  "mealType": "dinner",
+  "level": "advanced",
+  "goals": [
+   "muscle",
+   "endurance"
+  ],
+  "diet": [
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 45,
+  "servings": 4,
+  "kcal": 514,
+  "proteinG": 48.9,
+  "carbsG": 51.8,
+  "fatG": 9.8,
+  "ingredients": [
+   {
+    "name": "skinless chicken breast",
+    "amount": "600g"
+   },
+   {
+    "name": "butternut pumpkin",
+    "amount": "600g"
+   },
+   {
+    "name": "quinoa (dry)",
+    "amount": "200g"
+   },
+   {
+    "name": "red onion",
+    "amount": "150g"
+   },
+   {
+    "name": "red capsicum",
+    "amount": "200g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "120g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "15g"
+   },
+   {
+    "name": "smoked paprika, cumin, chilli & caraway",
+    "amount": "10g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "30ml"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "120g"
+   }
+  ],
+  "steps": [
+   "Toss pumpkin, onion and capsicum with half the oil and spices; roast at 210C for 15 minutes.",
+   "Add chicken rubbed with remaining oil and spices; roast 20 minutes more.",
+   "Simmer quinoa 15 minutes; stir through spinach and lemon.",
+   "Divide into 4 containers with a spoon of yoghurt."
+  ],
+  "description": "A spice-roasted tray that makes 4 gluten-free recovery dinners.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training; meal-prep for the week.",
+  "tips": [
+   "Light serve: halve the quinoa - ~422 kcal, 45g protein, 38g carbs.",
+   "Keeps 4 days in the fridge."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-salmon-patties-greens",
+  "name": "Somax Salmon & Potato Patties with Lemon Yoghurt",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "general-fitness",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 35,
+  "servings": 4,
+  "kcal": 385,
+  "proteinG": 34.7,
+  "carbsG": 27.9,
+  "fatG": 13.8,
+  "ingredients": [
+   {
+    "name": "potatoes",
+    "amount": "600g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "30g"
+   },
+   {
+    "name": "eggs (2 large)",
+    "amount": "100g"
+   },
+   {
+    "name": "dill & parsley",
+    "amount": "10g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "20ml"
+   },
+   {
+    "name": "olive oil",
+    "amount": "15g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "200g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "120g"
+   },
+   {
+    "name": "cherry tomatoes",
+    "amount": "200g"
+   },
+   {
+    "name": "canned pink salmon (2 x 210 g, drained)",
+    "amount": "420g"
+   }
+  ],
+  "steps": [
+   "Boil and mash the potatoes; cool slightly.",
+   "Mix mash with flaked salmon, egg, spring onion, herbs and half the lemon; shape 8 patties.",
+   "Pan-fry in the oil 3-4 minutes each side.",
+   "Serve 2 patties each with spinach, tomatoes and lemon yoghurt."
+  ],
+  "description": "A budget fish dinner from the pantry - freezes well.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training, or a cold next-day lunch.",
+  "tips": [
+   "Light serve: make the patties with half the potato - ~328 kcal, 33g protein, 16g carbs.",
+   "Keep the soft salmon bones - they're a great source of calcium."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-ricotta-berry-crumpet-stack",
+  "name": "Somax Ricotta, Honey & Berry Crumpet Stack",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "general-fitness",
+   "endurance"
+  ],
+  "diet": [
+   "vegetarian"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 419,
+  "proteinG": 21.5,
+  "carbsG": 67.6,
+  "fatG": 6.4,
+  "ingredients": [
+   {
+    "name": "crumpets (2)",
+    "amount": "110g"
+   },
+   {
+    "name": "light ricotta",
+    "amount": "70g"
+   },
+   {
+    "name": "strawberries",
+    "amount": "80g"
+   },
+   {
+    "name": "honey",
+    "amount": "10g"
+   },
+   {
+    "name": "skim milk (as a latte or glass)",
+    "amount": "200ml"
+   }
+  ],
+  "steps": [
+   "Toast the crumpets.",
+   "Spread with ricotta, top with sliced strawberries and drizzle honey.",
+   "Have the milk alongside."
+  ],
+  "description": "A sweet, quick breakfast that's light on the stomach.",
+  "whoItsFor": "Morning sessions: 60-90 minutes before training.",
+  "tips": [
+   "Light serve: one crumpet - ~314 kcal, 18g protein, 47g carbs.",
+   "Light ricotta is creamy enough that you won't miss butter."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-cinnamon-egg-tortilla-rollups",
+  "name": "Somax Cinnamon Egg-Tortilla Roll-Ups",
+  "mealType": "breakfast",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 10,
+  "servings": 1,
+  "kcal": 473,
+  "proteinG": 31.3,
+  "carbsG": 63.3,
+  "fatG": 9.4,
+  "ingredients": [
+   {
+    "name": "wholemeal wrap (1 large)",
+    "amount": "65g"
+   },
+   {
+    "name": "egg (1 large)",
+    "amount": "50g"
+   },
+   {
+    "name": "liquid egg whites",
+    "amount": "100ml"
+   },
+   {
+    "name": "skim milk",
+    "amount": "30ml"
+   },
+   {
+    "name": "banana",
+    "amount": "100g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "60g"
+   },
+   {
+    "name": "pure maple syrup",
+    "amount": "8g"
+   },
+   {
+    "name": "cinnamon",
+    "amount": "0.5g"
+   }
+  ],
+  "steps": [
+   "Whisk egg, whites, milk and cinnamon in a wide dish.",
+   "Soak the wrap on both sides, then cook in a sprayed pan 2 minutes each side.",
+   "Spread with yoghurt, add banana, roll and drizzle maple."
+  ],
+  "description": "French-toast vibes in 10 minutes with ~31 g protein.",
+  "whoItsFor": "Breakfast 1-2 hours before training or within an hour after.",
+  "tips": [
+   "Light serve: skip the banana - ~384 kcal, 30g protein, 43g carbs.",
+   "Pour the leftover egg mix over the wrap in the pan so nothing's wasted."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-edamame-rice-cracker-salt",
+  "name": "Somax Salted Edamame & Rice Cracker Recovery Box",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 336,
+  "proteinG": 17.7,
+  "carbsG": 45.0,
+  "fatG": 7.1,
+  "ingredients": [
+   {
+    "name": "frozen shelled edamame",
+    "amount": "120g"
+   },
+   {
+    "name": "plain rice crackers",
+    "amount": "30g"
+   },
+   {
+    "name": "orange (1)",
+    "amount": "150g"
+   },
+   {
+    "name": "sea salt",
+    "amount": "0.5g"
+   }
+  ],
+  "steps": [
+   "Microwave edamame 2 minutes and sprinkle with salt.",
+   "Pack with rice crackers and a peeled orange."
+  ],
+  "description": "A plant-based salty recovery box - protein, carbs, sodium and vitamin C.",
+  "whoItsFor": "Within 30 minutes after training for vegan athletes, or as a between-events snack.",
+  "tips": [
+   "Light serve: skip the crackers - ~216 kcal, 16g protein, 20g carbs.",
+   "Salt helps replace sweat losses after hot sessions."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-tuna-avo-rice-cake-stack",
+  "name": "Somax Tuna & Avo Crunch Stack",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "fat-loss",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 263,
+  "proteinG": 26.8,
+  "carbsG": 22.3,
+  "fatG": 6.8,
+  "ingredients": [
+   {
+    "name": "plain rice cakes (3)",
+    "amount": "25g"
+   },
+   {
+    "name": "canned tuna (1 can, drained)",
+    "amount": "95g"
+   },
+   {
+    "name": "avocado",
+    "amount": "25g"
+   },
+   {
+    "name": "tomato",
+    "amount": "60g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "5ml"
+   }
+  ],
+  "steps": [
+   "Mash avocado with lemon and spread on rice cakes.",
+   "Top with tuna and sliced tomato; season with pepper."
+  ],
+  "description": "A crunchy, gluten-free, dairy-free protein snack under 300 kcal.",
+  "whoItsFor": "An afternoon snack 1-2 hours before training, or recovery on fat-loss days.",
+  "tips": [
+   "Light serve: use 2 rice cakes - ~215 kcal, 26g protein, 12g carbs.",
+   "Chilli flakes or everything-bagel seasoning take it up a level."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-pre-bed-choc-protein-mousse",
+  "name": "Somax Pre-Bed Chocolate Protein Mousse",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "strength"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 243,
+  "proteinG": 34.7,
+  "carbsG": 18.1,
+  "fatG": 1.8,
+  "ingredients": [
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "200g"
+   },
+   {
+    "name": "vanilla whey protein isolate",
+    "amount": "15g"
+   },
+   {
+    "name": "cocoa powder",
+    "amount": "6g"
+   },
+   {
+    "name": "pure maple syrup",
+    "amount": "8g"
+   },
+   {
+    "name": "frozen raspberries",
+    "amount": "60g"
+   }
+  ],
+  "steps": [
+   "Whisk yoghurt, whey, cocoa and maple until thick and mousse-like.",
+   "Top with raspberries; chill 10 minutes if you can wait."
+  ],
+  "description": "~34 g protein that tastes like dessert.",
+  "whoItsFor": "Muscle-gain or recovery phases: 30-60 minutes before bed.",
+  "tips": [
+   "Light serve: already light - skip the maple to trim further (as written ~243 kcal, 35g protein, 18g carbs).",
+   "Add a pinch of salt to make the chocolate pop."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-vegan-pre-bed-tofu-pudding",
+  "name": "Somax Vegan Silken Choc-Berry Pudding",
+  "mealType": "snack",
+  "level": "intermediate",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "vegetarian",
+   "vegan",
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 5,
+  "servings": 1,
+  "kcal": 289,
+  "proteinG": 27.7,
+  "carbsG": 23.3,
+  "fatG": 8.9,
+  "ingredients": [
+   {
+    "name": "silken tofu",
+    "amount": "250g"
+   },
+   {
+    "name": "vanilla pea protein powder",
+    "amount": "15g"
+   },
+   {
+    "name": "cocoa powder",
+    "amount": "8g"
+   },
+   {
+    "name": "pure maple syrup",
+    "amount": "15g"
+   },
+   {
+    "name": "frozen mixed berries",
+    "amount": "80g"
+   }
+  ],
+  "steps": [
+   "Blend silken tofu, pea protein, cocoa and maple until silky.",
+   "Chill 30 minutes; top with berries."
+  ],
+  "description": "A plant-based pre-bed pudding with ~28 g protein.",
+  "whoItsFor": "Vegan athletes: 30-60 minutes before bed, or as an after-dinner recovery snack.",
+  "tips": [
+   "Light serve: skip the maple - ~250 kcal, 28g protein, 13g carbs.",
+   "Silken tofu is the secret - firm tofu will be grainy."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-lemon-prawn-pea-baked-rice",
+  "name": "Somax Lemon Prawn & Pea Baked Rice",
+  "mealType": "dinner",
+  "level": "intermediate",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 35,
+  "servings": 2,
+  "kcal": 612,
+  "proteinG": 44.6,
+  "carbsG": 85.6,
+  "fatG": 8.8,
+  "ingredients": [
+   {
+    "name": "arborio or medium-grain rice",
+    "amount": "180g"
+   },
+   {
+    "name": "raw peeled prawns",
+    "amount": "300g"
+   },
+   {
+    "name": "frozen peas",
+    "amount": "160g"
+   },
+   {
+    "name": "gluten-free chicken stock",
+    "amount": "700ml"
+   },
+   {
+    "name": "brown onion",
+    "amount": "80g"
+   },
+   {
+    "name": "garlic",
+    "amount": "6g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "20ml"
+   },
+   {
+    "name": "parmesan",
+    "amount": "15g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "8g"
+   },
+   {
+    "name": "baby spinach",
+    "amount": "60g"
+   }
+  ],
+  "steps": [
+   "Heat oven to 200C. Soften onion and garlic in the oil in an ovenproof pot; stir in rice.",
+   "Pour in hot stock, cover and bake 20 minutes.",
+   "Stir in prawns, peas and spinach; return to the oven 6 minutes.",
+   "Finish with lemon and parmesan."
+  ],
+  "description": "No-stir oven-baked rice - creamy carbs plus ~45 g protein a serve.",
+  "whoItsFor": "Dinner the night before a long session, or recovery 1-2 hours after one.",
+  "tips": [
+   "Light serve: halve the rice - ~452 kcal, 41g protein, 50g carbs.",
+   "Use frozen prawns - add them straight from frozen with an extra 2 minutes."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-chicken-corn-congee",
+  "name": "Somax Ginger Chicken & Corn Rice Porridge",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "endurance",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free",
+   "gluten-free"
+  ],
+  "prepMinutes": 45,
+  "servings": 2,
+  "kcal": 506,
+  "proteinG": 40.2,
+  "carbsG": 71.9,
+  "fatG": 6.0,
+  "ingredients": [
+   {
+    "name": "jasmine or basmati rice (dry)",
+    "amount": "140g"
+   },
+   {
+    "name": "skinless chicken breast",
+    "amount": "240g"
+   },
+   {
+    "name": "corn kernels (canned or frozen)",
+    "amount": "150g"
+   },
+   {
+    "name": "gluten-free chicken stock",
+    "amount": "1200ml"
+   },
+   {
+    "name": "fresh ginger",
+    "amount": "15g"
+   },
+   {
+    "name": "spring onion",
+    "amount": "20g"
+   },
+   {
+    "name": "gluten-free tamari",
+    "amount": "15ml"
+   },
+   {
+    "name": "sesame oil",
+    "amount": "4g"
+   }
+  ],
+  "steps": [
+   "Simmer rice, ginger and stock, partly covered, for 35 minutes, stirring often, until porridge-like.",
+   "Add whole chicken breasts for the last 15 minutes; remove, shred and return.",
+   "Stir in corn; finish with tamari, sesame oil and spring onion."
+  ],
+  "description": "Soothing, salty, easy-to-digest rice porridge - great for nervy stomachs.",
+  "whoItsFor": "Race-eve or game-eve dinner, or a gentle recovery meal when appetite is low after a hard effort.",
+  "tips": [
+   "Light serve: halve the rice - ~382 kcal, 38g protein, 44g carbs.",
+   "Makes great next-morning breakfast 3 hours before a race."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-beef-veg-skewers-couscous",
+  "name": "Somax Beef & Veg Skewers with Herby Couscous",
+  "mealType": "dinner",
+  "level": "beginner",
+  "goals": [
+   "strength",
+   "muscle"
+  ],
+  "diet": [
+   "high-protein"
+  ],
+  "prepMinutes": 25,
+  "servings": 1,
+  "kcal": 564,
+  "proteinG": 50.2,
+  "carbsG": 63.4,
+  "fatG": 11.1,
+  "ingredients": [
+   {
+    "name": "trimmed beef rump steak",
+    "amount": "150g"
+   },
+   {
+    "name": "couscous (dry)",
+    "amount": "70g"
+   },
+   {
+    "name": "red capsicum",
+    "amount": "80g"
+   },
+   {
+    "name": "zucchini",
+    "amount": "80g"
+   },
+   {
+    "name": "red onion",
+    "amount": "40g"
+   },
+   {
+    "name": "no-fat Greek yoghurt (plain)",
+    "amount": "50g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "parsley & mint",
+    "amount": "10g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "4g"
+   }
+  ],
+  "steps": [
+   "Cube beef and veg and thread onto skewers; brush with oil.",
+   "Grill or barbecue 8-10 minutes, turning.",
+   "Pour boiling water over couscous, rest 5 minutes and fluff with lemon and herbs.",
+   "Serve with yoghurt."
+  ],
+  "description": "Barbecue-friendly, ~45 g protein.",
+  "whoItsFor": "Recovery dinner 1-2 hours after training.",
+  "tips": [
+   "Light serve: halve the couscous - ~438 kcal, 46g protein, 38g carbs.",
+   "Great on the barbie for a team dinner - scale it up."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-white-bean-tuna-smash-toast",
+  "name": "Somax White Bean & Tuna Smash on Sourdough",
+  "mealType": "lunch",
+  "level": "beginner",
+  "goals": [
+   "muscle",
+   "general-fitness"
+  ],
+  "diet": [
+   "high-protein",
+   "dairy-free"
+  ],
+  "prepMinutes": 8,
+  "servings": 1,
+  "kcal": 450,
+  "proteinG": 38.1,
+  "carbsG": 52.6,
+  "fatG": 6.8,
+  "ingredients": [
+   {
+    "name": "sourdough (2 slices)",
+    "amount": "80g"
+   },
+   {
+    "name": "canned cannellini beans (drained)",
+    "amount": "100g"
+   },
+   {
+    "name": "canned tuna (1 can, drained)",
+    "amount": "95g"
+   },
+   {
+    "name": "lemon juice",
+    "amount": "10ml"
+   },
+   {
+    "name": "rocket",
+    "amount": "20g"
+   },
+   {
+    "name": "olive oil",
+    "amount": "4g"
+   },
+   {
+    "name": "garlic",
+    "amount": "2g"
+   }
+  ],
+  "steps": [
+   "Mash cannellini beans with lemon, oil and garlic.",
+   "Spread over toasted sourdough.",
+   "Top with tuna, rocket and black pepper."
+  ],
+  "description": "A pantry lunch with ~41 g protein.",
+  "whoItsFor": "Lunch 3-4 hours before training, or recovery 1-2 hours after.",
+  "tips": [
+   "Light serve: use one slice - ~350 kcal, 35g protein, 33g carbs.",
+   "Swap tuna for a boiled egg or two for a vegetarian version."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ },
+ {
+  "id": "somax-sn-cottage-pineapple-rice-cakes",
+  "name": "Somax Cottage Cheese & Pineapple Rice Cake Snack",
+  "mealType": "snack",
+  "level": "beginner",
+  "goals": [
+   "fat-loss",
+   "muscle"
+  ],
+  "diet": [
+   "vegetarian",
+   "high-protein",
+   "gluten-free"
+  ],
+  "prepMinutes": 3,
+  "servings": 1,
+  "kcal": 249,
+  "proteinG": 17.6,
+  "carbsG": 35.2,
+  "fatG": 3.9,
+  "ingredients": [
+   {
+    "name": "plain rice cakes (3)",
+    "amount": "25g"
+   },
+   {
+    "name": "reduced-fat cottage cheese",
+    "amount": "120g"
+   },
+   {
+    "name": "pineapple",
+    "amount": "100g"
+   },
+   {
+    "name": "mint",
+    "amount": "2g"
+   }
+  ],
+  "steps": [
+   "Spread cottage cheese over rice cakes.",
+   "Top with diced pineapple and torn mint."
+  ],
+  "description": "Sweet, salty and ~17 g protein for ~250 kcal.",
+  "whoItsFor": "Afternoon snack 60-90 minutes before training, or a light recovery snack.",
+  "tips": [
+   "Light serve: use 2 rice cakes - ~201 kcal, 17g protein, 25g carbs.",
+   "Canned pineapple in juice works fine - drain well."
+  ],
+  "credit": "Somax",
+  "sourceUrl": "",
+  "sourceNote": "Somax original recipe. Macros calculated per serving from AUSNUT 2011-13 / USDA FoodData Central values for the listed raw weights; treat as estimates.",
+  "verified": false,
+  "basedOn": []
+ }
+]

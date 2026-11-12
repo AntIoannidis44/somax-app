@@ -27,6 +27,8 @@ import {
   myLibraryItemIds,
   removeMyLibraryItem,
   fetchSaveCounts,
+  requiredAttribution,
+  usesYards,
   recordLibrarySave,
   type LibraryItem,
   type LibraryKind,
@@ -202,6 +204,10 @@ function ProgramDetail({ item, mine, saves, onSaved, onClose, onRemoved, pickFor
           <Icon name="link" /> Original source
         </a>
       )}
+      {usesYards(item) && (
+        <div className="lib-attrib">Distances are in yards, as published (1 yd ≈ 0.91 m). In a 25 m pool, swim the same number of lengths.</div>
+      )}
+      {requiredAttribution(item) && <div className="lib-attrib">{requiredAttribution(item)}</div>}
       <div className="recipe-stat-row">
         <div className="recipe-stat"><b>{item.content.exercises.length}</b><span>exercises</span></div>
         <div className="recipe-stat"><b>{item.duration ?? '-'}</b><span>time</span></div>
@@ -313,6 +319,7 @@ function MealDetail({ item, mine, saves, onSaved, onClose, onRemoved, logTo }: {
           <Icon name="link" /> Original recipe
         </a>
       )}
+      {requiredAttribution(item) && <div className="lib-attrib">{requiredAttribution(item)}</div>}
       <div className="recipe-stat-row">
         <div className="recipe-stat"><b>{c.kcal}</b><span>kcal</span></div>
         <div className="recipe-stat"><b>{c.proteinG}g</b><span>protein</span></div>

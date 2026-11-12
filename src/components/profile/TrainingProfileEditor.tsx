@@ -20,7 +20,7 @@ const PLACES: { id: 'gym' | 'home' | 'outdoor'; label: string; icon: IconName }[
   { id: 'home', label: 'Home', icon: 'home' },
   { id: 'outdoor', label: 'Outdoors', icon: 'run' },
 ];
-const KIT = ['Barbell', 'Dumbbells', 'Kettlebell', 'Bands', 'Pull-up bar', 'Bike / trainer', 'Pool', 'Running track'];
+const KIT = ['Barbell', 'Dumbbells', 'Kettlebell', 'Bands', 'Pull-up bar', 'Bike / trainer', 'Pool', 'Running track', 'Rower', 'Treadmill', 'Skipping rope', 'Medicine ball'];
 
 // Older profiles (pre-redesign) only have `focus` + old goal labels: seed
 // the editor from those so it opens on something sensible.
