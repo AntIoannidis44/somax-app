@@ -73,11 +73,16 @@ export function lockHint(item: CatalogItem): string {
 
 const WARDROBE_KEYS: CatalogKey[] = ['hair', 'outfit', 'build', 'hairColor', 'outfitColor', 'skin', 'top', 'bottom', 'legwear', 'acc', 'shoes', 'gymColor'];
 
-export function allWardrobe(): { key: CatalogKey; item: CatalogItem }[] {
+// Base-restricted categories (hair, tops, bottoms, ...) carry a male AND a
+// female item at the same unlock level with the same display name (e.g.
+// 'jeans'/'jeansM', both "Jeans") - every other caller already filters its
+// own tile grid to the player's base (see CharacterStudioScreen), so this
+// does the same or every one of them double-counts/double-shows each pair.
+export function allWardrobe(base?: CharacterBase): { key: CatalogKey; item: CatalogItem }[] {
   const out: { key: CatalogKey; item: CatalogItem }[] = [];
   WARDROBE_KEYS.forEach((k) => {
-    CATALOG[k].forEach((it) => {
-      if (it.unlock) out.push({ key: k, item: it });
+    (CATALOG[k] as (CatalogItem & { base?: CharacterBase })[]).forEach((it) => {
+      if (it.unlock && (!it.base || !base || it.base === base)) out.push({ key: k, item: it });
     });
   });
   return out;
@@ -106,9 +111,9 @@ export function unlockItemName(key: CatalogKey, item: CatalogItem): string {
   return suffix ? `${item.name} ${suffix}` : item.name;
 }
 
-export function nextUnlock(ctx: UnlockContext): NextUnlock | null {
+export function nextUnlock(ctx: UnlockContext, base?: CharacterBase): NextUnlock | null {
   let best: NextUnlock | null = null;
-  allWardrobe().forEach((w) => {
+  allWardrobe(base).forEach((w) => {
     if (isUnlocked(w.item, ctx)) return;
     const u = w.item.unlock;
     if (u?.level) {
@@ -118,8 +123,8 @@ export function nextUnlock(ctx: UnlockContext): NextUnlock | null {
   return best;
 }
 
-export function countUnlocked(ctx: UnlockContext): { done: number; total: number } {
-  const all = allWardrobe();
+export function countUnlocked(ctx: UnlockContext, base?: CharacterBase): { done: number; total: number } {
+  const all = allWardrobe(base);
   const done = all.filter((w) => isUnlocked(w.item, ctx)).length;
   return { done, total: all.length };
 }

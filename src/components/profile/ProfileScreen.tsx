@@ -89,8 +89,8 @@ export function ProfileScreen() {
 
   const ctx = { level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige };
   const wornCharacter = character ? wearUnlocked(character, { ...ctx, keeps: character.keeps }) : character!;
-  const nu = nextUnlock(ctx);
-  const cu = countUnlocked(ctx);
+  const nu = nextUnlock(ctx, character?.base);
+  const cu = countUnlocked(ctx, character?.base);
   const tier = tierFor(progress.level);
   const nuText = nu ? `Next unlock: ${unlockItemName(nu.key, nu.item)} at Level ${nu.level}` : 'Every item unlocked';
 

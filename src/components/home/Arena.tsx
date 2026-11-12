@@ -3,10 +3,12 @@ import { CharacterStage } from '../character/CharacterStage';
 import { useAppStore } from '../../store/useAppStore';
 import { nextUnlock, tierFor, unlockItemName } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
+import { TierBadge } from './TierBadge';
 
 export function Arena() {
   const progress = useAppStore((s) => s.progress);
   const coins = useAppStore((s) => s.coins);
+  const character = useAppStore((s) => s.character);
   const openCharacterStudio = useAppStore((s) => s.openCharacterStudio);
 
   const lvl = progress.level;
@@ -14,7 +16,7 @@ export function Arena() {
   const floor = levelFloor(lvl);
   const ceil = levelCeil(lvl);
   const pct = Math.max(0, Math.min(1, (progress.totalXP - floor) / (ceil - floor)));
-  const nu = nextUnlock({ level: lvl, longestStreak: progress.longestStreak, prestige: progress.prestige });
+  const nu = nextUnlock({ level: lvl, longestStreak: progress.longestStreak, prestige: progress.prestige }, character?.base);
 
   return (
     <div
@@ -31,16 +33,18 @@ export function Arena() {
         </button>
       </div>
       <div className="arena-foot">
-        <div className="af-row">
-          <span>
-            Level {lvl} · {t.name} ·{' '}
-            <span className="af-streak">
-              <Icon name="flame" /> {progress.currentStreak}d
-            </span>
-          </span>
-          <span className="mono">
-            {(progress.totalXP - floor).toLocaleString()} / {(ceil - floor).toLocaleString()} XP
-          </span>
+        <div className="af-top">
+          <TierBadge level={lvl} c1={t.c1} c2={t.c2} size={38} pct={pct} />
+          <div className="af-info">
+            <div className="af-tier">{t.name}</div>
+            <div className="af-streak">
+              <Icon name="flame" /> {progress.currentStreak}d streak
+            </div>
+          </div>
+          <div className="af-xp">
+            {(progress.totalXP - floor).toLocaleString()}
+            <span>/{(ceil - floor).toLocaleString()} XP</span>
+          </div>
         </div>
         <div className="progress-track">
           <div className="progress-fill" style={{ width: `${Math.round(pct * 100)}%` }} />

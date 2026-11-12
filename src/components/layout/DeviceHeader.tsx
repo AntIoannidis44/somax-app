@@ -53,6 +53,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   const route = useAppStore((s) => s.route);
   const profile = useAppStore((s) => s.profile);
   const progress = useAppStore((s) => s.progress);
+  const character = useAppStore((s) => s.character);
   const weekPlan = useAppStore((s) => s.weekPlan);
   const closeWorkout = useAppStore((s) => s.closeWorkout);
   const closeCharacterStudio = useAppStore((s) => s.closeCharacterStudio);
@@ -91,7 +92,7 @@ export function DeviceHeader({ solid }: DeviceHeaderProps) {
   }
 
   if (viewingCharacter) {
-    const cu = countUnlocked({ level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige });
+    const cu = countUnlocked({ level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige }, character?.base);
     return (
       <div className="device-header">
         <button className="level-chip" style={{ padding: 8 }} onClick={closeCharacterStudio}>

@@ -45,13 +45,17 @@ function CameraRig({ view, focus, headYRef }: { view: StageView; focus: StageFoc
   const target = useRef(new THREE.Vector3());
   useEffect(() => {
     if (view === 'arena') {
+      // Looking higher up the body (was 0.75, a first nudge to 0.9 wasn't
+      // enough to actually notice) brings the head down off the very top
+      // of the frame, away from the device header's text that sits over
+      // this stage.
       camera.position.set(0, 1.45, 8.5);
-      camera.lookAt(0, 0.75, 0);
+      camera.lookAt(0, 1.2, 0);
     } else {
       camera.position.set(0, 1.45, 6.1);
       camera.lookAt(0, 1.02, 0);
     }
-    look.current.set(0, view === 'arena' ? 0.75 : 1.02, 0);
+    look.current.set(0, view === 'arena' ? 1.2 : 1.02, 0);
   }, [view, camera]);
   // Glide between the full-body shot and the face shot.
   useFrame((_, delta) => {

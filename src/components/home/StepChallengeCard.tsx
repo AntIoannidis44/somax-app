@@ -18,9 +18,9 @@ export function StepChallengeCard() {
     // place that can actually confirm it, same as the Watch sync row.
     if (!healthAvailableOnPlatform()) return null;
     return (
-      <div className="goal-row">
+      <div className="goal-row" style={{ ['--gc' as string]: 'var(--stat-endurance)' }}>
         <div className="goal-check" style={{ cursor: 'default' }}>
-          <Icon name="watch" />
+          <Icon name="watch" className="ic-idle" />
         </div>
         <div className="goal-main">
           <div className="goal-title">Hit {STEP_GOAL.toLocaleString()} steps</div>
@@ -37,9 +37,9 @@ export function StepChallengeCard() {
   const done = health.steps >= STEP_GOAL;
 
   return (
-    <div className="goal-row">
+    <div className="goal-row" style={{ ['--gc' as string]: 'var(--stat-endurance)' }}>
       <div className={`goal-check${done ? ' done' : ''}`} style={{ cursor: 'default' }}>
-        <Icon name="check" />
+        <Icon name={done ? 'check' : 'walk'} className={done ? 'ic-done' : 'ic-idle'} />
       </div>
       <div className="goal-main">
         <div className={`goal-title${done ? ' done' : ''}`}>Hit {STEP_GOAL.toLocaleString()} steps</div>

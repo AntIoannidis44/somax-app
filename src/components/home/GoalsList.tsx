@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
+import { GOAL_ICON } from '../../lib/schedule';
 import { HydrationBar } from './HydrationBar';
 import { WatchSyncGoalRow } from './WatchSyncGoalRow';
 import { LogFeelGoalRow } from './LogFeelGoalRow';
@@ -27,8 +28,9 @@ export function GoalsList() {
         if (g.id === 'watch_workout') return <WatchSyncGoalRow key={g.id} />;
         if (g.id === 'logfeel') return <LogFeelGoalRow key={g.id} />;
         if (g.id === 'macros') return <MacroSyncGoalRow key={g.id} />;
+        const meta = GOAL_ICON[g.id];
         return (
-          <div className="goal-row" key={g.id}>
+          <div className="goal-row" key={g.id} style={meta ? { ['--gc' as string]: meta.color } : undefined}>
             <button
               className={`goal-check${g.done ? ' done' : ''}${poppedId === g.id ? ' pop' : ''}`}
               onClick={() => {
@@ -37,11 +39,14 @@ export function GoalsList() {
                 toggleGoal(g.id);
               }}
             >
-              <Icon name="check" />
+              <Icon name={g.done ? 'check' : (meta?.icon ?? 'check')} className={g.done ? 'ic-done' : 'ic-idle'} />
             </button>
             <div className="goal-main">
               <div className={`goal-title${g.done ? ' done' : ''}`}>{g.label}</div>
-              <div className="goal-meta">{g.meta}</div>
+              <div className="goal-meta">
+                {g.meta}
+                {!g.done && <span className="goal-tap-hint"> · Tap to complete</span>}
+              </div>
             </div>
             <div className="goal-xp">+{g.xp} XP</div>
           </div>

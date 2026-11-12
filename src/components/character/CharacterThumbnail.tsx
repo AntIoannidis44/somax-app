@@ -23,6 +23,6 @@ export function CharacterThumbnail({ cfg, mode, className }: CharacterThumbnailP
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cfg.base, cfg.build, cfg.skin, cfg.hair, cfg.hairColor, cfg.outfit, cfg.outfitColor, cfg.top, cfg.bottom, cfg.shoes, cfg.legwear, (cfg.acc ?? []).join(), cfg.topColor, cfg.bottomColor, cfg.shoesColor, mode]);
 
-  if (!src) return null;
+  if (!src) return <div className="char-thumb-skel" />;
   return <img className={className || 'fit-img'} src={src} alt="Your character" draggable={false} />;
 }

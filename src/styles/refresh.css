@@ -120,11 +120,10 @@
 .modal-close{ width:36px; height:36px; }
 
 /* ---------- home ---------- */
-.stage3d.arena{ margin: 0 -16px; height: clamp(380px, 54vh, 470px); border-radius: 0 0 34px 34px; }
+.stage3d.arena{ margin: 0 -16px; height: clamp(420px, 58vh, 500px); border-radius: 0 0 34px 34px; }
 .arena-top{ top:96px; }
-.arena-foot{ left:14px; right:14px; bottom:30px; padding:11px 14px 12px; border-radius:18px; }
-.af-row{ font-size:12.5px; }
-.metrics{ gap:10px; margin-top:-18px; }
+.arena-foot{ left:14px; right:14px; bottom:0; padding:11px 15px 11px; border-radius:20px; }
+.metrics{ gap:10px; margin-top:-6px; }
 .metric{ border-radius:20px; padding:12px 4px 10px; }
 .metric-val{ font-size:15.5px; }
 .metric-label{ font-size:10px; text-transform:none; letter-spacing:0; font-weight:600; }
@@ -134,24 +133,55 @@
 .workout-cta .wc-icon{ border-radius:15px; }
 .wc-title{ font-size:16px; }
 
-.goal-row{ padding:13px 2px; }
-.goal-check{ width:28px; height:28px; border:2px solid var(--line-2); background:transparent; }
+.goal-row{ padding:11px 10px; margin:0 -10px; border-radius:16px; border-bottom-color: transparent; transition: background var(--dur-fast) var(--ease-out); }
+.goal-row + .goal-row{ margin-top:2px; }
+.goal-row:active{ background: var(--surface-2); }
+/* Each goal gets its own real gradient badge (--gc, set per row) - the
+   same shine+gradient+shadow craft as the KPI ring icons - not a flat
+   tinted square. A visible ring marks it as still pending/tappable; the
+   ring drops away and the glyph swaps to a check, with a pop + ring-burst,
+   the moment it's actually done, so "tappable vs. done" never relies on
+   recognising the category icon itself. */
+.goal-check{
+  position:relative; width:36px; height:36px; border-radius:50%; border:none;
+  background: linear-gradient(165deg, rgba(255,255,255,.4), transparent 55%), linear-gradient(150deg, var(--gc, var(--accent)), color-mix(in srgb, var(--gc, var(--accent)) 62%, #000));
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px color-mix(in srgb, var(--gc, var(--accent)) 45%, transparent), 0 2px 6px -2px color-mix(in srgb, var(--gc, var(--accent)) 40%, transparent);
+}
+/* Only the real tap-to-complete rows render this as a <button> (every
+   read-only/synced row - watch sync, macros, steps, hydration's own cups -
+   renders a plain <div> instead) - a slow breathing ring on exactly those
+   signals "this one's waiting on you" without implying the synced rows
+   can be faked with a tap. */
+button.goal-check:not(.done){ animation: checkInvite 2.4s ease-in-out infinite; }
+@keyframes checkInvite{
+  0%, 100%{ box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px color-mix(in srgb, var(--gc, var(--accent)) 45%, transparent), 0 2px 6px -2px color-mix(in srgb, var(--gc, var(--accent)) 40%, transparent); }
+  50%{ box-shadow: 0 0 0 2px var(--surface), 0 0 0 6px color-mix(in srgb, var(--gc, var(--accent)) 70%, transparent), 0 4px 10px -2px color-mix(in srgb, var(--gc, var(--accent)) 55%, transparent); }
+}
+.goal-check.done{
+  background: linear-gradient(165deg, rgba(255,255,255,.45), transparent 55%), linear-gradient(150deg, var(--gc, var(--hero-1)), color-mix(in srgb, var(--gc, var(--hero-2)) 72%, #000));
+  box-shadow: 0 5px 14px -4px color-mix(in srgb, var(--gc, var(--hero-2)) 60%, transparent);
+}
+.goal-check .ic-idle, .goal-check .ic-done{ color:#fff; stroke:#fff; opacity:1; scale:1; filter: drop-shadow(0 1px 1px rgba(0,0,0,.25)); }
+.goal-check .ic-idle{ width:16px; height:16px; }
+.goal-check .ic-done{ width:16px; height:16px; }
+.goal-check.pop{ animation: checkPop 560ms var(--ease-spring); }
+.goal-check.pop::after{
+  content:''; position:absolute; inset:-4px; border-radius:50%; border:2px solid var(--gc, var(--accent));
+  animation: checkRing 560ms var(--ease-out) forwards;
+}
+@keyframes checkPop{ 0%{ transform:scale(1) rotate(0); } 35%{ transform:scale(1.35) rotate(-8deg); } 60%{ transform:scale(.92) rotate(4deg); } 100%{ transform:scale(1) rotate(0); } }
+@keyframes checkRing{ 0%{ opacity:.9; transform:scale(.7); } 100%{ opacity:0; transform:scale(1.7); } }
 .goal-title{ font-size:14.5px; font-weight:700; }
 .goal-meta{ font-size:12.5px; }
-.goal-xp{ font-weight:600; font-size:12px; }
-.hydration-track{ height:20px; border-radius:7px; }
-.hydration-fill{ border-radius:7px; background: linear-gradient(180deg, #38bdf8, var(--accent)); }
-
-/* Level path scrolls sideways instead of stacking down the page. */
-.ladder{ flex-direction:row; gap:10px; overflow-x:auto; scrollbar-width:none; margin:0 -16px; padding:0 16px 4px; }
-.ladder::-webkit-scrollbar{ display:none; }
-.rung{ flex:0 0 128px; flex-direction:column; align-items:flex-start; gap:10px; padding:14px; border-radius:20px; box-shadow:none; }
-.rung-main{ width:100%; }
-.rung-state{ display:none; }
-.rung.current{ background: linear-gradient(150deg, var(--hero-1), var(--hero-2)); border-color:transparent; color:#fff; }
-.rung.current .rung-num{ background: rgba(255,255,255,.2); box-shadow:none; }
-.rung.current .rung-sub{ color: rgba(255,255,255,.8); }
-.rung.locked{ opacity:.7; }
+/* Only the generic tap-to-complete rows (workout/warmup/mobility_rest -
+   see GoalsList) print this; every synced row (macros, watch, steps,
+   hydration's cups) has its own real status text instead, so it never
+   implies a tap can fake a real data source. */
+.goal-tap-hint{ color: var(--gc, var(--accent)); font-weight:800; }
+.goal-xp{
+  font-weight:700; font-size:11.5px; color: var(--accent); background: var(--accent-soft);
+  padding:4px 9px; border-radius:999px;
+}
 
 /* ---------- train ---------- */
 .week-strip{ gap:4px; padding:2px 0 4px; }
@@ -568,11 +598,12 @@ button.day-pill{ font:inherit; color:inherit; }
 .af-sub{ font-size:11px; margin-top:7px; color: rgba(255,255,255,.62); font-weight:600; letter-spacing:0; }
 
 /* metrics: ring top-left, value and label underneath */
-.metrics{ grid-template-columns: repeat(4, 1fr); gap:8px; margin-top:-20px; }
-.metric{ text-align:left; padding:12px 10px 11px; border-radius:20px; display:flex; flex-direction:column; gap:7px; box-shadow: var(--sh-2); }
+.metrics{ grid-template-columns: repeat(4, 1fr); gap:8px; margin-top:-6px; }
+.metric{ text-align:center; padding:12px 10px 11px; border-radius:20px; display:flex; flex-direction:column; align-items:center; gap:7px; box-shadow: var(--sh-2); }
 .metric-ring{ width:40px; height:40px; margin:0; }
-.metric-ring .mr-icon svg{ width:15px; height:15px; }
-.metric-val{ font-size:16px; font-weight:700; letter-spacing:-.03em; overflow:hidden; text-overflow:ellipsis; }
+.metric-ring .mr-icon{ inset:4px; }
+.metric-ring .mr-icon svg{ width:18px; height:18px; }
+.metric-val{ font-family: var(--font-display); font-size:20px; font-weight:800; letter-spacing:-.02em; overflow:hidden; text-overflow:ellipsis; }
 .metric-val small{ font-family: var(--font-body); font-size:10px; font-weight:600; letter-spacing:0; }
 .metric-label{ margin-top:-5px; font-size:11px; font-weight:600; letter-spacing:0; text-transform:none; color: var(--text-faint); }
 
@@ -603,14 +634,67 @@ button.day-pill{ font:inherit; color:inherit; }
 
 /* checklist */
 .card.checklist{ padding:4px 14px; }
-.checklist-cap{ height:4px; margin:10px 0 2px; }
-.water-cells{ display:flex; gap:4px; margin-top:7px; }
-.water-cells button{ flex:1; height:20px; border-radius:6px; border:none; padding:0; background: var(--surface-3); cursor:pointer; transition: background var(--dur-fast) var(--ease-out); }
-.water-cells button.on{ background: linear-gradient(180deg, #38bdf8, var(--accent)); }
+/* The same track+node language as the Level Path timeline (see .tl-node/
+   .tlPulse in app.css), scaled down to one row: a node per checklist item
+   (steps included) on a connected line, the next one up glowing, plus the
+   live XP total - carrying over the bold stat-card feel instead of a bare
+   percentage bar. */
+.checklist-path{ margin:10px 0 6px; }
+.checklist-hint{
+  display:flex; align-items:center; gap:6px; margin:0 0 10px; padding:8px 12px; border-radius:12px;
+  background: var(--accent-soft); color: var(--accent); font-size:12px; font-weight:600;
+}
+.checklist-hint svg{ width:14px; height:14px; flex-shrink:0; }
+.cp-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:10px; }
+.cp-xp{ font-family: var(--font-display); font-size:19px; font-weight:800; letter-spacing:-.02em; }
+.cp-xp small{ font-family: var(--font-body); font-size:11px; font-weight:600; color: var(--text-faint); letter-spacing:0; }
+.cp-count{ font-family: var(--font-mono); font-size:11.5px; font-weight:600; color: var(--text-faint); }
+.cp-track-row{ position:relative; display:flex; justify-content:space-between; align-items:center; height:20px; }
+.cp-track{ position:absolute; left:9px; right:9px; top:50%; translate:0 -50%; height:3px; border-radius:2px; background: var(--surface-3); }
+.cp-fill{
+  position:absolute; left:9px; top:50%; translate:0 -50%; height:3px; border-radius:2px;
+  background: linear-gradient(90deg, var(--hero-1), var(--hero-2)); transition: width 420ms var(--ease-spring);
+}
+.cp-node{
+  position:relative; z-index:1; width:18px; height:18px; border-radius:50%; flex-shrink:0;
+  background: var(--surface); border:2px solid var(--surface-3); display:grid; place-items:center;
+  transition: background var(--dur-med) var(--ease-spring), border-color var(--dur-med);
+}
+.cp-node svg{ width:10px; height:10px; stroke:#fff; opacity:0; scale:.4; transition: opacity var(--dur-fast), scale var(--dur-med) var(--ease-spring); }
+.cp-node.done{ background: linear-gradient(150deg, var(--hero-1), var(--hero-2)); border-color:transparent; }
+.cp-node.done svg{ opacity:1; scale:1; }
+.cp-node.next{ border-color: var(--hero-2); }
+.cp-node.next::before{
+  content:''; position:absolute; inset:-5px; border-radius:50%; background: conic-gradient(from 0deg, var(--hero-1), var(--hero-2), var(--hero-1));
+  opacity:.35; filter:blur(4px); animation: tlPulse 2.2s ease-in-out infinite; z-index:-1;
+}
+/* Hydration cells render as little glass cups with a liquid level that
+   rises when tapped, instead of flat on/off squares. */
+.water-cells{ display:flex; gap:7px; margin-top:9px; }
+.water-cells button{
+  position:relative; flex:1; height:40px; padding:0; border:none; cursor:pointer;
+  background: linear-gradient(200deg, var(--surface), var(--surface-3));
+  clip-path: polygon(12% 2%, 88% 2%, 80% 98%, 20% 98%);
+  box-shadow: inset 0 0 0 1.5px var(--line-2), var(--sh-1);
+  transition: transform var(--dur-fast) var(--ease-out);
+  overflow:hidden;
+}
+.water-cells button:active{ transform: scale(.92); }
+.water-cells button::before{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:0%;
+  background: linear-gradient(180deg, #8fe0ff, #38bdf8 45%, var(--accent));
+  border-radius:50% 50% 0 0 / 5px 5px 0 0;
+  transition: height 420ms var(--ease-spring);
+}
+.water-cells button.on::before{ height:100%; }
+.water-cells button.on{ animation: cup-fill 420ms var(--ease-spring); transform-origin: bottom center; }
+@keyframes cup-fill{ 0%{ transform: scaleY(.84); } 55%{ transform: scaleY(1.07); } 100%{ transform: scaleY(1); } }
+.water-cells button::after{
+  content:''; position:absolute; top:4px; left:22%; width:14%; height:72%;
+  background: linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,0));
+  border-radius:999px; pointer-events:none;
+}
 .water-cells.locked button{ cursor:default; }
-
-/* level path: done levels show a tick */
-.rung.done .rung-num svg{ color: var(--success); }
 
 /* ---------- Train, matched to the mockup ---------- */
 .week-strip + .weekcard{ margin-top:12px; }
@@ -852,6 +936,11 @@ button.day-pill{ font:inherit; color:inherit; }
 .st2-ctl svg{ width:16px; height:16px; }
 .st2-hide-compact{ transition: opacity .2s; }
 .st2-stage.compact .st2-hide-compact{ opacity:0; pointer-events:none !important; }
+/* Below SH_FULLY_COLLAPSED the stage is too short for its absolutely-
+   positioned top/bottom rows to both fit without overlapping - hide them
+   outright instead of letting them clip into each other. */
+.st2-stage-top, .st2-stage-ctl{ transition: opacity .15s; }
+.st2-stage.fully-collapsed .st2-stage-top, .st2-stage.fully-collapsed .st2-stage-ctl{ opacity:0; pointer-events:none; }
 .st2-stage .hud-chip{ pointer-events:none; }
 
 .st2-list{ position:absolute; inset:0; overflow-y:auto; overflow-x:hidden; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
@@ -946,8 +1035,9 @@ button.day-pill{ font:inherit; color:inherit; }
 .lib-card-credit{ font-size:12px; color:var(--text-dim); margin-top:2px; }
 .lib-card-meta{ display:flex; flex-wrap:wrap; align-items:center; gap:4px 8px; margin-top:6px; font-size:11.5px; color:var(--text-faint); }
 .lib-card-chev{ width:16px; height:16px; color:var(--text-faint); flex-shrink:0; }
-.lib-meal-badge{ width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:var(--stat-vitality); color:#fff; flex-shrink:0; }
-.lib-meal-badge svg{ width:19px; height:19px; }
+.lib-meal-badge{ position:relative; overflow:hidden; width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:var(--stat-vitality); color:#fff; flex-shrink:0; box-shadow: inset 0 1px 1px rgba(255,255,255,.25); }
+.lib-meal-badge::before{ content:""; position:absolute; inset:0; pointer-events:none; background: linear-gradient(165deg, rgba(255,255,255,.42), transparent 50%), linear-gradient(0deg, rgba(0,0,0,.22), transparent 60%); }
+.lib-meal-badge svg{ position:relative; z-index:1; width:19px; height:19px; filter: drop-shadow(0 1px 1px rgba(0,0,0,.2)); }
 .lib-level{ font-size:10.5px; font-weight:800; padding:2px 7px; border-radius:999px; letter-spacing:.02em; }
 .lib-level-beginner{ background:color-mix(in srgb, var(--stat-recovery) 18%, transparent); color:var(--stat-recovery); }
 .lib-level-intermediate{ background:color-mix(in srgb, var(--stat-endurance) 18%, transparent); color:var(--stat-endurance); }

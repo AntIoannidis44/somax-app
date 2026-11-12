@@ -36,9 +36,13 @@ export function LogFeelGoalRow() {
 
   return (
     <>
-      <div className="goal-row" onClick={() => !done && setOpen(true)} style={{ cursor: done ? 'default' : 'pointer' }}>
+      <div
+        className="goal-row"
+        onClick={() => !done && setOpen(true)}
+        style={{ cursor: done ? 'default' : 'pointer', ['--gc' as string]: 'var(--macro-protein)' }}
+      >
         <div className={`goal-check${done ? ' done' : ''}`} style={{ cursor: 'default' }}>
-          <Icon name="check" />
+          <Icon name={done ? 'check' : 'heart'} className={done ? 'ic-done' : 'ic-idle'} />
         </div>
         <div className="goal-main">
           <div className={`goal-title${done ? ' done' : ''}`}>{goal.label}</div>

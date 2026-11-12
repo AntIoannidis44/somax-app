@@ -27,9 +27,9 @@ export function MacroSyncGoalRow() {
   const done = goal.done;
 
   return (
-    <div className="goal-row">
+    <div className="goal-row" style={{ ['--gc' as string]: 'var(--stat-vitality)' }}>
       <div className={`goal-check${done ? ' done' : ''}`} style={{ cursor: 'default' }}>
-        <Icon name={done ? 'check' : 'nutrition'} />
+        <Icon name={done ? 'check' : 'nutrition'} className={done ? 'ic-done' : 'ic-idle'} />
       </div>
       <div className="goal-main">
         <div className={`goal-title${done ? ' done' : ''}`}>{goal.label}</div>

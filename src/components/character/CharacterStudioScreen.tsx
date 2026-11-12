@@ -39,8 +39,15 @@ const COLOR_KEY = { top: 'topColor', bottom: 'bottomColor', shoes: 'shoesColor' 
 // The stage is pinned above the list and shrinks from SH_MAX to SH_MIN as
 // the list scrolls. It floats over the list (which reserves SH_MAX at the
 // top), so the list's size never depends on the stage - no scroll feedback.
+// SH_MIN is 0 so scrolling (swiping) the menu all the way up fully
+// collapses the stage instead of always leaving a sliver of it on screen.
 const SH_MAX = 330;
-const SH_MIN = 150;
+const SH_MIN = 0;
+// Below this height the stage's own absolutely-positioned HUD/controls
+// (anchored to its top/bottom edges, not scaled to its height) would start
+// clipping into each other rather than cleanly fading like .st2-hide-compact
+// already does for the lower-priority ones - so the whole row hides instead.
+const SH_FULLY_COLLAPSED = 40;
 
 // studioCat (persisted) -> which tab / sub-tab to reopen on.
 function tabFor(cat: StudioCat): Tab {
@@ -161,13 +168,14 @@ export function CharacterStudioScreen() {
   }, []);
   CTX_REF.current = ctx;
   const t = tierFor(progress.level);
-  const cu = countUnlocked(ctx);
-  const nu = nextUnlock(ctx);
+  const cu = countUnlocked(ctx, character.base);
+  const nu = nextUnlock(ctx, character.base);
   const floor = levelFloor(progress.level);
   const ceil = levelCeil(progress.level);
   const lvlPct = Math.max(0, Math.min(1, (progress.totalXP - floor) / (ceil - floor)));
   const scale = 0.5 + (0.5 * (stageH - SH_MIN)) / (SH_MAX - SH_MIN);
   const compact = stageH < 230;
+  const fullyCollapsed = stageH < SH_FULLY_COLLAPSED;
 
   function goTab(next: Tab) {
     toTop();
@@ -462,7 +470,7 @@ export function CharacterStudioScreen() {
   return (
     <div className="studio2">
       <div
-        className={`st2-stage${compact ? ' compact' : ''}`}
+        className={`st2-stage${compact ? ' compact' : ''}${fullyCollapsed ? ' fully-collapsed' : ''}`}
         style={{ height: stageH, ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}
       >
         <div className="st2-canvas" style={{ ['--s' as string]: scale }}>

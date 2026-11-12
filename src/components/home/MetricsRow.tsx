@@ -21,15 +21,17 @@ function RingTile({
 }) {
   const R = 21;
   const C = 2 * Math.PI * R;
-  const off = C * (1 - Math.max(0, Math.min(1, pct)));
+  const clamped = Math.max(0, Math.min(1, pct));
+  const off = C * (1 - clamped);
+  const hit = clamped >= 1;
   return (
-    <div className="metric">
+    <div className={`metric${hit ? ' hit' : ''}`} style={{ ['--mc' as string]: color }}>
       <div className="metric-ring">
         <svg viewBox="0 0 52 52">
           <circle className="mr-track" cx="26" cy="26" r={R} />
           <circle className="mr-fill" cx="26" cy="26" r={R} stroke={color} strokeDasharray={C} strokeDashoffset={off} />
         </svg>
-        <div className="mr-icon" style={{ color }}>
+        <div className="mr-icon">
           <Icon name={iconName} />
         </div>
       </div>
@@ -73,12 +75,12 @@ export function MetricsRow() {
   if (health) {
     return (
       <div className="metrics">
-        <RingTile iconName="steps" color="#3b82f6" val={health.steps.toLocaleString()} label="Steps" pct={health.steps / STEPS_GOAL} />
-        <RingTile iconName="flame" color="#f97316" val={Math.round(health.kcal).toLocaleString()} label="Calories" pct={health.kcal / KCAL_GOAL} />
-        <RingTile iconName="clock" color="#10b981" val={Math.round(health.activeMinutes)} unit="min" label="Active" pct={health.activeMinutes / MINS_GOAL} />
+        <RingTile iconName="steps" color="var(--stat-agility)" val={health.steps.toLocaleString()} label="Steps" pct={health.steps / STEPS_GOAL} />
+        <RingTile iconName="flame" color="var(--stat-vitality)" val={Math.round(health.kcal).toLocaleString()} label="Calories" pct={health.kcal / KCAL_GOAL} />
+        <RingTile iconName="clock" color="var(--stat-endurance)" val={Math.round(health.activeMinutes)} unit="min" label="Active" pct={health.activeMinutes / MINS_GOAL} />
         <RingTile
           iconName="heart"
-          color="#ec4899"
+          color="var(--stat-strength)"
           val={health.hr ? Math.round(health.hr) : 'Pair watch'}
           unit={health.hr ? 'bpm' : undefined}
           label="Heart rate"
@@ -91,10 +93,10 @@ export function MetricsRow() {
   const m = todayMetrics(simDay, goalsDone, workoutDone);
   return (
     <div className="metrics">
-      <RingTile iconName="steps" color="#3b82f6" val={m.steps.toLocaleString()} label="Steps" pct={m.steps / m.stepsGoal} />
-      <RingTile iconName="flame" color="#f97316" val={m.kcal.toLocaleString()} label="Calories" pct={m.kcal / m.kcalGoal} />
-      <RingTile iconName="clock" color="#10b981" val={m.mins} unit="min" label="Active" pct={m.mins / m.minsGoal} />
-      <RingTile iconName="heart" color="#ec4899" val={m.hr} unit="bpm" label="Heart rate" pct={0.62} />
+      <RingTile iconName="steps" color="var(--stat-agility)" val={m.steps.toLocaleString()} label="Steps" pct={m.steps / m.stepsGoal} />
+      <RingTile iconName="flame" color="var(--stat-vitality)" val={m.kcal.toLocaleString()} label="Calories" pct={m.kcal / m.kcalGoal} />
+      <RingTile iconName="clock" color="var(--stat-endurance)" val={m.mins} unit="min" label="Active" pct={m.mins / m.minsGoal} />
+      <RingTile iconName="heart" color="var(--stat-strength)" val={m.hr} unit="bpm" label="Heart rate" pct={0.62} />
     </div>
   );
 }

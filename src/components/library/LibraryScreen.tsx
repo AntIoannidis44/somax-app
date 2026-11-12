@@ -522,7 +522,9 @@ export function LibraryScreen({ open, mode, onClose, logTo, pickFor, initialTab 
     });
   }, [filtered, groupBy, kind, saves]);
 
-  const activeFilterCount = [diet, days, lifestyle].filter((v) => v !== 'all').length;
+  // Diet sits in its own always-visible row for meals (see below), not
+  // behind the Filters toggle, so it doesn't count toward that badge.
+  const activeFilterCount = [days, lifestyle].filter((v) => v !== 'all').length;
 
   // Switching sort tab clears the chip filters, so nothing stays applied
   // out of sight on a tab you're no longer looking at.
@@ -628,10 +630,12 @@ export function LibraryScreen({ open, mode, onClose, logTo, pickFor, initialTab 
             <Icon name="search" />
             <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={kind === 'program' ? 'Search programs' : 'Search meals'} />
           </div>
-          <button className={`lib-filter-btn${showFilters || activeFilterCount ? ' on' : ''}`} onClick={() => setShowFilters((v) => !v)} aria-label="Filters">
-            <Icon name="layers" />
-            {activeFilterCount > 0 && <span>{activeFilterCount}</span>}
-          </button>
+          {kind === 'program' && (
+            <button className={`lib-filter-btn${showFilters || activeFilterCount ? ' on' : ''}`} onClick={() => setShowFilters((v) => !v)} aria-label="Filters">
+              <Icon name="layers" />
+              {activeFilterCount > 0 && <span>{activeFilterCount}</span>}
+            </button>
+          )}
         </div>
 
         <div className="feed-filters lib-chips">
@@ -656,6 +660,16 @@ export function LibraryScreen({ open, mode, onClose, logTo, pickFor, initialTab 
         {/* Third row follows the sort tab: levels / sports (or meal types) / goals. */}
         <SportWheel options={wheel.options} value={wheel.value} onChange={wheel.set} allLabel={wheel.allLabel} />
 
+        {/* Diet is core to browsing meals, not a secondary filter - it gets
+            its own always-visible row instead of hiding behind the Filters
+            toggle below, which is easy to miss entirely. */}
+        {kind === 'meal' && (
+          <>
+            <div className="lib-filter-label">Diet</div>
+            <Chips options={DIETS} value={diet} onChange={setDiet} />
+          </>
+        )}
+
         {showFilters && (
           <div className="lib-filters">
             {kind === 'program' && (
@@ -664,12 +678,6 @@ export function LibraryScreen({ open, mode, onClose, logTo, pickFor, initialTab 
                 <Chips options={DAYS_FILTERS} value={days} onChange={setDays} />
                 <div className="lib-filter-label">Lifestyle</div>
                 <Chips options={LIFESTYLES} value={lifestyle} onChange={setLifestyle} />
-              </>
-            )}
-            {kind === 'meal' && (
-              <>
-                <div className="lib-filter-label">Diet</div>
-                <Chips options={DIETS} value={diet} onChange={setDiet} />
               </>
             )}
           </div>

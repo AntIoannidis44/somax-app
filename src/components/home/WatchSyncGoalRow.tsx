@@ -20,9 +20,9 @@ export function WatchSyncGoalRow() {
   const selectedSet = new Set((selected ?? []).map((w) => w.startDate));
 
   return (
-    <div className="goal-row" style={{ flexWrap: 'wrap' }}>
+    <div className="goal-row" style={{ flexWrap: 'wrap', ['--gc' as string]: 'var(--stat-agility)' }}>
       <div className={`goal-check${done ? ' done' : ''}`} style={{ cursor: 'default' }}>
-        <Icon name={done ? 'check' : 'watch'} />
+        <Icon name={done ? 'check' : 'watch'} className={done ? 'ic-done' : 'ic-idle'} />
       </div>
       <div className="goal-main">
         <div className={`goal-title${done ? ' done' : ''}`}>

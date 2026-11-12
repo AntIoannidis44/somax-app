@@ -28,9 +28,9 @@ export function HydrationBar() {
   }
 
   return (
-    <div className="goal-row">
+    <div className="goal-row" style={{ ['--gc' as string]: '#38bdf8' }}>
       <div className={`goal-check${done ? ' done' : ''}`} style={{ cursor: 'default' }}>
-        <Icon name="check" />
+        <Icon name={done ? 'check' : 'droplet'} className={done ? 'ic-done' : 'ic-idle'} />
       </div>
       <div className="goal-main">
         <div className={`goal-title${done ? ' done' : ''}`}>{goal.label}</div>

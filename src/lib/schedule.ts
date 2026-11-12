@@ -1,6 +1,21 @@
 import { WORKOUTS } from '../data/workouts';
 import { getWorkout } from './customWorkouts';
 import type { PlanDay, TodayGoal, TrainingFocus, WorkoutState } from '../types';
+import type { IconName } from '../data/icons';
+
+// Per-goal icon + accent color for the checklist row (see GoalsList and
+// the other goal-row components) - keyed by TodayGoal.id, same ids built
+// below and in StepChallengeCard (which isn't a real goal, so it isn't
+// here - it hardcodes its own 'watch'/'check').
+export const GOAL_ICON: Record<string, { icon: IconName; color: string }> = {
+  workout: { icon: 'dumbbell', color: 'var(--stat-strength)' },
+  watch_workout: { icon: 'watch', color: 'var(--stat-agility)' },
+  mobility_rest: { icon: 'moon', color: 'var(--stat-recovery)' },
+  warmup: { icon: 'zap', color: 'var(--stat-discipline)' },
+  hydration: { icon: 'droplet', color: '#38bdf8' },
+  logfeel: { icon: 'heart', color: 'var(--macro-protein)' },
+  macros: { icon: 'nutrition', color: 'var(--stat-vitality)' },
+};
 
 // weekPlan is a fixed Sun-Sat template that repeats every real calendar
 // week - "today's" slot is always the real weekday, independent of

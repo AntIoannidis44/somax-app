@@ -442,27 +442,6 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .goal-meta{ font-size:11.5px; color: var(--text-faint); margin-top:2px; }
 .goal-xp{ font-family: var(--font-mono); font-size:11.5px; font-weight:500; color: var(--accent); flex-shrink:0; }
 
-.hydration-track{
-    position:relative; height:22px; border-radius:11px; background: var(--surface-3); margin:8px 0 5px;
-    cursor:pointer; overflow:hidden; touch-action:none;
-}
-.hydration-track.locked{ cursor:default; opacity:.75; }
-.hydration-fill{
-    position:absolute; inset:0 auto 0 0; border-radius:11px; overflow:hidden;
-    background: linear-gradient(180deg, #6cd0ff, #2f8fe0);
-    transition: width 140ms var(--ease-out);
-}
-.hydration-wave{
-    position:absolute; inset:0; opacity:.32;
-    background: repeating-linear-gradient(115deg, rgba(255,255,255,.55) 0 8px, transparent 8px 20px);
-    animation: hydration-shimmer 2.6s linear infinite;
-}
-@keyframes hydration-shimmer{ from{ transform: translateX(-20px); } to{ transform: translateX(0); } }
-.hydration-handle{
-    position:absolute; top:50%; width:18px; height:18px; border-radius:50%; background:#fff;
-    border:2px solid #2f8fe0; box-shadow:0 1px 4px rgba(0,0,0,.25); transform: translate(-50%, -50%); pointer-events:none;
-}
-
 .workout-cta{
     display:flex; align-items:center; gap:15px; padding:16px; border-radius:20px;
     background: var(--surface); border:1px solid var(--line); box-shadow: var(--sh-2); cursor:pointer;
@@ -517,11 +496,24 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
    flat" change: one class, applied everywhere a workout/activity type is
    shown (Train's week list, program rows, feed cards, DM cards), instead
    of the plain gray circle every one of those used before. */
+/* Shine-highlight + bottom-darkening overlay via pseudo-elements, not the
+   `background` property - every existing caller already sets its own
+   flat or gradient `background` inline (colorVar, hero gradient, dark
+   watch-sync gradient...), and an inline style always wins over a class's
+   `background`, so layering the craft on top this way gives every one of
+   them the same gradient+shine+shadow depth as the KPI/level badges
+   without touching a single call site. */
 .type-icon-badge{
-    width:34px; height:34px; border-radius:11px; display:flex; align-items:center; justify-content:center;
-    flex-shrink:0; color:#fff; box-shadow: 0 4px 10px -4px var(--badge-color, transparent);
+    position:relative; width:34px; height:34px; border-radius:11px; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; color:#fff; overflow:hidden;
+    box-shadow: 0 4px 10px -4px var(--badge-color, transparent), inset 0 1px 1px rgba(255,255,255,.25);
 }
-.type-icon-badge svg{ width:16px; height:16px; }
+.type-icon-badge::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background: linear-gradient(165deg, rgba(255,255,255,.42), transparent 50%), linear-gradient(0deg, rgba(0,0,0,.22), transparent 60%);
+}
+.type-icon-badge.muted::before{ display:none; }
+.type-icon-badge svg{ position:relative; z-index:1; width:16px; height:16px; filter: drop-shadow(0 1px 1px rgba(0,0,0,.2)); }
 .ex-name{ font-weight:700; font-size:14px; letter-spacing:-.01em; }
 .ex-meta{ font-size:11.5px; color: var(--text-faint); margin-top:3px; font-family: var(--font-mono); }
 .ex-toggle{
@@ -1231,27 +1223,47 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .hud-btn:hover{ background: rgba(255,255,255,.2); }
 .hud-chip svg{ width:13px; height:13px; }
 .arena-foot{
-    position:absolute; left:16px; right:16px; bottom:14px; z-index:2; padding:10px 13px 11px; border-radius:15px;
-    background: rgba(8,16,40,.5); border:1px solid rgba(255,255,255,.14); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    color:#fff;
+    position:absolute; left:16px; right:16px; bottom:14px; z-index:2; padding:13px 15px 13px; border-radius:20px;
+    background: rgba(8,16,40,.55); border:1px solid rgba(255,255,255,.16); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    color:#fff; box-shadow: 0 14px 30px -16px rgba(0,0,0,.55);
 }
-.af-row{ display:flex; justify-content:space-between; align-items:center; font-size:12px; font-weight:700; letter-spacing:-.01em; }
-.af-row span{ display:inline-flex; align-items:center; gap:4px; }
-.af-row svg{ width:12px; height:12px; color:#ffb454; }
-.af-row .mono{ font-weight:500; color: rgba(255,255,255,.8); font-size:11.5px; }
-.arena-foot .progress-track{ height:6px; background: rgba(255,255,255,.16); margin-top:8px; }
-.arena-foot .progress-fill{ background: linear-gradient(90deg, #fff, #9cc0ff); }
-.af-sub{ font-size:10.5px; color: rgba(255,255,255,.6); margin-top:7px; font-weight:600; letter-spacing:.02em; }
+.af-top{ display:flex; align-items:center; gap:12px; }
+.af-info{ flex:1; min-width:0; }
+.af-tier{ font-family: var(--font-display); font-size:15px; font-weight:800; letter-spacing:-.01em; }
+.af-streak{ display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; color:#ffb454; margin-top:2px; }
+.af-streak svg{ width:12px; height:12px; }
+.af-xp{ text-align:right; font-family: var(--font-mono); font-size:15px; font-weight:800; flex-shrink:0; font-variant-numeric:tabular-nums; }
+.af-xp span{ font-size:10.5px; font-weight:600; color: rgba(255,255,255,.65); margin-left:1px; }
+.arena-foot .progress-track{ height:7px; background: rgba(255,255,255,.18); margin-top:11px; }
+.arena-foot .progress-fill{ background: linear-gradient(90deg, var(--t1), var(--t2)); box-shadow: 0 0 12px -1px color-mix(in srgb, var(--t2) 70%, transparent); }
+.af-sub{ font-size:10.5px; color: rgba(255,255,255,.65); margin-top:8px; font-weight:600; letter-spacing:.02em; }
 
 .metrics{ display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin: -10px 0 0; position:relative; z-index:3; }
-.metric{ background: var(--surface); border:1px solid var(--line); border-radius:18px; padding:12px 4px 10px; text-align:center; box-shadow: var(--sh-2); }
-.metric-ring{ width:50px; height:50px; margin:0 auto 6px; position:relative; }
+.metric{
+  background: color-mix(in srgb, var(--mc) 12%, var(--surface)); border:1px solid color-mix(in srgb, var(--mc) 25%, var(--line));
+  border-radius:18px; padding:12px 4px 10px; text-align:center; box-shadow: var(--sh-2);
+  transition: box-shadow var(--dur-med) var(--ease-out), background var(--dur-med) var(--ease-out);
+}
+.metric.hit{
+  background: color-mix(in srgb, var(--mc) 20%, var(--surface));
+  box-shadow: var(--sh-2), 0 0 0 1.5px color-mix(in srgb, var(--mc) 50%, transparent), 0 8px 20px -10px color-mix(in srgb, var(--mc) 60%, transparent);
+}
+.metric-ring{ width:50px; height:50px; margin:0 auto 6px; position:relative; filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--mc) 35%, transparent)); }
 .metric-ring svg{ width:100%; height:100%; transform: rotate(-90deg); }
 .metric-ring circle{ fill:none; stroke-width:5; }
 .metric-ring .mr-track{ stroke: var(--surface-3); }
 .metric-ring .mr-fill{ stroke-linecap:round; transition: stroke-dashoffset 900ms var(--ease-out); }
-.metric-ring .mr-icon{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
-.metric-ring .mr-icon svg{ width:16px; height:16px; transform:none; }
+/* A real gradient-filled badge (the same shine+gradient+shadow craft as
+   the level badge's .lvl-hex) instead of a flat line icon sitting in the
+   ring - each metric gets its own distinct, crafted mark. */
+.metric-ring .mr-icon{
+  position:absolute; inset:5px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(165deg, rgba(255,255,255,.5), transparent 55%), linear-gradient(150deg, var(--mc), color-mix(in srgb, var(--mc) 62%, #000));
+  box-shadow: 0 3px 8px -2px color-mix(in srgb, var(--mc) 65%, transparent), inset 0 1px 1px rgba(255,255,255,.35);
+}
+.metric-ring .mr-icon svg{ width:21px; height:21px; transform:none; stroke:#fff; filter: drop-shadow(0 1px 1px rgba(0,0,0,.25)); }
+.metric.hit .metric-ring{ animation: metricHit 560ms var(--ease-spring); }
+@keyframes metricHit{ 0%{ transform:scale(1); } 45%{ transform:scale(1.14); } 100%{ transform:scale(1); } }
 .metric-val{ font-family:var(--font-display); font-size:14.5px; font-weight:700; letter-spacing:-.02em; font-variant-numeric:tabular-nums; white-space:nowrap; }
 .metric-val small{ font-size:9px; font-weight:700; color: var(--text-faint); margin-left:2px; letter-spacing:.02em; }
 .metric-label{ font-size:9px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color: var(--text-faint); margin-top:2px; white-space:nowrap; }
@@ -1274,20 +1286,125 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .quest-foot{ display:flex; justify-content:space-between; font-size:11.5px; color: rgba(255,255,255,.78); margin-top:8px; font-family:var(--font-mono); }
 .quest-btn{ margin-top:14px; background:#fff; color: var(--hero-2); width:100%; padding:13px; font-size:14px; }
 
-.ladder{ display:flex; flex-direction:column; gap:8px; }
-.rung{ display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:16px; background: var(--surface); border:1px solid var(--line); box-shadow: var(--sh-1); }
-.rung-num{ width:36px; height:36px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; font-size:13px; background: var(--surface-2); color: var(--text-dim); flex-shrink:0; }
-.rung.done .rung-num{ background: var(--success-soft); color: var(--success); }
-.rung.current .rung-num{ background: linear-gradient(152deg, var(--hero-1), var(--hero-2)); color:#fff; box-shadow: 0 8px 16px -8px rgba(12,50,150,.8); }
-.rung.current{ border-color: color-mix(in srgb, var(--accent) 35%, transparent); box-shadow: var(--sh-2); }
-.rung.locked{ opacity:.55; }
-.rung-main{ flex:1; min-width:0; }
-.rung-title{ font-size:13.5px; font-weight:700; letter-spacing:-.01em; }
-.rung-sub{ font-size:11px; color: var(--text-faint); margin-top:2px; font-family: var(--font-mono); }
-.rung-state{ font-size:9.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:5px 9px; border-radius:999px; background: var(--surface-2); color: var(--text-faint); display:flex; align-items:center; gap:4px; flex-shrink:0; }
-.rung.done .rung-state{ background: var(--success-soft); color: var(--success); }
-.rung.current .rung-state{ background: var(--accent-soft); color: var(--accent); }
-.rung-state svg{ width:11px; height:11px; }
+/* ---------- Level path: next-level stat card + a swipeable timeline of
+   the levels still ahead (levels already banked aren't worth screen space) --- */
+.tl-next{
+  position:relative; border-radius:22px; padding:16px 18px; overflow:hidden; color:#fff;
+  background: linear-gradient(135deg, var(--t1), var(--t2));
+  box-shadow: 0 16px 34px -18px color-mix(in srgb, var(--t2) 70%, transparent);
+}
+.tl-next::after{
+  content:''; position:absolute; inset:0; background: radial-gradient(120% 90% at 100% 0%, rgba(255,255,255,.28), transparent 60%);
+  pointer-events:none;
+}
+.tl-next-top{ display:flex; align-items:center; justify-content:space-between; }
+.tl-next-label{ font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color: rgba(255,255,255,.75); }
+.tl-next-lvl{ font-family: var(--font-mono); font-size:13px; font-weight:700; background: rgba(255,255,255,.2); padding:3px 10px; border-radius:999px; }
+.tl-next-xp{ font-family: var(--font-display); font-size:26px; font-weight:800; letter-spacing:-.02em; margin-top:6px; }
+.tl-next-bar{ height:7px; border-radius:999px; background: rgba(255,255,255,.22); margin-top:12px; overflow:hidden; }
+.tl-next-fill{ height:100%; border-radius:999px; background:#fff; box-shadow: 0 0 12px rgba(255,255,255,.75); transition: width var(--dur-slow) var(--ease-out); }
+
+.timeline{
+  position:relative; display:flex; align-items:flex-start; gap:16px; overflow-x:auto;
+  padding:38px 20px 14px; margin:12px -18px 0; scrollbar-width:none; scroll-behavior:smooth;
+}
+.timeline::-webkit-scrollbar{ display:none; }
+.timeline-track{ position:absolute; left:52px; right:52px; top:70px; height:4px; border-radius:2px; background: var(--surface-3); }
+.timeline-fill{ position:absolute; left:52px; top:70px; height:4px; border-radius:2px; background: linear-gradient(90deg, var(--hero-1), var(--hero-2)); }
+.tl-node{
+  position:relative; flex:0 0 76px; display:flex; flex-direction:column; align-items:center; gap:7px;
+  animation: tlRise .45s var(--ease-out) both;
+}
+@keyframes tlRise{ from{ opacity:0; transform:translateY(10px) scale(.92); } to{ opacity:1; transform:translateY(0) scale(1); } }
+.tl-tier{
+  position:absolute; top:-20px; left:50%; translate:-50% 0; font-size:10px; font-weight:800; letter-spacing:.03em;
+  color: var(--text-faint); white-space:nowrap;
+}
+.tl-badge{ position:relative; width:64px; height:64px; display:grid; place-items:center; z-index:1; }
+.tl-node.current .tl-badge{ filter: drop-shadow(0 6px 16px color-mix(in srgb, var(--accent) 45%, transparent)); }
+.tl-node.current .tl-badge::before{
+  content:''; position:absolute; inset:-6px; border-radius:50%;
+  background: conic-gradient(from 0deg, var(--hero-1), var(--hero-2), var(--hero-1));
+  opacity:.35; filter:blur(6px); animation: tlPulse 2.2s ease-in-out infinite;
+  z-index:-1;
+}
+@keyframes tlPulse{ 0%,100%{ opacity:.25; transform:scale(.96); } 50%{ opacity:.5; transform:scale(1.06); } }
+.tl-lvl{ font-size:12px; font-weight:800; color: var(--text-faint); font-family: var(--font-mono); }
+.tl-node.current .tl-lvl{ color: var(--accent); font-size:13px; }
+
+/* Unlocks rail: the same timeline, but the node's "badge" is the real
+   item on your actual character (CharacterThumbnail) sitting in full
+   view above the track - nothing dimmed, no lock icon over the art,
+   since the point is to show exactly what you're about to get. */
+.unlocks-timeline{ padding:8px 20px 16px; }
+.unlocks-timeline .timeline-track{ top:92px; }
+.tl-unlock{ flex:0 0 84px; gap:8px; }
+.tl-unlock-art{
+  position:relative; width:72px; height:72px; border-radius:18px; overflow:hidden; z-index:1;
+  background: radial-gradient(70% 60% at 50% 85%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%), var(--surface-2);
+  box-shadow: var(--sh-2);
+}
+.tl-unlock-art img{ width:100%; height:100%; object-fit:contain; object-position:center bottom; }
+/* CharacterThumbnail's loading state - a real 3D render is queued behind
+   it (see characterThumbnail.ts), so an empty box reads as broken rather
+   than "on its way" without this. */
+/* A translucent sweep, not an opaque surface-colored box - this sits on
+   all sorts of backgrounds (Character Studio's plain tiles, Profile's
+   colorful .char-card hero gradient, Home's Unlocks nodes), and a solid
+   light-grey fill read as a flashed-in white square on anything that
+   wasn't already that color. */
+.char-thumb-skel{
+  width:100%; height:100%; border-radius:inherit;
+  background: linear-gradient(100deg, rgba(255,255,255,.05) 35%, rgba(255,255,255,.22) 50%, rgba(255,255,255,.05) 65%);
+  background-size:200% 100%; animation: thumbSkel 1.3s ease-in-out infinite;
+}
+@keyframes thumbSkel{ from{ background-position:120% 0; } to{ background-position:-20% 0; } }
+.tl-dot{ width:11px; height:11px; border-radius:50%; background: var(--accent); box-shadow:0 0 0 3px var(--surface), var(--sh-1); z-index:1; }
+.tl-unlock-name{
+  font-size:11px; font-weight:700; text-align:center; color: var(--text-dim);
+  max-width:84px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+
+/* ---------- Goals (Home): a deck of accent-ringed cards, not a track -
+   same bold/animated family as Level Path and Unlocks, deliberately a
+   different shape since these are deadline goals, not a level ladder. --- */
+.goal-deck{ display:flex; flex-direction:column; gap:10px; }
+.goal-card{
+  position:relative; display:flex; align-items:center; gap:14px; width:100%; text-align:left;
+  padding:13px 14px; border-radius:20px; border:none; cursor:pointer; font:inherit; color:inherit;
+  background: var(--surface); box-shadow: var(--sh-1); border-left:4px solid var(--gc);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.goal-card:active{ transform: scale(.985); }
+.goal-card-ring{
+  width:52px; height:52px; border-radius:50%; padding:3px; flex-shrink:0; display:grid;
+  background: conic-gradient(var(--gc), color-mix(in srgb, var(--gc) 55%, #fff) var(--p), var(--surface-3) var(--p));
+}
+.goal-card-ring-inner{ display:grid; place-items:center; width:100%; height:100%; border-radius:50%; background: var(--surface); color: var(--gc); }
+.goal-card-ring-inner svg{ width:20px; height:20px; }
+.goal-card-ring.indeterminate{ background: conic-gradient(var(--gc) 0 30%, var(--surface-3) 0); animation: goalRingSpin 2.6s linear infinite; }
+@keyframes goalRingSpin{ to{ transform: rotate(360deg); } }
+.goal-card-main{ flex:1; min-width:0; }
+.goal-card-title{ font-size:14px; font-weight:800; letter-spacing:-.01em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.goal-card-meta{ font-size:11.5px; color: var(--text-faint); margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.goal-card-due{ display:flex; flex-direction:column; align-items:center; flex-shrink:0; font-family: var(--font-mono); min-width:30px; }
+.goal-card-due .n{ font-size:19px; font-weight:800; line-height:1; color: var(--text-dim); }
+.goal-card-due .u{ font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color: var(--text-faint); }
+.goal-card-due.soon .n{ color: var(--warn); }
+.goal-card-due.urgent .n{ color: var(--danger); }
+.goal-card-due.urgent{ animation: dueUrgent 1.6s ease-in-out infinite; }
+@keyframes dueUrgent{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.14); } }
+
+.goal-cta{
+  display:flex; align-items:center; gap:14px; width:100%; padding:16px; border-radius:20px; border:none;
+  cursor:pointer; font:inherit; text-align:left; color:#fff;
+  background: linear-gradient(135deg, var(--hero-1), var(--hero-2));
+  box-shadow: 0 16px 34px -18px color-mix(in srgb, var(--hero-2) 60%, transparent);
+}
+.goal-cta-icon{ width:40px; height:40px; border-radius:14px; background: rgba(255,255,255,.2); display:grid; place-items:center; flex-shrink:0; }
+.goal-cta-icon svg{ width:19px; height:19px; }
+.goal-cta-t{ font-weight:800; font-size:14.5px; }
+.goal-cta-s{ font-size:12px; color: rgba(255,255,255,.85); margin-top:2px; }
 
 /* ---------- level up ---------- */
 .levelup-burst{ position:absolute; inset:0; pointer-events:none; z-index:30; display:flex; align-items:center; justify-content:center; opacity:0; background: rgba(5,10,26,.35); backdrop-filter: blur(2px); }

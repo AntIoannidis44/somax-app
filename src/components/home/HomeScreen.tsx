@@ -1,3 +1,4 @@
+import { Icon } from '../Icon';
 import { Arena } from './Arena';
 import { MetricsRow } from './MetricsRow';
 import { QuestCard } from './QuestCard';
@@ -6,6 +7,7 @@ import { GoalsList } from './GoalsList';
 import { GoalsKPI } from './GoalsKPI';
 import { StepChallengeCard } from './StepChallengeCard';
 import { LevelPath } from './LevelPath';
+import { UnlocksRail } from './UnlocksRail';
 import { useAppStore } from '../../store/useAppStore';
 import { dailyCapForLevel } from '../../lib/xp';
 import { STEP_GOAL } from '../../lib/schedule';
@@ -30,7 +32,6 @@ export function HomeScreen() {
   const totalCount = goals.length + (stepChallengeShown ? 1 : 0);
   const doneCount = goals.filter((g) => g.done).length + (stepChallengeShown && stepChallengeDone ? 1 : 0);
   const dailyCap = dailyCapForLevel(level);
-  const capPct = Math.min(100, Math.round((xpEarnedToday / dailyCap) * 100));
 
   return (
     <>
@@ -50,16 +51,38 @@ export function HomeScreen() {
         </button>
       </div>
       <QuestCard />
-      <div className="section-label">
-        Today's checklist
-        <span className="mono" style={{ fontWeight: 500, color: 'var(--text-faint)' }}>
-          {doneCount}/{totalCount} done · {xpEarnedToday}/{dailyCap} XP
-        </span>
-      </div>
+      <div className="section-label">Today's checklist</div>
       <div className="card checklist">
-        <div className="progress-track checklist-cap">
-          <div className={`progress-fill${capPct >= 100 ? ' success' : ''}`} style={{ width: `${capPct}%` }} />
+        <div className="checklist-path">
+          <div className="cp-head">
+            <span className="cp-xp">
+              {xpEarnedToday}
+              <small> / {dailyCap} XP today</small>
+            </span>
+            <span className="cp-count">{doneCount}/{totalCount} done</span>
+          </div>
+          <div className="cp-track-row">
+            <div className="cp-track" />
+            <div
+              className="cp-fill"
+              style={{ width: `${totalCount > 1 ? (Math.min(doneCount, totalCount - 1) / (totalCount - 1)) * 100 : doneCount > 0 ? 100 : 0}%` }}
+            />
+            {Array.from({ length: totalCount }, (_, i) => {
+              const done = i < doneCount;
+              const next = i === doneCount;
+              return (
+                <div className={`cp-node${done ? ' done' : ''}${next ? ' next' : ''}`} key={i}>
+                  {done && <Icon name="check" />}
+                </div>
+              );
+            })}
+          </div>
         </div>
+        {doneCount === 0 && (
+          <div className="checklist-hint">
+            <Icon name="info" /> Tap a glowing icon below to mark it done
+          </div>
+        )}
         <StepChallengeCard />
         <GoalsList />
       </div>
@@ -72,6 +95,8 @@ export function HomeScreen() {
       <GoalsKPI />
       <div className="section-label">Level path</div>
       <LevelPath />
+      <div className="section-label">Unlocks</div>
+      <UnlocksRail />
       <div style={{ height: 8 }} />
     </>
   );
