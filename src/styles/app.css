@@ -881,15 +881,6 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .pv-achievement-num{ font-size:22px; font-weight:800; letter-spacing:-.02em; }
 .pv-achievement-label{ font-size:10.5px; color: var(--text-faint); margin-top:3px; font-weight:600; }
 
-.pv-favorites{ display:flex; gap:10px; margin-bottom:18px; overflow-x:auto; scrollbar-width:none; }
-.pv-favorites::-webkit-scrollbar{ display:none; }
-.pv-favorite{ flex-shrink:0; width:84px; background: var(--surface); border-radius:16px; padding:12px 8px; text-align:center; box-shadow: var(--sh-1); }
-.pv-favorite-icon{
-    width:30px; height:30px; border-radius:10px; background: var(--surface-2); color: var(--text-dim);
-    display:flex; align-items:center; justify-content:center; margin:0 auto 6px;
-}
-.pv-favorite-label{ font-size:11.5px; font-weight:700; }
-.pv-favorite-count{ font-size:10px; color: var(--text-faint); margin-top:1px; }
 .pv-character-view{ width:100%; height:320px; position:relative; overflow:hidden; }
 .pv-character-view .fit-img{
     position:absolute; left:50%; bottom:0; transform:translateX(-50%); width:auto; height:100%; object-fit:contain;
@@ -942,14 +933,6 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .flag-badge.on{ background: var(--success-soft); color: var(--success); }
 .flag-badge.off{ background: var(--surface-2); color: var(--text-faint); }
 
-.history-row{ display:flex; align-items:center; gap:12px; padding:12px 4px; border-bottom:1px solid var(--line-soft); }
-.history-row:last-child{ border-bottom:none; }
-.history-icon{ width:34px; height:34px; border-radius:12px; background: var(--accent-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.history-icon svg{ width:15px; height:15px; color: var(--accent); }
-.history-main{ flex:1; min-width:0; }
-.history-title{ font-size:13px; font-weight:600; letter-spacing:-.01em; }
-.history-time{ font-size:10.5px; color: var(--text-faint); margin-top:2px; font-family:var(--font-mono); }
-.history-xp{ font-family: var(--font-mono); font-size:12px; font-weight:500; color: var(--success); flex-shrink:0; }
 
 .simbar{ display:flex; align-items:center; justify-content:space-between; gap:14px; }
 
@@ -1035,6 +1018,7 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .char-card-figure{ width:132px; height:132px; flex-shrink:0; position:relative; align-self:center; }
 .char-card-figure .fit-img{ position:absolute; left:0; bottom:6px; width:100%; height:calc(100% - 6px); object-fit:contain; object-position:center bottom; transform:none; filter: drop-shadow(0 10px 12px rgba(0,0,0,.35)); }
 .char-card-body{ flex:1; padding:18px 18px 16px 0; display:flex; flex-direction:column; position:relative; }
+.char-card-top{ display:flex; align-items:center; gap:8px; }
 .char-tier{ font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color: rgba(255,255,255,.7); }
 .char-title{ font-family:var(--font-display); font-size:20px; font-weight:700; letter-spacing:-.025em; margin-top:3px; }
 .char-unlocks{ font-size:11.5px; color: rgba(255,255,255,.72); margin-top:6px; line-height:1.45; }
@@ -1614,9 +1598,12 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .group-row{ display:flex; align-items:center; gap:12px; padding:13px 4px; border-bottom:1px solid var(--line-soft); cursor:pointer; }
 .group-row:last-child{ border-bottom:none; }
 .group-icon{
-    width:40px; height:40px; border-radius:13px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    position:relative; width:40px; height:40px; border-radius:13px; flex-shrink:0; display:flex; align-items:center; justify-content:center; overflow:hidden;
     background: linear-gradient(152deg, var(--accent), var(--accent-2)); color:#fff;
+    box-shadow: 0 3px 8px -3px color-mix(in srgb, var(--accent) 55%, transparent), inset 0 1px 1px rgba(255,255,255,.3);
 }
+.group-icon::before{ content:""; position:absolute; inset:0; pointer-events:none; background: linear-gradient(165deg, rgba(255,255,255,.4), transparent 50%); }
+.group-icon svg{ position:relative; z-index:1; }
 .group-meta{ font-size:11.5px; color:var(--text-faint); margin-top:1px; }
 .member-pick{ display:flex; align-items:center; gap:10px; padding:10px 4px; border-bottom:1px solid var(--line-soft); cursor:pointer; }
 .member-pick:last-child{ border-bottom:none; }

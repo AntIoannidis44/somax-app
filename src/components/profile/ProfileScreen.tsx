@@ -15,6 +15,8 @@ import { uploadProfilePhoto, removeProfilePhoto } from '../../lib/profilePhoto';
 import { countUnlocked, nextUnlock, tierFor, unlockItemName, wearUnlocked } from '../../lib/character';
 import { first, initials } from '../../lib/format';
 import { onbSport } from '../../lib/plans/weekBuilder';
+import { levelCeil, levelFloor } from '../../lib/xp';
+import { TierBadge } from '../home/TierBadge';
 
 export function ProfileScreen() {
   const profile = useAppStore((s) => s.profile)!;
@@ -93,6 +95,9 @@ export function ProfileScreen() {
   const cu = countUnlocked(ctx, character?.base);
   const tier = tierFor(progress.level);
   const nuText = nu ? `Next unlock: ${unlockItemName(nu.key, nu.item)} at Level ${nu.level}` : 'Every item unlocked';
+  const lvlFloor = levelFloor(progress.level);
+  const lvlCeil = levelCeil(progress.level);
+  const lvlPct = Math.max(0, Math.min(1, (progress.totalXP - lvlFloor) / (lvlCeil - lvlFloor)));
 
   if (editing) {
     return (
@@ -230,8 +235,9 @@ export function ProfileScreen() {
       <div className="char-card" style={{ ['--t1' as string]: tier.c1, ['--t2' as string]: tier.c2 }} onClick={openCharacterStudio}>
         <div className="char-card-figure">{character && <CharacterThumbnail cfg={wornCharacter} mode="full" />}</div>
         <div className="char-card-body">
-          <div className="char-tier">
-            {tierFor(progress.level).name} tier · Lv {progress.level}
+          <div className="char-card-top">
+            <TierBadge level={progress.level} c1={tier.c1} c2={tier.c2} size={34} pct={lvlPct} />
+            <div className="char-tier">{tier.name} tier</div>
           </div>
           <div className="char-title">{first(profile.name)}</div>
           <div className="char-unlocks">

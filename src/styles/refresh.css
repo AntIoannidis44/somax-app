@@ -401,12 +401,16 @@ button.goal-check:not(.done){ animation: checkInvite 2.4s ease-in-out infinite; 
 .pv-stat-label{ font-size:12px; font-weight:600; }
 .pv-name{ font-family: var(--font-display); font-size:21px; font-weight:700; letter-spacing:-.03em; }
 .pv-actions .btn{ border-radius:12px; padding:10px 12px; font-size:13.5px; }
-.pv-achievement{ border:1px solid var(--line); box-shadow:none; border-radius:20px; text-align:left; padding:12px; }
-.pv-achievement-icon{ width:34px; height:34px; border-radius:11px; margin:0 0 9px; box-shadow:none; }
+/* This had drifted from app.css's centered, gradient-badge base (left-
+   aligned text, no icon shadow) - the exact same "silent override flattens
+   a tile" bug the Home KPI cards had. Shared by both your own Highlights
+   row and a friend's profile view (ProfileViewScreen), so fixing it once
+   covers both. */
+.pv-achievement{ border:1px solid var(--line); border-radius:20px; padding:14px 10px; }
+.pv-achievement-icon{ width:40px; height:40px; }
 .pv-achievement-icon svg{ width:18px; height:18px; }
 .pv-achievement-num{ font-family: var(--font-display); font-size:18px; font-weight:700; letter-spacing:-.03em; }
 .pv-achievement-label{ font-size:11.5px; }
-.pv-favorite{ border:1px solid var(--line); box-shadow:none; }
 
 /* ---------- own profile ---------- */
 .profile-head{ gap:18px; }
