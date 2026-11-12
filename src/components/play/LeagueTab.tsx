@@ -1,14 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
 import { fetchLeaderboard, subscribeLeaderboard, type PublicProfile } from '../../lib/social';
 import { getCharacterSnapshot } from '../../lib/characterThumbnail';
 import { initials } from '../../lib/format';
+import { rankLeague, scoreLabel, type Board, type Ranked } from '../../lib/league';
 
 function AvatarCell({ profile, className = 'league-avatar' }: { profile: PublicProfile; className?: string }) {
   const [src, setSrc] = useState('');
+  // Character portraits are rendered from 3D - only do it for rows that are
+  // actually on (or near) screen, so a 100-person league stays light.
+  const ref = useRef<HTMLDivElement>(null);
+  const [seen, setSeen] = useState(false);
   useEffect(() => {
+    const el = ref.current;
+    if (!el || seen) return;
+    if (typeof IntersectionObserver === 'undefined') return setSeen(true);
+    const io = new IntersectionObserver((entries) => entries.some((e) => e.isIntersecting) && setSeen(true), { rootMargin: '200px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [seen]);
+  useEffect(() => {
+    if (!seen) return;
     if (profile.photo_url || !profile.character) {
       setSrc('');
       return;
@@ -20,12 +34,12 @@ function AvatarCell({ profile, className = 'league-avatar' }: { profile: PublicP
     return () => {
       cancelled = true;
     };
-  }, [profile.photo_url, profile.character]);
+  }, [seen, profile.photo_url, profile.character]);
 
   const imgSrc = profile.photo_url || src;
 
   return (
-    <div className={className} style={imgSrc ? { overflow: 'hidden', padding: 0 } : undefined}>
+    <div ref={ref} className={className} style={imgSrc ? { overflow: 'hidden', padding: 0 } : undefined}>
       {imgSrc ? <img className="fit-img" src={imgSrc} alt={profile.name} draggable={false} /> : initials(profile.name)}
     </div>
   );
@@ -42,24 +56,15 @@ const RANKS = [
 // below still uses.
 const PODIUM_ORDER = [1, 0, 2] as const;
 
-function Podium({
-  top3,
-  userId,
-  board,
-  onOpen,
-}: {
-  top3: PublicProfile[];
-  userId: string | null;
-  board: Board;
-  onOpen: (id: string) => void;
-}) {
+function Podium({ top3, userId, onOpen }: { top3: Ranked[]; userId: string | null; onOpen: (id: string) => void }) {
   return (
     <div className="podium">
       {PODIUM_ORDER.map((i) => {
-        const r = top3[i];
-        if (!r) return <div key={i} className={`podium-col ${RANKS[i].cls}`} />;
+        const entry = top3[i];
+        if (!entry) return <div key={i} className={`podium-col ${RANKS[i].cls}`} />;
+        const r = entry.row;
         const isYou = r.user_id === userId;
-        const score = board === 'xp' ? `${r.monthly_xp} XP` : `${(r.monthly_steps || 0).toLocaleString()} steps`;
+        const score = entry.label;
         return (
           <div key={r.user_id} className={`podium-col ${RANKS[i].cls}${isYou ? ' you' : ''}`} onClick={() => onOpen(r.user_id)}>
             {i === 0 && <Icon name="trophy" className="podium-crown" />}
@@ -74,11 +79,66 @@ function Podium({
   );
 }
 
-const BOARDS = [
+const BOARDS: { id: Board; label: string }[] = [
   { id: 'xp', label: 'XP' },
   { id: 'steps', label: 'Steps' },
-] as const;
-type Board = (typeof BOARDS)[number]['id'];
+];
+
+// Rows beyond this show behind "Show all" - a big league stays quick to open.
+const LIST_PREVIEW = 50;
+
+// Podium + ranked list + "You" bar for one board. Pure presentation over
+// rankLeague(), exported so it can be exercised with any number of people.
+export function LeagueBoard({ ranked, userId, board, onOpen }: { ranked: Ranked[]; userId: string | null; board: Board; onOpen: (id: string) => void }) {
+  const [showAll, setShowAll] = useState(false);
+  const rest = ranked.slice(3);
+  const shown = showAll ? rest : rest.slice(0, LIST_PREVIEW);
+  const me = ranked.find((x) => x.row.user_id === userId) ?? null;
+  const third = ranked[2];
+  return (
+    <>
+      <Podium top3={ranked.slice(0, 3)} userId={userId} onOpen={onOpen} />
+      {rest.length > 0 && (
+        <div className="card">
+          {shown.map((x) => (
+            <div
+              className={`league-row${x.row.user_id === userId ? ' you' : ''}`}
+              key={x.row.user_id}
+              style={{ cursor: 'pointer' }}
+              onClick={() => onOpen(x.row.user_id)}
+            >
+              <div className="league-rank">{x.rank}</div>
+              <AvatarCell profile={x.row} />
+              <div className="league-name-col">
+                <div className="league-name">{x.row.user_id === userId ? 'You' : x.row.name}</div>
+                <div className="league-sub">Level {x.row.level ?? 1}</div>
+              </div>
+              <div className="league-xp">{x.label}</div>
+            </div>
+          ))}
+          {!showAll && rest.length > LIST_PREVIEW && (
+            <button type="button" className="lib-more" style={{ margin: '6px 0 4px' }} onClick={() => setShowAll(true)}>
+              Show all {ranked.length}
+            </button>
+          )}
+        </div>
+      )}
+      {me && me.rank > 3 && third && (
+        <div className="mebar">
+          <span className="rk">#{me.rank}</span>
+          <AvatarCell profile={me.row} />
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div className="t">You · {me.label}</div>
+            <div className="s">
+              Ahead of {Math.round(((ranked.length - me.rank) / Math.max(1, ranked.length - 1)) * 100)}% of the league ·{' '}
+              {scoreLabel(Math.max(0, third.score - me.score + 1), board)} to top 3
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
 
 export function LeagueTab() {
   const userId = useUserId();
@@ -103,13 +163,8 @@ export function LeagueTab() {
     };
   }, []);
 
-  // fetchLeaderboard already orders by monthly_xp - the steps board is the
-  // same small set of rows, just re-sorted client-side rather than a
-  // second query, since these are two views onto one leaderboard.
-  const sorted = board === 'xp' ? rows : [...rows].sort((a, b) => (b.monthly_steps || 0) - (a.monthly_steps || 0));
-  const rest = sorted.slice(3);
-  const meRank = sorted.findIndex((r) => r.user_id === userId) + 1;
-  const me = meRank > 0 ? sorted[meRank - 1] : null;
+  // Both boards are views onto the same rows, ranked by lib/league.ts.
+  const ranked = rankLeague(rows, board);
 
   return (
     <>
@@ -124,56 +179,15 @@ export function LeagueTab() {
             </button>
           ))}
         </div>
-        <span>{sorted.length} in your league</span>
+        <span>{ranked.length} in your league</span>
       </div>
 
-      {sorted.length === 0 ? (
+      {ranked.length === 0 ? (
         <div className="card" style={{ padding: '16px 4px', color: 'var(--text-faint)', fontSize: 13 }}>
           No one's on the board yet - finish onboarding to show up here.
         </div>
       ) : (
-        <>
-          <Podium top3={sorted.slice(0, 3)} userId={userId} board={board} onOpen={openProfile} />
-          {rest.length > 0 && (
-            <div className="card">
-              {rest.map((r, i) => (
-                <div
-                  className={`league-row${r.user_id === userId ? ' you' : ''}`}
-                  key={r.user_id}
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => openProfile(r.user_id)}
-                >
-                  <div className="league-rank">{i + 4}</div>
-                  <AvatarCell profile={r} />
-                  <div className="league-name-col">
-                    <div className="league-name">{r.user_id === userId ? 'You' : r.name}</div>
-                    <div className="league-sub">
-                      {board === 'xp' ? `${(r.monthly_steps || 0).toLocaleString()} steps` : `${r.monthly_xp} XP`}
-                    </div>
-                  </div>
-                  <div className="league-xp">
-                    {board === 'xp' ? `${r.monthly_xp} XP` : `${(r.monthly_steps || 0).toLocaleString()}`}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-          {meRank > 3 && me && (
-            <div className="mebar">
-              <span className="rk">#{meRank}</span>
-              <AvatarCell profile={me} />
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div className="t">You · {board === 'xp' ? `${me.monthly_xp.toLocaleString()} XP` : `${(me.monthly_steps || 0).toLocaleString()} steps`}</div>
-                <div className="s">
-                  Ahead of {Math.round(((sorted.length - meRank) / Math.max(1, sorted.length - 1)) * 100)}% of the league ·{' '}
-                  {board === 'xp'
-                    ? `${Math.max(0, sorted[2].monthly_xp - me.monthly_xp + 1).toLocaleString()} XP to top 3`
-                    : `${Math.max(0, (sorted[2].monthly_steps || 0) - (me.monthly_steps || 0) + 1).toLocaleString()} steps to top 3`}
-                </div>
-              </div>
-            </div>
-          )}
-        </>
+        <LeagueBoard key={board} ranked={ranked} userId={userId} board={board} onOpen={openProfile} />
       )}
     </>
   );
