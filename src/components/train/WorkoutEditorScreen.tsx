@@ -5,7 +5,32 @@ import { useUserId } from '../../lib/useSession';
 import { getWorkout, myWorkouts, saveWorkout, deleteWorkout } from '../../lib/customWorkouts';
 import { WORKOUT_TYPES } from '../../data/workoutTypes';
 import { expandSets } from '../../lib/workoutSets';
+import { parseDuration } from '../../lib/timerSpec';
 import type { ExerciseDef, SetDef } from '../../types';
+
+// How an exercise is measured. Stored the same way the library writes it
+// (free-text reps), so the tracking timer picks it up: "45s", "30s/side",
+// and Tabata-style "20s on / 10s off" repeated once per round.
+type SetKind = 'reps' | 'time' | 'intervals';
+type Draft = ExerciseDef & { kind?: SetKind };
+
+const ON_OFF = /(\d+)\s*s\w*\s*on\s*[/,]\s*(\d+)\s*s\w*\s*off/i;
+const SIDE = /\/\s*(side|leg|arm)\b/i;
+
+function kindOf(ex: ExerciseDef): SetKind {
+  const reps = (ex.setList?.[0]?.reps ?? ex.reps ?? '').trim();
+  if (ON_OFF.test(reps)) return 'intervals';
+  if (parseDuration(reps) !== null && !/^\d+$/.test(reps)) return 'time';
+  return 'reps';
+}
+function onOff(reps: string): { work: number; rest: number } {
+  const m = reps.match(ON_OFF);
+  return m ? { work: Number(m[1]), rest: Number(m[2]) } : { work: 20, rest: 10 };
+}
+function timeReps(sec: number, sides: boolean): string {
+  const t = sec >= 60 && sec % 60 === 0 ? `${sec / 60} min` : `${sec}s`;
+  return `${t}${sides ? '/side' : ''}`;
+}
 
 const GROUP_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -16,8 +41,9 @@ function nextGroup(exercises: ExerciseDef[]): string {
 
 // The editor always works on per-set rows (setList). Older programs are
 // expanded into rows on load, so one editing path covers everything.
-function toDraft(ex: ExerciseDef): ExerciseDef {
-  return { ...ex, setList: expandSets(ex).map((s) => ({ ...s })) };
+function toDraft(ex: ExerciseDef): Draft {
+  const d: Draft = { ...ex, setList: expandSets(ex).map((s) => ({ ...s })) };
+  return { ...d, kind: kindOf(d) };
 }
 
 export function WorkoutEditorScreen() {
@@ -32,9 +58,34 @@ export function WorkoutEditorScreen() {
   const [draftId] = useState<string | undefined>(owned?.id);
   const [name, setName] = useState(owned?.name ?? preset?.name ?? '');
   const [duration, setDuration] = useState(owned?.duration ?? preset?.duration ?? '30 min');
-  const [exercises, setExercises] = useState<ExerciseDef[]>((owned?.exercises ?? preset?.exercises ?? []).map(toDraft));
+  const [exercises, setExercises] = useState<Draft[]>((owned?.exercises ?? preset?.exercises ?? []).map(toDraft));
   const [category, setCategory] = useState(owned?.category ?? preset?.category ?? 'gym');
   const [saving, setSaving] = useState(false);
+
+  // Switch an exercise between reps, time and intervals, giving its sets
+  // sensible starting values in the new format.
+  function setKind(i: number, kind: SetKind) {
+    setExercises((prev) =>
+      prev.map((e, idx) => {
+        if (idx !== i || e.kind === kind) return e;
+        const n = Math.max(1, e.setList?.length ?? 1);
+        if (kind === 'intervals') return { ...e, kind, setList: Array.from({ length: 8 }, () => ({ reps: '20s on / 10s off' })) };
+        const reps = kind === 'time' ? '30s' : '10';
+        return { ...e, kind, setList: Array.from({ length: e.kind === 'intervals' ? 3 : n }, (_, k) => ({ reps, weight: e.setList?.[k]?.weight })) };
+      }),
+    );
+  }
+  function setIntervals(i: number, work: number, rest: number, rounds: number) {
+    const reps = `${work}s on / ${rest}s off`;
+    setExercises((prev) => prev.map((e, idx) => (idx === i ? { ...e, setList: Array.from({ length: rounds }, () => ({ reps })) } : e)));
+  }
+  function setSides(i: number, sides: boolean) {
+    setExercises((prev) =>
+      prev.map((e, idx) =>
+        idx === i ? { ...e, setList: (e.setList ?? []).map((st) => ({ ...st, reps: timeReps(parseDuration(st.reps) ?? 30, sides) })) } : e,
+      ),
+    );
+  }
 
   function updateExercise(i: number, patch: Partial<ExerciseDef>) {
     setExercises((prev) => prev.map((e, idx) => (idx === i ? { ...e, ...patch } : e)));
@@ -173,6 +224,8 @@ export function WorkoutEditorScreen() {
         const sets = ex.setList ?? [];
         const prevGroup = i > 0 ? exercises[i - 1].group : undefined;
         const canLinkAbove = i > 0;
+        const kind: SetKind = ex.kind ?? 'reps';
+        const sides = SIDE.test(sets[0]?.reps ?? '');
         return (
           <div className={`card ex-edit-block${ex.group ? ' in-superset' : ''}`} key={i} style={{ marginBottom: 12 }}>
             {ex.group && <div className="superset-label">Superset {ex.group}{prevGroup === ex.group ? '' : ' · starts here'}</div>}
@@ -188,16 +241,66 @@ export function WorkoutEditorScreen() {
               </button>
             </div>
 
+            <div className="wt-tabs ex-kind-tabs" role="tablist" aria-label="How this exercise is measured">
+              {(['reps', 'time', 'intervals'] as SetKind[]).map((k) => (
+                <button key={k} type="button" role="tab" aria-selected={kind === k} className={`wt-tab${kind === k ? ' on' : ''}`} onClick={() => setKind(i, k)}>
+                  {k === 'reps' ? 'Reps' : k === 'time' ? 'Time' : 'Intervals'}
+                </button>
+              ))}
+            </div>
+
+            {kind === 'intervals' ? (
+              <div className="ex-interval-edit">
+                {(() => {
+                  const { work, rest } = onOff(sets[0]?.reps ?? '');
+                  const rounds = sets.length;
+                  const num = (label: string, value: number, onChange: (v: number) => void, suffix = 's') => (
+                    <div className="ex-edit-field" key={label}>
+                      <label>{label}</label>
+                      <div className="ex-num-wrap">
+                        <input type="number" inputMode="numeric" min={1} value={value} onChange={(e) => onChange(Math.max(1, Math.round(Number(e.target.value) || 1)))} />
+                        {suffix && <span>{suffix}</span>}
+                      </div>
+                    </div>
+                  );
+                  return (
+                    <>
+                      <div className="ex-edit-card-row">
+                        {num('Work', work, (v) => setIntervals(i, v, rest, rounds))}
+                        {num('Rest', rest, (v) => setIntervals(i, work, v, rounds))}
+                        {num('Rounds', rounds, (v) => setIntervals(i, work, rest, Math.min(50, v)), '')}
+                      </div>
+                      <button type="button" className="link-btn" style={{ marginTop: 8 }} onClick={() => setIntervals(i, 20, 10, 8)}>
+                        Tabata 20s / 10s × 8
+                      </button>
+                      <div className="ex-kind-hint">Runs as an interval timer while tracking: one tick per round.</div>
+                    </>
+                  );
+                })()}
+              </div>
+            ) : (
+              <>
             <div className="set-edit-head">
               <span>Set</span>
-              <span>Reps</span>
+              <span>{kind === 'time' ? 'Time (sec)' : 'Reps'}</span>
               <span>Weight</span>
               <span />
             </div>
             {sets.map((s, k) => (
               <div className="set-edit-row" key={k}>
                 <span className="set-edit-no">{k + 1}</span>
-                <input value={s.reps} onChange={(e) => updateSet(i, k, { reps: e.target.value })} placeholder="12" />
+                {kind === 'time' ? (
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    min={1}
+                    value={parseDuration(s.reps) ?? ''}
+                    onChange={(e) => updateSet(i, k, { reps: e.target.value ? timeReps(Math.max(1, Math.round(Number(e.target.value))), sides) : '' })}
+                    placeholder="30"
+                  />
+                ) : (
+                  <input value={s.reps} onChange={(e) => updateSet(i, k, { reps: e.target.value })} placeholder="12" />
+                )}
                 <input value={s.weight ?? ''} onChange={(e) => updateSet(i, k, { weight: e.target.value })} placeholder="optional" />
                 <button className="ex-edit-remove" disabled={sets.length <= 1} onClick={() => removeSet(i, k)} aria-label="Remove set">
                   <Icon name="trash" style={{ width: 14, height: 14 }} />
@@ -208,12 +311,20 @@ export function WorkoutEditorScreen() {
               <button className="link-btn" onClick={() => addSet(i)}>
                 <Icon name="plus" style={{ width: 13, height: 13 }} /> Add set
               </button>
+              {kind === 'time' && (
+                <label className="ex-side-check">
+                  <input type="checkbox" checked={sides} onChange={(e) => setSides(i, e.target.checked)} /> Each side
+                </label>
+              )}
               {canLinkAbove && (
                 <button className={`skip-btn${ex.group ? ' on' : ''}`} onClick={() => toggleSupersetWithAbove(i)}>
                   {ex.group ? 'Unlink superset' : 'Superset with above'}
                 </button>
               )}
             </div>
+            {kind === 'time' && <div className="ex-kind-hint">A timer opens for this while you track it.</div>}
+              </>
+            )}
 
             <div className="ex-edit-card-row" style={{ marginTop: 8 }}>
               <div className="ex-edit-field">
