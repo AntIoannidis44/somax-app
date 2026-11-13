@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
@@ -16,7 +16,18 @@ import { decodeActivityMessage } from '../../lib/activityShare';
 import { decodeRecipeMessage } from '../../lib/recipeShare';
 import { encodeImageMessage, imagePathFromMessage, uploadChatImage } from '../../lib/chatImage';
 import { ChatImage, ProgramMessage, RecipeMessage, ActivityMessage, MessageMeta } from './SharedMessageCards';
-import { WallpaperPicker, getWallpaper, setWallpaper, useSwipeToDismissKeyboard, useVoiceDictation, type WallpaperKey } from './ChatChrome';
+import { MediaViewer } from './MediaViewer';
+import {
+  WallpaperPicker,
+  getWallpaper,
+  getWallpaperPhoto,
+  resizeWallpaperPhoto,
+  setWallpaper,
+  setWallpaperPhoto,
+  useSwipeToDismissKeyboard,
+  useVoiceDictation,
+  type WallpaperKey,
+} from './ChatChrome';
 
 export function GroupChatScreen() {
   const viewingGroup = useAppStore((s) => s.viewingGroup)!;
@@ -28,6 +39,10 @@ export function GroupChatScreen() {
   const [draft, setDraft] = useState('');
   const [uploading, setUploading] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  // Every photo in this conversation, in message order - lets the viewer
+  // swipe through all of them, not just the one that was tapped.
+  const imagePaths = useMemo(() => messages.map((m) => imagePathFromMessage(m.text)).filter((p): p is string => !!p), [messages]);
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   const [inputFocused, setInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -39,11 +54,18 @@ export function GroupChatScreen() {
 
   const wallpaperKey = `somaxx-wallpaper:group:${viewingGroup.groupId}`;
   const [wallpaper, setWallpaperState] = useState<WallpaperKey>(() => getWallpaper(wallpaperKey));
+  const [wallpaperPhoto, setWallpaperPhotoState] = useState<string | null>(() => getWallpaperPhoto(wallpaperKey));
   const swipeToDismiss = useSwipeToDismissKeyboard();
   const { listening, toggle: toggleDictation, available: voiceAvailable } = useVoiceDictation(draft, setDraft);
   function pickWallpaper(key: WallpaperKey) {
     setWallpaperState(key);
     setWallpaper(wallpaperKey, key);
+  }
+  async function pickWallpaperPhoto(file: File) {
+    const dataUrl = await resizeWallpaperPhoto(file);
+    setWallpaperPhoto(wallpaperKey, dataUrl);
+    setWallpaperPhotoState(dataUrl);
+    pickWallpaper('photo');
   }
 
   useEffect(() => {
@@ -108,7 +130,16 @@ export function GroupChatScreen() {
 
   return (
     <div className="dm-panel">
-      <div className="dm-messages" data-wallpaper={wallpaper} {...swipeToDismiss}>
+      <div
+        className="dm-messages"
+        data-wallpaper={wallpaper}
+        style={
+          wallpaper === 'photo' && wallpaperPhoto
+            ? { backgroundImage: `linear-gradient(var(--chat-wallpaper-scrim), var(--chat-wallpaper-scrim)), url(${wallpaperPhoto})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+            : undefined
+        }
+        {...swipeToDismiss}
+      >
         {messages.length === 0 && (
           <div style={{ padding: '16px 4px', color: 'var(--text-faint)', fontSize: 13, textAlign: 'center' }}>
             No messages yet - say hi to the group.
@@ -140,7 +171,14 @@ export function GroupChatScreen() {
                 <div className={`dm-row ${mine ? 'mine' : 'theirs'}`}>
                   {senderLine}
                   <div className={`dm-bubble image ${mine ? 'mine' : 'theirs'}`} onClick={() => mine && setSelectedId(showDelete ? null : m.id)}>
-                    <ChatImage path={imagePath} onLoad={scrollToBottom} />
+                    <div
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setViewerIndex(imagePaths.indexOf(imagePath));
+                      }}
+                    >
+                      <ChatImage path={imagePath} onLoad={scrollToBottom} />
+                    </div>
                     <MessageMeta at={m.created_at} mine={mine} />
                   </div>
                   {deleteRow}
@@ -248,7 +286,15 @@ export function GroupChatScreen() {
           </button>
         )}
       </div>
-      <WallpaperPicker open={wallpaperPickerOpen} value={wallpaper} onClose={closeWallpaperPicker} onPick={pickWallpaper} />
+      <WallpaperPicker
+        open={wallpaperPickerOpen}
+        value={wallpaper}
+        photoDataUrl={wallpaperPhoto}
+        onClose={closeWallpaperPicker}
+        onPick={pickWallpaper}
+        onPickPhoto={pickWallpaperPhoto}
+      />
+      {viewerIndex !== null && <MediaViewer paths={imagePaths} startIndex={viewerIndex} onClose={() => setViewerIndex(null)} />}
     </div>
   );
 }

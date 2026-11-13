@@ -23,6 +23,7 @@ export function ProfileScreen() {
   const progress = useAppStore((s) => s.progress);
   const character = useAppStore((s) => s.character);
   const openCharacterStudio = useAppStore((s) => s.openCharacterStudio);
+  const openProfile = useAppStore((s) => s.openProfile);
   const openGoals = useAppStore((s) => s.openGoals);
   const openTrainingProfile = useAppStore((s) => s.openTrainingProfile);
   const openMacros = useAppStore((s) => s.openMacros);
@@ -215,6 +216,11 @@ export function ProfileScreen() {
         <button className="btn btn-ghost" onClick={openCharacterStudio}>
           Character studio
         </button>
+        {userId && (
+          <button className="btn btn-ghost" style={{ gridColumn: '1 / -1' }} onClick={() => openProfile(userId)}>
+            View as others see it
+          </button>
+        )}
       </div>
       <button type="button" className="tp-summary" style={{ marginTop: 14 }} onClick={openTrainingProfile}>
         <span className="set-ic">

@@ -6,6 +6,7 @@ import { useAppStore } from '../../store/useAppStore';
 import { BODY_BUILDS, CATALOG, fitWearToBase, GYM_ACC, GYM_COLORS, GYM_BOTTOMS, GYM_LEGWEAR, GYM_SHOES, GYM_TOPS, HAIR_COLORS, OUTFITS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
 import { countUnlocked, isUnlocked, lockHint, nextUnlock, tierFor, unlockItemName, unlockLabel, wearUnlocked } from '../../lib/character';
 import { levelCeil, levelFloor } from '../../lib/xp';
+import { TierBadge } from '../home/TierBadge';
 import { isHeavyGarment } from '../../lib/gymWorkerClient';
 import type { IconName } from '../../data/icons';
 import type { CatalogItem, CharacterBase, CharacterConfig, HairItem, StudioCat } from '../../types';
@@ -161,9 +162,18 @@ export function CharacterStudioScreen() {
       if (progress.level >= 17) { keeps = [...(keeps ?? []), 'noble']; updateCharacterField('keeps', keeps); }
       updateCharacterField('tiersV2', true);
     }
-    // anything worn but not unlocked comes off for good (e.g. a look saved from a preview build)
+    // Anything worn but not unlocked comes off for good (e.g. a look saved
+    // from a preview build, or an unlock threshold that moved up since it
+    // was equipped - see the Noble example above). This used to do it with
+    // zero feedback, which is indistinguishable from "my character just
+    // changed itself" - now it always says so when it actually changes
+    // something, instead of silently rewriting what's equipped.
     const clean: any = wearUnlocked(character, { ...ctx, keeps });
-    for (const k of Object.keys(clean)) if (clean[k] !== (character as any)[k]) updateCharacterField(k as any, clean[k]);
+    const changedKeys = Object.keys(clean).filter((k) => clean[k] !== (character as any)[k]);
+    for (const k of changedKeys) updateCharacterField(k as any, clean[k]);
+    if (changedKeys.length > 0) {
+      showToast(changedKeys.length === 1 ? "An item you hadn't unlocked yet was reset" : `${changedKeys.length} items you hadn't unlocked yet were reset`);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   CTX_REF.current = ctx;
@@ -477,8 +487,8 @@ export function CharacterStudioScreen() {
           <CharacterStage view="studio" anim="idle" focus={view} />
         </div>
         <div className="st2-stage-top">
-          <span className="hud-chip">
-            <span className="hud-lvl">{progress.level}</span>
+          <span className="hud-chip hud-chip-badge">
+            <TierBadge level={progress.level} c1={t.c1} c2={t.c2} size={20} pct={lvlPct} />
             {t.name}
           </span>
           <span className="hud-chip mono st2-hide-compact">

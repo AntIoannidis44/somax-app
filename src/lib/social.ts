@@ -140,12 +140,14 @@ export async function fetchProfile(userId: string): Promise<PublicProfile | null
 
 // ---------- Community feed ----------
 
+// Throws on failure instead of swallowing it - a denied/dropped read (a
+// brief auth-token refresh, a network blip) looked identical to "the
+// feed is genuinely empty" when this quietly returned []. The caller
+// (CommunityScreen's FeedTab) keeps whatever posts it already has on a
+// failure and retries, rather than wiping the screen to empty.
 export async function fetchPosts(): Promise<CommunityPost[]> {
   const { data, error } = await supabase.from('community_posts').select('*').order('created_at', { ascending: false }).limit(100);
-  if (error) {
-    console.error('[social] fetchPosts:', error.message);
-    return [];
-  }
+  if (error) throw new Error(error.message);
   return data as CommunityPost[];
 }
 

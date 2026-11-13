@@ -21,6 +21,7 @@
     --sh-1:0 1px 2px rgba(12,24,56,.05);
     --sh-2:0 1px 2px rgba(12,24,56,.04), 0 14px 30px -18px rgba(12,24,56,.25);
     --sh-dock:0 18px 40px -18px rgba(12,24,56,.35), 0 2px 6px rgba(12,24,56,.06);
+    --chat-wallpaper-scrim: rgba(255,255,255,.55);
 }
 @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -34,6 +35,7 @@
       --sh-1:0 1px 2px rgba(0,0,0,.4);
       --sh-2:0 1px 2px rgba(0,0,0,.4), 0 14px 30px -18px rgba(0,0,0,.9);
       --sh-dock:0 18px 40px -16px rgba(0,0,0,.9), 0 0 0 1px rgba(160,185,255,.06);
+      --chat-wallpaper-scrim: rgba(5,7,13,.55);
     }
 }
 :root[data-theme="dark"]{
@@ -47,6 +49,7 @@
     --sh-1:0 1px 2px rgba(0,0,0,.4);
     --sh-2:0 1px 2px rgba(0,0,0,.4), 0 14px 30px -18px rgba(0,0,0,.9);
     --sh-dock:0 18px 40px -16px rgba(0,0,0,.9), 0 0 0 1px rgba(160,185,255,.06);
+    --chat-wallpaper-scrim: rgba(5,7,13,.55);
 }
 
 /* ---------- shell ---------- */
@@ -58,13 +61,25 @@
 .device-header.overlay:not(.solid) .dh-sub svg{ color:#9cc0ff; }
 
 /* level badge */
+/* The frosted/transparent chip Home's overlay header already used (see
+   the .device-header.overlay rule below) is now the one look everywhere -
+   no solid white chip on any other screen's header. */
 .lvl-badge2{
     display:flex; align-items:center; gap:8px; height:42px; padding:4px 12px 4px 4px; border-radius:999px; flex-shrink:0;
-    background: var(--surface); border:1px solid var(--line); box-shadow: var(--sh-1); color: var(--text); cursor:pointer;
+    background: color-mix(in srgb, var(--text) 6%, transparent); border:1px solid color-mix(in srgb, var(--text) 10%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--sh-1); color: var(--text); cursor:pointer;
     font-family:inherit; transition: transform var(--dur-fast) var(--ease-spring);
 }
 .lvl-badge2:active{ transform: scale(.95); }
-.lvl-ring{ width:34px; height:34px; border-radius:50%; padding:2.5px; display:grid; background: conic-gradient(var(--hero-1), var(--hero-2) var(--p), var(--lvl-track, var(--surface-3)) var(--p)); }
+/* --lvl-track used to default to --surface-3 (a solid light-grey/white
+   fill) everywhere this ring appears - header, Level Path, Profile,
+   friend profiles, Character Studio - except the one spot that bothered
+   to override it (Home's see-through header). That solid default is the
+   "white circle" behind the badge in every other one of those places.
+   Translucent by default instead, so every instance of this ring is
+   frosted out of the box, with nothing left to override per screen. */
+.lvl-ring{ width:34px; height:34px; border-radius:50%; padding:2.5px; display:grid; background: conic-gradient(var(--hero-1), var(--hero-2) var(--p), var(--lvl-track, color-mix(in srgb, var(--text) 14%, transparent)) var(--p)); }
 .lvl-hex{
     display:grid; place-items:center; clip-path: polygon(50% 1%, 93% 25%, 93% 75%, 50% 99%, 7% 75%, 7% 25%);
     background: linear-gradient(165deg, rgba(255,255,255,.45), transparent 50%), linear-gradient(150deg, var(--c1), var(--c2));
@@ -396,7 +411,7 @@ button.goal-check:not(.done){ animation: checkInvite 2.4s ease-in-out infinite; 
 .league-avatar{ width:42px; height:42px; }
 
 /* ---------- friend profile ---------- */
-.pv-avatar{ box-shadow: 0 0 0 3px var(--bg), 0 0 0 5.5px var(--accent); }
+.pv-avatar{ box-shadow: 0 0 0 3px rgba(255,255,255,.25); }
 .pv-stat-num{ font-family: var(--font-display); font-size:20px; font-weight:700; letter-spacing:-.03em; }
 .pv-stat-label{ font-size:12px; font-weight:600; }
 .pv-name{ font-family: var(--font-display); font-size:21px; font-weight:700; letter-spacing:-.03em; }
@@ -826,7 +841,17 @@ button.day-pill{ font:inherit; color:inherit; }
 .fav-chips span{ display:flex; align-items:center; gap:7px; padding:8px 12px 8px 8px; border-radius:14px; background: var(--surface); border:1px solid var(--line); font-weight:700; font-size:13px; }
 .fav-chips i{ width:26px; height:26px; border-radius:8px; display:grid; place-items:center; color:#fff; font-style:normal; }
 .fav-chips small{ font-family: var(--font-mono); color: var(--text-faint); font-weight:500; font-size:11px; }
-.pv-stage{ height:330px; border-radius:28px; background: radial-gradient(80% 70% at 50% 40%, color-mix(in srgb, var(--t1) 78%, #fff) 0%, var(--t1) 32%, var(--t2) 90%); }
+/* Same grid-floor + spotlight language as Home's Arena stage, so the
+   friend-profile character view reads as the same "stage", not a
+   different flat gradient box. */
+.pv-stage{ height:330px; border-radius:28px; background: radial-gradient(80% 70% at 50% 25%, color-mix(in srgb, var(--t1) 78%, #fff) 0%, var(--t1) 32%, var(--t2) 90%); }
+.pv-character-view::before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.35; z-index:0;
+  background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(70% 70% at 50% 60%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 60%, #000 30%, transparent 100%);
+}
 
 /* program posts */
 .feed-workout-card.program{ display:block; }

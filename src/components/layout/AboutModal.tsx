@@ -32,15 +32,6 @@ export function AboutModal({ open, onClose }: AboutModalProps) {
         </ul>
       </div>
       <div className="about-block">
-        <h4>Stack</h4>
-        <div className="about-stack">
-          <span className="stack-pill">React / TypeScript</span>
-          <span className="stack-pill">Capacitor (iOS)</span>
-          <span className="stack-pill">Supabase / Postgres</span>
-          <span className="stack-pill">Row-level auth</span>
-        </div>
-      </div>
-      <div className="about-block">
         <h4>Beta hypothesis</h4>
         <p>
           Does turning fitness consistency into visible game progression make people more likely to actually keep

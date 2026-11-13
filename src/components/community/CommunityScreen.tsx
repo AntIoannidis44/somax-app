@@ -49,6 +49,7 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
   const myPhotoUrl = useAppStore((s) => s.profile?.photoUrl ?? null);
   const unreadDM = useAppStore((s) => s.unreadDM);
   const [posts, setPosts] = useState<CommunityPost[]>([]);
+  const [feedError, setFeedError] = useState(false);
   const [filterType, setFilterType] = useState<string | 'all'>('all');
   const [contentFilter, setContentFilter] = useState<'all' | 'programs' | 'posts' | 'nutrition'>('all');
   const [feedSort, setFeedSort] = useState<'recent' | 'trending'>('recent');
@@ -61,10 +62,23 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
 
   useEffect(() => {
     let cancelled = false;
+    let retryTimer: ReturnType<typeof setTimeout> | null = null;
     function load() {
-      fetchPosts().then((rows) => {
-        if (!cancelled) setPosts(rows);
-      });
+      fetchPosts()
+        .then((rows) => {
+          if (cancelled) return;
+          setPosts(rows);
+          setFeedError(false);
+        })
+        .catch((err) => {
+          if (cancelled) return;
+          // A denied/dropped read, not necessarily an empty feed - keep
+          // whatever posts are already on screen and quietly retry,
+          // instead of wiping them and looking like the feed got cleared.
+          console.error('[feed] fetchPosts failed:', err);
+          setFeedError(true);
+          retryTimer = setTimeout(load, 4000);
+        });
       fetchLeaderboard().then((rows) => {
         if (!cancelled) setCharacters(new Map(rows.map((r) => [r.user_id, { character: r.character, photoUrl: r.photo_url, level: r.level, name: r.name }])));
       });
@@ -80,6 +94,7 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
     const unsubscribeFriends = subscribeFriendships(load);
     return () => {
       cancelled = true;
+      if (retryTimer) clearTimeout(retryTimer);
       unsubscribe();
       unsubscribeBoard();
       unsubscribeFriends();
@@ -205,6 +220,13 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
 
       <WeekSummary />
 
+      {feedError && (
+        <div className="banner" style={{ marginBottom: 14 }}>
+          <Icon name="info" />
+          <span>Having trouble loading the latest posts - retrying…</span>
+        </div>
+      )}
+
       <button className="composer-trigger" onClick={() => openComposer()}>
         <UserAvatar className="feed-avatar" name={myName} character={myCharacter} photoUrl={myPhotoUrl} />
         <span>Share a workout…</span>
@@ -220,11 +242,13 @@ function FeedTab({ userId, myName }: { userId: string; myName: string }) {
 
       {shown.length === 0 ? (
         <div className="card" style={{ padding: '16px 4px', color: 'var(--text-faint)', fontSize: 13 }}>
-          {scoped.length === 0
-            ? feedScope === 'friends'
-              ? 'Nothing from your friends yet.'
-              : 'No posts yet - be the first to share something.'
-            : 'No posts of this type yet.'}
+          {feedError
+            ? 'Could not load posts right now.'
+            : scoped.length === 0
+              ? feedScope === 'friends'
+                ? 'Nothing from your friends yet.'
+                : 'No posts yet - be the first to share something.'
+              : 'No posts of this type yet.'}
         </div>
       ) : (
         shown.map((p) => (

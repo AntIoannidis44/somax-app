@@ -12,6 +12,8 @@ import { tierFor } from '../../lib/character';
 import { initials, timeAgo } from '../../lib/format';
 import { categoryForActivityName, workoutTypeById } from '../../data/workoutTypes';
 import { TypeIconBadge } from '../TypeIconBadge';
+import { TierBadge } from '../home/TierBadge';
+import { levelCeil, levelFloor } from '../../lib/xp';
 import { Modal } from '../layout/Modal';
 import { ShareProgramSheet } from '../train/ShareProgramSheet';
 import {
@@ -142,30 +144,36 @@ export function ProfileViewScreen() {
     showToast(`Shared with ${profile!.name}`);
   }
 
+  const lvlFloor = levelFloor(profile.level);
+  const lvlCeil = levelCeil(profile.level);
+  const lvlPct = Math.max(0, Math.min(1, (profile.total_xp - lvlFloor) / (lvlCeil - lvlFloor)));
+
   return (
     <>
-      <div className="pv-header">
-        <div className="pv-avatar">
-          {profile.photo_url ? (
-            <img src={profile.photo_url} alt={profile.name} className="fit-img" draggable={false} />
-          ) : profile.character ? (
-            <CharacterThumbnail cfg={profile.character} mode="full" />
-          ) : (
-            <span className="pv-initials">{initials(profile.name)}</span>
-          )}
-        </div>
-        <div className="pv-stats">
-          <div className="pv-stat">
-            <div className="pv-stat-num">{posts.length}</div>
-            <div className="pv-stat-label">Posts</div>
+      <div className="pv-hero" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
+        <div className="pv-header">
+          <div className="pv-avatar">
+            {profile.photo_url ? (
+              <img src={profile.photo_url} alt={profile.name} className="fit-img" draggable={false} />
+            ) : profile.character ? (
+              <CharacterThumbnail cfg={profile.character} mode="full" />
+            ) : (
+              <span className="pv-initials">{initials(profile.name)}</span>
+            )}
           </div>
-          <div className="pv-stat">
-            <div className="pv-stat-num">{profile.level}</div>
-            <div className="pv-stat-label">Level</div>
-          </div>
-          <div className="pv-stat">
-            <div className="pv-stat-num">{profile.current_streak}d</div>
-            <div className="pv-stat-label">Streak</div>
+          <div className="pv-stats">
+            <div className="pv-stat">
+              <div className="pv-stat-num">{posts.length}</div>
+              <div className="pv-stat-label">Posts</div>
+            </div>
+            <div className="pv-stat">
+              <TierBadge level={profile.level} c1={t.c1} c2={t.c2} size={30} pct={lvlPct} />
+              <div className="pv-stat-label">{t.name}</div>
+            </div>
+            <div className="pv-stat">
+              <div className="pv-stat-num">{profile.current_streak}d</div>
+              <div className="pv-stat-label">Streak</div>
+            </div>
           </div>
         </div>
       </div>
@@ -267,27 +275,6 @@ export function ProfileViewScreen() {
               <div className="pv-achievement-label">Day streak</div>
             </div>
           </div>
-
-          {favoriteTypes.length > 0 && (
-            <>
-              <div className="section-label">Favourite workouts</div>
-              <div className="fav-chips">
-                {favoriteTypes.map(([typeId, count]) => {
-                  const wt = workoutTypeById(typeId);
-                  if (!wt) return null;
-                  return (
-                    <span key={typeId}>
-                      <i style={{ background: `var(${wt.colorVar})` }}>
-                        <Icon name={wt.icon} style={{ width: 15, height: 15 }} />
-                      </i>
-                      {wt.label}
-                      <small>×{count}</small>
-                    </span>
-                  );
-                })}
-              </div>
-            </>
-          )}
         </>
       )}
 
@@ -302,11 +289,37 @@ export function ProfileViewScreen() {
 
       {tab === 'character' ? (
         profile.character ? (
-          <div className="pv-character-view pv-stage" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
-            <div className="pv-character-shift">
-              <CharacterStage view="studio" anim="idle" cfg={profile.character} level={profile.level} showPedestal={false} />
+          <>
+            <div className="pv-character-view pv-stage" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
+              <div className="pv-stage-badge">
+                <TierBadge level={profile.level} c1={t.c1} c2={t.c2} size={36} pct={lvlPct} />
+              </div>
+              <div className="pv-stage-chip pv-stage-tier">
+                <Icon name="trophy" style={{ width: 13, height: 13 }} />
+                {t.name}
+              </div>
+              <div className="pv-stage-chip pv-stage-streak">
+                <Icon name="flame" style={{ width: 13, height: 13 }} />
+                {profile.current_streak}d streak
+              </div>
+              <div className="pv-character-shift">
+                <CharacterStage view="studio" anim="idle" cfg={profile.character} level={profile.level} />
+              </div>
             </div>
-          </div>
+            <div className="pv-char-fill">
+              {favoriteTypes.map(([typeId, count]) => {
+                const wt = workoutTypeById(typeId);
+                if (!wt) return null;
+                return (
+                  <div className="pv-char-tile" key={typeId}>
+                    <TypeIconBadge category={typeId} size={44} />
+                    <div className="pv-char-tile-num pv-char-tile-word">{wt.label}</div>
+                    <div className="pv-char-tile-label">×{count}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
         ) : (
           <div className="pv-stage pv-nochar" style={{ ['--t1' as string]: t.c1, ['--t2' as string]: t.c2 }}>
             <Icon name="profile" style={{ width: 34, height: 34 }} />

@@ -376,7 +376,7 @@ function App() {
     <div className="page">
       <Sitebar onAboutClick={() => setAboutOpen(true)} />
       <DeviceShell isHomeHero={!!session && isHomeHero}>
-        {!ready ? null : !session ? <AuthScreen /> : <Suspense fallback={<LoadingSpinner />}><CurrentScreen /></Suspense>}
+        {!ready ? <LoadingSpinner /> : !session ? <AuthScreen /> : <Suspense fallback={<LoadingSpinner />}><CurrentScreen /></Suspense>}
       </DeviceShell>
       <div className="sitefoot">
         Somax Beta — a click-through product prototype. Progress, XP and leaderboard data are saved to your account

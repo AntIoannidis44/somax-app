@@ -2,12 +2,13 @@ import { useRef, useState } from 'react';
 import { Modal } from '../layout/Modal';
 import { Icon } from '../Icon';
 import { requestSpeechPermission, speechToTextAvailableOnPlatform, startVoiceListening, stopVoiceListening } from '../../lib/speechToText';
+import { resizeToJpeg } from '../../lib/chatImage';
 
 // Shared chrome for both DMScreen and GroupChatScreen: the per-chat
 // wallpaper picker. The avatar+name row lives in the top device header now
 // (not a second header row in the chat screen) - see DeviceHeader.tsx.
 
-export type WallpaperKey = 'default' | 'ocean' | 'mint' | 'blush' | 'slate';
+export type WallpaperKey = 'default' | 'ocean' | 'mint' | 'blush' | 'slate' | 'photo';
 
 export const WALLPAPER_OPTIONS: { key: WallpaperKey; label: string }[] = [
   { key: 'default', label: 'Default' },
@@ -23,7 +24,7 @@ export const WALLPAPER_OPTIONS: { key: WallpaperKey; label: string }[] = [
 export function getWallpaper(storageKey: string): WallpaperKey {
   try {
     const v = localStorage.getItem(storageKey);
-    if (v && WALLPAPER_OPTIONS.some((w) => w.key === v)) return v as WallpaperKey;
+    if (v === 'photo' || WALLPAPER_OPTIONS.some((w) => w.key === v)) return v as WallpaperKey;
   } catch {
     // Private mode / blocked storage - default wallpaper is a fine fallback.
   }
@@ -36,6 +37,46 @@ export function setWallpaper(storageKey: string, value: WallpaperKey): void {
   } catch {
     // Nothing to persist to - the chat still works, just forgets the choice.
   }
+}
+
+// A custom photo wallpaper stores its own data URL under a derived key,
+// separate from the plain enum value above - same per-device-only
+// reasoning, just too big to live in the same string.
+function photoStorageKey(storageKey: string): string {
+  return `${storageKey}:photo`;
+}
+
+export function getWallpaperPhoto(storageKey: string): string | null {
+  try {
+    return localStorage.getItem(photoStorageKey(storageKey));
+  } catch {
+    return null;
+  }
+}
+
+export function setWallpaperPhoto(storageKey: string, dataUrl: string): void {
+  try {
+    localStorage.setItem(photoStorageKey(storageKey), dataUrl);
+  } catch {
+    // Most likely the device's localStorage quota - the picker's caller
+    // still flips the wallpaper key, it'll just fall back to showing
+    // nothing until a smaller photo is picked.
+  }
+}
+
+// Downscaled further than a shared chat photo (chatImage.ts's 1280px) -
+// this only ever needs to cover one phone screen's width as a background,
+// and a smaller data URL means more headroom under localStorage's quota.
+const WALLPAPER_MAX_SIDE = 900;
+
+export async function resizeWallpaperPhoto(file: File): Promise<string> {
+  const blob = await resizeToJpeg(file, WALLPAPER_MAX_SIDE);
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = () => reject(reader.error ?? new Error('Could not read image'));
+    reader.readAsDataURL(blob);
+  });
 }
 
 // A deliberate downward drag, starting from the very top of the message
@@ -102,11 +143,14 @@ export function useVoiceDictation(draft: string, setDraft: (text: string) => voi
 interface WallpaperPickerProps {
   open: boolean;
   value: WallpaperKey;
+  photoDataUrl: string | null;
   onClose: () => void;
   onPick: (key: WallpaperKey) => void;
+  onPickPhoto: (file: File) => void;
 }
 
-export function WallpaperPicker({ open, value, onClose, onPick }: WallpaperPickerProps) {
+export function WallpaperPicker({ open, value, photoDataUrl, onClose, onPick, onPickPhoto }: WallpaperPickerProps) {
+  const fileRef = useRef<HTMLInputElement>(null);
   return (
     <Modal open={open} onClose={onClose} title="Chat wallpaper">
       <div className="wallpaper-grid">
@@ -116,7 +160,31 @@ export function WallpaperPicker({ open, value, onClose, onPick }: WallpaperPicke
             <span className="wallpaper-swatch-label">{w.label}</span>
           </button>
         ))}
+        <button
+          className={`wallpaper-swatch wp-photo${value === 'photo' ? ' on' : ''}`}
+          style={photoDataUrl ? { backgroundImage: `url(${photoDataUrl})` } : undefined}
+          onClick={() => (photoDataUrl ? onPick('photo') : fileRef.current?.click())}
+        >
+          {value === 'photo' ? <Icon name="check" style={{ width: 16, height: 16 }} /> : <Icon name="camera" style={{ width: 16, height: 16 }} />}
+          <span className="wallpaper-swatch-label">Photo</span>
+        </button>
+        {photoDataUrl && (
+          <button className="wallpaper-swatch-replace" onClick={() => fileRef.current?.click()}>
+            Change photo
+          </button>
+        )}
       </div>
+      <input
+        ref={fileRef}
+        type="file"
+        accept="image/*"
+        style={{ display: 'none' }}
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file) onPickPhoto(file);
+          e.target.value = '';
+        }}
+      />
     </Modal>
   );
 }

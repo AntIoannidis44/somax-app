@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
@@ -10,7 +10,18 @@ import { encodeImageMessage, imagePathFromMessage, uploadChatImage } from '../..
 import { setBadgeCount } from '../../lib/badge';
 import { formatDateLabel } from '../../lib/format';
 import { ChatImage, ProgramMessage, RecipeMessage, ActivityMessage, MessageMeta } from './SharedMessageCards';
-import { WallpaperPicker, getWallpaper, setWallpaper, useSwipeToDismissKeyboard, useVoiceDictation, type WallpaperKey } from './ChatChrome';
+import { MediaViewer } from './MediaViewer';
+import {
+  WallpaperPicker,
+  getWallpaper,
+  getWallpaperPhoto,
+  resizeWallpaperPhoto,
+  setWallpaper,
+  setWallpaperPhoto,
+  useSwipeToDismissKeyboard,
+  useVoiceDictation,
+  type WallpaperKey,
+} from './ChatChrome';
 
 export function DMScreen() {
   const viewingDM = useAppStore((s) => s.viewingDM)!;
@@ -23,6 +34,10 @@ export function DMScreen() {
   const [uploading, setUploading] = useState(false);
   // Message whose delete option is showing (tap a bubble to reveal it).
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  // Every photo in this conversation, in message order - lets the viewer
+  // swipe through all of them, not just the one that was tapped.
+  const imagePaths = useMemo(() => messages.map((m) => imagePathFromMessage(m.text)).filter((p): p is string => !!p), [messages]);
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   const showToast = useAppStore((s) => s.showToast);
   const clearUnreadFrom = useAppStore((s) => s.clearUnreadFrom);
   // The wallpaper button lives in the top device header now, not a second
@@ -33,11 +48,18 @@ export function DMScreen() {
 
   const wallpaperKey = `somaxx-wallpaper:dm:${viewingDM.userId}`;
   const [wallpaper, setWallpaperState] = useState<WallpaperKey>(() => getWallpaper(wallpaperKey));
+  const [wallpaperPhoto, setWallpaperPhotoState] = useState<string | null>(() => getWallpaperPhoto(wallpaperKey));
   const swipeToDismiss = useSwipeToDismissKeyboard();
   const { listening, toggle: toggleDictation, available: voiceAvailable } = useVoiceDictation(draft, setDraft);
   function pickWallpaper(key: WallpaperKey) {
     setWallpaperState(key);
     setWallpaper(wallpaperKey, key);
+  }
+  async function pickWallpaperPhoto(file: File) {
+    const dataUrl = await resizeWallpaperPhoto(file);
+    setWallpaperPhoto(wallpaperKey, dataUrl);
+    setWallpaperPhotoState(dataUrl);
+    pickWallpaper('photo');
   }
 
   useEffect(() => {
@@ -118,7 +140,16 @@ export function DMScreen() {
 
   return (
     <div className="dm-panel">
-      <div className="dm-messages" data-wallpaper={wallpaper} {...swipeToDismiss}>
+      <div
+        className="dm-messages"
+        data-wallpaper={wallpaper}
+        style={
+          wallpaper === 'photo' && wallpaperPhoto
+            ? { backgroundImage: `linear-gradient(var(--chat-wallpaper-scrim), var(--chat-wallpaper-scrim)), url(${wallpaperPhoto})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+            : undefined
+        }
+        {...swipeToDismiss}
+      >
         {messages.length === 0 && (
           <div style={{ padding: '16px 4px', color: 'var(--text-faint)', fontSize: 13, textAlign: 'center' }}>
             No messages yet - say hi to {viewingDM.name}.
@@ -154,7 +185,14 @@ export function DMScreen() {
                 {dateSep}
                 <div className={`dm-row ${mine ? 'mine' : 'theirs'}`}>
                   <div className={`dm-bubble image ${mine ? 'mine' : 'theirs'}`} onClick={() => setSelectedId(showDelete ? null : m.id)}>
-                    <ChatImage path={imagePath} onLoad={scrollToBottom} />
+                    <div
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setViewerIndex(imagePaths.indexOf(imagePath));
+                      }}
+                    >
+                      <ChatImage path={imagePath} onLoad={scrollToBottom} />
+                    </div>
                     <MessageMeta at={m.created_at} mine={mine} read={mine ? m.read : undefined} />
                   </div>
                   {deleteRow}
@@ -258,7 +296,15 @@ export function DMScreen() {
           </button>
         )}
       </div>
-      <WallpaperPicker open={wallpaperPickerOpen} value={wallpaper} onClose={closeWallpaperPicker} onPick={pickWallpaper} />
+      <WallpaperPicker
+        open={wallpaperPickerOpen}
+        value={wallpaper}
+        photoDataUrl={wallpaperPhoto}
+        onClose={closeWallpaperPicker}
+        onPick={pickWallpaper}
+        onPickPhoto={pickWallpaperPhoto}
+      />
+      {viewerIndex !== null && <MediaViewer paths={imagePaths} startIndex={viewerIndex} onClose={() => setViewerIndex(null)} />}
     </div>
   );
 }
