@@ -9,6 +9,8 @@ import { ShareSessionButton } from './ShareSessionButton';
 import { ShareProgramSheet } from './ShareProgramSheet';
 import { recordActivityForGoals } from '../../lib/fitnessGoals';
 import { getWorkoutsForDate, healthAvailableOnPlatform, type HealthWorkout } from '../../lib/health';
+import { DEFAULT_CONFIG, timerChipLabel, timerForExercise, type TimerConfig } from '../../lib/timerSpec';
+import { WorkoutTimer } from './WorkoutTimer';
 
 // `day` is a simDay (days-since-onboarding counter, not a real date) -
 // shift today's real ISO date by the same number of days to get the real
@@ -149,6 +151,8 @@ export function WorkoutScreen() {
   const [syncOpen, setSyncOpen] = useState(false);
   const [syncLoading, setSyncLoading] = useState(false);
   const [syncOptions, setSyncOptions] = useState<HealthWorkout[] | null>(null);
+  // Open timer sheet: the general one (exIndex null) or one set up for an exercise.
+  const [timer, setTimer] = useState<{ title: string; cfg: TimerConfig; exIndex: number | null } | null>(null);
 
   const w = getWorkout(wid);
   if (!ws || !w) return null;
@@ -210,16 +214,49 @@ export function WorkoutScreen() {
     showToast(`Synced "${workout.activityName}" to this workout`);
   }
 
+  // The next sets of an exercise still waiting for a tick or cross.
+  function openSets(exIndex: number): number[] {
+    return expandSets(exercises[exIndex])
+      .map((_, k) => k)
+      .filter((k) => !ws!.setDone?.[setKey(exIndex, k)] && !ws!.setSkipped?.[setKey(exIndex, k)]);
+  }
+
+  function timerCompletion(): { label?: string; run?: () => void } {
+    if (!timer || timer.exIndex === null || ws!.completed || ws!.skipped?.[timer.exIndex]) return {};
+    const ex = timer.exIndex;
+    const pending = openSets(ex).slice(0, Math.max(1, timer.cfg.coversSets));
+    const restPending = timer.cfg.pairedRest && !ws!.skipped?.[ex + 1] ? openSets(ex + 1) : [];
+    if (!pending.length) return {};
+    return {
+      label: pending.length > 1 ? `Tick ${pending.length} sets` : `Tick set ${pending[0] + 1}`,
+      run: () => {
+        pending.forEach((k) => toggleSet(ex, k));
+        restPending.forEach((k) => toggleSet(ex + 1, k));
+      },
+    };
+  }
+
   // One exercise: its label and name, then a row per set. In tracking mode
   // each set row ticks off and turns green; a skipped exercise greys out.
   function renderItem(item: BlockItem) {
     const ex = exercises[item.exIndex];
     const skipped = !!ws!.skipped?.[item.exIndex];
+    const tcfg = tracking ? timerForExercise(ex, exercises[item.exIndex + 1]) : null;
     return (
       <div className={`ex-group${skipped ? ' skipped' : ''}`} key={item.exIndex}>
         <div className="ex-group-head">
           <span className="ex-label">{item.label}</span>
           <span className="ex-group-name">{ex.name}</span>
+          {tcfg && !skipped && !ws!.completed && (
+            <button
+              type="button"
+              className="timer-chip"
+              onClick={() => setTimer({ title: ex.name, cfg: tcfg, exIndex: item.exIndex })}
+              aria-label={`Start timer for ${ex.name}`}
+            >
+              <Icon name="clock" style={{ width: 12, height: 12 }} /> {timerChipLabel(tcfg)}
+            </button>
+          )}
           {tracking && (
             <button className={`skip-btn${skipped ? ' on' : ''}`} disabled={ws!.completed} onClick={() => toggleSkip(item.exIndex)}>
               {skipped ? 'Undo' : 'Skip'}
@@ -308,6 +345,9 @@ export function WorkoutScreen() {
               {doneSets}/{totalSets} sets{crossedSets > 0 ? ` · ${crossedSets} crossed` : ''}
             </span>
           </div>
+          <button type="button" className="track-timer-btn" onClick={() => setTimer({ title: 'Timer', cfg: DEFAULT_CONFIG, exIndex: null })}>
+            <Icon name="clock" style={{ width: 14, height: 14 }} /> Timer
+          </button>
           <div className="progress-track">
             <div className="progress-fill" style={{ width: `${pct}%` }} />
           </div>
@@ -411,6 +451,17 @@ export function WorkoutScreen() {
             </>
           )}
         </>
+      )}
+      {timer && (
+        <WorkoutTimer
+          key={`${timer.exIndex}-${timer.title}`}
+          open
+          onClose={() => setTimer(null)}
+          title={timer.title}
+          initial={timer.cfg}
+          completeLabel={timerCompletion().label}
+          onComplete={timerCompletion().run}
+        />
       )}
       {sharing && w && (
         <ShareProgramSheet

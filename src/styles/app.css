@@ -1928,3 +1928,29 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .macro-qty-stepper input{ flex:1; min-width:0; width:auto; border:none; background:none; text-align:center; font:inherit; font-family:var(--font-mono); font-size:14px; padding:11px 0; -moz-appearance:textfield; }
 .macro-qty-stepper input::-webkit-outer-spin-button, .macro-qty-stepper input::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
 
+
+/* ---- Workout timer (tracking): countdown, intervals, stopwatch ---- */
+.track-timer-btn{ position:relative; z-index:1; display:inline-flex; align-items:center; gap:6px; margin:0 0 10px; padding:6px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.45); background:rgba(255,255,255,.16); color:#fff; font:inherit; font-size:12.5px; font-weight:700; cursor:pointer; }
+.timer-chip{ flex-shrink:0; display:inline-flex; align-items:center; gap:5px; font:inherit; font-family:var(--font-mono); font-size:11.5px; font-weight:700; padding:5px 10px; border-radius:999px; border:1px solid color-mix(in srgb, var(--accent) 45%, transparent); background:color-mix(in srgb, var(--accent) 12%, transparent); color:var(--accent); cursor:pointer; white-space:nowrap; }
+.wt{ display:flex; flex-direction:column; gap:14px; padding-bottom:6px; }
+.wt-tabs{ display:flex; gap:4px; padding:4px; border-radius:12px; background:var(--surface-3); }
+.wt-tab{ flex:1; padding:8px 6px; border:none; border-radius:9px; background:none; color:var(--text-dim); font:inherit; font-size:13px; font-weight:700; cursor:pointer; }
+.wt-tab.on{ background:var(--surface); color:var(--text); box-shadow:0 1px 4px rgba(0,0,0,.12); }
+.wt-face{ text-align:center; padding:18px 14px 16px; border-radius:18px; background:var(--surface-3); transition:background .25s; }
+.wt-face.work{ background:linear-gradient(150deg, var(--hero-1), var(--hero-2)); color:#fff; }
+.wt-face.rest{ background:color-mix(in srgb, #2bb673 22%, var(--surface-3)); }
+.wt-face.done{ background:color-mix(in srgb, var(--accent) 18%, var(--surface-3)); }
+.wt-phase{ font-size:13px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; opacity:.85; }
+.wt-clock{ font-family:var(--font-mono); font-size:68px; font-weight:800; line-height:1.05; letter-spacing:-.03em; font-variant-numeric:tabular-nums; margin:4px 0 10px; }
+.wt-bar{ height:8px; border-radius:999px; background:rgba(127,127,127,.25); overflow:hidden; }
+.wt-bar-fill{ height:100%; background:currentColor; opacity:.8; transition:width .1s linear; }
+.wt-next{ margin-top:10px; font-size:12.5px; font-weight:600; opacity:.8; }
+.wt-settings{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center; }
+.wt-stepper{ display:flex; flex-direction:column; align-items:center; gap:4px; }
+.wt-stepper-label{ font-size:11.5px; font-weight:700; color:var(--text-dim); text-transform:uppercase; letter-spacing:.04em; }
+.wt-stepper-row{ display:flex; align-items:center; gap:6px; }
+.wt-step-btn{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--text); font:inherit; font-size:18px; font-weight:700; cursor:pointer; }
+.wt-stepper-value{ min-width:52px; text-align:center; font-family:var(--font-mono); font-size:16px; font-weight:800; }
+.wt-check{ width:100%; display:flex; align-items:center; justify-content:center; gap:8px; font-size:13px; font-weight:600; }
+.wt-cycle{ width:100%; text-align:center; font-size:13px; font-weight:600; color:var(--text-dim); }
+.wt-controls{ display:flex; flex-direction:column; gap:8px; }
