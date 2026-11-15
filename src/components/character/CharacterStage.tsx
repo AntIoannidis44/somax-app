@@ -3,6 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { addLights } from '../../lib/characterBuilder';
 import { CLIPS, composeCharacter, fitClipsToCharacter, loadAnimationClips } from '../../lib/characterModels';
+import { markArenaReady } from '../../lib/arenaReady';
 import { Pedestal } from './Pedestal';
 import { useAppStore } from '../../store/useAppStore';
 import { wearUnlocked } from '../../lib/character';
@@ -95,6 +96,7 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
   const [loaded, setLoaded] = useState<Loaded | null>(null);
   const timeRef = useRef(0);
   const activeClipRef = useRef<keyof typeof CLIPS | null>(null);
+  const drawnRef = useRef(false);
   // Going to the face close-up turns the character to face the camera.
   const toFrontRef = useRef(false);
   useEffect(() => {
@@ -134,6 +136,12 @@ function CharacterRig({ cfg, view, anim, rotRef, velRef, draggingRef, idleTRef, 
     timeRef.current += dt;
     if (!loaded) return;
     const { scene, mixer, actions } = loaded;
+    // First frame with the character in it: let deferred Home work start
+    // on the frame after this one is painted (see lib/arenaReady.ts).
+    if (!drawnRef.current) {
+      drawnRef.current = true;
+      requestAnimationFrame(() => requestAnimationFrame(markArenaReady));
+    }
 
     if (draggingRef.current) toFrontRef.current = false;
     if (toFrontRef.current) {

@@ -5,9 +5,12 @@ import { barcodeScanAvailableOnPlatform, scanBarcode } from '../../lib/barcodeSc
 import { lookupBarcode } from '../../lib/foodLookup';
 import { analyzeFoodPhoto } from '../../lib/foodPhoto';
 import { estimateFoodText } from '../../lib/foodText';
+import { importFoodFromUrl } from '../../lib/recipeImport';
 import { requestSpeechPermission, speechToTextAvailableOnPlatform, startVoiceListening, stopVoiceListening } from '../../lib/speechToText';
 import { FoodSearchOverlay } from './FoodSearchOverlay';
+import { Icon } from '../Icon';
 import { FavoritesOverlay } from './FavoritesOverlay';
+import { FavoriteMealCard, FavoriteRecipeCard } from './FavoriteCard';
 import { LibraryScreenLazy } from '../library/LazyLibrary';
 import type { LibraryMeal } from '../../lib/library';
 import { fetchUserRecipes, type UserRecipe } from '../../lib/recipes';
@@ -74,7 +77,10 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
   const [protein, setProtein] = useState('');
   const [carbs, setCarbs] = useState('');
   const [fat, setFat] = useState('');
-  const [busy, setBusy] = useState<'barcode' | 'photo' | null>(null);
+  const [busy, setBusy] = useState<'barcode' | 'photo' | 'link' | null>(null);
+  const [linkOpen, setLinkOpen] = useState(false);
+  const [linkUrl, setLinkUrl] = useState('');
+  const [notice, setNotice] = useState<string | null>(null);
   const [voiceState, setVoiceState] = useState<'idle' | 'listening' | 'processing'>('idle');
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -85,6 +91,8 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
   const [recipes, setRecipes] = useState<UserRecipe[]>([]);
   const [savingFavorite, setSavingFavorite] = useState(false);
   const [favoritesExpanded, setFavoritesExpanded] = useState(false);
+  // The quick favourites list on this sheet: collapsed until tapped.
+  const [favOpen, setFavOpen] = useState(false);
 
   const [reviewItems, setReviewItems] = useState<ReviewItem[] | null>(null);
 
@@ -115,6 +123,9 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
     setCarbs('');
     setFat('');
     setError(null);
+    setNotice(null);
+    setLinkOpen(false);
+    setLinkUrl('');
     setReviewItems(null);
     setSearchOpen(false);
   }
@@ -243,6 +254,39 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
       setProtein(String(product.protein100g ?? 0));
       setCarbs(String(product.carbs100g ?? 0));
       setFat(String(product.fat100g ?? 0));
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  // Any link - a menu item (McDonald's...), product page, HelloFresh or
+  // recipe page. Fills the fields below so it can be checked before adding.
+  async function handleLinkImport() {
+    if (!linkUrl.trim()) return;
+    setError(null);
+    setNotice(null);
+    setBusy('link');
+    try {
+      const f = await importFoodFromUrl(linkUrl);
+      if (!f.recognized) {
+        setError("Couldn't tell what food that link is about - try the item's own page, or enter it below.");
+        return;
+      }
+      setName(f.name);
+      setServing(f.serving || `${Math.round(f.estimatedGrams)}g`);
+      setQuantity(1);
+      setProtein(String(Math.round(f.proteinG)));
+      setCarbs(String(Math.round(f.carbsG)));
+      setFat(String(Math.round(f.fatG)));
+      setNotice(
+        f.fromPage
+          ? `From ${f.sourceLabel}: nutrition taken from the page. Check it and tap Add.`
+          : `From ${f.sourceLabel}: estimated (${f.confidence} confidence), the page didn't list nutrition. Check it and tap Add.`,
+      );
+      setLinkOpen(false);
+      setLinkUrl('');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not read that link');
     } finally {
       setBusy(null);
     }
@@ -468,34 +512,32 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
       </div>
 
       {(favorites.length > 0 || recipes.length > 0) && (
-        <>
-          <div className="macro-scan-divider" style={{ marginTop: 0 }}>favourites</div>
-          {(mealFavorites.length > 0 || favoriteRecipes.length > 0) && (
-            <div className="macro-favorites-row">
+        <div className={`fav-drop${favOpen ? ' open' : ''}`}>
+          <button type="button" className="fav-drop-head" aria-expanded={favOpen} onClick={() => setFavOpen((o) => !o)}>
+            <span className="fav-drop-star">&#9733;</span>
+            <span className="fav-drop-title">Favourites</span>
+            <span className="fav-drop-count">{mealFavorites.length + favoriteRecipes.length}</span>
+            <Icon name="chevron" className="fav-drop-chev" />
+          </button>
+          {favOpen && (
+            <div className="fav-drop-body">
               {mealFavorites.map((fav) => (
-                <div className="macro-favorite-chip" key={fav.id}>
-                  <button type="button" onClick={() => handleAddFavorite(fav)}>{fav.name}</button>
-                  <span role="button" aria-label="Delete favorite" onClick={() => handleDeleteFavorite(fav.id)}>
-                    <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></svg>
-                  </span>
-                </div>
+                <FavoriteMealCard key={fav.id} fav={fav} onAdd={() => handleAddFavorite(fav)} onDelete={() => handleDeleteFavorite(fav.id)} />
               ))}
               {favoriteRecipes.map((r) => (
-                <div className="macro-favorite-chip" key={r.id}>
-                  <button type="button" onClick={() => handleAddRecipe(r)}>&#9733; {r.name}</button>
-                </div>
+                <FavoriteRecipeCard key={r.id} recipe={r} onAdd={() => handleAddRecipe(r)} />
               ))}
+              {mealFavorites.length === 0 && favoriteRecipes.length === 0 && (
+                <div className="macro-kcal-hint" style={{ margin: '2px 4px 6px' }}>
+                  No {MEALS.find((m) => m.id === meal)!.label.toLowerCase()} favourites yet.
+                </div>
+              )}
+              <button type="button" className="link-btn fav-drop-all" onClick={() => setFavoritesExpanded(true)}>
+                See all favourites &amp; saved recipes
+              </button>
             </div>
           )}
-          {mealFavorites.length === 0 && favoriteRecipes.length === 0 && (
-            <div className="macro-kcal-hint" style={{ marginTop: 0 }}>
-              No {MEALS.find((m) => m.id === meal)!.label.toLowerCase()} favourites yet.
-            </div>
-          )}
-          <button type="button" className="btn btn-ghost" style={{ marginBottom: 14 }} onClick={() => setFavoritesExpanded(true)}>
-            &#9733; See all favourites &amp; saved recipes
-          </button>
-        </>
+        </div>
       )}
       <button type="button" className="btn btn-ghost add-food-library-btn" onClick={() => setLibraryOpen(true)}>
         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v15H6.5A2.5 2.5 0 0 0 4 20.5 2.5 2.5 0 0 0 6.5 23H20" /></svg>
@@ -534,6 +576,10 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
           <svg viewBox="0 0 24 24"><path d="M4 8a2 2 0 0 1 2-2h1l1.5-2h7L17 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" /><circle cx="12" cy="13" r="3.5" /></svg>
           {busy === 'photo' ? 'Analyzing…' : 'Scan photo'}
         </button>
+        <button type="button" className={`macro-scan-btn${linkOpen ? ' on' : ''}`} disabled={busy !== null && busy !== 'link'} onClick={() => setLinkOpen((o) => !o)}>
+          <svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1" /></svg>
+          {busy === 'link' ? 'Reading…' : 'Link'}
+        </button>
         {speechToTextAvailableOnPlatform() && (
           <button
             type="button"
@@ -558,6 +604,28 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
           }}
         />
       </div>
+      {linkOpen && (
+        <form
+          className="macro-link-row"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleLinkImport();
+          }}
+        >
+          <input
+            autoFocus
+            type="url"
+            inputMode="url"
+            value={linkUrl}
+            onChange={(e) => setLinkUrl(e.target.value)}
+            placeholder="Paste a link: menu item, product, recipe…"
+          />
+          <button type="submit" className="btn btn-primary" disabled={!linkUrl.trim() || busy === 'link'}>
+            {busy === 'link' ? 'Reading…' : 'Get macros'}
+          </button>
+        </form>
+      )}
+      {notice && <div className="macro-kcal-hint macro-link-notice">{notice}</div>}
       {error && <div className="macro-kcal-hint" style={{ color: 'var(--danger)' }}>{error}</div>}
 
       <div className="macro-scan-divider">or enter manually</div>

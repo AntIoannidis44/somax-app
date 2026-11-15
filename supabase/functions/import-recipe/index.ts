@@ -40,13 +40,49 @@ const RESPONSE_SCHEMA = {
   additionalProperties: false,
 };
 
+// mode: 'food' - log ONE food from a link (a menu item, product page,
+// recipe, nutrition page...). Returns one serving's macros.
+const FOOD_SCHEMA = {
+  type: 'object',
+  properties: {
+    name: { type: 'string' },
+    serving: { type: 'string' },
+    estimatedGrams: { type: 'number' },
+    kcal: { type: 'number' },
+    proteinG: { type: 'number' },
+    carbsG: { type: 'number' },
+    fatG: { type: 'number' },
+    fromPage: { type: 'boolean' },
+    confidence: { type: 'string', enum: ['low', 'medium', 'high'] },
+    sourceLabel: { type: 'string' },
+    recognized: { type: 'boolean' },
+  },
+  required: ['name', 'serving', 'estimatedGrams', 'kcal', 'proteinG', 'carbsG', 'fatG', 'fromPage', 'confidence', 'sourceLabel', 'recognized'],
+  additionalProperties: false,
+};
+
+const FOOD_PROMPT =
+  'A user of a fitness app pasted a link to log ONE food they ate. The page could be a restaurant/fast-food menu item ' +
+  '(e.g. McDonald\'s, Guzman y Gomez, Subway), a supermarket product, a meal-kit or recipe page (HelloFresh, Marley Spoon, ' +
+  'RecipeTin Eats...), or a nutrition page. Work out the single food item the link is about and give ONE serving\'s ' +
+  'calories/protein/carbs/fat. If the page states nutrition values (a nutrition table, schema.org NutritionInformation, ' +
+  'a product label), use those exact numbers and set fromPage true. If it is a recipe, give macros per serving. If the page ' +
+  'content is missing or blocked, identify the item from the URL itself (the path usually names it, e.g. ' +
+  '/menu/item/big-mac) and use your knowledge of that brand\'s published nutrition for that market (the domain\'s country), ' +
+  'setting fromPage false and confidence accordingly. serving is a short human description ("1 burger", "1 serve (420g)"). ' +
+  'name is the product name as a person would say it, including the brand for branded/restaurant items. sourceLabel is the ' +
+  'brand or site name. Set recognized false only if you genuinely cannot tell what food the link is about.';
+
 const TEXT_PROMPT =
   'Extract a complete recipe from the page content below for a fitness tracking app. Give the recipe name, servings, every ' +
   'ingredient with its amount exactly as written, every method step in order (do not condense or skip steps - include each ' +
   'one separately), and the estimated calories/protein/carbs/fat PER SERVING using standard nutrition knowledge for the ' +
   'ingredients and quantities given. Set sourceLabel to the site/publication name (e.g. "RecipeTin Eats") if you can tell ' +
   'it from the content, otherwise the domain. If the page contains a schema.org Recipe JSON-LD block, prefer its structured ' +
-  'ingredients/instructions over the visible text.';
+  'ingredients/instructions over the visible text. If the page is a single dish or product rather than a written recipe (e.g. a ' +
+  'restaurant menu item or meal-kit card without a method), still return it: name it, servings 1, list its main components ' +
+  'as ingredients, give a short step like "Ready to eat", and use any nutrition the page states. If the page content is ' +
+  'missing or blocked, work from the URL itself (the path usually names the dish).';
 
 const PHOTO_PROMPT =
   'This photo shows a recipe - this could be a printed recipe card, a cookbook page, a meal-kit instruction sheet, someone\'s ' +
@@ -91,6 +127,26 @@ function extractImageUrl(html: string): string | null {
   return null;
 }
 
+// Everything structured a page offers, for pages that are not a recipe
+// (menus, products): every JSON-LD block, framework data blobs that carry
+// the real content on JS-rendered sites, and the title/meta description.
+function structuredBits(html: string): string {
+  const out: string[] = [];
+  const title = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(html)?.[1]?.trim();
+  if (title) out.push(`TITLE: ${title}`);
+  for (const m of html.matchAll(/<meta[^>]+(?:name|property)=["'](?:description|og:title|og:description|product:[^"']+)["'][^>]*>/gi)) {
+    const c = /content=["']([^"']*)["']/i.exec(m[0])?.[1];
+    if (c) out.push(`META: ${c}`);
+  }
+  for (const m of html.matchAll(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+    out.push(`JSON-LD: ${m[1].replace(/\s+/g, ' ').slice(0, 6000)}`);
+  }
+  for (const m of html.matchAll(/<script[^>]*id=["'](?:__NEXT_DATA__|__NUXT_DATA__)["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+    out.push(`PAGE DATA: ${m[1].replace(/\s+/g, ' ').slice(0, 12000)}`);
+  }
+  return out.join('\n').slice(0, MAX_PAGE_TEXT);
+}
+
 function stripHtml(html: string): string {
   // Pull out schema.org Recipe JSON-LD first - it's exact structured data
   // (ingredients/instructions), much higher quality than parsing visible
@@ -118,10 +174,11 @@ function stripHtml(html: string): string {
     .replace(/&#?\w+;/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-  return text.slice(0, MAX_PAGE_TEXT);
+  const bits = structuredBits(html);
+  return (bits ? bits + '\n\nVISIBLE TEXT:\n' : '') + text.slice(0, MAX_PAGE_TEXT);
 }
 
-async function callClaude(content: Array<Record<string, unknown>>): Promise<Response> {
+async function callClaude(content: Array<Record<string, unknown>>, schema: Record<string, unknown> = RESPONSE_SCHEMA): Promise<Response> {
   return fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -132,7 +189,7 @@ async function callClaude(content: Array<Record<string, unknown>>): Promise<Resp
     body: JSON.stringify({
       model: 'claude-haiku-5-5',
       max_tokens: 3072,
-      output_config: { effort: 'low', format: { type: 'json_schema', schema: RESPONSE_SCHEMA } },
+      output_config: { effort: 'low', format: { type: 'json_schema', schema } },
       messages: [{ role: 'user', content }],
     }),
   });
@@ -151,40 +208,48 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { imageBase64, mediaType, url } = await req.json();
+    const { imageBase64, mediaType, url, mode } = await req.json();
+    const food = mode === 'food';
 
     let content: Array<Record<string, unknown>>;
     let pageImageUrl: string | null = null;
     if (typeof url === 'string' && url) {
-      let pageText: string;
+      if (!/^https?:\/\//i.test(url)) {
+        return new Response(JSON.stringify({ error: 'That doesn\'t look like a web link' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'content-type': 'application/json' },
+        });
+      }
+      // Many sites (fast-food menus, supermarkets) block obvious bots or
+      // render with JS - send a normal browser's headers, and if the page
+      // still can't be read, carry on from the URL alone rather than fail:
+      // its path usually names the item (/menu/item/big-mac).
+      let pageText = '';
       try {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 12000);
         const pageRes = await fetch(url, {
-          headers: { 'user-agent': 'Mozilla/5.0 (compatible; SomaxxRecipeImport/1.0)' },
+          headers: {
+            'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1',
+            accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'accept-language': 'en-AU,en;q=0.9',
+          },
           redirect: 'follow',
+          signal: ctrl.signal,
         });
-        if (!pageRes.ok) {
-          return new Response(JSON.stringify({ error: `Could not load that page (${pageRes.status})` }), {
-            status: 422,
-            headers: { ...corsHeaders, 'content-type': 'application/json' },
-          });
+        clearTimeout(timer);
+        if (pageRes.ok) {
+          const pageHtml = await pageRes.text();
+          pageImageUrl = extractImageUrl(pageHtml);
+          pageText = stripHtml(pageHtml);
+        } else {
+          console.warn('[import-recipe] page returned', pageRes.status, url);
         }
-        const pageHtml = await pageRes.text();
-        pageImageUrl = extractImageUrl(pageHtml);
-        pageText = stripHtml(pageHtml);
       } catch (fetchErr) {
-        console.error('[import-recipe] page fetch failed', fetchErr);
-        return new Response(JSON.stringify({ error: 'Could not reach that URL' }), {
-          status: 422,
-          headers: { ...corsHeaders, 'content-type': 'application/json' },
-        });
+        console.warn('[import-recipe] page fetch failed, using URL only', fetchErr);
       }
-      if (!pageText) {
-        return new Response(JSON.stringify({ error: 'No readable content on that page' }), {
-          status: 422,
-          headers: { ...corsHeaders, 'content-type': 'application/json' },
-        });
-      }
-      content = [{ type: 'text', text: `${TEXT_PROMPT}\n\nPage URL: ${url}\n\nPAGE CONTENT:\n${pageText}` }];
+      if (pageText.length < 200) pageText = `(The page content could not be read - it may block automated access or need JavaScript. Work from the URL.)\n${pageText}`;
+      content = [{ type: 'text', text: `${food ? FOOD_PROMPT : TEXT_PROMPT}\n\nPage URL: ${url}\n\nPAGE CONTENT:\n${pageText}` }];
     } else if (typeof imageBase64 === 'string' && imageBase64) {
       const safeMediaType = typeof mediaType === 'string' && mediaType.startsWith('image/') ? mediaType : 'image/jpeg';
       content = [
@@ -198,7 +263,7 @@ Deno.serve(async (req) => {
       });
     }
 
-    const anthropicRes = await callClaude(content);
+    const anthropicRes = await callClaude(content, food ? FOOD_SCHEMA : RESPONSE_SCHEMA);
     if (!anthropicRes.ok) {
       const errBody = await anthropicRes.text();
       console.error('[import-recipe] Anthropic API error', anthropicRes.status, errBody);

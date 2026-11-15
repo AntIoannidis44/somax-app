@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
 import type { FavoriteMeal, MealId } from './macros';
 import type { UserRecipe } from '../../lib/recipes';
+import { FavoriteMealCard, FavoriteRecipeCard } from './FavoriteCard';
 
 const MEAL_ORDER: { id: MealId; label: string }[] = [
   { id: 'breakfast', label: 'Breakfast' },
@@ -50,31 +51,22 @@ export function FavoritesOverlay({ open, favorites, recipes, onClose, onSelect, 
               return (
                 <div key={id}>
                   <div className="section-label" style={{ margin: '16px 4px 4px' }}>{label}</div>
-                  {group.map((fav) => (
-                    <div className="macro-fav-row" key={fav.id}>
-                      <button type="button" style={{ display: 'flex', alignItems: 'center' }} onClick={() => onSelect(fav)}>
-                        {fav.image_url && <img src={fav.image_url} alt="" style={{ width: 34, height: 34, borderRadius: 9, objectFit: 'cover', marginRight: 10 }} />}
-                        <span className="macro-search-name">{fav.name}</span>
-                      </button>
-                      <span role="button" aria-label="Delete favourite" onClick={() => onDelete(fav.id)}>
-                        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></svg>
-                      </span>
-                    </div>
-                  ))}
+                  <div className="fav-card-list">
+                    {group.map((fav) => (
+                      <FavoriteMealCard key={fav.id} fav={fav} onAdd={() => onSelect(fav)} onDelete={() => onDelete(fav.id)} />
+                    ))}
+                  </div>
                 </div>
               );
             })}
             {recipes.length > 0 && (
               <div>
                 <div className="section-label" style={{ margin: '16px 4px 4px' }}>My recipes</div>
-                {recipes.map((r) => (
-                  <div className="macro-fav-row" key={r.id}>
-                    <button type="button" style={{ display: 'flex', alignItems: 'center' }} onClick={() => onSelectRecipe(r)}>
-                      {r.image_url && <img src={r.image_url} alt="" style={{ width: 34, height: 34, borderRadius: 9, objectFit: 'cover', marginRight: 10 }} />}
-                      <span className="macro-search-name">{r.name}</span>
-                    </button>
-                  </div>
-                ))}
+                <div className="fav-card-list">
+                  {recipes.map((r) => (
+                    <FavoriteRecipeCard key={r.id} recipe={r} onAdd={() => onSelectRecipe(r)} />
+                  ))}
+                </div>
               </div>
             )}
           </>

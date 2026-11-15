@@ -56,3 +56,40 @@ export async function importRecipeFromUrl(url: string): Promise<ImportedRecipe> 
   if (data?.error) throw new Error(data.error);
   return data as ImportedRecipe;
 }
+
+export interface FoodFromLink {
+  name: string;
+  serving: string;
+  estimatedGrams: number;
+  kcal: number;
+  proteinG: number;
+  carbsG: number;
+  fatG: number;
+  // true = the numbers came from the page itself (a nutrition table/label),
+  // false = estimated from what the link is about.
+  fromPage: boolean;
+  confidence: 'low' | 'medium' | 'high';
+  sourceLabel: string;
+  recognized: boolean;
+}
+
+// Log one food from any link - a menu item, product page, meal-kit or
+// recipe page. Same import-recipe edge function, 'food' mode: it reads the
+// page server-side (falling back to the URL itself when a site blocks it)
+// and returns one serving's macros.
+export async function importFoodFromUrl(url: string): Promise<FoodFromLink> {
+  const { data, error } = await supabase.functions.invoke('import-recipe', {
+    body: { url: normaliseUrl(url), mode: 'food' },
+  });
+  if (error) throw new Error(error.message ?? 'Could not read that link');
+  if (data?.error) throw new Error(data.error);
+  return data as FoodFromLink;
+}
+
+// People paste "mcdonalds.com.au/..." or share-sheet text with words around
+// the link - pull out the URL and give it a scheme.
+export function normaliseUrl(input: string): string {
+  const m = input.match(/https?:\/\/\S+/i) ?? input.match(/\b[\w-]+(\.[\w-]+)+\/?\S*/);
+  const raw = (m ? m[0] : input).trim().replace(/[)\].,]+$/, '');
+  return /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+}

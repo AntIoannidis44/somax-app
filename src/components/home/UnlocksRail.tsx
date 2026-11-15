@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { whenArenaReady } from '../../lib/arenaReady';
 import { CharacterThumbnail } from '../character/CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
 import { allWardrobe, isUnlocked, unlockItemName } from '../../lib/character';
@@ -62,23 +63,54 @@ export function UnlocksRail() {
   const ctx = { level: progress.level, longestStreak: progress.longestStreak, prestige: progress.prestige };
 
   // Each uncached preview is a real composeCharacter + WebGL render + PNG
-  // encode (see characterThumbnail.ts), and this rail can ask for up to 6
-  // of them the instant Home mounts - right as Arena's own live 3D canvas
-  // is also doing its heaviest first-paint work. Letting the browser report
-  // idle first (bounded by a timeout, since idle callback support/timing
-  // varies) keeps those two off each other's feet instead of racing.
+  // encode (see characterThumbnail.ts) - often loading garments/hair the
+  // player doesn't own yet - and this rail asks for up to 6 of them. Started
+  // early, they compete with Arena's own character load and it appears
+  // late. So: wait until the main character has drawn (lib/arenaReady.ts),
+  // give it a moment more, and only once the rail is actually near the
+  // screen (it sits below the fold on most phones).
+  // Two steps: nothing at all is built (not even the placeholder shimmer -
+  // measured ~0.7 s of extra main-thread work on a phone-speed CPU) until
+  // the main character is up; then the previews render once the rail is
+  // near the screen.
+  const [arenaUp, setArenaUp] = useState(false);
   const [ready, setReady] = useState(false);
+  const railRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback;
-    if (ric) {
-      const id = ric(() => setReady(true), { timeout: 600 });
-      return () => (window as unknown as { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback?.(id);
-    }
-    const t = setTimeout(() => setReady(true), 300);
-    return () => clearTimeout(t);
+    let cancelled = false;
+    whenArenaReady().then(() => !cancelled && setArenaUp(true));
+    return () => {
+      cancelled = true;
+    };
   }, []);
+  useEffect(() => {
+    if (!arenaUp) return;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const go = () => {
+      timer = setTimeout(() => setReady(true), 400);
+    };
+    const el = railRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      go();
+      return () => clearTimeout(timer);
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          go();
+        }
+      },
+      { rootMargin: '300px 0px' },
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      clearTimeout(timer);
+    };
+  }, [arenaUp]);
 
-  if (!character) return null;
+  if (!character || !arenaUp) return null;
 
   // Only what's still coming - level-gated unlocks (streak/prestige ones
   // don't sort sensibly on a "Lv X" axis) that aren't unlocked yet, nearest
@@ -92,7 +124,7 @@ export function UnlocksRail() {
   if (upcoming.length === 0) return null;
 
   return (
-    <div className="timeline unlocks-timeline">
+    <div className="timeline unlocks-timeline" ref={railRef}>
       <div className="timeline-track" />
       {upcoming.map((w) => {
         const { cfg, mode } = previewFor(w.key, w.item, character);

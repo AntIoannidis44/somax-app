@@ -1964,3 +1964,30 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .ex-num-wrap span{ font-size:12px; font-weight:700; color:var(--text-dim); }
 .ex-kind-hint{ margin-top:6px; font-size:11.5px; color:var(--text-dim); }
 .ex-side-check{ display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; }
+/* Log food by link */
+.macro-scan-btn.on{ border-style:solid; border-color:var(--accent); color:var(--accent); background:color-mix(in srgb, var(--accent) 10%, var(--surface-2)); }
+.macro-link-row{ display:flex; gap:8px; margin:-4px 0 12px; }
+.macro-link-row input{ flex:1; min-width:0; padding:11px 13px; border-radius:12px; border:1px solid var(--line); background:var(--surface-2); color:var(--text); font:inherit; font-size:14px; }
+.macro-link-row .btn{ width:auto; flex-shrink:0; padding:0 14px; font-size:13px; }
+.macro-link-notice{ color:var(--accent); font-weight:600; }
+/* Favourites on Log food: a dropdown of Meal Library-style cards */
+.fav-drop{ margin-bottom:12px; border:1px solid var(--line); border-radius:16px; background:var(--surface); overflow:hidden; }
+.fav-drop-head{ display:flex; align-items:center; gap:9px; width:100%; padding:12px 14px; border:none; background:none; color:var(--text); font:inherit; font-size:14.5px; font-weight:700; cursor:pointer; text-align:left; }
+.fav-drop-star{ color:#f5b301; font-size:16px; line-height:1; }
+.fav-drop-title{ flex:1; }
+.fav-drop-count{ min-width:22px; padding:2px 7px; border-radius:999px; background:var(--surface-3); color:var(--text-dim); font-size:11.5px; font-weight:800; text-align:center; }
+.fav-drop-chev{ width:16px; height:16px; color:var(--text-faint); transform:rotate(90deg); transition:transform .2s; }
+.fav-drop.open .fav-drop-chev{ transform:rotate(-90deg); }
+.fav-drop-body{ display:flex; flex-direction:column; gap:8px; padding:0 10px 10px; max-height:46vh; overflow-y:auto; }
+.fav-drop-all{ align-self:center; margin:4px 0 2px; }
+.fav-card-list{ display:flex; flex-direction:column; gap:8px; }
+.fav-card-wrap{ position:relative; }
+.fav-card{ padding-right:46px; }
+.fav-card .lib-card-name{ overflow-wrap:anywhere; }
+.fav-card-img{ width:40px; height:40px; border-radius:11px; object-fit:cover; flex-shrink:0; }
+.fav-card-add{ position:absolute; right:12px; top:50%; translate:0 -50%; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:color-mix(in srgb, var(--accent) 14%, transparent); color:var(--accent); }
+.fav-card-add svg{ width:15px; height:15px; }
+.fav-card-wrap:has(.fav-card-del) .fav-card{ padding-right:84px; }
+.fav-card-wrap:has(.fav-card-del) .fav-card-add{ right:48px; }
+.fav-card-del{ position:absolute; right:12px; top:50%; translate:0 -50%; width:28px; height:28px; border-radius:50%; border:none; display:grid; place-items:center; background:var(--surface-3); color:var(--text-dim); cursor:pointer; }
+.fav-card-del svg{ width:12px; height:12px; }
