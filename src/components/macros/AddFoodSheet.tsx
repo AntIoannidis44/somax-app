@@ -5,9 +5,10 @@ import { barcodeScanAvailableOnPlatform, scanBarcode } from '../../lib/barcodeSc
 import { lookupBarcode } from '../../lib/foodLookup';
 import { analyzeFoodPhoto } from '../../lib/foodPhoto';
 import { estimateFoodText } from '../../lib/foodText';
-import { importFoodFromUrl } from '../../lib/recipeImport';
+import type { FoodFromLink } from '../../lib/recipeImport';
 import { requestSpeechPermission, speechToTextAvailableOnPlatform, startVoiceListening, stopVoiceListening } from '../../lib/speechToText';
 import { FoodSearchOverlay } from './FoodSearchOverlay';
+import { LinkImportOverlay } from './LinkImportOverlay';
 import { Icon } from '../Icon';
 import { FavoritesOverlay } from './FavoritesOverlay';
 import { FavoriteMealCard, FavoriteRecipeCard } from './FavoriteCard';
@@ -77,9 +78,8 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
   const [protein, setProtein] = useState('');
   const [carbs, setCarbs] = useState('');
   const [fat, setFat] = useState('');
-  const [busy, setBusy] = useState<'barcode' | 'photo' | 'link' | null>(null);
+  const [busy, setBusy] = useState<'barcode' | 'photo' | null>(null);
   const [linkOpen, setLinkOpen] = useState(false);
-  const [linkUrl, setLinkUrl] = useState('');
   const [notice, setNotice] = useState<string | null>(null);
   const [voiceState, setVoiceState] = useState<'idle' | 'listening' | 'processing'>('idle');
   const [error, setError] = useState<string | null>(null);
@@ -125,7 +125,6 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
     setError(null);
     setNotice(null);
     setLinkOpen(false);
-    setLinkUrl('');
     setReviewItems(null);
     setSearchOpen(false);
   }
@@ -261,35 +260,19 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
 
   // Any link - a menu item (McDonald's...), product page, HelloFresh or
   // recipe page. Fills the fields below so it can be checked before adding.
-  async function handleLinkImport() {
-    if (!linkUrl.trim()) return;
-    setError(null);
-    setNotice(null);
-    setBusy('link');
-    try {
-      const f = await importFoodFromUrl(linkUrl);
-      if (!f.recognized) {
-        setError("Couldn't tell what food that link is about - try the item's own page, or enter it below.");
-        return;
-      }
-      setName(f.name);
-      setServing(f.serving || `${Math.round(f.estimatedGrams)}g`);
-      setQuantity(1);
-      setProtein(String(Math.round(f.proteinG)));
-      setCarbs(String(Math.round(f.carbsG)));
-      setFat(String(Math.round(f.fatG)));
-      setNotice(
-        f.fromPage
-          ? `From ${f.sourceLabel}: nutrition taken from the page. Check it and tap Add.`
-          : `From ${f.sourceLabel}: estimated (${f.confidence} confidence), the page didn't list nutrition. Check it and tap Add.`,
-      );
-      setLinkOpen(false);
-      setLinkUrl('');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not read that link');
-    } finally {
-      setBusy(null);
-    }
+  function handleLinkImported(f: FoodFromLink) {
+    setName(f.name);
+    setServing(f.serving || `${Math.round(f.estimatedGrams)}g`);
+    setQuantity(1);
+    setProtein(String(Math.round(f.proteinG)));
+    setCarbs(String(Math.round(f.carbsG)));
+    setFat(String(Math.round(f.fatG)));
+    setNotice(
+      f.fromPage
+        ? `From ${f.sourceLabel}: nutrition taken from the page. Check it and tap Add.`
+        : `From ${f.sourceLabel}: estimated (${f.confidence} confidence), the page didn't list nutrition. Check it and tap Add.`,
+    );
+    setLinkOpen(false);
   }
 
   async function handlePhotoChosen(file: File) {
@@ -576,9 +559,9 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
           <svg viewBox="0 0 24 24"><path d="M4 8a2 2 0 0 1 2-2h1l1.5-2h7L17 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" /><circle cx="12" cy="13" r="3.5" /></svg>
           {busy === 'photo' ? 'Analyzing…' : 'Scan photo'}
         </button>
-        <button type="button" className={`macro-scan-btn${linkOpen ? ' on' : ''}`} disabled={busy !== null && busy !== 'link'} onClick={() => setLinkOpen((o) => !o)}>
+        <button type="button" className="macro-scan-btn" disabled={busy !== null} onClick={() => setLinkOpen(true)}>
           <svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1" /></svg>
-          {busy === 'link' ? 'Reading…' : 'Link'}
+          Link
         </button>
         {speechToTextAvailableOnPlatform() && (
           <button
@@ -604,27 +587,7 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
           }}
         />
       </div>
-      {linkOpen && (
-        <form
-          className="macro-link-row"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleLinkImport();
-          }}
-        >
-          <input
-            autoFocus
-            type="url"
-            inputMode="url"
-            value={linkUrl}
-            onChange={(e) => setLinkUrl(e.target.value)}
-            placeholder="Paste a link: menu item, product, recipe…"
-          />
-          <button type="submit" className="btn btn-primary" disabled={!linkUrl.trim() || busy === 'link'}>
-            {busy === 'link' ? 'Reading…' : 'Get macros'}
-          </button>
-        </form>
-      )}
+      <LinkImportOverlay open={linkOpen} onClose={() => setLinkOpen(false)} onImport={handleLinkImported} />
       {notice && <div className="macro-kcal-hint macro-link-notice">{notice}</div>}
       {error && <div className="macro-kcal-hint" style={{ color: 'var(--danger)' }}>{error}</div>}
 
