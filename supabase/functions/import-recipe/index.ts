@@ -213,6 +213,9 @@ Deno.serve(async (req) => {
 
     let content: Array<Record<string, unknown>>;
     let pageImageUrl: string | null = null;
+    // False when the site blocked us / had no readable content - then any
+    // numbers are estimates, whatever the model says.
+    let pageReadable = false;
     if (typeof url === 'string' && url) {
       if (!/^https?:\/\//i.test(url)) {
         return new Response(JSON.stringify({ error: 'That doesn\'t look like a web link' }), {
@@ -248,7 +251,8 @@ Deno.serve(async (req) => {
       } catch (fetchErr) {
         console.warn('[import-recipe] page fetch failed, using URL only', fetchErr);
       }
-      if (pageText.length < 200) pageText = `(The page content could not be read - it may block automated access or need JavaScript. Work from the URL.)\n${pageText}`;
+      pageReadable = pageText.length >= 200;
+      if (!pageReadable) pageText = `(The page content could not be read - it may block automated access or need JavaScript. Work from the URL.)\n${pageText}`;
       content = [{ type: 'text', text: `${food ? FOOD_PROMPT : TEXT_PROMPT}\n\nPage URL: ${url}\n\nPAGE CONTENT:\n${pageText}` }];
     } else if (typeof imageBase64 === 'string' && imageBase64) {
       const safeMediaType = typeof mediaType === 'string' && mediaType.startsWith('image/') ? mediaType : 'image/jpeg';
@@ -290,6 +294,10 @@ Deno.serve(async (req) => {
     }
 
     const parsed = JSON.parse(textBlock.text);
+    if (food && !pageReadable) {
+      parsed.fromPage = false;
+      if (parsed.confidence === 'high') parsed.confidence = 'medium';
+    }
     return new Response(JSON.stringify({ ...parsed, imageUrl: pageImageUrl }), {
       status: 200,
       headers: { ...corsHeaders, 'content-type': 'application/json' },
