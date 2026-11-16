@@ -13,6 +13,49 @@ let snapCam: THREE.PerspectiveCamera | null = null;
 const snapCache = new Map<string, string>();
 const pending = new Map<string, Promise<string>>();
 
+// snapCache above only lives for as long as the app process does - a cold
+// start (app relaunch, not just a fresh screen) always starts empty, so
+// every look anyone has ever previewed gets fully re-rendered again on
+// every single launch. Mirroring new entries to localStorage, and seeding
+// snapCache from it at startup, makes that a one-time cost per look per
+// device instead of a recurring one. Capped (oldest evicted first) so a
+// player who's browsed a lot of options doesn't grow this without bound.
+const PERSIST_KEY = 'somax.charThumbCache.v1';
+const PERSIST_LIMIT = 60;
+let persistedStore: Record<string, string> | null = null;
+
+function getPersistedStore(): Record<string, string> {
+  if (persistedStore) return persistedStore;
+  let store: Record<string, string> = {};
+  try {
+    const raw = localStorage.getItem(PERSIST_KEY);
+    store = raw ? JSON.parse(raw) : {};
+  } catch {
+    store = {};
+  }
+  persistedStore = store;
+  return store;
+}
+
+function persistSnapshot(key: string, url: string) {
+  try {
+    const store = getPersistedStore();
+    delete store[key];
+    store[key] = url;
+    const keys = Object.keys(store);
+    if (keys.length > PERSIST_LIMIT) {
+      for (const k of keys.slice(0, keys.length - PERSIST_LIMIT)) delete store[k];
+    }
+    localStorage.setItem(PERSIST_KEY, JSON.stringify(store));
+  } catch {
+    // Quota exceeded or storage unavailable (private mode, etc.) - the
+    // in-memory cache still works for the rest of this session, it just
+    // won't survive a restart.
+  }
+}
+
+for (const [key, url] of Object.entries(getPersistedStore())) snapCache.set(key, url);
+
 // Opening the Studio (or switching tabs there) can request a dozen-plus
 // thumbnails at once, each for a different, uncached config. composeCharacter()
 // clones and re-skins geometry synchronously, and the render()+toDataURL()
@@ -176,6 +219,7 @@ export function getCharacterSnapshot(cfg: CharacterConfig, mode: ThumbnailMode):
     try {
       resolvedUrl = renderGroup(group, mode);
       snapCache.set(key, resolvedUrl);
+      persistSnapshot(key, resolvedUrl);
     } finally {
       releaseComposedGroup(cfg);
     }

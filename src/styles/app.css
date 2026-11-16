@@ -1979,12 +1979,10 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .fav-drop-all{ align-self:center; margin:4px 0 2px; }
 .fav-card-list{ display:flex; flex-direction:column; gap:8px; }
 .fav-card-wrap{ position:relative; }
-.fav-card{ padding-right:46px; }
 .fav-card .lib-card-name{ overflow-wrap:anywhere; }
 .fav-card-img{ width:40px; height:40px; border-radius:11px; object-fit:cover; flex-shrink:0; }
 .fav-card-add{ position:absolute; right:12px; top:50%; translate:0 -50%; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:color-mix(in srgb, var(--accent) 14%, transparent); color:var(--accent); }
 .fav-card-add svg{ width:15px; height:15px; }
-.fav-card-wrap:has(.fav-card-del) .fav-card{ padding-right:84px; }
 .fav-card-wrap:has(.fav-card-del) .fav-card-add{ right:48px; }
 .fav-card-del{ position:absolute; right:12px; top:50%; translate:0 -50%; width:28px; height:28px; border-radius:50%; border:none; display:grid; place-items:center; background:var(--surface-3); color:var(--text-dim); cursor:pointer; }
 .fav-card-del svg{ width:12px; height:12px; }

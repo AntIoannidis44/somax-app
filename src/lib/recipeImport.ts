@@ -16,6 +16,11 @@ export interface ImportedRecipe {
   // extracted server-side) - a photo import's image is the photo itself,
   // handled client-side.
   imageUrl: string | null;
+  // Only meaningful for a URL import: false means the page couldn't be
+  // read (blocked, 404, needs JS...) and everything below - including the
+  // missing image - was reconstructed from the link itself, not the real
+  // page. Undefined for a photo import, where the question doesn't apply.
+  fromPage?: boolean;
 }
 
 const MAX_SIDE = 1280; // a recipe card/page needs more legible detail than a food photo does

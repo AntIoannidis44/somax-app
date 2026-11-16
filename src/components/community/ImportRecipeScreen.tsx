@@ -175,8 +175,19 @@ export function ImportRecipeScreen({ open, onClose, onSaved }: ImportRecipeScree
               <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
               {result.imageUrl ? `Imported from ${result.sourceLabel}` : result.sourceLabel}
             </span>
+            {result.fromPage === false && (
+              <div className="macro-search-hint" style={{ color: 'var(--warn, #d4a017)' }}>
+                Couldn't actually read this page - it may have been taken down or blocked automated access. Everything below (including the missing photo) is a best guess from the link itself, not the real page - check it carefully before saving, or add your own photo once it's in My Recipes.
+              </div>
+            )}
             <div className="recipe-hero">
-              <img src={photoPreviewUrl ?? result.imageUrl ?? ''} alt="" />
+              {photoPreviewUrl ?? result.imageUrl ? (
+                <img src={photoPreviewUrl ?? result.imageUrl ?? ''} alt="" />
+              ) : (
+                <div style={{ width: '100%', height: 200, background: 'var(--surface-2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Icon name="nutrition" style={{ width: 28, height: 28, color: 'var(--text-faint)' }} />
+                </div>
+              )}
             </div>
             <div className="recipe-title-block">
               <h1>{result.name}</h1>

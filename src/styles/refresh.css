@@ -1059,6 +1059,14 @@ button.day-pill{ font:inherit; color:inherit; }
 .lib-count{ font-family:var(--font-mono); font-weight:600; color:var(--text-faint); margin-left:4px; }
 .lib-list{ display:grid; gap:8px; margin-bottom:8px; }
 .lib-card{ display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:12px; border-radius:16px; border:1px solid var(--line); background:var(--surface); color:var(--text); font:inherit; cursor:pointer; box-shadow:var(--sh-1); }
+/* .fav-card-add below is position:absolute - taken out of this flex row
+   entirely, so .lib-card's own padding above never reserves room for it.
+   Needs its own padding-right here (after .lib-card's shorthand, which
+   would otherwise reset it back to 12px) rather than in app.css, which
+   loads first and loses this exact fight - a long recipe/favourite name
+   filled the full width and sat under the button instead of next to it. */
+.fav-card{ padding-right:46px; }
+.fav-card-wrap:has(.fav-card-del) .fav-card{ padding-right:84px; }
 .lib-card-main{ flex:1; min-width:0; }
 .lib-card-name{ font-weight:700; font-size:14.5px; line-height:1.25; }
 .lib-card-credit{ font-size:12px; color:var(--text-dim); margin-top:2px; }

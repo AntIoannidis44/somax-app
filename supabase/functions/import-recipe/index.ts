@@ -294,9 +294,20 @@ Deno.serve(async (req) => {
     }
 
     const parsed = JSON.parse(textBlock.text);
-    if (food && !pageReadable) {
-      parsed.fromPage = false;
-      if (parsed.confidence === 'high') parsed.confidence = 'medium';
+    const isUrlImport = typeof url === 'string' && !!url;
+    if (food) {
+      if (!pageReadable) {
+        parsed.fromPage = false;
+        if (parsed.confidence === 'high') parsed.confidence = 'medium';
+      }
+    } else if (isUrlImport) {
+      // RESPONSE_SCHEMA has no confidence/fromPage field for a recipe
+      // import the way FOOD_SCHEMA does - the model always returns its
+      // best-effort recipe either way, with nothing to tell a caller it
+      // was reconstructed from the URL slug alone (page blocked/404/no
+      // JS) rather than read from the real page. Set it ourselves so the
+      // screen can warn instead of presenting a guess as fact.
+      parsed.fromPage = pageReadable;
     }
     return new Response(JSON.stringify({ ...parsed, imageUrl: pageImageUrl }), {
       status: 200,

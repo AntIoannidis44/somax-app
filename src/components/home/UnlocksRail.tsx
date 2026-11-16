@@ -67,12 +67,18 @@ export function UnlocksRail() {
   // player doesn't own yet - and this rail asks for up to 6 of them. Started
   // early, they compete with Arena's own character load and it appears
   // late. So: wait until the main character has drawn (lib/arenaReady.ts),
-  // give it a moment more, and only once the rail is actually near the
-  // screen (it sits below the fold on most phones).
-  // Two steps: nothing at all is built (not even the placeholder shimmer -
-  // measured ~0.7 s of extra main-thread work on a phone-speed CPU) until
-  // the main character is up; then the previews render once the rail is
-  // near the screen.
+  // and only once the rail is actually near the screen (it sits below the
+  // fold on most phones). Nothing at all is built (not even the placeholder
+  // shimmer - measured ~0.7 s of extra main-thread work on a phone-speed
+  // CPU) until the main character is up; then the previews render once the
+  // rail is near the screen.
+  //
+  // A flat extra 400 ms used to sit between those two waits as a safety
+  // buffer - on a device where the character itself takes a moment to
+  // load, that stacked on top and made the rail visibly slow to appear.
+  // Two animation frames (enough for the browser to paint and settle after
+  // the character's first frame) gives the same breathing room without
+  // the fixed tax.
   const [arenaUp, setArenaUp] = useState(false);
   const [ready, setReady] = useState(false);
   const railRef = useRef<HTMLDivElement>(null);
@@ -85,14 +91,20 @@ export function UnlocksRail() {
   }, []);
   useEffect(() => {
     if (!arenaUp) return;
-    let timer: ReturnType<typeof setTimeout> | undefined;
+    let raf1 = 0;
+    let raf2 = 0;
     const go = () => {
-      timer = setTimeout(() => setReady(true), 400);
+      raf1 = requestAnimationFrame(() => {
+        raf2 = requestAnimationFrame(() => setReady(true));
+      });
     };
     const el = railRef.current;
     if (!el || typeof IntersectionObserver === 'undefined') {
       go();
-      return () => clearTimeout(timer);
+      return () => {
+        cancelAnimationFrame(raf1);
+        cancelAnimationFrame(raf2);
+      };
     }
     const io = new IntersectionObserver(
       (entries) => {
@@ -106,7 +118,8 @@ export function UnlocksRail() {
     io.observe(el);
     return () => {
       io.disconnect();
-      clearTimeout(timer);
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
     };
   }, [arenaUp]);
 
