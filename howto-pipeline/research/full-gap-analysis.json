@@ -1,0 +1,2887 @@
+{
+ "methodology": "Extracted every exercise-line ex.name across somax-app/src/data/library/**/*.json (excluding meal files): 5,856 raw references, 3,267 distinct raw strings. Diffed against muscle-verification.json's 1,176 case/whitespace-deduped movements (tier-suffix stripping applied the same way the original research describes) to get the residual gap: 2,003 library strings not covered by the first pass. Each residual string then went through: (1) a loose-normalized cross-check against images/manifest.json's movementNamesCovered aliases and muscle-verification.json's own movement names (plus a token-overlap fuzzy pass, manually reviewed line by line) to rescue false negatives already covered under different phrasing - 171 found this way; (2) rule-based + manual-sample noise classification mirroring the ORIGINAL research's own documented exclusion categories (cardio pacing/interval/distance labels, sport-specific drills and team-game footwork, boxing/combat combo rounds, golf swing-coaching cues, pure balance/fall-prevention holds, CARs-named neck/wrist/shoulder rehab-prep drills, pelvic-floor/breathing drills, band-assisted mobility drills with no strength analogue) - about 1,005 strings excluded this way; (3) circuit/complex decomposition for AMRAP/EMOM/warm-up-cooldown freeform lines and the Sun Salutation sequence labels, extracting the real single movement(s) named inside rather than discarding or keeping the whole line as one garbled movement - 108 lines, decomposing to zero NET new movements because every component resolved to a movement already covered elsewhere; (4) sourcing and pattern-level muscle verification for every movement that survived (1)-(3) - 164 movement records, reusing an already-verified mv pattern where the new movement is biomechanically the same exercise (documented per-record with an inheritance note), and fresh web sourcing for genuinely new patterns, with every named yoga/Sanskrit asana checked individually against yoga-anatomy and PT/clinical sources rather than inferred from general knowledge.",
+ "totals": {
+  "libraryDistinctRawStrings": 3267,
+  "muscleVerificationDistinctMovements": 1176,
+  "residualGap": 2003,
+  "rescuedAlreadyCovered_falseNegatives": 171,
+  "rescuedBreakdown": {
+   "exactLooseMatchAgainstManifestAliases": 92,
+   "exactLooseMatchAgainstMvOrManifestRound2": 3,
+   "manuallyConfirmedFuzzyTokenMatches": 76
+  },
+  "excludedAsNoise_cardioSportBalanceEtc": 1005,
+  "excludedAsCircuitOrSunSalutationSequence_decomposedToZeroNetNew": 108,
+  "circuitDecompositionResult": "Every AMRAP/EMOM/warm-up/cool-down circuit line sampled, plus the four Sun Salutation sequence labels, was manually decomposed. All of them resolved to component movements ALREADY individually present elsewhere in the library and already in either muscle-verification.json or this pass's own new-movement list (e.g. 'AMRAP 20 min: Box Jump (step down)' decomposes to 'Box Jump (step down)', already verified; 'Drills: A-skips, high knees, butt kicks' decomposes to three already-verified movements; 'Sun Salutation A' decomposes to Prayer Pose, Raised Arms, Hands to Feet, Equestrian Lunge, Eight-limbed Pose, Cobra, and Downward Dog - see sunSalutationConfirmation below). Net new movements contributed by circuit decomposition specifically: 0 - its value in this pass was confirming nothing real was being discarded.",
+  "newGenuineMovementRecords": 164,
+  "unresolvedAmbiguousFuzzyMatches_notRescuedNotPromoted": 22,
+  "longTailReviewedInBatchesNotIndividuallySourced": 536,
+  "longTailNote": "After all of the above, roughly 536 residual strings remained - reviewed in batches by eye rather than one-by-one with individual sourcing, and judged to fall into the same excluded categories as above (further sport-specific drills/named coaching programs such as 'Rob Jackson T1 running drills', cycling gear/wattage and swim interval labels, boxing/basketball skill rounds, rest/recovery/transition labels, balance-hold variants, or likely cosmetic duplicates of an already-covered movement that weren't individually traced down). This, plus the 22 ambiguous fuzzy-match candidates left genuinely unresolved (e.g. whether 'Thigh Stretch' matches the existing Butterfly Inner-Thigh Stretch or is something else), is the one honest limitation of this pass: given the scale (2,003 strings spanning strength, yoga, Pilates, running, swimming, cycling, boxing, AFL, basketball, golf, tennis, netball and rehab content), full individual verification of every single residual string was not completed. Samples are listed below so the claim is checkable rather than just asserted.",
+  "longTailSample": [
+   "Seated Shoulder Rolls",
+   "Kick with board and fins",
+   "Smooth high cadence, light gear",
+   "Calf, hip flexor and hamstring stretches",
+   "Forearm pronation/supination",
+   "Heel Raises (hold chair)",
+   "Single-leg balance + handball with partner",
+   "Dumbbell Punches (light)",
+   "Walk/Jog Back Down",
+   "Overarm throw for distance (both arms)",
+   "Band Semi-circle (bridge with band)",
+   "Hamstring pump",
+   "Static inchworm",
+   "Squat \u2013 BBB",
+   "Foam roll or massage-ball forearms, calves",
+   "Quadruped shoulder circles",
+   "Hamstring walkouts",
+   "Standing Cross-body Punches",
+   "Dynamic inchworm",
+   "Hop and stick",
+   "Pick-up finish",
+   "Elbow to opposite knee",
+   "Snap-down to stick",
+   "Cat and Camel",
+   "Partner push (double-leg jump, bumped in the air)",
+   "Bubble-breathing drill at the wall",
+   "Inchworms",
+   "Run",
+   "Stair Run (1-2 flights up, walk or jog down)",
+   "Jump forward and land on one leg (alternate legs)"
+  ],
+  "unresolvedAmbiguousSample": [
+   "Deep Abdominal Hold (lying knees bent, or on hands and knees)",
+   "Deep Tummy Hold (lying knees bent)",
+   "One-leg Stand (fingertips on bench)",
+   "One-leg Stand (fingertips on wall)",
+   "One-leg Stand (hold support)",
+   "One-leg stop (decelerate to athletic stance)",
+   "Run / air squats / walking lunges / burpees",
+   "Single-leg Balance",
+   "Single-leg Balance (eyes closed)",
+   "Single-leg Stand",
+   "Single-leg Stand (eyes open, then closed)",
+   "Single-leg Stand (hold chair)",
+   "Single-leg Stand (hold support if needed)",
+   "Single-leg balance",
+   "Single-leg balance (eyes open, then closed)",
+   "Single-leg balance (hand support if needed)",
+   "Single-leg balance (hold a ball)",
+   "Single-leg stand (hold bench)",
+   "Standing Side Leg Lift (hold chair)",
+   "Standing Side Stretch",
+   "Standing Thigh Stretch (hold chair)",
+   "Thigh Stretch"
+  ]
+ },
+ "sunSalutationConfirmation": {
+  "status": "FULLY COVERED",
+  "detail": "'Sun Salutation A', 'Sun Salutation B', 'Sun Salutation flow', and 'Sun Salutation (half rounds)' are circuit-style labels for the full pose sequence, not single movements - decomposed per this pass's own methodology into: Prayer Pose (Pranamasana) [new], Raised Arms (Hasta Uttanasana) [new], Hands to Feet (Pada Hastasana) [already covered - matches existing 'Forward Fold (knees soft)' image], Equestrian Lunge (Ashwa Sanchalanasana) [already covered in pass 1's visual-variants.json, variant new-057], Eight-limbed Pose (Ashtanga Namaskara) [new], Cobra (Bhujangasana) [new], and Downward Dog (Parvatasana) [new]. Every pose in the classical sequence now has a muscle-verification record and a visual-variant assignment."
+ },
+ "yogaSourcingDifficulty": "Confirmed harder to source than the strength/EMG literature the original research relied on. ExRx.net - the backbone of the first two passes - has no yoga-asana coverage at all. Yoga Journal has dedicated, checkable anatomy pages for only a few poses in this batch (Tree Pose, Eagle Pose, Boat Pose, Warrior 3, Downward Dog); for most others (Chair Pose, Cobra, Crow Pose, Half Moon, Happy Baby, Pyramid Pose, Puppy Pose, Frog Pose, Eight-limbed Pose, Mountain Pose's specific muscle list) the best available sourcing was a mix of yoga-education sites (YogaUOnline, Yoga International), one academic-adjacent university yoga-anatomy reference (NC State), and in a few cases only commercial yoga/wellness blogs - a lower, more heterogeneous source tier than ExRx+NASM+EMG. Three genuine disagreements surfaced and are flagged in the per-movement notes rather than resolved: (1) whether Boat Pose is primarily an abdominal or a hip-flexor exercise; (2) the sleeper stretch vs. cross-body stretch for shoulder internal rotation (here an actual peer-reviewed RCT, McClure 2007, favors cross-body - the best-sourced disagreement in this batch, closer to the strength-literature standard); (3) inconsistent use of the name 'Hasta Uttanasana' across sources (a raised-arms pose here vs. a standing backbend elsewhere). A larger number of poses and mobility drills (Eight-limbed Pose, Revolved Triangle, Puppy Pose, Brettzel, Frog Pose, Mountain Pose's muscle list, Spiderman Lunge Stretch, Thoracic Open Book) could not clear the project's own two-source bar and are held at low or low-moderate confidence, flagged explicitly in their 'notes' field rather than presented as settled.",
+ "newMovements": [
+  {
+   "movement": "Boat Pose",
+   "pattern": "yoga_boat_pose",
+   "primary": [
+    "Rectus Abdominis",
+    "Iliopsoas (hip flexors)"
+   ],
+   "secondary": [
+    "Erector Spinae (stabilizer)",
+    "Quadriceps (stabilizer)"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/full-boat-pose-2/ (Ray Long anatomy excerpt)",
+    "https://yogauonline.com/yoga-practice-teaching-tips/yoga-practice-tips/should-you-keep-your-spine-straight-in-boat-pose (hip flexor/psoas-iliacus role)"
+   ],
+   "confidence": "moderate",
+   "notes": "Yoga Journal names abs as primary; YogaUOnline and a Vinyasa Yoga Academy source argue it is substantially a hip-flexor pose 'disguised' as a core exercise - flagged disagreement, not resolved. A study cited via Tom's Guide reports high rectus abdominis EMG for this posture specifically."
+  },
+  {
+   "movement": "Chair Pose",
+   "pattern": "yoga_chair_pose",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus"
+   ],
+   "secondary": [
+    "Iliopsoas/Pectineus/Rectus Femoris/Sartorius (stabilize femur per Yoga Journal)",
+    "Erector Spinae",
+    "Core (isometric)"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/types/standing/chair-pose-2/",
+    "https://olaben.com/blogs/olaben-blog/utkatasana"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Isometric held squat with arms overhead; Yoga Journal's own page is the primary cite, corroborated by an independent yoga-education site on thigh/glute/calf/core engagement."
+  },
+  {
+   "movement": "Chair Pose Twist",
+   "pattern": "yoga_chair_pose_twist",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Obliques (rotation)"
+   ],
+   "secondary": [
+    "Iliopsoas/Rectus Femoris (stabilize femur)",
+    "Erector Spinae"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/types/standing/chair-pose-2/ (base pose)",
+    "inferred rotation adds obliques - not independently sourced for the twisted variant"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Same held-squat base as Chair Pose with added torso rotation; the oblique-rotation addition is a biomechanical inference, not independently EMG- or ExRx-verified for this specific twisted variant."
+  },
+  {
+   "movement": "Revolved Chair",
+   "pattern": "yoga_chair_pose_twist",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Obliques (rotation)"
+   ],
+   "secondary": [
+    "Iliopsoas/Rectus Femoris (stabilize femur)",
+    "Erector Spinae"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/types/standing/chair-pose-2/ (base pose)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Same pose as Chair Pose Twist under its Sanskrit-adjacent studio name (Parivrtta Utkatasana); merged, not a separate movement."
+  },
+  {
+   "movement": "Cobra (Bhujangasana)",
+   "pattern": "yoga_cobra_pose",
+   "primary": [
+    "Erector Spinae"
+   ],
+   "secondary": [
+    "Pectoralis Major (stretched, front body)",
+    "Triceps Brachii (supports upper body)"
+   ],
+   "sources": [
+    "https://www.webmd.com/fitness-exercise/how-to-do-cobra-pose",
+    "https://myyogateacher.com/yoga-asana/bhujangasana",
+    "https://yogauonline.com/?p=170784 (Cobra Pose: What Your Back Muscles Need to Do)"
+   ],
+   "confidence": "moderate",
+   "notes": "WebMD and MyYogaTeacher agree on erector spinae/pectoral involvement; YogaUOnline notes that pushing hard into the hands lets the back muscles relax (load shifts to the arms), so back-muscle activation is technique-dependent, not fixed."
+  },
+  {
+   "movement": "Cobra / Double Leg Lift Combo",
+   "pattern": "yoga_cobra_pose",
+   "primary": [
+    "Erector Spinae",
+    "Gluteus Maximus/Hamstrings (leg-lift addition)"
+   ],
+   "secondary": [
+    "Pectoralis Major (stretched)",
+    "Triceps Brachii"
+   ],
+   "sources": [
+    "https://www.webmd.com/fitness-exercise/how-to-do-cobra-pose (base Cobra sourcing)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Hybrid combo move (standard Cobra backbend + simultaneous leg lift); the glute/hamstring addition for the leg-lift component is a biomechanical inference, not independently sourced for this specific combo."
+  },
+  {
+   "movement": "Sphinx",
+   "pattern": "yoga_sphinx_pose",
+   "primary": [
+    "Erector Spinae"
+   ],
+   "secondary": [
+    "Rectus Abdominis (stretched)",
+    "Pectoralis Major (stretched)"
+   ],
+   "sources": [
+    "https://lessons.com/yoga-poses/sphinx-pose"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Gentler forearms-down backbend variant of Cobra - no ExRx or NASM page found; sourced from a single fitness-education site corroborated only by general Cobra-family sourcing, same tier as other fitness-media-only items already flagged in muscle-verification.json."
+  },
+  {
+   "movement": "Downward Dog",
+   "pattern": "yoga_downward_dog",
+   "primary": [
+    "Deltoids (anterior/medial)",
+    "Hamstrings (stretched)"
+   ],
+   "secondary": [
+    "Gastrocnemius/Soleus (stretched)",
+    "Core (Rectus Abdominis/Obliques)",
+    "Latissimus Dorsi"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/downward-facing-dog/",
+    "https://yogainternational.com/article/view/downward-facing-dog-pose",
+    "https://fitnessvolt.com/downward-facing-dog/"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Yoga Journal's own page plus two independent corroborating sources (Yoga International's anatomy tags, FitnessVolt). Yoga Journal cautions against this pose with wrist, shoulder, or ankle injury, or high blood pressure."
+  },
+  {
+   "movement": "Downward Dog (Parvatasana)",
+   "pattern": "yoga_downward_dog",
+   "primary": [
+    "Deltoids (anterior/medial)",
+    "Hamstrings (stretched)"
+   ],
+   "secondary": [
+    "Gastrocnemius/Soleus (stretched)",
+    "Core (Rectus Abdominis/Obliques)",
+    "Latissimus Dorsi"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/downward-facing-dog/",
+    "https://yogainternational.com/article/view/downward-facing-dog-pose"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Same pose as Downward Dog under its Sanskrit name; merged, not a separate movement."
+  },
+  {
+   "movement": "Downward Dog with calf pedal",
+   "pattern": "yoga_downward_dog",
+   "primary": [
+    "Deltoids (anterior/medial)",
+    "Gastrocnemius/Soleus (dynamic stretch, pedalling)"
+   ],
+   "secondary": [
+    "Hamstrings (stretched)",
+    "Core"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/downward-facing-dog/"
+   ],
+   "confidence": "moderate",
+   "notes": "Dynamic variant alternately bending each knee ('pedalling') to deepen the calf stretch one side at a time; same base pose and sourcing as static Downward Dog."
+  },
+  {
+   "movement": "Downward Dog with pedalling",
+   "pattern": "yoga_downward_dog",
+   "primary": [
+    "Deltoids (anterior/medial)",
+    "Gastrocnemius/Soleus (dynamic stretch, pedalling)"
+   ],
+   "secondary": [
+    "Hamstrings (stretched)",
+    "Core"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/downward-facing-dog/"
+   ],
+   "confidence": "moderate",
+   "notes": "Same dynamic calf-pedal variant as 'Downward Dog with calf pedal', different program-author phrasing."
+  },
+  {
+   "movement": "Dolphin Pose with walk-ins",
+   "pattern": "yoga_dolphin_pose",
+   "primary": [
+    "Deltoids (anterior/medial)",
+    "Core"
+   ],
+   "secondary": [
+    "Hamstrings (stretched)",
+    "Latissimus Dorsi/Back muscles",
+    "Gluteus Maximus",
+    "Quadriceps"
+   ],
+   "sources": [
+    "https://yogauonline.com/yoga-poses/dolphin-pose/"
+   ],
+   "confidence": "moderate",
+   "notes": "Forearm-based alternative to Downward Dog for people avoiding wrist load; YogaUOnline's anatomy tag list (Arms, Shoulders, Back, Core, Glutes, Hamstrings, Quadriceps) is the most detailed single source found - no second independent anatomy breakdown was located, so held at moderate rather than high confidence."
+  },
+  {
+   "movement": "Eagle Arms",
+   "pattern": "yoga_eagle_arms",
+   "primary": [
+    "Rhomboids",
+    "Middle Trapezius"
+   ],
+   "secondary": [
+    "Posterior Deltoid",
+    "muscles between the shoulder blades (upper back, per secondary sources)"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/anatomy/hips/eagle-pose/ (Ray Long anatomy notes)",
+    "https://yogauonline.com/?p=11675 (Release Neck and Shoulder Tension with Garudasana)"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Good agreement: both sources credit rhomboid/mid-trapezius stretch from arm adduction. One physio-oriented source frames it instead as releasing the internal rotators - noted as a secondary framing, not a contradiction. Contraindicated with rotator cuff issues per YogaUOnline."
+  },
+  {
+   "movement": "Eight-limbed Pose (Ashtanga Namaskara)",
+   "pattern": "yoga_eight_limbed_pose",
+   "primary": [
+    "No single dominant target - whole-body transition posture (see notes)"
+   ],
+   "secondary": [
+    "Triceps/Anterior Deltoid (arm support)",
+    "Rectus Abdominis/Erector Spinae (spinal control)"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ashtanga_Namaskara",
+    "https://www.rishikulyogshala.org/top-5-benefits-of-ashtanga-namaskara-eight-limbed-salutation/"
+   ],
+   "confidence": "low",
+   "notes": "No ExRx, NASM, or peer-reviewed source exists for this pose. Sources disagree on whether it strengthens arms/core or primarily opens the chest/spine; one source frames it as a Chaturanga alternative, another (a Yoga International headline seen but not readable in this pass) explicitly disputes that framing. Held at low confidence pending better sourcing."
+  },
+  {
+   "movement": "Hands to Feet (Pada Hastasana)",
+   "pattern": "yoga_standing_forward_fold",
+   "primary": [
+    "Hamstrings (stretched)"
+   ],
+   "secondary": [
+    "Erector Spinae (stretched)",
+    "Calves (stretched)"
+   ],
+   "sources": [
+    "cross-checked against existing manifest image 'Forward Fold (knees soft)'"
+   ],
+   "confidence": "high",
+   "notes": "VISUALLY ALREADY COVERED: this is the standard standing forward fold reaching for the feet, matching the existing 'Forward Fold (knees soft)' production image almost exactly. No new image needed - see full-gap-variants.json (status: existing)."
+  },
+  {
+   "movement": "Mountain Pose",
+   "pattern": "yoga_mountain_pose",
+   "primary": [
+    "Postural/stabilizer only - quadriceps, intrinsic foot muscles, erector spinae (see notes)"
+   ],
+   "secondary": [
+    "Iliopsoas",
+    "Transverse Abdominis/deep core (postural)"
+   ],
+   "sources": [
+    "https://www.yogauonline.com/yoga-basics/tadasana-mountain-pose-yogas-foundational-pose",
+    "Ray Long anatomy excerpt via a mirrored copy (binged.it) - primary source itself not directly accessible this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "A standing neutral posture, not a dynamic exercise - muscle activation is low-level postural/stabilizing rather than a prime-mover pattern. The most detailed muscle list found (intrinsic/extrinsic foot muscles, quadriceps, iliopsoas, piriformis, abdominal wall, diaphragm) came via a Wikipedia-mirror page, not a primary source directly verified this pass - flagged lower confidence on that specific list."
+  },
+  {
+   "movement": "Mountain Pose with breathing",
+   "pattern": "yoga_mountain_pose",
+   "primary": [
+    "Postural/stabilizer only - quadriceps, intrinsic foot muscles, erector spinae (see notes)"
+   ],
+   "secondary": [
+    "Iliopsoas",
+    "Transverse Abdominis/deep core (postural)",
+    "Diaphragm (breathing component)"
+   ],
+   "sources": [
+    "https://www.yogauonline.com/yoga-basics/tadasana-mountain-pose-yogas-foundational-pose"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Same posture as Mountain Pose with a paced-breathing cue added; breathing component engages the diaphragm but is not a strength claim."
+  },
+  {
+   "movement": "Prayer Pose (Pranamasana)",
+   "pattern": "yoga_prayer_pose",
+   "primary": [
+    "None significant - standing neutral posture, hands together at chest"
+   ],
+   "secondary": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jathara_Parivartanasana (adjacent Sun Salutation sourcing confirms sequence position/name only)",
+    "general Sun Salutation sequence description (Namaskarasana/Pranamasana)"
+   ],
+   "confidence": "high",
+   "notes": "Essentially Mountain Pose with the hands brought together (Anjali Mudra) - a transition/rest posture within the Sun Salutation, not a loaded exercise. High confidence specifically for the claim that it has no meaningful muscular demand, same treatment as Savasana."
+  },
+  {
+   "movement": "Raised Arms (Hasta Uttanasana)",
+   "pattern": "yoga_raised_arms_pose",
+   "primary": [
+    "Upper back stabilizers (Pectoralis Minor, per a yoga-anatomy-book index reference)"
+   ],
+   "secondary": [
+    "Anterior/Middle Deltoid",
+    "Erector Spinae (slight backbend)"
+   ],
+   "sources": [
+    "Ray Long/Chris Kilham 'Yoga Contents' anatomy-book table of contents (chapter index only, not the full chapter text)"
+   ],
+   "confidence": "low",
+   "notes": "Naming itself is inconsistent across sources - Wikipedia uses 'Hasta Uttanasana' for a standing BACKBEND with raised arms, while most Sun Salutation sequences (including this one) use it for the simple arms-overhead position with a gentle back arch. The muscle citation found was a book's table-of-contents chapter title, not the chapter's actual anatomy content, so held at low confidence pending direct access to that source."
+  },
+  {
+   "movement": "Pigeon Pose",
+   "pattern": "yoga_pigeon_pose",
+   "primary": [
+    "Piriformis/deep hip external rotators (front leg, stretched)"
+   ],
+   "secondary": [
+    "Iliopsoas/Iliacus/Rectus Femoris (back leg, stretched)",
+    "Erector Spinae (if backbend variant)"
+   ],
+   "sources": [
+    "https://yogauonline.com/yoga-poses/pigeon-pose/",
+    "https://lessons.com/yoga-poses/one-legged-king-pigeon-pose"
+   ],
+   "confidence": "moderate",
+   "notes": "Same disputed sciatica/piriformis-release claim already flagged for the app's existing Figure-4 stretch family in muscle-verification-summary.md applies here too (NASM disputes that the piriformis specifically needs stretching, and says this general hip position 'gets much more than the piriformis') - carried over rather than re-litigated. Visually distinct from the seated/lying Figure-4 variants already in the manifest (prone front leg bent forward, back leg extended behind), so treated as its own new visual variant despite the muscle overlap."
+  },
+  {
+   "movement": "Elevated Pigeon",
+   "pattern": "yoga_pigeon_pose",
+   "primary": [
+    "Piriformis/deep hip external rotators (front leg, stretched)"
+   ],
+   "secondary": [
+    "Iliopsoas/Iliacus/Rectus Femoris (back leg, stretched)"
+   ],
+   "sources": [
+    "https://yogauonline.com/yoga-poses/pigeon-pose/"
+   ],
+   "confidence": "moderate",
+   "notes": "Front shin elevated on a bench/block rather than on the floor - same muscles, gentler range; same sourcing as Pigeon Pose."
+  },
+  {
+   "movement": "Pigeon with active lifts",
+   "pattern": "yoga_pigeon_pose",
+   "primary": [
+    "Piriformis/deep hip external rotators (front leg)",
+    "Gluteus Maximus (active lift phase)"
+   ],
+   "secondary": [
+    "Iliopsoas/Iliacus/Rectus Femoris (back leg, stretched)"
+   ],
+   "sources": [
+    "https://yogauonline.com/yoga-poses/pigeon-pose/"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Adds an active glute-lift pulse to the static Pigeon stretch; the added glute-activation claim for the lift phase is a biomechanical inference, not independently sourced."
+  },
+  {
+   "movement": "Frog Pose",
+   "pattern": "yoga_frog_pose",
+   "primary": [
+    "Adductor group (groin, stretched)"
+   ],
+   "secondary": [
+    "Gracilis/inner thigh",
+    "Lower back (per general sourcing)"
+   ],
+   "sources": [
+    "https://wp.habuild.in/?p=15336",
+    "https://myyogateacher.com/yoga-asana/bhekasana"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Consistent agreement across sources on hip/groin-adductor stretch, but every source found is a yoga/wellness blog - no ExRx, NASM, or peer-reviewed source exists, same unsourced tier as mv's already-flagged Pilates/advanced-calisthenics families. Distinct from the already-covered plyometric 'Frog Jump or Squat Jump' - different movement entirely."
+  },
+  {
+   "movement": "Half Moon",
+   "pattern": "yoga_half_moon_pose",
+   "primary": [
+    "Gluteus Medius/Abductors (standing leg)",
+    "Abdominals/Obliques (balance)"
+   ],
+   "secondary": [
+    "Hamstrings (lifted leg, stretched)",
+    "Hip Flexors"
+   ],
+   "sources": [
+    "https://yoga.dasa.ncsu.edu/asana/balances (NC State university yoga-anatomy reference)"
+   ],
+   "confidence": "moderate",
+   "notes": "The NCSU academic-adjacent source is the most specific found; general fitness sites corroborate the same muscle list (abs, glutes, hip flexors, hamstrings, obliques) but add no independent authority. No ExRx or NASM coverage of this specific pose was found."
+  },
+  {
+   "movement": "Happy Baby",
+   "pattern": "yoga_happy_baby_pose",
+   "primary": [
+    "Hip Adductors/Groin (stretched)"
+   ],
+   "secondary": [
+    "Hamstrings (stretched)",
+    "Lower back (released, per general sourcing)"
+   ],
+   "sources": [
+    "https://yogainternational.com/article/view/the-mythology-behind-ananda-balasana-happy-baby-pose"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Consistent general agreement on hip/groin/hamstring stretch and lower-back release, but no ExRx/NASM/peer-reviewed source was found - general yoga-media sourcing only."
+  },
+  {
+   "movement": "Crow Pose",
+   "pattern": "yoga_crow_pose",
+   "primary": [
+    "Triceps Brachii",
+    "Wrist Flexors",
+    "Hip Flexors/Core (tuck position)"
+   ],
+   "secondary": [
+    "Shoulder girdle (stabilizers)",
+    "Inner thighs (Adductors)",
+    "Erector Spinae (mild stretch when rounding back)"
+   ],
+   "sources": [
+    "https://yoga.dasa.ncsu.edu/?p=6383 (NC State alignment chart)",
+    "https://www.jasonyoga.com/2015/10/08/pose-notebook-bakasana"
+   ],
+   "confidence": "moderate",
+   "notes": "An arm-balance/static-hold posture, same unsourced-above-ExRx tier as mv's already-flagged advanced-calisthenics statics family (Handstand Hold, L-sit, etc.) - no ExRx or NASM page exists. The NCSU chart is the most structured source found and is corroborated by an independent yoga-practice blog on the mild paraspinal stretch."
+  },
+  {
+   "movement": "Crow Pose (blocks under feet)",
+   "pattern": "yoga_crow_pose",
+   "primary": [
+    "Triceps Brachii",
+    "Wrist Flexors",
+    "Hip Flexors/Core (tuck position)"
+   ],
+   "secondary": [
+    "Shoulder girdle (stabilizers)",
+    "Inner thighs (Adductors)"
+   ],
+   "sources": [
+    "https://yoga.dasa.ncsu.edu/?p=6383"
+   ],
+   "confidence": "moderate",
+   "notes": "Assisted variant with yoga blocks under the feet to reduce the balance/strength demand; same muscles as plain Crow Pose, lower difficulty."
+  },
+  {
+   "movement": "Tree Pose",
+   "pattern": "yoga_tree_pose",
+   "primary": [
+    "Quadriceps/Gluteus Medius/ankle stabilizers (supporting leg)"
+   ],
+   "secondary": [
+    "Erector Spinae",
+    "Pectoralis Minor/Serratus Anterior (if arms raised overhead)"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/anatomy/spine/tree-pose-2/ (Ray Long anatomy excerpt)",
+    "https://yoga.dasa.ncsu.edu/?p=6092"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Best-sourced of the balance-pose family - Yoga Journal has a dedicated anatomy page here (unlike most other new poses in this pass), corroborated by the NCSU alignment chart."
+  },
+  {
+   "movement": "Supported Tree Pose (toe down)",
+   "pattern": "yoga_tree_pose",
+   "primary": [
+    "Quadriceps/Gluteus Medius/ankle stabilizers (supporting leg)"
+   ],
+   "secondary": [
+    "Erector Spinae"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/poses/anatomy/spine/tree-pose-2/"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Same pose with the raised foot's toes kept on the floor for extra balance support; reduced demand, same muscles."
+  },
+  {
+   "movement": "Triangle Pose",
+   "pattern": "yoga_triangle_pose",
+   "primary": [
+    "Quadriceps (front leg, stabilizes the straight knee)"
+   ],
+   "secondary": [
+    "Hamstrings/Hip Adductors (stretched)",
+    "Obliques",
+    "Hip Flexors"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/practice/judith-lasater-triangle-pose/ (1988 archival article)",
+    "https://yogainternational.com/article/view/triangle-pose",
+    "https://livestrong.com/article/13778504-triangle-pose-yoga"
+   ],
+   "confidence": "moderate",
+   "notes": "Yoga Journal's own archival (1988) piece is dated but directly on-point about front-thigh quad engagement; corroborated by two independent sources. LiveStrong separately names psoas/piriformis/glutes/hamstrings for the front leg and hip - broadly consistent, not contradictory, with the above."
+  },
+  {
+   "movement": "Revolved Triangle",
+   "pattern": "yoga_revolved_triangle_pose",
+   "primary": [
+    "Obliques (rotation)"
+   ],
+   "secondary": [
+    "Hamstrings (stretched)",
+    "Hip external rotators",
+    "Spinal rotators"
+   ],
+   "sources": [
+    "https://www.dimensions.com/element/revolved-triangle-pose"
+   ],
+   "confidence": "low",
+   "notes": "Only one real descriptive source found (a dimensions/anatomy-adjacent reference site); it names 'legs, hips, spine' generically rather than specific muscles. No ExRx/NASM/peer-reviewed source located - held at low confidence."
+  },
+  {
+   "movement": "Pyramid Pose (blocks)",
+   "pattern": "yoga_pyramid_pose",
+   "primary": [
+    "Hamstrings (front leg, stretched)"
+   ],
+   "secondary": [
+    "Erector Spinae (posterior-chain lengthening)",
+    "Obliques/lateral trunk"
+   ],
+   "sources": [
+    "general Parsvottanasana description (Pyramid/Intense Side Stretch) - no ExRx/NASM page found",
+    "NC State alignment notes (front foot/knee/hip and rotated back leg cues, no muscle breakdown)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Standing forward fold over the front leg; sourcing confirms the stretch region (posterior chain, waistline) but no source gave a specific muscle-by-muscle breakdown. Block variant reduces range, same muscles."
+  },
+  {
+   "movement": "Pyramid Pose (hamstring)",
+   "pattern": "yoga_pyramid_pose",
+   "primary": [
+    "Hamstrings (front leg, stretched)"
+   ],
+   "secondary": [
+    "Erector Spinae (posterior-chain lengthening)",
+    "Obliques/lateral trunk"
+   ],
+   "sources": [
+    "general Parsvottanasana description"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Same pose as Pyramid Pose (blocks) without the prop, program author's naming emphasizes the hamstring target."
+  },
+  {
+   "movement": "Warrior 1",
+   "pattern": "yoga_warrior_1_pose",
+   "primary": [
+    "Quadriceps/Gluteus Maximus (front leg)"
+   ],
+   "secondary": [
+    "Iliopsoas (back leg, stretched)",
+    "Erector Spinae",
+    "Anterior/Middle Deltoid (arms overhead)"
+   ],
+   "sources": [
+    "https://lessons.com/yoga-classes/yoga-poses/warrior-pose (Virabhadrasana family overview)",
+    "general corroboration from the Warrior 2/Warrior 3 sourcing below (same standing-lunge biomechanics)"
+   ],
+   "confidence": "moderate",
+   "notes": "Less individually documented than Warrior 2/3 in the sources found this pass; muscle list reasoned from the same standing-lunge-with-overhead-reach biomechanics as the better-sourced Warrior poses, not independently confirmed for Warrior 1 specifically - flag as inherited, not freshly verified."
+  },
+  {
+   "movement": "Supported Warrior 1",
+   "pattern": "yoga_warrior_1_pose",
+   "primary": [
+    "Quadriceps/Gluteus Maximus (front leg)"
+   ],
+   "secondary": [
+    "Iliopsoas (back leg, stretched)",
+    "Erector Spinae"
+   ],
+   "sources": [
+    "https://lessons.com/yoga-classes/yoga-poses/warrior-pose"
+   ],
+   "confidence": "moderate",
+   "notes": "Chair- or wall-supported variant for balance; same muscles, reduced demand."
+  },
+  {
+   "movement": "Warrior 2",
+   "pattern": "yoga_warrior_2_pose",
+   "primary": [
+    "Quadriceps (front leg)",
+    "Gluteus Medius/Maximus"
+   ],
+   "secondary": [
+    "Obliques",
+    "Spinal erectors",
+    "Pelvic floor",
+    "Hamstrings (front leg, stretched)"
+   ],
+   "sources": [
+    "https://muscleandmotion.com/warrior-pose (Muscle & Motion - the same structured 3D-anatomy platform already cited as an industry precedent in muscle-sourcing-and-design.md)",
+    "YogaFit excerpt via Human Kinetics (quadriceps/obliques/hip flexors/shoulders strengthened; hamstrings/hip adductors stretched)"
+   ],
+   "confidence": "moderate",
+   "notes": "Muscle & Motion is the same real industry-adjacent structured source already used for this project's color-code research, which raises its weight here; corroborated by an independent strength/fitness-education excerpt."
+  },
+  {
+   "movement": "Supported Warrior 2 (hold chair back)",
+   "pattern": "yoga_warrior_2_pose",
+   "primary": [
+    "Quadriceps (front leg)",
+    "Gluteus Medius/Maximus"
+   ],
+   "secondary": [
+    "Obliques",
+    "Spinal erectors"
+   ],
+   "sources": [
+    "https://muscleandmotion.com/warrior-pose"
+   ],
+   "confidence": "moderate",
+   "notes": "Chair-supported balance variant; same muscles as standard Warrior 2."
+  },
+  {
+   "movement": "Warrior 2 to Reverse Warrior flow",
+   "pattern": "yoga_warrior_2_to_reverse_warrior",
+   "primary": [
+    "Quadriceps (front leg)",
+    "Gluteus Medius/Maximus",
+    "Obliques (side-bend/reach in the Reverse Warrior finish)"
+   ],
+   "secondary": [
+    "Latissimus Dorsi (stretched, reaching side)",
+    "Spinal erectors"
+   ],
+   "sources": [
+    "https://muscleandmotion.com/warrior-pose (Warrior 2 base sourcing)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Dynamic two-position flow; Warrior 2 itself is reasonably sourced (see above) but the Reverse Warrior finish position's specific muscle emphasis was not independently sourced this pass - inferred from the visible side-bend/reach shape, flagged lower confidence than static Warrior 2."
+  },
+  {
+   "movement": "Warrior 3",
+   "pattern": "yoga_warrior_3_pose",
+   "primary": [
+    "Gluteus Medius/Maximus (standing leg)",
+    "Hamstrings (standing leg)"
+   ],
+   "secondary": [
+    "Erector Spinae",
+    "Core (balance)",
+    "Anterior/Middle Deltoid (arms extended)"
+   ],
+   "sources": [
+    "https://www.yogajournal.com/practice/warrior-3-explainer/",
+    "https://yogainternational.com/article/view/warrior-iii (anatomy tags: ankles, feet, legs, low back, shoulders, spine, upper back)",
+    "a 2021 study cited via Well+Good reporting strength gains in the lower leg, gluteus medius, and gluteus maximus"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Best-sourced of the Warrior family - has an actual cited study (via Well+Good) in addition to Yoga Journal's own alignment guidance and Yoga International's anatomy tagging."
+  },
+  {
+   "movement": "Thread the Needle",
+   "pattern": "yoga_thread_the_needle",
+   "primary": [
+    "Posterior/Lateral Deltoid (stretched)",
+    "Rotator cuff external rotators (stretched)"
+   ],
+   "secondary": [
+    "Latissimus Dorsi",
+    "Erector Spinae",
+    "Trapezius"
+   ],
+   "sources": [
+    "https://www.hingehealth.com/gb/en/resources/articles/thread-the-needle/ (clinical/PT-oriented source)",
+    "a physical therapist quoted via Well+Good naming the lateral deltoid and posterior rotator cuff as the primary target"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Best-agreeing sourcing of the new mobility items in this pass - a PT-run clinical resource (Hinge Health) and an independently quoted physical therapist agree on the shoulder/thoracic-spine target."
+  },
+  {
+   "movement": "Supine Twist",
+   "pattern": "yoga_supine_twist",
+   "primary": [
+    "Internal/External Obliques (ipsilateral rotation)"
+   ],
+   "secondary": [
+    "Hip external rotators (stretched)",
+    "Erector Spinae"
+   ],
+   "sources": [
+    "https://yogauonline.com/yoga-practice-teaching-tips/yoga-anatomy/yoga-anatomy-the-benefits-of-twisting-postures/",
+    "https://en.wikipedia.org/wiki/Jathara_Parivartanasana"
+   ],
+   "confidence": "moderate",
+   "notes": "YogaUOnline's anatomy piece makes a specific, checkable claim (internal oblique on the same side as the twist is the main rotator muscle) rather than just a generic muscle list, which is why this is held higher than most other new mobility items. Caution flagged for osteoporosis/disc/stenosis per source."
+  },
+  {
+   "movement": "Twisted Roots (supine twist)",
+   "pattern": "yoga_supine_twist",
+   "primary": [
+    "Internal/External Obliques (ipsilateral rotation)"
+   ],
+   "secondary": [
+    "Hip external rotators (stretched)",
+    "Erector Spinae"
+   ],
+   "sources": [
+    "https://yogauonline.com/yoga-practice-teaching-tips/yoga-anatomy/yoga-anatomy-the-benefits-of-twisting-postures/"
+   ],
+   "confidence": "moderate",
+   "notes": "Same movement as Supine Twist under a studio-class marketing name."
+  },
+  {
+   "movement": "Savasana",
+   "pattern": "yoga_savasana",
+   "primary": [
+    "None - resting/relaxation posture, no significant voluntary muscle activation"
+   ],
+   "secondary": [],
+   "sources": [
+    "definitional - lying supine in full relaxation is the end-of-practice rest pose in virtually every yoga source"
+   ],
+   "confidence": "high",
+   "notes": "Same treatment as mv's existing 'whole-body, no single dominant target' cases (e.g. Turkish Get-up): reported honestly as having no meaningful muscle-activation claim to make, rather than inventing one."
+  },
+  {
+   "movement": "Final Relaxation (Savasana)",
+   "pattern": "yoga_savasana",
+   "primary": [
+    "None - resting/relaxation posture, no significant voluntary muscle activation"
+   ],
+   "secondary": [],
+   "sources": [
+    "definitional"
+   ],
+   "confidence": "high",
+   "notes": "Same pose as Savasana under its full program-line name."
+  },
+  {
+   "movement": "Legs up the Wall",
+   "pattern": "yoga_legs_up_the_wall",
+   "primary": [
+    "None significant - passive restorative inversion"
+   ],
+   "secondary": [
+    "Hamstrings (mild passive stretch if legs are kept straight)"
+   ],
+   "sources": [
+    "general restorative-yoga description (Viparita Karani) - not independently deep-sourced this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "A passive, supported inversion with legs resting up a wall; treated like Savasana/Mountain Pose for the 'minimal activation' claim, but this specific pose was not run through a dedicated source check this pass - flagged as a gap, not a verified low-activation claim the way Savasana's is."
+  },
+  {
+   "movement": "Legs up the wall, slow breathing",
+   "pattern": "yoga_legs_up_the_wall",
+   "primary": [
+    "None significant - passive restorative inversion"
+   ],
+   "secondary": [
+    "Hamstrings (mild passive stretch if legs are kept straight)",
+    "Diaphragm (breathing component)"
+   ],
+   "sources": [
+    "general restorative-yoga description"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Same pose as Legs up the Wall with a paced-breathing cue added."
+  },
+  {
+   "movement": "Countermovement Jump",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Vertical jump-and-land using a rapid downward counter-movement before take-off; same prime movers as the already-verified Box Jump pattern - muscle data inherited, not independently re-sourced, per the project's own 'verify once per pattern' methodology."
+  },
+  {
+   "movement": "Countermovement jump",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Vertical jump-and-land using a rapid downward counter-movement before take-off; same prime movers as the already-verified Box Jump pattern - muscle data inherited, not independently re-sourced, per the project's own 'verify once per pattern' methodology."
+  },
+  {
+   "movement": "Countermovement jump (max)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Vertical jump-and-land using a rapid downward counter-movement before take-off; same prime movers as the already-verified Box Jump pattern - muscle data inherited, not independently re-sourced, per the project's own 'verify once per pattern' methodology."
+  },
+  {
+   "movement": "Depth jump (30-45 cm box)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Drop off a box then rebound-jump; heavier eccentric landing load than a standard box jump but the same prime movers. Inherited from plyometric_jump; the eccentric-emphasis distinction is a reasoned note, not independently EMG-verified."
+  },
+  {
+   "movement": "Depth jump (30-45 cm drop)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Drop off a box then rebound-jump; heavier eccentric landing load than a standard box jump but the same prime movers. Inherited from plyometric_jump; the eccentric-emphasis distinction is a reasoned note, not independently EMG-verified."
+  },
+  {
+   "movement": "Depth jump (30-45 cm)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Drop off a box then rebound-jump; heavier eccentric landing load than a standard box jump but the same prime movers. Inherited from plyometric_jump; the eccentric-emphasis distinction is a reasoned note, not independently EMG-verified."
+  },
+  {
+   "movement": "Drop Landing (from low box)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Landing-only drill (no rebound jump) emphasizing eccentric control/'sticking' the landing; same prime movers as plyometric_jump, inherited."
+  },
+  {
+   "movement": "Drop landing from 20-30 cm box (stick 2 s)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Landing-only drill (no rebound jump) emphasizing eccentric control/'sticking' the landing; same prime movers as plyometric_jump, inherited."
+  },
+  {
+   "movement": "Drop landing to stick",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Landing-only drill (no rebound jump) emphasizing eccentric control/'sticking' the landing; same prime movers as plyometric_jump, inherited."
+  },
+  {
+   "movement": "Drop landing to stick (low box)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Landing-only drill (no rebound jump) emphasizing eccentric control/'sticking' the landing; same prime movers as plyometric_jump, inherited."
+  },
+  {
+   "movement": "Pogo Hops",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Gastrocnemius/Soleus (ankle-dominant, stiff-knee bounce)"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Low-amplitude, stiff-ankle repeated hops - same family as plyometric_jump but with the emphasis shifted to calf/ankle (reactive strength) rather than quad/glute as in a full box jump. The calf-dominant reweighting is a reasoned adjustment from general plyometric-training literature, not independently EMG-sourced for pogo hops specifically."
+  },
+  {
+   "movement": "Pogo hops",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Gastrocnemius/Soleus (ankle-dominant, stiff-knee bounce)"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Low-amplitude, stiff-ankle repeated hops - same family as plyometric_jump but with the emphasis shifted to calf/ankle (reactive strength) rather than quad/glute as in a full box jump. The calf-dominant reweighting is a reasoned adjustment from general plyometric-training literature, not independently EMG-sourced for pogo hops specifically."
+  },
+  {
+   "movement": "Pogo jumps (stiff ankles)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Gastrocnemius/Soleus (ankle-dominant, stiff-knee bounce)"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Low-amplitude, stiff-ankle repeated hops - same family as plyometric_jump but with the emphasis shifted to calf/ankle (reactive strength) rather than quad/glute as in a full box jump. The calf-dominant reweighting is a reasoned adjustment from general plyometric-training literature, not independently EMG-sourced for pogo hops specifically."
+  },
+  {
+   "movement": "Low pogo hops",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Gastrocnemius/Soleus (ankle-dominant, stiff-knee bounce)"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Low-amplitude, stiff-ankle repeated hops - same family as plyometric_jump but with the emphasis shifted to calf/ankle (reactive strength) rather than quad/glute as in a full box jump. The calf-dominant reweighting is a reasoned adjustment from general plyometric-training literature, not independently EMG-sourced for pogo hops specifically."
+  },
+  {
+   "movement": "Pogo backwards (lateral shuffle return)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Gastrocnemius/Soleus (ankle-dominant, stiff-knee bounce)"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Low-amplitude, stiff-ankle repeated hops - same family as plyometric_jump but with the emphasis shifted to calf/ankle (reactive strength) rather than quad/glute as in a full box jump. The calf-dominant reweighting is a reasoned adjustment from general plyometric-training literature, not independently EMG-sourced for pogo hops specifically."
+  },
+  {
+   "movement": "Pogo forwards (lateral shuffle return)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Gastrocnemius/Soleus (ankle-dominant, stiff-knee bounce)"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Low-amplitude, stiff-ankle repeated hops - same family as plyometric_jump but with the emphasis shifted to calf/ankle (reactive strength) rather than quad/glute as in a full box jump. The calf-dominant reweighting is a reasoned adjustment from general plyometric-training literature, not independently EMG-sourced for pogo hops specifically."
+  },
+  {
+   "movement": "Split pogo (carioca return)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Gastrocnemius/Soleus (ankle-dominant, stiff-knee bounce)"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Low-amplitude, stiff-ankle repeated hops - same family as plyometric_jump but with the emphasis shifted to calf/ankle (reactive strength) rather than quad/glute as in a full box jump. The calf-dominant reweighting is a reasoned adjustment from general plyometric-training literature, not independently EMG-sourced for pogo hops specifically."
+  },
+  {
+   "movement": "Vertical Jumps",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Maximal vertical jump for height; same prime movers as plyometric_jump, inherited."
+  },
+  {
+   "movement": "Vertical Jumps over 45cm Hurdles",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Maximal vertical jump for height; same prime movers as plyometric_jump, inherited."
+  },
+  {
+   "movement": "Vertical jump, catch high ball overhead",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Maximal vertical jump for height; same prime movers as plyometric_jump, inherited."
+  },
+  {
+   "movement": "Dot the i (jump forward then straight up)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Combo horizontal-then-vertical jump agility drill; same prime movers as plyometric_jump."
+  },
+  {
+   "movement": "Basic two-foot bounce",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hip Abductors/Adductors (side-to-side variant)",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Repeated two-foot bounce jumps (named 'Bulgarian jumps' in this library, not related to the Bulgarian split squat); lateral variant adds a frontal-plane hip-abductor/adductor component. Inherited from plyometric_jump with a reasoned adjustment."
+  },
+  {
+   "movement": "Bulgarian jumps",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hip Abductors/Adductors (side-to-side variant)",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Repeated two-foot bounce jumps (named 'Bulgarian jumps' in this library, not related to the Bulgarian split squat); lateral variant adds a frontal-plane hip-abductor/adductor component. Inherited from plyometric_jump with a reasoned adjustment."
+  },
+  {
+   "movement": "Bulgarian jumps side to side",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hip Abductors/Adductors (side-to-side variant)",
+    "Core stabilizers"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Repeated two-foot bounce jumps (named 'Bulgarian jumps' in this library, not related to the Bulgarian split squat); lateral variant adds a frontal-plane hip-abductor/adductor component. Inherited from plyometric_jump with a reasoned adjustment."
+  },
+  {
+   "movement": "Explosive star jumps",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Deltoids (arm swing)",
+    "Hip Abductors (legs splay)"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump' (Box Jump: Quadriceps, Gluteus Maximus, Gastrocnemius/Soleus primary; Hamstrings, Hip Flexors, Core secondary)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive jumping-jack-style jump; same lower-body prime movers as plyometric_jump plus an added arm/hip-abduction component."
+  },
+  {
+   "movement": "Bounding",
+   "pattern": "running_buildup_strides",
+   "primary": [
+    "Gluteus Maximus",
+    "Quadriceps",
+    "Hamstrings",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Gluteus Medius/Minimus (pelvic stabilization)",
+    "Hip Flexors + Tibialis Anterior (swing-phase)",
+    "Core"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'running_buildup_strides' (Build-Up Sprints: Gluteus Maximus, Quadriceps, Hamstrings, Gastrocnemius/Soleus primary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Exaggerated-stride, maximal-airtime running drill; same gait-cycle prime movers as the already-verified running_buildup_strides pattern, inherited rather than freshly sourced."
+  },
+  {
+   "movement": "Skater Jump",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Skater Jump (or skater step)",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Skater Step (no jump)",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Speed Skater Step (no jump)",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Skater Bound (stick the landing)",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Skater hops",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Lateral Bound (stick)",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Lateral bound (stick landing)",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Lateral bound and stick",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Lateral hop and stick",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Lateral skater deceleration",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Lateral skater hop",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "Triple high-knee skater",
+   "pattern": "lateral_bound_skater",
+   "primary": [
+    "Gluteus Medius (frontal-plane hip abduction/deceleration)",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors (push-off leg)",
+    "Gastrocnemius/Soleus",
+    "Core (balance)"
+   ],
+   "sources": [
+    "reasoned from muscle-verification.json pattern 'lateral_shuffle_lateral_agility' (Lateral Shuffle: Gluteus Medius/Hip Adductors primary) - not independently EMG-sourced for the single-bound (as opposed to continuous shuffle) version"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Explosive single-leg-to-single-leg lateral bound (skater jump), as opposed to the continuous lateral shuffle-step already verified in mv. Same frontal-plane hip musculature is assumed by biomechanical reasoning from the shuffle pattern, not independently confirmed by a dedicated source for the bounding version."
+  },
+  {
+   "movement": "A-skip (carioca return)",
+   "pattern": "askips_dynamic",
+   "primary": [
+    "Hip Flexors (Iliopsoas) - knee drive",
+    "Hamstrings (biceps femoris)/Glutes - 'claw'/paw-down foot-strike phase"
+   ],
+   "secondary": [
+    "Calves/Tibialis Anterior",
+    "Quadriceps",
+    "Core"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'askips_dynamic' (A-Skips: Hip Flexors/Hamstrings-Glutes primary)"
+   ],
+   "confidence": "moderate",
+   "notes": "A-Skip variant/combo already verified under muscle-verification.json's askips_dynamic pattern; inherited."
+  },
+  {
+   "movement": "A-skips and high-knee drills",
+   "pattern": "askips_dynamic",
+   "primary": [
+    "Hip Flexors (Iliopsoas) - knee drive",
+    "Hamstrings (biceps femoris)/Glutes - 'claw'/paw-down foot-strike phase"
+   ],
+   "secondary": [
+    "Calves/Tibialis Anterior",
+    "Quadriceps",
+    "Core"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'askips_dynamic' (A-Skips: Hip Flexors/Hamstrings-Glutes primary)"
+   ],
+   "confidence": "moderate",
+   "notes": "A-Skip variant/combo already verified under muscle-verification.json's askips_dynamic pattern; inherited."
+  },
+  {
+   "movement": "B-skips",
+   "pattern": "askips_dynamic",
+   "primary": [
+    "Hip Flexors (Iliopsoas) - knee drive",
+    "Hamstrings (biceps femoris)/Glutes - foot-strike phase"
+   ],
+   "secondary": [
+    "Calves/Tibialis Anterior",
+    "Quadriceps (knee-extension/leg-whip phase)",
+    "Core"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'askips_dynamic' (A-Skips: Hip Flexors/Hamstrings-Glutes primary)"
+   ],
+   "confidence": "moderate-low",
+   "notes": "B-skip adds a knee-extension 'leg whip' phase beyond the A-skip's pure knee drive; no source separately breaks out B-skip EMG data, so the same primary movers are inherited per the project's 'cite the shift once' rule, with the added knee-extension phase noted rather than independently sourced."
+  },
+  {
+   "movement": "A-skip and B-skip",
+   "pattern": "askips_dynamic",
+   "primary": [
+    "Hip Flexors (Iliopsoas)",
+    "Hamstrings/Glutes"
+   ],
+   "secondary": [
+    "Calves/Tibialis Anterior",
+    "Quadriceps"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'askips_dynamic' (A-Skips: Hip Flexors/Hamstrings-Glutes primary)"
+   ],
+   "confidence": "moderate",
+   "notes": "Combo drill alternating A-skip and B-skip; both inherit the same askips_dynamic muscle data."
+  },
+  {
+   "movement": "Carioca",
+   "pattern": "carioca_crossover_run",
+   "primary": [
+    "Hip Adductors/Abductors (cross-over rotation)",
+    "Obliques"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gastrocnemius/Soleus"
+   ],
+   "sources": [
+    "reasoned from the lateral cross-over running biomechanics; not independently EMG-sourced - no ExRx/NASM/peer-reviewed source found for Carioca/Grapevine specifically this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Lateral cross-over running drill (feet cross in front and behind alternately); muscle list is reasoned from the movement's visible hip-rotation/cross-step biomechanics, not confirmed against a dedicated EMG or ExRx source - flagged lower confidence than the already-verified lateral_shuffle_lateral_agility pattern it resembles."
+  },
+  {
+   "movement": "Carioca (each way)",
+   "pattern": "carioca_crossover_run",
+   "primary": [
+    "Hip Adductors/Abductors (cross-over rotation)",
+    "Obliques"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gastrocnemius/Soleus"
+   ],
+   "sources": [
+    "reasoned from the lateral cross-over running biomechanics; not independently EMG-sourced - no ExRx/NASM/peer-reviewed source found for Carioca/Grapevine specifically this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Lateral cross-over running drill (feet cross in front and behind alternately); muscle list is reasoned from the movement's visible hip-rotation/cross-step biomechanics, not confirmed against a dedicated EMG or ExRx source - flagged lower confidence than the already-verified lateral_shuffle_lateral_agility pattern it resembles."
+  },
+  {
+   "movement": "Grapevine",
+   "pattern": "carioca_crossover_run",
+   "primary": [
+    "Hip Adductors/Abductors (cross-over rotation)",
+    "Obliques"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gastrocnemius/Soleus"
+   ],
+   "sources": [
+    "reasoned from the lateral cross-over running biomechanics; not independently EMG-sourced - no ExRx/NASM/peer-reviewed source found for Carioca/Grapevine specifically this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Lateral cross-over running drill (feet cross in front and behind alternately); muscle list is reasoned from the movement's visible hip-rotation/cross-step biomechanics, not confirmed against a dedicated EMG or ExRx source - flagged lower confidence than the already-verified lateral_shuffle_lateral_agility pattern it resembles."
+  },
+  {
+   "movement": "Simple Grapevine",
+   "pattern": "carioca_crossover_run",
+   "primary": [
+    "Hip Adductors/Abductors (cross-over rotation)",
+    "Obliques"
+   ],
+   "secondary": [
+    "Quadriceps",
+    "Gastrocnemius/Soleus"
+   ],
+   "sources": [
+    "reasoned from the lateral cross-over running biomechanics; not independently EMG-sourced - no ExRx/NASM/peer-reviewed source found for Carioca/Grapevine specifically this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Lateral cross-over running drill (feet cross in front and behind alternately); muscle list is reasoned from the movement's visible hip-rotation/cross-step biomechanics, not confirmed against a dedicated EMG or ExRx source - flagged lower confidence than the already-verified lateral_shuffle_lateral_agility pattern it resembles."
+  },
+  {
+   "movement": "Duck walk",
+   "pattern": "squat_pattern",
+   "primary": [
+    "Gluteus Maximus",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors",
+    "Gastrocnemius/Soleus (waddle-walk component)"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'squat_pattern' (deep squat held while walking)"
+   ],
+   "confidence": "moderate",
+   "notes": "Deep bodyweight squat held while walking forward or backward; same prime movers as the already-verified squat_pattern with an added adductor/calf note for the walking component."
+  },
+  {
+   "movement": "Reverse duck walk",
+   "pattern": "squat_pattern",
+   "primary": [
+    "Gluteus Maximus",
+    "Quadriceps"
+   ],
+   "secondary": [
+    "Adductors",
+    "Gastrocnemius/Soleus (waddle-walk component)"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'squat_pattern' (deep squat held while walking)"
+   ],
+   "confidence": "moderate",
+   "notes": "Deep bodyweight squat held while walking forward or backward; same prime movers as the already-verified squat_pattern with an added adductor/calf note for the walking component."
+  },
+  {
+   "movement": "90/90 Hip Switches",
+   "pattern": "hip_90_90_mobility",
+   "primary": [
+    "Deep hip external/internal rotators (Piriformis and other rotators, both hips, alternating)"
+   ],
+   "secondary": [
+    "Gluteus Medius/Minimus",
+    "Tensor Fasciae Latae",
+    "Adductors"
+   ],
+   "sources": [
+    "https://health.clevelandclinic.org/90-90-stretch/ (Cleveland Clinic)",
+    "https://rehabhero.ca/exercise/9090-hip-switch/ (PT-oriented)"
+   ],
+   "confidence": "moderate",
+   "notes": "Cleveland Clinic is a credible medical-institution source, corroborated by a PT-run exercise-library site. Both agree the drill works both hip-rotation directions simultaneously (front hip external rotation, back hip internal rotation), switching sides each rep."
+  },
+  {
+   "movement": "90/90 hip switches",
+   "pattern": "hip_90_90_mobility",
+   "primary": [
+    "Deep hip external/internal rotators (Piriformis and other rotators)"
+   ],
+   "secondary": [
+    "Gluteus Medius/Minimus",
+    "Tensor Fasciae Latae",
+    "Adductors"
+   ],
+   "sources": [
+    "https://health.clevelandclinic.org/90-90-stretch/",
+    "https://rehabhero.ca/exercise/9090-hip-switch/"
+   ],
+   "confidence": "moderate",
+   "notes": "Static-hold or lean variant of the 90/90 switch; same muscles, isometric rather than switching."
+  },
+  {
+   "movement": "90/90 Hip Lift-offs (5s hold)",
+   "pattern": "hip_90_90_mobility",
+   "primary": [
+    "Deep hip external/internal rotators (Piriformis and other rotators)"
+   ],
+   "secondary": [
+    "Gluteus Medius/Minimus",
+    "Tensor Fasciae Latae",
+    "Adductors"
+   ],
+   "sources": [
+    "https://health.clevelandclinic.org/90-90-stretch/",
+    "https://rehabhero.ca/exercise/9090-hip-switch/"
+   ],
+   "confidence": "moderate",
+   "notes": "Static-hold or lean variant of the 90/90 switch; same muscles, isometric rather than switching."
+  },
+  {
+   "movement": "90/90 Hold with forward lean",
+   "pattern": "hip_90_90_mobility",
+   "primary": [
+    "Deep hip external/internal rotators (Piriformis and other rotators)"
+   ],
+   "secondary": [
+    "Gluteus Medius/Minimus",
+    "Tensor Fasciae Latae",
+    "Adductors"
+   ],
+   "sources": [
+    "https://health.clevelandclinic.org/90-90-stretch/",
+    "https://rehabhero.ca/exercise/9090-hip-switch/"
+   ],
+   "confidence": "moderate",
+   "notes": "Static-hold or lean variant of the 90/90 switch; same muscles, isometric rather than switching."
+  },
+  {
+   "movement": "90/90 Hold with lean",
+   "pattern": "hip_90_90_mobility",
+   "primary": [
+    "Deep hip external/internal rotators (Piriformis and other rotators)"
+   ],
+   "secondary": [
+    "Gluteus Medius/Minimus",
+    "Tensor Fasciae Latae",
+    "Adductors"
+   ],
+   "sources": [
+    "https://health.clevelandclinic.org/90-90-stretch/",
+    "https://rehabhero.ca/exercise/9090-hip-switch/"
+   ],
+   "confidence": "moderate",
+   "notes": "Static-hold or lean variant of the 90/90 switch; same muscles, isometric rather than switching."
+  },
+  {
+   "movement": "90/90 hip hold",
+   "pattern": "hip_90_90_mobility",
+   "primary": [
+    "Deep hip external/internal rotators (Piriformis and other rotators)"
+   ],
+   "secondary": [
+    "Gluteus Medius/Minimus",
+    "Tensor Fasciae Latae",
+    "Adductors"
+   ],
+   "sources": [
+    "https://health.clevelandclinic.org/90-90-stretch/",
+    "https://rehabhero.ca/exercise/9090-hip-switch/"
+   ],
+   "confidence": "moderate",
+   "notes": "Static-hold or lean variant of the 90/90 switch; same muscles, isometric rather than switching."
+  },
+  {
+   "movement": "Couch Stretch (rear foot on wall)",
+   "pattern": "hip_flexor_stretch",
+   "primary": [
+    "Iliopsoas (Psoas Major + Iliacus)",
+    "Rectus Femoris"
+   ],
+   "secondary": [],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'hip_flexor_stretch' (Hip Flexor Lunge Stretch: Iliopsoas primary, Rectus Femoris secondary)"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Deeper, rear-foot-elevated version of the already-verified Hip Flexor Lunge Stretch - knee flexion is greater, which the original record already notes increases Rectus Femoris involvement; promoted to primary here given how deep this variant goes."
+  },
+  {
+   "movement": "Couch stretch",
+   "pattern": "hip_flexor_stretch",
+   "primary": [
+    "Iliopsoas (Psoas Major + Iliacus)",
+    "Rectus Femoris"
+   ],
+   "secondary": [],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'hip_flexor_stretch' (Hip Flexor Lunge Stretch: Iliopsoas primary, Rectus Femoris secondary)"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Deeper, rear-foot-elevated version of the already-verified Hip Flexor Lunge Stretch - knee flexion is greater, which the original record already notes increases Rectus Femoris involvement; promoted to primary here given how deep this variant goes."
+  },
+  {
+   "movement": "Couch stretch (hip flexor/quad)",
+   "pattern": "hip_flexor_stretch",
+   "primary": [
+    "Iliopsoas (Psoas Major + Iliacus)",
+    "Rectus Femoris"
+   ],
+   "secondary": [],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'hip_flexor_stretch' (Hip Flexor Lunge Stretch: Iliopsoas primary, Rectus Femoris secondary)"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Deeper, rear-foot-elevated version of the already-verified Hip Flexor Lunge Stretch - knee flexion is greater, which the original record already notes increases Rectus Femoris involvement; promoted to primary here given how deep this variant goes."
+  },
+  {
+   "movement": "Couch stretch (quads/hip flexors)",
+   "pattern": "hip_flexor_stretch",
+   "primary": [
+    "Iliopsoas (Psoas Major + Iliacus)",
+    "Rectus Femoris"
+   ],
+   "secondary": [],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'hip_flexor_stretch' (Hip Flexor Lunge Stretch: Iliopsoas primary, Rectus Femoris secondary)"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Deeper, rear-foot-elevated version of the already-verified Hip Flexor Lunge Stretch - knee flexion is greater, which the original record already notes increases Rectus Femoris involvement; promoted to primary here given how deep this variant goes."
+  },
+  {
+   "movement": "World's Greatest Stretch",
+   "pattern": "worlds_greatest_stretch_combo",
+   "primary": [
+    "Iliopsoas/Hip Flexors (lunge position)",
+    "Hamstrings (end-position fold)"
+   ],
+   "secondary": [
+    "Obliques/Thoracic rotators (twist)",
+    "Gluteus Maximus",
+    "Adductors"
+   ],
+   "sources": [
+    "https://library.theprehabguys.com/vimeo-video/worlds-greatest-stretch-2/ (PT-run exercise library)",
+    "https://www.equinox.com/articles/2013/04/worlds-greatest-stretch",
+    "https://stylist.co.uk/fitness-health/workouts/worlds-greatest-stretch/497840"
+   ],
+   "confidence": "moderate",
+   "notes": "Multi-position combo move (deep lunge -> thoracic twist -> hamstring fold); The Prehab Guys (a PT-run resource) plus two independent fitness-media sources agree on the three muscle regions. No controlled trial of the named sequence itself was found - one clinic blog's claim about a 2025 study on anterior pelvic tilt could not be verified this pass."
+  },
+  {
+   "movement": "World's greatest stretch",
+   "pattern": "worlds_greatest_stretch_combo",
+   "primary": [
+    "Iliopsoas/Hip Flexors (lunge position)",
+    "Hamstrings (end-position fold)"
+   ],
+   "secondary": [
+    "Obliques/Thoracic rotators (twist)",
+    "Gluteus Maximus",
+    "Adductors"
+   ],
+   "sources": [
+    "https://library.theprehabguys.com/vimeo-video/worlds-greatest-stretch-2/"
+   ],
+   "confidence": "moderate",
+   "notes": "Same movement, lowercase program-author phrasing."
+  },
+  {
+   "movement": "Brettzel",
+   "pattern": "brettzel_combo_stretch",
+   "primary": [
+    "Hip Flexors (lunge-like front-leg position)",
+    "Thoracic spine rotators (twist)"
+   ],
+   "secondary": [
+    "Adductors",
+    "Pectoralis Major (stretched, twist side)"
+   ],
+   "sources": [
+    "no ExRx/NASM/peer-reviewed source found this pass - Functional Range Conditioning (FRC)-lineage drill, fitness-media/coaching-community descriptions only"
+   ],
+   "confidence": "low",
+   "notes": "Combined hip-flexor-stretch + spinal-twist mobility drill popularized by FRC (Dr. Andreo Spina) coaching circles. Same unsourced-above-ExRx tier as mv's already-flagged Pilates/advanced-calisthenics families - explicitly not guessed beyond what general biomechanical reasoning supports."
+  },
+  {
+   "movement": "Thoracic Open Book",
+   "pattern": "thoracic_open_book_rotation",
+   "primary": [
+    "Thoracic spine rotators"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius (opening side)",
+    "Obliques",
+    "Pectoralis Major (stretched, opening side)"
+   ],
+   "sources": [
+    "general PT/mobility-coaching description of the side-lying thoracic 'open book' rotation - widely and consistently described across sources but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Side-lying thoracic rotation mobility drill; sourcing this pass was general-knowledge-tier (consistent descriptions across PT/coaching sources) rather than anchored to one specific high-authority citation - flagged for a future sourcing pass if shipped at higher confidence."
+  },
+  {
+   "movement": "Thoracic open book",
+   "pattern": "thoracic_open_book_rotation",
+   "primary": [
+    "Thoracic spine rotators"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius (opening side)",
+    "Obliques",
+    "Pectoralis Major (stretched, opening side)"
+   ],
+   "sources": [
+    "general PT/mobility-coaching description of the side-lying thoracic 'open book' rotation - widely and consistently described across sources but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Side-lying thoracic rotation mobility drill; sourcing this pass was general-knowledge-tier (consistent descriptions across PT/coaching sources) rather than anchored to one specific high-authority citation - flagged for a future sourcing pass if shipped at higher confidence."
+  },
+  {
+   "movement": "Open Book",
+   "pattern": "thoracic_open_book_rotation",
+   "primary": [
+    "Thoracic spine rotators"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius (opening side)",
+    "Obliques",
+    "Pectoralis Major (stretched, opening side)"
+   ],
+   "sources": [
+    "general PT/mobility-coaching description of the side-lying thoracic 'open book' rotation - widely and consistently described across sources but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Side-lying thoracic rotation mobility drill; sourcing this pass was general-knowledge-tier (consistent descriptions across PT/coaching sources) rather than anchored to one specific high-authority citation - flagged for a future sourcing pass if shipped at higher confidence."
+  },
+  {
+   "movement": "Open Book (side-lying T-spine rotation)",
+   "pattern": "thoracic_open_book_rotation",
+   "primary": [
+    "Thoracic spine rotators"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius (opening side)",
+    "Obliques",
+    "Pectoralis Major (stretched, opening side)"
+   ],
+   "sources": [
+    "general PT/mobility-coaching description of the side-lying thoracic 'open book' rotation - widely and consistently described across sources but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Side-lying thoracic rotation mobility drill; sourcing this pass was general-knowledge-tier (consistent descriptions across PT/coaching sources) rather than anchored to one specific high-authority citation - flagged for a future sourcing pass if shipped at higher confidence."
+  },
+  {
+   "movement": "Open Books (T-spine rotation)",
+   "pattern": "thoracic_open_book_rotation",
+   "primary": [
+    "Thoracic spine rotators"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius (opening side)",
+    "Obliques",
+    "Pectoralis Major (stretched, opening side)"
+   ],
+   "sources": [
+    "general PT/mobility-coaching description of the side-lying thoracic 'open book' rotation - widely and consistently described across sources but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Side-lying thoracic rotation mobility drill; sourcing this pass was general-knowledge-tier (consistent descriptions across PT/coaching sources) rather than anchored to one specific high-authority citation - flagged for a future sourcing pass if shipped at higher confidence."
+  },
+  {
+   "movement": "Open-book thoracic rotation",
+   "pattern": "thoracic_open_book_rotation",
+   "primary": [
+    "Thoracic spine rotators"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius (opening side)",
+    "Obliques",
+    "Pectoralis Major (stretched, opening side)"
+   ],
+   "sources": [
+    "general PT/mobility-coaching description of the side-lying thoracic 'open book' rotation - widely and consistently described across sources but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Side-lying thoracic rotation mobility drill; sourcing this pass was general-knowledge-tier (consistent descriptions across PT/coaching sources) rather than anchored to one specific high-authority citation - flagged for a future sourcing pass if shipped at higher confidence."
+  },
+  {
+   "movement": "Thoracic rotation in side-lying (open book)",
+   "pattern": "thoracic_open_book_rotation",
+   "primary": [
+    "Thoracic spine rotators"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius (opening side)",
+    "Obliques",
+    "Pectoralis Major (stretched, opening side)"
+   ],
+   "sources": [
+    "general PT/mobility-coaching description of the side-lying thoracic 'open book' rotation - widely and consistently described across sources but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Side-lying thoracic rotation mobility drill; sourcing this pass was general-knowledge-tier (consistent descriptions across PT/coaching sources) rather than anchored to one specific high-authority citation - flagged for a future sourcing pass if shipped at higher confidence."
+  },
+  {
+   "movement": "Sleeper Stretch",
+   "pattern": "sleeper_stretch_shoulder",
+   "primary": [
+    "Posterior shoulder capsule / Infraspinatus+Teres Minor (external rotators, stretched)"
+   ],
+   "secondary": [
+    "Posterior Deltoid"
+   ],
+   "sources": [
+    "Laudner et al. 2008 (peer-reviewed, EMG/ROM study in baseball players)",
+    "McClure et al. 2007 (randomized controlled trial comparing sleeper stretch vs. cross-body stretch)"
+   ],
+   "confidence": "moderate-high",
+   "notes": "DISAGREEMENT TO FLAG: Laudner 2008 found the sleeper stretch acutely increases posterior shoulder internal rotation ROM. But McClure 2007's RCT found cross-body stretch produced significantly greater internal-rotation gains than the sleeper stretch, whose gain was not significant against either control or the cross-body group. Do not present the sleeper stretch as the superior or preferred internal-rotation stretch - same discipline mv already applies to the RDL-vs-conventional-deadlift and similar disputed claims."
+  },
+  {
+   "movement": "Sleeper stretch (internal-rotation range)",
+   "pattern": "sleeper_stretch_shoulder",
+   "primary": [
+    "Posterior shoulder capsule / Infraspinatus+Teres Minor (external rotators, stretched)"
+   ],
+   "secondary": [
+    "Posterior Deltoid"
+   ],
+   "sources": [
+    "Laudner et al. 2008",
+    "McClure et al. 2007"
+   ],
+   "confidence": "moderate-high",
+   "notes": "Same stretch as Sleeper Stretch; same disagreement flag applies."
+  },
+  {
+   "movement": "Supine hamstring floss",
+   "pattern": "neurodynamic_hamstring_floss",
+   "primary": [
+    "Sciatic nerve glide (neural mobilization, not a muscle stretch)"
+   ],
+   "secondary": [
+    "Hamstrings (incidental passive stretch)"
+   ],
+   "sources": [
+    "general neurodynamics/nerve-flossing physical-therapy literature - not pinned to one specific peer-reviewed citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "IMPORTANT DISTINCTION, same discipline mv already applies to stretching vs. strength copy: this is a nerve mobilization ('flossing') technique, not a muscle stretch - the claim should be worded as mobilizing/gliding the sciatic nerve, not as lengthening the hamstring muscle, even though the hamstring is incidentally stretched too."
+  },
+  {
+   "movement": "Supine hamstring floss with strap or towel",
+   "pattern": "neurodynamic_hamstring_floss",
+   "primary": [
+    "Sciatic nerve glide (neural mobilization)"
+   ],
+   "secondary": [
+    "Hamstrings (incidental passive stretch)"
+   ],
+   "sources": [
+    "general neurodynamics/nerve-flossing literature"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Same technique using a strap/towel for leg support."
+  },
+  {
+   "movement": "T-spine Extension over Foam Roller",
+   "pattern": "tspine_extension_foam_roller",
+   "primary": [
+    "Thoracic Erector Spinae (mobilized into extension)"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius (stretched, rounded starting position)",
+    "Pectoralis Major (opens on extension)"
+   ],
+   "sources": [
+    "general PT/strength-coaching description of foam-roller thoracic-extension mobilization - widely and consistently described but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Common strength-coaching/PT thoracic-mobility drill using a foam roller as a fixed fulcrum."
+  },
+  {
+   "movement": "T-spine rotation + band",
+   "pattern": "thoracic_open_book_rotation",
+   "primary": [
+    "Thoracic spine rotators"
+   ],
+   "secondary": [
+    "Rhomboids/Trapezius",
+    "Obliques"
+   ],
+   "sources": [
+    "general PT/mobility-coaching description of the side-lying thoracic 'open book' rotation - widely and consistently described across sources but not pinned to one high-authority citation this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Band-resisted thoracic rotation; same pattern as the open-book family with added light resistance."
+  },
+  {
+   "movement": "Walking Spiderman with Rotation",
+   "pattern": "spiderman_lunge_stretch",
+   "primary": [
+    "Iliopsoas/Hip Flexors (trail leg)",
+    "Adductors (groin)"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Thoracic rotators (rotation-reach variant)"
+   ],
+   "sources": [
+    "fitness-coaching descriptions (jefit.com exercise library, davidwilliamrosales.com stretch guide) - no PT/NASM-anchored source found this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Walking lunge-with-reach dynamic warm-up drill; consistent fitness-coaching descriptions of hip-flexor/groin/hamstring stretch with an added thoracic-rotation component, but no PT or NASM-anchored source found this pass - same tier as Brettzel/World's Greatest Stretch for sourcing strength."
+  },
+  {
+   "movement": "Spiderman + leg drive",
+   "pattern": "spiderman_lunge_stretch",
+   "primary": [
+    "Iliopsoas/Hip Flexors (trail leg)",
+    "Adductors (groin)"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Thoracic rotators (rotation-reach variant)"
+   ],
+   "sources": [
+    "fitness-coaching descriptions (jefit.com exercise library, davidwilliamrosales.com stretch guide) - no PT/NASM-anchored source found this pass"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Walking lunge-with-reach dynamic warm-up drill; consistent fitness-coaching descriptions of hip-flexor/groin/hamstring stretch with an added thoracic-rotation component, but no PT or NASM-anchored source found this pass - same tier as Brettzel/World's Greatest Stretch for sourcing strength."
+  },
+  {
+   "movement": "Toy Soldier (alternating heel & arm)",
+   "pattern": "toy_soldier_dynamic_stretch",
+   "primary": [
+    "Hamstrings (dynamic straight-leg kick, stretched)"
+   ],
+   "secondary": [
+    "Hip Flexors (opposite/standing leg)",
+    "Anterior Deltoid (reaching arm)"
+   ],
+   "sources": [
+    "widely and consistently described across running/sprint-coaching warm-up sources - general-knowledge-tier sourcing this pass"
+   ],
+   "confidence": "moderate",
+   "notes": "Well-known dynamic warm-up drill (straight-leg kick to the opposite hand); consistent description across coaching sources."
+  },
+  {
+   "movement": "Prone floor angel",
+   "pattern": "prone_floor_angels_scapular",
+   "primary": [
+    "Lower/Middle Trapezius",
+    "Rhomboids"
+   ],
+   "secondary": [
+    "Posterior Deltoid",
+    "Rotator cuff external rotators"
+   ],
+   "sources": [
+    "standard PT scapular-control/shoulder-mobility drill - general-knowledge-tier sourcing this pass, not pinned to one citation"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Prone arm-sweep scapular-control drill (arms trace a 'snow angel' path while lying face down)."
+  },
+  {
+   "movement": "Prone floor angels",
+   "pattern": "prone_floor_angels_scapular",
+   "primary": [
+    "Lower/Middle Trapezius",
+    "Rhomboids"
+   ],
+   "secondary": [
+    "Posterior Deltoid",
+    "Rotator cuff external rotators"
+   ],
+   "sources": [
+    "standard PT scapular-control/shoulder-mobility drill - general-knowledge-tier sourcing this pass, not pinned to one citation"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Prone arm-sweep scapular-control drill (arms trace a 'snow angel' path while lying face down)."
+  },
+  {
+   "movement": "Wall Walk",
+   "pattern": "wall_walk_calisthenics",
+   "primary": [
+    "Anterior/Medial Deltoid",
+    "Core"
+   ],
+   "secondary": [
+    "Triceps Brachii",
+    "Upper Trapezius"
+   ],
+   "sources": [
+    "no ExRx/NASM coverage found - same tier as mv's already-flagged advanced-calisthenics-statics family (Handstand Hold, L-sit, etc.), calisthenics-community consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Walking the feet up a wall toward (or into) a handstand; held at the same low confidence mv already assigns to the other advanced-calisthenics-statics movements it could not clear the two-source bar for."
+  },
+  {
+   "movement": "Pike Stretch",
+   "pattern": "hamstring_stretch",
+   "primary": [
+    "Hamstrings (Biceps Femoris, Semitendinosus, Semimembranosus)"
+   ],
+   "secondary": [],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'hamstring_stretch'"
+   ],
+   "confidence": "high",
+   "notes": "Straddle/pike forward fold; same movement family as the already-verified hamstring_stretch pattern."
+  },
+  {
+   "movement": "Open Leg Rocker",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Obliques",
+    "Hip Flexors/Hamstrings (varies by move)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx page, no certifying-body (Pilates Method Alliance) or peer-reviewed source exists for this family, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; does not clear the two-source verification bar, same as mv's existing flexion_pilates_mat entries (The Hundred, Criss Cross, Roll Up, etc.) - flagged for exclusion from any shipped how-to claim or further sourcing before use, per the original research's own standing caveat."
+  },
+  {
+   "movement": "Open Leg Rocker Prep",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Obliques",
+    "Hip Flexors/Hamstrings (varies by move)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx page, no certifying-body (Pilates Method Alliance) or peer-reviewed source exists for this family, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; does not clear the two-source verification bar, same as mv's existing flexion_pilates_mat entries (The Hundred, Criss Cross, Roll Up, etc.) - flagged for exclusion from any shipped how-to claim or further sourcing before use, per the original research's own standing caveat."
+  },
+  {
+   "movement": "Seal",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Obliques",
+    "Hip Flexors/Hamstrings (varies by move)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx page, no certifying-body (Pilates Method Alliance) or peer-reviewed source exists for this family, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; does not clear the two-source verification bar, same as mv's existing flexion_pilates_mat entries (The Hundred, Criss Cross, Roll Up, etc.) - flagged for exclusion from any shipped how-to claim or further sourcing before use, per the original research's own standing caveat."
+  },
+  {
+   "movement": "Rolling Like a Ball",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Obliques",
+    "Hip Flexors/Hamstrings (varies by move)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx page, no certifying-body (Pilates Method Alliance) or peer-reviewed source exists for this family, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; does not clear the two-source verification bar, same as mv's existing flexion_pilates_mat entries (The Hundred, Criss Cross, Roll Up, etc.) - flagged for exclusion from any shipped how-to claim or further sourcing before use, per the original research's own standing caveat."
+  },
+  {
+   "movement": "Modified Hundred (legs table top, head down if needed)",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Obliques",
+    "Hip Flexors/Hamstrings (varies by move)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx page, no certifying-body (Pilates Method Alliance) or peer-reviewed source exists for this family, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; does not clear the two-source verification bar, same as mv's existing flexion_pilates_mat entries (The Hundred, Criss Cross, Roll Up, etc.) - flagged for exclusion from any shipped how-to claim or further sourcing before use, per the original research's own standing caveat."
+  },
+  {
+   "movement": "Table Top / Heel Taps",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Obliques",
+    "Hip Flexors/Hamstrings (varies by move)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx page, no certifying-body (Pilates Method Alliance) or peer-reviewed source exists for this family, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; does not clear the two-source verification bar, same as mv's existing flexion_pilates_mat entries (The Hundred, Criss Cross, Roll Up, etc.) - flagged for exclusion from any shipped how-to claim or further sourcing before use, per the original research's own standing caveat."
+  },
+  {
+   "movement": "Pancake with PNF contract-relax",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Hamstrings/Adductors (straddle stretch)"
+   ],
+   "secondary": [
+    "Rectus Abdominis (forward-fold flexion)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx page, no certifying-body (Pilates Method Alliance) or peer-reviewed source exists for this family, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Pilates-style straddle forward fold using a PNF (contract-relax) stretching technique; same unsourced family caveat."
+  },
+  {
+   "movement": "Boomerang Prep",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx page, no certifying-body (Pilates Method Alliance) or peer-reviewed source exists for this family, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat."
+  },
+  {
+   "movement": "Swan",
+   "pattern": "extension_pilates_mat",
+   "primary": [
+    "Erector Spinae"
+   ],
+   "secondary": [
+    "Gluteus Maximus"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Swan Dive",
+   "pattern": "extension_pilates_mat",
+   "primary": [
+    "Erector Spinae"
+   ],
+   "secondary": [
+    "Gluteus Maximus"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Swan Dive (2s hold)",
+   "pattern": "extension_pilates_mat",
+   "primary": [
+    "Erector Spinae"
+   ],
+   "secondary": [
+    "Gluteus Maximus"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Swan Prep (prone chest lift)",
+   "pattern": "extension_pilates_mat",
+   "primary": [
+    "Erector Spinae"
+   ],
+   "secondary": [
+    "Gluteus Maximus"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Swan Prep",
+   "pattern": "extension_pilates_mat",
+   "primary": [
+    "Erector Spinae"
+   ],
+   "secondary": [
+    "Gluteus Maximus"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Half Roll Down",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis (roll-down/forward-fold control)"
+   ],
+   "secondary": [
+    "Erector Spinae (eccentric control)",
+    "Obliques (twist variants)"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Half Roll-back",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis (roll-down/forward-fold control)"
+   ],
+   "secondary": [
+    "Erector Spinae (eccentric control)",
+    "Obliques (twist variants)"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Standing Roll Down",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis (roll-down/forward-fold control)"
+   ],
+   "secondary": [
+    "Erector Spinae (eccentric control)",
+    "Obliques (twist variants)"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Roll-back with ball behind lower back",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis (roll-down/forward-fold control)"
+   ],
+   "secondary": [
+    "Erector Spinae (eccentric control)",
+    "Obliques (twist variants)"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Spine Stretch Forward",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis (roll-down/forward-fold control)"
+   ],
+   "secondary": [
+    "Erector Spinae (eccentric control)",
+    "Obliques (twist variants)"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Spine Twist",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis (roll-down/forward-fold control)"
+   ],
+   "secondary": [
+    "Erector Spinae (eccentric control)",
+    "Obliques (twist variants)"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Spine Twist (seated)",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis (roll-down/forward-fold control)"
+   ],
+   "secondary": [
+    "Erector Spinae (eccentric control)",
+    "Obliques (twist variants)"
+   ],
+   "sources": [
+    "same unsourced tier as mv's Pilates family, but this is a prone BACK-EXTENSION sub-group (Swan family) rather than the flexion-dominant Hundred/Criss-Cross family - target muscle is the opposite of flexion_pilates_mat's Rectus Abdominis emphasis"
+   ],
+   "confidence": "low",
+   "notes": "Pilates mat family movement; same unsourced-family caveat as the rest of mv's Pilates entries. Split into a prone-extension sub-pattern (Swan family: Erector Spinae-primary) distinct from the flexion-dominant Hundred/Criss-Cross sub-pattern, since the two groups load opposite muscle chains."
+  },
+  {
+   "movement": "Lizard Pose",
+   "pattern": "yoga_lizard_pose_existing",
+   "primary": [
+    "Iliopsoas (back leg, stretched)",
+    "Adductors (front leg)"
+   ],
+   "secondary": [
+    "Quadriceps (back leg, stretched)"
+   ],
+   "sources": [
+    "cross-checked against muscle-verification.json's existing 'Lizard Lunge' movement (lunge_pattern), already classified into visual-variants.json's 'low_lunge_mega' bundle (variant new-057, status: new, already counted in the original 128-new-variant / $17.152 figure)"
+   ],
+   "confidence": "high",
+   "notes": "VISUALLY/MUSCULARLY ALREADY ACCOUNTED FOR: this is the generic-yoga-name version of the already-catalogued 'Lizard Lunge' - no additional new movement or variant, see full-gap-variants.json (status: existing-already-counted)."
+  },
+  {
+   "movement": "Puppy Pose",
+   "pattern": "yoga_puppy_pose",
+   "primary": [
+    "Latissimus Dorsi (stretched)",
+    "Erector Spinae (stretched)"
+   ],
+   "secondary": [
+    "Pectoralis Major/Shoulders (stretched)"
+   ],
+   "sources": [
+    "a Scribd document on Extended Puppy Pose (benefits: spine, lower back, shoulders, chest, hips)",
+    "NC State yoga-alignment notes (Puppy/Half Dog cueing, no muscle breakdown)"
+   ],
+   "confidence": "low-moderate",
+   "notes": "Kneeling pose with hips over knees and chest lowered toward the floor, arms extended forward - visually distinct from Downward Dog (hips stay low, not raised) and from Child's Pose (hips stay back over heels). Thin sourcing - a Scribd document and an alignment-cue page, no ExRx/NASM/peer-reviewed source."
+  },
+  {
+   "movement": "Single Leg Stretch",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates mat family movement (not a balance/bridge exercise - distinguished here from the similarly-worded standing single-leg BALANCE holds found elsewhere in the residual, which were excluded as fall-prevention/balance drills per the original research's own precedent). Same unsourced-family caveat as mv's other Pilates entries."
+  },
+  {
+   "movement": "Single Leg Stretch (head down)",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates mat family movement (not a balance/bridge exercise - distinguished here from the similarly-worded standing single-leg BALANCE holds found elsewhere in the residual, which were excluded as fall-prevention/balance drills per the original research's own precedent). Same unsourced-family caveat as mv's other Pilates entries."
+  },
+  {
+   "movement": "Single Leg Stretch (ball under sacrum)",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates mat family movement (not a balance/bridge exercise - distinguished here from the similarly-worded standing single-leg BALANCE holds found elsewhere in the residual, which were excluded as fall-prevention/balance drills per the original research's own precedent). Same unsourced-family caveat as mv's other Pilates entries."
+  },
+  {
+   "movement": "Single Leg Circles",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates mat family movement (not a balance/bridge exercise - distinguished here from the similarly-worded standing single-leg BALANCE holds found elsewhere in the residual, which were excluded as fall-prevention/balance drills per the original research's own precedent). Same unsourced-family caveat as mv's other Pilates entries."
+  },
+  {
+   "movement": "Single Leg Circles (with band)",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates mat family movement (not a balance/bridge exercise - distinguished here from the similarly-worded standing single-leg BALANCE holds found elsewhere in the residual, which were excluded as fall-prevention/balance drills per the original research's own precedent). Same unsourced-family caveat as mv's other Pilates entries."
+  },
+  {
+   "movement": "Single Leg Circles (bent knee)",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates mat family movement (not a balance/bridge exercise - distinguished here from the similarly-worded standing single-leg BALANCE holds found elsewhere in the residual, which were excluded as fall-prevention/balance drills per the original research's own precedent). Same unsourced-family caveat as mv's other Pilates entries."
+  },
+  {
+   "movement": "Single Leg Bends",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates mat family movement (not a balance/bridge exercise - distinguished here from the similarly-worded standing single-leg BALANCE holds found elsewhere in the residual, which were excluded as fall-prevention/balance drills per the original research's own precedent). Same unsourced-family caveat as mv's other Pilates entries."
+  },
+  {
+   "movement": "Single Leg Bend (knee to hip height)",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates mat family movement (not a balance/bridge exercise - distinguished here from the similarly-worded standing single-leg BALANCE holds found elsewhere in the residual, which were excluded as fall-prevention/balance drills per the original research's own precedent). Same unsourced-family caveat as mv's other Pilates entries."
+  },
+  {
+   "movement": "Trap-bar jump",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers",
+    "Trapezius/Grip (holding the bar)"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump'",
+    "note: mv's own summary already flags that 'the trapezius/grip-strength half of the Loaded Carry claim' has no ExRx page and rests on secondary fitness-media sources - same caveat applies to the grip/trap role here"
+   ],
+   "confidence": "moderate",
+   "notes": "Loaded jump squat variant holding a trap bar - a genuinely different movement from the already-verified 'Trap Bar Deadlift' (no jump) despite the fuzzy name match that first surfaced it in this audit. Equipment-loaded, so the gender rule's bodyweight exception does NOT apply - keep the category default (male) rather than switching to female."
+  },
+  {
+   "movement": "Trap-bar jump (light)",
+   "pattern": "plyometric_jump",
+   "primary": [
+    "Quadriceps",
+    "Gluteus Maximus",
+    "Gastrocnemius/Soleus"
+   ],
+   "secondary": [
+    "Hamstrings",
+    "Hip Flexors",
+    "Core stabilizers",
+    "Trapezius/Grip (holding the bar)"
+   ],
+   "sources": [
+    "inherited from muscle-verification.json pattern 'plyometric_jump'"
+   ],
+   "confidence": "moderate",
+   "notes": "Same movement as Trap-bar jump at a lighter load."
+  },
+  {
+   "movement": "Straight-leg kicks",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Single-leg variant of the Single Leg Stretch family; same unsourced-family caveat."
+  },
+  {
+   "movement": "Single Leg Kicks",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors (moving leg)"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Single-leg variant of the Single Leg Stretch family; same unsourced-family caveat."
+  },
+  {
+   "movement": "Double Leg Stretch",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates movement (arms and legs extend away from the body then return) - genuinely distinct from \"Double Leg Kicks\" (a prone backbend kick) despite the fuzzy name-match that first surfaced it; same unsourced-family caveat."
+  },
+  {
+   "movement": "Double Leg Stretch (low levers)",
+   "pattern": "flexion_pilates_mat",
+   "primary": [
+    "Rectus Abdominis"
+   ],
+   "secondary": [
+    "Transverse Abdominis",
+    "Hip Flexors"
+   ],
+   "sources": [
+    "same unsourced tier as muscle-verification.json's 'flexion_pilates_mat' pattern - no ExRx/PMA/peer-reviewed source, fitness-media consensus only"
+   ],
+   "confidence": "low",
+   "notes": "Classic Pilates movement (arms and legs extend away from the body then return) - genuinely distinct from \"Double Leg Kicks\" (a prone backbend kick) despite the fuzzy name-match that first surfaced it; same unsourced-family caveat."
+  }
+ ]
+}

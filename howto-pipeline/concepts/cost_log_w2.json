@@ -1,0 +1,451 @@
+{
+ "total": 11.926,
+ "count": 89,
+ "entries": [
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-016_a1.png",
+   "result": "ok",
+   "running_total": 0.134
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-109_a1.png",
+   "result": "ok",
+   "running_total": 0.268
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-002_a1.png",
+   "result": "ok",
+   "running_total": 0.402
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-106_a1.png",
+   "result": "ok",
+   "running_total": 0.536
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n004_a1.png",
+   "result": "ok",
+   "running_total": 0.67
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-051_a1.png",
+   "result": "ok",
+   "running_total": 0.804
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-012_a1.png",
+   "result": "ok",
+   "running_total": 0.938
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-111_a1.png",
+   "result": "ok",
+   "running_total": 1.072
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-069_a1.png",
+   "result": "ok",
+   "running_total": 1.206
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-021_a1.png",
+   "result": "ok",
+   "running_total": 1.34
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-109_a2.png",
+   "result": "ok",
+   "running_total": 1.474
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-106_a2.png",
+   "result": "ok",
+   "running_total": 1.608
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-002_a2.png",
+   "result": "ok",
+   "running_total": 1.742
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-016_a2.png",
+   "result": "ok",
+   "running_total": 1.876
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n004_a2.png",
+   "result": "ok",
+   "running_total": 2.01
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-051_a2.png",
+   "result": "ok",
+   "running_total": 2.144
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-016_a1.png",
+   "result": "ok",
+   "running_total": 2.278
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-069_a2.png",
+   "result": "ok",
+   "running_total": 2.412
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n030_a1.png",
+   "result": "ok",
+   "running_total": 2.546
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n009_a1.png",
+   "result": "ok",
+   "running_total": 2.68
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y007_a1.png",
+   "result": "ok",
+   "running_total": 2.814
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-p3-006_a1.png",
+   "result": "ok",
+   "running_total": 2.948
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-051_a3.png",
+   "result": "ok",
+   "running_total": 3.082
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n004_a3.png",
+   "result": "ok",
+   "running_total": 3.216
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-036_a1.png",
+   "result": "ok",
+   "running_total": 3.35
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-023_a1.png",
+   "result": "ok",
+   "running_total": 3.484
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-011_a1.png",
+   "result": "ok",
+   "running_total": 3.618
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y014_a1.png",
+   "result": "ok",
+   "running_total": 3.752
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-069_a3.png",
+   "result": "ok",
+   "running_total": 3.886
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-112_a1.png",
+   "result": "ok",
+   "running_total": 4.02
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-064_a1.png",
+   "result": "ok",
+   "running_total": 4.154
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-p3-006_a2.png",
+   "result": "ok",
+   "running_total": 4.288
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n009_a2.png",
+   "result": "ok",
+   "running_total": 4.422
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-p3-005_a1.png",
+   "result": "ok",
+   "running_total": 4.556
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-036_a2.png",
+   "result": "ok",
+   "running_total": 4.69
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-011_a2.png",
+   "result": "ok",
+   "running_total": 4.824
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n004_a4.png",
+   "result": "ok",
+   "running_total": 4.958
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-120_a1.png",
+   "result": "ok",
+   "running_total": 5.092
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y014_a2.png",
+   "result": "ok",
+   "running_total": 5.226
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-023_a2.png",
+   "result": "ok",
+   "running_total": 5.36
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-032_a1.png",
+   "result": "ok",
+   "running_total": 5.494
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-112_a2.png",
+   "result": "ok",
+   "running_total": 5.628
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-p3-006_a3.png",
+   "result": "ok",
+   "running_total": 5.762
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-059_a1.png",
+   "result": "ok",
+   "running_total": 5.896
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-038_a1.png",
+   "result": "ok",
+   "running_total": 6.03
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-069_a4.png",
+   "result": "ok",
+   "running_total": 6.164
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-036_a3.png",
+   "result": "ok",
+   "running_total": 6.298
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-023_a3.png",
+   "result": "ok",
+   "running_total": 6.432
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y003_a1.png",
+   "result": "ok",
+   "running_total": 6.566
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-033_a1.png",
+   "result": "ok",
+   "running_total": 6.7
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-043_a1.png",
+   "result": "ok",
+   "running_total": 6.834
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-035_a1.png",
+   "result": "ok",
+   "running_total": 6.968
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-038_a2.png",
+   "result": "ok",
+   "running_total": 7.102
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-032_a2.png",
+   "result": "ok",
+   "running_total": 7.236
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y022_a1.png",
+   "result": "ok",
+   "running_total": 7.37
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-018_a1.png",
+   "result": "ok",
+   "running_total": 7.504
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y011_a1.png",
+   "result": "ok",
+   "running_total": 7.638
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n016_a1.png",
+   "result": "ok",
+   "running_total": 7.772
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-107_a1.png",
+   "result": "ok",
+   "running_total": 7.906
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y019_a1.png",
+   "result": "ok",
+   "running_total": 8.04
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-006_a1.png",
+   "result": "ok",
+   "running_total": 8.174
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-033_a2.png",
+   "result": "ok",
+   "running_total": 8.308
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n008_a1.png",
+   "result": "ok",
+   "running_total": 8.442
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n034_a1.png",
+   "result": "ok",
+   "running_total": 8.576
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n029_a1.png",
+   "result": "ok",
+   "running_total": 8.71
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n016_a2.png",
+   "result": "ok",
+   "running_total": 8.844
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/existing-062_a1.png",
+   "result": "ok",
+   "running_total": 8.978
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-009_a1.png",
+   "result": "ok",
+   "running_total": 9.112
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-046_a1.png",
+   "result": "ok",
+   "running_total": 9.246
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-017_a1.png",
+   "result": "ok",
+   "running_total": 9.38
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-026_a1.png",
+   "result": "ok",
+   "running_total": 9.514
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y004_a1.png",
+   "result": "ok",
+   "running_total": 9.648
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-024_a1.png",
+   "result": "ok",
+   "running_total": 9.782
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-020_a1.png",
+   "result": "ok",
+   "running_total": 9.916
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y009_a1.png",
+   "result": "ok",
+   "running_total": 10.05
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-p3-004_a1.png",
+   "result": "ok",
+   "running_total": 10.184
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-039_a1.png",
+   "result": "ok",
+   "running_total": 10.318
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-p3-007_a1.png",
+   "result": "ok",
+   "running_total": 10.452
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-055_a1.png",
+   "result": "ok",
+   "running_total": 10.586
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-048_a1.png",
+   "result": "ok",
+   "running_total": 10.72
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-045_a1.png",
+   "result": "ok",
+   "running_total": 10.854
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-061_a1.png",
+   "result": "ok",
+   "running_total": 10.988
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-067_a1.png",
+   "result": "ok",
+   "running_total": 11.122
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-072_a1.png",
+   "result": "ok",
+   "running_total": 11.256
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-076_a1.png",
+   "result": "ok",
+   "running_total": 11.39
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-078_a1.png",
+   "result": "ok",
+   "running_total": 11.524
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-y021_a1.png",
+   "result": "ok",
+   "running_total": 11.658
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/new-083_a1.png",
+   "result": "ok",
+   "running_total": 11.792
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/concepts/attempts_w2/gap-n026_a1.png",
+   "result": "ok",
+   "running_total": 11.926
+  }
+ ]
+}

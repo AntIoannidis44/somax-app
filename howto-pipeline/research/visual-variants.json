@@ -1,0 +1,3828 @@
+[
+  {
+    "variantId": "existing-000",
+    "equipment": "barbell",
+    "movementDescription": "Barbell racked across the front of the shoulders, squat down and stand back up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Back or Front Squat",
+      "Band Front Squat",
+      "Dumbbell Front Squat",
+      "Front Squat",
+      "Front Squat or Paused Back Squat",
+      "Primary Accessory (e.g. close-grip bench, front squat)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/front-squat.png"
+  },
+  {
+    "variantId": "existing-001",
+    "equipment": "dumbbell",
+    "movementDescription": "Holding a single dumbbell vertically at the chest, squat down and stand back up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Back Squat (or Goblet Squat)",
+      "Back squat or goblet squat",
+      "Dumbbell Goblet Squat",
+      "Dumbbell Goblet Squat (3s lowering)",
+      "Even Minutes: Kettlebell Goblet Squat",
+      "Goblet Squat",
+      "Goblet Squat (dumbbell or backpack)",
+      "Goblet Squat Hold (mobility)",
+      "Goblet Squat Hold with pry",
+      "Goblet Squat Pry (light)",
+      "Goblet Squat to Chair",
+      "Goblet or back squat",
+      "Goblet or bodyweight squat",
+      "Goblet squat (light)",
+      "Goblet squat (warm-up sets)",
+      "Goblet squat with heel raise (wk 3-4 3x10, wk 5-6 3x8, wk 7-8 3x6)",
+      "Kettlebell Goblet Squat"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/dumbbell-goblet-squat.png"
+  },
+  {
+    "variantId": "existing-002",
+    "equipment": "bodyweight",
+    "movementDescription": "Bodyweight squat, arms forward for balance, down and up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "30-Second Chair Stand (count reps)",
+      "Air Squat or Lunge",
+      "Bodyweight Squat",
+      "Bodyweight Squat to Box or Chair",
+      "Bodyweight Squat to Stand",
+      "Bodyweight round: squats, push-ups, mountain climbers, plank (30 s each)",
+      "Bodyweight squat (3 s down)",
+      "Chair Squat",
+      "Chair Squat (sit-to-stand)",
+      "Fast Bodyweight Squat",
+      "Half Air Squat",
+      "Landing: Bodyweight Squat",
+      "Minute 1: Bodyweight Squat",
+      "Preparation Drill: bend and reach, rear lunge, high jumper, rower, squat bender, windmill, forward lunge, prone row, bent-leg body twist, push-up"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/bodyweight-squat.png"
+  },
+  {
+    "variantId": "existing-003",
+    "equipment": "dumbbell",
+    "movementDescription": "Lying on a flat bench, pressing a dumbbell in each hand up from chest level",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Bench Press (or Dumbbell Press)",
+      "Dumbbell Bench Press",
+      "Dumbbell Chest Press",
+      "Dumbbell Chest Press (floor press if no bench)",
+      "Dumbbell Floor Press",
+      "Flat Dumbbell Press",
+      "Flat Dumbbell Press \u2013 speed work",
+      "Incline Dumbbell Press",
+      "Single-arm dumbbell bench press"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/dumbbell-bench-press.png"
+  },
+  {
+    "variantId": "existing-004",
+    "equipment": "bodyweight",
+    "movementDescription": "Plank position, lowering the chest to the floor and pressing back up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Archer Push-up",
+      "Archer or Decline Push-up",
+      "Bench press or push-up",
+      "CD1: Single-leg Push-up",
+      "CD2: 8-count Push-up",
+      "Close-grip Push-up",
+      "Decline Push-up (feet on bed)",
+      "Decline Push-up (feet on chair)",
+      "Desk Push-up",
+      "Diamond Push-up",
+      "Dip or Close-grip Push-up",
+      "Dropdown push-up (3s lower)",
+      "Eccentric Floor Push-up (4s lowering)",
+      "Feet-elevated Push-up",
+      "Inchworm to push-up",
+      "Incline Push-up",
+      "Incline Push-up (bench or couch)",
+      "Incline Push-up (bench or wall)",
+      "Incline Push-up (hands on chair)",
+      "Incline Push-up (on a table)",
+      "Incline Push-up (or Decline Push-up, 5 x 10)",
+      "Incline Push-up (your level)",
+      "Incline Push-up on Bench",
+      "Incline Push-up on Desk",
+      "Kneeling Incline Push-up",
+      "Landing: Incline Push-up on Rail or Step",
+      "Med ball push-ups, swap hands",
+      "Minute 2: Push-up (knees or incline if needed)",
+      "Pike Push-up",
+      "Pike Push-up (feet elevated as you progress)",
+      "Plank to Push-up",
+      "Plyo bench push-ups",
+      "Plyo push-up",
+      "Plyometric Push-up",
+      "Plyometric Push-ups",
+      "Press-up (full or kneeling)",
+      "Press-ups",
+      "Press-ups - hands on the ball (walk feet back and forth)",
+      "Press-ups - rolling the ball around the hands (figure eight)",
+      "Press-ups - tunnel (press-up position, max 8 per group)",
+      "Prone Press-up (to comfort)",
+      "Push assistance (e.g. dips or push-ups)",
+      "Push-up",
+      "Push-up (Pilates)",
+      "Push-up (any variation)",
+      "Push-up (hands raised if needed)",
+      "Push-up (incline or floor)",
+      "Push-up (knees or incline OK)",
+      "Push-up (or incline)",
+      "Push-up / Sit-up Drill: Push-up",
+      "Push-up Test (full or knees, record which)",
+      "Push-up at your level",
+      "Push-up on Balance Cushion",
+      "Push-up plus",
+      "Push-up plus (extra shoulder-blade push at the top)",
+      "Push-up progression",
+      "Push-up with Band Across Back",
+      "Push-up with Rotation",
+      "Push-ups",
+      "Push-ups (knee or full)",
+      "Push-ups (kneeling OK)",
+      "Push-ups (knees if needed)",
+      "Rest-minute burst: push-ups 20 s",
+      "Ring Push-up",
+      "Slow Lowering Push-up (3s down)",
+      "Tempo Push-up",
+      "Wall Press-up",
+      "Wall Push-up",
+      "Wall Push-up (4 counts down, 4 up)",
+      "Wall or Kneeling Push-up",
+      "Weighted Push-up (vest or plate)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/push-up.png"
+  },
+  {
+    "variantId": "existing-005",
+    "equipment": "barbell",
+    "movementDescription": "Lying on an incline bench, pressing a barbell up from the upper chest",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Incline Barbell Press",
+      "Incline Bench Press"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/incline-barbell-bench-press.png"
+  },
+  {
+    "variantId": "existing-006",
+    "equipment": "machine",
+    "movementDescription": "Seated at a chest press machine, pushing the handles forward",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Chest Press Machine",
+      "Machine Chest Press"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/machine-chest-press.png"
+  },
+  {
+    "variantId": "existing-007",
+    "equipment": "bodyweight",
+    "movementDescription": "Stepping one leg back into a lunge and returning to standing",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Alternating Reverse Lunge",
+      "Backpack reverse lunge",
+      "Minute 3: Reverse Lunge (alternating)",
+      "Reverse Lunge",
+      "Reverse Lunge (alternating)",
+      "Reverse Lunge holding chair",
+      "Reverse Lunge to Knee Drive",
+      "Reverse lunge knee drive"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/bodyweight-reverse-lunge.png"
+  },
+  {
+    "variantId": "existing-008",
+    "equipment": "bodyweight",
+    "movementDescription": "Rear foot elevated on a bench, front leg squats down and up (Bulgarian split squat)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Band Bulgarian Split Squat",
+      "Bulgarian Split Squat",
+      "Bulgarian Split Squat (rear foot on bed)",
+      "Bulgarian Split Squat on Bench",
+      "Bulgarian Split Squat or Shrimp Squat",
+      "Bulgarian split squat (foot on bed)",
+      "Dumbbell Bulgarian Split Squat",
+      "Dumbbell Bulgarian Split Squat (lean forward)",
+      "Rear-foot Elevated Split Squat",
+      "Rear-foot-elevated Split Squat",
+      "Tempo Bulgarian Split Squat (rear foot on bed/chair)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/bulgarian-split-squat.png"
+  },
+  {
+    "variantId": "existing-009",
+    "equipment": "dumbbell",
+    "movementDescription": "Holding dumbbells, stepping sideways into a lateral lunge",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Isometric lateral lunge",
+      "Lateral Lunge",
+      "Lateral Lunge to Balance"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/dumbbell-lateral-lunge.png"
+  },
+  {
+    "variantId": "existing-010",
+    "equipment": "cable",
+    "movementDescription": "Seated at a low cable row station, pulling the handle to the torso",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Seated Band Row",
+      "Seated Band Rowing",
+      "Seated Cable Row",
+      "Seated Machine Row",
+      "Seated Row Machine",
+      "Single-arm Cable Row"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/seated-cable-row.png"
+  },
+  {
+    "variantId": "existing-011",
+    "equipment": "dumbbell",
+    "movementDescription": "Single arm, hinged forward, rowing one dumbbell to the hip",
+    "gender": "male",
+    "movementNamesCovered": [
+      "One-arm Dumbbell Row",
+      "Single-arm Dumbbell Row",
+      "Single-arm row + dumbbell"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/single-arm-dumbbell-row.png"
+  },
+  {
+    "variantId": "existing-012",
+    "equipment": "bodyweight",
+    "movementDescription": "Hanging under a bar/TRX at an angle, pulling the chest up to the bar",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Feet-elevated Inverted Row",
+      "Inverted Row",
+      "Inverted Row (low bar)",
+      "Inverted Row (under a sturdy table)",
+      "Ring Row",
+      "Ring Row (feet elevated)",
+      "TRX or ring row",
+      "Table inverted row",
+      "Table or bar inverted row"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/inverted-row.png"
+  },
+  {
+    "variantId": "existing-013",
+    "equipment": "barbell",
+    "movementDescription": "Hip hinge from standing with a barbell near the shins, minimal knee bend",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Romanian Deadlift",
+      "Barbell Romanian Deadlift",
+      "Cable Romanian Deadlift",
+      "Deadlift or Romanian Deadlift",
+      "Dumbbell Romanian Deadlift",
+      "Romanian Deadlift",
+      "Station 2: Straight-leg Deadlift",
+      "Stiff-legged Deadlift"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_hinge_deadlift/barbell-romanian-deadlift.png"
+  },
+  {
+    "variantId": "existing-014",
+    "equipment": "barbell",
+    "movementDescription": "Standing inside a hexagonal trap bar, hinging down to grip handles at the sides and standing up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Deadlift or Trap-bar Deadlift \u2013 top set",
+      "Trap bar deadlift",
+      "Trap bar deadlift (wk 3-4 3x8, wk 5-6 3x6, wk 7-8 4x4)",
+      "Trap bar or barbell deadlift",
+      "Trap-bar Deadlift",
+      "Trap-bar deadlift or front squat",
+      "Trap-bar or Block Deadlift",
+      "Trap-bar or Conventional Deadlift"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_hinge_deadlift/trap-bar-deadlift.png"
+  },
+  {
+    "variantId": "existing-015",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing on one leg, hinging forward holding a weight, free leg extending back",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Inverted Hamstring",
+      "Single-leg Deadlift holding luggage",
+      "Single-leg Dumbbell Deadlift",
+      "Single-leg Dumbbell Romanian Deadlift",
+      "Single-leg Kettlebell Deadlift",
+      "Single-leg RDL Reach",
+      "Single-leg Romanian Deadlift",
+      "Single-leg Romanian Deadlift (bodyweight)",
+      "Single-leg Romanian Deadlift (hand on wall)",
+      "Single-leg Romanian Deadlift (holding luggage)",
+      "Single-leg Romanian deadlift (body weight or light)",
+      "Single-leg deadlift",
+      "Single-leg deadlift (dumbbell)",
+      "Single-leg deadlift (left)",
+      "Single-leg deadlift (right)",
+      "Single-leg hip hinge + band",
+      "Staggered RDL + band"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_hinge_deadlift/single-leg-romanian-deadlift.png"
+  },
+  {
+    "variantId": "existing-016",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, knees bent, driving the hips up into a bridge",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bridge",
+      "Bridge (articulating)",
+      "Bridge (peel spine off the mat)",
+      "Bridge (progress to single-leg)",
+      "Bridge Pose",
+      "Bridge pullover + band",
+      "Bridge with arm raise",
+      "Bridge with ball squeeze",
+      "Bridge with march",
+      "Bridge with spinal roll",
+      "Dumbbell Glute Bridge (2s pause)",
+      "Four for the Core: Back Bridge",
+      "Glute Bridge",
+      "Glute Bridge (2s squeeze)",
+      "Glute Bridge (exhale and brace on the way up)",
+      "Glute Bridge Hold",
+      "Glute Bridge March",
+      "Glute bridge bench press",
+      "Glute bridge pullover",
+      "Hamstring walk-outs (bridge position)",
+      "Long-lever glute bridge (heels on step)",
+      "Pelvic Tilts and Bridge",
+      "Shoulder Bridge",
+      "Supported Bridge (block under sacrum)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_extension_glute_isolation/floor-glute-bridge.png"
+  },
+  {
+    "variantId": "existing-017",
+    "equipment": "bodyweight",
+    "movementDescription": "Glute bridge performed on one leg, the other held straight",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Single-leg Bridge",
+      "Single-leg Glute Bridge",
+      "Single-leg hamstring bridge (foot on bench/ball)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_extension_glute_isolation/single-leg-glute-bridge.png"
+  },
+  {
+    "variantId": "existing-018",
+    "equipment": "bodyweight",
+    "movementDescription": "Plank held on straight arms",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Plank Shoulder Taps",
+      "Plank Shoulder Taps (feet wide)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_front/straight-arm-plank.png"
+  },
+  {
+    "variantId": "existing-019",
+    "equipment": "other-named",
+    "movementDescription": "Kneeling, rolling an ab wheel out and pulling it back in",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Ab Wheel Rollout",
+      "Core (ab wheel or hanging leg raise)",
+      "Kneeling Ab Wheel Roll-out"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_front/ab-wheel-rollout.png"
+  },
+  {
+    "variantId": "existing-020",
+    "equipment": "machine",
+    "movementDescription": "Seated, pulling a lat pulldown bar down to the chest",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Assisted Chin-up or Neutral-grip Pulldown",
+      "Chin-up or Lat Pulldown",
+      "Close-grip Pulldown",
+      "Lat Pulldown",
+      "Lat Pulldown (overhand)",
+      "Lat Pulldown or Pull-up",
+      "Machine Row or Lat Pulldown",
+      "Neutral-grip Lat Pulldown",
+      "Pull-up or Lat Pulldown",
+      "Weighted Chin-up or Lat Pulldown",
+      "Weighted Pull-up or Pulldown"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_pull/lat-pulldown-machine.png"
+  },
+  {
+    "variantId": "existing-021",
+    "equipment": "dumbbell",
+    "movementDescription": "Seated, pressing a dumbbell in each hand overhead",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band or Water-bottle Overhead Press (seated)",
+      "Dumbbell Overhead Press",
+      "Dumbbell Shoulder Press",
+      "Dumbbell Shoulder Press (seated)",
+      "Seated Band Overhead Press",
+      "Seated Dumbbell Overhead Press",
+      "Seated Dumbbell Press",
+      "Seated Dumbbell Shoulder Press",
+      "Standing Dumbbell Overhead Press"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_press_overhead/seated-dumbbell-shoulder-press.png"
+  },
+  {
+    "variantId": "existing-022",
+    "equipment": "machine",
+    "movementDescription": "Seated calf raise machine, pressing the pads up through the toes",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Seated Calf Extension",
+      "Seated Calf Raise"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/calf_raise/seated-calf-raise-machine.png"
+  },
+  {
+    "variantId": "existing-023",
+    "equipment": "cable",
+    "movementDescription": "Standing at a low cable, curling the handle up to the shoulder",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Cable Curl",
+      "Cable Hammer Curl"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/elbow_flexion_curl/cable-curl.png"
+  },
+  {
+    "variantId": "existing-025",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, leaning back slightly, rotating the torso side to side",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Russian Twist",
+      "Russian twists"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/core_rotation_woodchop_twist/seated-russian-twist.png"
+  },
+  {
+    "variantId": "existing-026",
+    "equipment": "barbell",
+    "movementDescription": "Standing, rotating a landmine-anchored barbell from side to side at the hip",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Landmine rotation",
+      "Landmine rotation or cable chop"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/core_rotation_woodchop_twist/landmine-rotation.png"
+  },
+  {
+    "variantId": "existing-027",
+    "equipment": "bodyweight",
+    "movementDescription": "Hands on a bench behind the body, lowering and pressing back up (dip)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bench Dip (chair or bench)",
+      "Bench or Chair Dip",
+      "Chair Dip",
+      "Triceps Dip (chair, bath or bed edge)",
+      "Triceps Dip on Chair"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/dip/bench-dip.png"
+  },
+  {
+    "variantId": "existing-028",
+    "equipment": "cable",
+    "movementDescription": "Standing at a high cable, pushing the handle down to extend the elbows",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Rope Pressdown",
+      "Triceps Cable Push-down",
+      "Triceps Pushdown",
+      "Triceps Pushdown or Dip",
+      "Triceps Rope Pushdown"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/elbow_extension_triceps/cable-triceps-pushdown.png"
+  },
+  {
+    "variantId": "existing-030",
+    "equipment": "dumbbell",
+    "movementDescription": "Carrying a weight in one hand at the side while walking",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Suitcase Carry"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/loaded_carry/suitcase-carry.png"
+  },
+  {
+    "variantId": "existing-031",
+    "equipment": "band",
+    "movementDescription": "Holding a band at chest height, pulling it apart until the arms are out to the sides",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Pull-apart",
+      "Band pull-aparts + shoulder circles",
+      "Face Pull or Band Pull-apart",
+      "Seated Band Pull-apart",
+      "Shoulder pull-apart + band"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rear_delt_face_pull/band-pull-apart.png"
+  },
+  {
+    "variantId": "existing-032",
+    "equipment": "bodyweight",
+    "movementDescription": "Hanging passively from a pull-up bar with straight arms",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Active hang",
+      "Dead Hang"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/grip_forearm/dead-hang.png"
+  },
+  {
+    "variantId": "existing-033",
+    "equipment": "band",
+    "movementDescription": "Standing with a band around the ankles, stepping sideways",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Lateral Walk",
+      "Banded Lateral Walk",
+      "Lateral step with band",
+      "Mini-band Lateral Walk"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_abduction/standing-band-lateral-walk.png"
+  },
+  {
+    "variantId": "existing-034",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, crossing one ankle over the opposite knee and pulling the leg in",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Figure-4 glute stretch (lying)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/glute_piriformis_stretch/lying-figure-4-glute-stretch.png"
+  },
+  {
+    "variantId": "existing-035",
+    "equipment": "band",
+    "movementDescription": "Elbow at 90 degrees out to the side, rotating the forearm against a band",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band external rotation at 90/90"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rotator_cuff_external/band-external-rotation-at-9090.png"
+  },
+  {
+    "variantId": "existing-036",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying face down on the floor, lifting the chest and legs off the ground",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Floor Back Extension",
+      "Floor Back Extension (opposite arm and leg)",
+      "Floor or Machine Back Extension"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/back_extension_erector/floor-back-extension.png"
+  },
+  {
+    "variantId": "existing-037",
+    "equipment": "machine",
+    "movementDescription": "Seated leg curl machine, curling the pad toward the body",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Lying or Seated Leg Curl",
+      "Seated Leg Curl"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_curl_machine/seated-leg-curl-machine.png"
+  },
+  {
+    "variantId": "existing-038",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, extending one arm and the opposite leg while bracing the core",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Dead Bug",
+      "Dead Bug with Reach",
+      "Deadbugs"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_antirotation_birddog/dead-bug.png"
+  },
+  {
+    "variantId": "existing-040",
+    "equipment": "cable",
+    "movementDescription": "Kneeling at a high cable, crunching the torso down",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Cable Crunch",
+      "Crunch or Machine Crunch",
+      "Machine Crunch"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_crunch/cable-crunch.png"
+  },
+  {
+    "variantId": "existing-041",
+    "equipment": "dumbbell",
+    "movementDescription": "Lying on an incline bench, bringing two dumbbells together in an arc over the chest",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Incline Dumbbell Fly (flat if no incline)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_fly_pecs/incline-dumbbell-fly.png"
+  },
+  {
+    "variantId": "existing-042",
+    "equipment": "bodyweight",
+    "movementDescription": "On hands and feet, walking forward with hips low",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bear crawl and crab walk",
+      "Bear crawl then crab walk"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/bear_crawl_crab_walk/crab-walk.png"
+  },
+  {
+    "variantId": "existing-043",
+    "equipment": "machine",
+    "movementDescription": "Seated at a reverse pec-deck, pulling the arms backward against the pads",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Reverse Pec Deck",
+      "Reverse Pec Deck or Face Pull"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_fly_reardelt/reverse-pec-deck-machine.png"
+  },
+  {
+    "variantId": "existing-044",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, one heel on a raised surface, reaching toward the toes",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Gentle Standing Forward Reach"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hamstring_stretch/standing-hamstring-reach.png"
+  },
+  {
+    "variantId": "existing-045",
+    "equipment": "dumbbell",
+    "movementDescription": "Explosive single-arm pull of a dumbbell from the floor/hang to overhead",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Single-arm dumbbell snatch"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/olympic_clean_jerk_snatch/single-arm-dumbbell-snatch.png"
+  },
+  {
+    "variantId": "existing-046",
+    "equipment": "other-named",
+    "movementDescription": "Holding a wall ball at the chest, squatting and driving it up into a wall target",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Wall Ball or DB Thruster"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/thruster/wall-ball-thruster.png"
+  },
+  {
+    "variantId": "existing-047",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, legs extended, folding forward over the legs",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Seated Forward Fold"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/standing_forward_fold_hamstring_lowback/seated-forward-fold.png"
+  },
+  {
+    "variantId": "existing-048",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, bending the torso to one side and back",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Seated Side Bend"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/torso_lateral_flexion_mobility/seated-side-bend.png"
+  },
+  {
+    "variantId": "existing-049",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing on one leg, circling the raised ankle",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Ankle Circles"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/ankle_mobility/standing-ankle-circles.png"
+  },
+  {
+    "variantId": "existing-050",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, clasping hands behind the back and opening the chest",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Seated Chest Opener"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_stretch/seated-chest-opener.png"
+  },
+  {
+    "variantId": "existing-051",
+    "equipment": "barbell",
+    "movementDescription": "Standing, shrugging the shoulders up holding a barbell",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Shrug"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shrug_trapezius/barbell-shrug.png"
+  },
+  {
+    "variantId": "existing-052",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, knees bent, rotating them to one side",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Reclined Twist"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/torso_rotation_mobility/reclined-twist.png"
+  },
+  {
+    "variantId": "existing-053",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, soles of the feet together, knees pressed open",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Butterfly Inner-Thigh Stretch"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/adductor_groin_stretch/butterfly-inner-thigh-stretch.png"
+  },
+  {
+    "variantId": "existing-054",
+    "equipment": "bodyweight",
+    "movementDescription": "Inverted handstand against a wall, body held upside down",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Chest-to-wall Handstand",
+      "Chest-to-wall Handstand Hold",
+      "Wall Handstand Hold (chest to wall)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/advanced_calisthenics_static_hold/wall-handstand-hold.png"
+  },
+  {
+    "variantId": "existing-055",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, circling one ankle",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Seated Ankle Circles"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/ankle_mobility/seated-ankle-circles.png"
+  },
+  {
+    "variantId": "existing-056",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, circling the arms forward/backward",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Arm Circles"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/arm_circles_mobility/arm-circles.png"
+  },
+  {
+    "variantId": "existing-057",
+    "equipment": "bodyweight",
+    "movementDescription": "Fast skipping drill driving one knee up at a time",
+    "gender": "female",
+    "movementNamesCovered": [
+      "A-Skips"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/askips_dynamic/a-skips.png"
+  },
+  {
+    "variantId": "existing-058",
+    "equipment": "machine",
+    "movementDescription": "Lying face down on a 45-degree back-extension bench, hinging down and up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "45\u00b0 Back Extension (glute bias)",
+      "Back Extension",
+      "Extension progression",
+      "Prone Back Extensions"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/back_extension_erector/45-degree-back-extension.png"
+  },
+  {
+    "variantId": "existing-059",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing, swinging a dumbbell between the legs and up to shoulder height",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Swing",
+      "Finisher: Single-dumbbell Swing"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/ballistic_hip_hinge_swing/dumbbell-swing.png"
+  },
+  {
+    "variantId": "existing-060",
+    "equipment": "bodyweight",
+    "movementDescription": "On hands and feet, crawling forward with hips low",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bear Crawl Hold with Knee Taps",
+      "Bear crawl rotations"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/bear_crawl_crab_walk/bear-crawl.png"
+  },
+  {
+    "variantId": "existing-061",
+    "equipment": "bodyweight",
+    "movementDescription": "Squat down to a plank, push-up, jump feet in, then jump up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Block 1: Burpee",
+      "Bodyweight round: lunges, burpees, shoulder taps, squat hold",
+      "Burpee",
+      "Burpee (20s on / 10s off)",
+      "Burpee (no jump)",
+      "Burpee (or step-back burpee)",
+      "Burpee side roll",
+      "Burpee side shuffle",
+      "Burpees",
+      "Engine: Burpee",
+      "Finisher: Burpee",
+      "Finisher: Burpee (or step-back burpee)",
+      "Minute 3: Burpee",
+      "Step-back burpee (no jump)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/burpee/burpee.png"
+  },
+  {
+    "variantId": "existing-062",
+    "equipment": "bodyweight",
+    "movementDescription": "Jogging in place, kicking the heels up toward the glutes",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Butt Kicks"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/butt_kicks_hamstring_flexion/butt-kicks.png"
+  },
+  {
+    "variantId": "existing-063",
+    "equipment": "barbell",
+    "movementDescription": "Standing with a barbell on the back, rising onto the toes",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Balance: heel-to-toe stand, hold bench",
+      "Bilateral Calf Raise (holding support)",
+      "Calf Raise",
+      "Calf Raise holding chair back",
+      "Calf Raises",
+      "Calf raise (hold bench)",
+      "Donkey Calf Raise",
+      "Dumbbell Calf Raise",
+      "Heel Raise",
+      "Heel Raise (hold bench)",
+      "Heel Raises with arm raise",
+      "Isometric calf raise hold (mid-range)",
+      "Single-leg Calf Raise",
+      "Single-leg Calf Raise (bent & straight knee)",
+      "Single-leg Calf Raise (hold bench)",
+      "Single-leg Calf Raise on Step",
+      "Single-leg Dumbbell Calf Raise",
+      "Single-leg calf raise (bent knee) on step",
+      "Single-leg calf raise (straight knee) on step",
+      "Single-leg calf raise off a step",
+      "Single-leg heel raise (slight knee bend)",
+      "Single-leg heel raise (straight knee, hold bench)",
+      "Sprinter calf raise",
+      "Standing Calf Raise",
+      "Standing Calf Raise (aisle or galley)",
+      "Standing Calf Raise (hold support)",
+      "Standing Calf Raise (optional)",
+      "Standing Calf Raise or Heel Raise",
+      "Toe Raise (hold bench)",
+      "Toe Stand",
+      "Toe Stand (hold 2-4s at top)",
+      "Two-leg calf raise",
+      "Wall calf raise"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/calf_raise/standing-barbell-calf-raise.png"
+  },
+  {
+    "variantId": "existing-064",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, one leg back with the heel down, leaning into the calf",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Calf Stretch",
+      "Standing Calf Stretch (chair support)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/calf_stretch/standing-calf-stretch.png"
+  },
+  {
+    "variantId": "existing-065",
+    "equipment": "bodyweight",
+    "movementDescription": "On hands and knees, arching and rounding the spine",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Cat-Cow"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/cat_cow_spinal_mobility/cat-cow.png"
+  },
+  {
+    "variantId": "existing-066",
+    "equipment": "cable",
+    "movementDescription": "Standing at a cable, bringing the handle across the body in an arc",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Cable Fly",
+      "Cable Fly (low to high)",
+      "Standing Cable Chest Fly"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_fly_pecs/standing-cable-chest-fly.png"
+  },
+  {
+    "variantId": "existing-067",
+    "equipment": "dumbbell",
+    "movementDescription": "Bent forward, raising dumbbells out to the sides for the rear delts",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Rear-delt Fly",
+      "Dumbbell Reverse Fly"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_fly_reardelt/dumbbell-rear-delt-fly.png"
+  },
+  {
+    "variantId": "existing-068",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing in a doorway, arm braced on the frame, leaning the chest through",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Chest Doorway Stretch"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_stretch/chest-doorway-stretch.png"
+  },
+  {
+    "variantId": "existing-069",
+    "equipment": "cable",
+    "movementDescription": "Standing side-on to a cable, pressing the handle straight out and resisting rotation",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Pallof Press",
+      "Cable Pallof Press",
+      "Pallof Press",
+      "Pallof press (cable/band)",
+      "Split-stance Pallof Press",
+      "Standing Pallof Press with Overhead Raise",
+      "Standing Pallof Press with band",
+      "Tall-kneeling Pallof Press"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/core_antirotation_pallof/cable-pallof-press.png"
+  },
+  {
+    "variantId": "existing-070",
+    "equipment": "cable",
+    "movementDescription": "Standing at a cable, pulling the handle diagonally across the body like chopping wood",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Woodchop",
+      "Band chop (high to low)",
+      "Band diagonal pattern (low to high)",
+      "Cable Chop (fast)",
+      "Cable Lift (low to high)",
+      "Cable Woodchop",
+      "Cable or Band Rotations (fast)",
+      "Cable woodchop (high to low)",
+      "Half-kneeling Band Chop",
+      "Half-kneeling Cable Chop",
+      "Half-kneeling cable chop (high to low)",
+      "Half-kneeling cable lift (low to high)",
+      "Half-kneeling or Seated Band Chop"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/core_rotation_woodchop_twist/cable-woodchop.png"
+  },
+  {
+    "variantId": "existing-071",
+    "equipment": "bodyweight",
+    "movementDescription": "Supported on parallel dip bars, lowering and pressing back up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Dip",
+      "Dip (or Machine Dip)",
+      "Dip progression",
+      "Parallel Bar Dip",
+      "Ring Dip (band-assisted if needed)",
+      "Weighted Dip",
+      "Weighted Dip \u2013 back-off",
+      "Weighted Dip \u2013 top set",
+      "Weighted Ring Dip"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/dip/parallel-bar-dip.png"
+  },
+  {
+    "variantId": "existing-072",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing, lowering a single dumbbell behind the head and extending back up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Overhead Triceps Extension",
+      "Dumbbell Triceps Extension",
+      "Overhead Cable Triceps Extension",
+      "Overhead Dumbbell Triceps Extension",
+      "Overhead Rope Triceps Extension",
+      "Overhead Triceps Extension",
+      "Seated Cambered Bar Triceps Extension"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/elbow_extension_triceps/overhead-dumbbell-triceps-extension.png"
+  },
+  {
+    "variantId": "existing-073",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing, curling a dumbbell in each hand up to the shoulder",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Biceps Curl",
+      "Band Curl",
+      "Barbell Curl",
+      "Barbell Preacher Curl",
+      "Biceps Curl",
+      "Biceps Curl (2 up, 4 down)",
+      "Cambered Bar Curl",
+      "Cambered Bar Preacher Curl",
+      "Curl (any)",
+      "Dumbbell Biceps Curl",
+      "Dumbbell Concentration Curl",
+      "Dumbbell Curl",
+      "EZ-bar Curl",
+      "Hammer Curl",
+      "Incline Dumbbell Curl",
+      "Incline Spider Curl",
+      "Machine or Dumbbell Biceps Curl",
+      "Preacher Curl"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/elbow_flexion_curl/dumbbell-biceps-curl.png"
+  },
+  {
+    "variantId": "existing-074",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, legs straight, alternating small up-down kicks",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Flutter Kicks",
+      "Flutter kick + band"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_bicycle_flutter/flutter-kicks.png"
+  },
+  {
+    "variantId": "existing-075",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, knees bent, curling the shoulders off the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bent-knee curl-up",
+      "Bent-leg crunch, push arms between legs",
+      "Crunch",
+      "Crunch or Kneeling Plank",
+      "Crunches with finger slide and 1-inch pulse",
+      "Curl-up with ball between knees"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_crunch/crunch.png"
+  },
+  {
+    "variantId": "existing-076",
+    "equipment": "bodyweight",
+    "movementDescription": "Hanging from a bar, raising straight or bent legs up toward the chest",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Ab work (hanging leg raise)",
+      "CL1: Leg Tuck",
+      "Crunch or Hanging Knee Raise",
+      "Four for the Core: Bent-leg Raise",
+      "Hanging Knee Raise",
+      "Hanging Knee Raise or Dead Bug",
+      "Hanging Knee or Leg Raise",
+      "Hanging Leg Raise",
+      "Hanging Leg Raise (every other workout)",
+      "Station 10: Leg Tuck",
+      "Strict hanging leg raise"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_hipflexor_legraise/hanging-leg-raise.png"
+  },
+  {
+    "variantId": "existing-077",
+    "equipment": "bodyweight",
+    "movementDescription": "Plank position, driving the knees toward the chest alternately at speed",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Block 3: Mountain Climber",
+      "CD1: Mountain Climber",
+      "Engine: Mountain Climber",
+      "Mountain Climber",
+      "Mountain Climber (20s on / 10s off)",
+      "Mountain Climbers",
+      "Slow Mountain Climber"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_mountain_climber/mountain-climber.png"
+  },
+  {
+    "variantId": "existing-078",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, head and shoulders curled up, legs extended and pumping the arms",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Hundred (knees bent, feet down)",
+      "The Hundred",
+      "The Hundred (legs low)",
+      "The Hundred (legs table top or 45 degrees)",
+      "The Hundred with band (arms pump against band)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_pilates_mat/the-hundred.png"
+  },
+  {
+    "variantId": "existing-079",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, feet anchored, curling the whole torso up to the knees",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Push-up / Sit-up Drill: Sit-up",
+      "Sit-ups",
+      "Sit-ups, knees bent"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_situp/sit-up.png"
+  },
+  {
+    "variantId": "existing-080",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, simultaneously raising the torso and legs to meet in a V",
+    "gender": "female",
+    "movementNamesCovered": [
+      "CD1: V-up"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_vup/v-up.png"
+  },
+  {
+    "variantId": "existing-081",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, crossing one ankle over the opposite knee and leaning forward",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Figure-4 Glute Stretch",
+      "Figure-4 Glute Stretch (supported)",
+      "Piriformis Stretch",
+      "Seated Figure-4 Glute Stretch",
+      "Seated Hip Stretch",
+      "Seated Hip Stretch (ankle on knee)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/glute_piriformis_stretch/seated-figure-4-glute-stretch.png"
+  },
+  {
+    "variantId": "existing-082",
+    "equipment": "dumbbell",
+    "movementDescription": "Forearm on a bench, palm up, curling the wrist upward",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Wrist Curl (slow lower)",
+      "Wrist flexion and extension curl",
+      "Wrist flexion and extension curls",
+      "Wrist flexion curl"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/grip_forearm/wrist-curl.png"
+  },
+  {
+    "variantId": "existing-083",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, a strap around one foot, pulling the leg toward the chest",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Hamstring Stretch",
+      "Hamstring Stretch (strap-assisted)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hamstring_stretch/hamstring-stretch-strap-assisted.png"
+  },
+  {
+    "variantId": "existing-084",
+    "equipment": "bodyweight",
+    "movementDescription": "Jogging in place, driving the knees up high and fast",
+    "gender": "female",
+    "movementNamesCovered": [
+      "High Knees"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/high_knees_dynamic/high-knees.png"
+  },
+  {
+    "variantId": "existing-085",
+    "equipment": "machine",
+    "movementDescription": "Seated hip abduction machine, pressing the knees outward against the pads",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Seated Hip Abduction Machine"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_abduction/seated-hip-abduction-machine.png"
+  },
+  {
+    "variantId": "existing-086",
+    "equipment": "bodyweight",
+    "movementDescription": "Side-lying, top foot on a bench, hips held up in a side plank",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Body Armour circuit (Copenhagen hold, calf raise, hamstring walkouts)",
+      "Body lift (partner holds top ankle; Copenhagen-style, 2 s phases)",
+      "Copenhagen Plank",
+      "Copenhagen Plank (short lever)",
+      "Copenhagen Side Plank",
+      "Copenhagen groin (modified at knee or full at ankle)",
+      "Copenhagen groin (modified or full)",
+      "Copenhagen groin (short then long lever)",
+      "Copenhagen plank (long lever)",
+      "Copenhagen plank, short lever",
+      "Copenhagen plank, short lever (knee on bench)",
+      "Copenhagen plank, short lever on a chair",
+      "Copenhagen plank, short then long lever",
+      "Long-lever Copenhagen (dynamic)",
+      "Long-lever static Copenhagen",
+      "Short-lever static Copenhagen"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_adduction/copenhagen-plank.png"
+  },
+  {
+    "variantId": "existing-087",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing or on all fours, circling the hip joint",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Hip Circles",
+      "Small Hip Circles"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_circles_mobility/hip-circles.png"
+  },
+  {
+    "variantId": "existing-088",
+    "equipment": "barbell",
+    "movementDescription": "Shoulders against a bench, barbell across the hips, thrusting the hips up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "B-stance hip thrust",
+      "B-stance hip thrust (wk 3-4 3x10/side, wk 5-6 3x8/side, wk 7-8 3x6/side)",
+      "Barbell Hip Thrust",
+      "Barbell Hip Thrust (1s squeeze)",
+      "Barbell or Machine Hip Thrust",
+      "Hip thrust",
+      "Single-leg 90/90 hip extension",
+      "Single-leg 90/90 hip extension from bench",
+      "Single-leg 90/90 hip extension from floor",
+      "Single-leg Bench Hip Thrust",
+      "Single-leg Hip Thrust",
+      "Single-leg Hip Thrust (shoulders on bed)",
+      "Single-leg Hip Thrust (shoulders on bench)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_extension_glute_isolation/barbell-hip-thrust.png"
+  },
+  {
+    "variantId": "existing-089",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing in a split stance, front knee bent, stretching the back hip forward",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Hip Flexor Lunge Stretch",
+      "Low Lunge Hip Flexor Stretch",
+      "Standing Hip Flexor Stretch (chair-supported)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_flexor_stretch/standing-hip-flexor-lunge-stretch.png"
+  },
+  {
+    "variantId": "existing-090",
+    "equipment": "barbell",
+    "movementDescription": "Standing, hinging down to a barbell on the floor and standing it up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Back Squat or Deadlift (alternate sessions)",
+      "Block Pull or Deficit Deadlift",
+      "Competition Deadlift",
+      "Competition Deadlift \u2013 back-off",
+      "Competition Deadlift \u2013 top set",
+      "Competition Deadlift \u2013 top single",
+      "Deadlift",
+      "Deadlift attempts",
+      "Deadlift opener",
+      "Deadlift or Rack Pull",
+      "Deadlift warm-ups",
+      "Deadlift \u2013 5/3/1 sets",
+      "Deadlift \u2013 First Set Last",
+      "Deadlift \u2013 back-off",
+      "Deadlift \u2013 top set",
+      "Deadlift, reset each rep (every 3 min)",
+      "Deadlift: warm-ups as on meet day",
+      "Deficit or Paused Deadlift",
+      "Dumbbell deadlift",
+      "Kettlebell Deadlift",
+      "Kettlebell Deadlift (practice)",
+      "Speed Deadlift"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_hinge_deadlift/barbell-deadlift.png"
+  },
+  {
+    "variantId": "existing-091",
+    "equipment": "barbell",
+    "movementDescription": "Bent over at the hips, rowing a barbell to the torso",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Backpack Bent-over Row (loaded with books)",
+      "Band Bent-over Row",
+      "Band Row",
+      "Band Row (door anchor or seated)",
+      "Band Row (door anchor)",
+      "Band Rowing Series",
+      "Band Single-arm Row (1s pause)",
+      "Banded rows",
+      "Barbell Row",
+      "Barbell Row \u2013 speed work",
+      "Barbell or Pendlay Row",
+      "Barbell or Seal Row",
+      "Bent-over Dumbbell Row",
+      "Bent-over or Pendlay Row",
+      "Dumbbell Bent-over Row",
+      "Dumbbell Bent-over Row (both arms)",
+      "Dumbbell Row",
+      "Hinge and elbow pull (band)",
+      "Hinge elbow pull + band",
+      "Luggage Row",
+      "Pendlay Row",
+      "Single-arm Row",
+      "Station 7: Bent-over Row",
+      "Step-back banded row",
+      "Upper-back Accessory (row or pulldown)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/barbell-bent-over-row.png"
+  },
+  {
+    "variantId": "existing-092",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, crossing one leg behind the other and leaning the hip out to the side",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Standing IT Band Side Stretch"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/it_band_tfl_stretch/standing-it-band-side-stretch.png"
+  },
+  {
+    "variantId": "existing-093",
+    "equipment": "kettlebell",
+    "movementDescription": "Standing, circling a kettlebell around the head",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Kettlebell Halo"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/kettlebell_halo/kettlebell-halo.png"
+  },
+  {
+    "variantId": "existing-094",
+    "equipment": "kettlebell",
+    "movementDescription": "Standing, hinging to swing a kettlebell between the legs and up to chest height",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Kettlebell Swing",
+      "Odd Minutes: Two-hand Kettlebell Swing",
+      "One-arm Kettlebell Swing (switch hands each set, every 30s)",
+      "Two-hand Kettlebell Swing"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/kettlebell_swing/two-hand-kettlebell-swing.png"
+  },
+  {
+    "variantId": "existing-095",
+    "equipment": "bodyweight",
+    "movementDescription": "Kneeling, folding forward with arms extended and hips back toward the heels",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Child's Pose"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lat_childspose_stretch/childs-pose.png"
+  },
+  {
+    "variantId": "existing-096",
+    "equipment": "bodyweight",
+    "movementDescription": "Low athletic stance, shuffling sideways",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Lateral Shuffle"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lateral_shuffle_lateral_agility/lateral-shuffle.png"
+  },
+  {
+    "variantId": "existing-097",
+    "equipment": "machine",
+    "movementDescription": "Lying face down leg curl machine, curling the pad toward the glutes",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Leg Curl",
+      "Leg Curl Machine",
+      "Lying Leg Curl"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_curl_machine/lying-leg-curl-machine.png"
+  },
+  {
+    "variantId": "existing-098",
+    "equipment": "machine",
+    "movementDescription": "Seated leg extension machine, extending the knees against the pad",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Knee Extension (seated)",
+      "Knee Extension (seated, ankle weights)",
+      "Leg Extension",
+      "Seated Knee Extension (ankle weights)",
+      "Seated Knee Extension (hold 2s)",
+      "Seated Leg Extension (hold up to 5s)",
+      "Supported Single Leg Extension"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_extension_machine/leg-extension-machine.png"
+  },
+  {
+    "variantId": "existing-099",
+    "equipment": "machine",
+    "movementDescription": "Seated leg press machine, pressing the platform away with the feet",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Leg Press",
+      "Leg Press (feet high and wide)",
+      "Leg Press Machine"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_press_machine/leg-press.png"
+  },
+  {
+    "variantId": "existing-100",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, swinging one straight leg forward and back",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Leg Pendulum Swing",
+      "Leg Swings (front-to-back)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_swing_frontback_mobility/leg-swings-front-to-back.png"
+  },
+  {
+    "variantId": "existing-101",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, swinging one straight leg side to side across the body",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Leg Swings (front-to-back and side-to-side)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_swing_sideside_mobility/leg-swings-side-to-side.png"
+  },
+  {
+    "variantId": "existing-102",
+    "equipment": "dumbbell",
+    "movementDescription": "Carrying a weight in each hand at the sides while walking",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Box-to-box ball carry, walk back",
+      "Dumbbell Farmer Carry",
+      "Farmer Carry",
+      "Farmer Carry (dumbbells)",
+      "Farmer Carry (light dumbbells)",
+      "Farmer's Carry",
+      "Farmers Carry",
+      "Finisher: Dumbbell Farmer Carry",
+      "Heavy dumbbell farmers carry",
+      "Kettlebell farmers carry, max distance in the time left",
+      "Sled Drag or Farmer Carry"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/loaded_carry/farmers-carry.png"
+  },
+  {
+    "variantId": "existing-103",
+    "equipment": "dumbbell",
+    "movementDescription": "Holding dumbbells, stepping forward into a lunge and continuing to walk",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Barbell Lunge",
+      "CD2: Turn and Lunge",
+      "Dumbbell Lunge",
+      "Dumbbell Reverse Lunge",
+      "Dumbbell Reverse Lunge (alternating)",
+      "Dumbbell Step-back Lunge (alternating)",
+      "Dumbbell Step-back Lunge (hold chair if needed)",
+      "Dumbbell Walking Lunge",
+      "Dynamic warm-up: easy jog, leg swings, walking lunges, skips, side shuffles",
+      "Fast Step-back Lunge (alternating)",
+      "Finisher: walking lunges",
+      "FootyFirst-style warm-up (jog, side-to-side, carioca, butt kicks, leg swings, lunges)",
+      "Forward lunge",
+      "Isometric lunge",
+      "Jump Lunge or Alternating Lunge",
+      "Leg swings + walking lunges",
+      "Leg swings and walking lunges",
+      "Lunge",
+      "Lunge kettlebell under-swings (left)",
+      "Lunge kettlebell under-swings (right)",
+      "Lunge with Reach Back",
+      "Lunge with Rotation",
+      "Lunges",
+      "Lunges with Rotation",
+      "Prep to Play strength: lunges + glute bridge + plank",
+      "Reverse Dumbbell Lunge",
+      "Sandbag Lunges",
+      "Sandbag lunge - back knee touches",
+      "Sandbag walking lunge",
+      "Shallow Lunge",
+      "Single-leg / core (e.g. lunges or ab work)",
+      "Sprinter lunge",
+      "Squats - walking lunges",
+      "Station 3: Forward Lunge",
+      "Step-back Lunge (alternating)",
+      "Walking Lunge",
+      "Walking Lunge with Reach",
+      "Walking Lunges",
+      "Walking lunge (wk 3-4 3x10/leg, wk 5-6 3x8/leg, wk 7-8 3x6/leg)",
+      "Walking lunges, bodyweight"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/dumbbell-forward-lunge.png"
+  },
+  {
+    "variantId": "existing-104",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated or standing, tilting the ear toward one shoulder",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Neck Side Stretch",
+      "Neck Stretch"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/neck_lateral_stretch/neck-side-stretch.png"
+  },
+  {
+    "variantId": "existing-105",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, slowly rotating the head side to side",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Neck Rotation",
+      "Seated Neck Rotation"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/neck_rotation_mobility/seated-neck-rotation.png"
+  },
+  {
+    "variantId": "existing-106",
+    "equipment": "bodyweight",
+    "movementDescription": "Kneeling, ankles anchored, slowly lowering the torso forward and pulling back up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Hamstring lower (partner-held Nordic)",
+      "Hamstring lower (partner-held Nordic, fall slowly)",
+      "Nordic Curl (eccentric)",
+      "Nordic Curl Negative or Sliding Leg Curl",
+      "Nordic Hamstring Curl",
+      "Nordic Hamstring Curl (partner or anchor)",
+      "Nordic Hamstrings (beginner)",
+      "Nordic hamstring lower",
+      "Nordic hamstring lower (partner holds ankles)",
+      "Nordic hamstring lower (partner or anchored feet)",
+      "Nordic hamstring lower (partner or anchored)",
+      "Nordic hamstring lower (partner or couch)",
+      "Nordic hamstring lower (partner)",
+      "Nordic hamstring lowers",
+      "Nordic hamstrings - advanced (partner holds ankles)",
+      "Nordic hamstrings - intermediate (partner holds ankles)",
+      "Solo Nordic (heels under couch)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/nordic_hamstring/nordic-hamstring-curl.png"
+  },
+  {
+    "variantId": "existing-107",
+    "equipment": "barbell",
+    "movementDescription": "Explosive pull of a barbell from the hang position up to the shoulders",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Barbell Complex: 6 deadlifts, 6 rows, 6 hang cleans, 6 front squats, 6 push presses",
+      "Dumbbell Hang Clean",
+      "Hang power clean"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/olympic_clean_jerk_snatch/hang-power-clean.png"
+  },
+  {
+    "variantId": "existing-108",
+    "equipment": "bodyweight",
+    "movementDescription": "On hands and knees, extending one arm and the opposite leg",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bird-Dog",
+      "Bird-Dog (2s hold)",
+      "Bird-Dog (3s hold)",
+      "Bird-Dog / Swimming Prep",
+      "Superman / Bird Dog on hands and knees (10s hold)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_antirotation_birddog/bird-dog.png"
+  },
+  {
+    "variantId": "existing-109",
+    "equipment": "bodyweight",
+    "movementDescription": "Plank held on the forearms",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Anti-extension progression",
+      "Core finisher: plank + Russian twist",
+      "Forearm Plank",
+      "Forearm Plank (knees or feet)",
+      "Forward plank",
+      "Front Plank",
+      "Front Plank Hold",
+      "Front plank or wheelbarrow hold",
+      "Front plank rising to full arms (alternate)",
+      "Front plank with alternate leg raise",
+      "Kneeling Plank",
+      "Kneeling Plank on Balance Disc",
+      "Leg Pull Front Prep (plank with leg lift)",
+      "Long Stretch Plank with band press",
+      "Minute 4: Plank",
+      "Modified Plank on Knees",
+      "Plank",
+      "Plank (knees allowed)",
+      "Plank (knees if needed)",
+      "Plank (max hold)",
+      "Plank + reach + band",
+      "Plank Hold",
+      "Plank Saw",
+      "Plank Support",
+      "Plank on Balance Disc",
+      "Plank rocks",
+      "Plank wide pull + band",
+      "Rest-minute burst: plank 20 s",
+      "The Bench (static plank)",
+      "Weighted Plank",
+      "Wheelbarrow hold or front plank",
+      "Wheelbarrow or front plank hold"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_front/forearm-plank.png"
+  },
+  {
+    "variantId": "existing-110",
+    "equipment": "bodyweight",
+    "movementDescription": "Side plank held on the forearm",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Four for the Core: Side Bridge",
+      "Left side plank with arm raises",
+      "Oblique Crunch or Kneeling Side Plank",
+      "Right side plank with arm raises",
+      "Side Plank",
+      "Side Plank (knees or feet)",
+      "Side Plank Leg Lift",
+      "Side Plank from Knees",
+      "Side Plank with Leg Lift",
+      "Side Plank with hip dips",
+      "Side Plank with top-leg lift",
+      "Side plank hip lifts",
+      "Side plank leg lifts",
+      "Side plank lift and lower hips (2-2 tempo, 5 s between sets)",
+      "Side plank side-to-side (front-side-front-side, 1 s holds)",
+      "Side plank side-to-side with leg lift (5 s holds)",
+      "Side plank with arm and top-leg lift (5 s hold, 3 s rest)",
+      "Side plank with arm raise (2-2-2 tempo)",
+      "Side plank with reach-through",
+      "Side plank with top-arm reach",
+      "Side plank with top-leg raises (30 s each side, no rest)",
+      "Sideways Bench (static)",
+      "Sideways bench - raise & lower hip",
+      "Sideways bench - with leg lift",
+      "Single-arm plank (left)",
+      "Single-arm plank (right)",
+      "The bench - alternate legs (hold each lift 2 s)",
+      "The bench - one leg lift & hold (10-15 cm)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_side/side-plank.png"
+  },
+  {
+    "variantId": "existing-111",
+    "equipment": "bodyweight",
+    "movementDescription": "Jumping from standing up onto a raised box",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Box Jump",
+      "Box Jump (step down)",
+      "Box Jumps or Med Ball Throws",
+      "Box jump (streamline arms, step down)",
+      "Box jumps",
+      "Jumping - box jumps (across an imaginary cross)",
+      "Lateral box jump"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plyometric_jump/box-jump.png"
+  },
+  {
+    "variantId": "existing-112",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, pulling one heel toward the glute to stretch the quad",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Quad Stretch",
+      "Standing Quad Stretch"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/quad_stretch/standing-quad-stretch.png"
+  },
+  {
+    "variantId": "existing-113",
+    "equipment": "cable",
+    "movementDescription": "Standing at a cable, pulling the rope to the face with elbows high",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Face Pull",
+      "Face Pull"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rear_delt_face_pull/cable-face-pull.png"
+  },
+  {
+    "variantId": "existing-114",
+    "equipment": "band",
+    "movementDescription": "Elbow bent at the side, rotating the forearm outward against a band",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band External Rotation",
+      "Band External Rotation (elbow at side)",
+      "Band Shoulder External Rotations",
+      "Band external rotation at the side",
+      "Cable or band external rotation",
+      "Kneeling external rotation + press"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rotator_cuff_external/band-external-rotation.png"
+  },
+  {
+    "variantId": "existing-115",
+    "equipment": "band",
+    "movementDescription": "Elbow bent at the side, rotating the forearm inward against a band",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Internal Rotation"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rotator_cuff_internal/band-internal-rotation.png"
+  },
+  {
+    "variantId": "existing-116",
+    "equipment": "bodyweight",
+    "movementDescription": "Gradually accelerating from a jog to a sprint over a short distance",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Build-Up Sprints",
+      "Easy Strides (building to run pace)"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/running_buildup_strides/build-up-sprint-strides.png"
+  },
+  {
+    "variantId": "existing-117",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, circling the shoulder blades",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Scapular Circles"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/scapular_circles_mobility/scapular-circles.png"
+  },
+  {
+    "variantId": "existing-118",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, lifting the knees alternately like marching",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Seated Marching"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/seated_marching_activation/seated-marching.png"
+  },
+  {
+    "variantId": "existing-119",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, pulling one arm across the chest with the other hand",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Shoulder Cross-Body Stretch",
+      "Shoulder Stretch"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shoulder_crossbody_stretch/shoulder-cross-body-stretch.png"
+  },
+  {
+    "variantId": "existing-120",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing, raising a dumbbell in each hand out to the sides to shoulder height",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Lateral Raise",
+      "Cable Lateral Raise",
+      "Dumbbell Lateral Raise",
+      "I-raise + band",
+      "Lateral Raise",
+      "Lateral Raise (last set drop set)",
+      "Side Lateral Raise (dumbbell or cable)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shoulder_raise_isolation/dumbbell-lateral-raise.png"
+  },
+  {
+    "variantId": "existing-121",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing, shrugging the shoulders up holding dumbbells",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Shrug"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shrug_trapezius/dumbbell-shrug.png"
+  },
+  {
+    "variantId": "existing-122",
+    "equipment": "other-named",
+    "movementDescription": "Walking backward, pulling a loaded sled hand-over-hand on a rope",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Sled Pull",
+      "Sled pull - hand over hand, walk back",
+      "Sled pull walk-back (every 2 min)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/sled_pull_drag/sled-pull-hand-over-hand.png"
+  },
+  {
+    "variantId": "existing-123",
+    "equipment": "other-named",
+    "movementDescription": "Pushing a loaded sled forward across the floor",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Sled Push",
+      "Sled push - low hips, short fast steps"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/sled_push/sled-push.png"
+  },
+  {
+    "variantId": "existing-124",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, folding forward at the hips toward the toes",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Standing Forward Bend",
+      "Standing Forward Bend (lower back)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/standing_forward_fold_hamstring_lowback/standing-forward-bend.png"
+  },
+  {
+    "variantId": "existing-125",
+    "equipment": "other-named",
+    "movementDescription": "Holding a medicine ball at the chest, passing it explosively into a wall",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Med-ball chest pass against wall",
+      "Med-ball chest pass, explosive"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_chest_pass/med-ball-chest-pass.png"
+  },
+  {
+    "variantId": "existing-126",
+    "equipment": "other-named",
+    "movementDescription": "Rotating the torso and scooping a medicine ball up and across the body",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Med-ball scoop toss (rotational)",
+      "Rotational Med-ball Scoop Toss"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_scoop/rotational-med-ball-scoop-toss.png"
+  },
+  {
+    "variantId": "existing-127",
+    "equipment": "other-named",
+    "movementDescription": "Standing side-on, rotating the torso to throw a medicine ball into a wall",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Half-kneeling Med-ball Rotational Throw",
+      "Heavy Med-ball Rotational Throw",
+      "Med-ball Step-behind Throw",
+      "Med-ball rotational side throw",
+      "Rotational Med Ball Throw",
+      "Rotational Med Ball Throw (side to wall)",
+      "Rotational Med-ball Throw",
+      "Rotational med-ball side throw (2-3 kg)",
+      "Rotational med-ball throw to wall"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_side_rotational/med-ball-rotational-throw.png"
+  },
+  {
+    "variantId": "existing-128",
+    "equipment": "other-named",
+    "movementDescription": "Lifting a medicine ball overhead and slamming it down to the floor",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Med-ball overhead slam",
+      "Rotational med ball slam",
+      "Rotational med ball slams"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_slam/medicine-ball-slam.png"
+  },
+  {
+    "variantId": "existing-129",
+    "equipment": "dumbbell",
+    "movementDescription": "Squatting with dumbbells at the shoulders, then driving up and pressing overhead",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Thruster",
+      "Dumbbell thruster (wall-ball substitute)",
+      "Minute 1: Dumbbell Thruster"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/thruster/dumbbell-thruster.png"
+  },
+  {
+    "variantId": "existing-130",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing with heels on the floor and back against a wall, raising the toes up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Tibialis raise",
+      "Tibialis raise (back against wall)",
+      "Tibialis raises"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/tibialis_raise/tibialis-raise.png"
+  },
+  {
+    "variantId": "existing-131",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, bending the torso to one side and back",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Sideways Bend",
+      "Standing Side Bend"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/torso_lateral_flexion_mobility/standing-side-bend.png"
+  },
+  {
+    "variantId": "existing-132",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, rotating the torso side to side",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Torso Rotations"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/torso_rotation_mobility/standing-torso-rotations.png"
+  },
+  {
+    "variantId": "existing-133",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, raising one arm overhead and bending the elbow to stretch the triceps/lat",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Overhead Triceps/Lat Stretch",
+      "Overhead Triceps/Lat Stretch (strap-assisted)",
+      "Triceps Stretch"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/triceps_lat_overhead_stretch/overhead-tricepslat-stretch.png"
+  },
+  {
+    "variantId": "existing-134",
+    "equipment": "kettlebell",
+    "movementDescription": "Lying down with a kettlebell overhead, moving through to standing while keeping it locked out",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Turkish Get-up",
+      "Turkish Get-up (alternate sides, 1 per minute)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/turkish_getup/turkish-get-up.png"
+  },
+  {
+    "variantId": "existing-135",
+    "equipment": "barbell",
+    "movementDescription": "Standing, pressing a barbell from the shoulders straight overhead",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Arnold Press",
+      "Band Overhead Press",
+      "Banded single-arm press (left)",
+      "Banded single-arm press (right)",
+      "Dumbbell Push Press",
+      "Overhead Dumbbell Press",
+      "Overhead Press",
+      "Overhead Press (2 up, 4 down)",
+      "Overhead Press \u2013 5/3/1 sets",
+      "Overhead Press \u2013 First Set Last",
+      "Overhead Press \u2013 back-off",
+      "Overhead Press \u2013 top set",
+      "Push Press",
+      "Single-arm Kettlebell Press",
+      "Standing Overhead Press",
+      "Station 8: Overhead Push Press"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_press_overhead/standing-barbell-overhead-press.png"
+  },
+  {
+    "variantId": "existing-136",
+    "equipment": "bodyweight",
+    "movementDescription": "Hanging from a bar, pulling the chin up over the bar",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Archer Pull-up",
+      "Band-assisted Pull-up",
+      "CL1: Alternating-grip Pull-up",
+      "CL1: Pull-up",
+      "Chin-up",
+      "Chin-up (assisted if needed)",
+      "Chin-up (slow 3s lowering)",
+      "Chin-up or band-assisted chin-up",
+      "Chin-ups",
+      "Jumping Chin-up with Flat-foot Landing (or heel drops)",
+      "Lat work (chin-ups or rows)",
+      "Negative Pull-up (5s lowering)",
+      "Pull assistance (e.g. chin-ups or rows)",
+      "Pull-up",
+      "Pull-up (negatives if needed)",
+      "Pull-up (or assisted)",
+      "Pull-up or Chin-up (band-assisted if needed)",
+      "Pull-up or Inverted Row",
+      "Pull-up or TRX Row",
+      "Pull-up progression",
+      "Rack Chin",
+      "Scapular Pull-up",
+      "Station 5: Pull-up or Straight-arm Pull",
+      "Weighted Chin-up",
+      "Weighted Pull-up",
+      "Weighted Pull-up \u2013 back-off",
+      "Weighted Pull-up \u2013 top set",
+      "Weighted or Bodyweight Chin-up"
+    ],
+    "status": "existing-wrong-gender",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_pull/pull-up.png"
+  },
+  {
+    "variantId": "existing-137",
+    "equipment": "other-named",
+    "movementDescription": "Holding a wall ball at the chest, squatting and throwing it up into a wall target",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Wall Balls",
+      "Wall balls - full squat, hit the target",
+      "Wall balls for time",
+      "Wall balls for time in planned sets"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/wall_ball_squat_throw/wall-ball-shot.png"
+  },
+  {
+    "variantId": "existing-138",
+    "equipment": "barbell",
+    "movementDescription": "Barbell on the back, squatting down and standing back up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Back Squat",
+      "Back Squat (20-rep set)",
+      "Back Squat (or Box Squat)",
+      "Back Squat (volume)",
+      "Back Squat or Hack Squat",
+      "Back Squat \u2013 back-off",
+      "Back Squat \u2013 speed work",
+      "Back Squat \u2013 top set",
+      "Back squat (every 3 min)",
+      "Back squat (every 90s), build to a 5RM",
+      "Backpack squat",
+      "Band Squat",
+      "Band Squat (standing on band)",
+      "Barbell Back Squat",
+      "Competition Back Squat",
+      "Competition Squat",
+      "Competition Squat \u2013 back-off",
+      "Competition Squat \u2013 top set",
+      "Competition Squat \u2013 top single",
+      "Elevated-heel Squat (plate) for comparison",
+      "Half squat",
+      "Max-effort Variation (e.g. safety-bar squat, rack pull, floor press) \u2013 work up",
+      "Paused Back Squat (2s in the hole)",
+      "Paused Squat",
+      "Paused or Tempo Squat",
+      "Pin or Paused Squat",
+      "Rest-minute burst: squats 20 s",
+      "Speed Box Squat",
+      "Squat",
+      "Squat attempts",
+      "Squat opener (with commands)",
+      "Squat or Box Squat \u2013 top set",
+      "Squat progression",
+      "Squat warm-ups",
+      "Squat \u2013 5/3/1 sets",
+      "Squat \u2013 First Set Last",
+      "Squat \u2013 back-off",
+      "Squat \u2013 heavy single",
+      "Squat \u2013 warm-up ladder",
+      "Squat: warm-ups as on meet day",
+      "Squats",
+      "Squats with 3 s hold at the bottom",
+      "Zercher squats"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/barbell-back-squat.png"
+  },
+  {
+    "variantId": "existing-139",
+    "equipment": "barbell",
+    "movementDescription": "Lying on a flat bench, pressing a barbell up from the chest",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Bench Press",
+      "Bench Press (touch-and-go allowed)",
+      "Bench Press or Floor Press \u2013 top set",
+      "Bench Press \u2013 5/3/1 sets",
+      "Bench Press \u2013 First Set Last",
+      "Bench Press \u2013 back-off",
+      "Bench Press \u2013 top set",
+      "Bench attempts (paused)",
+      "Bench opener (paused, with commands)",
+      "Close-grip Bench Press",
+      "Close-grip or Larsen Bench Press",
+      "Competition Bench \u2013 back-off",
+      "Competition Bench \u2013 top set",
+      "Competition Bench \u2013 top single",
+      "Dumbbell Bench or Floor Press",
+      "Horizontal Bench Press",
+      "Kettlebell Floor Press",
+      "Paused Bench Press",
+      "Paused Bench Press (1s on chest)",
+      "Paused Bench Press (2s)",
+      "Paused Bench Press \u2013 back-off",
+      "Paused Bench Press \u2013 top set",
+      "Pin Press (just above sticking point)",
+      "Speed Bench Press",
+      "Spoto Press or Larsen Press",
+      "Station 6: Supine Chest Press"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/barbell-bench-press.png"
+  },
+  {
+    "variantId": "new-001",
+    "equipment": "band",
+    "movementDescription": "Band anchored behind the body, pressing the handles forward from chest height (seated or standing)",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Chest Press (anchored behind)",
+      "Band Chest Press (door anchor)",
+      "Seated Band Chest Press (band behind back)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-002",
+    "equipment": "band",
+    "movementDescription": "Standing, holding a band and pulling it toward the face with elbows high and wide",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Face Pull or Wall Slide"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-003",
+    "equipment": "band",
+    "movementDescription": "Band looped around the neck/shoulders, hinging forward at the hips with a slight knee bend",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Good Morning"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-004",
+    "equipment": "band",
+    "movementDescription": "Seated, a band looped around one foot, pressing that leg straight out",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Seated Band Leg Press (band around foot)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-005",
+    "equipment": "band",
+    "movementDescription": "Lying on the side, pressing the top leg straight out against a band",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Side-lying Band Leg Press"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-006",
+    "equipment": "band",
+    "movementDescription": "Standing, holding a band wide with straight arms, rotating it overhead and behind the back",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Shoulder Dislocates"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-007",
+    "equipment": "barbell",
+    "movementDescription": "Barbell racked on the back, stepping one leg back into a lunge, back knee lowering toward the floor",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Barbell reverse lunge, back knee touches floor (rest 2 min)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-008",
+    "equipment": "machine",
+    "movementDescription": "Standing in a belt-squat rig, weight hanging from a hip belt, squatting down and up with hands free",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Belt Squat or Leg Extension"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-009",
+    "equipment": "bodyweight",
+    "movementDescription": "Shoulders elevated on a bench, hips thrusting straight up into a bridge",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bench Glute Bridge"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-010",
+    "equipment": "band",
+    "movementDescription": "On hands and knees, rowing a band with one arm while extending the opposite leg back",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Bird-Dog Row (band)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-011",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing two-foot broad jump forward, landing softly",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Broad Jump",
+      "Broad Jump (stick the landing)",
+      "Broad Jump (walk back)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-012",
+    "equipment": "bodyweight",
+    "movementDescription": "Burpee (squat, plank, push-up) immediately followed by a broad jump forward",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Burpee Broad Jumps",
+      "Burpee broad jump",
+      "Burpee broad jump - chest to floor, jump forward",
+      "Buy-in: burpee broad jumps, split between partners"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-013",
+    "equipment": "cable",
+    "movementDescription": "Standing at a low cable with an ankle cuff, kicking one leg straight back",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Cable Glute Kickback",
+      "Cable Kickback"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-014",
+    "equipment": "cable",
+    "movementDescription": "Standing or kneeling, pulling a straight-arm cable bar down and back in an arc from overhead",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Cable Pullover"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-015",
+    "equipment": "machine",
+    "movementDescription": "Seated on an indoor rowing machine (ergometer), sliding the seat and pulling the handle for cardio",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Buy-in: row (men 500m / women 400m)",
+      "Easy Row",
+      "Easy bike or row",
+      "Easy jog or row cool-down",
+      "Easy row or bike",
+      "Easy spin or row",
+      "Hard Row",
+      "Row",
+      "Row - legs, hips, arms",
+      "Row or bike",
+      "Row progression",
+      "Row sprint (90s rest)",
+      "Run or row"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-016",
+    "equipment": "dumbbell",
+    "movementDescription": "Lying chest-down on an incline bench, rowing a dumbbell in each hand",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Chest-supported Dumbbell Row",
+      "Chest-supported Dumbbell Row (incline bench)",
+      "Chest-supported Row",
+      "Dumbbell or table row",
+      "Incline-braced Dumbbell Row or Shrug"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-017",
+    "equipment": "machine",
+    "movementDescription": "Seated upright against a chest pad on a row machine, pulling the handles back",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Chest-supported Machine Row"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-018",
+    "equipment": "bodyweight",
+    "movementDescription": "Side-lying, knees bent, opening the top knee like a clamshell (a light band is optional, not required)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Clam",
+      "Clam (band optional)",
+      "Clam with mini band",
+      "Clamshell or Fire Hydrant",
+      "Side-lying Clam"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-019",
+    "equipment": "bodyweight",
+    "movementDescription": "Small single-leg squat while tapping the free foot out to clock positions around the body for balance",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Clockface (mini squat, tap 12-3-6-9)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-020",
+    "equipment": "bodyweight",
+    "movementDescription": "Pilates mat move: lying on the back, legs together, circling them in a wide arc",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Corkscrew"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-021",
+    "equipment": "bodyweight",
+    "movementDescription": "Wide stance, shifting side to side into a deep squat on one leg while the other leg stays straight",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Alternating Cossack squat (2s pause)",
+      "Cossack Squat",
+      "Cossack Squat (light counterweight)",
+      "Non-supported Cossack squat",
+      "Supported Cossack squat"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-022",
+    "equipment": "bodyweight",
+    "movementDescription": "Yoga crescent lunge: front knee bent, back leg straight behind, torso upright, arms reaching overhead",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Crescent Lunge"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-023",
+    "equipment": "bodyweight",
+    "movementDescription": "Pilates criss-cross: lying on the back, hands behind the head, alternating elbow-to-knee twists with the other leg extended low",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Criss Cross",
+      "Criss-cross with leg rise, 4-count",
+      "Leg criss-cross 15 cm off floor"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-024",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing, holding a dumbbell at one side, bending the torso sideways or holding it upright against the load",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Side Bend or Suitcase Hold"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-025",
+    "equipment": "bodyweight",
+    "movementDescription": "Static deep squat hold, holding a support (door frame/rail) for balance",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Deep Squat Hold (hold door frame)",
+      "Deep Squat Hold (hold support)",
+      "Deep squat hold",
+      "Deep squat hold with heels down"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-026",
+    "equipment": "bodyweight",
+    "movementDescription": "Deep squat hold with one arm reaching/rotating upward for thoracic mobility",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Deep Squat with thoracic reach"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-027",
+    "equipment": "bodyweight",
+    "movementDescription": "Traveling deep-squat walk combined with a torso rotation",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Deep squat and rotate walk"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-028",
+    "equipment": "bodyweight",
+    "movementDescription": "Pilates mat move lying face down, both legs kicking toward the glutes then extending back",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Double Leg Kicks"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-029",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on a bench, shoulders anchored at the top, slowly lowering the straight body from a vertical hold",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Dragon Flag Negative"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-030",
+    "equipment": "dumbbell",
+    "movementDescription": "Holding dumbbells, stepping up onto a box and continuing over to the other side",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell box step-over"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-031",
+    "equipment": "dumbbell",
+    "movementDescription": "Multi-step complex: push-up with a dumbbell row on each side, then a clean-and-press to standing",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Man-maker"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-032",
+    "equipment": "dumbbell",
+    "movementDescription": "Static split stance (both feet on the ground), holding a dumbbell in each hand, lowering the rear knee toward the floor",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Split Squat"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-033",
+    "equipment": "dumbbell",
+    "movementDescription": "Holding a dumbbell in each hand, stepping up onto a bench with one leg driving up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Step-up",
+      "Dumbbell Step-up onto Bench"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-034",
+    "equipment": "bodyweight",
+    "movementDescription": "On hands and knees, lifting one bent knee out to the side like a dog at a fire hydrant",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Fire hydrants"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-035",
+    "equipment": "dumbbell",
+    "movementDescription": "Forearm resting on a thigh or bench, rotating a light dumbbell or hammer from palm-up to palm-down",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Forearm Rotation with hammer or dumbbell",
+      "Forearm pronation/supination with a hammer or light dumbbell"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-036",
+    "equipment": "bodyweight",
+    "movementDescription": "Hanging under a bar, holding the body horizontal and parallel to the floor (tuck or straddle progression)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Advanced Tuck or Straddle Front Lever Hold",
+      "Front Lever progression hold",
+      "Tuck Front Lever Hold"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-037",
+    "equipment": "dumbbell",
+    "movementDescription": "Weight held at the shoulders in a front-rack position, stepping one leg back into a lunge",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Front-rack Reverse Lunge"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-038",
+    "equipment": "bodyweight",
+    "movementDescription": "Yoga wheel/full bridge: backbend lifting the hips and chest off the floor, hands and feet planted",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bridge (wheel) or Wall Walks",
+      "Wheel or Bridge"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-039",
+    "equipment": "bodyweight",
+    "movementDescription": "Yoga Malasana: deep wide squat, heels down, hands together in front of the chest",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Garland Squat (Malasana)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-040",
+    "equipment": "machine",
+    "movementDescription": "Ankles anchored on a glute-ham developer, hinging the body down from the knees and curling back up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Glute-ham Raise or Leg Curl",
+      "Glute-ham Raise or Lying Leg Curl"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-041",
+    "equipment": "other-named",
+    "movementDescription": "Squeezing a soft ball or hand gripper in a closed fist",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Grip Squeeze with a ball (optional, hold 3-5s)",
+      "Grip squeeze",
+      "Grip squeeze (ball or gripper)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-042",
+    "equipment": "machine",
+    "movementDescription": "Back against the pad of an angled hack-squat machine, pressing the platform up with the legs",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Hack Squat",
+      "Hack Squat or Leg Press"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-043",
+    "equipment": "dumbbell",
+    "movementDescription": "Half-kneeling position, pressing a single dumbbell straight overhead",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Half-kneeling Press",
+      "Half-kneeling single-arm dumbbell press"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-044",
+    "equipment": "barbell",
+    "movementDescription": "Half-kneeling, pressing one end of a landmine-anchored barbell up and forward",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Half-kneeling Landmine Press"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-045",
+    "equipment": "dumbbell",
+    "movementDescription": "Half-kneeling position, holding a light weight locked out overhead and bracing",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Half-kneeling Overhead Carry Hold (light)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-046",
+    "equipment": "bodyweight",
+    "movementDescription": "Hanging from a bar, tucking the knees up and twisting them side to side",
+    "gender": "female",
+    "movementNamesCovered": [
+      "CD1: Leg Tuck and Twist"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-047",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, lower back pressed to the floor, arms and legs extended (or tucked) and lifted off the ground",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Finisher: Hollow Hold",
+      "Hollow Body Hold",
+      "Hollow Hold",
+      "Hollow Hold (tuck)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-048",
+    "equipment": "cable",
+    "movementDescription": "Lying on an incline bench, bringing two cable handles together in an arc over the chest",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Incline Cable Fly"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-049",
+    "equipment": "bodyweight",
+    "movementDescription": "Pilates jackknife: lying on the back, sweeping both legs up and overhead into a fold",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Jackknife"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-050",
+    "equipment": "other-named",
+    "movementDescription": "Standing on a box holding a light bar or plate, slowly rounding the spine down vertebra by vertebra",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Jefferson Curl",
+      "Jefferson Curl (light)",
+      "Jefferson Curl (weeks 7+)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-051",
+    "equipment": "bodyweight",
+    "movementDescription": "Squat down and jump straight up explosively, landing softly back into the squat",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Block 2: Jump Squat",
+      "Engine: Squat Jump",
+      "Frog Jump or Squat Jump",
+      "Jump Squat",
+      "Jump Squat (or fast squat)",
+      "Jump Squats or Broad Jumps",
+      "Squat Jump",
+      "Squat jump to freeze landing",
+      "Squat jump to stick",
+      "Squat jump to stick (land and hold 2 s)",
+      "Trap-bar or dumbbell jump squat"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-052",
+    "equipment": "kettlebell",
+    "movementDescription": "Bent over straddling two kettlebells on the floor, alternately rowing one up at a time",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Kettlebell Gorilla Row"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-053",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, pulling both knees in to the chest",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Knee-to-Chest Tuck"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-054",
+    "equipment": "band",
+    "movementDescription": "Kneeling, a band anchored in front, pulling the arms back and open at shoulder height",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Kneeling Chest Expansion (band anchored)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-055",
+    "equipment": "barbell",
+    "movementDescription": "Holding one end of a landmine-anchored barbell at the chest, rotating the torso and pressing it out",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Landmine Rotational Press"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-056",
+    "equipment": "bodyweight",
+    "movementDescription": "Traveling lateral squat steps with an arm reach at each step",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Lateral squat and reach walk"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-057",
+    "equipment": "bodyweight",
+    "movementDescription": "Deep low lunge stretch: front knee bent over the ankle, back leg extended behind, hands on the floor or raised overhead (dragon/lizard/equestrian/crescent-adjacent pose family, optional twist or reach)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Court warm-up: jog, carioca, defensive slides, high knees, leg swings, lunge + twist",
+      "Dragon (low lunge)",
+      "Equestrian Lunge \u2013 left (Ashwa Sanchalanasana)",
+      "Equestrian Lunge \u2013 right (Ashwa Sanchalanasana)",
+      "Lizard Lunge",
+      "Low Lunge",
+      "Low Lunge Twist",
+      "Low Lunge with reach",
+      "USTA-style dynamic warm-up (jog, side shuffles, carioca, high knees, lunges with rotation)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-058",
+    "equipment": "bodyweight",
+    "movementDescription": "Supporting the body on the floor or on parallettes/bars with the legs held straight out in an L shape (tuck version allowed)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "L-sit (tuck if needed)",
+      "L-sit Progression on Bars"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-059",
+    "equipment": "barbell",
+    "movementDescription": "Lying on a bench, lowering a barbell/EZ-bar to the forehead and extending back up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Barbell Lying Triceps Extension",
+      "Skull Crusher"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-060",
+    "equipment": "dumbbell",
+    "movementDescription": "Lying on a bench, lowering a dumbbell in each hand toward the head and extending back up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Dumbbell Skull Crusher"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-061",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, raising both straight legs up and lowering them back down",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Leg raises (up and down)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-062",
+    "equipment": "machine",
+    "movementDescription": "Seated at a shoulder press machine, pressing the handles overhead",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Machine Shoulder Press",
+      "Shoulder Press Machine"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-063",
+    "equipment": "other-named",
+    "movementDescription": "Holding a medicine ball overhead, throwing it backward over the head",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Med-ball overhead throw backwards"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-064",
+    "equipment": "other-named",
+    "movementDescription": "Holding a medicine ball overhead, throwing it forward and down to the ground (including a step-in or serve-style run-up)",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Med-ball overhead throw (forward)",
+      "Med-ball overhead throw (forward, step in)",
+      "Med-ball overhead throw (serve pattern)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-065",
+    "equipment": "bodyweight",
+    "movementDescription": "Small-range partial squat (knee bend) with the arms raised forward for balance",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Knee Bends (mini squat) with arms forward",
+      "Knee Bends with arm raise",
+      "Mini Squat"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-066",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying with knees bent squeezing a ball between them, curling up with a twist toward one knee",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Oblique Curl (ball squeeze)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-067",
+    "equipment": "dumbbell",
+    "movementDescription": "Holding a weight locked out overhead, stepping one leg back into a lunge",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Overhead reverse lunge"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-068",
+    "equipment": "other-named",
+    "movementDescription": "Squatting while holding a stick or light band overhead with straight arms",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Overhead Squat with golf club",
+      "Overhead squat + band"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-069",
+    "equipment": "bodyweight",
+    "movementDescription": "Single-leg squat, lowering all the way down while the other leg extends straight out in front (assisted with support or weighted, same core pose)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Assisted Pistol (hold pole)",
+      "Assisted Pistol Squat",
+      "Box Pistol (sit to bench)",
+      "Pistol Negative (5s lowering)",
+      "Pistol Squat",
+      "Weighted Pistol or Shrimp Squat"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-070",
+    "equipment": "bodyweight",
+    "movementDescription": "Face down, body horizontal over the hands with shoulders past the wrists, legs tucked or leaning forward (planche progression)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Planche Lean / Tuck Planche"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-071",
+    "equipment": "bodyweight",
+    "movementDescription": "From a straight-arm plank, lowering with elbows close to the body into a low push-up hold",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Plank to Chaturanga"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-072",
+    "equipment": "bodyweight",
+    "movementDescription": "Alternating between a forearm plank and a straight-arm plank, one arm at a time",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Plank up-downs"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-073",
+    "equipment": "band",
+    "movementDescription": "Lying face down, a band around one ankle, curling the heel toward the glute",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Prone Band Hamstring Curl"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-074",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying face down flat on the floor, raising one straight arm and the opposite leg together",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Contralateral Limb Raise (lying face down, 10s hold)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-075",
+    "equipment": "dumbbell",
+    "movementDescription": "Lying face down on an incline bench, raising both arms in a Y shape",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Prone Y Raise",
+      "Prone Y-raise"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-076",
+    "equipment": "bodyweight",
+    "movementDescription": "Push-up with the hands set further back, the torso leaning forward over the hands",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Pseudo-planche Push-up"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-077",
+    "equipment": "dumbbell",
+    "movementDescription": "Plank position with hands on two dumbbells, alternately rowing one dumbbell up at a time",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Minute 2: Renegade Row (each arm)",
+      "Renegade Row"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-078",
+    "equipment": "machine",
+    "movementDescription": "Lying face down on a reverse-hyper bench with the hips at the edge, swinging the legs up against resistance",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Reverse Hyper or Back Extension"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-079",
+    "equipment": "bodyweight",
+    "movementDescription": "Kneeling with ankles anchored, leaning the torso backward from the knees and returning to upright",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Reverse Nordic"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-080",
+    "equipment": "dumbbell",
+    "movementDescription": "Forearm resting on a bench, palm down, curling the wrist upward against a dumbbell/bar",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Reverse Wrist Curl (slow lower)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-081",
+    "equipment": "other-named",
+    "movementDescription": "Plank position gripping a Pilates ring, sliding the body forward and back",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Ring Body Saw or Fallout"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-082",
+    "equipment": "bodyweight",
+    "movementDescription": "Supporting the body above a pair of gymnastic rings on straight arms",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Ring Support Hold"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-083",
+    "equipment": "bodyweight",
+    "movementDescription": "Pilates roll-over: lying on the back, legs swing up and overhead, rolling the spine off the mat",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Roll Over"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-084",
+    "equipment": "other-named",
+    "movementDescription": "Lying on the back with a stability ball held between the feet, lifting the ball up and over toward the head",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Roll Over Prep (on ball)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-085",
+    "equipment": "bodyweight",
+    "movementDescription": "Pilates roll-up: lying flat, slowly curling up to a seated forward fold, then rolling back down",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Roll Up"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-086",
+    "equipment": "bodyweight",
+    "movementDescription": "Dynamic single-leg squat with the free leg reaching back like a sprinter's stride",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Running man single-leg squat (2-2 tempo, 10 s between sets)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-087",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated Pilates saw: legs apart, rotating the torso and reaching one hand past the opposite foot",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Saw"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-088",
+    "equipment": "bodyweight",
+    "movementDescription": "Plank/push-up position, small-range shoulder-blade protraction and retraction without bending the elbows",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Scapula push-up"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-089",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back with legs up, alternately scissoring one leg toward the chest",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Scissors"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-090",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated on the floor, legs extended, reaching forward toward the toes without a strap",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Seated Hamstring Reach"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-091",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated Pilates spine curl: rolling the spine down toward the mat and back up to seated",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Seated Spine Curl (roll down and up)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-092",
+    "equipment": "bodyweight",
+    "movementDescription": "Yoga side-crow prep: twisted squat leaning the torso toward one knee, hands planted on the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Side Crow Prep (twisted squat)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-093",
+    "equipment": "bodyweight",
+    "movementDescription": "Bodyweight lateral lunge: stepping to the side and bending that knee while the other leg stays straight",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Side Lunge"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-094",
+    "equipment": "bodyweight",
+    "movementDescription": "Rolling sideways onto the floor starting from a squat position",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Sideways roll - from squatting position"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-095",
+    "equipment": "dumbbell",
+    "movementDescription": "Kneeling on a bench with one leg, hinged forward, kicking a dumbbell straight back",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Single-leg Kneeling Kickbacks"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-096",
+    "equipment": "bodyweight",
+    "movementDescription": "Single-leg sit-to-stand from a chair/bed with the hands held behind the head",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Single-leg Prisoner Squat from bed or chair"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-097",
+    "equipment": "bodyweight",
+    "movementDescription": "Shallow single-leg squat, optionally holding a partner's shoulders or performed solo for balance",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Single-leg shallow squat (hands on partner's shoulders)",
+      "Single-leg shallow squat (solo, partners 3 m apart)",
+      "Single-leg shallow squat after receiving a handball",
+      "Squats - one-leg squats (hold partner lightly)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-098",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing on one leg, pressing a dumbbell straight overhead",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Single-leg shoulder press (left)",
+      "Single-leg shoulder press (right)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-099",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, one leg held vertical, slowly lowering and raising it while the other stays flat on the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Single Straight Leg Lower"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-100",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing up from a chair/bed and sitting back down under control",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Fast Sit-to-Stand (power, slow lower)",
+      "Sit-to-Stand",
+      "Sit-to-Stand (fast up, slow down)",
+      "Sit-to-Stand (hands allowed)",
+      "Sit-to-Stand (hands on thighs if needed)",
+      "Sit-to-Stand (narrow base, weight even on both feet)",
+      "Sit-to-Stand (slowly)",
+      "Sit-to-Stand from Chair",
+      "Sit-to-Stand from Office Chair (chair against desk)",
+      "Sit-to-stand from a chair",
+      "Slow Sit-to-Stand (no hands)",
+      "Squat Pulse to Stand",
+      "Squat to Bed Edge",
+      "Squat to Chair",
+      "Squat to Chair (4 counts down, 2 up)",
+      "Squat-to-stand"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-101",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, feet on sliders (or a towel), curling the heels in toward the glutes then sliding back out",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Sliding leg curl",
+      "Sliding leg curl (wk 3-4 3x6, wk 5-6 3x8, wk 7-8 3x10)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-102",
+    "equipment": "bodyweight",
+    "movementDescription": "Low lunge with the same-side hand reaching to the inside of the front foot and the torso rotating open",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Spiderman lunge"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-103",
+    "equipment": "bodyweight",
+    "movementDescription": "Bodyweight squat with an arm swing for momentum/balance",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Squat swings"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-104",
+    "equipment": "band",
+    "movementDescription": "Bodyweight squat paired with pressing a band overhead or forward at the top",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Squat to Overhead Press",
+      "Band Squat to Press"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-105",
+    "equipment": "bodyweight",
+    "movementDescription": "Squat with both arms reaching straight overhead at the top ('sky reach')",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Squat Sky Reaches"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-106",
+    "equipment": "bodyweight",
+    "movementDescription": "From standing, squat down, place hands on the floor, kick both feet back to a plank, then return to standing (no push-up or jump)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Squat thrusts"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-107",
+    "equipment": "bodyweight",
+    "movementDescription": "Squat down and, when standing back up, rise onto the toes for a calf raise",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Squat to Calf Raise",
+      "Squats with Toe Raise"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-108",
+    "equipment": "other-named",
+    "movementDescription": "Lying on the back, heels resting on a stability ball, curling the ball in toward the glutes",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Cable or Swiss-ball Leg Curl"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-109",
+    "equipment": "dumbbell",
+    "movementDescription": "Standing, pressing a dumbbell overhead while marching one knee up at a time",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Standing Dumbbell Press + March"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-110",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, ankle crossed over the opposite knee, holding a support for balance while sitting the hips back",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Standing Figure-4 Glute Stretch (hold car or cart)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-111",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, curling one heel up toward the glute (an ankle weight is optional, not required)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Knee Curl (standing)",
+      "Knee Curl (standing, ankle weights)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-112",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, holding a support, lifting one straight leg out to the side (an ankle weight is optional, not required)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Side Hip Raise",
+      "Side Hip Raise (behind chair)",
+      "Standing Side Hip Raise (ankle weights, hold bench)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-113",
+    "equipment": "bodyweight",
+    "movementDescription": "Stationary split stance (both feet on the ground), bending both knees and lowering the rear knee toward the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Split Squat",
+      "Split Squat or Reverse Lunge",
+      "Split squat with 2 s pause",
+      "Static split squat with calf raise",
+      "Static split squat, 2-3s lower (every 2:30)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-114",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing on a box, controlled step-down lowering the trailing leg to the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Patrick step-downs (wk 3-4 3x10/side, wk 5-6 3x8/side, wk 7-8 3x6/side)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-115",
+    "equipment": "bodyweight",
+    "movementDescription": "Stepping up onto a bench/stair/chair with one leg driving up, optionally holding a rail for balance",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Alternating Step-up",
+      "Box/step drive (explosive step-up)",
+      "Climb stairs (2-4 flights / step-ups 2 min)",
+      "Station 4: 8-count Step-up",
+      "Step-up",
+      "Step-up (low step, hold rail)",
+      "Step-up (rail nearby)",
+      "Step-up (rail or wall nearby)",
+      "Step-up (stairs, hold handrail)",
+      "Step-up on a stair",
+      "Step-up onto Bench",
+      "Step-up onto Chair",
+      "Step-up onto a step",
+      "Step-up onto bed or chair",
+      "Step-up or Glute Bridge",
+      "Step-up to bench",
+      "Step-up to low step (hold rail)",
+      "Step-up with Knee Drive",
+      "Step-ups onto low step (rail nearby)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-116",
+    "equipment": "bodyweight",
+    "movementDescription": "Explosive step-up finishing with a jump off the top of the box",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Step-up jumps"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-117",
+    "equipment": "bodyweight",
+    "movementDescription": "Wide stance squat with the toes turned out",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Station 1: Sumo Squat"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-118",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying face down, raising both arms and both legs off the floor at once and holding",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Superman hold (3 s)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-119",
+    "equipment": "barbell",
+    "movementDescription": "Standing bent over, pulling a T-bar/landmine handle up to the torso",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Seal Row or T-bar Row"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-120",
+    "equipment": "bodyweight",
+    "movementDescription": "Pilates teaser: balancing on the sit-bones in a V shape, arms and legs extended (a band held at the feet is a minor aid, same pose)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Teaser (hold top 3s)",
+      "Teaser 1-3",
+      "Teaser with band"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-121",
+    "equipment": "bodyweight",
+    "movementDescription": "Teaser prep: one leg extended on the floor, the other lifted, rolling up partway toward the V-sit",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Teaser Prep (one leg)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-122",
+    "equipment": "bodyweight",
+    "movementDescription": "Hanging from a bar, bringing the legs all the way up until the toes touch the bar",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Toes-to-bar"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-123",
+    "equipment": "bodyweight",
+    "movementDescription": "Jumping straight up and tucking both knees to the chest at the top",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Tuck jumps",
+      "Tuck jumps (knees to chest)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-124",
+    "equipment": "bodyweight",
+    "movementDescription": "Sit-up finishing with the hands reaching outside the alternating leg at the top",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Sit-up with hands rotating outside alternate legs"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-125",
+    "equipment": "barbell",
+    "movementDescription": "Standing, pulling a barbell or a dumbbell in each hand straight up along the body to chin height",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Upright Row"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-126",
+    "equipment": "dumbbell",
+    "movementDescription": "Walking while balancing a dumbbell overhead on an open palm like a waiter",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Waiter farmer carry (dumbbell)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-127",
+    "equipment": "bodyweight",
+    "movementDescription": "Back against a wall, sliding down to a squat angle and holding (or sliding up and down)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Wall Sit",
+      "Wall Squat",
+      "Wall squat (slide down and up)"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  },
+  {
+    "variantId": "new-128",
+    "equipment": "band",
+    "movementDescription": "Prone on a bench or standing with a band, moving the arms through Y, T, and W positions in sequence",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Band Y-T-W Raise",
+      "Prone Y-T-W Raise"
+    ],
+    "status": "new",
+    "existingImagePath": null
+  }
+]

@@ -1,0 +1,1006 @@
+[
+[
+"L000",
+"Front Squat"
+],
+[
+"L001",
+"Dumbbell Goblet Squat"
+],
+[
+"L002",
+"Bodyweight Squat"
+],
+[
+"L003",
+"Dumbbell Bench Press"
+],
+[
+"L004",
+"Push-up"
+],
+[
+"L005",
+"Incline Barbell Bench Press"
+],
+[
+"L006",
+"Machine Chest Press"
+],
+[
+"L007",
+"Bodyweight Reverse Lunge"
+],
+[
+"L008",
+"Bulgarian Split Squat"
+],
+[
+"L009",
+"Dumbbell Lateral Lunge"
+],
+[
+"L010",
+"Seated Cable Row"
+],
+[
+"L011",
+"Single-Arm Dumbbell Row"
+],
+[
+"L012",
+"Inverted Row"
+],
+[
+"L013",
+"Barbell Romanian Deadlift"
+],
+[
+"L014",
+"Trap Bar Deadlift"
+],
+[
+"L015",
+"Single-Leg Romanian Deadlift"
+],
+[
+"L016",
+"Floor Glute Bridge"
+],
+[
+"L017",
+"Single-Leg Glute Bridge"
+],
+[
+"L018",
+"Straight-Arm Plank"
+],
+[
+"L019",
+"Ab Wheel Rollout"
+],
+[
+"L020",
+"Lat Pulldown Machine"
+],
+[
+"L021",
+"Seated Dumbbell Shoulder Press"
+],
+[
+"L022",
+"Seated Calf Raise Machine"
+],
+[
+"L023",
+"Cable Curl"
+],
+[
+"L024",
+"Side Plank (straight arm)"
+],
+[
+"L025",
+"Seated Russian Twist"
+],
+[
+"L026",
+"Landmine Rotation"
+],
+[
+"L027",
+"Bench Dip"
+],
+[
+"L028",
+"Cable Triceps Pushdown"
+],
+[
+"L029",
+"Captain's Chair Leg Raise"
+],
+[
+"L030",
+"Suitcase Carry"
+],
+[
+"L031",
+"Band Pull-Apart"
+],
+[
+"L032",
+"Dead Hang"
+],
+[
+"L033",
+"Standing Band Lateral Walk"
+],
+[
+"L034",
+"Lying Figure-4 Glute Stretch"
+],
+[
+"L035",
+"Band External Rotation at 90/90"
+],
+[
+"L036",
+"Floor Back Extension"
+],
+[
+"L037",
+"Seated Leg Curl Machine"
+],
+[
+"L038",
+"Dead Bug"
+],
+[
+"L039",
+"Dumbbell Front Raise"
+],
+[
+"L040",
+"Cable Crunch"
+],
+[
+"L041",
+"Incline Dumbbell Fly"
+],
+[
+"L042",
+"Crab Walk"
+],
+[
+"L043",
+"Reverse Pec Deck Machine"
+],
+[
+"L044",
+"Standing Hamstring Reach"
+],
+[
+"L045",
+"Single-Arm Dumbbell Snatch"
+],
+[
+"L046",
+"Wall-Ball Thruster"
+],
+[
+"L047",
+"Seated Forward Fold"
+],
+[
+"L048",
+"Seated Side Bend"
+],
+[
+"L049",
+"Standing Ankle Circles"
+],
+[
+"L050",
+"Seated Chest Opener"
+],
+[
+"L051",
+"Barbell Shrug"
+],
+[
+"L052",
+"Reclined Twist"
+],
+[
+"L053",
+"Butterfly Inner-Thigh Stretch"
+],
+[
+"L054",
+"Wall Handstand Hold"
+],
+[
+"L055",
+"Seated Ankle Circles"
+],
+[
+"L056",
+"Arm Circles"
+],
+[
+"L057",
+"A-Skips"
+],
+[
+"L058",
+"45-Degree Back Extension"
+],
+[
+"L059",
+"Dumbbell Swing"
+],
+[
+"L060",
+"Bear Crawl"
+],
+[
+"L061",
+"Burpee"
+],
+[
+"L062",
+"Butt Kicks"
+],
+[
+"L063",
+"Standing Barbell Calf Raise"
+],
+[
+"L064",
+"Standing Calf Stretch"
+],
+[
+"L065",
+"Cat-Cow"
+],
+[
+"L066",
+"Standing Cable Chest Fly"
+],
+[
+"L067",
+"Dumbbell Rear-Delt Fly"
+],
+[
+"L068",
+"Chest Doorway Stretch"
+],
+[
+"L069",
+"Cable Pallof Press"
+],
+[
+"L070",
+"Cable Woodchop"
+],
+[
+"L071",
+"Parallel Bar Dip"
+],
+[
+"L072",
+"Overhead Dumbbell Triceps Extension"
+],
+[
+"L073",
+"Dumbbell Biceps Curl"
+],
+[
+"L074",
+"Flutter Kicks"
+],
+[
+"L075",
+"Crunch"
+],
+[
+"L076",
+"Hanging Leg Raise"
+],
+[
+"L077",
+"Mountain Climber"
+],
+[
+"L078",
+"The Hundred"
+],
+[
+"L079",
+"Sit-up"
+],
+[
+"L080",
+"V-up"
+],
+[
+"L081",
+"Seated Figure-4 Glute Stretch"
+],
+[
+"L082",
+"Wrist Curl"
+],
+[
+"L083",
+"Hamstring Stretch (strap-assisted)"
+],
+[
+"L084",
+"High Knees"
+],
+[
+"L085",
+"Seated Hip Abduction Machine"
+],
+[
+"L086",
+"Copenhagen Plank"
+],
+[
+"L087",
+"Hip Circles"
+],
+[
+"L088",
+"Barbell Hip Thrust"
+],
+[
+"L089",
+"Standing Hip Flexor Lunge Stretch"
+],
+[
+"L090",
+"Barbell Deadlift"
+],
+[
+"L091",
+"Barbell Bent-Over Row"
+],
+[
+"L092",
+"Standing IT Band Side Stretch"
+],
+[
+"L093",
+"Kettlebell Halo"
+],
+[
+"L094",
+"Two-Hand Kettlebell Swing"
+],
+[
+"L095",
+"Child's Pose"
+],
+[
+"L096",
+"Lateral Shuffle"
+],
+[
+"L097",
+"Lying Leg Curl Machine"
+],
+[
+"L098",
+"Leg Extension Machine"
+],
+[
+"L099",
+"Leg Press"
+],
+[
+"L100",
+"Leg Swings (front-to-back)"
+],
+[
+"L101",
+"Leg Swings (side-to-side)"
+],
+[
+"L102",
+"Farmer's Carry"
+],
+[
+"L103",
+"Dumbbell Forward Lunge"
+],
+[
+"L104",
+"Neck Side Stretch"
+],
+[
+"L105",
+"Seated Neck Rotation"
+],
+[
+"L106",
+"Nordic Hamstring Curl"
+],
+[
+"L107",
+"Hang Power Clean"
+],
+[
+"L108",
+"Bird-Dog"
+],
+[
+"L109",
+"Forearm Plank"
+],
+[
+"L110",
+"Side Plank"
+],
+[
+"L111",
+"Box Jump"
+],
+[
+"L112",
+"Standing Quad Stretch"
+],
+[
+"L113",
+"Cable Face Pull"
+],
+[
+"L114",
+"Band External Rotation"
+],
+[
+"L115",
+"Band Internal Rotation"
+],
+[
+"L116",
+"Build-Up Sprint Strides"
+],
+[
+"L117",
+"Scapular Circles"
+],
+[
+"L118",
+"Seated Marching"
+],
+[
+"L119",
+"Shoulder Cross-Body Stretch"
+],
+[
+"L120",
+"Dumbbell Lateral Raise"
+],
+[
+"L121",
+"Dumbbell Shrug"
+],
+[
+"L122",
+"Sled Pull (hand-over-hand)"
+],
+[
+"L123",
+"Sled Push"
+],
+[
+"L124",
+"Standing Forward Bend"
+],
+[
+"L125",
+"Med-Ball Chest Pass"
+],
+[
+"L126",
+"Rotational Med-Ball Scoop Toss"
+],
+[
+"L127",
+"Med-Ball Rotational Throw"
+],
+[
+"L128",
+"Medicine Ball Slam"
+],
+[
+"L129",
+"Dumbbell Thruster"
+],
+[
+"L130",
+"Tibialis Raise"
+],
+[
+"L131",
+"Standing Side Bend"
+],
+[
+"L132",
+"Standing Torso Rotations"
+],
+[
+"L133",
+"Overhead Triceps/Lat Stretch"
+],
+[
+"L134",
+"Turkish Get-Up"
+],
+[
+"L135",
+"Standing Barbell Overhead Press"
+],
+[
+"L136",
+"Pull-Up"
+],
+[
+"L137",
+"Wall Ball Shot"
+],
+[
+"L138",
+"Barbell Back Squat"
+],
+[
+"L139",
+"Barbell Bench Press"
+],
+[
+"existing-002",
+"30-Second Chair Stand (count reps) [bodyweight]"
+],
+[
+"existing-004",
+"Archer or Decline Push-up [bodyweight]"
+],
+[
+"existing-007",
+"Alternating Reverse Lunge [bodyweight]"
+],
+[
+"existing-008",
+"Band Bulgarian Split Squat [bodyweight]"
+],
+[
+"existing-012",
+"Feet-elevated Inverted Row [bodyweight]"
+],
+[
+"existing-016",
+"Bridge [bodyweight]"
+],
+[
+"existing-018",
+"Plank Shoulder Taps [bodyweight]"
+],
+[
+"existing-027",
+"Bench Dip (chair or bench) [bodyweight]"
+],
+[
+"existing-036",
+"Floor Back Extension [bodyweight]"
+],
+[
+"existing-042",
+"Bear crawl and crab walk [bodyweight]"
+],
+[
+"existing-058",
+"45\u00b0 Back Extension (glute bias) [machine]"
+],
+[
+"existing-060",
+"Bear Crawl Hold with Knee Taps [bodyweight]"
+],
+[
+"existing-061",
+"Block 1: Burpee [bodyweight]"
+],
+[
+"existing-075",
+"Bent-knee curl-up [bodyweight]"
+],
+[
+"existing-076",
+"Ab work (hanging leg raise) [bodyweight]"
+],
+[
+"existing-077",
+"Block 3: Mountain Climber [bodyweight]"
+],
+[
+"existing-080",
+"CD1: V-up [bodyweight]"
+],
+[
+"existing-086",
+"Body Armour circuit (Copenhagen hold, calf raise [bodyweight]"
+],
+[
+"existing-106",
+"Hamstring lower (partner-held Nordic) [bodyweight]"
+],
+[
+"existing-108",
+"Bird-Dog [bodyweight]"
+],
+[
+"existing-109",
+"Anti-extension progression [bodyweight]"
+],
+[
+"existing-110",
+"Four for the Core: Side Bridge [bodyweight]"
+],
+[
+"existing-111",
+"Box Jump [bodyweight]"
+],
+[
+"existing-116",
+"Build-Up Sprints [bodyweight]"
+],
+[
+"existing-130",
+"Tibialis raise [bodyweight]"
+],
+[
+"existing-133",
+"Overhead Triceps/Lat Stretch [bodyweight]"
+],
+[
+"existing-136",
+"Archer Pull-up [bodyweight]"
+],
+[
+"gap-n001",
+"Countermovement Jump [bodyweight]"
+],
+[
+"gap-n002",
+"Depth jump (30-45 cm box) [bodyweight]"
+],
+[
+"gap-n003",
+"Drop Landing (from low box) [bodyweight]"
+],
+[
+"gap-n005",
+"Explosive star jumps [bodyweight]"
+],
+[
+"gap-n006",
+"Hop and stick [bodyweight]"
+],
+[
+"gap-n019",
+"Spiderman + leg drive [bodyweight]"
+],
+[
+"gap-n021",
+"Prone floor angel [bodyweight]"
+],
+[
+"gap-n024",
+"Open Leg Rocker [bodyweight]"
+],
+[
+"gap-n027",
+"Table Top / Heel Taps [bodyweight]"
+],
+[
+"gap-n031",
+"Half Roll Down [bodyweight]"
+],
+[
+"gap-n032",
+"Single Leg Bend (knee to hip height) [bodyweight]"
+],
+[
+"gap-n033",
+"Single Leg Circles [bodyweight]"
+],
+[
+"gap-n034",
+"Trap-bar jump [trap bar]"
+],
+[
+"gap-y004",
+"Cobra (Bhujangasana) [bodyweight]"
+],
+[
+"gap-y005",
+"Cobra / Double Leg Lift Combo [bodyweight]"
+],
+[
+"gap-y007",
+"Downward Dog [bodyweight]"
+],
+[
+"gap-y010",
+"Eight-limbed Pose (Ashtanga Namaskara) [bodyweight]"
+],
+[
+"gap-y011",
+"Mountain Pose [bodyweight]"
+],
+[
+"gap-y012",
+"Prayer Pose (Pranamasana) [bodyweight]"
+],
+[
+"gap-y014",
+"Elevated Pigeon [bodyweight]"
+],
+[
+"gap-y017",
+"Happy Baby [bodyweight]"
+],
+[
+"gap-y018",
+"Crow Pose [bodyweight]"
+],
+[
+"gap-y022",
+"Pyramid Pose (blocks) [bodyweight]"
+],
+[
+"gap-y023",
+"Supported Warrior 1 [bodyweight]"
+],
+[
+"gap-y025",
+"Warrior 2 to Reverse Warrior flow [bodyweight]"
+],
+[
+"gap-y028",
+"Supine Twist [bodyweight]"
+],
+[
+"gap-y029",
+"Final Relaxation (Savasana) [bodyweight]"
+],
+[
+"gap-y031",
+"Puppy Pose [bodyweight]"
+],
+[
+"new-001",
+"Band Chest Press (anchored behind) [band]"
+],
+[
+"new-002",
+"Band Face Pull or Wall Slide [band]"
+],
+[
+"new-007",
+"Barbell reverse lunge, back knee touches floor ( [barbell]"
+],
+[
+"new-011",
+"Broad Jump [bodyweight]"
+],
+[
+"new-012",
+"Burpee broad jump [bodyweight]"
+],
+[
+"new-013",
+"Cable Glute Kickback [cable]"
+],
+[
+"new-014",
+"Cable Pullover [cable]"
+],
+[
+"new-015",
+"Buy-in: row (men 500m / women 400m) [machine]"
+],
+[
+"new-016",
+"Chest-supported Dumbbell Row [dumbbell]"
+],
+[
+"new-017",
+"Chest-supported Machine Row [machine]"
+],
+[
+"new-018",
+"Clam [bodyweight]"
+],
+[
+"new-021",
+"Alternating Cossack squat (2s pause) [bodyweight]"
+],
+[
+"new-024",
+"Dumbbell Side Bend or Suitcase Hold [dumbbell]"
+],
+[
+"new-026",
+"Deep Squat with thoracic reach [bodyweight]"
+],
+[
+"new-032",
+"Dumbbell Split Squat [dumbbell]"
+],
+[
+"new-037",
+"Front-rack Reverse Lunge [dumbbell]"
+],
+[
+"new-041",
+"Grip squeeze [other-named]"
+],
+[
+"new-043",
+"Half-kneeling Press [dumbbell]"
+],
+[
+"new-047",
+"Finisher: Hollow Hold [bodyweight]"
+],
+[
+"new-049",
+"Jackknife [bodyweight]"
+],
+[
+"new-051",
+"Block 2: Jump Squat [bodyweight]"
+],
+[
+"new-052",
+"Kettlebell Gorilla Row [kettlebell]"
+],
+[
+"new-056",
+"Lateral squat and reach walk [bodyweight]"
+],
+[
+"new-057",
+"Court warm-up: jog, carioca, defensive slides, h [bodyweight]"
+],
+[
+"new-059",
+"Barbell Lying Triceps Extension [barbell]"
+],
+[
+"new-062",
+"Machine Shoulder Press [machine]"
+],
+[
+"new-064",
+"Med-ball overhead throw (forward) [other-named]"
+],
+[
+"new-065",
+"Knee Bends (mini squat) with arms forward [bodyweight]"
+],
+[
+"new-067",
+"Overhead reverse lunge [dumbbell]"
+],
+[
+"new-068",
+"Overhead squat + band [other-named]"
+],
+[
+"new-071",
+"Plank to Chaturanga [bodyweight]"
+],
+[
+"new-072",
+"Plank up-downs [bodyweight]"
+],
+[
+"new-075",
+"Prone Y Raise [dumbbell]"
+],
+[
+"new-077",
+"Minute 2: Renegade Row (each arm) [dumbbell]"
+],
+[
+"new-087",
+"Saw [bodyweight]"
+],
+[
+"new-090",
+"Seated Hamstring Reach [bodyweight]"
+],
+[
+"new-093",
+"Side Lunge [bodyweight]"
+],
+[
+"new-097",
+"Single-leg shallow squat (hands on partner's sho [bodyweight]"
+],
+[
+"new-099",
+"Single Straight Leg Lower [bodyweight]"
+],
+[
+"new-100",
+"Fast Sit-to-Stand (power, slow lower) [bodyweight]"
+],
+[
+"new-101",
+"Sliding leg curl [bodyweight]"
+],
+[
+"new-104",
+"Band Squat to Overhead Press [band]"
+],
+[
+"new-105",
+"Squat Sky Reaches [bodyweight]"
+],
+[
+"new-108",
+"Cable or Swiss-ball Leg Curl [other-named]"
+],
+[
+"new-112",
+"Side Hip Raise [bodyweight]"
+],
+[
+"new-113",
+"Split Squat [bodyweight]"
+],
+[
+"new-115",
+"Alternating Step-up [bodyweight]"
+],
+[
+"new-116",
+"Step-up jumps [bodyweight]"
+],
+[
+"new-120",
+"Teaser (hold top 3s) [bodyweight]"
+],
+[
+"new-123",
+"Tuck jumps [bodyweight]"
+],
+[
+"new-127",
+"Wall Sit [bodyweight]"
+],
+[
+"new-p3-001",
+"Alternating single unders [bodyweight]"
+],
+[
+"new-p3-002",
+"CD2: Half Jacks [bodyweight]"
+],
+[
+"new-p3-003",
+"Chin Tuck (2s hold) [bodyweight]"
+],
+[
+"new-p3-005",
+"Happy Baby or Reclined Butterfly [bodyweight]"
+],
+[
+"new-p3-007",
+"Knee to Chest Stretch [bodyweight]"
+]
+]

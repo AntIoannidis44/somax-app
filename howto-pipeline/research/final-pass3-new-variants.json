@@ -1,0 +1,166 @@
+[
+ {
+  "primary": [
+   "Gastrocnemius",
+   "Soleus",
+   "Quadriceps"
+  ],
+  "secondary": [
+   "Hamstrings",
+   "Glutes",
+   "Hip Flexors",
+   "Shoulder/forearm stabilizers"
+  ],
+  "sources": [
+   "https://livestrong.com/article/210512-what-muscles-does-jump-roping-work (cites ExRx.net on jump-height technique)",
+   "https://workoutlabs.com/exercise-guide/rope-jumping-skipping/"
+  ],
+  "confidence": "low-moderate",
+  "gender": "female",
+  "notes": "No dedicated ExRx.net or NASM exercise-library page found for jump rope/skipping (searched directly); corroborated by two independent fitness-education sources plus a cited teen-athlete EMG finding that the calves work hardest. Does not clear the project's own ExRx+NASM two-source bar, flagged rather than guessed at 'high'.",
+  "pattern": "jump_rope_skipping",
+  "variantId": "new-p3-001",
+  "status": "new"
+ },
+ {
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Hamstrings",
+   "Calves",
+   "Shoulder stabilizers",
+   "Core stabilizers"
+  ],
+  "sources": [
+   "https://www.nasm.org/resource-center/exercise-library/jumping-jacks",
+   "https://www.webmd.com/fitness-exercise/how-to-do-jumping-jacks"
+  ],
+  "confidence": "high",
+  "gender": "female",
+  "notes": "NASM's own exercise-library page (fetched directly) gives quadriceps+glutes primary, hamstrings/calves/shoulder+core stabilizers secondary; corroborated by WebMD's deltoid/shoulder emphasis. Meets the ExRx/NASM-tier two-source bar.",
+  "pattern": "jumping_jack",
+  "variantId": "new-p3-002",
+  "status": "new"
+ },
+ {
+  "primary": [
+   "Longus Colli",
+   "Longus Capitis (deep cervical flexors)"
+  ],
+  "secondary": [
+   "Suboccipitals (lengthened, not targeted)"
+  ],
+  "sources": [
+   "https://www.nasm.org/resource-center/blog/recovery/fixing-forward-head-posture",
+   "https://theprehabguys.com/vimeo-video/openclose-book/"
+  ],
+  "confidence": "moderate",
+  "gender": "female",
+  "notes": "NASM's corrective-exercise blog places chin tucks as the deep-cervical-flexor activation step in its forward-head-posture continuum; corroborated by a PT-education source (The Prehab Guys) which also correctly separates true deep flexors (longus colli/capitis) from the more commonly (and anatomically looser) cited SCM/scalenes grouping used by some other sources - flagged as a real source disagreement, not resolved by assuming the looser grouping.",
+  "pattern": "chin_tuck_cervical_retraction",
+  "variantId": "new-p3-003",
+  "status": "new"
+ },
+ {
+  "primary": [
+   "Obliques (lower-side)",
+   "Gluteus Medius/Minimus (bent leg)",
+   "Tensor Fasciae Latae"
+  ],
+  "secondary": [
+   "Adductors (back leg)",
+   "Quadriceps",
+   "Shoulder stabilizers (top arm)"
+  ],
+  "sources": [
+   "https://www.yogajournal.com/poses/extended-side-angle-pose-2/",
+   "https://yogauonline.com/?p=10324"
+  ],
+  "confidence": "moderate",
+  "gender": "female",
+  "notes": "Sourced per the prior pass's own yoga methodology (ExRx has zero yoga-asana coverage): Yoga Journal's anatomy breakdown (co-authored with an orthopedic-surgeon anatomist) corroborated by a yoga-education site (YogaUOnline) on the TFL/glute role. No peer-reviewed EMG study found for this pose.",
+  "pattern": "yoga_extended_side_angle",
+  "variantId": "new-p3-004",
+  "status": "new"
+ },
+ {
+  "primary": [
+   "Adductor Longus",
+   "Adductor Brevis",
+   "Gracilis"
+  ],
+  "secondary": [
+   "Lower back/glutes (relaxation effect, not a stretch target)"
+  ],
+  "sources": [
+   "https://yogauonline.com/?p=8726",
+   "https://www.stylecraze.com/articles/amazing-benefits-of-supta-baddha-konasana-for-leading-a-healthy-life"
+  ],
+  "confidence": "low-moderate",
+  "gender": "female",
+  "notes": "Could not find a dedicated reclined-specific anatomy breakdown (most sources cover the seated Baddha Konasana only); adductor/groin target is the most consistent claim across sources. Flagged at the same low-moderate tier the prior pass used for its weakest-sourced yoga poses - does not clear the two-source bar as cleanly as Extended Side Angle above.",
+  "pattern": "yoga_reclined_butterfly",
+  "variantId": "new-p3-005",
+  "status": "new"
+ },
+ {
+  "primary": [
+   "Gastrocnemius",
+   "Soleus"
+  ],
+  "secondary": [
+   "Quadriceps (when rolling the thigh)",
+   "Plantaris"
+  ],
+  "sources": [
+   "https://www.nasm.org/resource-center/exercise-library/foam-roll-calves",
+   "https://www.nasm.org/resource-center/blog/recovery/foam-rolling-and-self-myofascial-release-the-trainer-application-guide"
+  ],
+  "confidence": "moderate-high",
+  "gender": "female",
+  "notes": "NASM's own exercise-library page (fetched directly) confirms gastrocnemius/soleus primary and plantaris secondary for calf rolling; NASM's trainer-application blog corroborates quads/TFL/adductors/lats/glute-piriformis/thoracic as the other common SMR targets, though without a dedicated page per body part - calves specifically is the best-sourced representative image for this family.",
+  "pattern": "foam_rolling_smr",
+  "variantId": "new-p3-006",
+  "status": "new"
+ },
+ {
+  "primary": [
+   "Erector Spinae (lower back)",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Hamstrings",
+   "Hip Flexors (contralateral leg)"
+  ],
+  "sources": [
+   "https://www.garagegymreviews.com/knee-stretches",
+   "https://www.hingehealth.com/resources/articles/knee-to-chest/"
+  ],
+  "confidence": "moderate",
+  "gender": "female",
+  "notes": "No dedicated ExRx or NASM exercise-library page found; corroborated by a NASM-CPT-authored fitness-media source (Garage Gym Reviews) and an independent clinical/PT source (Hinge Health), both agreeing on lower-back/glute primary with hamstring/hip-flexor secondary. Classified by StatPearls as a 'Williams back exercise.'",
+  "pattern": "knee_to_chest_stretch",
+  "variantId": "new-p3-007",
+  "status": "new"
+ },
+ {
+  "primary": [
+   "Wrist Flexors (Flexor Carpi Radialis/Ulnaris) or Wrist Extensors (Extensor Carpi Radialis/Ulnaris), depending on stretch direction"
+  ],
+  "secondary": [
+   "Finger flexors/extensors"
+  ],
+  "sources": [
+   "https://www.hingehealth.com/resources/articles/wrist-flexor-stretch/",
+   "https://www.msdmanuals.com/home/multimedia/video/v13975646"
+  ],
+  "confidence": "moderate",
+  "gender": "female",
+  "notes": "No ExRx or NASM exercise-library page found for this family; corroborated by a clinical/PT source (Hinge Health) and a clinical-reference video source (MSD Manuals), which agree on direction (palm-up vs palm-down) determining flexor vs extensor target. Covers the small 'wrist/finger prep' dynamic-mobility sub-family (circles, finger marching, radial/ulnar deviation) under the same general forearm-mobility visual.",
+  "pattern": "wrist_forearm_mobility_stretch",
+  "variantId": "new-p3-008",
+  "status": "new"
+ }
+]

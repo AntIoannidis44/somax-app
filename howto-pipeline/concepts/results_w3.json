@@ -1,0 +1,569 @@
+[
+ {
+  "variantId": "existing-136",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-136.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-115",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-115.png",
+  "notes": "filled black circle badges (not outline) - still circled numbers"
+ },
+ {
+  "variantId": "existing-086",
+  "status": "accepted",
+  "attempts": 3,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-086.png",
+  "notes": "hand-supported (straight bottom arm) Copenhagen rather than forearm"
+ },
+ {
+  "variantId": "existing-061",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-061.png",
+  "notes": "panel 2 jump shown facing camera, panel 1 three-quarter; same camera position"
+ },
+ {
+  "variantId": "existing-076",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-076.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-p3-001",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-p3-001.png",
+  "notes": "calves only (low-moderate confidence)"
+ },
+ {
+  "variantId": "new-057",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-057.png",
+  "notes": ""
+ },
+ {
+  "variantId": "existing-007",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-007.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n015",
+  "status": "failed",
+  "attempts": 4,
+  "path": null,
+  "notes": "Open Book: model never drew the end position correctly (arm raised overhead / panels near-identical instead of top arm opened to the floor on the far side)"
+ },
+ {
+  "variantId": "existing-075",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-075.png",
+  "notes": "queue primary/secondary contained arm-curl contamination (Biceps Brachii 'standard curl', Brachialis); drawn with Rectus Abdominis red + Obliques orange only"
+ },
+ {
+  "variantId": "existing-027",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-027.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-018",
+  "status": "accepted",
+  "attempts": 3,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-018.png",
+  "notes": "queue secondaries Quadriceps/Hamstrings are implausible for a clam; drawn with Gluteus Maximus primary only"
+ },
+ {
+  "variantId": "existing-058",
+  "status": "accepted",
+  "attempts": 4,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-058.png",
+  "notes": "red erector spinae + glute max, orange hamstrings"
+ },
+ {
+  "variantId": "gap-n012",
+  "status": "failed",
+  "attempts": 4,
+  "path": null,
+  "notes": "Couch stretch: back shin repeatedly drawn flat on the floor instead of up the wall/bench, and red overlay put on the FRONT leg's thigh instead of the back leg's hip flexor/rectus femoris"
+ },
+ {
+  "variantId": "gap-n003",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n003.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n031",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n031.png",
+  "notes": "primary only (low confidence)"
+ },
+ {
+  "variantId": "new-001",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-001.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-p3-002",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-p3-002.png",
+  "notes": "filled black circle badges"
+ },
+ {
+  "variantId": "existing-038",
+  "status": "failed",
+  "attempts": 4,
+  "path": null,
+  "notes": "Dead bug: arm and leg moved on the SAME side in every attempt (must be contralateral); earlier attempt also had feet on the floor"
+ },
+ {
+  "variantId": "existing-036",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-036.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-050",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue muscle data wrong: Jefferson Curl listed with arm-curl muscles (Biceps Brachii 'standard curl', Brachialis, Brachioradialis); needs corrected sourced data"
+ },
+ {
+  "variantId": "existing-133",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-133.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n033",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n033.png",
+  "notes": "includes a thin grey curved motion line around the foot (requested) - not text"
+ },
+ {
+  "variantId": "existing-130",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-130.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-104",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-104.png",
+  "notes": ""
+ },
+ {
+  "variantId": "existing-042",
+  "status": "accepted",
+  "attempts": 3,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-042.png",
+  "notes": "bear crawl drawn (per movementDescription), not crab walk"
+ },
+ {
+  "variantId": "existing-116",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-116.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-y018",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y018.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-y029",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y029.png",
+  "notes": "no muscle overlay (resting posture per queue data); filled black badges"
+ },
+ {
+  "variantId": "new-040",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue muscle data looks wrong: Glute-ham raise with Gluteus Maximus primary and Quadriceps secondary, hamstrings only secondary; needs verified data"
+ },
+ {
+  "variantId": "new-111",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue muscle data wrong: standing Knee Curl listed with arm-curl muscles (Biceps Brachii, Brachialis, Brachioradialis); should be hamstrings - needs corrected sourced data"
+ },
+ {
+  "variantId": "new-062",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-062.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n024",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n024.png",
+  "notes": "primary only (low confidence)"
+ },
+ {
+  "variantId": "gap-n021",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n021.png",
+  "notes": "primary only; face-down so face not visible"
+ },
+ {
+  "variantId": "existing-025",
+  "status": "failed",
+  "attempts": 4,
+  "path": null,
+  "notes": "Russian twist: panels near-identical (hands same side), one attempt mirrored the camera, final attempt drew two characters in panel 2"
+ },
+ {
+  "variantId": "new-101",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-101.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n017",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - primary target is a sciatic nerve glide, not a muscle; low-moderate confidence so secondary not allowed; overlay rule cannot be applied faithfully - coordinator decision needed"
+ },
+ {
+  "variantId": "gap-y023",
+  "status": "accepted",
+  "attempts": 3,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y023.png",
+  "notes": "profile side view"
+ },
+ {
+  "variantId": "new-123",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-123.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-002",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-002.png",
+  "notes": "viewed from behind (rear delts visible)"
+ },
+ {
+  "variantId": "new-007",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-007.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-010",
+  "status": "failed",
+  "attempts": 2,
+  "path": null,
+  "notes": "Bird-dog band row: both attempts rowed with the arm and extended the leg on the SAME side (must be contralateral); budget ran out before attempts 3-4"
+ },
+ {
+  "variantId": "gap-n007",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Bounding: panels looked like two ordinary running frames, not clearly airborne exaggerated bound; budget ran out before retry"
+ },
+ {
+  "variantId": "new-108",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-108.png",
+  "notes": ""
+ },
+ {
+  "variantId": "existing-080",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-080.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-p3-003",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-p3-003.png",
+  "notes": "secondary suboccipitals omitted (queue marks them 'lengthened, not targeted')"
+ },
+ {
+  "variantId": "gap-y005",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y005.png",
+  "notes": "primary only (low-moderate); viewed from behind so face not visible"
+ },
+ {
+  "variantId": "new-022",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Crescent lunge: wide front-facing stance read as a lateral/goddess lunge, back leg not clearly behind; budget ran out before retry"
+ },
+ {
+  "variantId": "gap-y008",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Dolphin walk-ins: two near-identical panels; budget ran out before retry"
+ },
+ {
+  "variantId": "new-030",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "DB box step-over: panel 2 ambiguous (straddling the box, not clearly on top / stepping over); budget ran out before retry"
+ },
+ {
+  "variantId": "new-060",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "DB skull crusher: panel 2 elbows barely bent, dumbbells not lowered beside the head; budget ran out before retry"
+ },
+ {
+  "variantId": "gap-y010",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y010.png",
+  "notes": "no muscle overlay (low confidence, primary 'no single dominant target')"
+ },
+ {
+  "variantId": "new-034",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Fire hydrant: leg kicked BACK (donkey kick) instead of out to the side - wrong exercise; budget ran out before retry"
+ },
+ {
+  "variantId": "gap-y016",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Half moon: red/orange on the wrong legs (red on lifted leg, orange on standing leg) and face read masculine; budget ran out before retry"
+ },
+ {
+  "variantId": "gap-y017",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y017.png",
+  "notes": "primary only"
+ },
+ {
+  "variantId": "new-049",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-049.png",
+  "notes": "primary only (low)"
+ },
+ {
+  "variantId": "new-053",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue muscle data wrong for a stretch: Knee-to-chest lists Iliopsoas (shortened, not lengthened) as primary; needs verified data"
+ },
+ {
+  "variantId": "existing-096",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Lateral shuffle: arrow placed inside panel 1 instead of in the gap between panels; budget ran out before retry"
+ },
+ {
+  "variantId": "new-063",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue muscle data doubtful: backward overhead med-ball throw is a triple-extension (glutes/hamstrings/erectors) movement, queue lists Obliques primary; needs verified data"
+ },
+ {
+  "variantId": "gap-n028",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Pancake: red painted on the front/top of the thighs (quads) instead of hamstrings/adductors; budget ran out before retry"
+ },
+ {
+  "variantId": "new-070",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Planche lean: panel 2 near hand lifted off the floor resting on her hip (not supported on both hands); face drifted masculine; budget ran out before retry"
+ },
+ {
+  "variantId": "gap-y012",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y012.png",
+  "notes": "no muscle overlay (queue: none significant)"
+ },
+ {
+  "variantId": "gap-y031",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y031.png",
+  "notes": "primary only"
+ },
+ {
+  "variantId": "new-079",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue muscle data wrong: Reverse Nordic lists Hamstrings primary (copied from Nordic curl); it loads the quadriceps; needs corrected data"
+ },
+ {
+  "variantId": "new-081",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Ring body saw: two near-identical panels; budget ran out before retry"
+ },
+ {
+  "variantId": "new-084",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-086",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-089",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-004",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-092",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-094",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-096",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-102",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-106",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "new-117",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "gap-n018",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "gap-y027",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "gap-y020",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "gap-n022",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "gap-n013",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ },
+ {
+  "variantId": "defect-standing-barbell-calf-raise",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "$12 cap reached ($11.926 spent; next call would exceed)"
+ }
+]

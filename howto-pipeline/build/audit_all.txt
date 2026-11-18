@@ -1,0 +1,479 @@
+[0] Front Squat :: back or front squat | floor get up practice with chair | front squat | front squat or paused back squat | lateral rocks | primary accessory e g close grip bench front squat | single leg sit to stand chair | sit to stand chair
+[1] Dumbbell Goblet Squat :: back squat or goblet squat | dumbbell goblet squat | dumbbell goblet squat 3s lowering | goblet or back squat | goblet or bodyweight squat | goblet squat | goblet squat dumbbell or backpack | goblet squat hold mobility | goblet squat hold with pry | goblet squat light | goblet squat pry light | goblet squat to chair | goblet squat warm up sets | goblet squat with heel raise wk 3 4 3x10 wk 5 6 3x8 wk 7 8 3x6
+[2] Bodyweight Squat (redrawn) :: 30 second chair stand count reps | air squat or lunge | bodyweight round squats push ups mountain climbers plank 30 s each | bodyweight squat | bodyweight squat 3 s down | bodyweight squat to box or chair | bodyweight squat to stand | chair squat | chair squat sit to stand | deep squat hold | deep squat hold hold door frame | deep squat hold hold support | deep squat hold with heels down | fast bodyweight squat | half air squat | landing bodyweight squat | minute 1 bodyweight squat | preparation drill bend and reach rear lunge high jumper rower squat bender windmill forward lunge prone row bent leg body twist push up | squat pulse to stand | squat swings | warm up bodyweight squat easy | warm up bodyweight squats
+[3] Dumbbell Bench Press :: bench back off | bench press or dumbbell press | bench warm ups | bench warm ups as on meet day | dumbbell bench or floor press | dumbbell bench press | dumbbell chest press | dumbbell chest press floor press if no bench | dumbbell floor press | flat dumbbell press | flat dumbbell press speed work | incline dumbbell press | single arm dumbbell bench press
+[4] Push-up (redrawn) :: bench press or push up | dropdown push up 3s lower | eccentric floor push up 4s lowering | minute 2 push up knees or incline if needed | plank to push up | press up full or kneeling | press ups | press ups hands on the ball walk feet back and forth | press ups rolling the ball around the hands figure eight | press ups tunnel press up position max 8 per group | prone press up to comfort | push assistance e g dips or push ups | push up | push up any variation | push up at your level | push up hands raised if needed | push up incline or floor | push up knees or incline ok | push up on balance cushion | push up or incline | push up pilates | push up progression | push up sit up drill push up | push up test full or knees record which | push ups | push ups knee or full | push ups kneeling ok | push ups knees if needed | rest minute burst push ups 20 s | slow lowering push up 3s down | tempo push up | wall press up
+[5] Incline Barbell Bench Press :: incline barbell press | incline bench press
+[6] Machine Chest Press :: chest press machine | machine chest press
+[7] Bodyweight Reverse Lunge (redrawn) :: alternating reverse lunge | backpack reverse lunge | minute 3 reverse lunge alternating | reverse lunge | reverse lunge alternating | reverse lunge holding chair | reverse lunge knee drive | reverse lunge to knee drive
+[8] Bulgarian Split Squat (redrawn) :: bulgarian split squat | bulgarian split squat foot on bed | bulgarian split squat on bench | bulgarian split squat or shrimp squat | bulgarian split squat rear foot on bed | rear foot elevated split squat | tempo bulgarian split squat rear foot on bed chair
+[9] Dumbbell Lateral Lunge :: isometric lateral lunge | lateral lunge | lateral lunge to balance
+[10] Seated Cable Row :: seated cable row | single arm cable row
+[11] Single-Arm Dumbbell Row :: dumbbell row | dumbbell row t3 | emom min 2 single arm dumbbell row left | emom min 3 single arm dumbbell row right | emom single arm row | one arm dumbbell row | single arm dumbbell row | single arm row dumbbell
+[12] Inverted Row (redrawn) :: feet elevated inverted row | inverted row | inverted row low bar | inverted row under a sturdy table | ring row | ring row feet elevated | table inverted row | table or bar inverted row | trx or ring row
+[13] Barbell Romanian Deadlift :: barbell romanian deadlift | deadlift bbb | deadlift or romanian deadlift | deadlift t1 | deadlift t2 | hinge matrix | hinge progression | romanian deadlift | station 2 straight leg deadlift | stiff legged deadlift
+[14] Trap Bar Deadlift :: deadlift or trap bar deadlift top set | trap bar deadlift | trap bar deadlift or front squat | trap bar deadlift wk 3 4 3x8 wk 5 6 3x6 wk 7 8 4x4 | trap bar or barbell deadlift | trap bar or block deadlift | trap bar or conventional deadlift
+[15] Single-Leg Romanian Deadlift :: single leg deadlift | single leg deadlift dumbbell | single leg deadlift holding luggage | single leg deadlift left | single leg deadlift right | single leg dumbbell deadlift | single leg dumbbell romanian deadlift | single leg kettlebell deadlift | single leg rdl reach | single leg romanian deadlift | single leg romanian deadlift holding luggage
+[16] Floor Glute Bridge (redrawn) :: bridge | bridge articulating | bridge peel spine off the mat | bridge pose | bridge progress to single leg | bridge with arm raise | bridge with ball squeeze | bridge with march | bridge with spinal roll | four for the core back bridge | glute bridge | glute bridge 2s squeeze | glute bridge bench press | glute bridge exhale and brace on the way up | glute bridge hold | glute bridge march | glute bridge pullover | heel digs | long lever glute bridge heels on step | pelvic tilt | pelvic tilt lying | pelvic tilts | pelvic tilts and bridge | pelvic tilts neutral to imprint | prone heel squeeze | seated pelvic tilts | shoulder bridge | supported bridge block under sacrum
+[17] Single-Leg Glute Bridge :: single leg bridge | single leg glute bridge
+[18] Straight-Arm Plank (redrawn) :: leg pull back | leg pull front | leg pull front alternating leg lift | plank shoulder taps | plank shoulder taps feet wide
+[19] Ab Wheel Rollout :: ab wheel rollout | core ab wheel or hanging leg raise | kneeling ab wheel roll out
+[20] Lat Pulldown Machine :: assisted chin up or neutral grip pulldown | chin tucks | chin up or lat pulldown | close grip pulldown | explosive pull downs | lat pulldown | lat pulldown or pull up | lat pulldown overhand | lat pulldown t3 | machine row or lat pulldown | neutral grip lat pulldown | pull up or lat pulldown | weighted chin up or lat pulldown | weighted pull up or pulldown
+[21] Seated Dumbbell Shoulder Press :: band or water bottle overhead press seated | dumbbell overhead press | dumbbell shoulder press | dumbbell shoulder press seated | emom single arm press | seated dumbbell overhead press | seated dumbbell press | seated dumbbell shoulder press | standing dumbbell overhead press
+[22] Seated Calf Raise Machine :: heel raises hold chair | seated calf extension | seated calf raise | stop 1 heel raises holding rail
+[23] Cable Curl :: cable curl | cable hammer curl
+[24] Side Plank (straight arm) :: 90 90 reach through | side lift and lower | side lying leg lift bottom leg 2 2 2 tempo | side lying lift and lower | sideways leg lift
+[25] Seated Russian Twist :: core twist | russian twist | russian twists
+[26] Landmine Rotation :: landmine rotation | landmine rotation or cable chop
+[27] Bench Dip (redrawn) :: bench dip chair or bench | bench or chair dip | chair dip | triceps dip chair bath or bed edge | triceps dip on chair
+[28] Cable Triceps Pushdown :: rope pressdown | triceps cable push down | triceps pushdown | triceps pushdown or dip | triceps rope pushdown
+[29] Captain's Chair Leg Raise :: 
+[30] Suitcase Carry :: emom suitcase carry | suitcase carry
+[31] Band Pull-Apart :: band pull apart | band pull aparts shoulder circles | face pull or band pull apart | kneeling chest expansion band anchored | prone y t w | prone y w | scapular wall slides | seated band pull apart | shoulder pull apart band | shoulder wall slides | wall angels | wall slide arms overhead | wall slides | wall slides ribs down | y w glides
+[32] Dead Hang :: active hang | dead hang | forearm pronation supination | scapular pull up
+[33] Standing Band Lateral Walk :: band lateral walk | banded lateral walk | lateral step with band | mini band lateral walk
+[34] Lying Figure-4 Glute Stretch :: buttock stretch | buttock stretch lying figure 4 | figure 4 glute stretch lying | figure 4 stretch lying | lying hip stretch knee out to side | shoelace or figure 4 | side lying thigh stretch
+[35] Band External Rotation at 90/90 :: band external rotation at 90 90 | shoulder mobility band
+[36] Floor Back Extension (redrawn) :: floor back extension | floor or machine back extension | superman hold 3 s
+[37] Seated Leg Curl Machine :: lying or seated leg curl | seated leg curl
+[38] Dead Bug :: dead bug | dead bug with reach | deadbugs
+[39] Dumbbell Front Raise :: 
+[40] Cable Crunch :: cable crunch
+[41] Incline Dumbbell Fly :: incline dumbbell fly flat if no incline
+[42] Crab Walk (redrawn) :: bear crawl and crab walk | bear crawl then crab walk
+[43] Reverse Pec Deck Machine :: reverse pec deck | reverse pec deck or face pull
+[44] Standing Hamstring Reach :: gentle standing forward reach | seated hamstring stretch | seated hamstring stretch heel forward | seated side reach | standing hamstring stretch heel forward | standing hamstring stretch heel on bed edge
+[45] Single-Arm Dumbbell Snatch :: single arm dumbbell snatch
+[46] Wall-Ball Thruster :: wall ball or db thruster
+[47] Seated Forward Fold :: caterpillar seated forward fold | pike stretch | ragdoll forward hang knees soft | seated calf hamstring stretch | seated forward fold | supported forward fold seated
+[48] Seated Side Bend :: low side sways touch sides of feet | mermaid side bend | seated side bend | side bend pilates star prep | sideways bend hold 2s
+[49] Standing Ankle Circles :: ankle circles | standing ankle circles
+[50] Seated Chest Opener :: seated chest opener
+[51] Barbell Shrug :: barbell shrug | shrug
+[52] Reclined Twist :: knee roll stretch | knee rolls | knees side to side feet on ball or floor | lying lower back rotation | reclined twist | station 9 supine body twist
+[53] Butterfly Inner-Thigh Stretch :: adductor rock back | adductor rock backs | ball squeeze legs straight 2 2 2 tempo 5 s rest | ball squeeze with legs lifted to 90 90 2 2 2 tempo 3 s rest | butterfly | butterfly inner thigh stretch | inner thigh stretch | inner thigh stretch soles together
+[54] Wall Handstand Hold :: chest to wall handstand | chest to wall handstand hold | support hold on bars | wall handstand hold chest to wall
+[55] Seated Ankle Circles :: ankle flexion | ankle grabs | ankle pogos | ankle rockers | seated ankle circles | seated ankle pumps
+[56] Arm Circles :: arm circles | around the world weight | warm up arm circles
+[57] A-Skips :: a skip carioca return | a skips | continuous skip any style | high skips | skips for height
+[58] 45-Degree Back Extension (redrawn) :: 45 back extension glute bias | back extension | extension progression | prone back extensions
+[59] Dumbbell Swing :: dumbbell swing | finisher single dumbbell swing
+[60] Bear Crawl (redrawn) :: bear crawl hold with knee taps | bear crawl rotations
+[61] Burpee (redrawn) :: amrap 20 min burpee | block 1 burpee | bodyweight round lunges burpees shoulder taps squat hold | burpee | burpee 20s on 10s off | burpee no jump | burpee or step back burpee | burpee side shuffle | burpees | engine burpee | finisher burpee | finisher burpee or step back burpee | minute 3 burpee | step back burpee no jump
+[62] Butt Kicks :: butt kicks | footyfirst warm up butt kicks
+[63] Standing Barbell Calf Raise :: bilateral calf raise holding support | calf raise | calf raise hold bench | calf raise holding chair back | calf raises | heel raise | heel raise hold bench | isometric calf raise hold mid range | single leg calf raise | single leg calf raise bent knee on step | single leg calf raise bent straight knee | single leg calf raise hold bench | single leg calf raise off a step | single leg calf raise on step | single leg calf raise straight knee on step | single leg dumbbell calf raise | single leg heel raise slight knee bend | single leg heel raise straight knee hold bench | standing barbell calf raise | standing calf raise | standing calf raise aisle or galley | standing calf raise hold support | standing calf raise optional | standing calf raise or heel raise | toe stand | toe stand hold 2 4s at top | two leg calf raise | wall calf raise
+[64] Standing Calf Stretch :: calf and achilles stretch | calf and ankle stretch | calf pump | calf stretch | calf stretch against the wall | calf stretch against wall | calf stretch bent knee dynamic | calf stretch both knees bent | calf stretch straight bent knee | calf stretch straight knee | calf stretch straight leg dynamic | standing calf stretch at wall | standing calf stretch car or wall | standing calf stretch chair support | wall calf stretch | wall calf stretch straight knee | wall soleus stretch bent knee
+[65] Cat-Cow :: cat and camel | cat camel | cat cow | cat cow slow | seated cat cow | spine cars cat cow segmental | standing cat cow hands on thighs | warm up cat cow
+[66] Standing Cable Chest Fly :: cable fly | cable fly low to high | standing cable chest fly
+[67] Dumbbell Rear-Delt Fly :: dumbbell rear delt fly | dumbbell reverse fly
+[68] Chest Doorway Stretch :: chest doorway stretch | chest stretch | chest stretch seated | doorway chest stretch | doorway pec stretch | seated chest stretch
+[69] Cable Pallof Press :: anti rotation progression | cable pallof press | pallof press | pallof press cable band | split stance pallof press | standing pallof press with overhead raise | tall kneeling pallof press
+[70] Cable Woodchop :: cable chop fast | cable lift low to high | cable woodchop | cable woodchop high to low | half kneeling cable chop | half kneeling cable chop high to low
+[71] Parallel Bar Dip :: dip | dip or close grip push up | dip or machine dip | dip progression | parallel bar dip | ring dip band assisted if needed | weighted dip | weighted dip back off | weighted dip top set | weighted ring dip
+[72] Overhead Dumbbell Triceps Extension :: dumbbell triceps extension | overhead dumbbell triceps extension | overhead triceps extension
+[73] Dumbbell Biceps Curl :: bicep curl | biceps curl | biceps curl 2 up 4 down | curl any | dumbbell biceps curl | dumbbell concentration curl | dumbbell curl | hammer curl | incline dumbbell curl | incline spider curl | machine or dumbbell biceps curl | preacher curl
+[74] Flutter Kicks :: cd2 supine bicycle | flutter kicks
+[75] Crunch (redrawn) :: bent knee curl up | bent leg crunch push arms between legs | crunch | crunch or kneeling plank | crunch or machine crunch | crunches with finger slide and 1 inch pulse | curl up with ball between knees
+[76] Hanging Leg Raise (redrawn) :: ab work hanging leg raise | cl1 leg tuck | crunch or hanging knee raise | hanging knee or leg raise | hanging knee raise | hanging knee raise or dead bug | hanging leg raise | hanging leg raise every other workout | station 10 leg tuck | strict hanging leg raise
+[77] Mountain Climber (redrawn) :: block 3 mountain climber | cd1 mountain climber | engine mountain climber | mountain climber | mountain climber 20s on 10s off | mountain climbers | slow mountain climber
+[78] The Hundred :: dynamic inchworm | inchworm to down dog | inchworms | knee hug arabesque | leg slides | neck pull | seated pancake leg lifts | seated twist and forward fold | spiderman stroking the ball | spiderman the crab on all fours feet first | static inchworm | stretch and roll feet to head | stretch feet to head | the hundred | the hundred legs low | the hundred legs table top or 45 degrees
+[79] Sit-up :: push up sit up drill sit up | sit ups | sit ups knees bent
+[80] V-up (redrawn) :: cd1 v up
+[81] Seated Figure-4 Glute Stretch :: 90 90 hip stretch | figure 4 glute stretch | figure 4 glute stretch supported | piriformis stretch | seated figure 4 glute stretch | seated figure 4 hip stretch | seated hip stretch | seated hip stretch ankle on knee | seated hip stretch ankle over knee
+[82] Wrist Curl :: wrist curl slow lower | wrist flexion and extension curl | wrist flexion and extension curls | wrist flexion curl
+[83] Hamstring Stretch (strap-assisted) :: front split blocks with contract relax | hamstring contract relax 5s press 20s stretch | hamstring contract relax press 5s relax deeper | hamstring stretch | hamstring stretch strap assisted | hamstring stretch with thigh contraction chair | hamstring stretches | hamstring switches | lying hamstring stretch | lying hamstring stretch with band | standing hamstring stretch heel on step | supine hamstring floss | supine hamstring floss with strap or towel | supine hamstring stretch strap or towel | supine hamstring stretch with strap | supine strap hamstring stretch
+[84] High Knees :: block 4 high knees | elbow to opposite knee | high knees | high knees 20 s basic 40 s | high knees running in place | standing knee drive alternating
+[85] Seated Hip Abduction Machine :: seated hip abduction machine
+[86] Copenhagen Plank (redrawn) :: body armour circuit copenhagen hold calf raise hamstring walkouts | body lift partner holds top ankle copenhagen style 2 s phases | copenhagen groin modified at knee or full at ankle | copenhagen groin modified or full | copenhagen groin short then long lever | copenhagen plank | copenhagen plank long lever | copenhagen plank short lever | copenhagen plank short lever knee on bench | copenhagen plank short lever on a chair | copenhagen plank short then long lever | copenhagen side plank | emom copenhagen plank alternate sides each minute | inner thigh lift | long lever copenhagen dynamic | long lever static copenhagen | short lever static copenhagen | side lying ball lift ball between ankles
+[87] Hip Circles :: advanced hip rolls | hip circles | hip rotation knee circles | side leg circles | small hip circles | warm up hip circles
+[88] Barbell Hip Thrust :: b stance hip thrust | b stance hip thrust wk 3 4 3x10 side wk 5 6 3x8 side wk 7 8 3x6 side | barbell hip thrust | barbell hip thrust 1s squeeze | barbell or machine hip thrust | bench glute bridge | hip thrust | single leg 90 90 hip extension | single leg 90 90 hip extension from bench | single leg 90 90 hip extension from floor | single leg bench hip thrust | single leg hip thrust | single leg hip thrust shoulders on bed | single leg hip thrust shoulders on bench
+[89] Standing Hip Flexor Lunge Stretch :: calf hip flexor stretch | half kneeling hip flexor stretch | hip flexor half kneel stretch | hip flexor lunge stretch | hip flexor pulses | low lunge hip flexor stretch | standing hip flexor stretch | standing hip flexor stretch chair supported | standing hip flexor stretch hold desk | standing hip flexor stretch split stance
+[90] Barbell Deadlift :: back squat or deadlift alternate sessions | block pull or deficit deadlift | competition deadlift | competition deadlift back off | competition deadlift top set | competition deadlift top single | deadlift | deadlift 5 3 1 sets | deadlift attempts | deadlift back off | deadlift first set last | deadlift opener | deadlift or rack pull | deadlift reset each rep every 3 min | deadlift top set | deadlift warm ups | deadlift warm ups as on meet day | deficit or paused deadlift | speed deadlift
+[91] Barbell Bent-Over Row :: backpack bent over row loaded with books | barbell or pendlay row | barbell or seal row | barbell row | barbell row speed work | bent over or pendlay row | luggage row | pendlay row | single arm row | station 7 bent over row | upper back accessory row or pulldown
+[92] Standing IT Band Side Stretch :: standing it band side stretch
+[93] Kettlebell Halo :: kettlebell halo
+[94] Two-Hand Kettlebell Swing :: amrap 20 min kettlebell swing | kettlebell swing | kettlebell swings | odd minutes two hand kettlebell swing | one arm kettlebell swing switch hands each set every 30s | two hand kettlebell swing
+[95] Child's Pose :: child s pose | child s pose and hamstring stretch | rest position child s pose | seated arm openings cactus | side lying arm opening | supported child s pose bolster
+[96] Lateral Shuffle :: defensive slide intervals 20 s on 40 s off | defensive slide intervals lane width 20 s on 40 s off | defensive slide sideline to lane and back | lateral shuffle | lateral shuffle 4 m decelerate to open stance hold 2 s | lateral shuffle and recover | set position to explosive shuffle 3 m each way | side shuffle | side shuffle intervals 20 s on 40 s easy | side to side shuffle singles sideline to centre mark
+[97] Lying Leg Curl Machine :: glute ham raise or leg curl | glute ham raise or lying leg curl | leg curl | leg curl machine | lying leg curl
+[98] Leg Extension Machine :: belt squat or leg extension | knee extension seated | knee extension seated ankle weights | leg extension | seated knee extension ankle weights | seated knee extension hold 2s | seated leg extension hold up to 5s | supported single leg extension
+[99] Leg Press :: leg press | leg press feet high and wide | leg press machine
+[100] Leg Swings (front-to-back) :: leg pendulum swing | leg swing club at your side for support | leg swings | leg swings forward back | leg swings forward back side | leg swings front back and side | leg swings front to back
+[101] Leg Swings (side-to-side) :: leg swings across body | leg swings front to back and side to side
+[102] Farmer's Carry :: amrap rest of 8 min farmers carry | box to box ball carry walk back | dumbbell farmer carry | farmer carry | farmer carry dumbbells | farmer carry light dumbbells | farmer s carry | farmers carry | finisher dumbbell farmer carry | heavy dumbbell farmers carry | sled drag or farmer carry
+[103] Dumbbell Forward Lunge :: cd2 turn and lunge | dumbbell lunge | dumbbell reverse lunge | dumbbell reverse lunge alternating | dumbbell step back lunge alternating | dumbbell step back lunge hold chair if needed | dumbbell walking lunge | dynamic warm up easy jog leg swings walking lunges skips side shuffles | fast step back lunge alternating | finisher walking lunges | footyfirst style warm up jog side to side carioca butt kicks leg swings lunges | forward lunge | isometric lunge | jump lunge or alternating lunge | leg swings and walking lunges | leg swings walking lunges | lunge | lunge with reach back | lunge with rotation | lunges | lunges with rotation | prep to play strength lunges glute bridge plank | reverse dumbbell lunge | sandbag lunge back knee touches | sandbag lunges | sandbag walking lunge | shallow lunge | single leg core e g lunges or ab work | sprinter lunge | squats walking lunges | station 3 forward lunge | step back lunge alternating | walking lunge | walking lunge with reach | walking lunge wk 3 4 3x10 leg wk 5 6 3x8 leg wk 7 8 3x6 leg | walking lunges | walking lunges bodyweight
+[104] Neck Side Stretch :: four way neck stretch | neck side stretch | neck side tilt | neck stretch | neck stretch hold 5s
+[105] Seated Neck Rotation :: neck rotation | neck rotation hold 5s | neck rotation seated | neck turn stretch | seated neck rotation
+[106] Nordic Hamstring Curl (redrawn) :: hamstring lower gentle partner held | hamstring lower partner held nordic | hamstring lower partner held nordic fall slowly | nordic curl eccentric | nordic curl negative or sliding leg curl | nordic hamstring curl | nordic hamstring curl partner or anchor | nordic hamstring lower | nordic hamstring lower partner | nordic hamstring lower partner holds ankles | nordic hamstring lower partner or anchored | nordic hamstring lower partner or anchored feet | nordic hamstring lower partner or couch | nordic hamstring lowers | nordic hamstrings advanced partner holds ankles | nordic hamstrings beginner | nordic hamstrings intermediate partner holds ankles | solo nordic heels under couch
+[107] Hang Power Clean :: barbell complex 6 deadlifts 6 rows 6 hang cleans 6 front squats 6 push presses | hang power clean
+[108] Bird-Dog (redrawn) :: arm and leg lift on all fours | bear dog | bird dog | bird dog 2s hold | bird dog 3s hold | bird dog elbows | bird dog hands | bird dog swimming prep | cd2 swimmer | four for the core quadraplex | superman bird dog on hands and knees 10s hold | swimming prep | swimming prep opposite arm and leg | swimming prep opposite arm leg | swimming prone arm reach
+[109] Forearm Plank (redrawn) :: anti extension progression | core finisher plank russian twist | forearm plank | forearm plank knees or feet | forward plank | front plank | front plank hold | front plank or wheelbarrow hold | front plank rising to full arms alternate | front plank with alternate leg raise | kneeling plank | kneeling plank on balance disc | leg pull front prep plank with leg lift | minute 4 plank | modified plank on knees | plank | plank hold | plank knees allowed | plank knees if needed | plank max hold | plank on balance disc | plank rocks | plank saw | plank support | rest minute burst plank 20 s | the bench static plank | weighted plank | wheelbarrow hold or front plank | wheelbarrow or front plank hold
+[110] Side Plank (redrawn) :: four for the core side bridge | left side plank with arm raises | oblique crunch or kneeling side plank | right side plank with arm raises | side plank | side plank from knees | side plank hip lifts | side plank knees or feet | side plank leg lift | side plank leg lifts | side plank lift and lower hips 2 2 tempo 5 s between sets | side plank side to side front side front side 1 s holds | side plank side to side with leg lift 5 s holds | side plank with arm and top leg lift 5 s hold 3 s rest | side plank with arm raise 2 2 2 tempo | side plank with hip dips | side plank with leg lift | side plank with reach through | side plank with top arm reach | side plank with top leg lift | side plank with top leg raises 30 s each side no rest | sideways bench raise lower hip | sideways bench static | sideways bench with leg lift | single arm plank left | single arm plank right
+[111] Box Jump (redrawn) :: amrap 20 min box jump step down | approach jump one leg take off both legs | box jump | box jump step down | box jump streamline arms step down | box jumps | box jumps or med ball throws | cd1 power jump | jump backward and land on one leg alternate legs | jump forward and land on one leg alternate legs | jumping box jumps across an imaginary cross | lateral box jump | single leg jumps forwards hold 3 s | two foot approach jump reach high
+[112] Standing Quad Stretch :: cool down quadriceps stretch hold chair | quad stretch | standing quad stretch | standing thigh stretch hold chair
+[113] Cable Face Pull :: face pull
+[114] Band External Rotation :: band external rotation | band external rotation at the side | band external rotation elbow at side | band shoulder external rotations | cable or band external rotation | eccentric external rotation | eccentric external rotation 3 s lower
+[115] Band Internal Rotation :: band internal rotation
+[116] Build-Up Sprint Strides (redrawn) :: build up court sprints | build up runs | build up sprints | build up sprints 50 75 100 | build up strides | build up to max | easy strides building to run pace | relaxed stride | relaxed stride walk back | sprint technique build ups | stride | stride walk back | strides | strides build to fast | strides fast relaxed walk back | strides walk back | tempo stride walk back
+[117] Scapular Circles :: quadruped shoulder circles | scapular circles | seated shoulder rolls | shoulder rolls
+[118] Seated Marching :: fast march step touch | gentle warm up march and leg swings | hotel room warm up march arm circles | march on the spot | march on the spot then forwards backwards pumping arms | marching on the spot | seated knee lift alternating | seated knee lift tummy drawn in | seated knee lifts | seated marching | shoulder rolls while marching 5 forward 5 back
+[119] Shoulder Cross-Body Stretch :: cross body shoulder stretch | cross body stretch | shoulder cross body stretch | shoulder stretch
+[120] Dumbbell Lateral Raise :: dumbbell lateral raise | lateral raise | lateral raise last set drop set | side lateral raise dumbbell or cable
+[121] Dumbbell Shrug :: dumbbell shrug
+[122] Sled Pull (hand-over-hand) :: sled pull | sled pull hand over hand walk back | sled pull walk back every 2 min
+[123] Sled Push :: sled push | sled push low hips short fast steps
+[124] Standing Forward Bend :: forward fold knees soft | hands to feet pada hastasana | standing forward bend | standing forward bend lower back
+[125] Med-Ball Chest Pass :: med ball chest pass against wall | med ball chest pass explosive | medicine ball chest pass to wall
+[126] Rotational Med-Ball Scoop Toss :: med ball scoop toss rotational | rotational med ball scoop toss | split stance scoop toss
+[127] Med-Ball Rotational Throw :: half kneeling med ball rotational throw | heavy med ball rotational throw | kneeling med ball throw left | kneeling med ball throw right | med ball rotational side throw | med ball shot put throw | med ball step behind throw | medicine ball rotational throw to wall | rotational med ball side throw 2 3 kg | rotational med ball throw | rotational med ball throw side to wall | rotational med ball throw to wall | step behind rotational throw
+[128] Medicine Ball Slam :: med ball overhead slam | medicine ball rotational slams | medicine ball slam | skater ball slam
+[129] Dumbbell Thruster :: dumbbell thruster | dumbbell thruster wall ball substitute | minute 1 dumbbell thruster
+[130] Tibialis Raise (redrawn) :: double toe taps | seated toe raises | tibialis raise | tibialis raise back against wall | tibialis raises | toe raise hold bench
+[131] Standing Side Bend :: arms in the air club overhead arms straight | club overhead side bend | sideways bend | standing chest openers | standing side bend | standing side stretch
+[132] Standing Torso Rotations :: bow and arrow rotation | club across shoulders trunk turns | kickstance rotations | standing body rotation with rope | standing trunk rotation | standing trunk rotation with club | torso rotations
+[133] Overhead Triceps/Lat Stretch (redrawn) :: overhead triceps lat stretch | overhead triceps lat stretch strap assisted | towel shoulder upper arm stretch | triceps stretch
+[134] Turkish Get-Up :: turkish get up | turkish get up alternate sides 1 per minute
+[135] Standing Barbell Overhead Press :: arnold press | overhead press | overhead press 2 up 4 down | overhead press 5 3 1 sets | overhead press back off | overhead press bbb | overhead press first set last | overhead press t1 | overhead press t2 | overhead press top set | push press | standing overhead press | station 8 overhead push press
+[136] Pull-Up (redrawn) :: amrap 20 min pull up | chin up | chin up assisted if needed | chin up or band assisted chin up | chin up slow 3s lowering | chin ups | cl1 alternating grip pull up | cl1 pull up | cl1 straight arm pull | jumping chin up with flat foot landing or heel drops | lat work chin ups or rows | negative pull up 5s lowering | pull | pull assistance e g chin ups or rows | pull up | pull up negatives if needed | pull up or assisted | pull up or chin up band assisted if needed | pull up or inverted row | pull up or trx row | pull up progression | rack chin | station 5 pull up or straight arm pull | weighted or bodyweight chin up
+[137] Wall Ball Shot :: amrap wall balls | emom odd minutes wall balls | wall balls | wall balls for time | wall balls for time in planned sets | wall balls full squat hit the target
+[138] Barbell Back Squat :: back squat | back squat 20 rep set | back squat back off | back squat every 3 min | back squat every 90s build to a 5rm | back squat or box squat | back squat or hack squat | back squat speed work | back squat top set | back squat volume | backpack squat | barbell back squat | competition back squat | competition squat | competition squat back off | competition squat top set | competition squat top single | elevated heel squat plate for comparison | half squat | max effort variation e g safety bar squat rack pull floor press work up | paused back squat 2s in the hole | paused or tempo squat | paused squat | pin or paused squat | rest minute burst squats 20 s | speed box squat | squat | squat 5 3 1 sets | squat attempts | squat back off | squat bbb | squat first set last | squat heavy single | squat opener with commands | squat or box squat top set | squat progression | squat t1 | squat t2 | squat warm up ladder | squat warm ups | squat warm ups as on meet day | squats | squats with 3 s hold at the bottom | zercher squats
+[139] Barbell Bench Press :: barbell bench press | bench attempts paused | bench opener paused with commands | bench press | bench press 5 3 1 sets | bench press back off | bench press bbb | bench press first set last | bench press or floor press top set | bench press t1 | bench press t2 | bench press top set | bench press touch and go allowed | close grip bench press | close grip or larsen bench press | competition bench back off | competition bench top set | competition bench top single | horizontal bench press | paused bench press | paused bench press 1s on chest | paused bench press 2s | paused bench press back off | paused bench press top set | pin press just above sticking point | speed bench press | spoto press or larsen press | station 6 supine chest press
+[140] Single-leg Stand (fingertips on a bench) :: balance single leg stand hold bench | one leg stand fingertips on bench | one leg stand fingertips on wall | one leg stand hold support | one leg stand with head turns | single leg balance | single leg balance eyes closed | single leg balance eyes open then closed | single leg balance hand support if needed | single leg stand | single leg stand eyes open then closed | single leg stand hold bench | single leg stand hold chair | single leg stand hold support if needed | standing single leg balance with knee drive | stop 3 one leg stand holding rail
+[141] Semi-tandem Stand (holding a bench) :: semi tandem stance support nearby | semi tandem stand hold bench | stop 2 semi tandem stand holding rail
+[142] Feet-together Stand (holding a bench) :: feet together stand hold bench
+[143] Heel-to-Toe Walk :: heel to toe walk | heel to toe walk along the bench | heel to toe walk fingers on wall if needed | heel to toe walk no support | heel to toe walk wall nearby
+[144] Sideways Walking along a Kitchen Bench :: balance sideways walking along the bench | sideways walking | sideways walking along the bench
+[145] Quadruped Hip CARs :: hip cars quadruped | quadruped hip cars
+[146] Standing Shoulder CARs :: shoulder cars standing
+[147] Quadruped Thoracic Reach-back (hand behind head) :: quadruped reach back hand behind head
+[148] Seated Arm Raises with Breath :: seated arm raises with breath
+[149] Band Hip Flexor Kick :: hip flexor kick band
+[150] Deep Abdominal Hold (drawing-in, lying) :: deep abdominal hold lying knees bent or on hands and knees | deep tummy hold lying knees bent
+[151] Line Hops (forward-back) :: line hops forward back and side side
+[152] Single-leg Hop in Place :: single leg hop in place
+[153] Sandbag Walking Lunge (bear-hug hold) :: amrap rest of 8 min sandbag walking lunge | emom even minutes sandbag walking lunge
+[154] Medicine Ball Sit-up :: amrap rest of 4 min med ball sit ups
+[155] Pallof Hold on a Balance Cushion :: anti rotation hold on balance cushion
+[156] Golf Address Posture Overhead Club Raise :: address position overhead raise
+[157] Forearm Rotations with a Golf Club :: arm rotations club vertical rotate each way
+[158] Standing Trunk Rotation with a Club across the Shoulders :: club assisted trunk rotation
+[159] Pilates Spine Twist with a Club :: spine twist with club across shoulders
+[160] Seated Rotation with a Club across the Chest :: seated rotation with club across chest
+[161] Half-kneeling Rotation with a Club (hips still) :: half kneeling rotation with club hips still
+[162] Upper-back Rotation in Golf Stance :: upper back rotation in golf stance
+[163] Band Speed Rotations in Golf Posture :: band speed rotations golf posture
+[164] Powerful Club Rotation (low to high diagonal) :: powerful rotation club low to high diagonal
+[165] Seated Back Stretch (fold from the hips) :: seated back stretch fold from hips
+[166] Bench Hamstring Stretch (one leg along the bench) :: bench back of leg stretch
+[167] Chest Stretch (arms drawn back) :: chest stretch arms back
+[168] SkiErg :: ski | skierg | skierg long arms hip hinge
+[169] Seated Band Ankle Eversion :: banded ankle eversion
+[170] Slow Single-leg Heel Drop off a Step :: slow heel drop off step up on two down on one
+[171] Side Step-over on an Aerobic Step :: side step over across the step
+[172] Neck Isometric (hand to forehead) :: neck isometrics | neck isometrics front back sides
+[173] Standing Cross-body Punches :: standing cross body punches
+[174] Light Dumbbell Punches :: dumbbell punches light
+[175] Band Straight Punches :: band straight punches alternate
+[176] Snap-down to Athletic Stance :: snap down to athletic stance | snap down to stick
+[177] Stepping to Floor Targets (hand support nearby) :: stepping to targets hand support nearby alternate legs
+[178] Ankle Dribble (running drill) :: ankle calf dribble | ankle calf knee dribble | ankle dribble backward jog return
+[179] Pilates Band Running (alternating heels) :: band running alternating heels
+[180] Golf-posture Pelvic Turns (club across the hips) :: golf posture pelvic turns club across hips
+[181] Pilates Control Balance :: control balance
+[182] Heel Hook (Army PRT climbing drill) :: cl1 heel hook
+[183] Band Speed Skiers (straight-arm pull-down) :: speed skiers band
+[184] Single-leg Stand on a Balance Disc (holding a ball) :: single leg standing on balance disc | single leg standing on balance disc repeat | single leg standing on disc holding ball
+[185] Two-foot Stand on a Balance Disc (holding a medicine ball) :: two foot standing on balance disc | two foot standing on disc holding medicine ball
+[186] Battle Rope Alternating Waves :: battle ropes
+[187] Pilates Spine Stretch Forward :: seated spine stretch forward | spine stretch forward
+[188] Pilates Spine Twist :: seated spine twist | seated spine twist ball between knees | seated torso twist | seated twist | seated upper body twist | spine twist | spine twist seated | upper body twist hold 5s | upper body twist seated
+[189] Countermovement Jump :: countermovement jump | countermovement jump max | dot the i jump forward then straight up | vertical jump catch high ball overhead | vertical jumps | vertical jumps over 45cm hurdles
+[190] Depth jump (30-45 cm box) :: depth jump 30 45 cm | depth jump 30 45 cm box | depth jump 30 45 cm drop
+[191] Drop Landing (from low box) :: drop landing from 20 30 cm box stick 2 s | drop landing from low box | drop landing to stick | drop landing to stick low box
+[192] Pogo Hops (two-foot bounce) :: basic two foot bounce | low pogo hops | pogo backwards lateral shuffle return | pogo forwards lateral shuffle return | pogo hops | pogo jumps stiff ankles
+[193] Split Pogo :: split pogo carioca return
+[194] Explosive star jumps :: explosive star jumps
+[195] Hop and stick :: hop and stick | hop and stick land on the same leg hold 3 s | hops forward as far as you can | jump forward land on one leg and stick | lateral bound and stick | lateral bound stick | lateral bound stick landing | lateral hop and stick | lateral skater deceleration | lateral skater hop | single leg hop to stick | skater bound stick the landing | skater hops | skater jump | skater jump or skater step | skating jumps learning how to land hold 3 s | triple high knee skater
+[196] Bounding (exaggerated running strides) :: bounding
+[197] B-skips (running drill) :: b skips
+[198] Carioca :: carioca | carioca each way | footyfirst warm up carioca grapevine with high knees | grapevine | simple grapevine
+[199] Duck Walk :: duck walk | reverse duck walk
+[200] 90/90 Hip Hold with Forward Lean :: 90 90 hip hold | 90 90 hip lift offs 5s hold | 90 90 hip switches | 90 90 hold with forward lean | 90 90 hold with lean | bent knee fall out | hip marching | hip marching seated | hip switches
+[201] Couch Stretch (rear shin up the wall) :: couch stretch | couch stretch hip flexor quad | couch stretch quads hip flexors | couch stretch rear foot on wall
+[202] World's Greatest Stretch :: warm up world s greatest stretch | world s greatest stretch
+[203] Brettzel (side-lying rotation stretch) :: brettzel
+[204] Side-lying Open Book (thoracic rotation) :: open book | open book side lying t spine rotation | open book thoracic rotation | open books t spine rotation | thoracic open book | thoracic rotation in side lying open book
+[205] Thoracic Extension over a Foam Roller :: t spine extension over foam roller
+[206] Spiderman + leg drive :: spiderman leg drive | spiderman lunge | walking spiderman with rotation
+[207] Toy Soldier (straight-leg kick walk) :: straight leg kicks | toy soldier alternating heel arm
+[208] Prone floor angel :: prone floor angel | prone floor angels
+[209] Wall Walk (to handstand) :: wall walk
+[210] Open Leg Rocker :: open leg rocker | open leg rocker prep
+[211] Pilates Rolling Like a Ball :: rolling like a ball | seal
+[212] Table Top / Heel Taps :: knee folds table top one leg | single leg bends | table top heel taps
+[213] Pancake Straddle Stretch :: pancake with pnf contract relax
+[214] Pilates Boomerang Prep :: boomerang prep
+[215] Half Roll Down :: half roll back | half roll down | roll back with ball behind lower back | standing roll down
+[216] Single Leg Bend (knee to hip height) :: single leg bend knee to hip height | single leg stretch | single leg stretch ball under sacrum | single leg stretch head down
+[217] Single Leg Circles :: single leg circles | single leg circles bent knee
+[218] Trap-bar jump :: trap bar jump | trap bar jump light | trap bar or dumbbell jump squat
+[219] Lizard Pose :: lizard pose
+[220] Boat Pose (Navasana) :: boat pose
+[221] Chair Pose (Utkatasana) :: chair pose
+[222] Revolved Chair Pose (Chair Twist) :: chair pose twist | revolved chair
+[223] Cobra (Bhujangasana) :: cobra bhujangasana | swan | swan dive | swan dive 2s hold | swan prep | swan prep prone chest lift
+[224] Cobra / Double Leg Lift Combo :: cobra double leg lift combo
+[225] Sphinx Pose :: sphinx
+[226] Downward Dog :: downward dog | downward dog parvatasana | downward dog with calf pedal | downward dog with pedalling
+[227] Dolphin Pose with Walk-ins :: dolphin pose with walk ins
+[228] Eagle Arms (Garudasana arms) :: eagle arms
+[229] Eight-limbed Pose (Ashtanga Namaskara) :: eight limbed pose ashtanga namaskara
+[230] Mountain Pose :: mountain pose | mountain pose with breathing
+[231] Prayer Pose (Pranamasana) :: prayer pose pranamasana
+[232] Raised Arms Pose (Hasta Uttanasana) :: raised arms hasta uttanasana
+[233] Elevated Pigeon :: elevated pigeon | pigeon pose | pigeon with active lifts
+[234] Half Moon Pose (Ardha Chandrasana) :: half moon
+[235] Happy Baby :: happy baby
+[236] Crow Pose :: crow pose | crow pose blocks under feet
+[237] Tree Pose (toe-down to full) :: supported tree pose toe down | tree pose
+[238] Triangle Pose (Trikonasana) :: triangle pose
+[239] Revolved Triangle (Parivrtta Trikonasana) :: revolved triangle
+[240] Pyramid Pose (blocks) :: pyramid pose blocks | pyramid pose hamstring
+[241] Supported Warrior 1 :: crescent lunge | supported warrior 1 | warrior 1
+[242] Warrior 2 (Supported, hand on chair back) :: supported warrior 2 hold chair back | warrior 2
+[243] Warrior 2 to Reverse Warrior flow :: warrior 2 to reverse warrior flow
+[244] Warrior 3 (Virabhadrasana III) :: warrior 3
+[245] Thread the Needle :: thread the needle
+[246] Supine Twist :: supine twist | twisted roots supine twist
+[247] Final Relaxation (Savasana) :: final relaxation savasana | savasana
+[248] Legs up the Wall :: legs up the wall | legs up the wall slow breathing
+[249] Puppy Pose :: puppy pose
+[250] Band Chest Press (anchored behind) :: band chest press anchored behind | band chest press door anchor | banded single arm press left | banded single arm press right | seated band chest press band behind back
+[251] Band Face Pull or Wall Slide :: band face pull | band face pull or wall slide
+[252] Band Good Morning :: band good morning
+[253] Seated Band Leg Press :: seated band leg press band around foot
+[254] Side-lying Band Leg Press :: side lying band leg press
+[255] Band Shoulder Pass-through (Dislocates) :: band shoulder dislocates
+[256] Barbell reverse lunge, back knee touches floor (rest 2 min) :: barbell reverse lunge back knee touches floor rest 2 min
+[257] Bird-Dog Band Row :: bird dog row band
+[258] Broad Jump :: broad jump | broad jump stick the landing | broad jump walk back
+[259] Burpee broad jump :: burpee broad jump | burpee broad jump chest to floor jump forward | burpee broad jumps | buy in burpee broad jumps split between partners
+[260] Cable Glute Kickback :: cable glute kickback | cable kickback
+[261] Cable Pullover :: cable pullover
+[262] Buy-in: row (men 500m / women 400m) :: buy in row men 500m women 400m | easy bike or row | easy jog or row cool down | easy row | easy row or bike | easy spin or row | hard row | row | row legs hips arms | row or bike | row progression | row sprint 90s rest | rowing intervals | run or row
+[263] Chest-supported Dumbbell Row :: chest supported dumbbell row | chest supported dumbbell row incline bench | chest supported row | dumbbell or table row | incline braced dumbbell row or shrug
+[264] Chest-supported Machine Row :: chest supported machine row | seated machine row | seated row machine
+[265] Clam :: clam | clam band optional | clam with mini band | clamshell or fire hydrant | side lying clam
+[266] Alternating Cossack squat (2s pause) :: alternating cossack squat 2s pause | cossack squat | cossack squat light counterweight | non supported cossack squat | supported cossack squat
+[267] Pilates Criss Cross :: criss cross | criss cross with leg rise 4 count | leg criss cross 15 cm off floor
+[268] Dumbbell Side Bend or Suitcase Hold :: dumbbell side bend or suitcase hold
+[269] Deep Squat with thoracic reach :: deep squat with thoracic reach
+[270] Deep Squat Walk with Torso Rotation :: deep squat and rotate walk
+[271] Pilates Double Leg Kicks :: double leg kicks
+[272] Dragon Flag Negative :: dragon flag negative
+[273] Dumbbell Man-maker :: dumbbell man maker
+[274] Dumbbell Split Squat :: dumbbell split squat
+[275] Forearm Rotation with a Hammer :: forearm pronation supination with a hammer or light dumbbell | forearm rotation with hammer or dumbbell
+[276] Tuck Front Lever Hold :: advanced tuck or straddle front lever hold | front lever progression hold | tuck front lever hold
+[277] Front-rack Reverse Lunge :: front rack reverse lunge
+[278] Wheel Pose (full bridge) :: bridge wheel or wall walks | wheel or bridge
+[279] Garland Squat (Malasana) :: garland squat malasana
+[280] Grip squeeze :: grip squeeze | grip squeeze ball or gripper | grip squeeze with a ball optional hold 3 5s
+[281] Machine Hack Squat :: hack squat | hack squat or leg press
+[282] Half-kneeling Press :: half kneeling overhead carry hold light | half kneeling press | half kneeling single arm dumbbell press
+[283] Half-kneeling Single-arm Landmine Press :: half kneeling landmine press
+[284] Leg Tuck and Twist (Army PRT CD1) :: cd1 leg tuck and twist
+[285] Finisher: Hollow Hold :: finisher hollow hold | hollow body hold | hollow hold | hollow hold tuck
+[286] Incline Cable Fly :: incline cable fly
+[287] Jackknife :: jackknife
+[288] Jefferson Curl (on a box) :: jefferson curl | jefferson curl light | jefferson curl weeks 7
+[289] Block 2: Jump Squat :: block 2 jump squat | engine squat jump | frog jump or squat jump | jump squat | jump squat or fast squat | jump squats or broad jumps | squat jump | squat jump to freeze landing | squat jump to stick | squat jump to stick land and hold 2 s
+[290] Kettlebell Gorilla Row :: kettlebell gorilla row
+[291] Double Knee-to-Chest Stretch :: knee hugs | knee to chest tuck | knees to chest | lying knee hugs at home
+[292] Landmine Rotational Press :: landmine punch press | landmine rotational press
+[293] Lateral squat and reach walk :: lateral squat and reach walk
+[294] Court warm-up: jog, carioca, defensive slides, high knees, leg swings, lunge + twist :: court warm up jog carioca defensive slides high knees leg swings lunge twist | dragon low lunge | equestrian lunge left ashwa sanchalanasana | equestrian lunge right ashwa sanchalanasana | lizard lunge | low lunge | low lunge twist | low lunge with reach | usta style dynamic warm up jog side shuffles carioca high knees lunges with rotation
+[295] L-sit on Parallettes :: l sit progression on bars | l sit tuck if needed
+[296] Barbell Lying Triceps Extension :: barbell lying triceps extension | skull crusher
+[297] Dumbbell Skull Crusher :: dumbbell skull crusher
+[298] Lying Straight-leg Raise :: leg raises up and down
+[299] Machine Shoulder Press :: machine shoulder press | shoulder press machine
+[300] Medicine Ball Backward Overhead Throw :: med ball overhead throw backwards
+[301] Med-ball overhead throw (forward) :: med ball overhead throw forward | med ball overhead throw forward step in | med ball overhead throw serve pattern | overarm ball throw both arms | overarm throw for distance both arms
+[302] Knee Bends (mini squat) with arms forward :: knee bends lower no more than 10 cm | knee bends mini squat with arms forward | knee bends with arm raise | mini squat
+[303] Oblique Curl with Ball Squeeze :: oblique curl ball squeeze
+[304] Overhead reverse lunge :: overhead reverse lunge
+[305] Overhead squat + band :: overhead squat band | overhead squat with golf club
+[306] Assisted Pistol Squat (holding a pole) :: assisted pistol hold pole | assisted pistol squat | box pistol sit to bench | pistol negative 5s lowering | pistol squat | single leg prisoner squat from bed or chair | weighted pistol or shrimp squat
+[307] Tuck Planche :: planche lean tuck planche
+[308] Plank to Chaturanga :: plank to chaturanga
+[309] Plank up-downs :: plank up downs
+[310] Prone Band Hamstring Curl :: prone band hamstring curl
+[311] Prone Opposite Arm and Leg Raise :: contralateral limb raise lying face down 10s hold | floor back extension opposite arm and leg
+[312] Prone Y Raise :: prone y raise
+[313] Minute 2: Renegade Row (each arm) :: minute 2 renegade row each arm | renegade row
+[314] Reverse Hyperextension on a High Bench :: reverse hyper or back extension
+[315] Reverse Nordic :: reverse nordic
+[316] Reverse Wrist Curl :: eccentric wrist extension 3 4 s lower | reverse wrist curl slow lower
+[317] Ring Fallout (kneeling) :: ring body saw or fallout
+[318] Ring Support Hold :: ring support hold
+[319] Pilates Roll Over :: roll over
+[320] Pilates Roll Over Prep with Stability Ball :: roll over prep on ball
+[321] Pilates Roll Up :: roll up
+[322] Running Man Single-leg Squat :: running man single leg squat 2 2 tempo 10 s between sets
+[323] Saw :: saw
+[324] Pilates Scissors :: scissors | single straight leg stretch
+[325] Seated Hamstring Reach :: seated hamstring reach
+[326] Pilates Seated Spine Curl :: seated spine curl roll down and up
+[327] Side Lunge :: side lunge
+[328] Sideways Roll from a Squat :: sideways roll dynamically from a standing position | sideways roll from a faster forward movement quick walk jog | sideways roll from squatting position
+[329] Single-leg Kneeling Kickback (bodyweight) :: single leg kneeling kickbacks
+[330] Single-leg shallow squat (hands on partner's shoulders) :: single leg shallow squat after receiving a handball | single leg shallow squat hands on partner s shoulders | single leg shallow squat solo partners 3 m apart | squats one leg squats hold partner lightly
+[331] Single Straight Leg Lower :: single straight leg lower
+[332] Fast Sit-to-Stand (power, slow lower) :: fast sit to stand power slow lower | sit to stand | sit to stand fast up slow down | sit to stand from a chair | sit to stand from chair | sit to stand from office chair chair against desk | sit to stand hands allowed | sit to stand hands on thighs if needed | sit to stand narrow base weight even on both feet | sit to stand slowly | slow sit to stand no hands | squat to bed edge | squat to chair | squat to chair 4 counts down 2 up
+[333] Sliding leg curl :: sliding leg curl | sliding leg curl wk 3 4 3x6 wk 5 6 3x8 wk 7 8 3x10
+[334] Band Squat to Overhead Press :: band squat to overhead press | band squat to press
+[335] Squat Sky Reaches :: squat sky reaches
+[336] Squat Thrust (no push-up, no jump) :: squat thrusts
+[337] Squat to Calf Raise :: squat to calf raise | squats with toe raise
+[338] Cable or Swiss-ball Leg Curl :: cable or swiss ball leg curl
+[339] Standing Figure-4 Glute Stretch :: standing figure 4 glute stretch hold car or cart
+[340] Standing Knee Curl :: knee curl standing | knee curl standing ankle weights
+[341] Side Hip Raise :: side hip raise | side hip raise behind chair | standing side hip raise ankle weights hold bench | standing side leg lift hold chair | standing side leg lift holding chair
+[342] Split Squat :: split squat | split squat or reverse lunge | split squat with 2 s pause | static split squat 2 3s lower every 2 30
+[343] Alternating Step-up :: alternating step up | box step drive explosive step up | climb stairs 2 4 flights step ups 2 min | dumbbell box step over | dumbbell step up | dumbbell step up onto bench | station 4 8 count step up | step up | step up low step hold rail | step up on a stair | step up onto a step | step up onto bed or chair | step up onto bench | step up onto chair | step up or glute bridge | step up rail nearby | step up rail or wall nearby | step up stairs hold handrail | step up to bench | step up to low step hold rail | step up with knee drive | step ups onto low step rail nearby
+[344] Step-up jumps :: step up jumps
+[345] Sumo Squat :: station 1 sumo squat
+[346] T-bar Row (landmine, V-handle) :: seal row or t bar row
+[347] Teaser (hold top 3s) :: teaser 1 3 | teaser hold top 3s | teaser with band
+[348] Pilates Teaser Prep (one leg) :: teaser prep one leg
+[349] Toes-to-bar :: toes to bar
+[350] Tuck jumps :: tuck jumps | tuck jumps knees to chest
+[351] Sit-up with Reach Outside the Knee :: sit up with hands rotating outside alternate legs
+[352] Barbell Upright Row :: upright row
+[353] Dumbbell Waiter Carry :: waiter farmer carry dumbbell
+[354] Wall Sit :: wall sit | wall squat | wall squat slide down and up
+[355] Prone Y-T Raise :: band y t w raise | prone y t raises | prone y t w raise | prone y t w raises
+[356] Alternating single unders :: alternating single unders | cool down light skipping | easy skipping warm up | fast skipping | jump rope | jump rope skip through the 1 min breaks | skipping | skipping games bounce boxer step high knees | skipping ladder 50 60 70 80 100 1 min each no break | skipping lateral skip high knee skip | skipping light | skipping light then faster each minute | skipping round steady last 20 s fast rounds 3 6 9 12 | skipping rounds 50 s medium 10 s max repeat
+[357] CD2: Half Jacks :: cd2 half jacks | jumping jacks | three way jumping jacks
+[358] Chin Tuck (2s hold) :: chin tuck 2s hold
+[359] Extended Side Angle (Utthita Parsvakonasana) :: extended side angle
+[360] Happy Baby or Reclined Butterfly :: happy baby or reclined butterfly | reclined butterfly | supported reclined butterfly
+[361] Foam Rolling the Quads :: foam roll calves and quads | foam roll calves quads glutes upper back | foam roll quads calves glutes | top down foam rolling
+[362] Foam Rolling the Calves :: foam roll or massage ball forearms calves
+[363] Knee to Chest Stretch :: knee to chest stretch | single knee hug
+[364] Wrist Flexor and Extensor Stretch :: radial and ulnar deviation | wrist and forearm stretch | wrist circles and flexor extensor stretch | wrist flexor and extensor stretch | wrist flexor extensor stretch | wrist prep | wrist prep circles palm lifts rocks | wrist shoulder prep | wrist shoulder scapular prep
+[365] Supine Adductor Ball Squeeze (knees bent) :: adductor ball squeeze knees bent 5 s hold | ball squeeze between knees 5s | ball squeeze knees bent 2 2 2 tempo | ball squeeze knees bent 2 2 2 tempo 5 s rest
+[366] Adductor Rock-back :: adductor rock back half kneeling
+[367] Ankle Driver (standing knee drive, 5 s hold) :: ankle driver 5s hold | ankle rocks knee over toes | knee to wall ankle mobilisation | knee to wall ankle mobility | knee to wall ankle rockers
+[368] Archer Pull-up :: archer pull up
+[369] Archer Push-up :: archer or decline push up | archer push up
+[370] Band Row (door anchor) :: band row | band row door anchor | band row door anchor or seated | band rowing series | band single arm row 1s pause | banded rows | step back banded row
+[371] Band-assisted Pull-up :: band assisted pull up
+[372] Band Bent-over Row :: band bent over row | hinge and elbow pull band | hinge elbow pull band
+[373] Band Bulgarian Split Squat :: band bulgarian split squat
+[374] Band Biceps Curl :: band biceps curl | band curl
+[375] Band Finger Extension :: band finger extension
+[376] Flutter Kicks with Band :: flutter kick band
+[377] Band I-raise (front raise to overhead) :: i raise band
+[378] Band Lateral Raise :: band lateral raise
+[379] Band Lift (low to high diagonal) :: band diagonal pattern low to high
+[380] Band Overhead Triceps Extension :: band overhead triceps extension
+[381] Band Overhead Press :: band overhead press | seated band overhead press
+[382] Band Pallof Press :: band pallof press | standing pallof press with band
+[383] Plank Reach with Band :: plank reach band
+[384] Band Romanian Deadlift :: band romanian deadlift
+[385] Seated Band Row :: seated band row | seated band rowing
+[386] Single-leg Band Hip Hinge :: single leg hip hinge band
+[387] Band Front Squat :: band front squat | band squat | band squat standing on band
+[388] Staggered-stance Band RDL :: staggered rdl band
+[389] Standing Mini-band March :: standing hip flexor march with band
+[390] Half-kneeling T-spine Rotation with Band :: t spine rotation band
+[391] Band Woodchop (high to low) :: band chop high to low | band woodchop
+[392] Band-resisted Push-up :: push up with band across back
+[393] EZ-bar Curl :: barbell curl | cambered bar curl | ez bar curl
+[394] Barbell Forward Lunge :: barbell lunge
+[395] Glute Bridge with Band Pullover :: bridge pullover band
+[396] Bulgarian Split Squat Jump :: bulgarian jumps | bulgarian jumps side to side
+[397] Single-leg Romanian Deadlift (bodyweight) :: inverted hamstring | single leg romanian deadlift body weight or light | single leg romanian deadlift bodyweight | single leg romanian deadlift hand on wall
+[398] Single-arm Cable Lateral Raise :: cable lateral raise
+[399] Overhead Cable Rope Triceps Extension :: overhead cable triceps extension | overhead rope triceps extension
+[400] Cable Romanian Deadlift :: cable romanian deadlift
+[401] Cable Rotation (horizontal) :: cable or band rotations fast
+[402] Child's Pose with Side Reach :: child s pose with side reach
+[403] Close-grip Push-up :: close grip push up
+[404] Dumbbell Bent-over Row (both arms) :: bent over dumbbell row | dumbbell bent over row | dumbbell bent over row both arms
+[405] Dumbbell Bulgarian Split Squat :: dumbbell bulgarian split squat | dumbbell bulgarian split squat lean forward
+[406] Dumbbell Deadlift :: dumbbell deadlift
+[407] Dumbbell Front Squat :: dumbbell front squat
+[408] Dumbbell Glute Bridge :: dumbbell glute bridge 2s pause
+[409] Dumbbell Hang Clean :: dumbbell hang clean
+[410] Dumbbell Push Press :: dumbbell push press
+[411] Dumbbell Romanian Deadlift :: dumbbell romanian deadlift
+[412] Standing Dumbbell Overhead Press :: overhead dumbbell press
+[413] Dumbbell Z-press (seated on the floor) :: emom min 1 dumbbell z press
+[414] Decline Push-up (feet elevated) :: decline push up feet on bed | decline push up feet on chair | feet elevated push up
+[415] Diamond Push-up :: diamond push up
+[416] 8-count Push-up (body-builder) :: cd2 8 count push up
+[417] False-grip Ring Hang :: false grip hang
+[418] Finger Marching :: finger marching | finger marching 3 movements 10s hold each
+[419] Half-kneeling Band Chop :: half kneeling band chop | half kneeling or seated band chop
+[420] Half-kneeling Cable Lift (low to high) :: half kneeling cable lift low to high
+[421] Hamstring Hold (heel bridge) :: hamstring holds | single leg hamstring holds
+[422] Hamstring Pump (lying, knee bend and straighten) :: hamstring pump
+[423] Hamstring Walk-outs (from a bridge) :: hamstring walk outs bridge position | hamstring walkouts | hamstring walkouts with end switches
+[424] High-knee March with Trunk Rotation :: high step with trunk rotation
+[425] Pilates Hundred with Band :: the hundred with band arms pump against band
+[426] Pilates Hundred (knees bent, feet down) :: hundred knees bent feet down | modified hundred legs table top head down if needed
+[427] Inchworm to Push-up :: inchworm to push up
+[428] Incline Push-up (hands on a bench) :: desk push up | incline push up | incline push up bench or couch | incline push up bench or wall | incline push up hands on chair | incline push up on a table | incline push up on bench | incline push up on desk | incline push up or decline push up 5 x 10 | incline push up your level | kneeling incline push up | landing incline push up on rail or step
+[429] Kettlebell Deadlift :: kettlebell deadlift | kettlebell deadlift practice
+[430] Kettlebell Farmer's Carry :: kettlebell farmers carry max distance in the time left
+[431] Kettlebell Floor Press :: kettlebell floor press
+[432] Kettlebell Goblet Squat :: even minutes kettlebell goblet squat | kettlebell goblet squat
+[433] Single-arm Kettlebell Press :: single arm kettlebell press
+[434] Half-kneeling Band External Rotation to Press :: kneeling external rotation press
+[435] Kneeling Lat Stretch (elbows on a bench) :: kneeling lat stretch elbows on bench
+[436] Two-foot Lateral Jumps :: jumping lateral jumps about 1 m side to side
+[437] Lunge with Kettlebell Pass-under :: lunge kettlebell under swings left | lunge kettlebell under swings right
+[438] Machine Crunch :: machine crunch
+[439] Neck Half-circles :: neck half circles
+[440] Seated Pike Compression Lift :: seated pike compression lifts | seated pike leg lift compression
+[441] Pike Push-up :: pike push up | pike push up feet elevated as you progress
+[442] Pilates Band Footwork (lying) :: band footwork lying band around feet | band footwork single leg
+[443] Pilates Band Frog :: band frog
+[444] Pilates Single Leg Circles with Band :: band leg circles | single leg circles with band
+[445] Pilates Semicircle with Band :: band semi circle bridge with band
+[446] Standing Side Splits with Band :: standing side splits with band
+[447] Pilates Double Leg Stretch :: double leg stretch | double leg stretch low levers
+[448] Pilates Hip Twist with Stretched Arms :: hip twist with stretched arms
+[449] Pilates Band Mermaid :: band mermaid | band mermaid stretch
+[450] Pilates Pulling Straps with Band (prone on bench) :: band long box pulling straps prone
+[451] Pilates Single Leg Kicks :: single leg kicks
+[452] Forearm Plank with Alternate Leg Lift (FIFA 11+ 'The Bench') :: the bench alternate legs hold each lift 2 s | the bench one leg lift hold 10 15 cm
+[453] Plyometric Push-up :: plyo bench push ups | plyo push up | plyometric push up | plyometric push ups
+[454] EZ-bar Preacher Curl :: barbell preacher curl | cambered bar preacher curl
+[455] Prone Ball Roll (Pilates swan prep) :: prone ball roll swan prep
+[456] Push-up Plus :: push up plus | push up plus extra shoulder blade push at the top
+[457] Push-up with Rotation to Side Plank :: push up with rotation
+[458] Quad Set (seated thigh contraction) :: seated thigh contraction hold
+[459] Supported Twist over a Bolster :: side lying supported twist
+[460] Ring Push-up :: ring push up
+[461] Rotational Medicine Ball Slam :: rotational med ball slam | rotational med ball slams
+[462] Seated EZ-bar Overhead Triceps Extension :: seated cambered bar triceps extension
+[463] 90/90 Hip Internal Rotation Lifts :: seated hip internal rotation lifts
+[464] Seated Knee Hug (on a chair) :: seated knee hug
+[465] Side-lying Glute Stretch :: side lying gluteal stretch
+[466] Single-leg Push-up :: cd1 single leg push up
+[467] Skater Step (no jump) :: skater step no jump | speed skater step no jump
+[468] Single-leg Hamstring Bridge (heel on a bench) :: single leg hamstring bridge foot on bench ball
+[469] Spiderman Ball Bearing (FIFA 11+ Kids) :: spiderman ball bearing roll ball under feet
+[470] Squat-to-Stand (holding the toes) :: squat to stand
+[471] High-knee Power March :: high knee power march | knee lifts
+[472] Bent-leg Raise (Army Four for the Core) :: four for the core bent leg raise
+[473] Lying Leg Hold, Open and Close :: leg hold 15 cm off floor open and close
+[474] Tandem (heel-to-toe) Stance, holding a bench :: balance heel to toe stand hold bench | tandem heel to toe stand hold bench | tandem stance | tandem stance heel to toe
+[475] Wall Push-up :: wall or kneeling push up | wall push up | wall push up 4 counts down 4 up
+[476] Serratus Wall Slide :: wall slide with serratus press
+[477] Weighted Pull-up (dip belt) :: weighted chin up | weighted pull up | weighted pull up back off | weighted pull up top set
+[478] Weighted Push-up (weight vest) :: weighted push up vest or plate

@@ -1,0 +1,3396 @@
+[
+ {
+  "id": "gap-n011",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "90/90 hip hold",
+  "desc": "Seated on the floor, soles of the feet together, knees at 90 degrees, alternately dropping one knee down (external rotation) while lifting the other (internal rotation)",
+  "names": [
+   "90/90 hip hold",
+   "90/90 Hip Lift-offs (5s hold)",
+   "90/90 Hip Switches",
+   "90/90 Hold with forward lean",
+   "90/90 Hold with lean",
+   "Bent-knee Fall Out",
+   "Hip Marching",
+   "Hip Marching (seated)",
+   "Hip switches"
+  ]
+ },
+ {
+  "id": "new-025",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Deep squat hold",
+  "desc": "Static deep squat hold, holding a support (door frame/rail) for balance",
+  "names": [
+   "Deep squat hold",
+   "Deep Squat Hold (hold door frame)",
+   "Deep Squat Hold (hold support)",
+   "Deep squat hold with heels down"
+  ]
+ },
+ {
+  "id": "gap-y015",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Band Frog",
+  "desc": "Kneeling with knees wide and shins turned out, hips sinking back toward the heels",
+  "names": [
+   "Band Frog",
+   "Frog Pose",
+   "Frog Stretch"
+  ]
+ },
+ {
+  "id": "existing-054",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Chest-to-wall Handstand",
+  "desc": "Inverted handstand against a wall, body held upside down",
+  "names": [
+   "Chest-to-wall Handstand",
+   "Chest-to-wall Handstand Hold",
+   "Wall Handstand Hold (chest to wall)"
+  ]
+ },
+ {
+  "id": "existing-079",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Push-up / Sit-up Drill: Sit-up",
+  "desc": "Lying on the back, feet anchored, curling the whole torso up to the knees",
+  "names": [
+   "Push-up / Sit-up Drill: Sit-up",
+   "Sit-ups",
+   "Sit-ups, knees bent"
+  ]
+ },
+ {
+  "id": "existing-017",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Single-leg Bridge",
+  "desc": "Glute bridge performed on one leg, the other held straight",
+  "names": [
+   "Single-leg Bridge",
+   "Single-leg Glute Bridge",
+   "Single-leg hamstring bridge (foot on bench/ball)"
+  ]
+ },
+ {
+  "id": "new-128",
+  "src": "queue",
+  "equip": "band",
+  "name": "Band Y-T-W Raise",
+  "desc": "Prone on a bench or standing with a band, moving the arms through Y, T, and W positions in sequence",
+  "names": [
+   "Band Y-T-W Raise",
+   "Prone Y-T-W Raise"
+  ]
+ },
+ {
+  "id": "gap-n010",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Duck walk",
+  "desc": "Walking forward in a deep squat position, knees bent throughout",
+  "names": [
+   "Duck walk",
+   "Reverse duck walk"
+  ]
+ },
+ {
+  "id": "new-042",
+  "src": "queue",
+  "equip": "machine",
+  "name": "Hack Squat",
+  "desc": "Back against the pad of an angled hack-squat machine, pressing the platform up with the legs",
+  "names": [
+   "Hack Squat",
+   "Hack Squat or Leg Press"
+  ]
+ },
+ {
+  "id": "new-058",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "L-sit (tuck if needed)",
+  "desc": "Supporting the body on the floor or on parallettes/bars with the legs held straight out in an L shape (tuck version allowed)",
+  "names": [
+   "L-sit (tuck if needed)",
+   "L-sit Progression on Bars"
+  ]
+ },
+ {
+  "id": "new-098",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Single-leg shoulder press (left)",
+  "desc": "Standing on one leg, pressing a dumbbell straight overhead",
+  "names": [
+   "Single-leg shoulder press (left)",
+   "Single-leg shoulder press (right)"
+  ]
+ },
+ {
+  "id": "gap-y024",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Supported Warrior 2 (hold chair back)",
+  "desc": "Standing wide-legged lunge, front knee bent to 90 degrees, arms extended out to the sides at shoulder height",
+  "names": [
+   "Supported Warrior 2 (hold chair back)",
+   "Warrior 2"
+  ]
+ },
+ {
+  "id": "existing-057",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "A-Skips",
+  "desc": "Fast skipping drill driving one knee up at a time",
+  "names": [
+   "A-Skips"
+  ]
+ },
+ {
+  "id": "new-003",
+  "src": "queue",
+  "equip": "band",
+  "name": "Band Good Morning",
+  "desc": "Band looped around the neck/shoulders, hinging forward at the hips with a slight knee bend",
+  "names": [
+   "Band Good Morning"
+  ]
+ },
+ {
+  "id": "new-008",
+  "src": "queue",
+  "equip": "machine",
+  "name": "Belt Squat or Leg Extension",
+  "desc": "Standing in a belt-squat rig, weight hanging from a hip belt, squatting down and up with hands free",
+  "names": [
+   "Belt Squat or Leg Extension"
+  ]
+ },
+ {
+  "id": "gap-y001",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Boat Pose",
+  "desc": "Seated V-sit, balancing on sitting bones, legs raised and straight, arms parallel to the floor",
+  "names": [
+   "Boat Pose"
+  ]
+ },
+ {
+  "id": "gap-n014",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Brettzel",
+  "desc": "Half-kneeling hip-flexor lunge combined with a reach-through thoracic twist under the body",
+  "names": [
+   "Brettzel"
+  ]
+ },
+ {
+  "id": "gap-y002",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Chair Pose",
+  "desc": "Standing with knees bent into a half-squat, torso upright, arms raised straight overhead",
+  "names": [
+   "Chair Pose"
+  ]
+ },
+ {
+  "id": "new-019",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Clockface (mini squat, tap 12-3-6-9)",
+  "desc": "Small single-leg squat while tapping the free foot out to clock positions around the body for balance",
+  "names": [
+   "Clockface (mini squat, tap 12-3-6-9)"
+  ]
+ },
+ {
+  "id": "new-074",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Contralateral Limb Raise (lying face down, 10s hold)",
+  "desc": "Lying face down flat on the floor, raising one straight arm and the opposite leg together",
+  "names": [
+   "Contralateral Limb Raise (lying face down, 10s hold)"
+  ]
+ },
+ {
+  "id": "new-027",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Deep squat and rotate walk",
+  "desc": "Traveling deep-squat walk combined with a torso rotation",
+  "names": [
+   "Deep squat and rotate walk"
+  ]
+ },
+ {
+  "id": "new-028",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Double Leg Kicks",
+  "desc": "Pilates mat move lying face down, both legs kicking toward the glutes then extending back",
+  "names": [
+   "Double Leg Kicks"
+  ]
+ },
+ {
+  "id": "new-044",
+  "src": "queue",
+  "equip": "barbell",
+  "name": "Half-kneeling Landmine Press",
+  "desc": "Half-kneeling, pressing one end of a landmine-anchored barbell up and forward",
+  "names": [
+   "Half-kneeling Landmine Press"
+  ]
+ },
+ {
+  "id": "existing-084",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "High Knees",
+  "desc": "Jogging in place, driving the knees up high and fast",
+  "names": [
+   "High Knees"
+  ]
+ },
+ {
+  "id": "new-054",
+  "src": "queue",
+  "equip": "band",
+  "name": "Kneeling Chest Expansion (band anchored)",
+  "desc": "Kneeling, a band anchored in front, pulling the arms back and open at shoulder height",
+  "names": [
+   "Kneeling Chest Expansion (band anchored)"
+  ]
+ },
+ {
+  "id": "new-066",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Oblique Curl (ball squeeze)",
+  "desc": "Lying with knees bent squeezing a ball between them, curling up with a twist toward one knee",
+  "names": [
+   "Oblique Curl (ball squeeze)"
+  ]
+ },
+ {
+  "id": "new-114",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Patrick step-downs (wk 3-4 3x10/side, wk 5-6 3x8/side, wk 7-8 3x6/side)",
+  "desc": "Standing on a box, controlled step-down lowering the trailing leg to the floor",
+  "names": [
+   "Patrick step-downs (wk 3-4 3x10/side, wk 5-6 3x8/side, wk 7-8 3x6/side)"
+  ]
+ },
+ {
+  "id": "new-073",
+  "src": "queue",
+  "equip": "band",
+  "name": "Prone Band Hamstring Curl",
+  "desc": "Lying face down, a band around one ankle, curling the heel toward the glute",
+  "names": [
+   "Prone Band Hamstring Curl"
+  ]
+ },
+ {
+  "id": "gap-y013",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Raised Arms (Hasta Uttanasana)",
+  "desc": "Standing, arms raised straight overhead with a slight backbend, palms together or shoulder-width apart",
+  "names": [
+   "Raised Arms (Hasta Uttanasana)"
+  ]
+ },
+ {
+  "id": "new-080",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Reverse Wrist Curl (slow lower)",
+  "desc": "Forearm resting on a bench, palm down, curling the wrist upward against a dumbbell/bar",
+  "names": [
+   "Reverse Wrist Curl (slow lower)"
+  ]
+ },
+ {
+  "id": "new-082",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Ring Support Hold",
+  "desc": "Supporting the body above a pair of gymnastic rings on straight arms",
+  "names": [
+   "Ring Support Hold"
+  ]
+ },
+ {
+  "id": "new-085",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Roll Up",
+  "desc": "Pilates roll-up: lying flat, slowly curling up to a seated forward fold, then rolling back down",
+  "names": [
+   "Roll Up"
+  ]
+ },
+ {
+  "id": "gap-n025",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Seal",
+  "desc": "Seated, knees bent and held wide by the hands on the outside of the ankles, balancing on the sitting bones and clapping the feet together",
+  "names": [
+   "Seal"
+  ]
+ },
+ {
+  "id": "new-124",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Sit-up with hands rotating outside alternate legs",
+  "desc": "Sit-up finishing with the hands reaching outside the alternating leg at the top",
+  "names": [
+   "Sit-up with hands rotating outside alternate legs"
+  ]
+ },
+ {
+  "id": "new-109",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Standing Dumbbell Press + March",
+  "desc": "Standing, pressing a dumbbell overhead while marching one knee up at a time",
+  "names": [
+   "Standing Dumbbell Press + March"
+  ]
+ },
+ {
+  "id": "new-122",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Toes-to-bar",
+  "desc": "Hanging from a bar, bringing the legs all the way up until the toes touch the bar",
+  "names": [
+   "Toes-to-bar"
+  ]
+ },
+ {
+  "id": "new-125",
+  "src": "queue",
+  "equip": "barbell",
+  "name": "Upright Row",
+  "desc": "Standing, pulling a barbell or a dumbbell in each hand straight up along the body to chin height",
+  "names": [
+   "Upright Row"
+  ]
+ },
+ {
+  "id": "extra-battle-ropes",
+  "src": "queue",
+  "equip": "battle ropes",
+  "name": "Battle Ropes",
+  "desc": "Athletic stance, knees bent, gripping one end of a heavy battle rope in each hand, making alternating up-and-down arm waves that send waves down the ropes",
+  "names": [
+   "Battle Ropes"
+  ]
+ },
+ {
+  "id": "new-p3-008",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Band finger extension",
+  "desc": "",
+  "names": [
+   "Band finger extension",
+   "Finger Marching",
+   "Finger Marching (3 movements, ~10s hold each)",
+   "Radial and ulnar deviation",
+   "Wrist & shoulder prep",
+   "Wrist and Forearm Stretch",
+   "Wrist circles and flexor/extensor stretch",
+   "Wrist Flexor & Extensor Stretch",
+   "Wrist flexor and extensor stretch",
+   "Wrist Prep",
+   "Wrist Prep (circles, palm lifts, rocks)",
+   "Wrist, shoulder & scapular prep"
+  ]
+ },
+ {
+  "id": "gap-n004",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Basic two-foot bounce",
+  "desc": "Small, rapid repeated hops in place on the balls of the feet with stiff ankles and minimal knee bend",
+  "names": [
+   "Basic two-foot bounce",
+   "Bulgarian jumps",
+   "Bulgarian jumps side to side",
+   "Low pogo hops",
+   "Pogo backwards (lateral shuffle return)",
+   "Pogo forwards (lateral shuffle return)",
+   "Pogo Hops",
+   "Pogo jumps (stiff ankles)",
+   "Split pogo (carioca return)"
+  ]
+ },
+ {
+  "id": "new-069",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Assisted Pistol (hold pole)",
+  "desc": "Single-leg squat, lowering all the way down while the other leg extends straight out in front (assisted with support or weighted, same core pose)",
+  "names": [
+   "Assisted Pistol (hold pole)",
+   "Assisted Pistol Squat",
+   "Box Pistol (sit to bench)",
+   "Pistol Negative (5s lowering)",
+   "Pistol Squat",
+   "Weighted Pistol or Shrimp Squat"
+  ]
+ },
+ {
+  "id": "gap-n009",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Carioca",
+  "desc": "Running sideways while crossing one foot alternately in front of and behind the other, hips rotating with the crossover",
+  "names": [
+   "Carioca",
+   "Carioca (each way)",
+   "Grapevine",
+   "Simple Grapevine"
+  ]
+ },
+ {
+  "id": "new-p3-006",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Foam Roll Calves and Quads",
+  "desc": "",
+  "names": [
+   "Foam Roll Calves and Quads",
+   "Foam roll or massage-ball forearms, calves",
+   "Foam roll quads, calves, glutes",
+   "Top-down foam rolling"
+  ]
+ },
+ {
+  "id": "new-036",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Advanced Tuck or Straddle Front Lever Hold",
+  "desc": "Hanging under a bar, holding the body horizontal and parallel to the floor (tuck or straddle progression)",
+  "names": [
+   "Advanced Tuck or Straddle Front Lever Hold",
+   "Front Lever progression hold",
+   "Tuck Front Lever Hold"
+  ]
+ },
+ {
+  "id": "new-023",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Criss Cross",
+  "desc": "Pilates criss-cross: lying on the back, hands behind the head, alternating elbow-to-knee twists with the other leg extended low",
+  "names": [
+   "Criss Cross",
+   "Criss-cross with leg rise, 4-count",
+   "Leg criss-cross 15 cm off floor"
+  ]
+ },
+ {
+  "id": "existing-032",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Active hang",
+  "desc": "Hanging passively from a pull-up bar with straight arms",
+  "names": [
+   "Active hang",
+   "Dead Hang"
+  ]
+ },
+ {
+  "id": "new-038",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Bridge (wheel) or Wall Walks",
+  "desc": "Yoga wheel/full bridge: backbend lifting the hips and chest off the floor, hands and feet planted",
+  "names": [
+   "Bridge (wheel) or Wall Walks",
+   "Wheel or Bridge"
+  ]
+ },
+ {
+  "id": "gap-y003",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Chair Pose Twist",
+  "desc": "Chair Pose with the torso rotated and hands brought together at the chest, elbow crossing toward the opposite knee",
+  "names": [
+   "Chair Pose Twist",
+   "Revolved Chair"
+  ]
+ },
+ {
+  "id": "new-033",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Dumbbell Step-up",
+  "desc": "Holding a dumbbell in each hand, stepping up onto a bench with one leg driving up",
+  "names": [
+   "Dumbbell Step-up",
+   "Dumbbell Step-up onto Bench"
+  ]
+ },
+ {
+  "id": "new-035",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Forearm pronation/supination with a hammer or light dumbbell",
+  "desc": "Forearm resting on a thigh or bench, rotating a light dumbbell or hammer from palm-up to palm-down",
+  "names": [
+   "Forearm pronation/supination with a hammer or light dumbbell",
+   "Forearm Rotation with hammer or dumbbell"
+  ]
+ },
+ {
+  "id": "gap-y030",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Legs up the Wall",
+  "desc": "Lying on the back with both legs extended straight up a wall, hips close to the wall, arms relaxed at the sides",
+  "names": [
+   "Legs up the Wall",
+   "Legs up the wall, slow breathing"
+  ]
+ },
+ {
+  "id": "gap-n016",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Sleeper stretch",
+  "desc": "Lying on one side, top arm behind the head, gently pressing the top knee down toward the floor to rotate the shoulder inward",
+  "names": [
+   "Sleeper stretch",
+   "Sleeper stretch (internal-rotation range)"
+  ]
+ },
+ {
+  "id": "new-107",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Squat to Calf Raise",
+  "desc": "Squat down and, when standing back up, rise onto the toes for a calf raise",
+  "names": [
+   "Squat to Calf Raise",
+   "Squats with Toe Raise"
+  ]
+ },
+ {
+  "id": "gap-y019",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Supported Tree Pose (toe down)",
+  "desc": "Standing on one leg, the other foot placed against the inner thigh, hands at the chest or raised overhead",
+  "names": [
+   "Supported Tree Pose (toe down)",
+   "Tree Pose"
+  ]
+ },
+ {
+  "id": "gap-n008",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "B-skips",
+  "desc": "Running drill driving the knee up then extending/whipping the lower leg straight before the foot strikes down",
+  "names": [
+   "B-skips"
+  ]
+ },
+ {
+  "id": "new-006",
+  "src": "queue",
+  "equip": "band",
+  "name": "Band Shoulder Dislocates",
+  "desc": "Standing, holding a band wide with straight arms, rotating it overhead and behind the back",
+  "names": [
+   "Band Shoulder Dislocates"
+  ]
+ },
+ {
+  "id": "new-009",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Bench Glute Bridge",
+  "desc": "Shoulders elevated on a bench, hips thrusting straight up into a bridge",
+  "names": [
+   "Bench Glute Bridge"
+  ]
+ },
+ {
+  "id": "gap-n029",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Boomerang Prep",
+  "desc": "Seated, rounding back into a ball on the tailbone with legs lifted and crossed at the ankles, preparing to roll back",
+  "names": [
+   "Boomerang Prep"
+  ]
+ },
+ {
+  "id": "existing-062",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Butt Kicks",
+  "desc": "Jogging in place, kicking the heels up toward the glutes",
+  "names": [
+   "Butt Kicks"
+  ]
+ },
+ {
+  "id": "new-046",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "CD1: Leg Tuck and Twist",
+  "desc": "Hanging from a bar, tucking the knees up and twisting them side to side",
+  "names": [
+   "CD1: Leg Tuck and Twist"
+  ]
+ },
+ {
+  "id": "new-020",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Corkscrew",
+  "desc": "Pilates mat move: lying on the back, legs together, circling them in a wide arc",
+  "names": [
+   "Corkscrew"
+  ]
+ },
+ {
+  "id": "new-029",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Dragon Flag Negative",
+  "desc": "Lying on a bench, shoulders anchored at the top, slowly lowering the straight body from a vertical hold",
+  "names": [
+   "Dragon Flag Negative"
+  ]
+ },
+ {
+  "id": "gap-y009",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Eagle Arms",
+  "desc": "Standing, forearms stacked vertically in front of the chest, elbows lifted, pressing the forearms together",
+  "names": [
+   "Eagle Arms"
+  ]
+ },
+ {
+  "id": "new-p3-004",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Extended Side Angle",
+  "desc": "",
+  "names": [
+   "Extended Side Angle"
+  ]
+ },
+ {
+  "id": "new-039",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Garland Squat (Malasana)",
+  "desc": "Yoga Malasana: deep wide squat, heels down, hands together in front of the chest",
+  "names": [
+   "Garland Squat (Malasana)"
+  ]
+ },
+ {
+  "id": "new-045",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Half-kneeling Overhead Carry Hold (light)",
+  "desc": "Half-kneeling position, holding a light weight locked out overhead and bracing",
+  "names": [
+   "Half-kneeling Overhead Carry Hold (light)"
+  ]
+ },
+ {
+  "id": "new-048",
+  "src": "queue",
+  "equip": "cable",
+  "name": "Incline Cable Fly",
+  "desc": "Lying on an incline bench, bringing two cable handles together in an arc over the chest",
+  "names": [
+   "Incline Cable Fly"
+  ]
+ },
+ {
+  "id": "new-055",
+  "src": "queue",
+  "equip": "barbell",
+  "name": "Landmine Rotational Press",
+  "desc": "Holding one end of a landmine-anchored barbell at the chest, rotating the torso and pressing it out",
+  "names": [
+   "Landmine Rotational Press"
+  ]
+ },
+ {
+  "id": "new-061",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Leg raises (up and down)",
+  "desc": "Lying on the back, raising both straight legs up and lowering them back down",
+  "names": [
+   "Leg raises (up and down)"
+  ]
+ },
+ {
+  "id": "new-076",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Pseudo-planche Push-up",
+  "desc": "Push-up with the hands set further back, the torso leaning forward over the hands",
+  "names": [
+   "Pseudo-planche Push-up"
+  ]
+ },
+ {
+  "id": "new-078",
+  "src": "queue",
+  "equip": "machine",
+  "name": "Reverse Hyper or Back Extension",
+  "desc": "Lying face down on a reverse-hyper bench with the hips at the edge, swinging the legs up against resistance",
+  "names": [
+   "Reverse Hyper or Back Extension"
+  ]
+ },
+ {
+  "id": "gap-y021",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Revolved Triangle",
+  "desc": "Standing wide-legged triangle shape with the torso rotated, the opposite hand reaching to the floor or shin",
+  "names": [
+   "Revolved Triangle"
+  ]
+ },
+ {
+  "id": "new-083",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Roll Over",
+  "desc": "Pilates roll-over: lying on the back, legs swing up and overhead, rolling the spine off the mat",
+  "names": [
+   "Roll Over"
+  ]
+ },
+ {
+  "id": "gap-n026",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Rolling Like a Ball",
+  "desc": "Seated in a tight tuck, knees drawn to the chest, rolling backward and forward along the curve of the spine like a ball",
+  "names": [
+   "Rolling Like a Ball"
+  ]
+ },
+ {
+  "id": "new-088",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Scapula push-up",
+  "desc": "Plank/push-up position, small-range shoulder-blade protraction and retraction without bending the elbows",
+  "names": [
+   "Scapula push-up"
+  ]
+ },
+ {
+  "id": "new-119",
+  "src": "queue",
+  "equip": "barbell",
+  "name": "Seal Row or T-bar Row",
+  "desc": "Standing bent over, pulling a T-bar/landmine handle up to the torso",
+  "names": [
+   "Seal Row or T-bar Row"
+  ]
+ },
+ {
+  "id": "new-091",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Seated Spine Curl (roll down and up)",
+  "desc": "Seated Pilates spine curl: rolling the spine down toward the mat and back up to seated",
+  "names": [
+   "Seated Spine Curl (roll down and up)"
+  ]
+ },
+ {
+  "id": "new-005",
+  "src": "queue",
+  "equip": "band",
+  "name": "Side-lying Band Leg Press",
+  "desc": "Lying on the side, pressing the top leg straight out against a band",
+  "names": [
+   "Side-lying Band Leg Press"
+  ]
+ },
+ {
+  "id": "new-095",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Single-leg Kneeling Kickbacks",
+  "desc": "Kneeling on a bench with one leg, hinged forward, kicking a dumbbell straight back",
+  "names": [
+   "Single-leg Kneeling Kickbacks"
+  ]
+ },
+ {
+  "id": "gap-y006",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Sphinx",
+  "desc": "Lying face down propped up on the forearms, gentle backbend with forearms flat on the floor",
+  "names": [
+   "Sphinx"
+  ]
+ },
+ {
+  "id": "new-103",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Squat swings",
+  "desc": "Bodyweight squat with an arm swing for momentum/balance",
+  "names": [
+   "Squat swings"
+  ]
+ },
+ {
+  "id": "new-110",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Standing Figure-4 Glute Stretch (hold car or cart)",
+  "desc": "Standing, ankle crossed over the opposite knee, holding a support for balance while sitting the hips back",
+  "names": [
+   "Standing Figure-4 Glute Stretch (hold car or cart)"
+  ]
+ },
+ {
+  "id": "new-118",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Superman hold (3 s)",
+  "desc": "Lying face down, raising both arms and both legs off the floor at once and holding",
+  "names": [
+   "Superman hold (3 s)"
+  ]
+ },
+ {
+  "id": "new-121",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Teaser Prep (one leg)",
+  "desc": "Teaser prep: one leg extended on the floor, the other lifted, rolling up partway toward the V-sit",
+  "names": [
+   "Teaser Prep (one leg)"
+  ]
+ },
+ {
+  "id": "gap-n020",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Toy Soldier (alternating heel & arm)",
+  "desc": "Walking forward, kicking one straight leg up toward the opposite hand while the other arm swings back, alternating sides",
+  "names": [
+   "Toy Soldier (alternating heel & arm)"
+  ]
+ },
+ {
+  "id": "new-126",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Waiter farmer carry (dumbbell)",
+  "desc": "Walking while balancing a dumbbell overhead on an open palm like a waiter",
+  "names": [
+   "Waiter farmer carry (dumbbell)"
+  ]
+ },
+ {
+  "id": "gap-y026",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Warrior 3",
+  "desc": "Standing on one leg, torso and extended arms parallel to the floor, the back leg lifted straight behind in line with the torso",
+  "names": [
+   "Warrior 3"
+  ]
+ },
+ {
+  "id": "defect-barbell-shrug",
+  "src": "queue",
+  "equip": "barbell",
+  "name": "Barbell Shrug",
+  "desc": "Standing tall holding a loaded barbell at arms length in front of the thighs; panel 1 shoulders relaxed and low, panel 2 shoulders shrugged straight up toward the ears as high as possible, clearly elevated",
+  "names": [
+   "Barbell Shrug"
+  ]
+ },
+ {
+  "id": "gap-n015",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Open Book",
+  "desc": "Lying on one side, knees bent and stacked, top arm sweeping open from the floor in front up and over like opening a book",
+  "names": [
+   "Open Book",
+   "Open Book (side-lying T-spine rotation)",
+   "Open Books (T-spine rotation)",
+   "Open-book thoracic rotation",
+   "T-spine rotation + band",
+   "Thoracic Open Book",
+   "Thoracic rotation in side-lying (open book)"
+  ]
+ },
+ {
+  "id": "gap-n012",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Couch stretch",
+  "desc": "Kneeling in a deep lunge with the rear foot propped up on a wall or bench behind the body, hips sunk forward",
+  "names": [
+   "Couch stretch",
+   "Couch stretch (hip flexor/quad)",
+   "Couch stretch (quads/hip flexors)",
+   "Couch Stretch (rear foot on wall)"
+  ]
+ },
+ {
+  "id": "existing-038",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Dead Bug",
+  "desc": "Lying on the back, extending one arm and the opposite leg while bracing the core",
+  "names": [
+   "Dead Bug",
+   "Dead Bug with Reach",
+   "Deadbugs"
+  ]
+ },
+ {
+  "id": "new-050",
+  "src": "queue",
+  "equip": "other-named",
+  "name": "Jefferson Curl",
+  "desc": "Standing on a box holding a light bar or plate, slowly rounding the spine down vertebra by vertebra",
+  "names": [
+   "Jefferson Curl",
+   "Jefferson Curl (light)",
+   "Jefferson Curl (weeks 7+)"
+  ]
+ },
+ {
+  "id": "new-040",
+  "src": "queue",
+  "equip": "machine",
+  "name": "Glute-ham Raise or Leg Curl",
+  "desc": "Ankles anchored on a glute-ham developer, hinging the body down from the knees and curling back up",
+  "names": [
+   "Glute-ham Raise or Leg Curl",
+   "Glute-ham Raise or Lying Leg Curl"
+  ]
+ },
+ {
+  "id": "new-111",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Knee Curl (standing)",
+  "desc": "Standing, curling one heel up toward the glute (an ankle weight is optional, not required)",
+  "names": [
+   "Knee Curl (standing)",
+   "Knee Curl (standing, ankle weights)"
+  ]
+ },
+ {
+  "id": "existing-025",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Russian Twist",
+  "desc": "Seated, leaning back slightly, rotating the torso side to side",
+  "names": [
+   "Russian Twist",
+   "Russian twists"
+  ]
+ },
+ {
+  "id": "gap-n017",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Supine hamstring floss",
+  "desc": "Lying on the back, one leg raised straight with a strap or towel around the foot, gently sliding the ankle to glide tension along the back of the leg",
+  "names": [
+   "Supine hamstring floss",
+   "Supine hamstring floss with strap or towel"
+  ]
+ },
+ {
+  "id": "new-010",
+  "src": "queue",
+  "equip": "band",
+  "name": "Bird-Dog Row (band)",
+  "desc": "On hands and knees, rowing a band with one arm while extending the opposite leg back",
+  "names": [
+   "Bird-Dog Row (band)"
+  ]
+ },
+ {
+  "id": "gap-n007",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Bounding",
+  "desc": "Running with an exaggerated, powerful stride and extended air time, driving the knee high and the opposite arm forward",
+  "names": [
+   "Bounding"
+  ]
+ },
+ {
+  "id": "new-022",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Crescent Lunge",
+  "desc": "Yoga crescent lunge: front knee bent, back leg straight behind, torso upright, arms reaching overhead",
+  "names": [
+   "Crescent Lunge"
+  ]
+ },
+ {
+  "id": "gap-y008",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Dolphin Pose with walk-ins",
+  "desc": "Forearm-based Downward-Dog shape: forearms flat on the floor, hips lifted high, walking the feet in toward the forearms",
+  "names": [
+   "Dolphin Pose with walk-ins"
+  ]
+ },
+ {
+  "id": "new-030",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Dumbbell box step-over",
+  "desc": "Holding dumbbells, stepping up onto a box and continuing over to the other side",
+  "names": [
+   "Dumbbell box step-over"
+  ]
+ },
+ {
+  "id": "new-060",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Dumbbell Skull Crusher",
+  "desc": "Lying on a bench, lowering a dumbbell in each hand toward the head and extending back up",
+  "names": [
+   "Dumbbell Skull Crusher"
+  ]
+ },
+ {
+  "id": "new-034",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Fire hydrants",
+  "desc": "On hands and knees, lifting one bent knee out to the side like a dog at a fire hydrant",
+  "names": [
+   "Fire hydrants"
+  ]
+ },
+ {
+  "id": "gap-y016",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Half Moon",
+  "desc": "Standing on one leg with a slight side-bend, torso and raised-leg reaching, hand on the hip or extended overhead",
+  "names": [
+   "Half Moon"
+  ]
+ },
+ {
+  "id": "new-053",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Knee-to-Chest Tuck",
+  "desc": "Lying on the back, pulling both knees in to the chest",
+  "names": [
+   "Knee-to-Chest Tuck"
+  ]
+ },
+ {
+  "id": "existing-096",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Lateral Shuffle",
+  "desc": "Low athletic stance, shuffling sideways",
+  "names": [
+   "Lateral Shuffle"
+  ]
+ },
+ {
+  "id": "new-063",
+  "src": "queue",
+  "equip": "other-named",
+  "name": "Med-ball overhead throw backwards",
+  "desc": "Holding a medicine ball overhead, throwing it backward over the head",
+  "names": [
+   "Med-ball overhead throw backwards"
+  ]
+ },
+ {
+  "id": "gap-n028",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Pancake with PNF contract-relax",
+  "desc": "Seated with legs spread wide into a straddle, folding forward over one leg with a brief muscle-contraction pause before relaxing deeper into the stretch",
+  "names": [
+   "Pancake with PNF contract-relax"
+  ]
+ },
+ {
+  "id": "new-070",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Planche Lean / Tuck Planche",
+  "desc": "Face down, body horizontal over the hands with shoulders past the wrists, legs tucked or leaning forward (planche progression)",
+  "names": [
+   "Planche Lean / Tuck Planche"
+  ]
+ },
+ {
+  "id": "new-079",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Reverse Nordic",
+  "desc": "Kneeling with ankles anchored, leaning the torso backward from the knees and returning to upright",
+  "names": [
+   "Reverse Nordic"
+  ]
+ },
+ {
+  "id": "new-081",
+  "src": "queue",
+  "equip": "other-named",
+  "name": "Ring Body Saw or Fallout",
+  "desc": "Plank position gripping a Pilates ring, sliding the body forward and back",
+  "names": [
+   "Ring Body Saw or Fallout"
+  ]
+ },
+ {
+  "id": "new-084",
+  "src": "queue",
+  "equip": "other-named",
+  "name": "Roll Over Prep (on ball)",
+  "desc": "Lying on the back with a stability ball held between the feet, lifting the ball up and over toward the head",
+  "names": [
+   "Roll Over Prep (on ball)"
+  ]
+ },
+ {
+  "id": "new-086",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Running man single-leg squat (2-2 tempo, 10 s between sets)",
+  "desc": "Dynamic single-leg squat with the free leg reaching back like a sprinter's stride",
+  "names": [
+   "Running man single-leg squat (2-2 tempo, 10 s between sets)"
+  ]
+ },
+ {
+  "id": "new-089",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Scissors",
+  "desc": "Lying on the back with legs up, alternately scissoring one leg toward the chest",
+  "names": [
+   "Scissors"
+  ]
+ },
+ {
+  "id": "new-004",
+  "src": "queue",
+  "equip": "band",
+  "name": "Seated Band Leg Press (band around foot)",
+  "desc": "Seated, a band looped around one foot, pressing that leg straight out",
+  "names": [
+   "Seated Band Leg Press (band around foot)"
+  ]
+ },
+ {
+  "id": "new-092",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Side Crow Prep (twisted squat)",
+  "desc": "Yoga side-crow prep: twisted squat leaning the torso toward one knee, hands planted on the floor",
+  "names": [
+   "Side Crow Prep (twisted squat)"
+  ]
+ },
+ {
+  "id": "new-094",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Sideways roll - from squatting position",
+  "desc": "Rolling sideways onto the floor starting from a squat position",
+  "names": [
+   "Sideways roll - from squatting position"
+  ]
+ },
+ {
+  "id": "new-096",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Single-leg Prisoner Squat from bed or chair",
+  "desc": "Single-leg sit-to-stand from a chair/bed with the hands held behind the head",
+  "names": [
+   "Single-leg Prisoner Squat from bed or chair"
+  ]
+ },
+ {
+  "id": "new-102",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Spiderman lunge",
+  "desc": "Low lunge with the same-side hand reaching to the inside of the front foot and the torso rotating open",
+  "names": [
+   "Spiderman lunge"
+  ]
+ },
+ {
+  "id": "new-106",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Squat thrusts",
+  "desc": "From standing, squat down, place hands on the floor, kick both feet back to a plank, then return to standing (no push-up or jump)",
+  "names": [
+   "Squat thrusts"
+  ]
+ },
+ {
+  "id": "new-117",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Station 1: Sumo Squat",
+  "desc": "Wide stance squat with the toes turned out",
+  "names": [
+   "Station 1: Sumo Squat"
+  ]
+ },
+ {
+  "id": "gap-n018",
+  "src": "queue",
+  "equip": "foam roller",
+  "name": "T-spine Extension over Foam Roller",
+  "desc": "Lying back over a foam roller placed across the upper back, hands behind the head, extending the upper back over the roller",
+  "names": [
+   "T-spine Extension over Foam Roller"
+  ]
+ },
+ {
+  "id": "gap-y027",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Thread the Needle",
+  "desc": "Kneeling on all fours, one arm threaded under the body and the shoulder lowered to the floor",
+  "names": [
+   "Thread the Needle"
+  ]
+ },
+ {
+  "id": "gap-y020",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Triangle Pose",
+  "desc": "Standing with feet wide, front leg straight, torso folded sideways over the front leg with one hand reaching toward the floor and the other extended up",
+  "names": [
+   "Triangle Pose"
+  ]
+ },
+ {
+  "id": "gap-n022",
+  "src": "queue",
+  "equip": "wall",
+  "name": "Wall Walk",
+  "desc": "Starting in a push-up position with the feet against a wall, walking the feet up the wall while walking the hands in, toward a vertical handstand",
+  "names": [
+   "Wall Walk"
+  ]
+ },
+ {
+  "id": "gap-n013",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "World's Greatest Stretch",
+  "desc": "Deep lunge with the trailing hand on the floor, rotating the torso and reaching the other arm up toward the ceiling, then folding forward over the front leg into a hamstring stretch",
+  "names": [
+   "World's Greatest Stretch"
+  ]
+ },
+ {
+  "id": "defect-standing-barbell-calf-raise",
+  "src": "queue",
+  "equip": "barbell",
+  "name": "Standing Barbell Calf Raise",
+  "desc": "Standing with a barbell across the upper back, balls of the feet on a low step; panel 1 heels dropped below the step, panel 2 up high on the toes with heels clearly lifted well above the step",
+  "names": [
+   "Standing Barbell Calf Raise"
+  ]
+ },
+ {
+  "id": "existing-071",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Dip",
+  "desc": "Supported on parallel dip bars, lowering and pressing back up",
+  "names": [
+   "Dip",
+   "Dip (or Machine Dip)",
+   "Dip progression",
+   "Parallel Bar Dip",
+   "Ring Dip (band-assisted if needed)",
+   "Weighted Dip",
+   "Weighted Dip \u2013 back-off",
+   "Weighted Dip \u2013 top set",
+   "Weighted Ring Dip"
+  ]
+ },
+ {
+  "id": "existing-074",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Flutter kick + band",
+  "desc": "Lying on the back, legs straight, alternating small up-down kicks",
+  "names": [
+   "Flutter kick + band",
+   "Flutter Kicks"
+  ]
+ },
+ {
+  "id": "gap-n030",
+  "src": "queue",
+  "equip": "bodyweight",
+  "name": "Swan",
+  "desc": "Lying face down, lifting the chest and straight legs off the floor simultaneously into a prone backbend, arms extended forward or back",
+  "names": [
+   "Swan",
+   "Swan Dive",
+   "Swan Dive (2s hold)",
+   "Swan Prep",
+   "Swan Prep (prone chest lift)"
+  ]
+ },
+ {
+  "id": "new-031",
+  "src": "queue",
+  "equip": "dumbbell",
+  "name": "Dumbbell Man-maker",
+  "desc": "Multi-step complex: push-up with a dumbbell row on each side, then a clean-and-press to standing",
+  "names": [
+   "Dumbbell Man-maker"
+  ]
+ },
+ {
+  "id": "nv-adductor-ball-squeeze",
+  "src": "review",
+  "equip": "small ball",
+  "desc": "Lying on the back, knees bent, feet flat, squeezing a soft ball between the knees (isometric adductor squeeze)",
+  "names": [
+   "Adductor ball squeeze, knees bent (5 s hold)",
+   "Ball Squeeze between knees (5s)",
+   "Ball squeeze, knees bent (2-2-2 tempo)",
+   "Ball squeeze, knees bent (2-2-2 tempo, 5 s rest)"
+  ],
+  "name": "Adductor ball squeeze, knees bent (5 s hold)"
+ },
+ {
+  "id": "nv-adductor-rockback",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Half-kneeling (or on all fours) with one leg extended straight out to the side, foot flat, rocking the hips back to stretch that inner thigh",
+  "names": [
+   "Adductor rock-back (half kneeling)"
+  ],
+  "name": "Adductor rock-back (half kneeling)"
+ },
+ {
+  "id": "nv-band-ankle-circles",
+  "src": "review",
+  "equip": "band",
+  "desc": "Seated, band looped around the forefoot, circling the ankle against the band",
+  "names": [
+   "Ankle circles + band"
+  ],
+  "name": "Ankle circles + band"
+ },
+ {
+  "id": "nv-ankle-driver-hold",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "UNDEFINED in source (mobility block, 5 s hold) - likely half-kneeling knee-over-toe ankle drive with a hold; confirm before drawing",
+  "names": [
+   "Ankle driver (5s hold)"
+  ],
+  "name": "Ankle driver (5s hold)"
+ },
+ {
+  "id": "nv-ankle-press-hold",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "UNDEFINED in source (mobility block, 5 s hold) - likely isometric ankle press; confirm before drawing",
+  "names": [
+   "Ankle press (5s hold)"
+  ],
+  "name": "Ankle press (5s hold)"
+ },
+ {
+  "id": "nv-ankle-rocks",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Half-kneeling or split stance facing a wall, heel down, rocking the front knee forward toward the wall over the toes and back (knee-to-wall ankle mobility)",
+  "names": [
+   "Ankle Rocks (knee over toes)",
+   "Knee-to-wall ankle mobilisation",
+   "Knee-to-wall ankle mobility",
+   "Knee-to-wall Ankle Rockers"
+  ],
+  "name": "Ankle Rocks (knee over toes)"
+ },
+ {
+  "id": "nv-ankle-point-flex",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated with the leg extended (or raised), alternately pointing the toes away and pulling them back toward the shin",
+  "names": [
+   "Ankle Stretch (point and flex)",
+   "Ankle Stretch (point and flex, leg raised)",
+   "Seated Ankle Stretch (toes up, toes away)"
+  ],
+  "name": "Ankle Stretch (point and flex)"
+ },
+ {
+  "id": "nv-archer-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Very wide hand placement, lowering the chest toward one hand while the other arm straightens out to the side",
+  "names": [
+   "Archer or Decline Push-up",
+   "Archer Push-up"
+  ],
+  "name": "Archer or Decline Push-up"
+ },
+ {
+  "id": "nv-archer-pullup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Wide-grip hang, pulling up toward one hand while the other arm stays nearly straight along the bar",
+  "names": [
+   "Archer Pull-up"
+  ],
+  "name": "Archer Pull-up"
+ },
+ {
+  "id": "nv-tandem-stance",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing heel-to-toe (one foot directly in front of the other), lightly holding a bench/chair for balance",
+  "names": [
+   "Balance: heel-to-toe stand, hold bench",
+   "Tandem (heel-to-toe) Stand (hold bench)"
+  ],
+  "name": "Balance: heel-to-toe stand, hold bench"
+ },
+ {
+  "id": "nv-band-bentover-row",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing on a band, hinged forward at the hips, rowing the band handles to the torso",
+  "names": [
+   "Band Bent-over Row",
+   "Hinge and elbow pull (band)",
+   "Hinge elbow pull + band"
+  ],
+  "name": "Band Bent-over Row"
+ },
+ {
+  "id": "nv-band-curl",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing on a band, curling the handles up to the shoulders",
+  "names": [
+   "Band Biceps Curl",
+   "Band Curl"
+  ],
+  "name": "Band Biceps Curl"
+ },
+ {
+  "id": "nv-band-bss",
+  "src": "review",
+  "equip": "band",
+  "desc": "Bulgarian split squat (rear foot on a bench) with a band under the front foot, handles held at the shoulders",
+  "names": [
+   "Band Bulgarian Split Squat"
+  ],
+  "name": "Band Bulgarian Split Squat"
+ },
+ {
+  "id": "nv-band-woodchop-high-low",
+  "src": "review",
+  "equip": "band",
+  "desc": "Band anchored high to one side, pulling diagonally down and across the body like chopping wood",
+  "names": [
+   "Band chop (high to low)",
+   "Band Woodchop"
+  ],
+  "name": "Band chop (high to low)"
+ },
+ {
+  "id": "nv-band-lift-low-high",
+  "src": "review",
+  "equip": "band",
+  "desc": "Band anchored low to one side, pulling diagonally up and across the body to above the opposite shoulder",
+  "names": [
+   "Band diagonal pattern (low to high)"
+  ],
+  "name": "Band diagonal pattern (low to high)"
+ },
+ {
+  "id": "nv-band-finger-extension",
+  "src": "review",
+  "equip": "band",
+  "desc": "Rubber band looped around the fingertips, spreading the fingers open against the band",
+  "names": [
+   "Band finger extension"
+  ],
+  "name": "Band finger extension"
+ },
+ {
+  "id": "nv-pilates-band-footwork",
+  "src": "review",
+  "equip": "band",
+  "desc": "Lying on the back, legs raised, band looped around the balls of the feet, bending the knees in and pressing the legs straight (one or both legs)",
+  "names": [
+   "Band Footwork (lying, band around feet)",
+   "Band Footwork (single leg)"
+  ],
+  "name": "Band Footwork (lying, band around feet)"
+ },
+ {
+  "id": "nv-pilates-band-frog",
+  "src": "review",
+  "equip": "band",
+  "desc": "Lying on the back, band around the feet, heels together and knees bent wide (frog), pressing the legs out straight on a diagonal and back",
+  "names": [
+   "Band Frog"
+  ],
+  "name": "Band Frog"
+ },
+ {
+  "id": "nv-band-squat",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing on a band with the handles held at the shoulders, squatting down and standing up",
+  "names": [
+   "Band Front Squat",
+   "Band Squat",
+   "Band Squat (standing on band)"
+  ],
+  "name": "Band Front Squat"
+ },
+ {
+  "id": "nv-band-lateral-raise",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing on a band, raising the arms out to the sides to shoulder height",
+  "names": [
+   "Band Lateral Raise"
+  ],
+  "name": "Band Lateral Raise"
+ },
+ {
+  "id": "nv-pilates-band-leg-circles",
+  "src": "review",
+  "equip": "band",
+  "desc": "Lying on the back, band looped around one raised foot, tracing circles with the straight leg",
+  "names": [
+   "Band Leg Circles",
+   "Single Leg Circles (with band)"
+  ],
+  "name": "Band Leg Circles"
+ },
+ {
+  "id": "nv-pilates-prone-pulling-straps",
+  "src": "review",
+  "equip": "band",
+  "desc": "Lying face down on a long box/bench, arms reaching forward holding band ends, pulling straight arms back alongside the body while lifting the chest",
+  "names": [
+   "Band Long Box Pulling Straps (prone)"
+  ],
+  "name": "Band Long Box Pulling Straps (prone)"
+ },
+ {
+  "id": "nv-pilates-mermaid",
+  "src": "review",
+  "equip": "band",
+  "desc": "Seated with the legs folded to one side (side-sit), one arm reaching overhead (holding a band) and bending the torso sideways",
+  "names": [
+   "Band Mermaid",
+   "Band Mermaid Stretch"
+  ],
+  "name": "Band Mermaid"
+ },
+ {
+  "id": "nv-band-ohp",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing or seated on a band, pressing the handles from the shoulders straight overhead (one or both arms)",
+  "names": [
+   "Band Overhead Press",
+   "Seated Band Overhead Press"
+  ],
+  "name": "Band Overhead Press"
+ },
+ {
+  "id": "nv-band-oh-triceps",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing on a band, hands behind the head, extending the elbows to press the band overhead",
+  "names": [
+   "Band Overhead Triceps Extension"
+  ],
+  "name": "Band Overhead Triceps Extension"
+ },
+ {
+  "id": "nv-band-pallof",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing side-on to an anchored band, pressing the handle straight out from the chest and resisting rotation",
+  "names": [
+   "Band Pallof Press",
+   "Standing Pallof Press with band"
+  ],
+  "name": "Band Pallof Press"
+ },
+ {
+  "id": "nv-band-rdl",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing on a band holding the handles, hip hinge with minimal knee bend and standing back up",
+  "names": [
+   "Band Romanian Deadlift"
+  ],
+  "name": "Band Romanian Deadlift"
+ },
+ {
+  "id": "nv-band-anchored-row",
+  "src": "review",
+  "equip": "band",
+  "desc": "Band anchored in front at chest height (door anchor), standing or seated, rowing the handles back to the torso (one or both arms)",
+  "names": [
+   "Band Row",
+   "Band Row (door anchor or seated)",
+   "Band Row (door anchor)",
+   "Band Rowing Series",
+   "Band Single-arm Row (1s pause)",
+   "Banded rows",
+   "Step-back banded row"
+  ],
+  "name": "Band Row"
+ },
+ {
+  "id": "nv-pilates-band-semicircle",
+  "src": "review",
+  "equip": "band",
+  "desc": "Pilates semi-circle with a band: lying in a bridge, band around the feet, lowering and rolling the spine through a circle - confirm set-up",
+  "names": [
+   "Band Semi-circle (bridge with band)"
+  ],
+  "name": "Band Semi-circle (bridge with band)"
+ },
+ {
+  "id": "nv-band-assisted-pullup",
+  "src": "review",
+  "equip": "band",
+  "desc": "Pull-up with a resistance band looped over the bar and under one knee/foot for assistance",
+  "names": [
+   "Band-assisted Pull-up"
+  ],
+  "name": "Band-assisted Pull-up"
+ },
+ {
+  "id": "nv-barbell-curl",
+  "src": "review",
+  "equip": "barbell",
+  "desc": "Standing, curling a barbell/EZ-bar from the thighs up to the shoulders",
+  "names": [
+   "Barbell Curl",
+   "Cambered Bar Curl",
+   "EZ-bar Curl"
+  ],
+  "name": "Barbell Curl"
+ },
+ {
+  "id": "nv-barbell-forward-lunge",
+  "src": "review",
+  "equip": "barbell",
+  "desc": "Barbell on the back, stepping forward into a lunge and pushing back to standing",
+  "names": [
+   "Barbell Lunge"
+  ],
+  "name": "Barbell Lunge"
+ },
+ {
+  "id": "nv-preacher-curl",
+  "src": "review",
+  "equip": "barbell",
+  "desc": "Seated at a preacher bench, upper arms on the pad, curling a barbell/EZ-bar up",
+  "names": [
+   "Barbell Preacher Curl",
+   "Cambered Bar Preacher Curl"
+  ],
+  "name": "Barbell Preacher Curl"
+ },
+ {
+  "id": "nv-db-bentover-row",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Bent over at the hips, rowing a dumbbell in each hand to the torso",
+  "names": [
+   "Bent-over Dumbbell Row",
+   "Dumbbell Bent-over Row",
+   "Dumbbell Bent-over Row (both arms)"
+  ],
+  "name": "Bent-over Dumbbell Row"
+ },
+ {
+  "id": "nv-bw-calf-raise",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing bodyweight calf raise holding a chair/wall/bench for balance, rising onto the toes (both feet)",
+  "names": [
+   "Bilateral Calf Raise (holding support)",
+   "Calf raise (hold bench)",
+   "Calf Raise holding chair back",
+   "Calf Raises",
+   "Heel Raise",
+   "Heel Raise (hold bench)",
+   "Isometric calf raise hold (mid-range)",
+   "Standing Calf Raise (aisle or galley)",
+   "Standing Calf Raise (hold support)",
+   "Toe Stand (hold 2-4s at top)",
+   "Two-leg calf raise",
+   "Wall calf raise"
+  ],
+  "name": "Bilateral Calf Raise (holding support)"
+ },
+ {
+  "id": "nv-bridge-band-pullover",
+  "src": "review",
+  "equip": "band",
+  "desc": "Holding a glute bridge, band anchored behind the head, pulling straight arms from overhead down to the hips",
+  "names": [
+   "Bridge pullover + band"
+  ],
+  "name": "Bridge pullover + band"
+ },
+ {
+  "id": "nv-bulgarian-split-jump",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Rear foot on a bench, jumping explosively off the front leg (Bulgarian split-squat jump) - confirm 'side to side' version",
+  "names": [
+   "Bulgarian jumps",
+   "Bulgarian jumps side to side"
+  ],
+  "name": "Bulgarian jumps"
+ },
+ {
+  "id": "nv-burpee-side-roll",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Rolling sideways along the floor then coming up into a burpee - confirm",
+  "names": [
+   "Burpee side roll"
+  ],
+  "name": "Burpee side roll"
+ },
+ {
+  "id": "nv-cable-lateral-raise",
+  "src": "review",
+  "equip": "cable",
+  "desc": "Standing side-on to a low cable, raising the handle out to the side to shoulder height",
+  "names": [
+   "Cable Lateral Raise"
+  ],
+  "name": "Cable Lateral Raise"
+ },
+ {
+  "id": "nv-cable-rotation",
+  "src": "review",
+  "equip": "cable",
+  "desc": "Standing side-on to a chest-height cable or band, rotating the torso to pull the handle horizontally across the body",
+  "names": [
+   "Cable or Band Rotations (fast)"
+  ],
+  "name": "Cable or Band Rotations (fast)"
+ },
+ {
+  "id": "nv-cable-rdl",
+  "src": "review",
+  "equip": "cable",
+  "desc": "Facing a low cable, holding the handle/rope, hip hinge with minimal knee bend and standing back up",
+  "names": [
+   "Cable Romanian Deadlift"
+  ],
+  "name": "Cable Romanian Deadlift"
+ },
+ {
+  "id": "nv-single-leg-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Push-up with one foot lifted off the floor",
+  "names": [
+   "CD1: Single-leg Push-up"
+  ],
+  "name": "CD1: Single-leg Push-up"
+ },
+ {
+  "id": "nv-eight-count-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "8-count body-builder: squat, kick back to plank, push-up, jump feet out and in, back to squat, stand",
+  "names": [
+   "CD2: 8-count Push-up"
+  ],
+  "name": "CD2: 8-count Push-up"
+ },
+ {
+  "id": "nv-childs-pose-side-reach",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Child's pose with both hands walked over to one side to stretch the opposite side body",
+  "names": [
+   "Child's Pose with side reach"
+  ],
+  "name": "Child's Pose with side reach"
+ },
+ {
+  "id": "nv-close-grip-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Push-up with the hands close together under the chest, elbows tucked to the sides",
+  "names": [
+   "Close-grip Push-up"
+  ],
+  "name": "Close-grip Push-up"
+ },
+ {
+  "id": "nv-decline-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Push-up with the hands on the floor and the feet raised on a bench/chair/bed, lowering the chest to the floor",
+  "names": [
+   "Decline Push-up (feet on bed)",
+   "Decline Push-up (feet on chair)",
+   "Feet-elevated Push-up"
+  ],
+  "name": "Decline Push-up (feet on bed)"
+ },
+ {
+  "id": "nv-incline-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Push-up with the hands on a raised surface (bench/chair/desk/table/rail/step), body straight, lowering the chest to the edge",
+  "names": [
+   "Desk Push-up",
+   "Incline Push-up",
+   "Incline Push-up (bench or couch)",
+   "Incline Push-up (bench or wall)",
+   "Incline Push-up (hands on chair)",
+   "Incline Push-up (on a table)",
+   "Incline Push-up (or Decline Push-up, 5 x 10)",
+   "Incline Push-up (your level)",
+   "Incline Push-up on Bench",
+   "Incline Push-up on Desk",
+   "Kneeling Incline Push-up",
+   "Landing: Incline Push-up on Rail or Step"
+  ],
+  "name": "Desk Push-up"
+ },
+ {
+  "id": "nv-diamond-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Push-up with the hands together under the chest, thumbs and index fingers forming a diamond",
+  "names": [
+   "Diamond Push-up"
+  ],
+  "name": "Diamond Push-up"
+ },
+ {
+  "id": "nv-donkey-calf-raise",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Bent forward at the hips about 90 degrees, hands on a support, balls of the feet on a step, rising onto the toes",
+  "names": [
+   "Donkey Calf Raise"
+  ],
+  "name": "Donkey Calf Raise"
+ },
+ {
+  "id": "nv-pilates-double-leg-stretch",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Lying on the back, head and shoulders curled up hugging the knees, then extending arms overhead and legs out long and low, circling the arms back to hug the knees",
+  "names": [
+   "Double Leg Stretch",
+   "Double Leg Stretch (low levers)"
+  ],
+  "name": "Double Leg Stretch"
+ },
+ {
+  "id": "nv-db-bss",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Bulgarian split squat (rear foot on a bench) holding a dumbbell in each hand",
+  "names": [
+   "Dumbbell Bulgarian Split Squat",
+   "Dumbbell Bulgarian Split Squat (lean forward)"
+  ],
+  "name": "Dumbbell Bulgarian Split Squat"
+ },
+ {
+  "id": "nv-db-calf-raise",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Standing holding a dumbbell in each hand at the sides, rising onto the toes",
+  "names": [
+   "Dumbbell Calf Raise"
+  ],
+  "name": "Dumbbell Calf Raise"
+ },
+ {
+  "id": "nv-db-deadlift",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Standing with a dumbbell in each hand in front of the thighs/at the sides, bending hips and knees to lower them toward the floor and standing up",
+  "names": [
+   "Dumbbell deadlift"
+  ],
+  "name": "Dumbbell deadlift"
+ },
+ {
+  "id": "nv-db-front-squat",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Dumbbells held on the front of the shoulders, squatting down and standing up",
+  "names": [
+   "Dumbbell Front Squat"
+  ],
+  "name": "Dumbbell Front Squat"
+ },
+ {
+  "id": "nv-db-glute-bridge",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Lying on the back, knees bent, a dumbbell resting across the hips, driving the hips up into a bridge",
+  "names": [
+   "Dumbbell Glute Bridge (2s pause)"
+  ],
+  "name": "Dumbbell Glute Bridge (2s pause)"
+ },
+ {
+  "id": "nv-db-hang-clean",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Dumbbells hanging at the thighs, explosive hip extension pulling them up to catch on the shoulders",
+  "names": [
+   "Dumbbell Hang Clean"
+  ],
+  "name": "Dumbbell Hang Clean"
+ },
+ {
+  "id": "nv-db-push-press",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Dumbbells at the shoulders, a quick knee dip then driving up with the legs to press the dumbbells overhead",
+  "names": [
+   "Dumbbell Push Press"
+  ],
+  "name": "Dumbbell Push Press"
+ },
+ {
+  "id": "nv-db-rdl",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Holding a dumbbell in each hand in front of the thighs, hip hinge with minimal knee bend, lowering along the legs and standing up",
+  "names": [
+   "Dumbbell Romanian Deadlift"
+  ],
+  "name": "Dumbbell Romanian Deadlift"
+ },
+ {
+  "id": "nv-db-z-press",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Seated on the floor with the legs straight out in front, pressing dumbbells from the shoulders overhead",
+  "names": [
+   "EMOM min 1: dumbbell Z-press"
+  ],
+  "name": "EMOM min 1: dumbbell Z-press"
+ },
+ {
+  "id": "nv-kb-goblet-squat",
+  "src": "review",
+  "equip": "kettlebell",
+  "desc": "Holding a kettlebell by the horns at the chest, squatting down and standing up",
+  "names": [
+   "Even Minutes: Kettlebell Goblet Squat",
+   "Kettlebell Goblet Squat"
+  ],
+  "name": "Even Minutes: Kettlebell Goblet Squat"
+ },
+ {
+  "id": "nv-false-grip-hang",
+  "src": "review",
+  "equip": "rings",
+  "desc": "Hanging from gymnastic rings with the wrists bent over the rings (false grip), arms straight",
+  "names": [
+   "False-grip Hang"
+  ],
+  "name": "False-grip Hang"
+ },
+ {
+  "id": "nv-finger-marching",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "UNDEFINED in source (older-adult hand exercise, 3 movements) - likely touching each fingertip to the thumb / spreading fingers; confirm",
+  "names": [
+   "Finger Marching (3 movements, ~10s hold each)"
+  ],
+  "name": "Finger Marching (3 movements, ~10s hold each)"
+ },
+ {
+  "id": "nv-band-flutter-kick",
+  "src": "review",
+  "equip": "band",
+  "desc": "Flutter kick with a band around the ankles - confirm lying position (supine or prone swim-style)",
+  "names": [
+   "Flutter kick + band"
+  ],
+  "name": "Flutter kick + band"
+ },
+ {
+  "id": "nv-supine-bent-leg-raise",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Lying on the back, hands under the hips, raising the bent legs until the thighs are vertical and lowering to just off the floor (Army 4C bent-leg raise)",
+  "names": [
+   "Four for the Core: Bent-leg Raise"
+  ],
+  "name": "Four for the Core: Bent-leg Raise"
+ },
+ {
+  "id": "nv-half-kneeling-chop",
+  "src": "review",
+  "equip": "band",
+  "desc": "Half-kneeling side-on to a high band/cable anchor, pulling the handle diagonally down across the body",
+  "names": [
+   "Half-kneeling Band Chop",
+   "Half-kneeling or Seated Band Chop"
+  ],
+  "name": "Half-kneeling Band Chop"
+ },
+ {
+  "id": "nv-half-kneeling-lift",
+  "src": "review",
+  "equip": "cable",
+  "desc": "Half-kneeling side-on to a low cable, pulling the handle diagonally up across the body (low to high)",
+  "names": [
+   "Half-kneeling cable lift (low to high)"
+  ],
+  "name": "Half-kneeling cable lift (low to high)"
+ },
+ {
+  "id": "nv-hamstring-bridge-hold",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Lying on the back, heels on the floor with knees slightly bent, holding the hips up in a bridge (isometric hamstring hold, one or both legs) - confirm",
+  "names": [
+   "Hamstring holds",
+   "Single-leg hamstring holds"
+  ],
+  "name": "Hamstring holds"
+ },
+ {
+  "id": "nv-hamstring-pump",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "UNDEFINED in source (mobility block, 6/side) - confirm before drawing",
+  "names": [
+   "Hamstring pump"
+  ],
+  "name": "Hamstring pump"
+ },
+ {
+  "id": "nv-hamstring-walkout",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "From a glute bridge, walking the heels out step by step until the legs are nearly straight, then walking back in",
+  "names": [
+   "Hamstring walk-outs (bridge position)",
+   "Hamstring walkouts",
+   "Hamstring walkouts with end switches"
+  ],
+  "name": "Hamstring walk-outs (bridge position)"
+ },
+ {
+  "id": "nv-calf-raise-arms-overhead",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing bodyweight calf raise with both arms raised overhead, rising onto the toes",
+  "names": [
+   "Heel Raises with arm raise"
+  ],
+  "name": "Heel Raises with arm raise"
+ },
+ {
+  "id": "nv-high-step-rotation",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Marching with a high knee lift while rotating the torso toward the raised knee",
+  "names": [
+   "High Step with Trunk Rotation"
+  ],
+  "name": "High Step with Trunk Rotation"
+ },
+ {
+  "id": "nv-standing-high-knee-march",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing, marching on the spot powerfully, driving each knee to hip height with the opposite arm swinging",
+  "names": [
+   "High-knee Power March",
+   "Knee Lifts"
+  ],
+  "name": "High-knee Power March"
+ },
+ {
+  "id": "nv-pilates-hip-twist",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated leaning back on the hands, legs straight and raised together, circling the legs (Pilates hip twist with stretched arms)",
+  "names": [
+   "Hip Twist with Stretched Arms"
+  ],
+  "name": "Hip Twist with Stretched Arms"
+ },
+ {
+  "id": "nv-single-leg-hop-stick",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Hopping/jumping forward and landing on one leg, sticking the landing in a balanced half-squat and holding",
+  "names": [
+   "Hop and stick (land on the same leg, hold 3 s)",
+   "Hops forward as far as you can",
+   "Jump forward, land on one leg and stick",
+   "Single-leg hop to stick"
+  ],
+  "name": "Hop and stick (land on the same leg, hold 3 s)"
+ },
+ {
+  "id": "nv-hundred-modified",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Pilates Hundred with knees bent and feet on the floor, head and shoulders curled up, straight arms pumping by the hips",
+  "names": [
+   "Hundred (knees bent, feet down)"
+  ],
+  "name": "Hundred (knees bent, feet down)"
+ },
+ {
+  "id": "nv-band-i-raise",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing on a band, raising straight arms forward and up overhead into an 'I'",
+  "names": [
+   "I-raise + band"
+  ],
+  "name": "I-raise + band"
+ },
+ {
+  "id": "nv-inchworm-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "From standing, folding forward to place the hands down, walking the hands out to a plank, doing a push-up, walking back up",
+  "names": [
+   "Inchworm to push-up"
+  ],
+  "name": "Inchworm to push-up"
+ },
+ {
+  "id": "nv-bw-single-leg-hinge",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing on one leg, hinging forward with arms out and no weight, free leg extending straight back",
+  "names": [
+   "Inverted Hamstring",
+   "Single-leg Romanian deadlift (body weight or light)",
+   "Single-leg Romanian Deadlift (bodyweight)",
+   "Single-leg Romanian Deadlift (hand on wall)"
+  ],
+  "name": "Inverted Hamstring"
+ },
+ {
+  "id": "nv-lateral-jumps-two-foot",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Two-footed jumps side to side over about 1 m, landing softly on both feet",
+  "names": [
+   "Jumping - lateral jumps (about 1 m side to side)"
+  ],
+  "name": "Jumping - lateral jumps (about 1 m side to side)"
+ },
+ {
+  "id": "nv-kb-deadlift",
+  "src": "review",
+  "equip": "kettlebell",
+  "desc": "Standing over a kettlebell between the feet, hinging down to grip the handle and standing up",
+  "names": [
+   "Kettlebell Deadlift",
+   "Kettlebell Deadlift (practice)"
+  ],
+  "name": "Kettlebell Deadlift"
+ },
+ {
+  "id": "nv-kb-farmers-carry",
+  "src": "review",
+  "equip": "kettlebell",
+  "desc": "Walking while carrying a kettlebell in each hand at the sides",
+  "names": [
+   "Kettlebell farmers carry, max distance in the time left"
+  ],
+  "name": "Kettlebell farmers carry, max distance in the time left"
+ },
+ {
+  "id": "nv-kb-floor-press",
+  "src": "review",
+  "equip": "kettlebell",
+  "desc": "Lying on the floor, pressing a kettlebell (one or two) up from the chest, upper arms touching the floor at the bottom",
+  "names": [
+   "Kettlebell Floor Press"
+  ],
+  "name": "Kettlebell Floor Press"
+ },
+ {
+  "id": "nv-pilates-band-knee-stretch",
+  "src": "review",
+  "equip": "band",
+  "desc": "Kneeling on all fours, band around the feet anchored behind, pushing the knees back and drawing them in (Pilates knee stretches)",
+  "names": [
+   "Knee Stretches (band behind, kneeling)"
+  ],
+  "name": "Knee Stretches (band behind, kneeling)"
+ },
+ {
+  "id": "nv-kneeling-er-press",
+  "src": "review",
+  "equip": "band",
+  "desc": "Half-kneeling with a band, rotating the forearm out (external rotation) then pressing the hand overhead",
+  "names": [
+   "Kneeling external rotation + press"
+  ],
+  "name": "Kneeling external rotation + press"
+ },
+ {
+  "id": "nv-kneeling-lat-stretch-bench",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Kneeling facing a bench, elbows on the bench, sinking the chest and head down toward the floor",
+  "names": [
+   "Kneeling Lat Stretch (elbows on bench)"
+  ],
+  "name": "Kneeling Lat Stretch (elbows on bench)"
+ },
+ {
+  "id": "nv-supine-leg-open-close",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Lying on the back, both straight legs held about 15 cm off the floor, opening them apart and closing them",
+  "names": [
+   "Leg hold 15 cm off floor, open and close"
+  ],
+  "name": "Leg hold 15 cm off floor, open and close"
+ },
+ {
+  "id": "nv-pilates-band-long-stretch",
+  "src": "review",
+  "equip": "band",
+  "desc": "Straight-arm plank with a band, shifting the body forward and back over the hands (Pilates long stretch) - confirm band set-up",
+  "names": [
+   "Long Stretch Plank with band press"
+  ],
+  "name": "Long Stretch Plank with band press"
+ },
+ {
+  "id": "nv-lunge-kb-pass-under",
+  "src": "review",
+  "equip": "kettlebell",
+  "desc": "Static lunge, passing a kettlebell under the front thigh from hand to hand",
+  "names": [
+   "Lunge kettlebell under-swings (left)",
+   "Lunge kettlebell under-swings (right)"
+  ],
+  "name": "Lunge kettlebell under-swings (left)"
+ },
+ {
+  "id": "nv-machine-crunch",
+  "src": "review",
+  "equip": "machine",
+  "desc": "Seated in an ab-crunch machine, crunching the torso forward against the pads",
+  "names": [
+   "Machine Crunch"
+  ],
+  "name": "Machine Crunch"
+ },
+ {
+  "id": "nv-medball-pushup",
+  "src": "review",
+  "equip": "medicine ball",
+  "desc": "Push-up with one hand on a medicine ball, rolling the ball to the other hand between reps",
+  "names": [
+   "Med ball push-ups, swap hands"
+  ],
+  "name": "Med ball push-ups, swap hands"
+ },
+ {
+  "id": "nv-neck-half-circles",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated or standing, rolling the head in a half circle from one shoulder, chin down past the chest, to the other shoulder",
+  "names": [
+   "Neck Half-circles"
+  ],
+  "name": "Neck Half-circles"
+ },
+ {
+  "id": "nv-cable-oh-triceps",
+  "src": "review",
+  "equip": "cable",
+  "desc": "Facing away from a cable, rope held behind the head, extending the elbows to press the rope forward/overhead",
+  "names": [
+   "Overhead Cable Triceps Extension",
+   "Overhead Rope Triceps Extension"
+  ],
+  "name": "Overhead Cable Triceps Extension"
+ },
+ {
+  "id": "nv-db-standing-ohp",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Standing, pressing a dumbbell in each hand from the shoulders straight overhead",
+  "names": [
+   "Overhead Dumbbell Press"
+  ],
+  "name": "Overhead Dumbbell Press"
+ },
+ {
+  "id": "nv-pike-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Hips high in an inverted V, bending the elbows to lower the head toward the floor between the hands and pressing back up (feet may be elevated)",
+  "names": [
+   "Pike Push-up",
+   "Pike Push-up (feet elevated as you progress)"
+  ],
+  "name": "Pike Push-up"
+ },
+ {
+  "id": "nv-band-plank-reach",
+  "src": "review",
+  "equip": "band",
+  "desc": "Straight-arm plank, reaching one arm forward against a band - confirm set-up",
+  "names": [
+   "Plank + reach + band"
+  ],
+  "name": "Plank + reach + band"
+ },
+ {
+  "id": "nv-band-plank-wide-pull",
+  "src": "review",
+  "equip": "band",
+  "desc": "Straight-arm plank, pulling a band out wide to the side with one arm - confirm set-up",
+  "names": [
+   "Plank wide pull + band"
+  ],
+  "name": "Plank wide pull + band"
+ },
+ {
+  "id": "nv-plyo-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Explosive push-up, pressing hard so the hands leave the floor (or bench) at the top",
+  "names": [
+   "Plyo bench push-ups",
+   "Plyo push-up",
+   "Plyometric Push-up",
+   "Plyometric Push-ups"
+  ],
+  "name": "Plyo bench push-ups"
+ },
+ {
+  "id": "nv-prone-ball-roll",
+  "src": "review",
+  "equip": "stability ball",
+  "desc": "Lying face down over a stability ball, rolling forward onto the hands and lifting the chest (Pilates swan prep)",
+  "names": [
+   "Prone Ball Roll (swan prep)"
+  ],
+  "name": "Prone Ball Roll (swan prep)"
+ },
+ {
+  "id": "nv-pushup-plus",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Push-up, then at the top pushing the floor further away to round the upper back (extra shoulder-blade protraction)",
+  "names": [
+   "Push-up plus",
+   "Push-up plus (extra shoulder-blade push at the top)"
+  ],
+  "name": "Push-up plus"
+ },
+ {
+  "id": "nv-banded-pushup",
+  "src": "review",
+  "equip": "band",
+  "desc": "Push-up with a resistance band across the upper back, ends pinned under the hands",
+  "names": [
+   "Push-up with Band Across Back"
+  ],
+  "name": "Push-up with Band Across Back"
+ },
+ {
+  "id": "nv-pushup-rotation",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Push-up, then rotating into a side plank with the top arm reaching straight up, alternating sides",
+  "names": [
+   "Push-up with Rotation"
+  ],
+  "name": "Push-up with Rotation"
+ },
+ {
+  "id": "nv-reverse-skip-hip-rotation",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Skipping backward, opening each knee out to the side (hip rotation) on each skip",
+  "names": [
+   "Reverse Skip with Hip Rotation"
+  ],
+  "name": "Reverse Skip with Hip Rotation"
+ },
+ {
+  "id": "nv-ring-pushup",
+  "src": "review",
+  "equip": "rings",
+  "desc": "Push-up with the hands on gymnastic rings near the floor",
+  "names": [
+   "Ring Push-up"
+  ],
+  "name": "Ring Push-up"
+ },
+ {
+  "id": "nv-scapular-pullup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Hanging from a bar with straight arms, pulling the shoulder blades down and back to lift the body slightly without bending the elbows",
+  "names": [
+   "Scapular Pull-up"
+  ],
+  "name": "Scapular Pull-up"
+ },
+ {
+  "id": "nv-band-seated-row",
+  "src": "review",
+  "equip": "band",
+  "desc": "Seated on the floor, legs extended, band looped around the feet, rowing the handles back to the torso",
+  "names": [
+   "Seated Band Row",
+   "Seated Band Rowing"
+  ],
+  "name": "Seated Band Row"
+ },
+ {
+  "id": "nv-seated-ezbar-oh-triceps",
+  "src": "review",
+  "equip": "barbell",
+  "desc": "Seated, lowering an EZ/cambered bar behind the head and extending the elbows overhead",
+  "names": [
+   "Seated Cambered Bar Triceps Extension"
+  ],
+  "name": "Seated Cambered Bar Triceps Extension"
+ },
+ {
+  "id": "nv-seated-hip-ir-lifts",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated on the floor in a 90/90 position, lifting the back shin/foot off the floor (hip internal rotation lift)",
+  "names": [
+   "Seated Hip Internal Rotation Lifts"
+  ],
+  "name": "Seated Hip Internal Rotation Lifts"
+ },
+ {
+  "id": "nv-seated-knee-hug",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated on a chair, hugging one knee up toward the chest",
+  "names": [
+   "Seated Knee Hug"
+  ],
+  "name": "Seated Knee Hug"
+ },
+ {
+  "id": "nv-pike-compression-lift",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated with the legs straight together, hands on the floor beside the knees, lifting both legs off the floor",
+  "names": [
+   "Seated Pike Compression Lifts",
+   "Seated Pike Leg Lift (compression)"
+  ],
+  "name": "Seated Pike Compression Lifts"
+ },
+ {
+  "id": "nv-quad-set",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated or lying with one leg straight, tightening the thigh to press the back of the knee down and hold",
+  "names": [
+   "Seated thigh contraction (hold)"
+  ],
+  "name": "Seated thigh contraction (hold)"
+ },
+ {
+  "id": "nv-side-lying-glute-stretch",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Lying on one side, drawing the top knee up toward the chest to stretch the glute - confirm",
+  "names": [
+   "Side-lying Gluteal Stretch"
+  ],
+  "name": "Side-lying Gluteal Stretch"
+ },
+ {
+  "id": "nv-restorative-side-twist",
+  "src": "review",
+  "equip": "bolster",
+  "desc": "Lying on the side over a bolster with the knees bent, torso rotated chest-down onto the bolster (restorative supported twist)",
+  "names": [
+   "Side-lying Supported Twist"
+  ],
+  "name": "Side-lying Supported Twist"
+ },
+ {
+  "id": "nv-pilates-single-leg-kick",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Lying face down propped on the forearms, kicking one heel toward the glute (double pulse), alternating legs",
+  "names": [
+   "Single Leg Kicks"
+  ],
+  "name": "Single Leg Kicks"
+ },
+ {
+  "id": "nv-kb-single-arm-press",
+  "src": "review",
+  "equip": "kettlebell",
+  "desc": "Standing, pressing one kettlebell from the racked shoulder position straight overhead",
+  "names": [
+   "Single-arm Kettlebell Press"
+  ],
+  "name": "Single-arm Kettlebell Press"
+ },
+ {
+  "id": "nv-single-leg-calf-raise",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing on one leg (often on a step edge) holding a support, rising onto the toes and lowering (knee straight or slightly bent)",
+  "names": [
+   "Single-leg Calf Raise",
+   "Single-leg Calf Raise (bent & straight knee)",
+   "Single-leg calf raise (bent knee) on step",
+   "Single-leg Calf Raise (hold bench)",
+   "Single-leg calf raise (straight knee) on step",
+   "Single-leg calf raise off a step",
+   "Single-leg Calf Raise on Step",
+   "Single-leg heel raise (slight knee bend)",
+   "Single-leg heel raise (straight knee, hold bench)"
+  ],
+  "name": "Single-leg Calf Raise"
+ },
+ {
+  "id": "nv-single-leg-db-calf-raise",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Standing on one leg holding a dumbbell at the side, rising onto the toes",
+  "names": [
+   "Single-leg Dumbbell Calf Raise"
+  ],
+  "name": "Single-leg Dumbbell Calf Raise"
+ },
+ {
+  "id": "nv-sl-hamstring-bridge-elevated",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Lying on the back, one heel on a bench/ball, the other leg raised, driving the hips up into a single-leg bridge",
+  "names": [
+   "Single-leg hamstring bridge (foot on bench/ball)"
+  ],
+  "name": "Single-leg hamstring bridge (foot on bench/ball)"
+ },
+ {
+  "id": "nv-band-sl-hinge",
+  "src": "review",
+  "equip": "band",
+  "desc": "Single-leg hip hinge standing on a band holding the ends",
+  "names": [
+   "Single-leg hip hinge + band"
+  ],
+  "name": "Single-leg hip hinge + band"
+ },
+ {
+  "id": "nv-skater-step",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Stepping (not jumping) laterally from one leg to the other in a skater pattern, trailing leg sweeping behind",
+  "names": [
+   "Skater Step (no jump)",
+   "Speed Skater Step (no jump)"
+  ],
+  "name": "Skater Step (no jump)"
+ },
+ {
+  "id": "nv-spiderman-ball-bearing",
+  "src": "review",
+  "equip": "ball",
+  "desc": "UNDEFINED in source (kids football drill, 3-7 m) - on hands and feet with a ball rolled under the feet; confirm",
+  "names": [
+   "Spiderman - ball bearing (roll ball under feet)"
+  ],
+  "name": "Spiderman - ball bearing (roll ball under feet)"
+ },
+ {
+  "id": "nv-sprinter-calf-raise",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing on one leg with the other knee driven up to hip height (sprint posture), rising onto the toes of the standing leg",
+  "names": [
+   "Sprinter calf raise"
+  ],
+  "name": "Sprinter calf raise"
+ },
+ {
+  "id": "nv-squat-to-stand-mobility",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Holding the toes in a deep squat, then straightening the legs into a hamstring stretch while keeping hold, lifting the chest",
+  "names": [
+   "Squat-to-stand"
+  ],
+  "name": "Squat-to-stand"
+ },
+ {
+  "id": "nv-band-staggered-rdl",
+  "src": "review",
+  "equip": "band",
+  "desc": "Staggered (kickstand) stance standing on a band, hip hinge with the back foot on its toes",
+  "names": [
+   "Staggered RDL + band"
+  ],
+  "name": "Staggered RDL + band"
+ },
+ {
+  "id": "nv-band-standing-march",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing with a mini band around the feet, marching one knee up to hip height against the band",
+  "names": [
+   "Standing hip flexor march with band"
+  ],
+  "name": "Standing hip flexor march with band"
+ },
+ {
+  "id": "nv-pilates-band-side-splits",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing wide with a band around the feet, pressing the legs apart and drawing them together - confirm",
+  "names": [
+   "Standing Side Splits with band"
+  ],
+  "name": "Standing Side Splits with band"
+ },
+ {
+  "id": "nv-split-squat-calf-raise",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Static split squat, then on rising coming up onto the toes of the front foot (calf raise)",
+  "names": [
+   "Static split squat with calf raise"
+  ],
+  "name": "Static split squat with calf raise"
+ },
+ {
+  "id": "nv-band-tspine-rotation",
+  "src": "review",
+  "equip": "band",
+  "desc": "Thoracic rotation against a band (half-kneeling or side-lying) - confirm set-up",
+  "names": [
+   "T-spine rotation + band"
+  ],
+  "name": "T-spine rotation + band"
+ },
+ {
+  "id": "nv-plank-leg-lift",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Forearm plank, lifting one straight leg 10-15 cm and holding, alternating legs (FIFA 11+ 'The bench')",
+  "names": [
+   "The bench - alternate legs (hold each lift 2 s)",
+   "The bench - one leg lift & hold (10-15 cm)"
+  ],
+  "name": "The bench - alternate legs (hold each lift 2 s)"
+ },
+ {
+  "id": "nv-hundred-band",
+  "src": "review",
+  "equip": "band",
+  "desc": "Pilates Hundred holding a band anchored at the feet/behind, straight arms pumping against the band",
+  "names": [
+   "The Hundred with band (arms pump against band)"
+  ],
+  "name": "The Hundred with band (arms pump against band)"
+ },
+ {
+  "id": "nv-standing-toe-raise-support",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing holding a bench/chair, rocking back onto the heels to lift the toes and front of the feet off the floor",
+  "names": [
+   "Toe Raise (hold bench)"
+  ],
+  "name": "Toe Raise (hold bench)"
+ },
+ {
+  "id": "nv-wall-pushup",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing facing a wall, hands on the wall at shoulder height, bending the elbows to bring the chest to the wall and pushing back",
+  "names": [
+   "Wall or Kneeling Push-up",
+   "Wall Push-up",
+   "Wall Push-up (4 counts down, 4 up)"
+  ],
+  "name": "Wall or Kneeling Push-up"
+ },
+ {
+  "id": "nv-wall-slide-serratus",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Forearms on a wall, sliding them up the wall while pressing into it (serratus wall slide)",
+  "names": [
+   "Wall slide with serratus press"
+  ],
+  "name": "Wall slide with serratus press"
+ },
+ {
+  "id": "nv-weighted-pullup",
+  "src": "review",
+  "equip": "dip belt + plate",
+  "desc": "Pull-up/chin-up with a plate or dumbbell hanging from a dip belt",
+  "names": [
+   "Weighted Chin-up",
+   "Weighted Pull-up",
+   "Weighted Pull-up \u2013 back-off",
+   "Weighted Pull-up \u2013 top set"
+  ],
+  "name": "Weighted Chin-up"
+ },
+ {
+  "id": "nv-weighted-pushup",
+  "src": "review",
+  "equip": "weight vest/plate",
+  "desc": "Push-up wearing a weight vest or with a plate on the upper back",
+  "names": [
+   "Weighted Push-up (vest or plate)"
+  ],
+  "name": "Weighted Push-up (vest or plate)"
+ },
+ {
+  "id": "nv-rotational-medball-slam",
+  "src": "review",
+  "equip": "medicine ball",
+  "desc": "Lifting a medicine ball overhead and rotating to slam it down beside one foot",
+  "names": [
+   "Rotational med ball slam",
+   "Rotational med ball slams"
+  ],
+  "name": "Rotational med ball slam"
+ },
+ {
+  "id": "extra-battle-ropes",
+  "src": "review",
+  "equip": "battle ropes",
+  "desc": "already in gen_queue",
+  "names": [
+   "Battle Ropes"
+  ],
+  "name": "Battle Ropes"
+ },
+ {
+  "id": "NV19",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "In golf address posture (hip hinge, knees soft), holding a club with both hands and raising it from the hips to straight-armed overhead without losing the posture",
+  "names": [
+   "Address Position Overhead Raise"
+  ],
+  "name": "Address Position Overhead Raise"
+ },
+ {
+  "id": "NV17",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Sit-up holding a medicine ball at the chest (or pressing it overhead at the top), feet flat",
+  "names": [
+   "AMRAP rest of 4 min: med-ball sit-ups"
+  ],
+  "name": "AMRAP rest of 4 min: med-ball sit-ups"
+ },
+ {
+  "id": "NV16",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Sandbag held in a bear-hug at the chest, stepping forward into a walking lunge",
+  "names": [
+   "AMRAP rest of 8 min: sandbag walking lunge",
+   "EMOM even minutes: sandbag walking lunge"
+  ],
+  "name": "AMRAP rest of 8 min: sandbag walking lunge"
+ },
+ {
+  "id": "NV18",
+  "src": "review",
+  "equip": "cable",
+  "desc": "Standing on a balance cushion side-on to a cable/band anchor, holding the handle pressed straight out at chest height and resisting rotation (Pallof hold)",
+  "names": [
+   "Anti-rotation Hold on Balance Cushion"
+  ],
+  "name": "Anti-rotation Hold on Balance Cushion"
+ },
+ {
+  "id": "NV20",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Standing, holding a golf club vertically in front in one hand, rotating the forearm so the club turns from one side to the other",
+  "names": [
+   "Arm Rotations (club vertical, rotate each way)"
+  ],
+  "name": "Arm Rotations (club vertical, rotate each way)"
+ },
+ {
+  "id": "NV01",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)",
+  "names": [
+   "Balance: single-leg stand, hold bench",
+   "One-leg Stand (hold support)",
+   "Single-leg stand (hold bench)",
+   "Single-leg Stand (hold chair)",
+   "Single-leg Stand (hold support if needed)",
+   "Stop 3: One-leg Stand holding rail",
+   "One-leg Stand (fingertips on bench)",
+   "One-leg Stand (fingertips on wall)",
+   "One-leg Stand with Head Turns",
+   "Single-leg Balance",
+   "Single-leg Balance (eyes closed)",
+   "Single-leg balance (eyes open, then closed)",
+   "Single-leg balance (hand support if needed)",
+   "Single-leg Stand",
+   "Single-leg Stand (eyes open, then closed)",
+   "Standing Single-leg Balance with knee drive"
+  ],
+  "name": "Balance: single-leg stand, hold bench"
+ },
+ {
+  "id": "NV26",
+  "src": "review",
+  "equip": "band",
+  "desc": "In golf posture (hip hinge), a band anchored to one side, rotating the torso quickly away from the anchor and back",
+  "names": [
+   "Band Speed Rotations (golf posture)"
+  ],
+  "name": "Band Speed Rotations (golf posture)"
+ },
+ {
+  "id": "NV29",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Sitting sideways on a bench, one leg extended straight along the bench, the other foot on the floor, leaning forward from the hips over the straight leg",
+  "names": [
+   "Bench Back-of-Leg Stretch"
+  ],
+  "name": "Bench Back-of-Leg Stretch"
+ },
+ {
+  "id": "NV30",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated or standing tall, arms out to the sides at shoulder height with palms forward, drawing the arms back to open the chest",
+  "names": [
+   "Chest Stretch (arms back)"
+  ],
+  "name": "Chest Stretch (arms back)"
+ },
+ {
+  "id": "NV21",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Standing upright, a golf club held across the shoulders behind the neck, rotating the upper body to one side then the other",
+  "names": [
+   "Club-assisted Trunk Rotation"
+  ],
+  "name": "Club-assisted Trunk Rotation"
+ },
+ {
+  "id": "NV13",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Lying on the back with knees bent, gently drawing the lower belly in toward the spine and holding (transversus abdominis hold); visually subtle",
+  "names": [
+   "Deep Abdominal Hold (lying knees bent, or on hands and knees)",
+   "Deep Tummy Hold (lying knees bent)"
+  ],
+  "name": "Deep Abdominal Hold (lying knees bent, or on hands and knees)"
+ },
+ {
+  "id": "NV03",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing with the feet pressed together, holding a bench lightly for balance",
+  "names": [
+   "Feet-together Stand (hold bench)"
+  ],
+  "name": "Feet-together Stand (hold bench)"
+ },
+ {
+  "id": "NV24",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Half-kneeling, a golf club held across the chest/shoulders, rotating the upper body toward the front-knee side with the hips still",
+  "names": [
+   "Half-kneeling Rotation with club (hips still)"
+  ],
+  "name": "Half-kneeling Rotation with club (hips still)"
+ },
+ {
+  "id": "NV07",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "On hands and knees, lifting one bent knee and slowly circling it out to the side, back and round (quadruped hip CAR)",
+  "names": [
+   "Hip CARs (quadruped)",
+   "Quadruped Hip CARs"
+  ],
+  "name": "Hip CARs (quadruped)"
+ },
+ {
+  "id": "NV12",
+  "src": "review",
+  "equip": "band",
+  "desc": "Standing, a band looped around one ankle and anchored behind, driving that straight leg forward and up against the band (hip-flexor kick)",
+  "names": [
+   "Hip flexor kick (band)"
+  ],
+  "name": "Hip flexor kick (band)"
+ },
+ {
+  "id": "NV14",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Quick two-foot hops back and forth and side to side over a line on the floor",
+  "names": [
+   "Line hops forward-back and side-side"
+  ],
+  "name": "Line hops forward-back and side-side"
+ },
+ {
+  "id": "NV27",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Standing, club held in both hands low beside one hip, rotating and lifting it diagonally up across the body to above the opposite shoulder",
+  "names": [
+   "Powerful Rotation (club low to high diagonal)"
+  ],
+  "name": "Powerful Rotation (club low to high diagonal)"
+ },
+ {
+  "id": "NV10",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "On hands and knees, one hand behind the head, rotating that elbow down toward the opposite wrist then up toward the ceiling (quadruped T-spine reach-back)",
+  "names": [
+   "Quadruped Reach-back (hand behind head)"
+  ],
+  "name": "Quadruped Reach-back (hand behind head)"
+ },
+ {
+  "id": "NV11",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated upright on a chair, raising both arms out and overhead on the in-breath and lowering them on the out-breath",
+  "names": [
+   "Seated Arm Raises with breath"
+  ],
+  "name": "Seated Arm Raises with breath"
+ },
+ {
+  "id": "NV28",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated near the front of a chair, feet flat, bending forward from the hips with a long back, hands sliding down the shins",
+  "names": [
+   "Seated Back Stretch (fold from hips)"
+  ],
+  "name": "Seated Back Stretch (fold from hips)"
+ },
+ {
+  "id": "NV23",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Seated on a chair or bench, a golf club held across the chest, rotating the ribcage to each side with the hips still",
+  "names": [
+   "Seated Rotation with club across chest"
+  ],
+  "name": "Seated Rotation with club across chest"
+ },
+ {
+  "id": "NV02",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Semi-tandem stance: standing with the heel of one foot beside the big toe of the other, holding a bench lightly",
+  "names": [
+   "Semi-tandem Stand (hold bench)",
+   "Stop 2: Semi-tandem Stand holding rail",
+   "Semi-tandem Stance (support nearby)"
+  ],
+  "name": "Semi-tandem Stand (hold bench)"
+ },
+ {
+  "id": "NV08",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing tall, one straight arm tracing the largest slow circle forward, up overhead, back and down while the torso stays still (shoulder CAR)",
+  "names": [
+   "Shoulder CARs (standing)"
+  ],
+  "name": "Shoulder CARs (standing)"
+ },
+ {
+  "id": "NV09",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Pilates side kick: lying on one side, legs straight and slightly forward, swinging the top leg forward then back",
+  "names": [
+   "Side Kick Front/Back",
+   "Side Kick Front/Back (small range)",
+   "Side Kick Series",
+   "Side Kick Series (front/back, up/down, circles)"
+  ],
+  "name": "Side Kick Front/Back"
+ },
+ {
+  "id": "NV15",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Small, quick repeated hops in place on one foot, the other leg lifted",
+  "names": [
+   "Single-leg hop in place"
+  ],
+  "name": "Single-leg hop in place"
+ },
+ {
+  "id": "NV48",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Standing on one leg on an inflatable balance disc/cushion, arms free or holding a ball at the chest",
+  "names": [
+   "Single-leg Standing on Disc holding Ball",
+   "Single-leg Standing on Balance Disc",
+   "Single-leg Standing on Balance Disc (repeat)"
+  ],
+  "name": "Single-leg Standing on Disc holding Ball"
+ },
+ {
+  "id": "NV22",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Pilates spine twist: seated tall on the floor, legs extended, a club across the shoulders, twisting the torso to each side",
+  "names": [
+   "Spine Twist with club across shoulders"
+  ],
+  "name": "Spine Twist with club across shoulders"
+ },
+ {
+  "id": "NV49",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Standing with both feet on an inflatable balance disc, arms free or holding a medicine ball at the chest",
+  "names": [
+   "Two-foot Standing on Disc holding Medicine Ball",
+   "Two-foot Standing on Balance Disc"
+  ],
+  "name": "Two-foot Standing on Disc holding Medicine Ball"
+ },
+ {
+  "id": "NV25",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "In golf address posture (hip hinge), a club held across the shoulders/chest, turning the upper back to each side",
+  "names": [
+   "Upper-back Rotation in golf stance"
+  ],
+  "name": "Upper-back Rotation in golf stance"
+ },
+ {
+  "id": "NV04",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Tandem stance: one foot directly in front of the other, heel touching toe, holding a bench lightly",
+  "names": [
+   "Tandem Stance",
+   "Tandem Stance (heel-to-toe)"
+  ],
+  "name": "Tandem Stance"
+ },
+ {
+  "id": "NV05",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Heel-to-toe walk: stepping forward placing the heel directly in front of the other foot's toes, arms out or fingertips near a wall/bench",
+  "names": [
+   "Heel-to-Toe Walk",
+   "Heel-to-toe Walk (fingers on wall if needed)",
+   "Heel-to-toe Walk (wall nearby)",
+   "Heel-to-toe walk along the bench",
+   "Heel-to-toe Walk, no support"
+  ],
+  "name": "Heel-to-Toe Walk"
+ },
+ {
+  "id": "NV06",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Side-stepping along a kitchen bench while holding it, feet stepping apart then together",
+  "names": [
+   "Balance: sideways walking along the bench",
+   "Sideways Walking",
+   "Sideways Walking along the Bench"
+  ],
+  "name": "Balance: sideways walking along the bench"
+ },
+ {
+  "id": "NV31",
+  "src": "review",
+  "equip": "machine",
+  "desc": "Standing at a SkiErg, pulling both handles down from overhead past the hips while hinging at the hips and bending the knees",
+  "names": [
+   "Ski",
+   "SkiErg",
+   "SkiErg - long arms, hip hinge"
+  ],
+  "name": "Ski"
+ },
+ {
+  "id": "NV32",
+  "src": "review",
+  "equip": "band",
+  "desc": "Seated with the leg extended, a band around the forefoot anchored to the inside, turning the sole of the foot outward against the band (eversion)",
+  "names": [
+   "Banded ankle eversion"
+  ],
+  "name": "Banded ankle eversion"
+ },
+ {
+  "id": "NV33",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing on the edge of a step, rising onto the toes with both feet, then slowly lowering the heel below the step on one leg only",
+  "names": [
+   "Slow heel drop off step (up on two, down on one)"
+  ],
+  "name": "Slow heel drop off step (up on two, down on one)"
+ },
+ {
+  "id": "NV34",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Standing facing an aerobic step, quickly tapping the toes of alternate feet onto the top of the step",
+  "names": [
+   "Fast Toe Taps on the Step"
+  ],
+  "name": "Fast Toe Taps on the Step"
+ },
+ {
+  "id": "NV35",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "Standing beside an aerobic step, stepping up onto it and over to the floor on the other side, then back",
+  "names": [
+   "Side Step-over (across the step)"
+  ],
+  "name": "Side Step-over (across the step)"
+ },
+ {
+  "id": "NV36",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Seated or standing, pressing a hand against the forehead (then back and sides of the head) while the neck resists without moving",
+  "names": [
+   "Neck isometrics",
+   "Neck isometrics (front, back, sides)"
+  ],
+  "name": "Neck isometrics"
+ },
+ {
+  "id": "NV37",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing with feet apart, punching each arm alternately across the body with a slight torso rotation",
+  "names": [
+   "Standing Cross-body Punches"
+  ],
+  "name": "Standing Cross-body Punches"
+ },
+ {
+  "id": "NV38",
+  "src": "review",
+  "equip": "dumbbell",
+  "desc": "Standing in a split stance, holding light dumbbells at the chin, punching them straight forward alternately",
+  "names": [
+   "Dumbbell Punches (light)"
+  ],
+  "name": "Dumbbell Punches (light)"
+ },
+ {
+  "id": "NV39",
+  "src": "review",
+  "equip": "band",
+  "desc": "Band anchored behind at chest height, a handle in each hand, punching straight forward alternately against the band",
+  "names": [
+   "Band straight punches (alternate)"
+  ],
+  "name": "Band straight punches (alternate)"
+ },
+ {
+  "id": "NV40",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Rising onto the toes with arms overhead, then quickly snapping down into a balanced athletic stance (hips back, knees bent, arms forward) and holding",
+  "names": [
+   "Snap-down to athletic stance",
+   "Snap-down to stick"
+  ],
+  "name": "Snap-down to athletic stance"
+ },
+ {
+  "id": "NV41",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Standing next to a support, stepping one foot out to a target on the floor (front, side, back) and returning, alternating legs",
+  "names": [
+   "Stepping to Targets (hand support nearby, alternate legs)"
+  ],
+  "name": "Stepping to Targets (hand support nearby, alternate legs)"
+ },
+ {
+  "id": "NV42",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Running drill: short quick steps where the foot rolls heel-to-toe and lifts only to ankle height (ankle dribble; calf and knee versions lift higher)",
+  "names": [
+   "Ankle dribble (backward jog return)",
+   "Ankle-calf dribble",
+   "Ankle-calf-knee dribble"
+  ],
+  "name": "Ankle dribble (backward jog return)"
+ },
+ {
+  "id": "NV43",
+  "src": "review",
+  "equip": "band",
+  "desc": "Pilates band running: lying on the back, band around the balls of both feet with legs pressed out long, alternately lowering one heel while the other rises onto the toes",
+  "names": [
+   "Band Running (alternating heels)"
+  ],
+  "name": "Band Running (alternating heels)"
+ },
+ {
+  "id": "NV44",
+  "src": "review",
+  "equip": "other-named",
+  "desc": "In golf posture, a club held across the front of the hips, turning the pelvis to each side while the upper body stays quiet",
+  "names": [
+   "Golf-posture Pelvic Turns (club across hips)"
+  ],
+  "name": "Golf-posture Pelvic Turns (club across hips)"
+ },
+ {
+  "id": "NV45",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Pilates control balance: from a roll-over (hips over shoulders, legs overhead), holding one foot overhead while the other leg extends straight up to the ceiling, then scissoring",
+  "names": [
+   "Control Balance"
+  ],
+  "name": "Control Balance"
+ },
+ {
+  "id": "NV46",
+  "src": "review",
+  "equip": "bodyweight",
+  "desc": "Army PRT heel hook: from a straight-arm hang on a bar, raising the legs and hooking one heel over the bar, then lowering",
+  "names": [
+   "CL1: Heel Hook"
+  ],
+  "name": "CL1: Heel Hook"
+ },
+ {
+  "id": "NV47",
+  "src": "review",
+  "equip": "band",
+  "desc": "Band anchored high in front, holding an end in each hand, pulling both straight arms down and back past the hips quickly (ski-pole pattern)",
+  "names": [
+   "Speed skiers (band)"
+  ],
+  "name": "Speed skiers (band)"
+ }
+]

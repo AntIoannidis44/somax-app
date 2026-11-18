@@ -1,0 +1,62 @@
+[
+ {
+  "variantId": "gap-n011",
+  "reason": "Names disagree about the movement: '90/90 hip hold/switches/lift-offs' (one shin in front, one to the side) vs 'Bent-knee Fall Out' (supine knee drop) vs 'Hip Marching (seated)' (hip flexion). The desc ('soles of the feet together') is a butterfly sit, not 90/90 - v1 render failed on it. Owner must split the names and confirm which pose this image shows."
+ },
+ {
+  "variantId": "gap-y015",
+  "reason": "Names disagree: 'Frog Pose'/'Frog Stretch' (kneeling, knees wide) vs 'Band Frog' (Pilates supine band move, already its own item nv-pilates-band-frog). Remap 'Band Frog' to nv-pilates-band-frog, then this can be specced as a kneeling Frog Stretch."
+ },
+ {
+  "variantId": "new-128",
+  "reason": "Y-T-W is a three-position sequence (Y, T, W); the 2-panel start/end format cannot show it without misrepresenting the exercise (v1 parked it for the same reason). Needs a format decision (3 panels, or split into Y / T / W images); a Y-only image duplicates Prone Y Raise."
+ },
+ {
+  "variantId": "gap-n014",
+  "reason": "Desc ('half-kneeling hip-flexor lunge with reach-through twist') does not match the standard Brettzel (side-lying: top knee bent in front pinned down, bottom-leg quad stretch held by the hand, upper back rotated to the floor). Owner must confirm which pose is meant."
+ },
+ {
+  "variantId": "new-114",
+  "reason": "Direction unclear: desc says the 'trailing' leg lowers to the floor (behind), but the Patrick (ATG) step-down is usually done with the free leg in FRONT, standing knee travelling forward over the toes. v1 render also drew a step-up. Confirm front vs back free leg before spending."
+ },
+ {
+  "variantId": "gap-n004",
+  "reason": "Names disagree: most are two-foot pogo hops in place, but 'Split pogo (carioca return)' is a split-stance hop and 'Bulgarian jumps (side to side)' is a different jump. Image must suit all names - split them (two-foot pogo vs split pogo vs Bulgarian jumps) before speccing."
+ },
+ {
+  "variantId": "new-p3-006",
+  "reason": "Desc is empty and the names disagree on body part: calves+quads, forearms+calves (massage ball), quads+calves+glutes, 'top-down foam rolling'. One image cannot show all; owner must choose the body region(s)."
+ },
+ {
+  "variantId": "new-038",
+  "reason": "Names disagree: 'Bridge (wheel) or Wall Walks' offers two different exercises (wheel pose vs wall walk, which is its own item gap-n022), and 'Wheel or Bridge' could mean a glute bridge. Confirm this image is the full wheel only and remap the wall-walk name."
+ },
+ {
+  "variantId": "new-046",
+  "reason": "Desc says 'hanging from a bar', but 'CD1: Leg Tuck and Twist' is the US Army PRT Conditioning Drill 1 exercise, which is done SEATED on the ground leaning back on the arms (the hanging leg tuck is the separate CL1 drill). Owner must confirm which version before drawing."
+ },
+ {
+  "variantId": "new-p3-004",
+  "reason": "Desc is empty (rule: do not guess). Extended Side Angle is a standard yoga pose, but v1 notes show a conflict about which side's obliques to tint (queue said lower side; v1 render tinted the top, lengthened side). Owner to confirm desc and whether the tint is the lengthened top side or the working lower side."
+ },
+ {
+  "variantId": "new-095",
+  "reason": "Ambiguous exercise: 'Single-leg Kneeling Kickbacks' with a dumbbell could be a triceps kickback (one knee on a bench, arm extends back - what the verified record assumes) or a glute kickback (kneeling, dumbbell behind the knee, leg kicks back). Desc 'kicking a dumbbell straight back' fits either. Owner to confirm arm vs leg."
+ },
+ {
+  "variantId": "new-081",
+  "reason": "Desc and name disagree: 'Ring Body Saw or Fallout' reads as a gymnastic-ring fallout (kneeling or standing, rings hanging from straps) or a forearm-plank body saw, but desc says 'plank gripping a Pilates ring, sliding forward and back', which is not a recognised exercise. v1 render was near-identical panels. Owner to confirm which exercise and equipment."
+ },
+ {
+  "variantId": "nv-pilates-band-semicircle",
+  "reason": "Desc itself says 'confirm set-up' (Pilates semi-circle with a band: bridge, band around the feet, rolling the spine through a circle). The band anchoring and start/end positions are not defined."
+ },
+ {
+  "variantId": "nv-hamstring-bridge-hold",
+  "reason": "Desc itself ends with '- confirm' (isometric hamstring bridge hold, heels on the floor, one or both legs). Owner to confirm the pose (knee angle, one vs both legs) before speccing."
+ },
+ {
+  "variantId": "nv-pilates-band-knee-stretch",
+  "reason": "Set-up not physically clear: desc says kneeling on all fours on a mat, band around the feet anchored behind, 'pushing the knees back and drawing them in' (Pilates reformer knee stretches). On a mat the knees cannot slide back without sliders or a carriage; band anchor point and start/end positions need confirming."
+ }
+]

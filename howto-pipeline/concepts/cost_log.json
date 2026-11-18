@@ -1,0 +1,893 @@
+{
+ "total": 23.316,
+ "count": 174,
+ "entries": [
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/barbell-back-squat.png",
+   "result": "ok",
+   "running_total": 0.134
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/adductor_groin_stretch/butterfly-inner-thigh-stretch.png",
+   "result": "ok",
+   "running_total": 0.268
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_pilates_mat/the-hundred.png",
+   "result": "ok",
+   "running_total": 0.402
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/barbell-bent-over-row.png",
+   "result": "ok",
+   "running_total": 0.536
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/advanced_calisthenics_static_hold/wall-handstand-hold.png",
+   "result": "ok",
+   "running_total": 0.67
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/ankle_mobility/seated-ankle-circles.png",
+   "result": "ok",
+   "running_total": 0.804
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/arm_circles_mobility/arm-circles.png",
+   "result": "ok",
+   "running_total": 0.938
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/askips_dynamic/a-skips.png",
+   "result": "ok",
+   "running_total": 1.072
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/back_extension_erector/45-degree-back-extension.png",
+   "result": "ok",
+   "running_total": 1.206
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/ballistic_hip_hinge_swing/dumbbell-swing.png",
+   "result": "ok",
+   "running_total": 1.34
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/bear_crawl_crab_walk/bear-crawl.png",
+   "result": "ok",
+   "running_total": 1.474
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/burpee/burpee.png",
+   "result": "ok",
+   "running_total": 1.608
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/butt_kicks_hamstring_flexion/butt-kicks.png",
+   "result": "ok",
+   "running_total": 1.742
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/calf_raise/standing-barbell-calf-raise.png",
+   "result": "ok",
+   "running_total": 1.876
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/calf_stretch/standing-calf-stretch.png",
+   "result": "ok",
+   "running_total": 2.01
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/cat_cow_spinal_mobility/cat-cow.png",
+   "result": "ok",
+   "running_total": 2.144
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_fly_pecs/standing-cable-chest-fly.png",
+   "result": "ok",
+   "running_total": 2.278
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_fly_reardelt/dumbbell-rear-delt-fly.png",
+   "result": "ok",
+   "running_total": 2.412
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_stretch/chest-doorway-stretch.png",
+   "result": "ok",
+   "running_total": 2.546
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/core_antirotation_pallof/cable-pallof-press.png",
+   "result": "ok",
+   "running_total": 2.68
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/core_rotation_woodchop_twist/cable-woodchop.png",
+   "result": "ok",
+   "running_total": 2.814
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/dip/parallel-bar-dip.png",
+   "result": "ok",
+   "running_total": 2.948
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/elbow_extension_triceps/overhead-dumbbell-triceps-extension.png",
+   "result": "ok",
+   "running_total": 3.082
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/elbow_flexion_curl/dumbbell-biceps-curl.png",
+   "result": "ok",
+   "running_total": 3.216
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_bicycle_flutter/flutter-kicks.png",
+   "result": "ok",
+   "running_total": 3.35
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_crunch/crunch.png",
+   "result": "ok",
+   "running_total": 3.484
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_hipflexor_legraise/hanging-leg-raise.png",
+   "result": "ok",
+   "running_total": 3.618
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_mountain_climber/mountain-climber.png",
+   "result": "ok",
+   "running_total": 3.752
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_situp/sit-up.png",
+   "result": "ok",
+   "running_total": 3.886
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_vup/v-up.png",
+   "result": "ok",
+   "running_total": 4.02
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/glute_piriformis_stretch/seated-figure-4-glute-stretch.png",
+   "result": "ok",
+   "running_total": 4.154
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/grip_forearm/wrist-curl.png",
+   "result": "ok",
+   "running_total": 4.288
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hamstring_stretch/hamstring-stretch-strap-assisted.png",
+   "result": "ok",
+   "running_total": 4.422
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/high_knees_dynamic/high-knees.png",
+   "result": "ok",
+   "running_total": 4.556
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_abduction/seated-hip-abduction-machine.png",
+   "result": "ok",
+   "running_total": 4.69
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_adduction/copenhagen-plank.png",
+   "result": "ok",
+   "running_total": 4.824
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_circles_mobility/hip-circles.png",
+   "result": "ok",
+   "running_total": 4.958
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_extension_glute_isolation/barbell-hip-thrust.png",
+   "result": "ok",
+   "running_total": 5.092
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_flexor_stretch/standing-hip-flexor-lunge-stretch.png",
+   "result": "ok",
+   "running_total": 5.226
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_hinge_deadlift/barbell-deadlift.png",
+   "result": "ok",
+   "running_total": 5.36
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/it_band_tfl_stretch/standing-it-band-side-stretch.png",
+   "result": "ok",
+   "running_total": 5.494
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/kettlebell_halo/kettlebell-halo.png",
+   "result": "ok",
+   "running_total": 5.628
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/kettlebell_swing/two-hand-kettlebell-swing.png",
+   "result": "ok",
+   "running_total": 5.762
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lat_childspose_stretch/childs-pose.png",
+   "result": "ok",
+   "running_total": 5.896
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lateral_shuffle_lateral_agility/lateral-shuffle.png",
+   "result": "ok",
+   "running_total": 6.03
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_curl_machine/lying-leg-curl-machine.png",
+   "result": "ok",
+   "running_total": 6.164
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_extension_machine/leg-extension-machine.png",
+   "result": "ok",
+   "running_total": 6.298
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_press_machine/leg-press.png",
+   "result": "ok",
+   "running_total": 6.432
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_swing_frontback_mobility/leg-swings-front-to-back.png",
+   "result": "ok",
+   "running_total": 6.566
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_swing_sideside_mobility/leg-swings-side-to-side.png",
+   "result": "ok",
+   "running_total": 6.7
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/loaded_carry/farmers-carry.png",
+   "result": "ok",
+   "running_total": 6.834
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/dumbbell-forward-lunge.png",
+   "result": "ok",
+   "running_total": 6.968
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/neck_lateral_stretch/neck-side-stretch.png",
+   "result": "ok",
+   "running_total": 7.102
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/neck_rotation_mobility/seated-neck-rotation.png",
+   "result": "ok",
+   "running_total": 7.236
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/nordic_hamstring/nordic-hamstring-curl.png",
+   "result": "ok",
+   "running_total": 7.37
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/olympic_clean_jerk_snatch/hang-power-clean.png",
+   "result": "ok",
+   "running_total": 7.504
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_antirotation_birddog/bird-dog.png",
+   "result": "ok",
+   "running_total": 7.638
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_front/forearm-plank.png",
+   "result": "ok",
+   "running_total": 7.772
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_side/side-plank.png",
+   "result": "ok",
+   "running_total": 7.906
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plyometric_jump/box-jump.png",
+   "result": "ok",
+   "running_total": 8.04
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/quad_stretch/standing-quad-stretch.png",
+   "result": "ok",
+   "running_total": 8.174
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rear_delt_face_pull/cable-face-pull.png",
+   "result": "ok",
+   "running_total": 8.308
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rotator_cuff_external/band-external-rotation.png",
+   "result": "ok",
+   "running_total": 8.442
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rotator_cuff_internal/band-internal-rotation.png",
+   "result": "ok",
+   "running_total": 8.576
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/running_buildup_strides/build-up-sprint-strides.png",
+   "result": "ok",
+   "running_total": 8.71
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/scapular_circles_mobility/scapular-circles.png",
+   "result": "ok",
+   "running_total": 8.844
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/seated_marching_activation/seated-marching.png",
+   "result": "ok",
+   "running_total": 8.978
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shoulder_crossbody_stretch/shoulder-cross-body-stretch.png",
+   "result": "ok",
+   "running_total": 9.112
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shoulder_raise_isolation/dumbbell-lateral-raise.png",
+   "result": "ok",
+   "running_total": 9.246
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shrug_trapezius/dumbbell-shrug.png",
+   "result": "ok",
+   "running_total": 9.38
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/sled_pull_drag/sled-pull-hand-over-hand.png",
+   "result": "ok",
+   "running_total": 9.514
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/sled_push/sled-push.png",
+   "result": "ok",
+   "running_total": 9.648
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/standing_forward_fold_hamstring_lowback/standing-forward-bend.png",
+   "result": "ok",
+   "running_total": 9.782
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_chest_pass/med-ball-chest-pass.png",
+   "result": "ok",
+   "running_total": 9.916
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_scoop/rotational-med-ball-scoop-toss.png",
+   "result": "ok",
+   "running_total": 10.05
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_side_rotational/med-ball-rotational-throw.png",
+   "result": "ok",
+   "running_total": 10.184
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_slam/medicine-ball-slam.png",
+   "result": "ok",
+   "running_total": 10.318
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/thruster/dumbbell-thruster.png",
+   "result": "ok",
+   "running_total": 10.452
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/tibialis_raise/tibialis-raise.png",
+   "result": "ok",
+   "running_total": 10.586
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/torso_lateral_flexion_mobility/standing-side-bend.png",
+   "result": "ok",
+   "running_total": 10.72
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/torso_rotation_mobility/standing-torso-rotations.png",
+   "result": "ok",
+   "running_total": 10.854
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/triceps_lat_overhead_stretch/overhead-tricepslat-stretch.png",
+   "result": "ok",
+   "running_total": 10.988
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/turkish_getup/turkish-get-up.png",
+   "result": "ok",
+   "running_total": 11.122
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_press_overhead/standing-barbell-overhead-press.png",
+   "result": "ok",
+   "running_total": 11.256
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_pull/pull-up.png",
+   "result": "ok",
+   "running_total": 11.39
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/wall_ball_squat_throw/wall-ball-shot.png",
+   "result": "ok",
+   "running_total": 11.524
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/front-squat.png",
+   "result": "ok",
+   "running_total": 11.658
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/dumbbell-goblet-squat.png",
+   "result": "ok",
+   "running_total": 11.792
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/bodyweight-squat.png",
+   "result": "ok",
+   "running_total": 11.926
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/dumbbell-bench-press.png",
+   "result": "ok",
+   "running_total": 12.06
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/push-up.png",
+   "result": "ok",
+   "running_total": 12.194
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/incline-barbell-bench-press.png",
+   "result": "ok",
+   "running_total": 12.328
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/machine-chest-press.png",
+   "result": "ok",
+   "running_total": 12.462
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/bodyweight-reverse-lunge.png",
+   "result": "ok",
+   "running_total": 12.596
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/bulgarian-split-squat.png",
+   "result": "ok",
+   "running_total": 12.73
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/dumbbell-lateral-lunge.png",
+   "result": "ok",
+   "running_total": 12.864
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/seated-cable-row.png",
+   "result": "ok",
+   "running_total": 12.998
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/single-arm-dumbbell-row.png",
+   "result": "ok",
+   "running_total": 13.132
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/inverted-row.png",
+   "result": "ok",
+   "running_total": 13.266
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_hinge_deadlift/barbell-romanian-deadlift.png",
+   "result": "ok",
+   "running_total": 13.4
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_hinge_deadlift/trap-bar-deadlift.png",
+   "result": "ok",
+   "running_total": 13.534
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_hinge_deadlift/single-leg-romanian-deadlift.png",
+   "result": "ok",
+   "running_total": 13.668
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_extension_glute_isolation/floor-glute-bridge.png",
+   "result": "ok",
+   "running_total": 13.802
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_extension_glute_isolation/single-leg-glute-bridge.png",
+   "result": "ok",
+   "running_total": 13.936
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_front/straight-arm-plank.png",
+   "result": "ok",
+   "running_total": 14.07
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_front/ab-wheel-rollout.png",
+   "result": "ok",
+   "running_total": 14.204
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_pull/lat-pulldown-machine.png",
+   "result": "ok",
+   "running_total": 14.338
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_press_overhead/seated-dumbbell-shoulder-press.png",
+   "result": "ok",
+   "running_total": 14.472
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/calf_raise/seated-calf-raise-machine.png",
+   "result": "ok",
+   "running_total": 14.606
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/elbow_flexion_curl/cable-curl.png",
+   "result": "ok",
+   "running_total": 14.74
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_side/side-plank-straight-arm.png",
+   "result": "ok",
+   "running_total": 14.874
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/core_rotation_woodchop_twist/seated-russian-twist.png",
+   "result": "ok",
+   "running_total": 15.008
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/core_rotation_woodchop_twist/landmine-rotation.png",
+   "result": "ok",
+   "running_total": 15.142
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/dip/bench-dip.png",
+   "result": "ok",
+   "running_total": 15.276
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/elbow_extension_triceps/cable-triceps-pushdown.png",
+   "result": "ok",
+   "running_total": 15.41
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_hipflexor_legraise/captains-chair-leg-raise.png",
+   "result": "ok",
+   "running_total": 15.544
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/loaded_carry/suitcase-carry.png",
+   "result": "ok",
+   "running_total": 15.678
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rear_delt_face_pull/band-pull-apart.png",
+   "result": "ok",
+   "running_total": 15.812
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/grip_forearm/dead-hang.png",
+   "result": "ok",
+   "running_total": 15.946
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_abduction/standing-band-lateral-walk.png",
+   "result": "ok",
+   "running_total": 16.08
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/glute_piriformis_stretch/lying-figure-4-glute-stretch.png",
+   "result": "ok",
+   "running_total": 16.214
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/rotator_cuff_external/band-external-rotation-at-9090.png",
+   "result": "ok",
+   "running_total": 16.348
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/back_extension_erector/floor-back-extension.png",
+   "result": "ok",
+   "running_total": 16.482
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_curl_machine/seated-leg-curl-machine.png",
+   "result": "ok",
+   "running_total": 16.616
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_antirotation_birddog/dead-bug.png",
+   "result": "ok",
+   "running_total": 16.75
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shoulder_raise_isolation/dumbbell-front-raise.png",
+   "result": "ok",
+   "running_total": 16.884
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_crunch/cable-crunch.png",
+   "result": "ok",
+   "running_total": 17.018
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_fly_pecs/incline-dumbbell-fly.png",
+   "result": "ok",
+   "running_total": 17.152
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/bear_crawl_crab_walk/crab-walk.png",
+   "result": "ok",
+   "running_total": 17.286
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_fly_reardelt/reverse-pec-deck-machine.png",
+   "result": "ok",
+   "running_total": 17.42
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hamstring_stretch/standing-hamstring-reach.png",
+   "result": "ok",
+   "running_total": 17.554
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/olympic_clean_jerk_snatch/single-arm-dumbbell-snatch.png",
+   "result": "ok",
+   "running_total": 17.688
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/thruster/wall-ball-thruster.png",
+   "result": "ok",
+   "running_total": 17.822
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/standing_forward_fold_hamstring_lowback/seated-forward-fold.png",
+   "result": "ok",
+   "running_total": 17.956
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/torso_lateral_flexion_mobility/seated-side-bend.png",
+   "result": "ok",
+   "running_total": 18.09
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/ankle_mobility/standing-ankle-circles.png",
+   "result": "ok",
+   "running_total": 18.224
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/chest_stretch/seated-chest-opener.png",
+   "result": "ok",
+   "running_total": 18.358
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/shrug_trapezius/barbell-shrug.png",
+   "result": "ok",
+   "running_total": 18.492
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/torso_rotation_mobility/reclined-twist.png",
+   "result": "ok",
+   "running_total": 18.626
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_pilates_mat/the-hundred.png",
+   "result": "ok",
+   "running_total": 18.76,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hamstring_stretch/standing-hamstring-reach.png",
+   "result": "ok",
+   "running_total": 18.894,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_circles_mobility/hip-circles.png",
+   "result": "ok",
+   "running_total": 19.028,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/dumbbell-bench-press.png",
+   "result": "ok",
+   "running_total": 19.162,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_press/incline-barbell-bench-press.png",
+   "result": "ok",
+   "running_total": 19.296,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_press_machine/leg-press.png",
+   "result": "ok",
+   "running_total": 19.43,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/leg_swing_sideside_mobility/leg-swings-side-to-side.png",
+   "result": "ok",
+   "running_total": 19.564,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/lunge_pattern/bulgarian-split-squat.png",
+   "result": "ok",
+   "running_total": 19.698,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/neck_rotation_mobility/seated-neck-rotation.png",
+   "result": "ok",
+   "running_total": 19.832,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/bodyweight-squat.png",
+   "result": "ok",
+   "running_total": 19.966,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/standing_forward_fold_hamstring_lowback/standing-forward-bend.png",
+   "result": "ok",
+   "running_total": 20.1,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/throw_slam/medicine-ball-slam.png",
+   "result": "ok",
+   "running_total": 20.234,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/vertical_pull/pull-up.png",
+   "result": "ok",
+   "running_total": 20.368,
+   "note": "QA re-generation 2026-11-18 (gender/numbering fix)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_pilates_mat/the-hundred.png",
+   "result": "ok",
+   "running_total": 20.502,
+   "note": "direct retry: stronger gender-lock wording (failed, still male)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_pilates_mat/the-hundred.png",
+   "result": "ok",
+   "running_total": 20.636,
+   "note": "direct retry: character-swap edit approach (failed, still male)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_pilates_mat/the-hundred.png",
+   "result": "ok",
+   "running_total": 20.77,
+   "note": "direct retry: camera angle for torso visibility (failed, still male)"
+  },
+  {
+   "out": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/flexion_pilates_mat/the-hundred.png",
+   "result": "ok",
+   "running_total": 20.904,
+   "note": "direct retry: corrected arm pose (straight arms not raised fists) + camera angle (SUCCESS - used as final the-hundred.png)"
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/band_external_rotation.png",
+   "result": "ok",
+   "running_total": 21.038
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/standing_ankle_circles.png",
+   "result": "ok",
+   "running_total": 21.172
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/seated_ankle_circles.png",
+   "result": "ok",
+   "running_total": 21.306
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/cable_pallof_press.png",
+   "result": "ok",
+   "running_total": 21.44
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/seated_russian_twist.png",
+   "result": "ok",
+   "running_total": 21.574
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/barbell_shrug.png",
+   "result": "ok",
+   "running_total": 21.708
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/reclined_twist.png",
+   "result": "ok",
+   "running_total": 21.842
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/standing_barbell_calf_raise.png",
+   "result": "ok",
+   "running_total": 21.976
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/hip_circles.png",
+   "result": "ok",
+   "running_total": 22.11
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/scapular_circles.png",
+   "result": "ok",
+   "running_total": 22.244
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/standing_torso_rotations.png",
+   "result": "ok",
+   "running_total": 22.378
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/barbell_shrug_v2.png",
+   "result": "ok",
+   "running_total": 22.512
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/standing_barbell_calf_raise_v2.png",
+   "result": "ok",
+   "running_total": 22.646
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/standing_torso_rotations_v2.png",
+   "result": "ok",
+   "running_total": 22.78
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/barbell_shrug_v3.png",
+   "result": "ok",
+   "running_total": 22.914
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/standing_barbell_calf_raise_v3.png",
+   "result": "ok",
+   "running_total": 23.048
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/barbell_shrug_v4.png",
+   "result": "ok",
+   "running_total": 23.182
+  },
+  {
+   "out": "/private/tmp/claude-501/-Users-ngalnyaatkinson-claude-project-fitness-app/9b5e45bd-499e-4366-80d2-ad1bb01baff9/scratchpad/work/regen/standing_barbell_calf_raise_v4.png",
+   "result": "ok",
+   "running_total": 23.316
+  }
+ ]
+}

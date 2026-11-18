@@ -1,0 +1,569 @@
+[
+ {
+  "variantId": "existing-004",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-004.png",
+  "notes": "Female push-up regen; circled badges, grey arrow, chest red, delts/triceps orange."
+ },
+ {
+  "variantId": "existing-110",
+  "status": "accepted",
+  "attempts": 4,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-110.png",
+  "notes": "Female forearm side plank: hips on mat -> hips lifted. Obliques + glute red, small glute-med orange patch (QL patch not distinct). a1/a2 rejected (gluteus max painted orange not red), a3 rejected (panel 1 already lifted, panels near-identical)."
+ },
+ {
+  "variantId": "gap-n006",
+  "status": "accepted",
+  "attempts": 3,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n006.png",
+  "notes": "Lateral hop-and-stick; front-ish camera to show sideways travel; single-leg push-off and single-leg landing. Primary only (low-moderate). Both thighs tinted red. a1 rejected (lunge, not single-leg), a2 rejected (no visible sideways travel)."
+ },
+ {
+  "variantId": "new-100",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-100.png",
+  "notes": "Chair sit-to-stand, arms crossed. Badges are filled dark discs with white digits (still circled badges)."
+ },
+ {
+  "variantId": "new-015",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-015.png",
+  "notes": "Male on air rower, catch -> finish. a1 rejected (arrow drawn inside panel 1, none between panels)."
+ },
+ {
+  "variantId": "existing-008",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-008.png",
+  "notes": "Bodyweight Bulgarian split squat (queue equipment bodyweight; old image used dumbbells), hands on hips, rear foot on bench. Rear-leg thigh also tinted red."
+ },
+ {
+  "variantId": "gap-n011",
+  "status": "failed",
+  "attempts": 5,
+  "path": null,
+  "notes": "Coordinator-corrected 90/90 description applied (attempt c1): render showed cross-legged sitting then a crouch/kneel, not 90/90. Earlier 4 attempts were on the old (wrong) description. Nothing was accepted from the old description. Retry only if budget remains."
+ },
+ {
+  "variantId": "existing-071",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-071.png",
+  "notes": "Female parallel-bar dip; triceps red, front delts/chest orange; legs straight rather than crossed."
+ },
+ {
+  "variantId": "existing-077",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-077.png",
+  "notes": "Female mountain climber, defect-style redraw: straight plank -> knee driven to chest; abs only (low confidence). a1 rejected (three feet in panel 2)."
+ },
+ {
+  "variantId": "gap-n032",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n032.png",
+  "notes": "Pilates single leg stretch: both knees tucked -> one leg extended. Abs only (low). a1 rejected (panels identical)."
+ },
+ {
+  "variantId": "gap-n001",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n001.png",
+  "notes": "Countermovement jump: dip with arms back -> airborne with arms overhead. Image is 1536x2752 (taller aspect than most)."
+ },
+ {
+  "variantId": "existing-108",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-108.png",
+  "notes": "Female bird-dog regen; abs red, obliques/glutes orange."
+ },
+ {
+  "variantId": "new-113",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-113.png",
+  "notes": "Bodyweight static split squat, hands on hips."
+ },
+ {
+  "variantId": "new-012",
+  "status": "accepted",
+  "attempts": 3,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-012.png",
+  "notes": "Burpee broad jump: chest-down -> two-footed airborne forward jump. Filled-disc badges. Image 1536x2752. a1 rejected (realistic skinned-muscle overlay, unclear travel), a2 rejected (running stride, not two-footed)."
+ },
+ {
+  "variantId": "new-025",
+  "status": "failed",
+  "attempts": 4,
+  "path": null,
+  "notes": "FAILED after 4 attempts: every render stopped at roughly a parallel squat (hips level with knees) - never a true deep squat with hips well below the knees as the exercise requires."
+ },
+ {
+  "variantId": "new-047",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-047.png",
+  "notes": "Hollow body hold: flat -> arms/legs lifted. Abs red, obliques orange."
+ },
+ {
+  "variantId": "new-097",
+  "status": "accepted",
+  "attempts": 3,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-097.png",
+  "notes": "Single-leg shallow squat (solo variant), free foot held off the floor in both panels. Lifted leg's thigh also tinted. a1/a2 rejected (both feet on the floor in panel 2)."
+ },
+ {
+  "variantId": "gap-y015",
+  "status": "failed",
+  "attempts": 3,
+  "path": null,
+  "notes": "Frog stretch: a1 legs barely moved and face drifted male; a2 legs drawn straight in a straddle; a3 knees only slightly wider than hips (not a frog). Retry only if budget remains."
+ },
+ {
+  "variantId": "existing-054",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue muscle data does not fit the exercise: chest-to-wall handstand lists Latissimus Dorsi (Front Lever) / Pec-Serratus (Planche) as primary - these are front-lever/planche muscles, not a handstand's (deltoids/triceps/traps). Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "gap-n002",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n002.png",
+  "notes": "Depth jump: standing on box -> airborne beside box, arms overhead. Image is 1792x2390."
+ },
+ {
+  "variantId": "new-041",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-041.png",
+  "notes": "Male grip squeeze with spring hand gripper, open -> closed; forearm flexors only (secondary 'biceps supination assist' from the wrist-curl family omitted as it does not apply to a grip squeeze). Close framing (legs cut at the knee by design)."
+ },
+ {
+  "variantId": "new-065",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-065.png",
+  "notes": "Mini squat with arms forward: standing -> partial knee bend, arms raised forward."
+ },
+ {
+  "variantId": "existing-079",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue lists Pectoralis Major (sternal) as a PRIMARY muscle for a sit-up (data appears copied from the push-up family). Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "existing-017",
+  "status": "failed",
+  "attempts": 2,
+  "path": null,
+  "notes": "a1 realistic skinned-muscle overlay with orange on both legs; a2 raised leg bent in panel 1 and orange painted on the raised (non-working) leg. Retry only if budget remains."
+ },
+ {
+  "variantId": "new-127",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-127.png",
+  "notes": "Wall sit: standing against wall -> 90/90 seated against wall."
+ },
+ {
+  "variantId": "new-128",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Band Y-T-W is a three-position sequence (Y, then T, then W); the mandated 2-panel start/end format cannot show it without misrepresenting the exercise (and a Y-only drawing would duplicate Prone Y Raise new-075). Needs a format decision (e.g. 3 panels)."
+ },
+ {
+  "variantId": "existing-060",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-060.png",
+  "notes": "Bear crawl hold with knee taps (drawn to the name: bear hold -> one hand reaching back to tap a knee). Abs red, front delts/quads orange; serratus not distinctly marked; overlays slightly soft."
+ },
+ {
+  "variantId": "new-013",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-013.png",
+  "notes": "Male cable glute kickback, ankle cuff on low pulley; glute red, hamstrings orange."
+ },
+ {
+  "variantId": "gap-n010",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Duck walk a1: two near-identical squat panels with no visible forward step. Retry only if budget remains."
+ },
+ {
+  "variantId": "existing-074",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-074.png",
+  "notes": "Female flutter kicks redraw (old image had identical panels): both legs hovering -> scissored. Abs red, hip flexors orange. No band drawn."
+ },
+ {
+  "variantId": "new-042",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Hack squat a1: male shorts missing (bare anatomical legs with red briefs), skinned-anatomy overlay. Retry only if budget remains."
+ },
+ {
+  "variantId": "new-058",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - L-sit queue muscles are front-lever/planche muscles (lats, pec/serratus) rather than L-sit's hip flexors/abs/triceps/depressors. Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "new-077",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-077.png",
+  "notes": "Male dumbbell renegade row; upper back red, rear delt orange."
+ },
+ {
+  "variantId": "new-068",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-068.png",
+  "notes": "Male overhead squat holding a wooden stick. Image 1536x2752."
+ },
+ {
+  "variantId": "new-075",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-075.png",
+  "notes": "Male prone Y raise on low-incline bench with dumbbells; rear delts red, rhomboids/traps orange."
+ },
+ {
+  "variantId": "new-098",
+  "status": "failed",
+  "attempts": 2,
+  "path": null,
+  "notes": "a1 and a2: the model kept painting the primary red on the NON-pressing shoulder (pressing shoulder only got a sliver). Budget exhausted before a 3rd try."
+ },
+ {
+  "variantId": "gap-n019",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n019.png",
+  "notes": "Walking spiderman with rotation: deep lunge hands down -> rotate arm to ceiling. Primary only (low-moderate)."
+ },
+ {
+  "variantId": "gap-y028",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y028.png",
+  "notes": "Supine twist: knees up -> knees dropped to side, arms in T. Obliques red, outer hip/lower back orange (soft glow edges)."
+ },
+ {
+  "variantId": "gap-y024",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: panel 2 drawn as a forward lunge with the back knee bent near the floor, not Warrior 2 (back leg must stay straight). Retry only if budget remains."
+ },
+ {
+  "variantId": "existing-057",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: both panels identical (same knee up) and realistic skinned-muscle overlay. Retry only if budget remains."
+ },
+ {
+  "variantId": "new-003",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: heavy rectangular frame borders around panels and orange painted on the front of the knees/thighs instead of hamstrings."
+ },
+ {
+  "variantId": "new-008",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: in panel 1 the chain hangs from the handlebar, not the hip belt (equipment set-up wrong)."
+ },
+ {
+  "variantId": "gap-y001",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: a brand-like swoosh mark rendered on the leggings in panel 2."
+ },
+ {
+  "variantId": "gap-n014",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - queue description ('half-kneeling hip-flexor lunge with reach-through twist') does not match the standard Brettzel (side-lying: top knee bent in front held down, bottom-leg quad stretch, upper back rotated to the floor). Needs the correct pose confirmed before rendering (same kind of mismatch as the coordinator's 90/90 correction)."
+ },
+ {
+  "variantId": "new-014",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-014.png",
+  "notes": "Male standing straight-arm cable pullover, viewed from behind; lats only (queue secondaries brachialis/brachioradialis omitted - they do not fit a straight-arm movement)."
+ },
+ {
+  "variantId": "gap-y002",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: panel 1 has no muscle overlay at all."
+ },
+ {
+  "variantId": "new-019",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: panel 1 drawn on two feet (not a single-leg squat)."
+ },
+ {
+  "variantId": "new-074",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - prone contralateral arm/leg raise listed with rectus abdominis / transverse abdominis primary (bird-dog data); lying face down these are hidden and the prone lift is driven by back extensors/glutes. Needs confirmation of sourced muscles."
+ },
+ {
+  "variantId": "new-027",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: no torso rotation shown; panel 2 reads as a split squat."
+ },
+ {
+  "variantId": "new-028",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Pilates Double Leg Kicks (prone back-extension + hamstring kick) listed with rectus abdominis/obliques primary and iliopsoas/rectus femoris secondary - wrong family. Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "new-031",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-031.png",
+  "notes": "Male dumbbell man-maker shown as plank renegade-row -> standing overhead press; chest red, delts/triceps orange (per queue data). Panels drawn as faint boxes."
+ },
+ {
+  "variantId": "new-032",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-032.png",
+  "notes": "Male dumbbell split squat."
+ },
+ {
+  "variantId": "gap-n005",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n005.png",
+  "notes": "Explosive star jump: crouch -> airborne star. Primary only (low-moderate)."
+ },
+ {
+  "variantId": "new-037",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-037.png",
+  "notes": "Male front-rack dumbbell reverse lunge (dumbbells at the shoulders). Image 1536x2752."
+ },
+ {
+  "variantId": "new-044",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: in panel 2 the bar slides through his hand (hand grips mid-shaft, bar end sticks out above) - landmine mechanics wrong; red also on the non-pressing shoulder."
+ },
+ {
+  "variantId": "existing-084",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - High Knees primary is recorded as 'Disputed primary - either Gluteus Maximus or Hip Flexors/Iliopsoas'; cannot paint a disputed primary without a decision."
+ },
+ {
+  "variantId": "new-052",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-052.png",
+  "notes": "Male kettlebell gorilla row; filled-disc badges; kettlebells slightly off the floor in panel 1."
+ },
+ {
+  "variantId": "new-054",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: band anchored off to the side with wrong band path; front view put red on the front/side delts and orange on the chest instead of rear delts/rhomboids."
+ },
+ {
+  "variantId": "new-056",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-056.png",
+  "notes": "Lateral squat and reach walk: feet together -> wide lateral squat stepping sideways, arms forward."
+ },
+ {
+  "variantId": "new-066",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Oblique Curl (ball squeeze) listed with Biceps Brachii / Brachialis primary (arm-curl data). Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "new-114",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: drawn as a step-up beside the box (standing on the floor with one foot on the box), not a step-down from on top of the box."
+ },
+ {
+  "variantId": "new-071",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-071.png",
+  "notes": "Plank to chaturanga: high plank -> elbows-in low hover. Abs red, obliques orange (per queue data; triceps/chest not highlighted)."
+ },
+ {
+  "variantId": "new-073",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Prone Band Hamstring Curl listed with Biceps Brachii / Brachialis (arm-curl data) instead of hamstrings. Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "gap-y013",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Raised Arms (Hasta Uttanasana) primary given as Pectoralis Minor (a deep muscle, from a book-index reference, low confidence) - not drawable as a credible overlay. Needs a better source."
+ },
+ {
+  "variantId": "new-080",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Reverse Wrist Curl listed with Biceps Brachii / Brachialis primary instead of wrist extensors. Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "new-082",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Ring Support Hold listed with wrist flexors/extensors (grip data) as primary instead of triceps/shoulder depressors/chest. Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "new-085",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: arrow placed inside panel 1 at the left edge instead of between the panels."
+ },
+ {
+  "variantId": "new-087",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-087.png",
+  "notes": "Pilates saw: seated T-arms -> rotate and reach to opposite foot. Abs only (low)."
+ },
+ {
+  "variantId": "gap-n025",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: gender drift - panel 2 face rendered with stubble/male features; hand placement also not threaded to the ankles."
+ },
+ {
+  "variantId": "new-090",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-090.png",
+  "notes": "Seated hamstring reach: upright -> forward fold. Hamstrings red (stretched)."
+ },
+ {
+  "variantId": "new-093",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-093.png",
+  "notes": "Bodyweight side lunge, hands clasped. Red also on the straight leg's thigh."
+ },
+ {
+  "variantId": "new-099",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-099.png",
+  "notes": "Single straight leg lower: leg vertical -> lowered. Abs only (low)."
+ },
+ {
+  "variantId": "new-124",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: panel 2 is a plain sit-up with hands forward - no rotation to the outside of the leg."
+ },
+ {
+  "variantId": "new-105",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-105.png",
+  "notes": "Squat sky reach: squat arms forward -> standing on toes, arms overhead."
+ },
+ {
+  "variantId": "new-109",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: same fault as new-098 - red on the non-pressing shoulder. Budget exhausted."
+ },
+ {
+  "variantId": "new-116",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-116.png",
+  "notes": "Step-up jump: foot on box -> airborne off the box, knee driven up."
+ },
+ {
+  "variantId": "gap-n027",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n027.png",
+  "notes": "Table top heel taps: table-top -> one foot tapped to the mat. Abs only (low)."
+ },
+ {
+  "variantId": "new-122",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Toes-to-bar listed with wrist flexors/extensors (grip data) as primary instead of abdominals/hip flexors. Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "new-125",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "NOT GENERATED - Upright Row listed with Latissimus Dorsi / Middle-Lower Trapezius primary (row data) instead of deltoids/upper trapezius. Needs corrected sourced muscles."
+ },
+ {
+  "variantId": "gap-y025",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y025.png",
+  "notes": "Warrior 2 -> Reverse Warrior. Primary only (low-moderate)."
+ },
+ {
+  "variantId": "extra-battle-ropes",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "a1: both panels show the same arm position (right up, left down) - near-identical panels. Budget exhausted."
+ }
+]

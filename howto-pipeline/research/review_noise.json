@@ -1,0 +1,2780 @@
+[
+ {
+  "exerciseName": "1000m run, then 2 rounds: 20 cal row / 15 air squats / 10 burpees",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "circuit (run/row/air squats/burpees) - parts covered"
+ },
+ {
+  "exerciseName": "2 kicks, 1 pull drill (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "25 kick / 25 drill / 25 build (rest 15s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "25 kick / 25 drill / 25 build (rest :15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "25s on :45 - free pull, catch-up free, free pull, free kick",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "30-40 m build-up, flying 10 m sprint + decel",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "running sprint/pace label (flying sprint) - consistent with all other sprint labels left excluded"
+ },
+ {
+  "exerciseName": "440 warm-up: 3 min run, then 20 s each of high skips, high knees, walking lunges, hamstring stretch, butt kicks, straight-leg kicks",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up"
+ },
+ {
+  "exerciseName": "50 kick / 50 drill (rest 15s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "50 kick / 50 drill / 50 swim (rest :15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "50 kick on side / 50 free / 50 kick on side / 50 free, easy",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "A-skips, B-skips, straight-leg bounds (Rob Jackson T1-style drills)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "list of three running drills - each covered individually"
+ },
+ {
+  "exerciseName": "Address Position Overhead Raise",
+  "verdict": "needs-new-variant",
+  "variantId": "NV19",
+  "reason": "golf address-posture overhead raise with club - no matching variant",
+  "newVariant": {
+   "key": "NV19",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "In golf address posture (hip hinge, knees soft), holding a club with both hands and raising it from the hips to straight-armed overhead without losing the posture"
+  }
+ },
+ {
+  "exerciseName": "Alternate 50 kick / 50 swim, choice (on 1:00 / 1:10)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Alternate easy/fast with strong kick",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Alternate kick with board / pull with buoy (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "AMRAP 3 (15 min): ski / row / run",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "circuit (ski/row/run)"
+ },
+ {
+  "exerciseName": "AMRAP rest of 4 min: med-ball sit-ups",
+  "verdict": "needs-new-variant",
+  "variantId": "NV17",
+  "reason": "med-ball sit-up - existing sit-up image has no ball",
+  "newVariant": {
+   "key": "NV17",
+   "equipment": "other-named",
+   "gender": "male",
+   "movementDescription": "Sit-up holding a medicine ball at the chest (or pressing it overhead at the top), feet flat"
+  }
+ },
+ {
+  "exerciseName": "AMRAP rest of 8 min: sandbag walking lunge",
+  "verdict": "needs-new-variant",
+  "variantId": "NV16",
+  "reason": "sandbag walking lunge - existing-103 is a dumbbell walking lunge (equipment differs; see note on the 3 existing Sandbag rows)",
+  "newVariant": {
+   "key": "NV16",
+   "equipment": "other-named",
+   "gender": "male",
+   "movementDescription": "Sandbag held in a bear-hug at the chest, stepping forward into a walking lunge"
+  }
+ },
+ {
+  "exerciseName": "Anti-rotation Hold on Balance Cushion",
+  "verdict": "needs-new-variant",
+  "variantId": "NV18",
+  "reason": "Pallof-style hold standing on a balance cushion (TOGU golf) - existing Pallof image has no cushion",
+  "newVariant": {
+   "key": "NV18",
+   "equipment": "cable",
+   "gender": "male",
+   "movementDescription": "Standing on a balance cushion side-on to a cable/band anchor, holding the handle pressed straight out at chest height and resisting rotation (Pallof hold)"
+  }
+ },
+ {
+  "exerciseName": "Approach jump, 1- or 2-foot (game-like)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "volleyball approach jump - sport skill"
+ },
+ {
+  "exerciseName": "Arm Rotations (club vertical, rotate each way)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV20",
+  "reason": "GRIPP club-vertical forearm rotation - new-035 is forearm-on-thigh with a hammer/dumbbell, different set-up",
+  "newVariant": {
+   "key": "NV20",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "Standing, holding a golf club vertically in front in one hand, rotating the forearm so the club turns from one side to the other"
+  }
+ },
+ {
+  "exerciseName": "Backstroke - 50 kick / 50 sprint / 50 drill (rest :15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Bag or shadow round: hooks and uppercuts, slow and controlled",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Balance: single-leg stand, hold bench",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand (Otago/falls-prevention balance) - real demonstrable exercise, no single-leg stand variant exists",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Band Speed Rotations (golf posture)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV26",
+  "reason": "band rotation in golf posture - existing-070 is a cable diagonal chop, different plane and equipment",
+  "newVariant": {
+   "key": "NV26",
+   "equipment": "band",
+   "gender": "male",
+   "movementDescription": "In golf posture (hip hinge), a band anchored to one side, rotating the torso quickly away from the anchor and back"
+  }
+ },
+ {
+  "exerciseName": "Bench Back-of-Leg Stretch",
+  "verdict": "needs-new-variant",
+  "variantId": "NV29",
+  "reason": "NIH \"back-of-leg stretch\" is sitting sideways on a bench with one leg along it - existing-044 is a standing heel-up reach",
+  "newVariant": {
+   "key": "NV29",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Sitting sideways on a bench, one leg extended straight along the bench, the other foot on the floor, leaning forward from the hips over the straight leg"
+  }
+ },
+ {
+  "exerciseName": "Block 1: kick 30 m to partner, run 40 m to a new cone, repeat",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "AFL kicking drill"
+ },
+ {
+  "exerciseName": "Block 3: 3-person kick-and-follow (kick, follow your kick)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "AFL kicking drill"
+ },
+ {
+  "exerciseName": "Block 4: lead 20 m, mark, turn, kick to 30 m target",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "AFL kicking drill"
+ },
+ {
+  "exerciseName": "Breaststroke - 50 kick / 50 sprint / 50 drill (rest :15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Breaststroke kick on back, arms by sides (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Breaststroke kick with board (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Breaststroke, pull-breathe-kick-glide, count strokes (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Butterfly",
+  "verdict": "remap",
+  "variantId": "existing-053",
+  "reason": "\"Butterfly\" here is the Yin yoga pose (Somax Yin-Style Long Holds 45, 3-min hold), not the swim stroke - same seated soles-together stretch as existing-053"
+ },
+ {
+  "exerciseName": "Butterfly - 50 dolphin kick / 50 sprint / 50 drill (rest :15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Cadence lift - same gear, spin faster",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "cycling cadence label"
+ },
+ {
+  "exerciseName": "Chest Stretch (arms back)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV30",
+  "reason": "NIH chest stretch = arms out to sides drawn back; existing-050 is hands clasped behind the back, baseline is a doorway stretch",
+  "newVariant": {
+   "key": "NV30",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Seated or standing tall, arms out to the sides at shoulder height with palms forward, drawing the arms back to open the chest"
+  }
+ },
+ {
+  "exerciseName": "Choice - free, kick, scull, free by 25 (on 2:00)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Choice - hold best average time and stroke count (on 1:30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Choice with fins - distance per stroke, breathing patterns, dolphin kicks off walls (on 3:30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Choice, hold the 100 pace (on 10:00)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Choice, IM rotation - 50 of each stroke (on 3:15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Club-assisted Trunk Rotation",
+  "verdict": "needs-new-variant",
+  "variantId": "NV21",
+  "reason": "senior golfer club-across-shoulders trunk rotation - torso-rotation image has no club (prop must be visible)",
+  "newVariant": {
+   "key": "NV21",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "Standing upright, a golf club held across the shoulders behind the neck, rotating the upper body to one side then the other"
+  }
+ },
+ {
+  "exerciseName": "Contrast - kick with board",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Cool-down and stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down jog + stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down kick",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Cool-down stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down stretch (calves, thighs, hips, chest)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down stretch (hips, hamstrings, chest)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down stretch (hips, hamstrings, chest, upper back)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down stretch: quads, hips, calves",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down stretches: chest & arms, hamstrings, quadriceps, neck & back",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down walk and stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: calf and thigh stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: Chest and Arm Stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: gentle stretches (calf, thigh, chest), 20-30s holds",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: Hamstring/Calf Stretch (hands on chair)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "combined hamstring+calf stretch line - both stretches covered individually"
+ },
+ {
+  "exerciseName": "Cool-down: light skipping",
+  "verdict": "remap",
+  "variantId": "new-p3-001",
+  "reason": "jump-rope skipping (AU usage) - programs are Somax Jump Rope Intervals / IABA boxing skipping; same as the other Skipping rows mapped to new-p3-001"
+ },
+ {
+  "exerciseName": "Cool-down: light skipping or jog on the spot",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "alternatives (skipping OR jog)"
+ },
+ {
+  "exerciseName": "Cool-down: Neck, Upper Back and Shoulder Stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: slow march and calf stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: walk and stretch (hips, hamstrings, calves, chest)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: walk, calf and thigh stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: walk, shoulder and calf stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Cool-down: walk, then calf and thigh stretches",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Court running drills: jog, hip out/in, carioca, backpedal",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part court running drills"
+ },
+ {
+  "exerciseName": "Cross-body stretch",
+  "verdict": "remap",
+  "variantId": "existing-119",
+  "reason": "Tennis Shoulder Care cross-body stretch = arm pulled across chest, same as \"Shoulder Cross-Body Stretch\" (existing-119)"
+ },
+ {
+  "exerciseName": "Deep Abdominal Hold (lying knees bent, or on hands and knees)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV13",
+  "reason": "postnatal deep abdominal (TrA) hold - real exercise; visually subtle, panel 2 must show belly drawn in",
+  "newVariant": {
+   "key": "NV13",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Lying on the back with knees bent, gently drawing the lower belly in toward the spine and holding (transversus abdominis hold); visually subtle"
+  }
+ },
+ {
+  "exerciseName": "Deep Tummy Hold (lying knees bent)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV13",
+  "reason": "postnatal deep abdominal (TrA) hold - real exercise; visually subtle, panel 2 must show belly drawn in",
+  "newVariant": {
+   "key": "NV13",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Lying on the back with knees bent, gently drawing the lower belly in toward the spine and holding (transversus abdominis hold); visually subtle"
+  }
+ },
+ {
+  "exerciseName": "Drill - backstroke kick, one arm forward one at side, switch (on :30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Drill - lift and switch arms (on :30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Drill – 25 six-kick switch / 25 freestyle",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Drill/swim by 25 - catch-up or kick on side (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Drills: A-skips, high knees, butt kicks",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "list of drills - each covered"
+ },
+ {
+  "exerciseName": "Dynamic warm-up and progressive swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf warm-up + swings"
+ },
+ {
+  "exerciseName": "Dynamic warm-up: skips, lateral shuffles, leg swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Easy backstroke kick/swim",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Easy bike, walk or light skipping",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "alternatives (bike/walk/skipping)"
+ },
+ {
+  "exerciseName": "Easy cool-down + stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Easy jog + leg swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Easy kick",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Easy kick with board",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Easy rolling on the flat",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "cycling (rolling on the flat)"
+ },
+ {
+  "exerciseName": "Easy Skipping (warm-up)",
+  "verdict": "remap",
+  "variantId": "new-p3-001",
+  "reason": "jump-rope skipping (AU usage) - programs are Somax Jump Rope Intervals / IABA boxing skipping; same as the other Skipping rows mapped to new-p3-001"
+ },
+ {
+  "exerciseName": "Easy walk + calf stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Easy walk + stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Easy walk and calf stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Easy walk cool-down + calf/hip stretches",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "EMOM even minutes: sandbag walking lunge",
+  "verdict": "needs-new-variant",
+  "variantId": "NV16",
+  "reason": "sandbag walking lunge - existing-103 is a dumbbell walking lunge (equipment differs; see note on the 3 existing Sandbag rows)",
+  "newVariant": {
+   "key": "NV16",
+   "equipment": "other-named",
+   "gender": "male",
+   "movementDescription": "Sandbag held in a bear-hug at the chest, stepping forward into a walking lunge"
+  }
+ },
+ {
+  "exerciseName": "Erg / hip flow / squat-to-stand / shoulder dislocates",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part list"
+ },
+ {
+  "exerciseName": "Falling and rolling practice (both shoulders, from kneeling)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "break-fall technique"
+ },
+ {
+  "exerciseName": "Falling/rolling technique",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "break-fall technique"
+ },
+ {
+  "exerciseName": "Falling/rolling technique on grass",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "break-fall technique"
+ },
+ {
+  "exerciseName": "Fast fly kick off the wall (6-8 kicks) then freestyle",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Fast Skipping",
+  "verdict": "remap",
+  "variantId": "new-p3-001",
+  "reason": "jump-rope skipping (AU usage) - programs are Somax Jump Rope Intervals / IABA boxing skipping; same as the other Skipping rows mapped to new-p3-001"
+ },
+ {
+  "exerciseName": "Feet-together Stand (hold bench)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV03",
+  "reason": "feet-together stance balance exercise (Steady Feet program) - no variant exists",
+  "newVariant": {
+   "key": "NV03",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing with the feet pressed together, holding a bench lightly for balance"
+  }
+ },
+ {
+  "exerciseName": "Finish-position Hold on lead leg (club)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf finish-position hold - swing posture, not an exercise"
+ },
+ {
+  "exerciseName": "Flying sprint (20 m build-up)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "flying sprint pace label"
+ },
+ {
+  "exerciseName": "Flying sprint (30 m build-up)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "flying sprint pace label"
+ },
+ {
+  "exerciseName": "Flying sprint after 30 m build-up",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "flying sprint pace label"
+ },
+ {
+  "exerciseName": "Foam roll calves, quads, glutes, upper back",
+  "verdict": "remap",
+  "variantId": "new-p3-006",
+  "reason": "foam rolling multiple areas - matches \"Foam roll quads, calves, glutes\" already mapped to new-p3-006"
+ },
+ {
+  "exerciseName": "Foam Roll: calves, quads, glutes, upper back",
+  "verdict": "remap",
+  "variantId": "new-p3-006",
+  "reason": "foam rolling multiple areas - matches \"Foam roll quads, calves, glutes\" already mapped to new-p3-006"
+ },
+ {
+  "exerciseName": "FootyFirst warm-up: carioca/grapevine with high knees",
+  "verdict": "remap",
+  "variantId": "gap-n009",
+  "reason": "single drill: carioca/grapevine (gap-n009); high-knee crossover is a minor variation of the same movement"
+ },
+ {
+  "exerciseName": "Free / pull / kick / choice",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Free kick (on 2:00 / 2:15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle - 100 pace / 50 dolphin kick on back / 100 pace (rest :15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle - 50 kick / 50 sprint / 50 drill (rest :15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle - very hard but controlled (rest 25s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle – hold pace per 50 (rest 25s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle, count strokes, hold the count (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle, fast but controlled (rest 15s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle, focus on a quiet, steady kick (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle, hold best average (on 2:00 / 15-20s rest)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Freestyle, strong but controlled race start (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Fuel: carbohydrate",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "nutrition note"
+ },
+ {
+  "exerciseName": "Full-speed Practice Swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf practice swings"
+ },
+ {
+  "exerciseName": "Functional Brace (pelvic floor squeeze when coughing, sneezing or lifting)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pelvic-floor contraction - no visible movement to illustrate"
+ },
+ {
+  "exerciseName": "Gentle kick with board (rest 30s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Guard hold with small punches",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing guard hold"
+ },
+ {
+  "exerciseName": "Half-kneeling Rotation with club (hips still)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV24",
+  "reason": "half-kneeling rotation with club - distinct kneeling position",
+  "newVariant": {
+   "key": "NV24",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "Half-kneeling, a golf club held across the chest/shoulders, rotating the upper body toward the front-knee side with the hips still"
+  }
+ },
+ {
+  "exerciseName": "Heavy-club or Two-club Swings (smooth)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf swings"
+ },
+ {
+  "exerciseName": "Heavy-stick Swings (dominant side)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf swings"
+ },
+ {
+  "exerciseName": "Hip and ankle mobility",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "generic mobility label"
+ },
+ {
+  "exerciseName": "Hip and thoracic mobility circuit",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "generic circuit label"
+ },
+ {
+  "exerciseName": "Hip CARs (quadruped)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV07",
+  "reason": "quadruped hip CAR - on all fours, distinct from the standing hip-circles image",
+  "newVariant": {
+   "key": "NV07",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "On hands and knees, lifting one bent knee and slowly circling it out to the side, back and round (quadruped hip CAR)"
+  }
+ },
+ {
+  "exerciseName": "Hip flexor + thoracic mobility",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "generic mobility label"
+ },
+ {
+  "exerciseName": "Hip flexor kick (band)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV12",
+  "reason": "USMS dryland band hip-flexor kick - no variant",
+  "newVariant": {
+   "key": "NV12",
+   "equipment": "band",
+   "gender": "male",
+   "movementDescription": "Standing, a band looped around one ankle and anchored behind, driving that straight leg forward and up against the band (hip-flexor kick)"
+  }
+ },
+ {
+  "exerciseName": "Hold cadence",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pacing / interval label"
+ },
+ {
+  "exerciseName": "IM by stroke count - 12 fly, 18 back, 10 breast, free to the marker (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "IM kick (on 2:00)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Jog at least 200 m + leg swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Jog with Progressive Arm Circles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "jog combined with arm circles - both covered"
+ },
+ {
+  "exerciseName": "Jog, side-to-side, carioca, leg swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Jog, skip, side-slide the court lines",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Jog, skip, side-step the court lines",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Jump stop from a dribble (freeze 2 s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "basketball skill drill"
+ },
+ {
+  "exerciseName": "Kick",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick (on 1:00)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick (on :40)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick (rest 30s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick (rest :10)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick (rest :15)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick - 2 kicks each on side, belly, back, belly (on :45)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick - 25 flutter / 50 dolphin (core focus) / 25 flutter (rest :10)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick - arms at sides, roll chest/belly/toes (on :30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick - arms in streamline, same roll (on :30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick - moderate",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick on back, arms at sides - body position (on :30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick on back, arms by sides (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick on side, bottom arm extended (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick on side, bottom arm extended - switch sides each length (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick on the run to a target (both feet)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "AFL kicking skill"
+ },
+ {
+  "exerciseName": "Kick sprints 15m, 25m, 35m, 50m with fins and board",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with board",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with board (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with board and fins",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with board and fins (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with board and fins (rest 30s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with board and fins, moderate (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with board, hips high (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with board, moderate (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with fins",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with short fins (on 1:05)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick with short fins (on 4:30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick, fast/easy (on 2:00)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Kick, IM order, fins or board (rest :10)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick, moderate (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick-and-handball circuit / small-sided game",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "AFL kick-and-handball game"
+ },
+ {
+  "exerciseName": "Kick/drill/swim by 25 (rest 15s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Kick/swim",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Landmine punch press",
+  "verdict": "remap",
+  "variantId": "new-055",
+  "reason": "landmine punch press = pressing the landmine bar out from the chest with torso rotation, same as new-055 Landmine Rotational Press"
+ },
+ {
+  "exerciseName": "Light jog on the spot with arm crosses and trunk twists",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Light kicking and handball, both sides",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "AFL kicking/handball skill"
+ },
+ {
+  "exerciseName": "Light-stick Speed Swings (dominant side)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf swings"
+ },
+ {
+  "exerciseName": "Light-stick Speed Swings (non-dominant side)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf swings"
+ },
+ {
+  "exerciseName": "Light-stick Swings (dominant side)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf swings"
+ },
+ {
+  "exerciseName": "Light-stick Swings (non-dominant side)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf swings"
+ },
+ {
+  "exerciseName": "Line hops forward-back and side-side",
+  "verdict": "needs-new-variant",
+  "variantId": "NV14",
+  "reason": "line hops are travelling two-foot hops over a line; gap-n004 is pogo hops in place",
+  "newVariant": {
+   "key": "NV14",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Quick two-foot hops back and forth and side to side over a line on the floor"
+  }
+ },
+ {
+  "exerciseName": "Mobility: hips, shoulders, T-spine",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "generic mobility label"
+ },
+ {
+  "exerciseName": "Normal-club Speed Swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf swings"
+ },
+ {
+  "exerciseName": "Normal-stick Swings (dominant side)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf swings"
+ },
+ {
+  "exerciseName": "One-leg Stand (hold support)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand (Otago/falls-prevention balance) - real demonstrable exercise, no single-leg stand variant exists",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Optional cool-down: Child's Pose + Reach, Supine Twist, Diaphragmatic Breathing",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "optional multi-part cool-down"
+ },
+ {
+  "exerciseName": "Pad round: combo then slip or roll the holder's return",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Partner push (double-leg jump, bumped in the air)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "partner contact drill"
+ },
+ {
+  "exerciseName": "Pelvic Floor Lift & Release",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pelvic-floor contraction - no visible movement to illustrate"
+ },
+ {
+  "exerciseName": "Pelvic Floor Long Hold",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pelvic-floor contraction - no visible movement to illustrate"
+ },
+ {
+  "exerciseName": "Pelvic Floor Long Hold (5s rest between)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pelvic-floor contraction - no visible movement to illustrate"
+ },
+ {
+  "exerciseName": "Poolside stretches - calves, hamstrings, shoulders",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Post-walk Calf and Hamstring Stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Power-stick Swinging on Air Cushion",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "golf power-stick swinging (swing practice)"
+ },
+ {
+  "exerciseName": "Powerful Rotation (club low to high diagonal)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV27",
+  "reason": "GRIPP low-to-high diagonal club rotation - an injury-prevention warm-up exercise, not swing practice",
+  "newVariant": {
+   "key": "NV27",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "Standing, club held in both hands low beside one hip, rotating and lifting it diagonally up across the body to above the opposite shoulder"
+  }
+ },
+ {
+  "exerciseName": "Pull with buoy (optional paddles), focus on rotation (rest 30s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Quadruped Hip CARs",
+  "verdict": "needs-new-variant",
+  "variantId": "NV07",
+  "reason": "quadruped hip CAR - on all fours, distinct from the standing hip-circles image",
+  "newVariant": {
+   "key": "NV07",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "On hands and knees, lifting one bent knee and slowly circling it out to the side, back and round (quadruped hip CAR)"
+  }
+ },
+ {
+  "exerciseName": "Quadruped Reach-back (hand behind head)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV10",
+  "reason": "quadruped thoracic reach-back (hand behind head) - not thread-the-needle or open book",
+  "newVariant": {
+   "key": "NV10",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "On hands and knees, one hand behind the head, rotating that elbow down toward the opposite wrist then up toward the ceiling (quadruped T-spine reach-back)"
+  }
+ },
+ {
+  "exerciseName": "Recovery (skip after the 2nd round)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "instruction note (skip after round)"
+ },
+ {
+  "exerciseName": "Recovery Drill: overhead arm pull, rear lunge, extend and flex, thigh stretch, single-leg over",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part recovery drill list (Army PRT) - parts covered individually"
+ },
+ {
+  "exerciseName": "Rest between series (walk + mobility)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Roll down and recover",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "\"Roll down and recover\" is from Somax Outdoor Hill Repeats - cycling/running downhill recovery, not a Pilates roll-down"
+ },
+ {
+  "exerciseName": "Round 1: shape, movement, slips/ducks/rolls and feints - no punching",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Round 3: slip or roll, then counter 2-3 punches",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Round 4: power - single shots with full rotation",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Run (3 steps), jump 45 degrees to the side and land",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "netball run-jump-land skill drill"
+ },
+ {
+  "exerciseName": "Run (3-5 steps), jump, land and run on 5 m; coach adds a ball to mark",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "netball run-jump-land skill drill with ball"
+ },
+ {
+  "exerciseName": "Run / air squats / walking lunges / burpees",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "circuit - parts covered"
+ },
+ {
+  "exerciseName": "Run forward (3-step run-up), jump and land on the other leg",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "run-jump-land skill drill"
+ },
+ {
+  "exerciseName": "Running - shoulder contact jumps",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "partner contact drill"
+ },
+ {
+  "exerciseName": "Running partner push with 90-degree twist",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "partner contact drill"
+ },
+ {
+  "exerciseName": "Running – shoulder contact jumps",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "partner contact drill"
+ },
+ {
+  "exerciseName": "Seated Arm Raises with breath",
+  "verdict": "needs-new-variant",
+  "variantId": "NV11",
+  "reason": "chair-yoga seated arm raise with breath - no seated arm-raise variant",
+  "newVariant": {
+   "key": "NV11",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Seated upright on a chair, raising both arms out and overhead on the in-breath and lowering them on the out-breath"
+  }
+ },
+ {
+  "exerciseName": "Seated Back Stretch (fold from hips)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV28",
+  "reason": "NIH/Emory \"Seated Back Stretch\" is done on a chair (program equipment: chair) - existing-047 is a floor seated fold",
+  "newVariant": {
+   "key": "NV28",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Seated near the front of a chair, feet flat, bending forward from the hips with a long back, hands sliding down the shins"
+  }
+ },
+ {
+  "exerciseName": "Seated Rotation with club across chest",
+  "verdict": "needs-new-variant",
+  "variantId": "NV23",
+  "reason": "seated rotation with club across chest (Thoracic Turn 10)",
+  "newVariant": {
+   "key": "NV23",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "Seated on a chair or bench, a golf club held across the chest, rotating the ribcage to each side with the hips still"
+  }
+ },
+ {
+  "exerciseName": "Semi-tandem Stand (hold bench)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV02",
+  "reason": "semi-tandem stance balance exercise - no variant exists",
+  "newVariant": {
+   "key": "NV02",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Semi-tandem stance: standing with the heel of one foot beside the big toe of the other, holding a bench lightly"
+  }
+ },
+ {
+  "exerciseName": "Shadow round 3: lead hand only - feint head/throw body, feint body/throw head",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Shadow round 4: full-extension jab ladder (1-2-3 jabs forward and back)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Shadow round 5: close-range pressure, no punching, cut off angles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Shadow round: slip, roll, counter",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Shadow swings: forehand, backhand, serve",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "tennis shadow swings - sport skill"
+ },
+ {
+  "exerciseName": "Shoulder CARs (standing)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV08",
+  "reason": "shoulder CAR is a single slow full-range arm circle, not small arm circles or shoulder rolls",
+  "newVariant": {
+   "key": "NV08",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing tall, one straight arm tracing the largest slow circle forward, up overhead, back and down while the torso stays still (shoulder CAR)"
+  }
+ },
+ {
+  "exerciseName": "Shoulder Rolls (back and down)",
+  "verdict": "remap",
+  "variantId": "baseline:scapular_circles_mobility",
+  "reason": "shoulder rolls - \"Shoulder Rolls\" already mapped to scapular circles"
+ },
+ {
+  "exerciseName": "Side Kick Front/Back",
+  "verdict": "needs-new-variant",
+  "variantId": "NV09",
+  "reason": "Pilates side-lying side kick - no side-kick variant exists (224 series adds up/down and circles; same side-lying base image)",
+  "newVariant": {
+   "key": "NV09",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Pilates side kick: lying on one side, legs straight and slightly forward, swinging the top leg forward then back"
+  }
+ },
+ {
+  "exerciseName": "Side Kick Front/Back (small range)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV09",
+  "reason": "Pilates side-lying side kick - no side-kick variant exists (224 series adds up/down and circles; same side-lying base image)",
+  "newVariant": {
+   "key": "NV09",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Pilates side kick: lying on one side, legs straight and slightly forward, swinging the top leg forward then back"
+  }
+ },
+ {
+  "exerciseName": "Side Kick Series",
+  "verdict": "needs-new-variant",
+  "variantId": "NV09",
+  "reason": "Pilates side-lying side kick - no side-kick variant exists (224 series adds up/down and circles; same side-lying base image)",
+  "newVariant": {
+   "key": "NV09",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Pilates side kick: lying on one side, legs straight and slightly forward, swinging the top leg forward then back"
+  }
+ },
+ {
+  "exerciseName": "Side Kick Series (front/back, up/down, circles)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV09",
+  "reason": "Pilates side-lying side kick - no side-kick variant exists (224 series adds up/down and circles; same side-lying base image)",
+  "newVariant": {
+   "key": "NV09",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Pilates side kick: lying on one side, legs straight and slightly forward, swinging the top leg forward then back"
+  }
+ },
+ {
+  "exerciseName": "Sighting: lift eyes to a landmark every 6-8 strokes",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "open-water swim sighting skill"
+ },
+ {
+  "exerciseName": "Single-arm butterfly, alternating arms (on :30)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Single-leg balance (hold a ball)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "basketball ball-handling balance drill; base stance is NV01 but the ball-holding version is left as a sport drill"
+ },
+ {
+  "exerciseName": "Single-leg Balance Reach",
+  "verdict": "remap",
+  "variantId": "new-019",
+  "reason": "single-leg balance with a free-foot reach to targets (star-excursion style), same as new-019 clock reach"
+ },
+ {
+  "exerciseName": "Single-leg balance with ball pass (or hold)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "partner ball-pass balance drill"
+ },
+ {
+  "exerciseName": "Single-leg balance with reach",
+  "verdict": "remap",
+  "variantId": "new-019",
+  "reason": "single-leg balance with a free-foot reach to targets (star-excursion style), same as new-019 clock reach"
+ },
+ {
+  "exerciseName": "Single-leg hop in place",
+  "verdict": "needs-new-variant",
+  "variantId": "NV15",
+  "reason": "single-leg hop in place; gap-n004 is two-footed",
+  "newVariant": {
+   "key": "NV15",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Small, quick repeated hops in place on one foot, the other leg lifted"
+  }
+ },
+ {
+  "exerciseName": "Single-leg jump forward and back, arms up as if marking",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "AFL marking-specific jump drill"
+ },
+ {
+  "exerciseName": "Single-leg jumps - coach indicates direction, ball in both hands",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "coach-directed netball jump drill with ball"
+ },
+ {
+  "exerciseName": "Single-leg jumps - sideways (coach gives direction)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "coach-directed netball jump drill"
+ },
+ {
+  "exerciseName": "Single-leg stance - testing the partner's balance (balls pressed together)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "partner balance-testing drill"
+ },
+ {
+  "exerciseName": "Single-leg Stance, hold the ball",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "FIFA 11+ partner/ball balance drill"
+ },
+ {
+  "exerciseName": "Single-leg stand (hold bench)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand (Otago/falls-prevention balance) - real demonstrable exercise, no single-leg stand variant exists",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Stand (hold chair)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand (Otago/falls-prevention balance) - real demonstrable exercise, no single-leg stand variant exists",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Stand (hold support if needed)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand (Otago/falls-prevention balance) - real demonstrable exercise, no single-leg stand variant exists",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Standing on Disc holding Ball",
+  "verdict": "needs-new-variant",
+  "variantId": "NV48",
+  "reason": "TOGU single-leg standing on a balance disc holding a ball - real balance exercise; disc + ball must be shown",
+  "newVariant": {
+   "key": "NV48",
+   "equipment": "other-named",
+   "gender": "male",
+   "movementDescription": "Standing on one leg on an inflatable balance disc/cushion, arms free or holding a ball at the chest"
+  }
+ },
+ {
+  "exerciseName": "Six-arm switch: 6 kicks on side, 1 stroke, roll to other side (rest 20s)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Skating jumps - balancing with the ball in one hand",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "skating jump with ball - sport drill"
+ },
+ {
+  "exerciseName": "Skating jumps - dynamic balancing with ball (reach ball forward, leg back)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "skating jump with ball - sport drill"
+ },
+ {
+  "exerciseName": "Skating jumps - learning how to land (hold 3 s)",
+  "verdict": "remap",
+  "variantId": "gap-n006",
+  "reason": "skater hop landing and holding 3 s on one leg, no ball - same as \"Hop and stick\"/\"Lateral skater hop\" (gap-n006)"
+ },
+ {
+  "exerciseName": "Skipping ladder (50-60-70-80-100%, 1 min each, no break)",
+  "verdict": "remap",
+  "variantId": "new-p3-001",
+  "reason": "jump-rope skipping (AU usage) - programs are Somax Jump Rope Intervals / IABA boxing skipping; same as the other Skipping rows mapped to new-p3-001"
+ },
+ {
+  "exerciseName": "Skipping warm-up + leg swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Spine CARs (cat-cow segmental)",
+  "verdict": "remap",
+  "variantId": "existing-065",
+  "reason": "segmental cat-cow on hands and knees - same visual as Cat-Cow (existing-065)"
+ },
+ {
+  "exerciseName": "Spine Twist with club across shoulders",
+  "verdict": "needs-new-variant",
+  "variantId": "NV22",
+  "reason": "Pilates spine twist (seated, legs extended) with a club across the shoulders",
+  "newVariant": {
+   "key": "NV22",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "Pilates spine twist: seated tall on the floor, legs extended, a club across the shoulders, twisting the torso to each side"
+  }
+ },
+ {
+  "exerciseName": "Sprint from rolling ~15 km/h, mid gear",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "cycling sprint label"
+ },
+ {
+  "exerciseName": "Sprint to 3-step stop at the free-throw line",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "basketball skill drill"
+ },
+ {
+  "exerciseName": "Standing Hip CARs",
+  "verdict": "remap",
+  "variantId": "baseline:hip_circles_mobility",
+  "reason": "standing hip CAR - existing hip-circles image shows exactly this (standing, knee lifted and opened out to the side)"
+ },
+ {
+  "exerciseName": "Star excursion reach (front, side, back)",
+  "verdict": "remap",
+  "variantId": "new-019",
+  "reason": "star excursion reach = single-leg mini squat reaching the free foot front/side/back, same as new-019"
+ },
+ {
+  "exerciseName": "Stop 2: Semi-tandem Stand holding rail",
+  "verdict": "needs-new-variant",
+  "variantId": "NV02",
+  "reason": "semi-tandem stance balance exercise - no variant exists",
+  "newVariant": {
+   "key": "NV02",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Semi-tandem stance: standing with the heel of one foot beside the big toe of the other, holding a bench lightly"
+  }
+ },
+ {
+  "exerciseName": "Stop 3: One-leg Stand holding rail",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand (Otago/falls-prevention balance) - real demonstrable exercise, no single-leg stand variant exists",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Streamline jumps + band",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim dryland combo (streamline jumps + band)"
+ },
+ {
+  "exerciseName": "Streamline underwater butterfly kick",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "generic label"
+ },
+ {
+  "exerciseName": "Stretching",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "generic label"
+ },
+ {
+  "exerciseName": "Swim - odds free, evens free/fly by 50 (on 3:00)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label, not a land exercise"
+ },
+ {
+  "exerciseName": "Technical round 4: 3-4 punch combos at short range, roll out every 15 s",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "boxing round / skill drill"
+ },
+ {
+  "exerciseName": "Thigh Stretch",
+  "verdict": "remap",
+  "variantId": "baseline:quad_stretch",
+  "reason": "NHS Post-exercise \"Thigh Stretch\" is the standing heel-to-buttock quad stretch, same as \"Standing Thigh Stretch (hold chair)\""
+ },
+ {
+  "exerciseName": "Threshold 1 km",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pacing / interval label"
+ },
+ {
+  "exerciseName": "Threshold block",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pacing / interval label"
+ },
+ {
+  "exerciseName": "Threshold effort",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pacing / interval label"
+ },
+ {
+  "exerciseName": "Threshold finish",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pacing / interval label"
+ },
+ {
+  "exerciseName": "Threshold rep",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pacing / interval label"
+ },
+ {
+  "exerciseName": "Two-foot Standing on Disc holding Medicine Ball",
+  "verdict": "needs-new-variant",
+  "variantId": "NV49",
+  "reason": "TOGU two-foot standing on a balance disc holding a medicine ball",
+  "newVariant": {
+   "key": "NV49",
+   "equipment": "other-named",
+   "gender": "male",
+   "movementDescription": "Standing with both feet on an inflatable balance disc, arms free or holding a medicine ball at the chest"
+  }
+ },
+ {
+  "exerciseName": "Under: just below threshold",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "pacing / interval label"
+ },
+ {
+  "exerciseName": "Upper-back Rotation in golf stance",
+  "verdict": "needs-new-variant",
+  "variantId": "NV25",
+  "reason": "GRIPP upper-back rotation in hinged golf stance - not upright torso rotation",
+  "newVariant": {
+   "key": "NV25",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "In golf address posture (hip hinge), a club held across the shoulders/chest, turning the upper back to each side"
+  }
+ },
+ {
+  "exerciseName": "Walk (skip after the final run)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "walk instruction note"
+ },
+ {
+  "exerciseName": "Walk + stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Walk + stretch calves and quads",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Walk cool-down + calf stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Walk down carefully / easy walk",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "walking note"
+ },
+ {
+  "exerciseName": "Walk warm-up, then stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-down Stretching",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "generic label"
+ },
+ {
+  "exerciseName": "Warm-up (not in post): easy erg + mobility",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up - 1:00 swim / 1:00 kick / 1:00 fly drill or breaststroke",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Warm-up - free, pull, kick (rest :05 each)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Warm-up - free, pull, kick 100 each (rest :05)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Warm-up - swim, kick, IM, easy/build/easy/fast (about 10 min)",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "swim set / kick or drill label (pool), not a land exercise"
+ },
+ {
+  "exerciseName": "Warm-up: ankle bounces, calf raises, arm circles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: arm circles + scapular shrugs",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: arm circles + wall slides",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: arm circles and wall push-ups",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: Arm Wings with Torso Rotations",
+  "verdict": "remap",
+  "variantId": "baseline:torso_rotation_mobility",
+  "reason": "Utah golf \"Arm Wings with Torso Rotations\" = arms out wide rotating the torso, exactly what the standing torso-rotation image shows"
+ },
+ {
+  "exerciseName": "Warm-up: band pull-aparts + arm circles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up; both parts covered individually"
+ },
+ {
+  "exerciseName": "Warm-up: band pull-aparts, streamline squats",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up; parts covered individually"
+ },
+ {
+  "exerciseName": "Warm-up: bike + hip and shoulder mobility",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: bike + hip and thoracic mobility",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: bike or rower easy, then hip and shoulder mobility",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: bodyweight squat (easy)",
+  "verdict": "remap",
+  "variantId": "existing-002",
+  "reason": "single exercise (bodyweight squat), not a circuit - same as Bodyweight Squat (existing-002)"
+ },
+ {
+  "exerciseName": "Warm-up: Bodyweight Squats",
+  "verdict": "remap",
+  "variantId": "existing-002",
+  "reason": "single exercise (bodyweight squat), not a circuit - same as Bodyweight Squat (existing-002)"
+ },
+ {
+  "exerciseName": "Warm-up: bodyweight squats + arm circles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: brisk march and arm swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: brisk walk + bodyweight squats and hip hinges",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: brisk walk, arm swings, leg swings, heel-toe walks",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: cat-cow + deep squat hold",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: cat-cow, thoracic rotations, dead bugs",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: easy bike + leg swings",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: easy jog + mobility",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: easy push-ups and inverted rows",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: easy row + bodyweight squats",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: easy row + goblet squats",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: easy skipping + shoulder, hip and ankle circles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: easy skipping and mobility",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: general warm-up and stretch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: general warm-up and stretching",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: goblet squat + band or cable pull-apart",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up; both parts covered individually"
+ },
+ {
+  "exerciseName": "Warm-up: heel and toe walks, ankle circles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: jog on the spot, arm circles, lunges with rotation",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: jog on the spot, leg swings, lunges",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: march on the spot, heel digs, knee lifts",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: march or skip on the spot",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "alternatives (march OR skip)"
+ },
+ {
+  "exerciseName": "Warm-up: march, arm circles, hip circles, step-touch",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: march, arm circles, side steps, heel-toe walk",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: march, arm swings, hip circles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: ramp-up sets of the first lift",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "ramp-up sets instruction"
+ },
+ {
+  "exerciseName": "Warm-up: row + bodyweight squats + inchworms",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: row + walking lunges + inchworms",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: shadow at 50%, arm and hip circles",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: Shoulder Circles",
+  "verdict": "remap",
+  "variantId": "baseline:scapular_circles_mobility",
+  "reason": "\"Shoulder Circles 15 forward + 15 back\" = shoulder rolls; note source is ambiguous vs arm circles (baseline:arm_circles_mobility) - coordinator may prefer that"
+ },
+ {
+  "exerciseName": "Warm-up: slow jog or jumping jacks",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "alternatives (slow jog OR jumping jacks) - both covered"
+ },
+ {
+  "exerciseName": "Warm-up: World's Greatest Stretch",
+  "verdict": "remap",
+  "variantId": "gap-n013",
+  "reason": "single exercise - World's Greatest Stretch already mapped to gap-n013"
+ },
+ {
+  "exerciseName": "Warm-up: wrist circles + arm circles + cat-cow",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Warm-up: wrist circles + scapular shrugs on the bar",
+  "verdict": "correctly-excluded",
+  "variantId": null,
+  "reason": "multi-part warm-up/cool-down/circuit or generic label; its component movements are covered individually (or it is too generic to illustrate)"
+ },
+ {
+  "exerciseName": "Clockface",
+  "verdict": "remap",
+  "variantId": "new-019",
+  "reason": "AFLW Knee-Smart warm-up clockface = single-leg mini squat tapping 12-3-6-9, same as \"Clockface (mini squat, tap 12-3-6-9)\" (new-019)"
+ },
+ {
+  "exerciseName": "One-leg Stand (fingertips on bench)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "One-leg Stand (fingertips on wall)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "One-leg Stand with Head Turns",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "single-leg stand (head turns are a progression of the same stance)",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Balance",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "single-leg stand",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Balance (eyes closed)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "single-leg stand (eyes-closed progression)",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg balance (eyes open, then closed)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "single-leg stand",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg balance (hand support if needed)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "supported single-leg stand",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Stand",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "single-leg stand (Active Ageing)",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Stand (eyes open, then closed)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "single-leg stand",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Standing Single-leg Balance with knee drive",
+  "verdict": "needs-new-variant",
+  "variantId": "NV01",
+  "reason": "single-leg stand with the free knee driven up - same stance image",
+  "newVariant": {
+   "key": "NV01",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on one leg, the other knee lifted, fingertips resting on a bench/chair/rail for support (support optional as balance improves)"
+  }
+ },
+ {
+  "exerciseName": "Semi-tandem Stance (support nearby)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV02",
+  "reason": "semi-tandem stance",
+  "newVariant": {
+   "key": "NV02",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Semi-tandem stance: standing with the heel of one foot beside the big toe of the other, holding a bench lightly"
+  }
+ },
+ {
+  "exerciseName": "Tandem Stance",
+  "verdict": "needs-new-variant",
+  "variantId": "NV04",
+  "reason": "tandem (heel-to-toe) stance",
+  "newVariant": {
+   "key": "NV04",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Tandem stance: one foot directly in front of the other, heel touching toe, holding a bench lightly"
+  }
+ },
+ {
+  "exerciseName": "Tandem Stance (heel-to-toe)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV04",
+  "reason": "tandem (heel-to-toe) stance",
+  "newVariant": {
+   "key": "NV04",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Tandem stance: one foot directly in front of the other, heel touching toe, holding a bench lightly"
+  }
+ },
+ {
+  "exerciseName": "Heel-to-Toe Walk",
+  "verdict": "needs-new-variant",
+  "variantId": "NV05",
+  "reason": "heel-to-toe (tandem) walk balance exercise",
+  "newVariant": {
+   "key": "NV05",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Heel-to-toe walk: stepping forward placing the heel directly in front of the other foot's toes, arms out or fingertips near a wall/bench"
+  }
+ },
+ {
+  "exerciseName": "Heel-to-toe Walk (fingers on wall if needed)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV05",
+  "reason": "tandem walk",
+  "newVariant": {
+   "key": "NV05",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Heel-to-toe walk: stepping forward placing the heel directly in front of the other foot's toes, arms out or fingertips near a wall/bench"
+  }
+ },
+ {
+  "exerciseName": "Heel-to-toe Walk (wall nearby)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV05",
+  "reason": "tandem walk",
+  "newVariant": {
+   "key": "NV05",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Heel-to-toe walk: stepping forward placing the heel directly in front of the other foot's toes, arms out or fingertips near a wall/bench"
+  }
+ },
+ {
+  "exerciseName": "Heel-to-toe walk along the bench",
+  "verdict": "needs-new-variant",
+  "variantId": "NV05",
+  "reason": "tandem walk",
+  "newVariant": {
+   "key": "NV05",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Heel-to-toe walk: stepping forward placing the heel directly in front of the other foot's toes, arms out or fingertips near a wall/bench"
+  }
+ },
+ {
+  "exerciseName": "Heel-to-toe Walk, no support",
+  "verdict": "needs-new-variant",
+  "variantId": "NV05",
+  "reason": "tandem walk",
+  "newVariant": {
+   "key": "NV05",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Heel-to-toe walk: stepping forward placing the heel directly in front of the other foot's toes, arms out or fingertips near a wall/bench"
+  }
+ },
+ {
+  "exerciseName": "Balance: sideways walking along the bench",
+  "verdict": "needs-new-variant",
+  "variantId": "NV06",
+  "reason": "supported side-stepping balance exercise",
+  "newVariant": {
+   "key": "NV06",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Side-stepping along a kitchen bench while holding it, feet stepping apart then together"
+  }
+ },
+ {
+  "exerciseName": "Sideways Walking",
+  "verdict": "needs-new-variant",
+  "variantId": "NV06",
+  "reason": "NHS Balance Exercises sideways walking",
+  "newVariant": {
+   "key": "NV06",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Side-stepping along a kitchen bench while holding it, feet stepping apart then together"
+  }
+ },
+ {
+  "exerciseName": "Sideways Walking along the Bench",
+  "verdict": "needs-new-variant",
+  "variantId": "NV06",
+  "reason": "supported side-stepping",
+  "newVariant": {
+   "key": "NV06",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Side-stepping along a kitchen bench while holding it, feet stepping apart then together"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Standing on Balance Disc",
+  "verdict": "needs-new-variant",
+  "variantId": "NV48",
+  "reason": "single-leg balance on a disc",
+  "newVariant": {
+   "key": "NV48",
+   "equipment": "other-named",
+   "gender": "male",
+   "movementDescription": "Standing on one leg on an inflatable balance disc/cushion, arms free or holding a ball at the chest"
+  }
+ },
+ {
+  "exerciseName": "Single-leg Standing on Balance Disc (repeat)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV48",
+  "reason": "single-leg balance on a disc",
+  "newVariant": {
+   "key": "NV48",
+   "equipment": "other-named",
+   "gender": "male",
+   "movementDescription": "Standing on one leg on an inflatable balance disc/cushion, arms free or holding a ball at the chest"
+  }
+ },
+ {
+  "exerciseName": "Two-foot Standing on Balance Disc",
+  "verdict": "needs-new-variant",
+  "variantId": "NV49",
+  "reason": "two-foot balance on a disc",
+  "newVariant": {
+   "key": "NV49",
+   "equipment": "other-named",
+   "gender": "male",
+   "movementDescription": "Standing with both feet on an inflatable balance disc, arms free or holding a medicine ball at the chest"
+  }
+ },
+ {
+  "exerciseName": "Ski",
+  "verdict": "needs-new-variant",
+  "variantId": "NV31",
+  "reason": "HYROX AMRAP \"Ski\" = SkiErg; rowing erg already has its own variant (new-015), SkiErg has none",
+  "newVariant": {
+   "key": "NV31",
+   "equipment": "machine",
+   "gender": "male",
+   "movementDescription": "Standing at a SkiErg, pulling both handles down from overhead past the hips while hinging at the hips and bending the knees"
+  }
+ },
+ {
+  "exerciseName": "SkiErg",
+  "verdict": "needs-new-variant",
+  "variantId": "NV31",
+  "reason": "SkiErg machine exercise",
+  "newVariant": {
+   "key": "NV31",
+   "equipment": "machine",
+   "gender": "male",
+   "movementDescription": "Standing at a SkiErg, pulling both handles down from overhead past the hips while hinging at the hips and bending the knees"
+  }
+ },
+ {
+  "exerciseName": "SkiErg - long arms, hip hinge",
+  "verdict": "needs-new-variant",
+  "variantId": "NV31",
+  "reason": "SkiErg machine exercise",
+  "newVariant": {
+   "key": "NV31",
+   "equipment": "machine",
+   "gender": "male",
+   "movementDescription": "Standing at a SkiErg, pulling both handles down from overhead past the hips while hinging at the hips and bending the knees"
+  }
+ },
+ {
+  "exerciseName": "Banded ankle eversion",
+  "verdict": "needs-new-variant",
+  "variantId": "NV32",
+  "reason": "ankle rehab band exercise (Basketball Ankle Armour)",
+  "newVariant": {
+   "key": "NV32",
+   "equipment": "band",
+   "gender": "male",
+   "movementDescription": "Seated with the leg extended, a band around the forefoot anchored to the inside, turning the sole of the foot outward against the band (eversion)"
+  }
+ },
+ {
+  "exerciseName": "Slow heel drop off step (up on two, down on one)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV33",
+  "reason": "eccentric heel drop off a step - existing calf-raise variants are barbell/machine",
+  "newVariant": {
+   "key": "NV33",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing on the edge of a step, rising onto the toes with both feet, then slowly lowering the heel below the step on one leg only"
+  }
+ },
+ {
+  "exerciseName": "Fast Toe Taps on the Step",
+  "verdict": "needs-new-variant",
+  "variantId": "NV34",
+  "reason": "step-cardio toe taps (not the tibialis \"Double Toe Taps\")",
+  "newVariant": {
+   "key": "NV34",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "Standing facing an aerobic step, quickly tapping the toes of alternate feet onto the top of the step"
+  }
+ },
+ {
+  "exerciseName": "Side Step-over (across the step)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV35",
+  "reason": "bodyweight step-over; new-030 is a dumbbell box step-over",
+  "newVariant": {
+   "key": "NV35",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "Standing beside an aerobic step, stepping up onto it and over to the floor on the other side, then back"
+  }
+ },
+ {
+  "exerciseName": "Neck isometrics",
+  "verdict": "needs-new-variant",
+  "variantId": "NV36",
+  "reason": "hand-resisted neck isometrics",
+  "newVariant": {
+   "key": "NV36",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Seated or standing, pressing a hand against the forehead (then back and sides of the head) while the neck resists without moving"
+  }
+ },
+ {
+  "exerciseName": "Neck isometrics (front, back, sides)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV36",
+  "reason": "hand-resisted neck isometrics",
+  "newVariant": {
+   "key": "NV36",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Seated or standing, pressing a hand against the forehead (then back and sides of the head) while the neck resists without moving"
+  }
+ },
+ {
+  "exerciseName": "Standing Cross-body Punches",
+  "verdict": "needs-new-variant",
+  "variantId": "NV37",
+  "reason": "low-impact HIIT bodyweight exercise, not a boxing round",
+  "newVariant": {
+   "key": "NV37",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing with feet apart, punching each arm alternately across the body with a slight torso rotation"
+  }
+ },
+ {
+  "exerciseName": "Dumbbell Punches (light)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV38",
+  "reason": "dumbbell HIIT exercise",
+  "newVariant": {
+   "key": "NV38",
+   "equipment": "dumbbell",
+   "gender": "male",
+   "movementDescription": "Standing in a split stance, holding light dumbbells at the chin, punching them straight forward alternately"
+  }
+ },
+ {
+  "exerciseName": "Band straight punches (alternate)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV39",
+  "reason": "band-resisted punching exercise",
+  "newVariant": {
+   "key": "NV39",
+   "equipment": "band",
+   "gender": "male",
+   "movementDescription": "Band anchored behind at chest height, a handle in each hand, punching straight forward alternately against the band"
+  }
+ },
+ {
+  "exerciseName": "Snap-down to athletic stance",
+  "verdict": "needs-new-variant",
+  "variantId": "NV40",
+  "reason": "landing-mechanics drill with a clear repeatable movement",
+  "newVariant": {
+   "key": "NV40",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Rising onto the toes with arms overhead, then quickly snapping down into a balanced athletic stance (hips back, knees bent, arms forward) and holding"
+  }
+ },
+ {
+  "exerciseName": "Snap-down to stick",
+  "verdict": "needs-new-variant",
+  "variantId": "NV40",
+  "reason": "same snap-down drill",
+  "newVariant": {
+   "key": "NV40",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Rising onto the toes with arms overhead, then quickly snapping down into a balanced athletic stance (hips back, knees bent, arms forward) and holding"
+  }
+ },
+ {
+  "exerciseName": "Stepping to Targets (hand support nearby, alternate legs)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV41",
+  "reason": "falls-prevention stepping exercise",
+  "newVariant": {
+   "key": "NV41",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Standing next to a support, stepping one foot out to a target on the floor (front, side, back) and returning, alternating legs"
+  }
+ },
+ {
+  "exerciseName": "Ankle dribble (backward jog return)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV42",
+  "reason": "running technique drill (A-skips have an image; ankle dribbles do not)",
+  "newVariant": {
+   "key": "NV42",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Running drill: short quick steps where the foot rolls heel-to-toe and lifts only to ankle height (ankle dribble; calf and knee versions lift higher)"
+  }
+ },
+ {
+  "exerciseName": "Ankle-calf dribble",
+  "verdict": "needs-new-variant",
+  "variantId": "NV42",
+  "reason": "ankle dribble progression",
+  "newVariant": {
+   "key": "NV42",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Running drill: short quick steps where the foot rolls heel-to-toe and lifts only to ankle height (ankle dribble; calf and knee versions lift higher)"
+  }
+ },
+ {
+  "exerciseName": "Ankle-calf-knee dribble",
+  "verdict": "needs-new-variant",
+  "variantId": "NV42",
+  "reason": "ankle dribble progression",
+  "newVariant": {
+   "key": "NV42",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Running drill: short quick steps where the foot rolls heel-to-toe and lifts only to ankle height (ankle dribble; calf and knee versions lift higher)"
+  }
+ },
+ {
+  "exerciseName": "Band Running (alternating heels)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV43",
+  "reason": "Pilates band exercise (Band Pilates 45)",
+  "newVariant": {
+   "key": "NV43",
+   "equipment": "band",
+   "gender": "female",
+   "movementDescription": "Pilates band running: lying on the back, band around the balls of both feet with legs pressed out long, alternately lowering one heel while the other rises onto the toes"
+  }
+ },
+ {
+  "exerciseName": "Golf-posture Pelvic Turns (club across hips)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV44",
+  "reason": "golf hip-mobility drill",
+  "newVariant": {
+   "key": "NV44",
+   "equipment": "other-named",
+   "gender": "female",
+   "movementDescription": "In golf posture, a club held across the front of the hips, turning the pelvis to each side while the upper body stays quiet"
+  }
+ },
+ {
+  "exerciseName": "Control Balance",
+  "verdict": "needs-new-variant",
+  "variantId": "NV45",
+  "reason": "classical Pilates mat exercise (Advanced Mat Pilates 45)",
+  "newVariant": {
+   "key": "NV45",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Pilates control balance: from a roll-over (hips over shoulders, legs overhead), holding one foot overhead while the other leg extends straight up to the ceiling, then scissoring"
+  }
+ },
+ {
+  "exerciseName": "CL1: Heel Hook",
+  "verdict": "needs-new-variant",
+  "variantId": "NV46",
+  "reason": "Army PRT climbing drill",
+  "newVariant": {
+   "key": "NV46",
+   "equipment": "bodyweight",
+   "gender": "female",
+   "movementDescription": "Army PRT heel hook: from a straight-arm hang on a bar, raising the legs and hooking one heel over the bar, then lowering"
+  }
+ },
+ {
+  "exerciseName": "Speed skiers (band)",
+  "verdict": "needs-new-variant",
+  "variantId": "NV47",
+  "reason": "USMS dryland band exercise; new-014 is a cable straight-arm pulldown (equipment differs)",
+  "newVariant": {
+   "key": "NV47",
+   "equipment": "band",
+   "gender": "male",
+   "movementDescription": "Band anchored high in front, holding an end in each hand, pulling both straight arms down and back past the hips quickly (ski-pole pattern)"
+  }
+ }
+]

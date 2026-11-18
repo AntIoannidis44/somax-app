@@ -1,0 +1,569 @@
+[
+ {
+  "variantId": "existing-109",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-109.png",
+  "notes": "a1 rejected: panels mirrored (camera flip)"
+ },
+ {
+  "variantId": "existing-016",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-016.png",
+  "notes": "a1 rejected: filled badges, red bled onto hamstrings"
+ },
+ {
+  "variantId": "existing-106",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-106.png",
+  "notes": "a1 rejected: filled badges. Minor hip flex in panel 2 within normal Nordic technique"
+ },
+ {
+  "variantId": "existing-002",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-002.png",
+  "notes": "a1 rejected: filled badges"
+ },
+ {
+  "variantId": "new-p3-008",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "Not generated (0 attempts): queue data mismatch - representative name Band finger extension but namesCovered are wrist flexor/extensor stretches, no movementDescription, primary muscle ambiguous"
+ },
+ {
+  "variantId": "new-051",
+  "status": "accepted",
+  "attempts": 3,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-051.png",
+  "notes": "a1 hands cropped; a2 hands crossed panel divider; a3 arms down - clean"
+ },
+ {
+  "variantId": "gap-n004",
+  "status": "failed",
+  "attempts": 4,
+  "path": null,
+  "notes": "Basic two-foot bounce: 4 attempts, panel 2 never showed a clearly visible hop above the floor - the two panels stay near-identical (small-range movement)"
+ },
+ {
+  "variantId": "existing-012",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-012.png",
+  "notes": "Regen of inverted-row with female ref; feet on floor like existing image"
+ },
+ {
+  "variantId": "existing-111",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-111.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-069",
+  "status": "failed",
+  "attempts": 4,
+  "path": null,
+  "notes": "Assisted pistol: 4 attempts; panel 2 never reached full pistol depth (stayed a partial squat) and the raised leg kept getting coloured; a2/a3 also cropped/odd rack"
+ },
+ {
+  "variantId": "new-021",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-021.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-016",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-016.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n030",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n030.png",
+  "notes": "Drawn per queue description (chest+legs lift, arms forward)"
+ },
+ {
+  "variantId": "gap-n009",
+  "status": "failed",
+  "attempts": 2,
+  "path": null,
+  "notes": "Carioca: 2 attempts both rendered near-identical crossed-leg panels (front vs behind cross not distinguishable); stopped to preserve budget - needs a different depiction approach"
+ },
+ {
+  "variantId": "gap-y007",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y007.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-p3-006",
+  "status": "failed",
+  "attempts": 3,
+  "path": null,
+  "notes": "Foam roll calves: 3 attempts, panels stayed near-identical (roller position / hip lift not visibly different); stopped to preserve budget"
+ },
+ {
+  "variantId": "new-036",
+  "status": "failed",
+  "attempts": 3,
+  "path": null,
+  "notes": "Tuck front lever: 3 attempts; panel 2 never held the torso horizontal (head/shoulders stayed lower than hips, reads as an inverted tuck hang)"
+ },
+ {
+  "variantId": "new-011",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-011.png",
+  "notes": "a1 panels near-identical; a2 shows take-off extension in flight"
+ },
+ {
+  "variantId": "new-023",
+  "status": "failed",
+  "attempts": 3,
+  "path": null,
+  "notes": "Criss Cross: 3 attempts; a1 wrong start pose, a2/a3 panels near-identical with no visible elbow-to-knee twist"
+ },
+ {
+  "variantId": "gap-y014",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y014.png",
+  "notes": "a1 wrong exercise (step-up, leg not on bench)"
+ },
+ {
+  "variantId": "new-p3-005",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-p3-005.png",
+  "notes": "Reclined Butterfly variant drawn (name covers Happy Baby or Reclined Butterfly)"
+ },
+ {
+  "variantId": "new-064",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-064.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-112",
+  "status": "accepted",
+  "attempts": 2,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-112.png",
+  "notes": "a1 leg lifted backward instead of sideways; a2 frontal camera exception used so abduction is visible"
+ },
+ {
+  "variantId": "new-120",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-120.png",
+  "notes": ""
+ },
+ {
+  "variantId": "existing-032",
+  "status": "failed",
+  "attempts": 2,
+  "path": null,
+  "notes": "Dead/active hang: 2 attempts; a1 panels near-identical, a2 broke layout (panels side by side) and still near-identical. Small-range movement"
+ },
+ {
+  "variantId": "new-059",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-059.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-038",
+  "status": "failed",
+  "attempts": 2,
+  "path": null,
+  "notes": "Wheel pose: 2 attempts; panel 1 never showed the correct set-up (hands planted beside the ears, elbows up) - a1 fists on chest, a2 arms by sides"
+ },
+ {
+  "variantId": "gap-y003",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Chair Pose Twist: 1 attempt; panel 2 had prayer hands but no torso rotation / elbow hooked outside knee. Not retried (budget prioritised to untried items)"
+ },
+ {
+  "variantId": "new-033",
+  "status": "failed",
+  "attempts": 2,
+  "path": null,
+  "notes": "Dumbbell step-up: 2 attempts, both rendered near-identical panels (foot on bench in both; never showed standing on top)"
+ },
+ {
+  "variantId": "new-035",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Forearm pronation/supination: 1 attempt; palm-up vs palm-down orientation not readable from the image, hammer rotation ambiguous. Not retried (budget prioritised to untried items)"
+ },
+ {
+  "variantId": "new-043",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-043.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-y030",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "Not generated (0 attempts): queue primary muscle is None significant - nothing valid to highlight in red"
+ },
+ {
+  "variantId": "gap-y011",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y011.png",
+  "notes": "Static pose shown as slouched standing -> Mountain Pose"
+ },
+ {
+  "variantId": "existing-018",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/existing-018.png",
+  "notes": "Regen; panel 1 kneeling straight-arm plank, panel 2 full (existing image had identical panels)"
+ },
+ {
+  "variantId": "gap-y022",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y022.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n016",
+  "status": "failed",
+  "attempts": 2,
+  "path": null,
+  "notes": "Sleeper stretch (coordinator-corrected pose used in both attempts): 2 attempts; a1 bent the TOP arm instead of the bottom arm, a2 had her propped up on a hand - neither shows the bottom-arm internal-rotation stretch. Not retried further (budget)"
+ },
+ {
+  "variantId": "new-107",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Squat to calf raise: 1 attempt; panel 2 heels not clearly raised (calf raise not visible). Not retried (budget)"
+ },
+ {
+  "variantId": "gap-y019",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Tree pose: 1 attempt; muscle overlay wrong - abdomen coloured orange and the bent (lifted) leg coloured red instead of only the standing leg; panel 1 toes not on the mat. Not retried (budget)"
+ },
+ {
+  "variantId": "gap-n034",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-n034.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n008",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "B-skips: 1 attempt; hamstring red placed on the standing leg instead of the driving/whipping leg. Not retried (budget)"
+ },
+ {
+  "variantId": "new-006",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Band dislocates: 1 attempt; panel 1 showed him standing on the band loop (wrong set-up), not holding it in front of the thighs. Not retried (budget)"
+ },
+ {
+  "variantId": "new-009",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Bench glute bridge: 1 attempt; panel 2 hips never thrust up to tabletop (sagging, reads as a dip). Not retried (budget)"
+ },
+ {
+  "variantId": "gap-n029",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Boomerang prep: 1 attempt; legs bent and not crossed at the ankles in both panels, does not match the described pose. Not retried (budget)"
+ },
+ {
+  "variantId": "existing-062",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Butt kicks regen: 1 attempt; both panels identical (same leg kicked). Not retried (budget)"
+ },
+ {
+  "variantId": "new-046",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Hanging leg tuck and twist: 1 attempt; panel 2 knee tuck with no twist. Not retried (budget)"
+ },
+ {
+  "variantId": "new-017",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-017.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-y004",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/gap-y004.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-020",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Corkscrew: 1 attempt; panel 2 legs split apart (one on the floor) instead of circling together. Not retried (budget)"
+ },
+ {
+  "variantId": "new-026",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-026.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-029",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "Not generated (0 attempts): queue muscle data wrong for Dragon Flag Negative (lats/pec planche mapping; dragon flag is primarily an anterior-core exercise)"
+ },
+ {
+  "variantId": "new-024",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-024.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-y009",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Eagle arms: 1 attempt; seen from behind so the arm wrap is not visible, and red spread up the neck (upper traps) beyond the named rhomboids/mid-traps. Not retried (budget)"
+ },
+ {
+  "variantId": "new-p3-004",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Extended side angle: 1 attempt; pose correct but the oblique highlight is on the top (lengthened) side instead of the lower side named in the queue. Not retried (budget)"
+ },
+ {
+  "variantId": "new-039",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Garland squat: 1 attempt; panel 2 only a parallel sumo squat, not a deep Malasana with hips near the mat and elbows pressing inner knees"
+ },
+ {
+  "variantId": "new-045",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Half-kneeling overhead hold: 1 attempt; a second, unrequested dumbbell appears at his front knee in both panels"
+ },
+ {
+  "variantId": "new-048",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Incline cable fly: 1 attempt; panel 2 handles meet above his head with bent arms rather than over the upper chest"
+ },
+ {
+  "variantId": "new-p3-007",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-p3-007.png",
+  "notes": "Lower-back highlight is hidden against the mat (lying supine); glute red visible"
+ },
+ {
+  "variantId": "new-055",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Landmine rotational press: 1 attempt; panel 2 bar still at his face, never pressed out to arm's length"
+ },
+ {
+  "variantId": "new-061",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Leg raises: 1 attempt; pose correct but orange covers the whole front of both thighs (reads as quadriceps), beyond the named TFL/pectineus secondaries"
+ },
+ {
+  "variantId": "new-067",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-067.png",
+  "notes": ""
+ },
+ {
+  "variantId": "gap-n023",
+  "status": "skipped-remapped",
+  "attempts": 0,
+  "path": null,
+  "notes": "Coordinator instruction: name remapped to existing seated forward fold image; not generated"
+ },
+ {
+  "variantId": "new-072",
+  "status": "accepted",
+  "attempts": 1,
+  "path": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/_pending/new-072.png",
+  "notes": ""
+ },
+ {
+  "variantId": "new-076",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Pseudo-planche push-up: 1 attempt; hands placed under the shoulders (ordinary push-up), not back by the waist with shoulders leaning forward"
+ },
+ {
+  "variantId": "new-078",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Reverse hyper: 1 attempt; wrong machine drawn (45-degree back-extension bench with ankle pads), not a reverse hyper with a swinging pendulum"
+ },
+ {
+  "variantId": "gap-y021",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Revolved triangle: 1 attempt; panel 2 is an ordinary (non-revolved) triangle - same-side hand down, chest open"
+ },
+ {
+  "variantId": "new-083",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Pilates roll over: 1 attempt; legs not taken over the head parallel to the floor, and the face drifted toward male"
+ },
+ {
+  "variantId": "gap-n026",
+  "status": "failed",
+  "attempts": 1,
+  "path": null,
+  "notes": "Rolling like a ball: 1 attempt; panel 2 face drifted male and head dropped back out of the tuck"
+ },
+ {
+  "variantId": "new-088",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "Not generated (0 attempts): queue muscle data wrong for Scapula push-up (pec major listed; movement is serratus anterior protraction/retraction)"
+ },
+ {
+  "variantId": "new-119",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "new-091",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "Not generated (0 attempts): queue muscle data wrong for Seated Spine Curl (biceps/brachialis listed; it is a Pilates abdominal move)"
+ },
+ {
+  "variantId": "new-005",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "new-095",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "gap-y006",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "new-103",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "new-110",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "new-118",
+  "status": "failed",
+  "attempts": 0,
+  "path": null,
+  "notes": "Not generated (0 attempts): queue muscle data wrong for Superman hold (rectus abdominis/TA listed as primary; superman is a posterior-chain/erector spinae exercise)"
+ },
+ {
+  "variantId": "new-121",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "gap-n020",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "new-126",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "gap-y026",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ },
+ {
+  "variantId": "defect-barbell-shrug",
+  "status": "not-started-budget",
+  "attempts": 0,
+  "path": null,
+  "notes": "Worker 2 hit the 12 USD cap before this item"
+ }
+]

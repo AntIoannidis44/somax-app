@@ -1,0 +1,809 @@
+[
+  {
+    "variantId": "gap-y001",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated V-sit, balancing on sitting bones, legs raised and straight, arms parallel to the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Boat Pose"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y002",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing with knees bent into a half-squat, torso upright, arms raised straight overhead",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Chair Pose"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y003",
+    "equipment": "bodyweight",
+    "movementDescription": "Chair Pose with the torso rotated and hands brought together at the chest, elbow crossing toward the opposite knee",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Chair Pose Twist",
+      "Revolved Chair"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y004",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying face down, pressing the chest and head up into a low backbend, hands under the shoulders, hips and legs on the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Cobra (Bhujangasana)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y005",
+    "equipment": "bodyweight",
+    "movementDescription": "Cobra backbend with one leg lifted straight behind the body",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Cobra / Double Leg Lift Combo"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y006",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying face down propped up on the forearms, gentle backbend with forearms flat on the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Sphinx"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y007",
+    "equipment": "bodyweight",
+    "movementDescription": "Inverted V-shape: hands and feet on the floor, hips lifted high, straight arms and legs",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Downward Dog",
+      "Downward Dog (Parvatasana)",
+      "Downward Dog with calf pedal",
+      "Downward Dog with pedalling"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y008",
+    "equipment": "bodyweight",
+    "movementDescription": "Forearm-based Downward-Dog shape: forearms flat on the floor, hips lifted high, walking the feet in toward the forearms",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Dolphin Pose with walk-ins"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y009",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, forearms stacked vertically in front of the chest, elbows lifted, pressing the forearms together",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Eagle Arms"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y010",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying face down, both hands, both knees, chest and chin all touching the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Eight-limbed Pose (Ashtanga Namaskara)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y011",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing tall, feet together, arms at the sides, neutral posture",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Mountain Pose",
+      "Mountain Pose with breathing"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y012",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing tall with the hands pressed together in front of the chest",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Prayer Pose (Pranamasana)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y013",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing, arms raised straight overhead with a slight backbend, palms together or shoulder-width apart",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Raised Arms (Hasta Uttanasana)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y014",
+    "equipment": "bodyweight",
+    "movementDescription": "Kneeling/prone hip opener: front leg bent in front of the body, back leg extended straight behind",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Pigeon Pose",
+      "Elevated Pigeon",
+      "Pigeon with active lifts"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y015",
+    "equipment": "bodyweight",
+    "movementDescription": "Kneeling with knees wide and shins turned out, hips sinking back toward the heels",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Frog Pose"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y016",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing on one leg with a slight side-bend, torso and raised-leg reaching, hand on the hip or extended overhead",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Half Moon"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y017",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, knees drawn toward the armpits, hands holding the outside edges of the feet",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Happy Baby"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y018",
+    "equipment": "bodyweight",
+    "movementDescription": "Crouched forward balance on the hands, knees resting against the upper arms, feet lifted off the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Crow Pose",
+      "Crow Pose (blocks under feet)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y019",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing on one leg, the other foot placed against the inner thigh, hands at the chest or raised overhead",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Tree Pose",
+      "Supported Tree Pose (toe down)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y020",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing with feet wide, front leg straight, torso folded sideways over the front leg with one hand reaching toward the floor and the other extended up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Triangle Pose"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y021",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing wide-legged triangle shape with the torso rotated, the opposite hand reaching to the floor or shin",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Revolved Triangle"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y022",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing forward fold over a straight front leg, back leg turned out behind, hands on blocks or the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Pyramid Pose (blocks)",
+      "Pyramid Pose (hamstring)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y023",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing lunge with the front knee bent, back leg straight behind, arms raised overhead",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Warrior 1",
+      "Supported Warrior 1"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y024",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing wide-legged lunge, front knee bent to 90 degrees, arms extended out to the sides at shoulder height",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Warrior 2",
+      "Supported Warrior 2 (hold chair back)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y025",
+    "equipment": "bodyweight",
+    "movementDescription": "Warrior 2 transitioning into a side-bend, front arm sliding down the front leg and the back arm reaching up and over",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Warrior 2 to Reverse Warrior flow"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y026",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing on one leg, torso and extended arms parallel to the floor, the back leg lifted straight behind in line with the torso",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Warrior 3"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y027",
+    "equipment": "bodyweight",
+    "movementDescription": "Kneeling on all fours, one arm threaded under the body and the shoulder lowered to the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Thread the Needle"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y028",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, knees bent and dropped to one side, arms extended out to the sides, gaze turned the opposite way",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Supine Twist",
+      "Twisted Roots (supine twist)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y029",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying flat on the back, arms and legs relaxed, eyes closed",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Savasana",
+      "Final Relaxation (Savasana)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y030",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back with both legs extended straight up a wall, hips close to the wall, arms relaxed at the sides",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Legs up the Wall",
+      "Legs up the wall, slow breathing"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y031",
+    "equipment": "bodyweight",
+    "movementDescription": "Kneeling with hips over knees, arms extended forward and chest lowered toward the floor",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Puppy Pose"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-y-exist-001",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing forward fold, knees soft, reaching the hands toward the feet",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Hands to Feet (Pada Hastasana)"
+    ],
+    "status": "existing",
+    "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images (manifest entry covering 'Forward Fold (knees soft)')"
+  },
+  {
+    "variantId": "gap-y-exist-002",
+    "equipment": "bodyweight",
+    "movementDescription": "Deep low lunge with forearms down near the front foot",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Lizard Pose"
+    ],
+    "status": "existing-already-counted",
+    "existingImagePath": "already classified in visual-variants.json variant new-057 ('low_lunge_mega', status: new) via 'Lizard Lunge' - no additional work beyond what pass 1 already costed"
+  },
+  {
+    "variantId": "gap-n001",
+    "equipment": "bodyweight",
+    "movementDescription": "Standing jump straight up for height with a quick downward counter-movement dip before take-off, landing softly",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Countermovement Jump",
+      "Countermovement jump",
+      "Countermovement jump (max)",
+      "Vertical Jumps",
+      "Vertical Jumps over 45cm Hurdles",
+      "Vertical jump, catch high ball overhead",
+      "Dot the i (jump forward then straight up)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n002",
+    "equipment": "bodyweight",
+    "movementDescription": "Stepping off a box, dropping to the floor, then immediately rebounding into a vertical jump",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Depth jump (30-45 cm box)",
+      "Depth jump (30-45 cm drop)",
+      "Depth jump (30-45 cm)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n003",
+    "equipment": "bodyweight",
+    "movementDescription": "Dropping off a low box and landing in a stable athletic stance without rebounding, holding the landing",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Drop Landing (from low box)",
+      "Drop landing from 20-30 cm box (stick 2 s)",
+      "Drop landing to stick",
+      "Drop landing to stick (low box)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n004",
+    "equipment": "bodyweight",
+    "movementDescription": "Small, rapid repeated hops in place on the balls of the feet with stiff ankles and minimal knee bend",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Pogo Hops",
+      "Pogo hops",
+      "Pogo jumps (stiff ankles)",
+      "Low pogo hops",
+      "Pogo backwards (lateral shuffle return)",
+      "Pogo forwards (lateral shuffle return)",
+      "Split pogo (carioca return)",
+      "Basic two-foot bounce",
+      "Bulgarian jumps",
+      "Bulgarian jumps side to side"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n005",
+    "equipment": "bodyweight",
+    "movementDescription": "Explosive jump splaying the arms and legs out to the sides mid-air, like an airborne jumping jack",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Explosive star jumps"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n006",
+    "equipment": "bodyweight",
+    "movementDescription": "Explosive single-leg-to-single-leg bound sideways, sticking the landing on the outside leg with the other leg trailing behind",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Skater Jump",
+      "Skater Jump (or skater step)",
+      "Skater Step (no jump)",
+      "Speed Skater Step (no jump)",
+      "Skater Bound (stick the landing)",
+      "Skater hops",
+      "Lateral Bound (stick)",
+      "Lateral bound (stick landing)",
+      "Lateral bound and stick",
+      "Lateral hop and stick",
+      "Lateral skater deceleration",
+      "Lateral skater hop",
+      "Triple high-knee skater"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n007",
+    "equipment": "bodyweight",
+    "movementDescription": "Running with an exaggerated, powerful stride and extended air time, driving the knee high and the opposite arm forward",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Bounding"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n008",
+    "equipment": "bodyweight",
+    "movementDescription": "Running drill driving the knee up then extending/whipping the lower leg straight before the foot strikes down",
+    "gender": "female",
+    "movementNamesCovered": [
+      "B-skips"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n009",
+    "equipment": "bodyweight",
+    "movementDescription": "Running sideways while crossing one foot alternately in front of and behind the other, hips rotating with the crossover",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Carioca",
+      "Carioca (each way)",
+      "Grapevine",
+      "Simple Grapevine"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n010",
+    "equipment": "bodyweight",
+    "movementDescription": "Walking forward in a deep squat position, knees bent throughout",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Duck walk",
+      "Reverse duck walk"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n011",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated on the floor, soles of the feet together, knees at 90 degrees, alternately dropping one knee down (external rotation) while lifting the other (internal rotation)",
+    "gender": "female",
+    "movementNamesCovered": [
+      "90/90 Hip Switches",
+      "90/90 hip switches",
+      "90/90 Hip Lift-offs (5s hold)",
+      "90/90 Hold with forward lean",
+      "90/90 Hold with lean",
+      "90/90 hip hold"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n012",
+    "equipment": "bodyweight",
+    "movementDescription": "Kneeling in a deep lunge with the rear foot propped up on a wall or bench behind the body, hips sunk forward",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Couch Stretch (rear foot on wall)",
+      "Couch stretch",
+      "Couch stretch (hip flexor/quad)",
+      "Couch stretch (quads/hip flexors)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n013",
+    "equipment": "bodyweight",
+    "movementDescription": "Deep lunge with the trailing hand on the floor, rotating the torso and reaching the other arm up toward the ceiling, then folding forward over the front leg into a hamstring stretch",
+    "gender": "female",
+    "movementNamesCovered": [
+      "World's Greatest Stretch",
+      "World's greatest stretch"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n014",
+    "equipment": "bodyweight",
+    "movementDescription": "Half-kneeling hip-flexor lunge combined with a reach-through thoracic twist under the body",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Brettzel"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n015",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on one side, knees bent and stacked, top arm sweeping open from the floor in front up and over like opening a book",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Thoracic Open Book",
+      "Thoracic open book",
+      "Open Book",
+      "Open Book (side-lying T-spine rotation)",
+      "Open Books (T-spine rotation)",
+      "Open-book thoracic rotation",
+      "Thoracic rotation in side-lying (open book)",
+      "T-spine rotation + band"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n016",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on one side, top arm behind the head, gently pressing the top knee down toward the floor to rotate the shoulder inward",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Sleeper Stretch",
+      "Sleeper stretch (internal-rotation range)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n017",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, one leg raised straight with a strap or towel around the foot, gently sliding the ankle to glide tension along the back of the leg",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Supine hamstring floss",
+      "Supine hamstring floss with strap or towel"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n018",
+    "equipment": "foam roller",
+    "movementDescription": "Lying back over a foam roller placed across the upper back, hands behind the head, extending the upper back over the roller",
+    "gender": "female",
+    "movementNamesCovered": [
+      "T-spine Extension over Foam Roller"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n019",
+    "equipment": "bodyweight",
+    "movementDescription": "Walking lunge pausing in the bottom position with the trailing hand on the floor and the other arm reaching up in a thoracic rotation",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Walking Spiderman with Rotation",
+      "Spiderman + leg drive"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n020",
+    "equipment": "bodyweight",
+    "movementDescription": "Walking forward, kicking one straight leg up toward the opposite hand while the other arm swings back, alternating sides",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Toy Soldier (alternating heel & arm)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n021",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying face down, arms sweeping out and up from the sides of the body overhead and back, like a snow angel",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Prone floor angel",
+      "Prone floor angels"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n022",
+    "equipment": "wall",
+    "movementDescription": "Starting in a push-up position with the feet against a wall, walking the feet up the wall while walking the hands in, toward a vertical handstand",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Wall Walk"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n023",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated or standing with legs spread wide into a straddle, folding the torso forward between the legs",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Pike Stretch"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n024",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated V-sit balance, hands behind the knees, rocking back onto the shoulders and rolling back up to balance",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Open Leg Rocker",
+      "Open Leg Rocker Prep"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n025",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, knees bent and held wide by the hands on the outside of the ankles, balancing on the sitting bones and clapping the feet together",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Seal"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n026",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated in a tight tuck, knees drawn to the chest, rolling backward and forward along the curve of the spine like a ball",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Rolling Like a Ball"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n027",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back with the lower legs resting parallel to the floor (table-top), alternately tapping the toes down",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Table Top / Heel Taps"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n028",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated with legs spread wide into a straddle, folding forward over one leg with a brief muscle-contraction pause before relaxing deeper into the stretch",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Pancake with PNF contract-relax"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n029",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, rounding back into a ball on the tailbone with legs lifted and crossed at the ankles, preparing to roll back",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Boomerang Prep"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n030",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying face down, lifting the chest and straight legs off the floor simultaneously into a prone backbend, arms extended forward or back",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Swan",
+      "Swan Dive",
+      "Swan Dive (2s hold)",
+      "Swan Prep (prone chest lift)",
+      "Swan Prep"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n031",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated or standing tall, slowly curling the spine down one vertebra at a time toward the floor or thighs, then rolling back up",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Half Roll Down",
+      "Half Roll-back",
+      "Standing Roll Down",
+      "Roll-back with ball behind lower back"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n-exist-001",
+    "equipment": "bodyweight",
+    "movementDescription": "High-knee running drill with a quick 'paw-back' foot strike",
+    "gender": "female",
+    "movementNamesCovered": [
+      "A-skip (carioca return)",
+      "A-skips and high-knee drills",
+      "A-skip and B-skip"
+    ],
+    "status": "existing",
+    "existingImagePath": "already covered by the existing 'A-Skips' manifest image (also already flagged wrong-gender in pass 1's existing-wrong-gender list - that regeneration is already counted in the original 39/$5.226 figure, not double-counted here)"
+  },
+  {
+    "variantId": "gap-n-exist-002",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, knees bent toward the chest or raised to table-top, head down, small pumping arm movements",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Modified Hundred (legs table top, head down if needed)"
+    ],
+    "status": "existing",
+    "existingImagePath": "same visual shape as the existing 'The Hundred (legs table top or 45 degrees)' manifest image - an easier entry variation, not a new silhouette"
+  },
+  {
+    "variantId": "gap-n-exist-003",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated, legs extended, folding the torso forward over straight legs reaching toward the feet",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Spine Stretch Forward"
+    ],
+    "status": "existing",
+    "existingImagePath": "same visual shape as the existing 'Seated Forward Fold' manifest image"
+  },
+  {
+    "variantId": "gap-n-exist-004",
+    "equipment": "bodyweight",
+    "movementDescription": "Seated upright, rotating the torso to one side and back to center",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Spine Twist",
+      "Spine Twist (seated)"
+    ],
+    "status": "existing",
+    "existingImagePath": "same visual shape as the existing seated torso-rotation mobility image (torso_rotation_mobility pattern)"
+  },
+  {
+    "variantId": "gap-n032",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, one knee pulled to the chest while the other leg extends long and low, alternating",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Single Leg Stretch",
+      "Single Leg Stretch (head down)",
+      "Single Leg Stretch (ball under sacrum)",
+      "Single Leg Bends",
+      "Single Leg Bend (knee to hip height)",
+      "Straight-leg kicks",
+      "Single Leg Kicks"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n033",
+    "equipment": "bodyweight",
+    "movementDescription": "Lying on the back, one leg raised straight up, tracing small circles with the foot",
+    "gender": "female",
+    "movementNamesCovered": [
+      "Single Leg Circles",
+      "Single Leg Circles (with band)",
+      "Single Leg Circles (bent knee)"
+    ],
+    "status": "new"
+  },
+  {
+    "variantId": "gap-n034",
+    "equipment": "trap bar",
+    "movementDescription": "Standing inside a trap bar holding the handles, dropping into a quarter-squat and jumping straight up",
+    "gender": "male",
+    "movementNamesCovered": [
+      "Trap-bar jump",
+      "Trap-bar jump (light)"
+    ],
+    "status": "new"
+  }
+]

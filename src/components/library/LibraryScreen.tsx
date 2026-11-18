@@ -9,6 +9,7 @@ import { saveWorkout } from '../../lib/customWorkouts';
 import { saveUserRecipe } from '../../lib/recipes';
 import type { IconName } from '../../data/icons';
 import { PlansTab } from './PlansTab';
+import { ExerciseHowToButton } from './ExerciseHowTo';
 import { rankForYou } from '../../lib/plans/weekBuilder';
 import {
   DAYS_FILTERS,
@@ -221,12 +222,15 @@ function ProgramDetail({ item, mine, saves, onSaved, onClose, onRemoved, pickFor
           const inGroup = !!ex.group && (prev?.group === ex.group || next?.group === ex.group);
           return (
             <div className={`lib-ex-row${inGroup ? ' grouped' : ''}`} key={i}>
-              {inGroup && prev?.group !== ex.group && <div className="lib-superset">Superset {ex.group}</div>}
-              <div className="lib-ex-name">{ex.name}</div>
-              <div className="lib-ex-meta">
-                {ex.distance || !ex.reps ? exerciseMeta(ex) : `${ex.sets} × ${ex.reps}${/^\d+(-\d+)?$/.test(ex.reps) ? ' reps' : ''}`}
-                {ex.weight ? ` · ${ex.weight}` : ''}
+              <div className="lib-ex-row-main">
+                {inGroup && prev?.group !== ex.group && <div className="lib-superset">Superset {ex.group}</div>}
+                <div className="lib-ex-name">{ex.name}</div>
+                <div className="lib-ex-meta">
+                  {ex.distance || !ex.reps ? exerciseMeta(ex) : `${ex.sets} × ${ex.reps}${/^\d+(-\d+)?$/.test(ex.reps) ? ' reps' : ''}`}
+                  {ex.weight ? ` · ${ex.weight}` : ''}
+                </div>
               </div>
+              <ExerciseHowToButton name={ex.name} />
             </div>
           );
         })}

@@ -1,0 +1,1830 @@
+[
+ {
+  "variantId": "existing-109",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Plank held on the forearms",
+  "representativeName": "Anti-extension progression",
+  "namesCovered": [
+   "Anti-extension progression",
+   "Core finisher: plank + Russian twist",
+   "Forearm Plank",
+   "Forearm Plank (knees or feet)",
+   "Forward plank",
+   "Front Plank",
+   "Front Plank Hold",
+   "Front plank or wheelbarrow hold",
+   "Front plank rising to full arms (alternate)",
+   "Front plank with alternate leg raise",
+   "Kneeling Plank",
+   "Kneeling Plank on Balance Disc",
+   "Leg Pull Front Prep (plank with leg lift)",
+   "Long Stretch Plank with band press",
+   "Minute 4: Plank",
+   "Modified Plank on Knees",
+   "Plank",
+   "Plank (knees allowed)",
+   "Plank (knees if needed)",
+   "Plank (max hold)",
+   "Plank + reach + band",
+   "Plank Hold",
+   "Plank on Balance Disc",
+   "Plank rocks",
+   "Plank Saw",
+   "Plank Support",
+   "Plank wide pull + band",
+   "Rest-minute burst: plank 20 s",
+   "The Bench (static plank)",
+   "Weighted Plank",
+   "Wheelbarrow hold or front plank",
+   "Wheelbarrow or front plank hold"
+  ],
+  "primary": [
+   "Rectus Abdominis",
+   "Latissimus Dorsi"
+  ],
+  "secondary": [
+   "Obliques",
+   "Transverse Abdominis"
+  ],
+  "confidence": "high",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_front/forearm-plank.png"
+ },
+ {
+  "variantId": "existing-016",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying on the back, knees bent, driving the hips up into a bridge",
+  "representativeName": "Bridge",
+  "namesCovered": [
+   "Bridge",
+   "Bridge (articulating)",
+   "Bridge (peel spine off the mat)",
+   "Bridge (progress to single-leg)",
+   "Bridge Pose",
+   "Bridge pullover + band",
+   "Bridge with arm raise",
+   "Bridge with ball squeeze",
+   "Bridge with march",
+   "Bridge with spinal roll",
+   "Dumbbell Glute Bridge (2s pause)",
+   "Four for the Core: Back Bridge",
+   "Glute Bridge",
+   "Glute Bridge (2s squeeze)",
+   "Glute Bridge (exhale and brace on the way up)",
+   "Glute bridge bench press",
+   "Glute Bridge Hold",
+   "Glute Bridge March",
+   "Glute bridge pullover",
+   "Hamstring walk-outs (bridge position)",
+   "Long-lever glute bridge (heels on step)",
+   "Pelvic Tilts and Bridge",
+   "Shoulder Bridge",
+   "Supported Bridge (block under sacrum)"
+  ],
+  "primary": [
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Quadriceps",
+   "Hamstrings"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/hip_extension_glute_isolation/floor-glute-bridge.png"
+ },
+ {
+  "variantId": "existing-106",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Kneeling, ankles anchored, slowly lowering the torso forward and pulling back up",
+  "representativeName": "Hamstring lower (partner-held Nordic)",
+  "namesCovered": [
+   "Hamstring lower (partner-held Nordic)",
+   "Hamstring lower (partner-held Nordic, fall slowly)",
+   "Nordic Curl (eccentric)",
+   "Nordic Curl Negative or Sliding Leg Curl",
+   "Nordic Hamstring Curl",
+   "Nordic Hamstring Curl (partner or anchor)",
+   "Nordic hamstring lower",
+   "Nordic hamstring lower (partner holds ankles)",
+   "Nordic hamstring lower (partner or anchored feet)",
+   "Nordic hamstring lower (partner or anchored)",
+   "Nordic hamstring lower (partner or couch)",
+   "Nordic hamstring lower (partner)",
+   "Nordic hamstring lowers",
+   "Nordic Hamstrings (beginner)",
+   "Nordic hamstrings - advanced (partner holds ankles)",
+   "Nordic hamstrings - intermediate (partner holds ankles)",
+   "Solo Nordic (heels under couch)"
+  ],
+  "primary": [
+   "Hamstrings (Biceps Femoris Long Head, Semitendinosus)"
+  ],
+  "secondary": [
+   "Gastrocnemius",
+   "Gracilis"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/nordic_hamstring/nordic-hamstring-curl.png"
+ },
+ {
+  "variantId": "existing-002",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Bodyweight squat, arms forward for balance, down and up",
+  "representativeName": "30-Second Chair Stand (count reps)",
+  "namesCovered": [
+   "30-Second Chair Stand (count reps)",
+   "Air Squat or Lunge",
+   "Bodyweight round: squats, push-ups, mountain climbers, plank (30 s each)",
+   "Bodyweight Squat",
+   "Bodyweight squat (3 s down)",
+   "Bodyweight Squat to Box or Chair",
+   "Bodyweight Squat to Stand",
+   "Chair Squat",
+   "Chair Squat (sit-to-stand)",
+   "Fast Bodyweight Squat",
+   "Half Air Squat",
+   "Landing: Bodyweight Squat",
+   "Minute 1: Bodyweight Squat",
+   "Preparation Drill: bend and reach, rear lunge, high jumper, rower, squat bender, windmill, forward lunge, prone row, bent-leg body twist, push-up"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/squat_pattern/bodyweight-squat.png"
+ },
+ {
+  "variantId": "new-p3-008",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "",
+  "representativeName": "Band finger extension",
+  "namesCovered": [
+   "Band finger extension",
+   "Finger Marching",
+   "Finger Marching (3 movements, ~10s hold each)",
+   "Radial and ulnar deviation",
+   "Wrist & shoulder prep",
+   "Wrist and Forearm Stretch",
+   "Wrist circles and flexor/extensor stretch",
+   "Wrist Flexor & Extensor Stretch",
+   "Wrist flexor and extensor stretch",
+   "Wrist Prep",
+   "Wrist Prep (circles, palm lifts, rocks)",
+   "Wrist, shoulder & scapular prep"
+  ],
+  "primary": [
+   "Wrist Flexors (Flexor Carpi Radialis/Ulnaris) or Wrist Extensors (Extensor Carpi Radialis/Ulnaris), depending on stretch direction"
+  ],
+  "secondary": [
+   "Finger flexors/extensors"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-051",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Squat down and jump straight up explosively, landing softly back into the squat",
+  "representativeName": "Block 2: Jump Squat",
+  "namesCovered": [
+   "Block 2: Jump Squat",
+   "Engine: Squat Jump",
+   "Frog Jump or Squat Jump",
+   "Jump Squat",
+   "Jump Squat (or fast squat)",
+   "Jump Squats or Broad Jumps",
+   "Squat Jump",
+   "Squat jump to freeze landing",
+   "Squat jump to stick",
+   "Squat jump to stick (land and hold 2 s)",
+   "Trap-bar or dumbbell jump squat"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Hamstrings",
+   "Adductor Magnus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n004",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Small, rapid repeated hops in place on the balls of the feet with stiff ankles and minimal knee bend",
+  "representativeName": "Basic two-foot bounce",
+  "namesCovered": [
+   "Basic two-foot bounce",
+   "Bulgarian jumps",
+   "Bulgarian jumps side to side",
+   "Low pogo hops",
+   "Pogo backwards (lateral shuffle return)",
+   "Pogo forwards (lateral shuffle return)",
+   "Pogo Hops",
+   "Pogo jumps (stiff ankles)",
+   "Split pogo (carioca return)"
+  ],
+  "primary": [
+   "Gastrocnemius/Soleus (ankle-dominant, stiff-knee bounce)",
+   "Quadriceps"
+  ],
+  "secondary": [
+   "Core stabilizers",
+   "Quadriceps"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "existing-012",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Hanging under a bar/TRX at an angle, pulling the chest up to the bar",
+  "representativeName": "Feet-elevated Inverted Row",
+  "namesCovered": [
+   "Feet-elevated Inverted Row",
+   "Inverted Row",
+   "Inverted Row (low bar)",
+   "Inverted Row (under a sturdy table)",
+   "Ring Row",
+   "Ring Row (feet elevated)",
+   "Table inverted row",
+   "Table or bar inverted row",
+   "TRX or ring row"
+  ],
+  "primary": [
+   "Latissimus Dorsi",
+   "Middle/Lower Trapezius"
+  ],
+  "secondary": [
+   "Posterior Deltoid",
+   "Teres Major"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/horizontal_row/inverted-row.png"
+ },
+ {
+  "variantId": "existing-111",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Jumping from standing up onto a raised box",
+  "representativeName": "Box Jump",
+  "namesCovered": [
+   "Box Jump",
+   "Box Jump (step down)",
+   "Box jump (streamline arms, step down)",
+   "Box jumps",
+   "Box Jumps or Med Ball Throws",
+   "Jumping - box jumps (across an imaginary cross)",
+   "Lateral box jump"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Hamstrings",
+   "Hip Flexors"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plyometric_jump/box-jump.png"
+ },
+ {
+  "variantId": "new-069",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Single-leg squat, lowering all the way down while the other leg extends straight out in front (assisted with support or weighted, same core pose)",
+  "representativeName": "Assisted Pistol (hold pole)",
+  "namesCovered": [
+   "Assisted Pistol (hold pole)",
+   "Assisted Pistol Squat",
+   "Box Pistol (sit to bench)",
+   "Pistol Negative (5s lowering)",
+   "Pistol Squat",
+   "Weighted Pistol or Shrimp Squat"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-021",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Wide stance, shifting side to side into a deep squat on one leg while the other leg stays straight",
+  "representativeName": "Alternating Cossack squat (2s pause)",
+  "namesCovered": [
+   "Alternating Cossack squat (2s pause)",
+   "Cossack Squat",
+   "Cossack Squat (light counterweight)",
+   "Non-supported Cossack squat",
+   "Supported Cossack squat"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-016",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Lying chest-down on an incline bench, rowing a dumbbell in each hand",
+  "representativeName": "Chest-supported Dumbbell Row",
+  "namesCovered": [
+   "Chest-supported Dumbbell Row",
+   "Chest-supported Dumbbell Row (incline bench)",
+   "Chest-supported Row",
+   "Dumbbell or table row",
+   "Incline-braced Dumbbell Row or Shrug"
+  ],
+  "primary": [
+   "Latissimus Dorsi",
+   "Middle/Lower Trapezius"
+  ],
+  "secondary": [
+   "Posterior Deltoid",
+   "Teres Major"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n030",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying face down, lifting the chest and straight legs off the floor simultaneously into a prone backbend, arms extended forward or back",
+  "representativeName": "Swan",
+  "namesCovered": [
+   "Swan",
+   "Swan Dive",
+   "Swan Dive (2s hold)",
+   "Swan Prep",
+   "Swan Prep (prone chest lift)"
+  ],
+  "primary": [
+   "Erector Spinae"
+  ],
+  "secondary": [
+   "Gluteus Maximus"
+  ],
+  "confidence": "low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n009",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Running sideways while crossing one foot alternately in front of and behind the other, hips rotating with the crossover",
+  "representativeName": "Carioca",
+  "namesCovered": [
+   "Carioca",
+   "Carioca (each way)",
+   "Grapevine",
+   "Simple Grapevine"
+  ],
+  "primary": [
+   "Hip Adductors/Abductors (cross-over rotation)",
+   "Obliques"
+  ],
+  "secondary": [
+   "Quadriceps",
+   "Gastrocnemius/Soleus"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y007",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Inverted V-shape: hands and feet on the floor, hips lifted high, straight arms and legs",
+  "representativeName": "Downward Dog",
+  "namesCovered": [
+   "Downward Dog",
+   "Downward Dog (Parvatasana)",
+   "Downward Dog with calf pedal",
+   "Downward Dog with pedalling"
+  ],
+  "primary": [
+   "Deltoids (anterior/medial)",
+   "Hamstrings (stretched)"
+  ],
+  "secondary": [
+   "Gastrocnemius/Soleus (stretched)",
+   "Core (Rectus Abdominis/Obliques)"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-p3-006",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "",
+  "representativeName": "Foam Roll Calves and Quads",
+  "namesCovered": [
+   "Foam Roll Calves and Quads",
+   "Foam roll or massage-ball forearms, calves",
+   "Foam roll quads, calves, glutes",
+   "Top-down foam rolling"
+  ],
+  "primary": [
+   "Gastrocnemius",
+   "Soleus"
+  ],
+  "secondary": [
+   "Quadriceps (when rolling the thigh)",
+   "Plantaris"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-036",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Hanging under a bar, holding the body horizontal and parallel to the floor (tuck or straddle progression)",
+  "representativeName": "Advanced Tuck or Straddle Front Lever Hold",
+  "namesCovered": [
+   "Advanced Tuck or Straddle Front Lever Hold",
+   "Front Lever progression hold",
+   "Tuck Front Lever Hold"
+  ],
+  "primary": [
+   "Latissimus Dorsi (Front Lever)",
+   "Pectoralis Major/Serratus Anterior (Planche)"
+  ],
+  "secondary": [
+   "Posterior Deltoid",
+   "Rhomboids"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-011",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing two-foot broad jump forward, landing softly",
+  "representativeName": "Broad Jump",
+  "namesCovered": [
+   "Broad Jump",
+   "Broad Jump (stick the landing)",
+   "Broad Jump (walk back)"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Hamstrings",
+   "Hip Flexors"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-023",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Pilates criss-cross: lying on the back, hands behind the head, alternating elbow-to-knee twists with the other leg extended low",
+  "representativeName": "Criss Cross",
+  "namesCovered": [
+   "Criss Cross",
+   "Criss-cross with leg rise, 4-count",
+   "Leg criss-cross 15 cm off floor"
+  ],
+  "primary": [
+   "Rectus Abdominis"
+  ],
+  "secondary": [
+   "Transverse Abdominis",
+   "Obliques"
+  ],
+  "confidence": "low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y014",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Kneeling/prone hip opener: front leg bent in front of the body, back leg extended straight behind",
+  "representativeName": "Elevated Pigeon",
+  "namesCovered": [
+   "Elevated Pigeon",
+   "Pigeon Pose",
+   "Pigeon with active lifts"
+  ],
+  "primary": [
+   "Piriformis/deep hip external rotators (front leg, stretched)",
+   "Piriformis/deep hip external rotators (front leg)"
+  ],
+  "secondary": [
+   "Iliopsoas/Iliacus/Rectus Femoris (back leg, stretched)",
+   "Erector Spinae (if backbend variant)"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-p3-005",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "",
+  "representativeName": "Happy Baby or Reclined Butterfly",
+  "namesCovered": [
+   "Happy Baby or Reclined Butterfly",
+   "Reclined Butterfly",
+   "Supported Reclined Butterfly"
+  ],
+  "primary": [
+   "Adductor Longus",
+   "Adductor Brevis"
+  ],
+  "secondary": [
+   "Lower back/glutes (relaxation effect, not a stretch target)"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-064",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "other-named",
+  "movementDescription": "Holding a medicine ball overhead, throwing it forward and down to the ground (including a step-in or serve-style run-up)",
+  "representativeName": "Med-ball overhead throw (forward)",
+  "namesCovered": [
+   "Med-ball overhead throw (forward)",
+   "Med-ball overhead throw (forward, step in)",
+   "Med-ball overhead throw (serve pattern)"
+  ],
+  "primary": [
+   "Obliques (internal/external)"
+  ],
+  "secondary": [
+   "Anterior Deltoid/Pectoralis",
+   "Serratus Anterior"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-112",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing, holding a support, lifting one straight leg out to the side (an ankle weight is optional, not required)",
+  "representativeName": "Side Hip Raise",
+  "namesCovered": [
+   "Side Hip Raise",
+   "Side Hip Raise (behind chair)",
+   "Standing Side Hip Raise (ankle weights, hold bench)"
+  ],
+  "primary": [
+   "Gluteus Medius"
+  ],
+  "secondary": [
+   "Gluteus Minimus",
+   "Tensor Fasciae Latae"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-120",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Pilates teaser: balancing on the sit-bones in a V shape, arms and legs extended (a band held at the feet is a minor aid, same pose)",
+  "representativeName": "Teaser (hold top 3s)",
+  "namesCovered": [
+   "Teaser (hold top 3s)",
+   "Teaser 1-3",
+   "Teaser with band"
+  ],
+  "primary": [
+   "Rectus Abdominis"
+  ],
+  "secondary": [
+   "Transverse Abdominis",
+   "Obliques"
+  ],
+  "confidence": "low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "existing-032",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Hanging passively from a pull-up bar with straight arms",
+  "representativeName": "Active hang",
+  "namesCovered": [
+   "Active hang",
+   "Dead Hang"
+  ],
+  "primary": [
+   "Wrist Flexors (wrist curl, grip squeeze)",
+   "Wrist Extensors (reverse wrist curl)"
+  ],
+  "secondary": [
+   "Biceps Brachii (supination assist)"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/grip_forearm/dead-hang.png"
+ },
+ {
+  "variantId": "new-059",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "barbell",
+  "movementDescription": "Lying on a bench, lowering a barbell/EZ-bar to the forehead and extending back up",
+  "representativeName": "Barbell Lying Triceps Extension",
+  "namesCovered": [
+   "Barbell Lying Triceps Extension",
+   "Skull Crusher"
+  ],
+  "primary": [
+   "Triceps Brachii"
+  ],
+  "secondary": [],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-038",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Yoga wheel/full bridge: backbend lifting the hips and chest off the floor, hands and feet planted",
+  "representativeName": "Bridge (wheel) or Wall Walks",
+  "namesCovered": [
+   "Bridge (wheel) or Wall Walks",
+   "Wheel or Bridge"
+  ],
+  "primary": [
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Quadriceps",
+   "Hamstrings"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y003",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Chair Pose with the torso rotated and hands brought together at the chest, elbow crossing toward the opposite knee",
+  "representativeName": "Chair Pose Twist",
+  "namesCovered": [
+   "Chair Pose Twist",
+   "Revolved Chair"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Iliopsoas/Rectus Femoris (stabilize femur)",
+   "Erector Spinae"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-033",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Holding a dumbbell in each hand, stepping up onto a bench with one leg driving up",
+  "representativeName": "Dumbbell Step-up",
+  "namesCovered": [
+   "Dumbbell Step-up",
+   "Dumbbell Step-up onto Bench"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-035",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Forearm resting on a thigh or bench, rotating a light dumbbell or hammer from palm-up to palm-down",
+  "representativeName": "Forearm pronation/supination with a hammer or light dumbbell",
+  "namesCovered": [
+   "Forearm pronation/supination with a hammer or light dumbbell",
+   "Forearm Rotation with hammer or dumbbell"
+  ],
+  "primary": [
+   "Wrist Flexors (wrist curl, grip squeeze)",
+   "Wrist Extensors (reverse wrist curl)"
+  ],
+  "secondary": [
+   "Biceps Brachii (supination assist)"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-043",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Half-kneeling position, pressing a single dumbbell straight overhead",
+  "representativeName": "Half-kneeling Press",
+  "namesCovered": [
+   "Half-kneeling Press",
+   "Half-kneeling single-arm dumbbell press"
+  ],
+  "primary": [
+   "Anterior Deltoid"
+  ],
+  "secondary": [
+   "Pectoralis Major (Clavicular)",
+   "Triceps Brachii"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y030",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying on the back with both legs extended straight up a wall, hips close to the wall, arms relaxed at the sides",
+  "representativeName": "Legs up the Wall",
+  "namesCovered": [
+   "Legs up the Wall",
+   "Legs up the wall, slow breathing"
+  ],
+  "primary": [
+   "None significant - passive restorative inversion"
+  ],
+  "secondary": [
+   "Hamstrings (mild passive stretch if legs are kept straight)",
+   "Diaphragm (breathing component)"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y011",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing tall, feet together, arms at the sides, neutral posture",
+  "representativeName": "Mountain Pose",
+  "namesCovered": [
+   "Mountain Pose",
+   "Mountain Pose with breathing"
+  ],
+  "primary": [
+   "Postural/stabilizer only - quadriceps, intrinsic foot muscles, erector spinae (see notes)"
+  ],
+  "secondary": [
+   "Iliopsoas",
+   "Transverse Abdominis/deep core (postural)"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "existing-018",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Plank held on straight arms",
+  "representativeName": "Plank Shoulder Taps",
+  "namesCovered": [
+   "Plank Shoulder Taps",
+   "Plank Shoulder Taps (feet wide)"
+  ],
+  "primary": [
+   "Rectus Abdominis"
+  ],
+  "secondary": [
+   "Obliques",
+   "Transverse Abdominis"
+  ],
+  "confidence": "high",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/plank_front/straight-arm-plank.png"
+ },
+ {
+  "variantId": "gap-y022",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing forward fold over a straight front leg, back leg turned out behind, hands on blocks or the floor",
+  "representativeName": "Pyramid Pose (blocks)",
+  "namesCovered": [
+   "Pyramid Pose (blocks)",
+   "Pyramid Pose (hamstring)"
+  ],
+  "primary": [
+   "Hamstrings (front leg, stretched)"
+  ],
+  "secondary": [
+   "Erector Spinae (posterior-chain lengthening)",
+   "Obliques/lateral trunk"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n016",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying on one side, top arm behind the head, gently pressing the top knee down toward the floor to rotate the shoulder inward",
+  "representativeName": "Sleeper stretch",
+  "namesCovered": [
+   "Sleeper stretch",
+   "Sleeper stretch (internal-rotation range)"
+  ],
+  "primary": [
+   "Posterior shoulder capsule / Infraspinatus+Teres Minor (external rotators, stretched)"
+  ],
+  "secondary": [
+   "Posterior Deltoid"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-107",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Squat down and, when standing back up, rise onto the toes for a calf raise",
+  "representativeName": "Squat to Calf Raise",
+  "namesCovered": [
+   "Squat to Calf Raise",
+   "Squats with Toe Raise"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y019",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing on one leg, the other foot placed against the inner thigh, hands at the chest or raised overhead",
+  "representativeName": "Supported Tree Pose (toe down)",
+  "namesCovered": [
+   "Supported Tree Pose (toe down)",
+   "Tree Pose"
+  ],
+  "primary": [
+   "Quadriceps/Gluteus Medius/ankle stabilizers (supporting leg)"
+  ],
+  "secondary": [
+   "Erector Spinae",
+   "Pectoralis Minor/Serratus Anterior (if arms raised overhead)"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n034",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "trap bar",
+  "movementDescription": "Standing inside a trap bar holding the handles, dropping into a quarter-squat and jumping straight up",
+  "representativeName": "Trap-bar jump",
+  "namesCovered": [
+   "Trap-bar jump",
+   "Trap-bar jump (light)"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Hamstrings",
+   "Hip Flexors"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n008",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Running drill driving the knee up then extending/whipping the lower leg straight before the foot strikes down",
+  "representativeName": "B-skips",
+  "namesCovered": [
+   "B-skips"
+  ],
+  "primary": [
+   "Hip Flexors (Iliopsoas) - knee drive",
+   "Hamstrings (biceps femoris)/Glutes - foot-strike phase"
+  ],
+  "secondary": [
+   "Calves/Tibialis Anterior",
+   "Quadriceps (knee-extension/leg-whip phase)"
+  ],
+  "confidence": "moderate-low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-006",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "band",
+  "movementDescription": "Standing, holding a band wide with straight arms, rotating it overhead and behind the back",
+  "representativeName": "Band Shoulder Dislocates",
+  "namesCovered": [
+   "Band Shoulder Dislocates"
+  ],
+  "primary": [
+   "Infraspinatus"
+  ],
+  "secondary": [
+   "Teres Minor",
+   "Posterior Deltoid"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-009",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Shoulders elevated on a bench, hips thrusting straight up into a bridge",
+  "representativeName": "Bench Glute Bridge",
+  "namesCovered": [
+   "Bench Glute Bridge"
+  ],
+  "primary": [
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Quadriceps",
+   "Hamstrings"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n029",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Seated, rounding back into a ball on the tailbone with legs lifted and crossed at the ankles, preparing to roll back",
+  "representativeName": "Boomerang Prep",
+  "namesCovered": [
+   "Boomerang Prep"
+  ],
+  "primary": [
+   "Rectus Abdominis"
+  ],
+  "secondary": [
+   "Transverse Abdominis",
+   "Hip Flexors"
+  ],
+  "confidence": "low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "existing-062",
+  "kind": "regen",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Jogging in place, kicking the heels up toward the glutes",
+  "representativeName": "Butt Kicks",
+  "namesCovered": [
+   "Butt Kicks"
+  ],
+  "primary": [
+   "Hamstrings (Biceps Femoris - knee flexion, heel-to-glute action)"
+  ],
+  "secondary": [
+   "Glutes",
+   "Hip Flexors (disputed role - see notes)"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": "/Users/ngalnyaatkinson/claude project/fitness app/exercise-howto/images/butt_kicks_hamstring_flexion/butt-kicks.png"
+ },
+ {
+  "variantId": "new-046",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Hanging from a bar, tucking the knees up and twisting them side to side",
+  "representativeName": "CD1: Leg Tuck and Twist",
+  "namesCovered": [
+   "CD1: Leg Tuck and Twist"
+  ],
+  "primary": [
+   "Iliopsoas"
+  ],
+  "secondary": [
+   "Tensor Fasciae Latae",
+   "Pectineus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-017",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "machine",
+  "movementDescription": "Seated upright against a chest pad on a row machine, pulling the handles back",
+  "representativeName": "Chest-supported Machine Row",
+  "namesCovered": [
+   "Chest-supported Machine Row"
+  ],
+  "primary": [
+   "Latissimus Dorsi",
+   "Middle/Lower Trapezius"
+  ],
+  "secondary": [
+   "Posterior Deltoid",
+   "Teres Major"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y004",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying face down, pressing the chest and head up into a low backbend, hands under the shoulders, hips and legs on the floor",
+  "representativeName": "Cobra (Bhujangasana)",
+  "namesCovered": [
+   "Cobra (Bhujangasana)"
+  ],
+  "primary": [
+   "Erector Spinae"
+  ],
+  "secondary": [
+   "Pectoralis Major (stretched, front body)",
+   "Triceps Brachii (supports upper body)"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-020",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Pilates mat move: lying on the back, legs together, circling them in a wide arc",
+  "representativeName": "Corkscrew",
+  "namesCovered": [
+   "Corkscrew"
+  ],
+  "primary": [
+   "Obliques"
+  ],
+  "secondary": [
+   "Psoas Major",
+   "Quadratus Lumborum"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-026",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Deep squat hold with one arm reaching/rotating upward for thoracic mobility",
+  "representativeName": "Deep Squat with thoracic reach",
+  "namesCovered": [
+   "Deep Squat with thoracic reach"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-029",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying on a bench, shoulders anchored at the top, slowly lowering the straight body from a vertical hold",
+  "representativeName": "Dragon Flag Negative",
+  "namesCovered": [
+   "Dragon Flag Negative"
+  ],
+  "primary": [
+   "Latissimus Dorsi (Front Lever)",
+   "Pectoralis Major/Serratus Anterior (Planche)"
+  ],
+  "secondary": [
+   "Posterior Deltoid",
+   "Rhomboids"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-024",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Standing, holding a dumbbell at one side, bending the torso sideways or holding it upright against the load",
+  "representativeName": "Dumbbell Side Bend or Suitcase Hold",
+  "namesCovered": [
+   "Dumbbell Side Bend or Suitcase Hold"
+  ],
+  "primary": [
+   "Obliques"
+  ],
+  "secondary": [
+   "Psoas Major",
+   "Quadratus Lumborum"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y009",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing, forearms stacked vertically in front of the chest, elbows lifted, pressing the forearms together",
+  "representativeName": "Eagle Arms",
+  "namesCovered": [
+   "Eagle Arms"
+  ],
+  "primary": [
+   "Rhomboids",
+   "Middle Trapezius"
+  ],
+  "secondary": [
+   "Posterior Deltoid",
+   "muscles between the shoulder blades (upper back, per secondary sources)"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-p3-004",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "",
+  "representativeName": "Extended Side Angle",
+  "namesCovered": [
+   "Extended Side Angle"
+  ],
+  "primary": [
+   "Obliques (lower-side)",
+   "Gluteus Medius/Minimus (bent leg)"
+  ],
+  "secondary": [
+   "Adductors (back leg)",
+   "Quadriceps"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-039",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Yoga Malasana: deep wide squat, heels down, hands together in front of the chest",
+  "representativeName": "Garland Squat (Malasana)",
+  "namesCovered": [
+   "Garland Squat (Malasana)"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-045",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Half-kneeling position, holding a light weight locked out overhead and bracing",
+  "representativeName": "Half-kneeling Overhead Carry Hold (light)",
+  "namesCovered": [
+   "Half-kneeling Overhead Carry Hold (light)"
+  ],
+  "primary": [
+   "Trapezius (Upper)",
+   "Forearm Flexors/Grip"
+  ],
+  "secondary": [
+   "Rectus Abdominis",
+   "Erector Spinae/Longissimus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-048",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "cable",
+  "movementDescription": "Lying on an incline bench, bringing two cable handles together in an arc over the chest",
+  "representativeName": "Incline Cable Fly",
+  "namesCovered": [
+   "Incline Cable Fly"
+  ],
+  "primary": [
+   "Pectoralis Major, Sternal"
+  ],
+  "secondary": [
+   "Pectoralis Major (Clavicular)",
+   "Anterior Deltoid"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-p3-007",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "",
+  "representativeName": "Knee to Chest Stretch",
+  "namesCovered": [
+   "Knee to Chest Stretch"
+  ],
+  "primary": [
+   "Erector Spinae (lower back)",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Hamstrings",
+   "Hip Flexors (contralateral leg)"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-055",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "barbell",
+  "movementDescription": "Holding one end of a landmine-anchored barbell at the chest, rotating the torso and pressing it out",
+  "representativeName": "Landmine Rotational Press",
+  "namesCovered": [
+   "Landmine Rotational Press"
+  ],
+  "primary": [
+   "Obliques"
+  ],
+  "secondary": [
+   "Psoas Major",
+   "Quadratus Lumborum"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-061",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying on the back, raising both straight legs up and lowering them back down",
+  "representativeName": "Leg raises (up and down)",
+  "namesCovered": [
+   "Leg raises (up and down)"
+  ],
+  "primary": [
+   "Iliopsoas"
+  ],
+  "secondary": [
+   "Tensor Fasciae Latae",
+   "Pectineus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-067",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Holding a weight locked out overhead, stepping one leg back into a lunge",
+  "representativeName": "Overhead reverse lunge",
+  "namesCovered": [
+   "Overhead reverse lunge"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n023",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Seated or standing with legs spread wide into a straddle, folding the torso forward between the legs",
+  "representativeName": "Pike Stretch",
+  "namesCovered": [
+   "Pike Stretch"
+  ],
+  "primary": [
+   "Hamstrings (Biceps Femoris, Semitendinosus, Semimembranosus)"
+  ],
+  "secondary": [],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-072",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Alternating between a forearm plank and a straight-arm plank, one arm at a time",
+  "representativeName": "Plank up-downs",
+  "namesCovered": [
+   "Plank up-downs"
+  ],
+  "primary": [
+   "Rectus Abdominis"
+  ],
+  "secondary": [
+   "Obliques",
+   "Transverse Abdominis"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-076",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Push-up with the hands set further back, the torso leaning forward over the hands",
+  "representativeName": "Pseudo-planche Push-up",
+  "namesCovered": [
+   "Pseudo-planche Push-up"
+  ],
+  "primary": [
+   "Latissimus Dorsi (Front Lever)",
+   "Pectoralis Major/Serratus Anterior (Planche)"
+  ],
+  "secondary": [
+   "Posterior Deltoid",
+   "Rhomboids"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-078",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "machine",
+  "movementDescription": "Lying face down on a reverse-hyper bench with the hips at the edge, swinging the legs up against resistance",
+  "representativeName": "Reverse Hyper or Back Extension",
+  "namesCovered": [
+   "Reverse Hyper or Back Extension"
+  ],
+  "primary": [
+   "Erector Spinae (standard/45-degree back extension)",
+   "Gluteus Maximus (reverse hyperextension)"
+  ],
+  "secondary": [
+   "Gluteus Maximus",
+   "Adductor Magnus"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y021",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing wide-legged triangle shape with the torso rotated, the opposite hand reaching to the floor or shin",
+  "representativeName": "Revolved Triangle",
+  "namesCovered": [
+   "Revolved Triangle"
+  ],
+  "primary": [
+   "Obliques (rotation)"
+  ],
+  "secondary": [
+   "Hamstrings (stretched)",
+   "Hip external rotators"
+  ],
+  "confidence": "low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-083",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Pilates roll-over: lying on the back, legs swing up and overhead, rolling the spine off the mat",
+  "representativeName": "Roll Over",
+  "namesCovered": [
+   "Roll Over"
+  ],
+  "primary": [
+   "Rectus Abdominis"
+  ],
+  "secondary": [
+   "Transverse Abdominis",
+   "Obliques"
+  ],
+  "confidence": "low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n026",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Seated in a tight tuck, knees drawn to the chest, rolling backward and forward along the curve of the spine like a ball",
+  "representativeName": "Rolling Like a Ball",
+  "namesCovered": [
+   "Rolling Like a Ball"
+  ],
+  "primary": [
+   "Rectus Abdominis"
+  ],
+  "secondary": [
+   "Transverse Abdominis",
+   "Obliques"
+  ],
+  "confidence": "low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-088",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Plank/push-up position, small-range shoulder-blade protraction and retraction without bending the elbows",
+  "representativeName": "Scapula push-up",
+  "namesCovered": [
+   "Scapula push-up"
+  ],
+  "primary": [
+   "Pectoralis Major, Sternal head (flat)",
+   "Pectoralis Major, Clavicular head (incline)"
+  ],
+  "secondary": [
+   "Anterior Deltoid",
+   "Triceps Brachii"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-119",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "barbell",
+  "movementDescription": "Standing bent over, pulling a T-bar/landmine handle up to the torso",
+  "representativeName": "Seal Row or T-bar Row",
+  "namesCovered": [
+   "Seal Row or T-bar Row"
+  ],
+  "primary": [
+   "Latissimus Dorsi",
+   "Middle/Lower Trapezius"
+  ],
+  "secondary": [
+   "Posterior Deltoid",
+   "Teres Major"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-091",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Seated Pilates spine curl: rolling the spine down toward the mat and back up to seated",
+  "representativeName": "Seated Spine Curl (roll down and up)",
+  "namesCovered": [
+   "Seated Spine Curl (roll down and up)"
+  ],
+  "primary": [
+   "Biceps Brachii (standard curl)",
+   "Brachialis (preacher curl - see notes)"
+  ],
+  "secondary": [
+   "Brachialis",
+   "Brachioradialis"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-005",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "band",
+  "movementDescription": "Lying on the side, pressing the top leg straight out against a band",
+  "representativeName": "Side-lying Band Leg Press",
+  "namesCovered": [
+   "Side-lying Band Leg Press"
+  ],
+  "primary": [
+   "Quadriceps (low/neutral foot placement)",
+   "Gluteus Maximus (high foot placement)"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-095",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Kneeling on a bench with one leg, hinged forward, kicking a dumbbell straight back",
+  "representativeName": "Single-leg Kneeling Kickbacks",
+  "namesCovered": [
+   "Single-leg Kneeling Kickbacks"
+  ],
+  "primary": [
+   "Triceps Brachii"
+  ],
+  "secondary": [],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y006",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying face down propped up on the forearms, gentle backbend with forearms flat on the floor",
+  "representativeName": "Sphinx",
+  "namesCovered": [
+   "Sphinx"
+  ],
+  "primary": [
+   "Erector Spinae"
+  ],
+  "secondary": [
+   "Rectus Abdominis (stretched)",
+   "Pectoralis Major (stretched)"
+  ],
+  "confidence": "low-moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-103",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Bodyweight squat with an arm swing for momentum/balance",
+  "representativeName": "Squat swings",
+  "namesCovered": [
+   "Squat swings"
+  ],
+  "primary": [
+   "Quadriceps",
+   "Gluteus Maximus"
+  ],
+  "secondary": [
+   "Adductor Magnus",
+   "Soleus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-110",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing, ankle crossed over the opposite knee, holding a support for balance while sitting the hips back",
+  "representativeName": "Standing Figure-4 Glute Stretch (hold car or cart)",
+  "namesCovered": [
+   "Standing Figure-4 Glute Stretch (hold car or cart)"
+  ],
+  "primary": [
+   "Piriformis / Deep Hip External Rotators"
+  ],
+  "secondary": [
+   "Gluteus Maximus (anatomically plausible, not directly measured)"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-118",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Lying face down, raising both arms and both legs off the floor at once and holding",
+  "representativeName": "Superman hold (3 s)",
+  "namesCovered": [
+   "Superman hold (3 s)"
+  ],
+  "primary": [
+   "Rectus Abdominis",
+   "Transverse Abdominis"
+  ],
+  "secondary": [
+   "Obliques",
+   "Gluteus Maximus/Medius"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-121",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Teaser prep: one leg extended on the floor, the other lifted, rolling up partway toward the V-sit",
+  "representativeName": "Teaser Prep (one leg)",
+  "namesCovered": [
+   "Teaser Prep (one leg)"
+  ],
+  "primary": [
+   "Rectus Abdominis"
+  ],
+  "secondary": [
+   "Transverse Abdominis",
+   "Obliques"
+  ],
+  "confidence": "low",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-n020",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Walking forward, kicking one straight leg up toward the opposite hand while the other arm swings back, alternating sides",
+  "representativeName": "Toy Soldier (alternating heel & arm)",
+  "namesCovered": [
+   "Toy Soldier (alternating heel & arm)"
+  ],
+  "primary": [
+   "Hamstrings (dynamic straight-leg kick, stretched)"
+  ],
+  "secondary": [
+   "Hip Flexors (opposite/standing leg)",
+   "Anterior Deltoid (reaching arm)"
+  ],
+  "confidence": "moderate",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "new-126",
+  "kind": "new",
+  "gender": "male",
+  "equipment": "dumbbell",
+  "movementDescription": "Walking while balancing a dumbbell overhead on an open palm like a waiter",
+  "representativeName": "Waiter farmer carry (dumbbell)",
+  "namesCovered": [
+   "Waiter farmer carry (dumbbell)"
+  ],
+  "primary": [
+   "Trapezius (Upper)",
+   "Forearm Flexors/Grip"
+  ],
+  "secondary": [
+   "Rectus Abdominis",
+   "Erector Spinae/Longissimus"
+  ],
+  "confidence": "high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "gap-y026",
+  "kind": "new",
+  "gender": "female",
+  "equipment": "bodyweight",
+  "movementDescription": "Standing on one leg, torso and extended arms parallel to the floor, the back leg lifted straight behind in line with the torso",
+  "representativeName": "Warrior 3",
+  "namesCovered": [
+   "Warrior 3"
+  ],
+  "primary": [
+   "Gluteus Medius/Maximus (standing leg)",
+   "Hamstrings (standing leg)"
+  ],
+  "secondary": [
+   "Erector Spinae",
+   "Core (balance)"
+  ],
+  "confidence": "moderate-high",
+  "existingImagePath": null
+ },
+ {
+  "variantId": "defect-barbell-shrug",
+  "kind": "defect-redo",
+  "gender": "male",
+  "equipment": "barbell",
+  "movementDescription": "Standing tall holding a loaded barbell at arms length in front of the thighs; panel 1 shoulders relaxed and low, panel 2 shoulders shrugged straight up toward the ears as high as possible, clearly elevated",
+  "representativeName": "Barbell Shrug",
+  "namesCovered": [
+   "Barbell Shrug"
+  ],
+  "primary": [
+   "upper trapezius"
+  ],
+  "secondary": [
+   "levator scapulae"
+  ],
+  "confidence": "high",
+  "existingImagePath": "images/shrug_trapezius/barbell-shrug.png"
+ }
+]

@@ -1,0 +1,696 @@
+{
+ "existing-109": {
+  "gender": "female",
+  "name": "Forearm Plank",
+  "setup": "bodyweight on a dark grey exercise mat, no other equipment",
+  "p1": "kneeling forearm plank set-up: forearms flat on the mat parallel to each other with elbows directly under the shoulders, knees resting on the mat, hips lowered so the body forms a line from knees to head",
+  "p2": "full forearm plank: knees lifted off the mat, weight on the forearms and toes, body in one straight rigid line from heels through hips to head, hips neither sagging nor piked, eyes looking down at the mat",
+  "primary": "rectus abdominis (front abdominal wall) and latissimus dorsi (side of the upper back)",
+  "secondary": "obliques (sides of the waist) and transverse abdominis",
+  "extra": "Keep the camera showing her torso clearly from the side, her feminine chest and waist visible through the blue top."
+ },
+ "existing-016": {
+  "gender": "female",
+  "name": "Floor Glute Bridge",
+  "setup": "bodyweight, lying on her back on a dark grey exercise mat, knees bent, feet flat on the mat hip-width apart, arms resting straight on the mat by her sides",
+  "p1": "hips and lower back resting on the mat, knees bent at about 90 degrees, feet flat",
+  "p2": "hips driven up high so the body forms one straight line from shoulders through hips to knees, shoulders and feet still on the mat, glutes squeezed",
+  "primary": "gluteus maximus (buttocks)",
+  "secondary": "quadriceps (front of thighs) and hamstrings (back of thighs)",
+  "extra": "Keep her torso visible from the side so her feminine chest and waist show clearly through the blue top; she is the same woman as the reference, not a man. Colour ONLY the buttocks solid red; the back of the thighs (hamstrings) and front of the thighs (quadriceps) are the lighter orange, not red."
+ },
+ "existing-106": {
+  "gender": "female",
+  "name": "Nordic Hamstring Curl",
+  "setup": "bodyweight, kneeling on the padded kneeling pad of a Nordic hamstring bench, both ankles hooked and locked under the bench's padded ankle roller behind her",
+  "p1": "kneeling tall and upright, body in a straight line from knees through hips to head, hips fully extended, arms relaxed at her sides",
+  "p2": "slowly lowered forward under control to about 45 degrees from the floor, body still one straight line from knees to head (hips NOT bent), arms reaching forward with hands open ready to catch herself",
+  "primary": "hamstrings (back of the thighs)",
+  "secondary": "gastrocnemius (calves) and gracilis (inner thigh)"
+ },
+ "existing-002": {
+  "gender": "female",
+  "name": "Bodyweight Squat",
+  "setup": "bodyweight, standing on the floor, feet shoulder-width apart, no equipment",
+  "p1": "standing tall, legs straight, both arms extended straight forward at shoulder height for balance",
+  "p2": "deep squat with thighs parallel to the floor, hips pushed back, heels flat on the floor, chest up, arms still extended straight forward at shoulder height",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "adductor magnus (inner thighs) and soleus (lower calves)"
+ },
+ "new-051": {
+  "gender": "female",
+  "name": "Jump Squat",
+  "setup": "bodyweight, on the floor, no equipment",
+  "p1": "loaded in a squat with thighs about parallel to the floor, hips back, heels down, arms swung back behind her hips",
+  "p2": "exploding straight up into the air: body fully extended in a straight vertical line, both feet clearly OFF the floor with a visible gap of air between her trainers and the floor (draw her shadow on the floor below her), toes pointed, arms straight down by her sides and slightly behind her (NOT raised overhead)",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "hamstrings (back of thighs) and adductor magnus (inner thighs)",
+  "extra": "The arrow sits centred in the gap between the two panels; nothing from one panel crosses into the other."
+ },
+ "gap-n004": {
+  "gender": "female",
+  "name": "Basic Two-Foot Bounce (ankle hops in place)",
+  "setup": "bodyweight, on the floor, no equipment, feet together hip-width, arms relaxed and slightly bent at her sides",
+  "p1": "ground contact: both feet on the floor on the balls of the feet, knees slightly bent absorbing the landing, arms slightly back",
+  "p2": "high in the air at the top of the hop: her trainers are a FULL FOOT-LENGTH above the floor with a large empty gap down to her shadow, toes pointed down, legs straight, arms slightly forward - she is unmistakably airborne and much higher in the panel than in panel 1",
+  "primary": "calves (gastrocnemius and soleus) and quadriceps (front of thighs)",
+  "secondary": null
+ },
+ "existing-012": {
+  "gender": "female",
+  "name": "Inverted Row",
+  "setup": "bodyweight, hanging under a horizontal bar on a free-standing metal bar frame at about hip height, overhand grip slightly wider than shoulders, heels on the floor, body held straight like a plank",
+  "p1": "hanging under the bar with arms fully straight, body in one straight line from heels to head, chest well below the bar",
+  "p2": "chest pulled up to touch the bar, elbows driven back, shoulder blades squeezed together, body still straight from heels to head",
+  "primary": "latissimus dorsi and middle/lower trapezius (upper and mid back)",
+  "secondary": "posterior deltoid (rear shoulder) and teres major",
+  "extra": "Keep her feminine chest and waist visible through the blue top."
+ },
+ "existing-111": {
+  "gender": "female",
+  "name": "Box Jump",
+  "setup": "bodyweight, standing on the floor just in front of a wooden plyometric jump box about knee height",
+  "p1": "on the floor in front of the box, in a quarter squat, hips back, arms swung back behind her ready to jump",
+  "p2": "landed softly on top of the box with BOTH feet fully on the box top, knees bent in a soft squat, arms forward",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "hamstrings (back of thighs) and hip flexors (front of hips)"
+ },
+ "new-069": {
+  "gender": "female",
+  "name": "Assisted Pistol Squat (holding a pole)",
+  "setup": "bodyweight, standing next to a simple single vertical metal support pole fixed to the floor with a flat base plate (the whole pole from base to top inside the frame), holding it with one hand for balance",
+  "p1": "standing tall on her left leg, holding the pole, right leg lifted slightly straight out in front just off the floor",
+  "p2": "FULL-DEPTH pistol squat on the left leg: hips dropped all the way down so the back of the left thigh rests on the left calf and the buttocks are just above the left heel, left heel flat on the floor, torso leaning forward, right leg held straight out in front parallel to the floor with the right foot clearly OFF the floor, still holding the rack upright",
+  "primary": "quadriceps (front of thigh) and gluteus maximus (buttock) of the squatting leg",
+  "secondary": "adductor magnus (inner thigh) and soleus (lower calf) of the squatting leg",
+  "extra": "Show the whole pole and her whole body inside the panel with margin. Colour muscles ONLY on the squatting left leg (red front of thigh and buttock, orange inner thigh and lower calf); the raised right leg has NO colour at all. Panel 2 must be a full-depth pistol: hips lower than the knee, buttocks near the heel."
+ },
+ "new-021": {
+  "gender": "female",
+  "name": "Cossack Squat",
+  "setup": "bodyweight, very wide stance with feet about twice shoulder width, toes turned slightly out, hands clasped in front of the chest",
+  "p1": "standing tall in the wide stance, both legs straight",
+  "p2": "shifted sideways into a deep squat over the right leg (right knee fully bent, right heel flat, hips low) while the left leg is completely straight out to the side with the left heel on the floor and left toes pointing up to the ceiling",
+  "primary": "quadriceps (front of thigh) and gluteus maximus (buttock) of the bent leg",
+  "secondary": "adductor magnus (inner thigh of the straight leg) and soleus (lower calf)",
+  "extra": "For this side-to-side movement, turn the camera so she faces the viewer at a mild three-quarter angle so the sideways shift and the straight side leg are clearly visible."
+ },
+ "new-016": {
+  "gender": "male",
+  "name": "Chest-supported Dumbbell Row",
+  "setup": "lying chest-down on an adjustable bench set to about a 30-45 degree incline, feet on the floor, a dumbbell in each hand",
+  "p1": "arms hanging straight down toward the floor below the bench, dumbbells near the floor, palms facing each other",
+  "p2": "both dumbbells rowed up to the sides of the lower ribs, elbows driven up and back past the torso, shoulder blades squeezed, chest still on the pad",
+  "primary": "latissimus dorsi and middle/lower trapezius (upper and mid back)",
+  "secondary": "posterior deltoid (rear shoulder) and teres major"
+ },
+ "gap-n030": {
+  "gender": "female",
+  "name": "Pilates Swan (prone back extension)",
+  "setup": "bodyweight, lying face down on a dark grey exercise mat, legs straight together",
+  "p1": "lying flat face down on the mat, arms extended straight forward on the mat beyond her head, legs straight",
+  "p2": "chest, arms and both straight legs lifted off the mat at the same time into a gentle prone backbend, arms extended forward, only the hips and lower belly touching the mat",
+  "primary": "erector spinae (the long muscles running up both sides of the spine on the back)",
+  "secondary": null,
+  "extra": "She is the same woman as the reference: keep her feminine body shape visible from the side."
+ },
+ "gap-n009": {
+  "gender": "female",
+  "name": "Carioca (grapevine lateral run)",
+  "setup": "bodyweight running drill moving sideways across the frame to the viewer's right, light athletic stance on the balls of the feet, arms bent and held out for balance; the camera sees her from the front at a mild three-quarter angle",
+  "p1": "CROSS IN FRONT: her trailing leg swings across IN FRONT of her lead leg (the crossing knee is nearer the camera than the other leg), hips twisted toward the direction of travel while her chest still faces the camera",
+  "p2": "CROSS BEHIND: the same trailing leg now steps BEHIND her lead leg (the crossing leg is further from the camera and partly hidden behind the other leg), hips twisted the opposite way, chest still facing the camera",
+  "primary": "hip adductors and abductors (inner and outer thighs) and obliques (sides of the waist)",
+  "secondary": null,
+  "extra": "Make the difference unmistakable: in panel 1 the crossing leg is clearly in front, in panel 2 clearly behind."
+ },
+ "gap-y007": {
+  "gender": "female",
+  "name": "Downward Dog (yoga)",
+  "setup": "bodyweight on a dark grey yoga mat",
+  "p1": "tabletop on hands and knees: hands under shoulders, knees under hips, back flat",
+  "p2": "Downward Dog: knees lifted, hips pushed high up and back so the body forms an inverted V, arms and legs straight, heels reaching toward the mat, head between the upper arms",
+  "primary": "deltoids (shoulders) and hamstrings (back of thighs, being stretched)",
+  "secondary": "calves (gastrocnemius and soleus, stretched) and abdominals"
+ },
+ "new-p3-006": {
+  "gender": "female",
+  "name": "Foam Roll Calves",
+  "setup": "sitting on a dark grey mat with both legs straight out in front, a black foam roller lying crosswise under the middle of both calves, hands planted on the mat behind her hips",
+  "p1": "hips and buttocks resting DOWN on the mat, legs relaxed on the roller",
+  "p2": "hips and buttocks LIFTED high off the mat, weight supported on her straight arms and on the calves pressing into the roller, rolling the calves along it - obviously higher hips than panel 1",
+  "primary": "calves (gastrocnemius and soleus)",
+  "secondary": null
+ },
+ "new-036": {
+  "gender": "female",
+  "name": "Tuck Front Lever",
+  "setup": "bodyweight, gripping the bar of a sturdy free-standing metal pull-up frame (two uprights and the bar) with an overhand grip, arms straight throughout",
+  "p1": "dead hang below the bar with arms straight, knees tucked up toward the chest",
+  "p2": "advanced tuck front lever, seen exactly SIDE-ON: arms straight from the bar angled down to the shoulders, and her torso held like a flat coffee-table top directly under the bar - shoulders, back and hips all on one HORIZONTAL line parallel to the floor, her face looking up at the ceiling, hips NOT below the shoulders and NOT tipped upside down, thighs pulled in so the knees are near the chest and the shins hang down",
+  "primary": "latissimus dorsi (sides of the upper back)",
+  "secondary": null
+ },
+ "new-011": {
+  "gender": "female",
+  "name": "Standing Broad Jump",
+  "setup": "bodyweight, on the floor, jumping forward to the viewer's right, camera from the side so the forward travel is visible",
+  "p1": "standing loaded in a quarter squat, hips back, arms swung back behind her",
+  "p2": "mid-flight forward: she is in the air flying forward, body stretched in a long diagonal, arms reaching forward, knees swinging forward to land, both feet well OFF the floor with a shadow below, and she is clearly displaced toward the right side of the panel compared with panel 1",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "hamstrings (back of thighs) and hip flexors (front of hips)"
+ },
+ "new-023": {
+  "gender": "female",
+  "name": "Pilates Criss Cross",
+  "setup": "lying on her back on a dark grey mat, hands lightly behind her head with elbows wide, head and shoulders curled up off the mat, both feet off the mat throughout",
+  "p1": "torso curled up and rotated to her LEFT: right elbow reaching toward the bent LEFT knee drawn in toward her chest, RIGHT leg extended straight and low at about 45 degrees off the mat",
+  "p2": "torso curled up and rotated to her RIGHT: left elbow reaching toward the bent RIGHT knee drawn in toward her chest, LEFT leg extended straight and low at about 45 degrees off the mat - the mirror-image twist of panel 1 (same camera)",
+  "primary": "rectus abdominis (front of the abdomen)",
+  "secondary": null,
+  "extra": "Show the twist clearly: in each panel one elbow visibly crosses the body to meet the opposite bent knee, and the extended leg is held in the air off the mat. Keep her torso visible with her feminine chest and waist through the blue top."
+ },
+ "gap-y014": {
+  "gender": "female",
+  "name": "Elevated Pigeon Stretch",
+  "setup": "using a flat padded gym bench, standing behind one side of it",
+  "p1": "kneeling up onto the bench: her right knee and the entire outer side of her right shin lie flat ON TOP of the bench pad, the shin crosswise across the bench, right knee bent about 90 degrees, right foot near the far edge of the bench, left foot standing on the floor, hands on the bench, torso upright",
+  "p2": "same right shin still lying ON the bench top, left leg slid back and extended straight behind her with the left knee and toes on the floor, hips square and sunk down toward the bench, torso folded forward over the right shin with forearms resting on the bench",
+  "primary": "piriformis and deep hip external rotators (deep buttock of the right, front leg - being stretched)",
+  "secondary": "hip flexors (front of the hip of the left, back leg - being stretched)"
+ },
+ "new-p3-005": {
+  "gender": "female",
+  "name": "Reclined Butterfly",
+  "setup": "lying on her back on a dark grey mat, arms relaxed on the mat",
+  "p1": "knees bent, feet flat on the mat, knees together pointing up",
+  "p2": "soles of the feet pressed together close to the hips and both knees dropped wide open out to the sides toward the mat",
+  "primary": "adductors (inner thighs, being stretched)",
+  "secondary": null,
+  "extra": "Keep her torso visible from the side with her feminine chest and waist through the blue top."
+ },
+ "new-064": {
+  "gender": "male",
+  "name": "Medicine Ball Overhead Throw (forward slam)",
+  "setup": "standing in a staggered stance holding a medicine ball in both hands",
+  "p1": "medicine ball held overhead with straight arms, slight lean back, weight on the back foot",
+  "p2": "ball thrown forward and down: torso flexed forward and rotated slightly, arms followed through down in front, the ball just released and in the air heading to the floor in front of him, weight shifted onto the front foot",
+  "primary": "obliques (sides of the waist)",
+  "secondary": "anterior deltoid and pectoralis (front shoulders and chest) and serratus anterior"
+ },
+ "new-112": {
+  "gender": "female",
+  "name": "Standing Side Hip Raise (hip abduction)",
+  "setup": "standing side-on to the back of a sturdy chair, her inner hand resting on the chair back for support",
+  "p1": "standing tall with both feet together on the floor",
+  "p2": "her outer leg lifted straight out SIDEWAYS away from her body to about 40 degrees, knee straight, toes pointing forward toward the viewer, the leg moving in the same flat plane as her body, torso staying upright",
+  "primary": "gluteus medius (outer hip of the lifting leg)",
+  "secondary": "gluteus minimus and tensor fasciae latae (outer upper hip)",
+  "extra": "CAMERA EXCEPTION for this exercise: show her from the FRONT (facing the viewer squarely, chair beside her) so the leg lifting out SIDEWAYS away from her body is unmistakable. The leg must move out to the side (abduction, like a star), NOT backward and NOT forward."
+ },
+ "new-120": {
+  "gender": "female",
+  "name": "Pilates Teaser",
+  "setup": "on a dark grey mat",
+  "p1": "lying on her back with both legs straight together lifted to about 45 degrees off the mat and arms reaching straight overhead along the mat",
+  "p2": "rolled up into a V-sit balanced on the sit-bones: torso lifted to about 60 degrees, legs straight together at about 60 degrees, arms reaching forward parallel to the legs",
+  "primary": "rectus abdominis (front of the abdomen)",
+  "secondary": null,
+  "extra": "Keep her torso clearly visible from the side, feminine chest and waist through the blue top."
+ },
+ "existing-032": {
+  "gender": "female",
+  "name": "Dead Hang to Active Hang",
+  "setup": "hanging from a pull-up bar on a free-standing metal pull-up frame, overhand grip shoulder-width, feet off the floor, arms straight in both panels",
+  "p1": "passive dead hang: arms fully straight, shoulders relaxed and shrugged right up around her ears so the neck almost disappears, head well below the bar",
+  "p2": "scapular pull / active hang: arms STILL STRAIGHT at the elbows, but the shoulder blades are pulled hard down so the shoulders drop far away from the ears, the chest lifts and the whole body rises noticeably (about a head's height closer to the bar than in panel 1, her head now near bar level) - EXAGGERATE so the difference is obvious",
+  "primary": "forearm flexors and extensors (grip, the forearms)",
+  "secondary": "biceps brachii (front of upper arm)"
+ },
+ "new-059": {
+  "gender": "male",
+  "name": "Barbell Lying Triceps Extension (skull crusher)",
+  "setup": "lying on his back on a flat bench, feet on the floor, holding an EZ curl bar with a narrow overhand grip",
+  "p1": "arms straight, holding the bar directly above the shoulders",
+  "p2": "elbows bent to about 90 degrees with upper arms still pointing up, bar lowered to just above the forehead",
+  "primary": "triceps brachii (back of the upper arms)",
+  "secondary": null
+ },
+ "new-038": {
+  "gender": "female",
+  "name": "Wheel Pose (full bridge)",
+  "setup": "on a dark grey yoga mat",
+  "p1": "lying flat on her back preparing: knees bent with feet flat near the hips, both palms flat on the mat beside her ears with fingers pointing toward her shoulders and both elbows pointing up to the ceiling (open hands, not fists, nothing on her chest)",
+  "p2": "pressed up into a full wheel backbend: arms straight, hips and chest lifted high into an arch, hands and feet on the mat, head hanging between the arms",
+  "primary": "gluteus maximus (buttocks)",
+  "secondary": "quadriceps (front of thighs) and hamstrings (back of thighs)"
+ },
+ "gap-y003": {
+  "gender": "female",
+  "name": "Chair Pose Twist (yoga)",
+  "setup": "on a dark grey yoga mat, feet together",
+  "p1": "Chair Pose: knees bent deeply, hips sitting back, torso leaning slightly forward, both arms raised overhead",
+  "p2": "Chair Pose Twist: same deep knee bend, hands pressed together in prayer at the chest, torso rotated to the right so the left elbow hooks outside the right knee",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": null
+ },
+ "new-033": {
+  "gender": "male",
+  "name": "Dumbbell Step-up",
+  "setup": "standing in front of a flat bench, a dumbbell hanging at arm's length in each hand",
+  "p1": "standing on the floor with the right foot placed flat on top of the bench, left foot on the floor",
+  "p2": "the top of the step-up: he is now standing UP ON TOP of the bench, his right foot on the bench with the right leg completely straight, his whole body raised a full bench-height above panel 1, the left foot lifted off the floor with the left knee driven up to hip height, dumbbells still hanging at his sides - his head is clearly much higher in the panel than in panel 1",
+  "primary": "quadriceps (front of thigh) and gluteus maximus (buttock)",
+  "secondary": "adductor magnus (inner thigh) and soleus (lower calf)"
+ },
+ "new-035": {
+  "gender": "male",
+  "name": "Forearm Pronation/Supination with a hammer",
+  "setup": "seated on a flat bench, right forearm resting along the top of his right thigh with the wrist just past the knee, holding a hammer by the end of its handle, hammer head pointing up",
+  "p1": "forearm rotated palm-up (supinated), hammer head tipped out to the right side",
+  "p2": "forearm rotated palm-down (pronated), hammer head tipped over to the left side - clearly the opposite direction from panel 1",
+  "primary": "forearm muscles (wrist flexors and extensors)",
+  "secondary": "biceps brachii (front of upper arm)"
+ },
+ "new-043": {
+  "gender": "male",
+  "name": "Half-kneeling Single-arm Dumbbell Press",
+  "setup": "half-kneeling on a mat: right knee on the mat, left foot flat in front with the knee at 90 degrees, a single dumbbell in the right hand, torso tall",
+  "p1": "dumbbell held at the right shoulder, elbow bent below it",
+  "p2": "dumbbell pressed straight up overhead with the right arm fully locked out, torso still upright",
+  "primary": "anterior deltoid (front of shoulder)",
+  "secondary": "upper pectoralis major (upper chest) and triceps brachii"
+ },
+ "gap-y011": {
+  "gender": "female",
+  "name": "Mountain Pose (yoga)",
+  "setup": "standing on a dark grey yoga mat",
+  "p1": "relaxed standing: feet hip-width, shoulders rounded forward and slumped, upper back rounded, head forward, arms hanging",
+  "p2": "Mountain Pose: feet together, standing very tall with the spine straight, chest open, shoulders back and down, crown of the head lifted, arms straight by the sides with palms facing forward - clearly taller and straighter than panel 1",
+  "primary": "quadriceps (front of thighs) and erector spinae (muscles along the spine)",
+  "secondary": null,
+  "extra": "Show her from the side at the mild three-quarter angle so the posture change is obvious."
+ },
+ "existing-018": {
+  "gender": "female",
+  "name": "Straight-arm Plank",
+  "setup": "bodyweight on a dark grey exercise mat, hands flat under the shoulders, arms straight",
+  "p1": "kneeling straight-arm plank: arms straight, hands under shoulders, knees resting on the mat, body in a line from knees to head",
+  "p2": "full straight-arm plank: knees lifted, weight on the hands and toes, body in one straight rigid line from heels to head",
+  "primary": "rectus abdominis (front of the abdomen)",
+  "secondary": "obliques (sides of the waist) and transverse abdominis",
+  "extra": "Keep her feminine chest and waist visible from the side through the blue top."
+ },
+ "gap-y022": {
+  "gender": "female",
+  "name": "Pyramid Pose (yoga, with blocks)",
+  "setup": "on a dark grey yoga mat with two yoga blocks, feet staggered about one leg-length apart: right foot forward pointing ahead, left back foot turned out about 45 degrees, both legs straight",
+  "p1": "standing upright in the staggered stance, hands on hips",
+  "p2": "folded forward from the hips over the straight front leg with a long flat back, hands resting on the two yoga blocks either side of the front foot",
+  "primary": "hamstrings of the front leg (back of the thigh, being stretched)",
+  "secondary": null
+ },
+ "gap-n016": {
+  "gender": "female",
+  "name": "Sleeper Stretch",
+  "setup": "lying on her RIGHT side on a dark grey mat, head on a small pillow, knees bent. Her weight rests ON her bottom (right) shoulder. IMPORTANT: the arm doing the stretch is the BOTTOM arm, the one underneath her touching the mat - its upper arm sticks straight out in front of her chest along the mat at shoulder height, elbow bent 90 degrees",
+  "p1": "the BOTTOM (right) forearm points straight up to the ceiling from the elbow on the mat; her TOP (left) hand rests lightly on the back of that right wrist",
+  "p2": "her TOP (left) hand presses the BOTTOM (right) forearm forward and down toward the mat so the right palm moves toward the floor in front of her belly, the right elbow staying on the mat at shoulder height",
+  "primary": "back of the right (bottom) shoulder - infraspinatus and teres minor, being stretched",
+  "secondary": "posterior deltoid (rear shoulder)",
+  "extra": "The top arm is only the helper hand; do NOT raise the top arm with its own bent elbow. Highlight the back of the bottom (right) shoulder."
+ },
+ "new-107": {
+  "gender": "female",
+  "name": "Squat to Calf Raise",
+  "setup": "bodyweight, on the floor, feet hip-width",
+  "p1": "deep squat, thighs parallel to the floor, heels down, arms extended forward for balance",
+  "p2": "stood all the way up and risen onto the toes: legs straight, heels lifted high off the floor, arms by her sides",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "adductor magnus (inner thighs) and soleus (lower calves)"
+ },
+ "gap-y019": {
+  "gender": "female",
+  "name": "Tree Pose",
+  "setup": "standing on her left leg on a dark grey yoga mat",
+  "p1": "supported tree: right heel resting against the left ankle with the right toes touching the mat like a kickstand, right knee turned out to the side, hands pressed together in prayer at the chest",
+  "p2": "full tree: right foot lifted and its sole placed flat against the inside of the left thigh, right knee pointing out to the side, both arms raised straight overhead with palms together",
+  "primary": "quadriceps and gluteus medius of the left standing leg",
+  "secondary": "erector spinae (along the spine) and serratus anterior",
+  "extra": "Turn the camera so she faces the viewer at a mild three-quarter angle so the bent knee pointing out to the side is clearly visible."
+ },
+ "gap-n034": {
+  "gender": "male",
+  "name": "Trap-bar Jump",
+  "setup": "standing inside a hexagonal trap bar loaded with light plates, holding the side handles with straight arms",
+  "p1": "quarter squat: hips back, knees bent, torso leaning slightly forward, the bar hanging just above knee height",
+  "p2": "jumping straight up: body fully extended, both feet clearly OFF the floor with a visible gap of air (shadow on the floor below), arms still straight holding the trap bar",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "hamstrings and hip flexors"
+ },
+ "gap-n008": {
+  "gender": "female",
+  "name": "B-skips (running drill)",
+  "setup": "running drill on the floor, upright tall posture, arms bent at 90 degrees swinging like running",
+  "p1": "standing on the ball of the left foot, right knee driven up to hip height with the thigh parallel to the floor and the lower leg hanging down, left arm forward",
+  "p2": "right lower leg whipped forward so the right leg is now nearly straight out in front, the right foot just above the floor about to paw down and back",
+  "primary": "hip flexors (front of the right hip) and hamstrings (back of the right thigh)",
+  "secondary": null
+ },
+ "new-006": {
+  "gender": "male",
+  "name": "Band Shoulder Dislocates",
+  "setup": "standing tall holding a long flat resistance band with a very wide overhand grip, arms straight throughout",
+  "p1": "band held in front of the thighs, arms straight down",
+  "p2": "straight arms rotated up over the head and all the way behind, band now held behind the lower back, arms still straight",
+  "primary": "infraspinatus (back of the shoulder blade)",
+  "secondary": "teres minor and posterior deltoid (rear shoulder)",
+  "extra": "Turn the camera slightly behind his side so the back of his shoulders is visible."
+ },
+ "new-009": {
+  "gender": "female",
+  "name": "Bench Glute Bridge (bodyweight hip thrust)",
+  "setup": "upper back resting against the long edge of a flat bench, knees bent, feet flat on the floor, arms out along the bench",
+  "p1": "hips lowered down close to the floor",
+  "p2": "hips thrust up so the torso is horizontal like a tabletop from shoulders to knees, knees bent 90 degrees, glutes squeezed",
+  "primary": "gluteus maximus (buttocks)",
+  "secondary": "quadriceps and hamstrings"
+ },
+ "gap-n029": {
+  "gender": "female",
+  "name": "Pilates Boomerang Prep",
+  "setup": "on a dark grey mat",
+  "p1": "sitting tall on the mat, legs straight together on the mat in front, crossed at the ankles, hands on the mat beside the hips",
+  "p2": "spine rounded into a C-curve balancing on the tailbone, both straight legs lifted off the mat to about 45 degrees still crossed at the ankles, arms reaching forward alongside the legs",
+  "primary": "rectus abdominis (front of the abdomen)",
+  "secondary": null,
+  "extra": "Keep her torso visible from the side with her feminine chest and waist through the blue top."
+ },
+ "existing-062": {
+  "gender": "female",
+  "name": "Butt Kicks",
+  "setup": "jogging in place on the floor, upright posture, arms bent swinging",
+  "p1": "right heel kicked up behind her to touch the right buttock, left foot on the floor, left arm forward",
+  "p2": "left heel kicked up behind her to touch the left buttock, right foot on the floor, right arm forward",
+  "primary": "hamstrings (back of thighs)",
+  "secondary": "glutes and hip flexors"
+ },
+ "new-046": {
+  "gender": "female",
+  "name": "Hanging Leg Tuck and Twist",
+  "setup": "hanging from a pull-up bar on a free-standing metal pull-up frame, overhand grip, arms straight",
+  "p1": "dead hang, legs straight down together",
+  "p2": "knees tucked up to chest height and twisted together to her right side toward the right elbow",
+  "primary": "iliopsoas (hip flexors, front of the hips)",
+  "secondary": "tensor fasciae latae (outer front hip) and pectineus (upper inner thigh)"
+ },
+ "new-017": {
+  "gender": "male",
+  "name": "Chest-supported Machine Row",
+  "setup": "seated on a plate-loaded chest-supported row machine, chest against the vertical chest pad, feet on the foot platform",
+  "p1": "arms fully extended forward holding the machine handles",
+  "p2": "handles pulled back to the sides of the torso, elbows driven behind the body, shoulder blades squeezed, chest still on the pad",
+  "primary": "latissimus dorsi and middle/lower trapezius (upper and mid back)",
+  "secondary": "posterior deltoid and teres major"
+ },
+ "gap-y004": {
+  "gender": "female",
+  "name": "Cobra (Bhujangasana)",
+  "setup": "lying face down on a dark grey yoga mat, legs straight with the tops of the feet on the mat, hands flat under the shoulders, elbows tucked in",
+  "p1": "lying flat, forehead resting on the mat",
+  "p2": "head and chest lifted into a low backbend, elbows slightly bent and hugging the sides, hips and legs staying on the mat",
+  "primary": "erector spinae (along the spine)",
+  "secondary": "pectoralis major (chest, stretched) and triceps"
+ },
+ "new-020": {
+  "gender": "female",
+  "name": "Pilates Corkscrew",
+  "setup": "lying on her back on a dark grey mat, arms long by her sides with palms down",
+  "p1": "both legs straight and together pointing straight up to the ceiling",
+  "p2": "both legs, still straight and together, swung down in a wide arc to her right side at about 45 degrees from the floor, hips slightly rotated - clearly lower and to the side compared with panel 1",
+  "primary": "obliques (sides of the waist)",
+  "secondary": "psoas major and quadratus lumborum",
+  "extra": "Keep her torso visible with her feminine chest and waist through the blue top."
+ },
+ "new-026": {
+  "gender": "female",
+  "name": "Deep Squat with Thoracic Reach",
+  "setup": "holding a deep bodyweight squat on the floor, heels flat, hips low",
+  "p1": "deep squat with both hands pressed together in front of the chest, elbows inside the knees",
+  "p2": "still in the same deep squat, left hand on the floor in front, right arm reaching straight up to the ceiling with the chest rotated open to the right",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "adductor magnus (inner thighs) and soleus (lower calves)"
+ },
+ "new-024": {
+  "gender": "male",
+  "name": "Dumbbell Side Bend",
+  "setup": "standing tall, feet hip-width, a single dumbbell in the right hand at his side, left hand on the left hip",
+  "p1": "standing straight upright",
+  "p2": "torso bent sideways to the right, dumbbell lowered down the outside of the right leg to about knee level",
+  "primary": "obliques (sides of the waist)",
+  "secondary": "quadratus lumborum (lower back, side)",
+  "extra": "Turn the camera so he faces the viewer at a mild three-quarter angle so the sideways bend is clearly visible."
+ },
+ "gap-y009": {
+  "gender": "female",
+  "name": "Eagle Arms (yoga)",
+  "setup": "standing tall on a dark grey yoga mat",
+  "p1": "both arms extended straight out to the sides at shoulder height",
+  "p2": "arms wrapped: right elbow tucked under the left elbow, forearms crossed and twisted so the palms press together in front of the face, elbows lifted to shoulder height, upper back rounded wide",
+  "primary": "rhomboids and middle trapezius (between the shoulder blades, being stretched)",
+  "secondary": "posterior deltoids (rear shoulders)",
+  "extra": "Turn the camera to a mild three-quarter view from slightly behind her side so her upper back and her arms are both visible."
+ },
+ "new-p3-004": {
+  "gender": "female",
+  "name": "Extended Side Angle (yoga)",
+  "setup": "wide stance on a dark grey yoga mat, right foot pointing forward, left back foot turned in slightly, left leg straight",
+  "p1": "Warrior 2: right front knee bent 90 degrees over the ankle, arms extended out to the sides parallel to the floor, torso upright",
+  "p2": "Extended Side Angle: right forearm resting on the right thigh, torso tilted over the bent right leg, left arm reaching up and over the ear in one long diagonal line from the left heel to the left fingertips, chest open to the side",
+  "primary": "obliques (side of the waist) and gluteus medius of the bent right leg",
+  "secondary": "adductors of the straight left leg (inner thigh) and quadriceps",
+  "extra": "Turn the camera so she faces the viewer at a mild three-quarter angle so the side bend is clearly visible."
+ },
+ "new-039": {
+  "gender": "female",
+  "name": "Garland Squat (Malasana)",
+  "setup": "on a dark grey yoga mat, feet wider than hips with toes turned out",
+  "p1": "standing tall, hands pressed together in prayer at the chest",
+  "p2": "deep wide squat with hips low just above the mat, heels down, hands in prayer at the chest and the elbows pressing against the inner knees",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "adductor magnus (inner thighs) and soleus (lower calves)"
+ },
+ "new-045": {
+  "gender": "male",
+  "name": "Half-kneeling Overhead Hold",
+  "setup": "half-kneeling on a mat: left knee on the mat, right foot flat in front, torso tall, a light dumbbell in the left hand",
+  "p1": "dumbbell held racked at the left shoulder, elbow bent",
+  "p2": "dumbbell locked out overhead with the left arm fully straight, held still, torso braced and upright",
+  "primary": "upper trapezius (top of the shoulder and neck) and forearm flexors (grip)",
+  "secondary": "rectus abdominis and erector spinae"
+ },
+ "new-048": {
+  "gender": "male",
+  "name": "Incline Cable Fly",
+  "setup": "lying on an incline bench (about 30 degrees) placed between two cable towers, holding a D-handle in each hand attached to the LOW pulleys, cables visible running to the pulleys",
+  "p1": "arms opened wide out to the sides with a slight bend in the elbows, handles at chest level, chest stretched",
+  "p2": "handles brought together in a wide arc to meet above the upper chest, arms extended",
+  "primary": "pectoralis major (middle and lower chest)",
+  "secondary": "upper chest near the collarbone and anterior deltoid (front shoulder)"
+ },
+ "new-p3-007": {
+  "gender": "female",
+  "name": "Knee to Chest Stretch",
+  "setup": "lying on her back on a dark grey mat",
+  "p1": "lying flat with both legs straight on the mat and arms by her sides",
+  "p2": "right knee pulled in to the chest with both hands clasped around the right shin, left leg straight on the mat",
+  "primary": "lower back (erector spinae) and gluteus maximus of the right leg (being stretched)",
+  "secondary": "hamstrings and the hip flexors of the straight left leg",
+  "extra": "Keep her torso visible with her feminine chest and waist through the blue top."
+ },
+ "new-055": {
+  "gender": "male",
+  "name": "Landmine Rotational Press",
+  "setup": "a barbell with one end anchored in a landmine base on the floor and a weight plate on the other end; he stands facing the loaded end in an athletic stance, holding the end of the barbell sleeve with both hands",
+  "p1": "bar end held at the right shoulder, torso and hips rotated to the right",
+  "p2": "hips and torso rotated forward to face left of centre, right heel pivoted, bar pressed up and out diagonally to full arm extension",
+  "primary": "obliques (sides of the waist)",
+  "secondary": "quadratus lumborum"
+ },
+ "new-061": {
+  "gender": "female",
+  "name": "Lying Leg Raises",
+  "setup": "lying on her back on a dark grey mat, arms by her sides palms down",
+  "p1": "both legs straight together, heels just above the mat",
+  "p2": "both legs raised straight up together to vertical, 90 degrees to the floor, lower back on the mat",
+  "primary": "iliopsoas (hip flexors, front of the hips)",
+  "secondary": "tensor fasciae latae and pectineus",
+  "extra": "Keep her torso visible with her feminine chest and waist through the blue top."
+ },
+ "new-067": {
+  "gender": "male",
+  "name": "Overhead Reverse Lunge",
+  "setup": "standing, a dumbbell held locked out overhead in the right hand with the arm straight",
+  "p1": "standing tall, feet together, dumbbell overhead",
+  "p2": "left leg stepped back into a reverse lunge, back knee just above the floor, front thigh parallel to the floor, torso upright, dumbbell still locked out overhead",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "adductor magnus (inner thigh) and soleus"
+ },
+ "new-072": {
+  "gender": "female",
+  "name": "Plank Up-downs",
+  "setup": "on a dark grey mat in plank, feet on the toes",
+  "p1": "forearm plank: both forearms on the mat, elbows under shoulders, body straight from heels to head",
+  "p2": "pushed up to a straight-arm plank: both hands flat under the shoulders, arms straight, body still straight from heels to head - clearly higher than panel 1",
+  "primary": "rectus abdominis (front of the abdomen)",
+  "secondary": "obliques and transverse abdominis",
+  "extra": "Keep her feminine chest and waist visible from the side through the blue top."
+ },
+ "new-076": {
+  "gender": "female",
+  "name": "Pseudo-planche Push-up",
+  "setup": "push-up position on the floor with the hands placed back beside the waist, fingers turned out to the sides, body leaning forward so the shoulders are well in front of the hands",
+  "p1": "top position: arms straight, shoulders far forward past the hands, body straight from heels to head",
+  "p2": "bottom position: elbows bent tight to the body pointing back, chest lowered just above the floor, shoulders still forward of the hands",
+  "primary": "pectoralis major (chest) and serratus anterior (side of the ribs)",
+  "secondary": null
+ },
+ "new-078": {
+  "gender": "male",
+  "name": "Reverse Hyperextension",
+  "setup": "lying face down on a reverse hyper machine: torso on the top pad with the hips at the back edge, hands gripping the front handles, ankles in the strap of the swinging pendulum",
+  "p1": "legs hanging straight down below the pad",
+  "p2": "straight legs swung up behind him until they are horizontal, in line with the torso",
+  "primary": "gluteus maximus (buttocks) and erector spinae (lower back)",
+  "secondary": "adductor magnus (inner-rear thigh)"
+ },
+ "gap-y021": {
+  "gender": "female",
+  "name": "Revolved Triangle (yoga)",
+  "setup": "wide staggered stance on a dark grey yoga mat, right foot forward, both legs straight",
+  "p1": "standing upright in the stance, arms extended out to the sides at shoulder height",
+  "p2": "torso folded forward and rotated to the right: left hand on the mat outside the right foot, right arm reaching straight up to the ceiling, both legs straight",
+  "primary": "obliques (sides of the waist)",
+  "secondary": null
+ },
+ "new-083": {
+  "gender": "female",
+  "name": "Pilates Roll Over",
+  "setup": "lying on her back on a dark grey mat, arms long by her sides palms down",
+  "p1": "both legs straight and together raised to vertical",
+  "p2": "legs swept up and over the head so they are parallel to the floor behind her head, hips and spine peeled off the mat, weight on the shoulder blades",
+  "primary": "rectus abdominis (front of the abdomen)",
+  "secondary": null,
+  "extra": "Keep her torso visible with her feminine chest and waist through the blue top."
+ },
+ "gap-n026": {
+  "gender": "female",
+  "name": "Pilates Rolling Like a Ball",
+  "setup": "on a dark grey mat, body in a tight tuck: knees pulled to the chest, hands holding the shins, head curled down",
+  "p1": "balanced on the sit-bones in the tuck, feet just off the mat",
+  "p2": "rolled backward onto the upper back between the shoulder blades, still in the same tight tuck, hips lifted, feet above the head height of panel 1",
+  "primary": "rectus abdominis (front of the abdomen)",
+  "secondary": null
+ },
+ "new-119": {
+  "gender": "male",
+  "name": "T-bar Row (landmine)",
+  "setup": "a barbell anchored at one end in a landmine base, weight plates on the other end, a V-grip row handle hooked under the bar just behind the plates; he straddles the bar, hips hinged so the torso is about 45 degrees, back flat",
+  "p1": "arms straight, plates hanging just above the floor",
+  "p2": "handle pulled up to the lower chest, elbows driven back past the torso, torso angle unchanged",
+  "primary": "latissimus dorsi and middle/lower trapezius (upper and mid back)",
+  "secondary": "posterior deltoid and teres major"
+ },
+ "new-005": {
+  "gender": "male",
+  "name": "Side-lying Band Leg Press",
+  "setup": "lying on his left side on a mat, head resting on the left arm, a long resistance band looped around the sole of the top (right) foot with both ends held in the right hand at the chest",
+  "p1": "top right knee bent and drawn in toward the chest, band slack-to-taut",
+  "p2": "top right leg pressed straight out in line with the body against the stretched band",
+  "primary": "quadriceps (front of thigh) and gluteus maximus (buttock) of the top leg",
+  "secondary": "adductor magnus and soleus"
+ },
+ "new-095": {
+  "gender": "male",
+  "name": "Single-arm Dumbbell Kickback (kneeling on a bench)",
+  "setup": "left knee and left hand on a flat bench, back flat and parallel to the floor, right foot on the floor, dumbbell in the right hand, right upper arm held tight to the side and parallel to the floor",
+  "p1": "right elbow bent 90 degrees, forearm hanging straight down",
+  "p2": "right forearm extended straight back so the whole arm is straight and parallel to the floor",
+  "primary": "triceps brachii (back of the upper arm)",
+  "secondary": null
+ },
+ "gap-y006": {
+  "gender": "female",
+  "name": "Sphinx Pose (yoga)",
+  "setup": "lying face down on a dark grey yoga mat, legs straight",
+  "p1": "lying flat with forehead resting on the stacked hands",
+  "p2": "propped up on the forearms with elbows directly under the shoulders, forearms flat on the mat, chest lifted into a gentle backbend, hips on the mat",
+  "primary": "erector spinae (along the spine)",
+  "secondary": null
+ },
+ "new-103": {
+  "gender": "female",
+  "name": "Squat Swings",
+  "setup": "bodyweight on the floor, feet shoulder-width",
+  "p1": "standing tall with both arms swung up forward to shoulder height",
+  "p2": "deep squat, thighs parallel, heels flat, both arms swung down and back behind the hips",
+  "primary": "quadriceps (front of thighs) and gluteus maximus (buttocks)",
+  "secondary": "adductor magnus (inner thighs) and soleus"
+ },
+ "new-110": {
+  "gender": "female",
+  "name": "Standing Figure-4 Glute Stretch",
+  "setup": "standing in front of a waist-height metal rail, holding it with both hands for balance",
+  "p1": "standing on the left leg, right ankle crossed over the left knee",
+  "p2": "sitting the hips back and down as if into a chair on the left leg, torso leaning forward, right shin now near horizontal across the left thigh",
+  "primary": "piriformis and deep hip rotators (deep buttock of the right, crossed leg, being stretched)",
+  "secondary": "gluteus maximus of the right leg"
+ },
+ "new-121": {
+  "gender": "female",
+  "name": "Pilates Teaser Prep (one leg)",
+  "setup": "on a dark grey mat",
+  "p1": "lying on her back, left knee bent with the left foot flat on the mat, right leg straight and lifted to match the angle of the left thigh, arms reaching overhead",
+  "p2": "rolled up partway: torso lifted about 60 degrees off the mat, arms reaching forward parallel to the lifted right leg, left foot still on the mat",
+  "primary": "rectus abdominis (front of the abdomen)",
+  "secondary": null,
+  "extra": "Keep her torso visible with her feminine chest and waist through the blue top."
+ },
+ "gap-n020": {
+  "gender": "female",
+  "name": "Toy Soldier (walking straight-leg kicks)",
+  "setup": "walking forward on the floor, standing tall",
+  "p1": "right leg kicked straight forward to hip height with the knee straight, left arm reaching forward toward the right toes, right arm swung back",
+  "p2": "left leg kicked straight forward to hip height, right arm reaching forward toward the left toes, left arm swung back",
+  "primary": "hamstrings of the kicking leg (being stretched)",
+  "secondary": "hip flexors and anterior deltoid"
+ },
+ "new-126": {
+  "gender": "male",
+  "name": "Waiter Carry (dumbbell)",
+  "setup": "a single dumbbell held overhead in the right hand with the arm locked straight, the dumbbell resting on the flat open palm like a waiter's tray",
+  "p1": "standing still with feet together, dumbbell overhead",
+  "p2": "walking forward mid-stride, left leg forward, dumbbell still overhead on the open palm, arm straight",
+  "primary": "upper trapezius and forearm flexors",
+  "secondary": "rectus abdominis and erector spinae"
+ },
+ "gap-y026": {
+  "gender": "female",
+  "name": "Warrior 3 (yoga)",
+  "setup": "on a dark grey yoga mat",
+  "p1": "standing tall on the left leg with the right toes lightly touching the mat behind, arms raised overhead",
+  "p2": "hinged forward into a T-shape: torso and straight arms parallel to the floor reaching forward, right leg lifted straight back in line with the torso, left standing leg straight",
+  "primary": "gluteus maximus/medius and hamstrings of the left standing leg",
+  "secondary": "erector spinae and core"
+ },
+ "defect-barbell-shrug": {
+  "gender": "male",
+  "name": "Barbell Shrug",
+  "setup": "standing tall holding a loaded barbell at arm's length in front of the thighs, overhand grip just outside the hips, arms straight in both panels",
+  "p1": "shoulders fully relaxed and dropped LOW, long neck visible between shoulders and ears",
+  "p2": "shoulders shrugged straight up toward the ears as HIGH as possible - EXAGGERATE this: the tops of the shoulders almost touch the earlobes, the neck almost hidden, and the barbell visibly higher on the thighs than in panel 1",
+  "primary": "upper trapezius (top of the shoulders and neck)",
+  "secondary": "levator scapulae (side of the neck)",
+  "extra": "Turn the camera so he faces the viewer at a mild three-quarter angle so the shoulder height change is obvious."
+ }
+}
