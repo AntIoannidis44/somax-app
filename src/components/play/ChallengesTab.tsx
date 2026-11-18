@@ -195,7 +195,7 @@ export function ChallengesTab() {
                     {diff && (
                       <>
                         {' '}
-                        <span style={{ whiteSpace: 'nowrap' }}>
+                        <span style={{ whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
                           · <Icon name={diff.icon} style={{ width: 11, height: 11, color: `var(${diff.colorVar})` }} /> {diff.label}
                         </span>
                       </>
