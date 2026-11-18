@@ -861,6 +861,16 @@
    "Leg Criss-cross off Floor"
   ]
  },
+ "Lying Toe Touch (core crunch, legs vertical)": {
+  "type": "new",
+  "names": [
+   "Toe touches"
+  ],
+  "labels": [
+   "Toe Touches",
+   "Toe Touch"
+  ]
+ },
  "Machine Chest Fly (pec deck)": {
   "type": "new",
   "names": [

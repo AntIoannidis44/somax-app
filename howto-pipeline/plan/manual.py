@@ -102,3 +102,6 @@ MANUAL.update({
 "EMOM: Single-arm Press":"EXISTING:Single-arm Kettlebell Press","Single-leg hamstring holds":"EXISTING:Single-leg Hamstring Bridge (foot on bench)",
 "Plank Support":"NEW:Straight-arm Plank",
 })
+# ---- owner answers 2026-11-19
+MANUAL.update({"Toe touches":"NEW:Lying Toe Touch (core crunch, legs vertical)",
+ "Barbell standing row (drop set)":"LINKED","Barbell inverted row, standing (drop set)":"LINKED"})

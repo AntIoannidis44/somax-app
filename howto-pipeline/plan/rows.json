@@ -1456,24 +1456,6 @@
   ]
  },
  {
-  "exercise": "Barbell inverted row, standing (drop set)",
-  "decision": "OWNER",
-  "image_or_reason": "your Full Body program - what movement is this?",
-  "how": "individual decision",
-  "programs": [
-   "User program"
-  ]
- },
- {
-  "exercise": "Barbell standing row (drop set)",
-  "decision": "OWNER",
-  "image_or_reason": "your Full Body program - what movement is this?",
-  "how": "individual decision",
-  "programs": [
-   "User program"
-  ]
- },
- {
   "exercise": "Baseline-to-baseline sprint (about 28 m), 15 s rest",
   "decision": "NOIMG",
   "image_or_reason": "cardio / swim / ride / row interval",
@@ -14216,8 +14198,8 @@
  },
  {
   "exercise": "Toe touches",
-  "decision": "OWNER",
-  "image_or_reason": "your Full Body program - standing toe touch (forward bend) or lying toe-touch crunch?",
+  "decision": "NEW",
+  "image_or_reason": "Lying Toe Touch (core crunch, legs vertical)",
   "how": "individual decision",
   "programs": [
    "User program"

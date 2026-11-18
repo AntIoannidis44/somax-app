@@ -88,6 +88,7 @@
   ],
   "Barbell Bent-over Row": [
    "Barbell Row",
+   "Barbell Standing Row",
    "Pendlay Row"
   ],
   "Barbell Deadlift": [
@@ -842,6 +843,9 @@
   ],
   "Single-leg Hamstring Bridge (foot on bench)": [
    "Single-leg Hamstring Holds"
+  ],
+  "Barbell Upright Row": [
+   "Barbell Inverted Row, Standing"
   ]
  },
  "remove": [
@@ -936,6 +940,13 @@
   "Plank to push-up": "new-072",
   "Front plank with alternate leg raise": "nv-plank-leg-lift",
   "Ankle Rockers": "nv-ankle-driver-hold",
-  "Ankle pogos": "gap-n004"
+  "Ankle pogos": "gap-n004",
+  "Barbell standing row (drop set)": "L091",
+  "Barbell inverted row, standing (drop set)": "new-125"
+ },
+ "owner_answers": {
+  "Barbell standing row": "bent-over row (owner, 2026-11-19)",
+  "Barbell inverted row, standing": "upright row (owner, 2026-11-19)",
+  "Toe touches": "core: lying toe touch (owner, 2026-11-19)"
  }
 }
