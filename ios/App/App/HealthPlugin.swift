@@ -18,6 +18,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "getLatestHeartRate", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getTodayWorkouts", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getWorkoutRoute", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getDailyVerifiedSteps", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "openAppSettings", returnType: CAPPluginReturnPromise),
     ]
 
@@ -103,7 +104,11 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         let startOfDay = Calendar.current.startOfDay(for: Date())
         let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: Date(), options: .strictStartDate)
 
+        // Coins are only paid for data a device recorded - steps someone typed
+        // into the Health app ("Add Data") carry HKMetadataKeyWasUserEntered.
+        let verifiedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, Self.notUserEntered])
         sumQuantity(type: stepsType, unit: .count(), predicate: predicate) { steps in
+          self.sumQuantity(type: self.stepsType, unit: .count(), predicate: verifiedPredicate) { verifiedSteps in
             self.sumQuantity(type: self.exerciseType, unit: .minute(), predicate: predicate) { minutes in
                 self.sumQuantity(type: self.energyType, unit: .kilocalorie(), predicate: predicate) { kcal in
                     call.resolve([
@@ -112,11 +117,13 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
                         // floating-point summation across samples, which must never
                         // reach the UI/leaderboards as a decimal.
                         "steps": Int(steps.rounded()),
+                        "verifiedSteps": Int(verifiedSteps.rounded()),
                         "activeMinutes": minutes,
                         "kcal": kcal,
                     ])
                 }
             }
+          }
         }
     }
 
@@ -193,6 +200,11 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
                     "startDate": ISO8601DateFormatter().string(from: w.startDate),
                     "durationMinutes": w.duration / 60,
                     "kcal": kcal ?? 0,
+                    // Added by hand in the Health app rather than recorded by a
+                    // device - never verifies a session or earns coins.
+                    "userEntered": (w.metadata?[HKMetadataKeyWasUserEntered] as? Bool) ?? false,
+                    // Pool length set on the watch for pool swims - laps = distance / this.
+                    "lapLengthMeters": (w.metadata?[HKMetadataKeyLapLength] as? HKQuantity)?.doubleValue(for: .meter()) ?? NSNull(),
                     // NSNull, not a raw nil Double - an Optional boxed as Any
                     // isn't valid JSON and would silently break the whole
                     // resolve rather than just this one field.
@@ -222,7 +234,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             HKQuery.predicateForWorkouts(with: .cycling),
             HKQuery.predicateForWorkouts(with: .swimming),
         ])
-        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate, activityPredicate])
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate, activityPredicate, Self.notUserEntered])
         let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { _, samples, error in
             if error != nil {
                 call.resolve(["meters": 0])
@@ -284,6 +296,46 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         store.execute(workoutQuery)
     }
 
+    // Device-recorded steps per local calendar day between startDate and
+    // endDate (ISO8601) - for step challenges, so a day counts even if the app
+    // was never opened that day. Hand-entered steps are excluded.
+    @objc func getDailyVerifiedSteps(_ call: CAPPluginCall) {
+        let formatter = ISO8601DateFormatter()
+        guard let startStr = call.getString("startDate"), let start = formatter.date(from: startStr) else {
+            call.resolve(["days": []])
+            return
+        }
+        let end = call.getString("endDate").flatMap { formatter.date(from: $0) } ?? Date()
+        let calendar = Calendar.current
+        let anchor = calendar.startOfDay(for: start)
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            HKQuery.predicateForSamples(withStart: anchor, end: end, options: .strictStartDate), Self.notUserEntered,
+        ])
+        let query = HKStatisticsCollectionQuery(quantityType: stepsType, quantitySamplePredicate: predicate,
+                                                options: .cumulativeSum, anchorDate: anchor,
+                                                intervalComponents: DateComponents(day: 1))
+        query.initialResultsHandler = { _, results, error in
+            guard error == nil, let results = results else {
+                call.resolve(["days": []])
+                return
+            }
+            let dayFormatter = DateFormatter()
+            dayFormatter.calendar = calendar
+            dayFormatter.timeZone = calendar.timeZone
+            dayFormatter.dateFormat = "yyyy-MM-dd"
+            var days: [[String: Any]] = []
+            results.enumerateStatistics(from: anchor, to: end) { stats, _ in
+                let steps = stats.sumQuantity()?.doubleValue(for: .count()) ?? 0
+                days.append(["date": dayFormatter.string(from: stats.startDate), "steps": Int(steps.rounded())])
+            }
+            call.resolve(["days": days])
+        }
+        store.execute(query)
+    }
+
+    // Samples a device recorded, excluding anything typed into the Health app.
+    private static let notUserEntered = HKQuery.predicateForObjects(withMetadataKey: HKMetadataKeyWasUserEntered, operatorType: .notEqualTo, value: true)
+
     private static func activityName(for type: HKWorkoutActivityType) -> String {
         switch type {
         case .traditionalStrengthTraining, .functionalStrengthTraining: return "Strength Training"
@@ -295,6 +347,19 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         case .mixedCardio, .cardioDance: return "Cardio"
         case .yoga: return "Yoga"
         case .pilates: return "Pilates"
+        // Added 2026-11-18 so sport challenges can count real sessions.
+        // Anything that returned "Workout" before still does unless listed here.
+        case .swimming: return "Swim"
+        case .hiking: return "Hike"
+        case .boxing, .kickboxing, .martialArts: return "Boxing"
+        case .australianFootball: return "AFL"
+        case .soccer: return "Soccer"
+        case .basketball: return "Basketball"
+        case .tennis: return "Tennis"
+        case .golf: return "Golf"
+        case .flexibility, .mindAndBody: return "Mobility"
+        case .crossTraining: return "Cross Training"
+        case .rowing, .elliptical, .stairClimbing, .jumpRope: return "Cardio"
         default: return "Workout"
         }
     }

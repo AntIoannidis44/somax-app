@@ -32,6 +32,84 @@ export const STEP_GOAL_XP = 20;
 // see HydrationBar for the draggable UI that tracks toward this.
 export const HYDRATION_TARGET_ML = 2000;
 
+// Single source of truth for workout XP: finishing an in-app workout pays
+// WORKOUT_XP, attaching a real Apple Fitness workout to it adds
+// WATCH_SYNC_XP (the full 40). A workout logged only on Apple Fitness is
+// already verified, so it pays both at once.
+export const WORKOUT_XP = 30;
+export const WATCH_SYNC_XP = 10;
+
+// Apple Fitness verification for the +WATCH_SYNC_XP top-up: the attached
+// workout has to plausibly BE this session - at least 40% of the planned
+// duration and never under 10 min (a 1-minute "workout" can't verify a
+// 45-minute session), and one Apple Fitness workout can only verify one
+// session. Shared by the sync picker UI and the store, so the store
+// enforces it even if the UI is bypassed.
+export const WATCH_SYNC_MIN_FLOOR = 10;
+
+export function plannedMinutes(duration: string | undefined): number {
+  const m = duration?.match(/\d+/);
+  return m ? parseInt(m[0], 10) : 30;
+}
+
+export function watchSyncMinMinutes(duration: string | undefined): number {
+  return Math.max(WATCH_SYNC_MIN_FLOOR, Math.round(plannedMinutes(duration) * 0.4));
+}
+
+export type WatchSyncCheck = { ok: true } | { ok: false; reason: string };
+
+// Which Apple Fitness workout types can verify which kind of in-app session
+// (names come from HealthPlugin.swift's activityName). A morning walk can't
+// verify a gym session; "Workout" is Apple's catch-all (incl. swimming).
+const WATCH_TYPES_FOR_CATEGORY: Record<string, string[]> = {
+  gym: ['Strength Training', 'Core Training', 'HIIT', 'Cardio', 'Cross Training', 'Boxing', 'Workout'],
+  fitness: ['Strength Training', 'Core Training', 'HIIT', 'Cardio', 'Cross Training', 'Boxing', 'Workout', 'Yoga', 'Pilates', 'Mobility'],
+  run: ['Run'],
+  walk: ['Walk', 'Run', 'Hike'],
+  ride: ['Cycling'],
+  swim: ['Swim', 'Workout'],
+  pilates: ['Pilates', 'Core Training', 'Yoga', 'Mobility', 'Workout'],
+  reformer: ['Pilates', 'Core Training', 'Workout'],
+};
+
+// Minimum active calories per minute that shows the watch was on someone
+// actually exercising - a watch left recording on the couch burns roughly
+// 0.2-0.6 active kcal/min. Owner's rule (2026-11-18): only catch that, never
+// penalise a real but lighter or shorter-than-planned session.
+function minKcalPerMinute(category: string | undefined): number {
+  return category === 'walk' || category === 'pilates' || category === 'reformer' ? 0.8 : 1.3;
+}
+
+export function checkWatchSync(
+  workout: { uuid: string; durationMinutes: number; activityName?: string; kcal?: number; userEntered?: boolean },
+  planned: { duration?: string; category?: string } | undefined,
+  usedElsewhere: boolean,
+): WatchSyncCheck {
+  const min = watchSyncMinMinutes(planned?.duration);
+  if (usedElsewhere) return { ok: false, reason: 'Already used to verify another workout' };
+  if (workout.userEntered) return { ok: false, reason: 'Added by hand in the Health app - record it on your Apple Watch' };
+  const allowed = planned?.category ? WATCH_TYPES_FOR_CATEGORY[planned.category] : undefined;
+  if (allowed && workout.activityName && !allowed.includes(workout.activityName)) {
+    return { ok: false, reason: `A ${workout.activityName} can't verify this workout` };
+  }
+  if (workout.durationMinutes < min) return { ok: false, reason: `Too short - needs at least ${min} min` };
+  const kcal = workout.kcal ?? 0;
+  const perMin = workout.durationMinutes > 0 ? kcal / workout.durationMinutes : 0;
+  if (perMin < minKcalPerMinute(planned?.category)) {
+    return { ok: false, reason: kcal <= 0 ? 'No effort data - record it on your Apple Watch' : 'Too little effort recorded for this workout' };
+  }
+  return { ok: true };
+}
+
+// Checklists saved before WORKOUT_XP existed (local storage or the cloud
+// snapshot, which skips persist's migrate) still carry xp: 40 on the
+// in-app workout row - correct it wherever a saved `today` is loaded.
+export function normalizeGoalXp<T extends { id: string; xp: number }>(goals: T[] | undefined): void {
+  goals?.forEach((g) => {
+    if (g.id === 'workout') g.xp = WORKOUT_XP;
+  });
+}
+
 export function todayPlanIndex(): number {
   return new Date().getDay();
 }
@@ -148,13 +226,13 @@ export function buildTodayGoals(weekPlan: PlanDay[]): TodayGoal[] {
   const goals: TodayGoal[] = [];
   if (plan.type === 'train' && plan.key) {
     const w = getWorkout(plan.key);
-    goals.push({ id: 'workout', label: `Complete ${w?.name || 'workout'}`, meta: w?.duration || '', xp: 40, type: 'workout', done: false });
+    goals.push({ id: 'workout', label: `Complete ${w?.name || 'workout'}`, meta: w?.duration || '', xp: WORKOUT_XP, type: 'workout', done: false });
   } else if (plan.type === 'watch') {
     goals.push({
       id: 'watch_workout',
       label: 'Log a workout on Apple Fitness',
       meta: 'Syncs automatically once detected',
-      xp: 40,
+      xp: WORKOUT_XP + WATCH_SYNC_XP,
       type: 'watch',
       done: false,
     });

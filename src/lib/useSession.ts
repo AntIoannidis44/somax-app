@@ -3,6 +3,7 @@ import type { Session } from '@supabase/supabase-js';
 import { supabase } from './supabase';
 import { hydrateFromCloud, startCloudSync, stopCloudSync } from './cloudSync';
 import { loadMyWorkouts } from './customWorkouts';
+import { E2E, E2E_USER_ID } from './e2e';
 
 // A lighter version of useSession for components that just need to know
 // "who am I" (e.g. to mark which league row/post is mine) without also
@@ -10,6 +11,10 @@ import { loadMyWorkouts } from './customWorkouts';
 export function useUserId(): string | null {
   const [userId, setUserId] = useState<string | null>(null);
   useEffect(() => {
+    if (E2E) {
+      setUserId(E2E_USER_ID);
+      return;
+    }
     supabase.auth.getSession().then(({ data }) => setUserId(data.session?.user.id ?? null));
     const { data: sub } = supabase.auth.onAuthStateChange((_event, next) => setUserId(next?.user.id ?? null));
     return () => sub.subscription.unsubscribe();
@@ -22,6 +27,12 @@ export function useSession() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    if (E2E) {
+      // Fake local user; no hydrate, no cloud sync - see lib/e2e.ts.
+      setSession({ user: { id: E2E_USER_ID } } as Session);
+      setReady(true);
+      return;
+    }
     let cancelled = false;
     let lastUserId: string | null = null;
 

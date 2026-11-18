@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { takePendingWatchVerify } from './VerifyWatchButton';
 import { Icon } from '../Icon';
 import { getWorkout } from '../../lib/customWorkouts';
 import { buildBlocks, expandSets, setKey, type BlockItem, type WorkoutBlock } from '../../lib/workoutSets';
-import { useAppStore } from '../../store/useAppStore';
+import { useAppStore, watchWorkoutUsedElsewhere } from '../../store/useAppStore';
+import { WATCH_SYNC_XP, WORKOUT_XP, checkWatchSync, watchSyncMinMinutes } from '../../lib/schedule';
 import { useUserId } from '../../lib/useSession';
 import { workoutTypeById } from '../../data/workoutTypes';
 import { ShareSessionButton } from './ShareSessionButton';
@@ -154,6 +156,13 @@ export function WorkoutScreen() {
   // Open timer sheet: the general one (exIndex null) or one set up for an exercise.
   const [timer, setTimer] = useState<{ title: string; cfg: TimerConfig; exIndex: number | null } | null>(null);
 
+  const syncScrolled = useRef(false);
+  // Arrived via a card's "Verify with Apple Fitness" button - open the picker.
+  useEffect(() => {
+    if (takePendingWatchVerify() && ws?.completed) handleOpenSync();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const w = getWorkout(wid);
   if (!ws || !w) return null;
 
@@ -209,10 +218,20 @@ export function WorkoutScreen() {
   }
 
   function handleSelectSyncWorkout(workout: HealthWorkout) {
-    attachWatchWorkoutToSession(wid, simDay, workout);
+    const res = attachWatchWorkoutToSession(wid, simDay, workout);
+    if (res.reason) {
+      showToast(`Can't verify with "${workout.activityName}": ${res.reason}`);
+      return;
+    }
     setSyncOpen(false);
-    showToast(`Synced "${workout.activityName}" to this workout`);
+    showToast(
+      res.awarded
+        ? `Verified with Apple Fitness · +${WATCH_SYNC_XP} XP`
+        : `Synced "${workout.activityName}" to this workout`,
+    );
   }
+
+  const syncMin = watchSyncMinMinutes(w.duration);
 
   // The next sets of an exercise still waiting for a tick or cross.
   function openSets(exIndex: number): number[] {
@@ -369,7 +388,7 @@ export function WorkoutScreen() {
               <Icon name="check" style={{ width: 16, height: 16 }} /> Workout completed
             </>
           ) : allDone ? (
-            'Finish workout · +40 XP'
+            'Finish workout · +30 XP'
           ) : (
             'Tick or cross every set to finish'
           )}
@@ -397,7 +416,7 @@ export function WorkoutScreen() {
             onClick={() =>
               openComposer({
                 workout: { name: w.name, duration: w.duration, category: w.category, exercises: w.exercises },
-                defaultCaption: `Just finished ${w.name} (${w.duration}) — +40 XP`,
+                defaultCaption: `Just finished ${w.name} (${w.duration}) — +${WORKOUT_XP + (ws.watchSyncXpAwarded ? WATCH_SYNC_XP : 0)} XP`,
                 defaultType: w.category,
                 locked: true,
               })
@@ -415,34 +434,64 @@ export function WorkoutScreen() {
                   <div style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 13, fontWeight: 600 }}>
                     <Icon name="watch" style={{ width: 15, height: 15, color: 'var(--accent)', flexShrink: 0 }} />
                     <span style={{ flex: 1 }}>
-                      Synced from Apple Fitness: {ws.watchSync.activityName} · {Math.round(ws.watchSync.kcal)} kcal · {Math.round(ws.watchSync.durationMinutes)} min
+                      Verified with Apple Fitness: {ws.watchSync.activityName} · {Math.round(ws.watchSync.kcal)} kcal · {Math.round(ws.watchSync.durationMinutes)} min
                     </span>
+                    {ws.watchSyncXpAwarded && <span style={{ color: 'var(--accent)', fontWeight: 700 }}>+{WATCH_SYNC_XP} XP</span>}
                   </div>
                   <button className="link-btn" style={{ marginTop: 6 }} onClick={handleOpenSync}>
                     Change
                   </button>
                 </div>
               ) : (
-                <button className="btn btn-ghost" onClick={handleOpenSync}>
-                  <Icon name="watch" style={{ width: 15, height: 15 }} /> Sync from Apple Fitness
-                </button>
+                <>
+                  <button className="btn btn-ghost" onClick={handleOpenSync}>
+                    <Icon name="watch" style={{ width: 15, height: 15 }} /> Verify with Apple Fitness · +{WATCH_SYNC_XP} XP
+                  </button>
+                  <div style={{ fontSize: 12, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.4 }}>
+                    Log the Apple Watch workout you recorded for this session to earn an extra +{WATCH_SYNC_XP} XP. It must be a
+                    matching workout type, at least {syncMin} min long, with real effort recorded on the watch.
+                  </div>
+                </>
               )}
               {syncOpen && (
-                <div className="day-picker">
+                <div
+                  className="day-picker"
+                  ref={(el) => {
+                    // Bring the picker into view once per opening - it sits at the
+                    // bottom of a long workout, below the fold.
+                    if (el && !syncScrolled.current) {
+                      syncScrolled.current = true;
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    if (!el) syncScrolled.current = false;
+                  }}
+                >
                   {syncLoading && <div className="day-picker-group-label">Loading…</div>}
                   {!syncLoading && syncOptions?.length === 0 && (
                     <div className="day-picker-group-label">No Apple Fitness workouts found for this day</div>
                   )}
+                  {!syncLoading && !!syncOptions?.length && (
+                    <div className="day-picker-group-label">Pick the workout you recorded for this session (min {syncMin} min)</div>
+                  )}
                   {!syncLoading &&
-                    syncOptions?.map((workout) => (
-                      <div
-                        key={workout.uuid}
-                        className={`day-picker-opt${ws.watchSync?.uuid === workout.uuid ? ' current' : ''}`}
-                        onClick={() => handleSelectSyncWorkout(workout)}
-                      >
-                        {workout.activityName} · {Math.round(workout.kcal)} kcal · {Math.round(workout.durationMinutes)} min
-                      </div>
-                    ))}
+                    syncOptions?.map((workout) => {
+                      const check = checkWatchSync(
+                        workout,
+                        w,
+                        watchWorkoutUsedElsewhere(useAppStore.getState().workoutState, workout.uuid, simDay, wid),
+                      );
+                      return (
+                        <div
+                          key={workout.uuid}
+                          className={`day-picker-opt${ws.watchSync?.uuid === workout.uuid ? ' current' : ''}`}
+                          style={check.ok ? undefined : { opacity: 0.5 }}
+                          onClick={() => handleSelectSyncWorkout(workout)}
+                        >
+                          {workout.activityName} · {Math.round(workout.kcal)} kcal · {Math.round(workout.durationMinutes)} min
+                          {!check.ok && <div style={{ fontSize: 11, marginTop: 2 }}>{check.reason}</div>}
+                        </div>
+                      );
+                    })}
                   <div className="day-picker-opt" onClick={() => setSyncOpen(false)}>
                     Cancel
                   </div>

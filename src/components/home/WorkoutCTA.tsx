@@ -1,7 +1,8 @@
 import { Icon } from '../Icon';
 import { getWorkout } from '../../lib/customWorkouts';
 import { useAppStore } from '../../store/useAppStore';
-import { WEEKDAY_LABELS, isWorkoutDone, todayPlan, todayPlanIndex } from '../../lib/schedule';
+import { WEEKDAY_LABELS, WORKOUT_XP, isWorkoutDone, todayPlan, todayPlanIndex } from '../../lib/schedule';
+import { VerifyWatchButton } from '../train/VerifyWatchButton';
 
 const FULL_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -93,7 +94,7 @@ export function WorkoutCTA() {
           <Icon name="dumbbell" /> {w.exercises.length} exercises
         </span>
         <span>
-          <Icon name="zap" /> +40 XP
+          <Icon name="zap" /> +{WORKOUT_XP} XP
         </span>
       </div>
       <div className="today-chips">
@@ -111,6 +112,7 @@ export function WorkoutCTA() {
           'Start workout'
         )}
       </button>
+      {done && <VerifyWatchButton wid={wid} day={simDay} />}
     </div>
   );
 }

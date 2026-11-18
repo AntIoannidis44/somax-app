@@ -34,16 +34,11 @@ const SharedProgramScreen = lazy(() => import('./components/train/SharedProgramS
 const PostComposerScreen = lazy(() => import('./components/community/PostComposerScreen').then((m) => ({ default: m.PostComposerScreen })));
 const WorkoutSessionDetail = lazy(() => import('./components/train/WorkoutSessionDetail').then((m) => ({ default: m.WorkoutSessionDetail })));
 import { useAppStore } from './store/useAppStore';
+import { CHALLENGE_DEFS } from './data/challenges';
+import { getWorkout } from './lib/customWorkouts';
+import { challengeWindow, computeChallengeProgress, verifySpecFor, type InAppDay } from './lib/verifiedChallenges';
 import { useSession, useUserId } from './lib/useSession';
-import {
-  healthAvailableOnPlatform,
-  requestHealthAuthorization,
-  getTodayHealthSummary,
-  getMonthlySteps,
-  getMonthlyCardioKm,
-  getLatestHeartRate,
-  getTodayWorkouts,
-} from './lib/health';
+import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getMonthlyCardioKm, getLatestHeartRate, getTodayWorkouts, getWorkoutsInRange, getDailyVerifiedSteps } from './lib/health';
 import { syncLocalReminders } from './lib/notifications';
 import { registerForPush, registerPushTapHandler } from './lib/push';
 import { fetchUnreadDMCounts, subscribeDMs } from './lib/social';
@@ -132,6 +127,7 @@ function App() {
   const setMonthlySteps = useAppStore((s) => s.setMonthlySteps);
   const syncCardioKm = useAppStore((s) => s.syncCardioKm);
   const syncWatchWorkout = useAppStore((s) => s.syncWatchWorkout);
+  const syncVerifiedChallenges = useAppStore((s) => s.syncVerifiedChallenges);
   const awardFitnessGoalXP = useAppStore((s) => s.awardFitnessGoalXP);
   const showToast = useAppStore((s) => s.showToast);
   const setUnreadDM = useAppStore((s) => s.setUnreadDM);
@@ -204,11 +200,55 @@ function App() {
           getTodayWorkouts(),
         ]);
         if (summary) {
-          syncHealthMetrics({ steps: summary.steps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr: hr?.bpm ?? null });
+          syncHealthMetrics({ steps: summary.steps, verifiedSteps: summary.verifiedSteps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr: hr?.bpm ?? null });
         }
         if (monthlySteps !== null) setMonthlySteps(monthlySteps);
         if (cardioKm !== null) syncCardioKm(cardioKm);
         syncWatchWorkout(workouts);
+
+        // Verified challenges: recount every joined one for its own window
+        // (lib/verifiedChallenges.ts) - Apple Health data (coins) plus workouts
+        // finished in the app and log-button entries (XP only). Completed ones
+        // keep syncing while their window is open, so coins can still land if
+        // the Apple Health part catches up.
+        {
+          const st = useAppStore.getState();
+          const d = new Date();
+          const iso = (x: Date) => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, '0')}-${String(x.getDate()).padStart(2, '0')}`;
+          const todayIso = iso(d);
+          const active = st.challenges
+            .filter((c) => c.joined)
+            .map((c) => ({ c, def: CHALLENGE_DEFS.find((x) => x.id === c.id) }))
+            .map(({ c, def }) => ({ c, def, spec: def ? verifySpecFor(def) : null }))
+            .filter((x): x is { c: typeof x.c; def: NonNullable<typeof x.def>; spec: NonNullable<typeof x.spec> } => !!x.def && !!x.spec)
+            .filter(({ c, def }) => {
+              if (!c.completed) return true;
+              const end = challengeWindow(def, c.joinedAt ?? todayIso, '9999-12-31').to;
+              return (c.verifiedProgress ?? 0) < def.target && end >= todayIso;
+            });
+          if (active.length) {
+            const from = active.map(({ c }) => c.joinedAt ?? todayIso).sort()[0];
+            const needsSteps = active.some(({ spec }) => spec.metric === 'stepDays' || spec.metric === 'stepStreak');
+            const [rangeWorkouts, dailySteps] = await Promise.all([
+              getWorkoutsInRange(from, todayIso),
+              needsSteps ? getDailyVerifiedSteps(from, todayIso) : Promise.resolve([]),
+            ]);
+            // Workouts finished in the app, by real calendar date (simDay -> date).
+            const inAppDays: InAppDay[] = [];
+            for (const [day, sessions] of Object.entries(st.workoutState ?? {})) {
+              const dt = new Date(`${st.lastActiveDate}T00:00:00`);
+              dt.setDate(dt.getDate() + (Number(day) - st.simDay));
+              for (const [wid, ws] of Object.entries(sessions ?? {})) {
+                if (ws?.completed) inAppDays.push({ date: iso(dt), category: getWorkout(wid)?.category ?? 'other' });
+              }
+            }
+            const progress: Record<string, { total: number; verified: number }> = {};
+            for (const { c, def, spec } of active) {
+              progress[c.id] = computeChallengeProgress(def, spec, c.joinedAt ?? todayIso, todayIso, rangeWorkouts, dailySteps, inAppDays, c.manualProgress ?? 0);
+            }
+            syncVerifiedChallenges(progress);
+          }
+        }
 
         // Performance goals (distance-time PBs, cumulative distance,
         // frequency) check against every real workout independently of

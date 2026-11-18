@@ -1,6 +1,7 @@
 import { supabase } from './supabase';
 import { useAppStore } from '../store/useAppStore';
 import { withAllChallenges } from '../data/challenges';
+import { WORKOUT_XP, normalizeGoalXp } from './schedule';
 import { monthStartOf } from '../store/useAppStore';
 
 let unsubscribeStore: (() => void) | null = null;
@@ -127,6 +128,15 @@ export async function hydrateFromCloud(userId: string, isStillCurrent: () => boo
   if (data?.state) {
     useAppStore.setState(data.state as Partial<ReturnType<typeof useAppStore.getState>>);
     useAppStore.setState({ challenges: withAllChallenges(useAppStore.getState().challenges) });
+    // Cloud snapshots skip persist's migrate - fix a stale +40 workout row here too.
+    {
+      const today = useAppStore.getState().today;
+      if (today?.goals?.some((g) => g.id === 'workout' && g.xp !== WORKOUT_XP)) {
+        const goals = today.goals.map((g) => ({ ...g }));
+        normalizeGoalXp(goals);
+        useAppStore.setState({ today: { ...today, goals } });
+      }
+    }
     // The cloud snapshot's `today` (checklist goals, streak-sync flags,
     // etc.) was pushed whenever it last synced - possibly yesterday or
     // earlier. Hydration is async and can resolve after App.tsx's own

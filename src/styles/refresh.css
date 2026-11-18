@@ -797,6 +797,12 @@ button.day-pill{ font:inherit; color:inherit; }
 .chal-h{ display:flex; gap:12px; align-items:center; }
 .chal-h .t{ font-weight:700; font-size:15px; letter-spacing:-.01em; }
 .chal-h .s{ font-size:12.5px; color: var(--text-faint); line-height:1.4; margin-top:1px; }
+/* Home challenge card: the coin chip is a button that opens the same note */
+.qchip-btn{ color: inherit; font-family: inherit; line-height: inherit; cursor: pointer; }
+/* Tap-to-open "how coins work" note on coin-paying challenges */
+.chal-info{ display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; margin-left:4px; vertical-align:-4px; padding:0; border:0; border-radius:50%; background:none; color: var(--text-faint); }
+.chal-info svg{ width:15px; height:15px; }
+.chal-coin-rule{ margin-top:10px; padding:9px 11px; border-radius:10px; font-size:12px; line-height:1.45; color: var(--text-dim); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 .chal-f{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:12px; }
 .chal-meta{ font-size:12.5px; color: var(--text-dim); font-weight:600; }
 .chal-meta b{ font-family: var(--font-mono); font-weight:600; color: var(--text); }
@@ -1086,12 +1092,29 @@ button.day-pill{ font:inherit; color:inherit; }
 .lib-desc{ font-size:14px; line-height:1.5; color:var(--text-dim); margin:0 0 10px; }
 .lib-source{ display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:var(--accent); margin:0 0 12px; text-decoration:none; }
 .lib-source svg{ width:13px; height:13px; }
-.lib-ex-row{ padding:10px 0; border-bottom:1px solid var(--line); }
+.lib-ex-row{ display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--line); }
 .lib-ex-row:last-child{ border-bottom:none; }
 .lib-ex-row.grouped{ border-left:3px solid var(--accent); padding-left:10px; }
+.lib-ex-row-main{ flex:1; min-width:0; }
 .lib-superset{ font-size:10.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--accent); margin-bottom:4px; }
 .lib-ex-name{ font-weight:700; font-size:14px; }
 .lib-ex-meta{ font-size:12px; color:var(--text-faint); margin-top:2px; }
+
+/* How-to button sits beside .lib-ex-row-main as a real flex sibling with
+   flex-shrink:0, not absolutely positioned - the exact fix the favourites
+   list needed after a long name overlapped its button (see
+   feedback_fullscreen_overlay_convention / the fav-card CSS fix). */
+.ex-howto{
+  flex-shrink:0; width:30px; height:30px; border-radius:50%; border:none; cursor:pointer;
+  display:grid; place-items:center; background:var(--accent-soft); color:var(--accent); padding:0;
+}
+.ex-howto.pending{ background:transparent; border:1.5px dashed var(--line); color:var(--text-faint); cursor:default; }
+.howto-diagram{ position:relative; border-radius:20px; overflow:hidden; background:var(--surface-2); box-shadow:var(--sh-3); }
+.howto-diagram img{ display:block; width:100%; height:auto; }
+.howto-legend{ display:flex; align-items:center; gap:14px; padding:10px 14px; border-top:1px solid var(--line-soft); background:var(--surface); font-size:11px; color:var(--text-dim); }
+.howto-legend span{ display:flex; align-items:center; gap:6px; }
+.howto-legend i{ width:11px; height:11px; border-radius:3px; display:inline-block; }
+.howto-caveat{ margin-top:14px; padding:12px 14px; border-radius:14px; background:color-mix(in srgb, var(--warn) 14%, transparent); color:var(--warn); font-size:12px; line-height:1.5; }
 .lib-entry{ display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:14px; border-radius:18px; border:none; color:#fff; font:inherit; cursor:pointer; background:linear-gradient(140deg, var(--hero-1), var(--hero-2)); margin-bottom:14px; box-shadow:var(--sh-1); }
 .lib-entry .ic{ width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,.18); display:grid; place-items:center; flex-shrink:0; }
 .lib-entry .ic svg{ width:20px; height:20px; }

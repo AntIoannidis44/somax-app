@@ -1,8 +1,9 @@
 import type { ChallengeDef, ChallengeState } from '../types';
+import { GENERATED_CHALLENGES } from './challenges_generated';
 
 export const MAX_ACTIVE_CHALLENGES = 2;
 
-export const CHALLENGE_DEFS: ChallengeDef[] = [
+const HAND_WRITTEN_CHALLENGES: ChallengeDef[] = [
   {
     id: 'consistency',
     name: 'Consistency Sprint',
@@ -12,6 +13,8 @@ export const CHALLENGE_DEFS: ChallengeDef[] = [
     unit: 'workout',
     xpPerUnit: 18,
     bonusXp: 60,
+    sport: 'general',
+    difficulty: 'beginner',
   },
   {
     id: 'pushups',
@@ -23,6 +26,8 @@ export const CHALLENGE_DEFS: ChallengeDef[] = [
     xpPerUnit: 0.6,
     bonusXp: 40,
     logStep: 10,
+    sport: 'calisthenics',
+    difficulty: 'intermediate',
   },
   {
     id: 'squats',
@@ -34,6 +39,8 @@ export const CHALLENGE_DEFS: ChallengeDef[] = [
     xpPerUnit: 0.2,
     bonusXp: 40,
     logStep: 10,
+    sport: 'calisthenics',
+    difficulty: 'beginner',
   },
   {
     id: 'core',
@@ -45,6 +52,8 @@ export const CHALLENGE_DEFS: ChallengeDef[] = [
     xpPerUnit: 8,
     bonusXp: 50,
     logStep: 1,
+    sport: 'calisthenics',
+    difficulty: 'intermediate',
   },
   {
     id: 'cardio',
@@ -58,6 +67,10 @@ export const CHALLENGE_DEFS: ChallengeDef[] = [
     // Deliberately no logStep - this is the one challenge with a real data
     // source (HealthKit workout distance, see syncCardioKm), so there's no
     // manual "log km" button letting anyone self-report fake progress.
+    sport: 'running',
+    difficulty: 'intermediate',
+    coinsVerified: true,
+    verify: { metric: 'km', types: ['Run', 'Cycling', 'Swim'] },
   },
   {
     id: 'macrotrack',
@@ -70,6 +83,8 @@ export const CHALLENGE_DEFS: ChallengeDef[] = [
     bonusXp: 50,
     // Also deliberately no logStep - driven by real food_log_entries rows
     // (see syncMacroChallenge), not a manual "log a day" button.
+    sport: 'general',
+    difficulty: 'beginner',
   },
   {
     id: 'streak7',
@@ -84,8 +99,174 @@ export const CHALLENGE_DEFS: ChallengeDef[] = [
     // actual progress.currentStreak counter (see syncStreakChallenge), not
     // a manual "log a day" tap. It used to be self-reported; fixed because
     // it let anyone claim a streak with no real activity behind it.
+    sport: 'general',
+    difficulty: 'beginner',
+  },
+  // Added 2026-11-18: counted only from Apple Health device data (pay coins).
+  {
+    id: 'three-in-a-row',
+    name: 'Three in a Row',
+    desc: 'Do a verified workout 3 days in a row (Apple Watch).',
+    lengthDays: 7,
+    target: 3,
+    unit: 'day',
+    xpPerUnit: 10,
+    bonusXp: 30,
+    sport: 'general',
+    difficulty: 'beginner',
+    verify: { metric: 'workoutStreak' },
+  },
+  {
+    id: 'five-in-a-row',
+    name: 'Five in a Row',
+    desc: 'Do a verified workout 5 days in a row (Apple Watch).',
+    lengthDays: 10,
+    target: 5,
+    unit: 'day',
+    xpPerUnit: 10,
+    bonusXp: 50,
+    sport: 'general',
+    difficulty: 'intermediate',
+    verify: { metric: 'workoutStreak' },
+  },
+  {
+    id: 'iron-streak',
+    name: 'Seven-Day Iron Streak',
+    desc: 'Do a verified workout 7 days in a row (Apple Watch).',
+    lengthDays: 14,
+    target: 7,
+    unit: 'day',
+    xpPerUnit: 10,
+    bonusXp: 80,
+    sport: 'general',
+    difficulty: 'advanced',
+    verify: { metric: 'workoutStreak' },
+  },
+  {
+    id: 'step-goal-week',
+    name: 'Step Goal Week',
+    desc: 'Hit 8,000 steps on 5 of the next 7 days.',
+    lengthDays: 7,
+    target: 5,
+    unit: 'day',
+    xpPerUnit: 6,
+    bonusXp: 30,
+    sport: 'general',
+    difficulty: 'beginner',
+    verify: { metric: 'stepDays', dailySteps: 8000 },
+  },
+  {
+    id: 'eight-k-every-day',
+    name: '8K Every Day',
+    desc: 'Hit 8,000 steps 7 days in a row.',
+    lengthDays: 10,
+    target: 7,
+    unit: 'day',
+    xpPerUnit: 7,
+    bonusXp: 50,
+    sport: 'general',
+    difficulty: 'intermediate',
+    verify: { metric: 'stepStreak', dailySteps: 8000 },
+  },
+  {
+    id: 'step-month',
+    name: 'Step Month',
+    desc: 'Hit 8,000 steps on 20 of the next 30 days.',
+    lengthDays: 30,
+    target: 20,
+    unit: 'day',
+    xpPerUnit: 3,
+    bonusXp: 60,
+    sport: 'general',
+    difficulty: 'intermediate',
+    verify: { metric: 'stepDays', dailySteps: 8000 },
+  },
+  {
+    id: 'ten-k-fortnight',
+    name: '10K Fortnight',
+    desc: 'Hit 10,000 steps 14 days in a row.',
+    lengthDays: 21,
+    target: 14,
+    unit: 'day',
+    xpPerUnit: 5,
+    bonusXp: 90,
+    sport: 'general',
+    difficulty: 'advanced',
+    verify: { metric: 'stepStreak', dailySteps: 10000 },
+  },
+  {
+    id: 'walk-25k',
+    name: 'Walk 25',
+    desc: 'Walk or hike 25 km over 14 days.',
+    lengthDays: 14,
+    target: 25,
+    unit: 'km',
+    xpPerUnit: 2,
+    bonusXp: 30,
+    logStep: 1,
+    sport: 'general',
+    difficulty: 'beginner',
+    verify: { metric: 'km', types: ['Walk', 'Hike'] },
+  },
+  {
+    id: 'swim-5k',
+    name: 'Swim 5K',
+    desc: 'Swim 5 km over 14 days.',
+    lengthDays: 14,
+    target: 5,
+    unit: 'km',
+    xpPerUnit: 8,
+    bonusXp: 50,
+    logStep: 0.5,
+    sport: 'swimming',
+    difficulty: 'intermediate',
+    verify: { metric: 'km', types: ['Swim'] },
+  },
+  {
+    id: 'swim-15k',
+    name: 'Swim 15K',
+    desc: 'Swim 15 km over 30 days.',
+    lengthDays: 30,
+    target: 15,
+    unit: 'km',
+    xpPerUnit: 4,
+    bonusXp: 80,
+    logStep: 1,
+    sport: 'swimming',
+    difficulty: 'advanced',
+    verify: { metric: 'km', types: ['Swim'] },
+  },
+  {
+    id: 'run-100k-month',
+    name: '100 km Month',
+    desc: 'Run 100 km over 30 days.',
+    lengthDays: 30,
+    target: 100,
+    unit: 'km',
+    xpPerUnit: 1,
+    bonusXp: 120,
+    logStep: 5,
+    sport: 'running',
+    difficulty: 'advanced',
+    verify: { metric: 'km', types: ['Run'] },
+  },
+  {
+    id: 'active-week',
+    name: 'Active Week',
+    desc: 'Do a verified workout on 4 of the next 7 days (any type).',
+    lengthDays: 7,
+    target: 4,
+    unit: 'day',
+    xpPerUnit: 8,
+    bonusXp: 30,
+    logStep: 1,
+    sport: 'general',
+    difficulty: 'beginner',
+    verify: { metric: 'activeDays' },
   },
 ];
+
+export const CHALLENGE_DEFS: ChallengeDef[] = [...HAND_WRITTEN_CHALLENGES, ...GENERATED_CHALLENGES];
 
 export function defaultChallengeState(id: string): ChallengeState {
   return { id, joined: false, progress: 0, completed: false, pushupLog: 0 };

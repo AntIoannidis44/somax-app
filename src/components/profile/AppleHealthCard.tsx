@@ -30,7 +30,7 @@ export function AppleHealthCard() {
         return;
       }
       setHasHeartRateEver(!!hr?.bpm);
-      syncHealthMetrics({ steps: summary.steps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr: hr?.bpm ?? null });
+      syncHealthMetrics({ steps: summary.steps, verifiedSteps: summary.verifiedSteps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr: hr?.bpm ?? null });
       if (monthlySteps !== null) setMonthlySteps(monthlySteps);
       setStatus('connected');
     } catch (e) {

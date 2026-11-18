@@ -45,9 +45,9 @@ export function HomeScreen() {
       </div>
       <WorkoutCTA />
       <div className="section-label">
-        Quest
+        Challenge
         <button className="link-btn" onClick={() => go('play')}>
-          All quests
+          All challenges
         </button>
       </div>
       <QuestCard />

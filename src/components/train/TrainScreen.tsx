@@ -10,7 +10,7 @@ import { getWorkout, useMyWorkouts, deleteWorkout, saveWorkout } from '../../lib
 import { recordLibrarySave, type LibraryProgram } from '../../lib/library';
 
 const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-import { WEEKDAY_LABELS, isWorkoutDone, todayPlan, todayPlanIndex } from '../../lib/schedule';
+import { WATCH_SYNC_XP, WORKOUT_XP, WEEKDAY_LABELS, isWorkoutDone, todayPlan, todayPlanIndex } from '../../lib/schedule';
 import { formatTime } from '../../lib/format';
 import { categoryForActivityName, workoutTypeById } from '../../data/workoutTypes';
 import { ShareSessionButton } from './ShareSessionButton';
@@ -19,6 +19,7 @@ import { Modal } from '../layout/Modal';
 import { exerciseMeta } from '../../data/workouts';
 import type { PostWorkout } from '../../lib/social';
 import type { HealthWorkoutSummary } from '../../types';
+import { VerifyWatchButton } from './VerifyWatchButton';
 
 
 // Shared by "Share with a friend" and "Post to feed" - both need the exact
@@ -495,7 +496,7 @@ export function TrainScreen() {
               Counted<b>{Math.round((selectedWatchWorkouts ?? []).reduce((sum, w) => sum + w.durationMinutes, 0))} min</b>
             </div>
             <div>
-              Reward<b>+40 XP</b>
+              Reward<b>+{WORKOUT_XP + WATCH_SYNC_XP} XP</b>
             </div>
           </div>
           {availableWatchWorkouts && availableWatchWorkouts.length > 0 ? (
@@ -602,7 +603,7 @@ export function TrainScreen() {
               Est. time<b>{todayWorkout.duration}</b>
             </div>
             <div>
-              Reward<b>+40 XP</b>
+              Reward<b>+{WORKOUT_XP} XP</b>
             </div>
           </div>
           <button className="btn" onClick={() => openWorkout(plan.key!)}>
@@ -616,6 +617,7 @@ export function TrainScreen() {
               </>
             )}
           </button>
+          <VerifyWatchButton wid={plan.key!} day={simDay} />
         </div>
       )}
 

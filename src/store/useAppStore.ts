@@ -6,7 +6,9 @@ import { ACHIEVEMENT_DEFS } from '../data/achievements';
 import { CHALLENGE_DEFS, MAX_ACTIVE_CHALLENGES, activeChallengeCount, defaultChallengeState, withAllChallenges } from '../data/challenges';
 import { statBumpFor } from '../data/workouts';
 import { defaultCharacter } from '../lib/character';
-import { HYDRATION_TARGET_ML, STEP_GOAL, STEP_GOAL_XP, buildTodayGoals, generateWeekPlan, reviseWeekPlanFrom, todayPlanIndex } from '../lib/schedule';
+import { COINS, challengeCoins } from '../lib/coins';
+import { manualLogAllowed, verifySpecFor } from '../lib/verifiedChallenges';
+import { HYDRATION_TARGET_ML, STEP_GOAL, STEP_GOAL_XP, WATCH_SYNC_XP, WORKOUT_XP, checkWatchSync, normalizeGoalXp, buildTodayGoals, generateWeekPlan, reviseWeekPlanFrom, todayPlanIndex } from '../lib/schedule';
 import { getWorkout, registerPlanWorkouts } from '../lib/customWorkouts';
 import { expandSets, setKey } from '../lib/workoutSets';
 import { dailyCapForLevel, MAX_LEVEL, levelFromXP } from '../lib/xp';
@@ -176,7 +178,7 @@ interface Actions {
   openWorkout: (wid: string, day?: number) => void;
   closeWorkout: () => void;
   resumeWorkout: (wid: string, day?: number) => void;
-  attachWatchWorkoutToSession: (wid: string, day: number, workout: HealthWorkoutSummary) => void;
+  attachWatchWorkoutToSession: (wid: string, day: number, workout: HealthWorkoutSummary) => { awarded: boolean; reason?: string };
   openCharacterStudio: () => void;
   closeCharacterStudio: () => void;
   openGoals: () => void;
@@ -252,6 +254,7 @@ interface Actions {
   joinChallenge: (id: string) => void;
   logChallenge: (id: string) => void;
   syncCardioKm: (km: number) => void;
+  syncVerifiedChallenges: (progressById: Record<string, { total: number; verified: number }>) => void;
   syncMacroChallenge: (fullyLoggedDays: number) => void;
   setFriendCount: (count: number) => void;
   prestige: () => void;
@@ -343,7 +346,15 @@ export const useAppStore = create<Store>()(
             ws.completed = false;
           }),
         ),
-      attachWatchWorkoutToSession: (wid, day, workout) =>
+      attachWatchWorkoutToSession: (wid, day, workout) => {
+        const check = checkWatchSync(
+          workout,
+          getWorkout(wid),
+          watchWorkoutUsedElsewhere(get().workoutState, workout.uuid, day, wid),
+        );
+        // A workout that can't verify this session isn't attached at all -
+        // otherwise the session would read as "synced" without being verified.
+        if (!check.ok) return { awarded: false, reason: check.reason };
         set(
           produce((s) => {
             const ws = s.workoutState[day]?.[wid];
@@ -356,7 +367,19 @@ export const useAppStore = create<Store>()(
               distanceMeters: workout.distanceMeters,
             };
           }),
-        ),
+        );
+        // The +10 top-up to the full 40, only once per session, and only
+        // once the base 30 has actually been paid (matches the real app
+        // flow - Sync only ever shows once the workout is finished).
+        awardWorkoutCoins(workout, getWorkout(wid));
+        const ws = get().workoutState[day]?.[wid];
+        if (ws?.xpAwarded && !ws.watchSyncXpAwarded) {
+          set(produce((s) => { s.workoutState[day][wid].watchSyncXpAwarded = true; }));
+          awardXP(WATCH_SYNC_XP, `${getWorkout(wid)?.name || 'Workout'} - Apple Fitness verified`);
+          return { awarded: true };
+        }
+        return { awarded: false };
+      },
       openCharacterStudio: () => set({ viewingCharacter: true, route: 'profile' }),
       closeCharacterStudio: () => set({ viewingCharacter: false }),
       openGoals: () => set({ viewingGoals: true, route: 'profile' }),
@@ -678,6 +701,10 @@ export const useAppStore = create<Store>()(
           awardXP(STEP_GOAL_XP, 'Hit step goal');
           updateStreakOnActivity();
         }
+        // Coins only on device-recorded steps (typed-in Health entries excluded).
+        if ((metrics.verifiedSteps ?? 0) >= STEP_GOAL) {
+          awardCoins(`steps:${todayISO()}`, COINS.stepGoal, 'Daily step goal (device-recorded)');
+        }
       },
 
       // The true month-to-date total straight from HealthKit (see
@@ -773,6 +800,10 @@ export const useAppStore = create<Store>()(
           return;
         }
         const isToday = day === s.simDay;
+        // Today's workout row may already have paid out another way (ticked
+        // on the checklist, or an Apple Fitness workout matched to it) -
+        // finishing the session must not pay a second time on top of that.
+        const alreadyPaidToday = isToday && !!s.today.goals.find((g) => g.id === 'workout')?.done;
         set(
           produce((st) => {
             const sess = st.workoutState[day][wid];
@@ -794,7 +825,7 @@ export const useAppStore = create<Store>()(
             });
           }),
         );
-        awardXP(40, `${getWorkout(wid)?.name || 'Workout'} completed`);
+        if (!alreadyPaidToday) awardXP(WORKOUT_XP, `${getWorkout(wid)?.name || 'Workout'} completed`);
         if (isToday) updateStreakOnActivity();
         bumpChallengeProgress('consistency', 1);
         checkAchievements();
@@ -822,6 +853,8 @@ export const useAppStore = create<Store>()(
             durationMinutes: w.durationMinutes,
             kcal: w.kcal,
             distanceMeters: w.distanceMeters,
+            // Must survive this copy - drops it and a hand-entered workout earns coins.
+            userEntered: w.userEntered,
           }));
           // First time we see a logged Watch workout today, it counts on its
           // own (the goal says so) - once. Anything logged later still shows
@@ -853,7 +886,8 @@ export const useAppStore = create<Store>()(
             }),
           );
           if (autoCount) {
-            awardXP(40, `${listed[0].activityName} synced from Apple Fitness`);
+            awardXP(WORKOUT_XP + WATCH_SYNC_XP, `${listed[0].activityName} synced from Apple Fitness`);
+            awardWorkoutCoins(listed[0]);
             updateStreakOnActivity();
             bumpChallengeProgress('consistency', 1);
             checkAchievements();
@@ -891,7 +925,8 @@ export const useAppStore = create<Store>()(
             });
           }),
         );
-        awardXP(40, `${w.name} synced from Apple Fitness`);
+        awardXP(WORKOUT_XP + WATCH_SYNC_XP, `${w.name} synced from Apple Fitness`);
+        awardWorkoutCoins(workouts[0], w);
         updateStreakOnActivity();
         bumpChallengeProgress('consistency', 1);
         checkAchievements();
@@ -962,7 +997,8 @@ export const useAppStore = create<Store>()(
               st.progress.stats.vitality = Math.min(99, st.progress.stats.vitality + 0.4);
             }),
           );
-          awardXP(40, `${workout.activityName} synced from Apple Fitness`);
+          awardXP(WORKOUT_XP + WATCH_SYNC_XP, `${workout.activityName} synced from Apple Fitness`);
+          awardWorkoutCoins(workout);
           updateStreakOnActivity();
           bumpChallengeProgress('consistency', 1);
           checkAchievements();
@@ -982,6 +1018,7 @@ export const useAppStore = create<Store>()(
             s.challenges = withAllChallenges(s.challenges);
             const c = s.challenges.find((x: { id: string }) => x.id === id)!;
             c.joined = true;
+            c.joinedAt = todayISO();
           }),
         );
         get().showToast(`Joined ${def.name}`);
@@ -995,6 +1032,9 @@ export const useAppStore = create<Store>()(
             if (c.completed) return;
             c.joined = false;
             c.progress = 0;
+            delete c.joinedAt;
+            delete c.manualProgress;
+            delete c.verifiedProgress;
           }),
         );
       },
@@ -1023,7 +1063,42 @@ export const useAppStore = create<Store>()(
       logChallenge: (id) => {
         const def = CHALLENGE_DEFS.find((d) => d.id === id);
         if (!def?.logStep) return;
+        const spec = verifySpecFor(def);
+        if (spec) {
+          // Counts toward the challenge (and its XP), never toward coins.
+          if (!manualLogAllowed(spec)) return;
+          set(
+            produce((st) => {
+              const c = st.challenges.find((x: { id: string }) => x.id === id);
+              if (c) c.manualProgress = (c.manualProgress ?? 0) + def.logStep!;
+            }),
+          );
+        }
         bumpChallengeProgress(id, def.logStep);
+      },
+      // Results of lib/verifiedChallenges.ts for each joined verified
+      // challenge (App.tsx health sync). Sets progress to the real total -
+      // same diff pattern as syncCardioKm, so re-syncing never double-counts.
+      syncVerifiedChallenges: (progressById) => {
+        for (const [id, { total, verified }] of Object.entries(progressById)) {
+          const c = get().challenges.find((x) => x.id === id);
+          const def = CHALLENGE_DEFS.find((d) => d.id === id);
+          if (!c || !c.joined || !def) continue;
+          if (verified !== c.verifiedProgress) {
+            set(
+              produce((st) => {
+                const cc = st.challenges.find((x: { id: string }) => x.id === id);
+                if (cc) cc.verifiedProgress = verified;
+              }),
+            );
+          }
+          if (!c.completed && total !== c.progress) bumpChallengeProgress(id, total - c.progress);
+          // Coins only when the Apple Health part alone reaches the target -
+          // can land after the challenge already completed on unverified progress.
+          if (verified >= def.target) {
+            awardCoins(`challenge:${id}:${c.joinedAt ?? ''}`, challengeCoins(def), `${def.name} - verified complete`);
+          }
+        }
       },
       // A verified weigh-in (logWeight already confirmed it against the
       // goal) earns flat XP same as hitting a daily goal, so it's subject to
@@ -1061,6 +1136,9 @@ export const useAppStore = create<Store>()(
       // a transient HealthKit error.
       syncCardioKm: (km) => {
         const c = get().challenges.find((x) => x.id === 'cardio');
+        // Superseded by syncVerifiedChallenges (cardio has a verify spec now).
+        const cdef = CHALLENGE_DEFS.find((d) => d.id === 'cardio');
+        if (cdef && verifySpecFor(cdef)) return;
         if (!c || !c.joined || c.completed || km <= 0) return;
         if (km !== c.progress) bumpChallengeProgress('cardio', km - c.progress);
       },
@@ -1184,7 +1262,7 @@ export const useAppStore = create<Store>()(
       // have the old string shape, which crashes anything calling
       // .join()/.includes() on it - coerce on load instead of requiring
       // everyone to reset their demo data.
-      version: 9,
+      version: 11,
       migrate: (persisted) => {
         const s = persisted as any;
         const toGoalArray = (g: unknown) => (Array.isArray(g) ? g : typeof g === 'string' && g ? [g] : []);
@@ -1205,6 +1283,12 @@ export const useAppStore = create<Store>()(
         // triggering a burst of catch-up day-advances for existing users.
         if (!s?.lastActiveDate) s.lastActiveDate = todayISO();
         if (s) s.challenges = withAllChallenges(s.challenges);
+        // v11: verified challenges need a join date for their window - ones
+        // joined before this existed start counting from today.
+        s?.challenges?.forEach((c: { id: string; joined: boolean; completed: boolean; joinedAt?: string }) => {
+          const def = CHALLENGE_DEFS.find((d) => d.id === c.id);
+          if (c.joined && !c.completed && !c.joinedAt && def && verifySpecFor(def)) c.joinedAt = todayISO();
+        });
         if (s?.progress && typeof s.progress.prestige !== 'number') s.progress.prestige = 0;
         if (s?.progress && typeof s.progress.monthlyXP !== 'number') {
           s.progress.monthlyXP = s.progress.totalXP ?? 0;
@@ -1223,11 +1307,47 @@ export const useAppStore = create<Store>()(
         if (s?.settings && !s.settings.theme) {
           s.settings.theme = 'system';
         }
+        // v10: workout row is WORKOUT_XP (30), not the old flat 40.
+        normalizeGoalXp(s?.today?.goals);
         return s;
       },
     },
   ),
 );
+
+// One Apple Fitness workout can verify only one in-app session.
+export function watchWorkoutUsedElsewhere(
+  workoutState: Record<number, Record<string, { watchSync?: { uuid: string } }>>,
+  uuid: string,
+  day: number,
+  wid: string,
+): boolean {
+  return Object.entries(workoutState ?? {}).some(([d, sessions]) =>
+    Object.entries(sessions ?? {}).some(([w, ws]) => ws?.watchSync?.uuid === uuid && !(Number(d) === day && w === wid)),
+  );
+}
+
+// The ONLY way coins are paid (lib/coins.ts). Keyed: a key already in the
+// ledger never pays again, whichever path asks.
+function awardCoins(key: string, amount: number, label: string) {
+  const s = useAppStore.getState();
+  if (amount <= 0 || (s.coinLedger ?? []).some((e) => e.key === key)) return;
+  useAppStore.setState(
+    produce((st) => {
+      if (!st.coinLedger) st.coinLedger = [];
+      st.coinLedger.push({ key, coins: amount, label, at: new Date().toISOString() });
+      st.coins = (st.coins || 0) + amount;
+    }),
+  );
+}
+
+// A real Apple Fitness workout earns coins once per calendar day, only if it
+// passes the same verification as the +10 XP (type, length, effort, not
+// hand-entered). `planned` = the in-app session it's matched to, if any.
+function awardWorkoutCoins(workout: HealthWorkoutSummary, planned?: { duration?: string; category?: string }) {
+  if (!checkWatchSync(workout, planned, false).ok) return;
+  awardCoins(`workout-day:${(workout.startDate || todayISO()).slice(0, 10)}`, COINS.verifiedWorkout, `${workout.activityName} - verified workout`);
+}
 
 function awardXP(amount: number, label: string, opts: { ignoreCap?: boolean } = {}) {
   const s = useAppStore.getState();
@@ -1246,7 +1366,6 @@ function awardXP(amount: number, label: string, opts: { ignoreCap?: boolean } = 
       // missing monthly total here as well.
       st.progress.monthlyXP = (st.progress.monthlyXP || 0) + awarded;
       st.today.xpEarnedToday += awarded;
-      st.coins += Math.round(awarded / 4);
       const afterLevel = levelFromXP(st.progress.totalXP);
       st.progress.level = afterLevel;
       st.history.unshift({ type: 'xp', label, xp: awarded, day: st.simDay, at: new Date().toISOString() });
@@ -1316,7 +1435,9 @@ function bumpChallengeProgress(id: string, amount: number) {
         cc.completed = true;
       }),
     );
-    awardXP(def.bonusXp, `${def.name} complete`, { ignoreCap: true });
+    awardXP(def.bonusXp, `${def.name} complete`);
+    // Verified challenges pay coins from syncVerifiedChallenges (verified part only).
+    if (!verifySpecFor(def)) awardCoins(`challenge:${id}:${todayISO()}`, challengeCoins(def), `${def.name} complete`);
     useAppStore.getState().showToast(`${def.name} complete! +${def.bonusXp} bonus XP`);
     checkAchievements();
   }

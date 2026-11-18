@@ -166,6 +166,9 @@ export interface TodayGoal {
 
 export interface HealthMetrics {
   steps: number;
+  // Device-recorded steps only (excludes anything typed into the Health app) -
+  // the only step count that can earn coins. Undefined on older native builds.
+  verifiedSteps?: number;
   kcal: number;
   activeMinutes: number;
   hr: number | null;
@@ -181,6 +184,9 @@ export interface HealthWorkoutSummary {
   durationMinutes: number;
   kcal: number;
   distanceMeters: number | null;
+  // Added by hand in the Health app, not recorded by a device - can't verify
+  // a session or earn coins.
+  userEntered?: boolean;
 }
 
 export interface TodayState {
@@ -281,14 +287,14 @@ export interface WorkoutSessionState {
   skipped?: Record<number, boolean>;
   completed: boolean;
   // Separate from `completed` so a mis-tapped Finish can be undone (just
-  // flip `completed` back to false) without re-awarding the 40 XP/stat
+  // flip `completed` back to false) without re-awarding the workout XP/stat
   // bumps a second time when it's finished again - finishWorkout checks
   // this, not `completed`, before awarding anything.
   xpAwarded?: boolean;
   // A real Apple Watch/Fitness app workout attached to this session after
   // the fact (e.g. you forgot to start tracking, or want its real calories/
-  // duration attached to a session you logged by hand) - informational
-  // only, never re-triggers XP/stat awards.
+  // duration attached to a session you logged by hand) - also the trigger
+  // for the verified-completion XP top-up (see attachWatchWorkoutToSession).
   watchSync?: {
     uuid: string;
     activityName: string;
@@ -296,6 +302,10 @@ export interface WorkoutSessionState {
     durationMinutes: number;
     distanceMeters: number | null;
   };
+  // Guards the +10 verified-completion top-up the same way xpAwarded guards
+  // the base 30 - re-syncing to a different real workout (or re-picking the
+  // same one) must not pay out a second time.
+  watchSyncXpAwarded?: boolean;
 }
 
 export type WorkoutState = Record<number, Record<string, WorkoutSessionState>>;
@@ -322,11 +332,43 @@ export interface ChallengeDef {
   xpPerUnit: number;
   bonusXp: number;
   logStep?: number;
+  // Same sport ids as the Program Library (src/lib/library.ts SPORTS), plus
+  // 'general' for anything not tied to one discipline - lets the Challenges
+  // browser filter the same way the Library already does.
+  sport: string;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  // Progress comes only from verified device data (no log button) - the
+  // only kind of challenge that pays coins (lib/coins.ts).
+  coinsVerified?: boolean;
+  // Explicit Apple Health measurement (lib/verifiedChallenges.ts); most of
+  // the pool derives one from sport + unit instead.
+  verify?: VerifySpec;
+}
+
+export type VerifyMetric = 'sessions' | 'minutes' | 'km' | 'laps' | 'activeDays' | 'workoutStreak' | 'stepDays' | 'stepStreak';
+export interface VerifySpec {
+  metric: VerifyMetric;
+  types?: string[];
+  dailySteps?: number;
+}
+
+export interface CoinEntry {
+  key: string;
+  coins: number;
+  label: string;
+  at: string;
 }
 
 export interface ChallengeState {
   id: string;
   joined: boolean;
+  // Local date ("YYYY-MM-DD") the challenge was joined - starts the window
+  // that verified progress is counted in.
+  joinedAt?: string;
+  // Verified challenges: unverified log-button contributions (XP only) and
+  // the Apple Health-only count that coins are paid on (lib/verifiedChallenges.ts).
+  manualProgress?: number;
+  verifiedProgress?: number;
   progress: number;
   completed: boolean;
   pushupLog: number;
@@ -400,6 +442,8 @@ export interface AppState {
   history: HistoryEntry[];
   challenges: ChallengeState[];
   coins: number;
+  // Every coin payout, keyed so nothing pays twice - see lib/coins.ts.
+  coinLedger?: CoinEntry[];
   achievements: Record<string, boolean>;
   settings: Settings;
   viewingWorkout: string | null;

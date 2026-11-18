@@ -1,7 +1,9 @@
 import { registerPlugin, Capacitor } from '@capacitor/core';
+import { E2E } from './e2e';
 
 interface TodaySummary {
   steps: number;
+  verifiedSteps?: number;
   activeMinutes: number;
   kcal: number;
 }
@@ -18,6 +20,8 @@ export interface HealthWorkout {
   durationMinutes: number;
   kcal: number;
   distanceMeters: number | null;
+  userEntered?: boolean;
+  lapLengthMeters?: number | null;
 }
 
 export interface RoutePoint {
@@ -31,6 +35,7 @@ interface HealthPlugin {
   requestAuthorization(): Promise<{ granted: boolean }>;
   getTodaySummary(): Promise<TodaySummary>;
   getMonthlyStepsSummary(): Promise<{ steps: number }>;
+  getDailyVerifiedSteps(options: { startDate: string; endDate: string }): Promise<{ days: { date: string; steps: number }[] }>;
   getMonthlyCardioDistance(): Promise<{ meters: number }>;
   getLatestHeartRate(): Promise<LatestHeartRate>;
   getTodayWorkouts(options?: { startDate?: string; endDate?: string }): Promise<{ workouts: HealthWorkout[] }>;
@@ -38,12 +43,14 @@ interface HealthPlugin {
   openAppSettings(): Promise<{ opened: boolean }>;
 }
 
-const Health = registerPlugin<HealthPlugin>('Health');
+// Screen-test mode uses the fake the test script installs (lib/e2e.ts).
+const Health: HealthPlugin = E2E ? (window as unknown as { __E2E_HEALTH__: HealthPlugin }).__E2E_HEALTH__ : registerPlugin<HealthPlugin>('Health');
 
 // Apple Health only exists inside the native iOS shell (Capacitor) - the
 // web/PWA build has no HealthKit bridge, so every caller checks this
 // first rather than the plugin call failing loudly for web users.
 export function healthAvailableOnPlatform(): boolean {
+  if (E2E) return true;
   return Capacitor.getPlatform() === 'ios' && Capacitor.isNativePlatform();
 }
 
@@ -94,6 +101,29 @@ export async function getWorkoutsForDate(isoDate: string): Promise<HealthWorkout
   const end = new Date(start.getTime() + 24 * 60 * 60 * 1000);
   const { workouts } = await Health.getTodayWorkouts({ startDate: start.toISOString(), endDate: end.toISOString() });
   return workouts;
+}
+
+// Every Health workout between two local dates (inclusive, "YYYY-MM-DD") -
+// the source for verified challenge progress (lib/verifiedChallenges.ts).
+export async function getWorkoutsInRange(startIso: string, endIso: string): Promise<HealthWorkout[]> {
+  if (!healthAvailableOnPlatform()) return [];
+  const start = new Date(`${startIso}T00:00:00`);
+  const end = new Date(new Date(`${endIso}T00:00:00`).getTime() + 24 * 60 * 60 * 1000);
+  const { workouts } = await Health.getTodayWorkouts({ startDate: start.toISOString(), endDate: end.toISOString() });
+  return workouts;
+}
+
+// Device-recorded (not hand-entered) steps per day between two local dates.
+export async function getDailyVerifiedSteps(startIso: string, endIso: string): Promise<{ date: string; steps: number }[]> {
+  if (!healthAvailableOnPlatform()) return [];
+  const start = new Date(`${startIso}T00:00:00`);
+  const end = new Date(new Date(`${endIso}T00:00:00`).getTime() + 24 * 60 * 60 * 1000);
+  try {
+    const { days } = await Health.getDailyVerifiedSteps({ startDate: start.toISOString(), endDate: end.toISOString() });
+    return days ?? [];
+  } catch {
+    return []; // older native build without the method
+  }
 }
 
 export async function getWorkoutRoute(uuid: string): Promise<RoutePoint[]> {
