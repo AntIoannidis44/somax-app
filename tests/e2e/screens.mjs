@@ -89,7 +89,8 @@ try {
   const home = await page.textContent('body');
   check('Home says "Challenge", not "Quest"', /All challenges/.test(home) && !/\bQuests?\b/.test(home));
   const coinsAfterSteps = await page.evaluate(() => window.__store.getState().coins);
-  check('Device-recorded step goal paid 5 coins', coinsAfterSteps === 5, `coins=${coinsAfterSteps}`);
+  // steps (5) + today's real Apple Watch strength workout auto-synced (10); the couch and hand-entered ones pay nothing
+  check('Verified sources paid coins: 8k device steps (5) + real watch workout (10), nothing for couch/typed-in', coinsAfterSteps === 15, `coins=${coinsAfterSteps}`);
 
   // 2. Challenges tab + coin info
   await page.evaluate(() => { const s = window.__store.getState(); s.go('play'); s.setPlayTab('challenges'); });
@@ -125,7 +126,7 @@ try {
   await picker.locator('.day-picker-opt', { hasText: '220 kcal' }).click();
   await page.waitForTimeout(500);
   const st = await page.evaluate(() => { const s = window.__store.getState(); const ws = s.workoutState[s.simDay].push; return { coins: s.coins, verified: !!ws.watchSyncXpAwarded }; });
-  check('Verifying the real workout pays +10 XP and 10 coins', st.verified && st.coins === 15, JSON.stringify(st));
+  check('Verifying the real workout pays +10 XP, and no second workout coins the same day', st.verified && st.coins === 15, JSON.stringify(st));
   await page.screenshot({ path: path.join(SHOTS, '06-verified.png'), fullPage: true });
 
   // 5. Home now shows the verified line
