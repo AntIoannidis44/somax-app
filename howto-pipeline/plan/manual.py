@@ -104,4 +104,4 @@ MANUAL.update({
 })
 # ---- owner answers 2026-11-19
 MANUAL.update({"Toe touches":"NEW:Lying Toe Touch (core crunch, legs vertical)",
- "Barbell standing row (drop set)":"LINKED","Barbell inverted row, standing (drop set)":"LINKED"})
+ "Barbell inverted row, standing (drop set)":"NEW:Underhand Barbell Bent-over Row"})

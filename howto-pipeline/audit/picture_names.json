@@ -616,7 +616,6 @@
   "name": "Barbell Bent-over Row",
   "aka": [
    "Barbell Row",
-   "Barbell Standing Row",
    "Pendlay Row"
   ]
  },
@@ -2264,9 +2263,7 @@
  "new-125": {
   "idx": 352,
   "name": "Barbell Upright Row",
-  "aka": [
-   "Barbell Inverted Row, Standing"
-  ]
+  "aka": []
  },
  "new-126": {
   "idx": 353,

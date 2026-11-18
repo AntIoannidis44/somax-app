@@ -69,7 +69,7 @@ was added.
 - 1,723 exercise names have no picture: 1,343 need none (cardio, swim, session instructions, multi-move lines,
   sport drills, breathing), 18 were linked to existing pictures, 359 are covered by planned images, and 3 wait on
   the owner.
-- **221 images required = 200 new movements + 21 redraws** (17 defective pictures still in use + 4 broken ones:
+- **222 images required = 201 new movements + 21 redraws** (17 defective pictures still in use + 4 broken ones:
   straight-arm plank, band external rotation, Control Balance, Cobra/Double Leg Lift).
 - Verified by: every name classified once; the app's name test passes for every planned and existing link
   (`tests/plan-verify.test.ts`, on demand); each planned image was checked against all 476 existing pictures and
@@ -91,6 +91,8 @@ credit left to add for a long time.
 
 Copies of the audit and plan working files (originals are in ../exercise-howto/audit, build, plan) are kept in `howto-pipeline/audit/` and `howto-pipeline/plan/`.
 
-Owner answers (2026-11-19): "Barbell standing row" = barbell bent-over row (linked). "Barbell inverted row, standing" =
-upright row (linked, and renamed in the owner's Full Body program to "Barbell upright row (drop set)"; a backup of the
-row before the change is in ../backups/). "Toe touches" = core lying toe touch, which is 1 new image (in the 221).
+Owner answers (2026-11-19, corrected): "Barbell standing row" was renamed in the owner's Full Body program to "Barbell
+upright row" and opens the upright row picture. "Barbell inverted row, standing" is its own exercise, an underhand
+(reverse-grip) barbell bent-over row, and needs 1 new image. "Toe touches" is a core lying toe touch and needs 1 new
+image. (A first rename hit the wrong exercise and was reverted to the exact original; backups of the program row are
+in ../backups/.)

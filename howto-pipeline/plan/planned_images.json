@@ -1746,6 +1746,16 @@
    "Turn and Lunge"
   ]
  },
+ "Underhand Barbell Bent-over Row": {
+  "type": "new",
+  "names": [
+   "Barbell inverted row, standing (drop set)"
+  ],
+  "labels": [
+   "Barbell Inverted Row, Standing",
+   "Reverse-grip Barbell Row"
+  ]
+ },
  "Wall Angel": {
   "type": "new",
   "names": [
