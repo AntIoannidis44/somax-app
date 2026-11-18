@@ -584,8 +584,10 @@ export const useAppStore = create<Store>()(
       // program picker - independent of the goal/focus-driven generator,
       // since the user is choosing exactly what they want for that slot.
       setDayWorkout: (dayIndex, key) => {
+        let removed = 0;
         set(
           produce((st) => {
+            if (todayPlanIndex() === dayIndex) removed = revokeTodaySessionXp(st, key ? { type: 'train', key } : { type: 'rest' });
             st.weekPlan[dayIndex] = key ? { type: 'train', key } : { type: 'rest' };
             if (todayPlanIndex() === dayIndex) {
               const oldGoals = st.today.goals;
@@ -596,6 +598,7 @@ export const useAppStore = create<Store>()(
             }
           }),
         );
+        if (removed > 0) get().showToast(`Today's session changed - ${removed} XP from the old one removed`);
       },
 
       // Marks a day as "don't pre-plan a session - just count whatever
@@ -604,8 +607,10 @@ export const useAppStore = create<Store>()(
       // any earlier sync/selection, so it doubles as a reset if the
       // wrong activity got picked or the list needs refetching.
       setDayToWatchSync: (dayIndex) => {
+        let removed = 0;
         set(
           produce((st) => {
+            if (todayPlanIndex() === dayIndex) removed = revokeTodaySessionXp(st, { type: 'watch' });
             st.weekPlan[dayIndex] = { type: 'watch' };
             if (todayPlanIndex() === dayIndex) {
               st.today._watchWorkoutSynced = false;
@@ -624,6 +629,7 @@ export const useAppStore = create<Store>()(
             }
           }),
         );
+        if (removed > 0) get().showToast(`Today's session changed - ${removed} XP from the old one removed`);
       },
 
       toggleGoal: (goalId) => {
@@ -1314,6 +1320,52 @@ export const useAppStore = create<Store>()(
     },
   ),
 );
+
+// Owner 2026-11-18: if today's session is swapped (Train > edit, or switched
+// to an Apple Fitness sync day) after it already paid workout XP, take that
+// XP back - otherwise the old and the new session both pay for one day.
+// Returns how much was taken back. Mutates the draft `st`.
+function revokeTodaySessionXp(st: any, newPlan: { type: string; key?: string }): number {
+  const idx = todayPlanIndex();
+  const old = st.weekPlan[idx];
+  // Same programmed session = nothing changed. (Re-picking 'watch' is a reset of the sync, so it does revoke.)
+  if (!old || (old.type === 'train' && newPlan.type === 'train' && old.key === newPlan.key)) return 0;
+  let amount = 0;
+  let label = '';
+  if (old.type === 'train' && old.key) {
+    const ws = st.workoutState?.[st.simDay]?.[old.key];
+    const goalDone = !!st.today.goals.find((g: { id: string }) => g.id === 'workout')?.done;
+    if (ws?.xpAwarded || goalDone) amount += WORKOUT_XP;
+    if (ws?.watchSyncXpAwarded) amount += WATCH_SYNC_XP;
+    if (ws) {
+      if (ws.xpAwarded) st.stats_workoutsDone = Math.max(0, (st.stats_workoutsDone || 0) - 1);
+      ws.completed = false;
+      ws.xpAwarded = false;
+      ws.watchSyncXpAwarded = false;
+      delete ws.watchSync;
+    }
+    label = getWorkout(old.key)?.name || 'Workout';
+  } else if (old.type === 'watch' && st.today._watchWorkoutSynced) {
+    amount += WORKOUT_XP + WATCH_SYNC_XP;
+    st.stats_workoutsDone = Math.max(0, (st.stats_workoutsDone || 0) - 1);
+    label = 'Apple Fitness activity';
+  }
+  st.today.goals.forEach((g: { id: string; done: boolean }) => {
+    if (g.id === 'workout' || g.id === 'watch_workout') g.done = false;
+  });
+  if (old.type === 'watch') {
+    st.today._watchWorkoutSynced = false;
+    st.today.selectedWatchWorkouts = undefined;
+  }
+  if (amount > 0) {
+    st.progress.totalXP = Math.max(0, st.progress.totalXP - amount);
+    st.progress.monthlyXP = Math.max(0, (st.progress.monthlyXP || 0) - amount);
+    st.today.xpEarnedToday = Math.max(0, st.today.xpEarnedToday - amount);
+    st.progress.level = levelFromXP(st.progress.totalXP);
+    st.history.unshift({ type: 'xp', label: `${label} replaced - XP removed`, xp: -amount, day: st.simDay, at: new Date().toISOString() });
+  }
+  return amount;
+}
 
 // One Apple Fitness workout can verify only one in-app session.
 export function watchWorkoutUsedElsewhere(

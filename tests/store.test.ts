@@ -124,3 +124,44 @@ describe('challenges: progress counts for everyone, coins only for the verified 
     expect(S().coins).toBe(100);
   });
 });
+
+describe('swapping today\'s session never pays twice (owner bug 2026-11-18)', () => {
+  // session XP only (achievement bonuses like 'First Rep' are separate, legitimate one-offs)
+  const xp = () => S().progress.totalXP - S().history.filter((h) => h.label.startsWith('Achievement:')).reduce((n, h) => n + (h.xp ?? 0), 0);
+  const setToday = (plan: object) => {
+    const p = [...S().weekPlan]; p[new Date().getDay()] = plan as never; useAppStore.setState({ weekPlan: p });
+    useAppStore.setState({ today: { ...S().today, goals: [{ id: 'workout', label: 'Complete Push', meta: '', xp: 30, type: 'workout', done: false }], xpEarnedToday: 0 } });
+  };
+  it('ticked workout, then switched to Apple Fitness sync and synced: only the synced activity pays', () => {
+    setToday({ type: 'train', key: 'push' });
+    const x0 = xp();
+    S().toggleGoal('workout');
+    expect(xp() - x0).toBe(30);
+    S().setDayToWatchSync(new Date().getDay());
+    expect(xp() - x0).toBe(0);
+    S().toggleWatchWorkoutSelection({ uuid: 'w1', activityName: 'Strength Training', startDate: new Date().toISOString(), durationMinutes: 45, kcal: 220, distanceMeters: null });
+    expect(xp() - x0).toBe(40);
+  });
+  it('finished + verified workout, then swapped to another program: old 40 removed, new one can pay', () => {
+    setToday({ type: 'train', key: 'push' });
+    S().openWorkout('push');
+    const len = S().history.length; const x0 = xp();
+    S().finishWorkout('push');
+    S().attachWatchWorkoutToSession('push', S().simDay, { uuid: 'w2', activityName: 'Strength Training', startDate: new Date().toISOString(), durationMinutes: 45, kcal: 220, distanceMeters: null });
+    const earned = xp() - x0;
+    S().setDayWorkout(new Date().getDay(), 'pull');
+    expect(x0 + earned - xp()).toBe(40);
+    S().openWorkout('pull'); S().finishWorkout('pull');
+    expect(S().history.slice(0, S().history.length - len).some((h) => h.label.includes('Pull') && h.xp === 30)).toBe(true);
+  });
+  it('re-picking Apple Fitness sync (reset) does not let the same day pay 40 twice', () => {
+    setToday({ type: 'watch' });
+    useAppStore.setState({ today: { ...S().today, goals: [{ id: 'watch_workout', label: 'Log a workout', meta: '', xp: 40, type: 'watch', done: false }] } });
+    const x0 = xp();
+    const w = { uuid: 'w3', activityName: 'Run', startDate: new Date().toISOString(), durationMinutes: 30, kcal: 300, distanceMeters: 5000 };
+    S().toggleWatchWorkoutSelection(w);
+    S().setDayToWatchSync(new Date().getDay());
+    S().toggleWatchWorkoutSelection({ ...w, uuid: 'w4' });
+    expect(xp() - x0).toBe(40);
+  });
+});
