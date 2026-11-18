@@ -1,0 +1,1803 @@
+{
+ "90/90 Reach-through": {
+  "type": "new",
+  "names": [
+   "90-90 reach through"
+  ],
+  "labels": []
+ },
+ "Adductor Ball Squeeze (lying, legs at 90/90)": {
+  "type": "new",
+  "names": [
+   "Ball squeeze with legs lifted to 90/90 (2-2-2 tempo, 3 s rest)"
+  ],
+  "labels": [
+   "Ball Squeeze with Legs Lifted to 90/90"
+  ]
+ },
+ "Adductor Ball Squeeze (lying, legs straight)": {
+  "type": "new",
+  "names": [
+   "Ball squeeze, legs straight (2-2-2 tempo, 5 s rest)"
+  ],
+  "labels": [
+   "Ball Squeeze, Legs Straight"
+  ]
+ },
+ "Advanced Hip Rolls (classical Pilates)": {
+  "type": "new",
+  "names": [
+   "Advanced Hip Rolls"
+  ],
+  "labels": []
+ },
+ "Arm Wings with Torso Rotation": {
+  "type": "new",
+  "names": [
+   "Warm-up: Arm Wings with Torso Rotations"
+  ],
+  "labels": []
+ },
+ "B-stance Hip Thrust": {
+  "type": "new",
+  "names": [
+   "B-stance hip thrust",
+   "B-stance hip thrust (wk 3-4 3x10/side, wk 5-6 3x8/side, wk 7-8 3x6/side)"
+  ],
+  "labels": []
+ },
+ "Backpack Reverse Lunge": {
+  "type": "new",
+  "names": [
+   "Backpack reverse lunge"
+  ],
+  "labels": []
+ },
+ "Backpack Squat": {
+  "type": "new",
+  "names": [
+   "Backpack squat"
+  ],
+  "labels": []
+ },
+ "Band External Rotation (elbow at side)": {
+  "type": "redraw #114",
+  "names": [
+   "Band External Rotation",
+   "Band External Rotation (elbow at side)",
+   "Band Shoulder External Rotations",
+   "Band external rotation",
+   "Band external rotation at the side",
+   "Cable or band external rotation",
+   "Eccentric external rotation",
+   "Eccentric external rotation (3 s lower)"
+  ],
+  "labels": [
+   "Band Shoulder External Rotations",
+   "Eccentric External Rotation",
+   "Cable or Band External Rotation"
+  ]
+ },
+ "Band Footwork (single leg)": {
+  "type": "new",
+  "names": [
+   "Band Footwork (single leg)"
+  ],
+  "labels": []
+ },
+ "Band Overhead Squat": {
+  "type": "new",
+  "names": [
+   "Overhead squat + band"
+  ],
+  "labels": []
+ },
+ "Band Single-arm Chest Press": {
+  "type": "new",
+  "names": [
+   "Banded single-arm press (left)",
+   "Banded single-arm press (right)"
+  ],
+  "labels": [
+   "Banded Single-arm Press"
+  ]
+ },
+ "Band Single-arm Row": {
+  "type": "new",
+  "names": [
+   "Band Single-arm Row (1s pause)"
+  ],
+  "labels": []
+ },
+ "Band Streamline Jump": {
+  "type": "new",
+  "names": [
+   "Streamline jumps + band"
+  ],
+  "labels": []
+ },
+ "Band Y-T-W Raise (standing)": {
+  "type": "new",
+  "names": [
+   "Band Y-T-W Raise"
+  ],
+  "labels": []
+ },
+ "Band-resisted Golf Takeaway": {
+  "type": "new",
+  "names": [
+   "Band-resisted Takeaway"
+  ],
+  "labels": [
+   "Band-resisted Takeaway"
+  ]
+ },
+ "Barbell Box Squat": {
+  "type": "new",
+  "names": [
+   "Speed Box Squat"
+  ],
+  "labels": []
+ },
+ "Barbell Close-grip Bench Press": {
+  "type": "new",
+  "names": [
+   "Close-grip Bench Press",
+   "Close-grip or Larsen Bench Press"
+  ],
+  "labels": []
+ },
+ "Barbell Deficit Deadlift": {
+  "type": "new",
+  "names": [
+   "Block Pull or Deficit Deadlift"
+  ],
+  "labels": []
+ },
+ "Barbell Pin Press": {
+  "type": "new",
+  "names": [
+   "Pin Press (just above sticking point)"
+  ],
+  "labels": []
+ },
+ "Barbell Zercher Squat": {
+  "type": "new",
+  "names": [
+   "Zercher squats"
+  ],
+  "labels": []
+ },
+ "Bear Crawl Knee Taps": {
+  "type": "new",
+  "names": [
+   "Bear Crawl Hold with Knee Taps"
+  ],
+  "labels": [
+   "Bear Crawl Hold with Knee Taps"
+  ]
+ },
+ "Bear Crawl Rotation": {
+  "type": "new",
+  "names": [
+   "Bear crawl rotations"
+  ],
+  "labels": []
+ },
+ "Bear Dog": {
+  "type": "new",
+  "names": [
+   "Bear dog"
+  ],
+  "labels": [
+   "Bear Dog"
+  ]
+ },
+ "Bent-knee Fall Out": {
+  "type": "new",
+  "names": [
+   "Bent-knee Fall Out"
+  ],
+  "labels": []
+ },
+ "Bicycle Crunch": {
+  "type": "new",
+  "names": [
+   "Bicycle",
+   "CD2: Supine Bicycle",
+   "Elbow to opposite knee"
+  ],
+  "labels": [
+   "Bicycle",
+   "Supine Bicycle",
+   "Elbow to Opposite Knee"
+  ]
+ },
+ "Bird Dog on Elbows": {
+  "type": "new",
+  "names": [
+   "Bird dog (elbows)"
+  ],
+  "labels": [
+   "Bird Dog (elbows)"
+  ]
+ },
+ "Bodyweight Hip Thrust (shoulders on bench)": {
+  "type": "new",
+  "names": [
+   "Bench Glute Bridge"
+  ],
+  "labels": [
+   "Bench Glute Bridge"
+  ]
+ },
+ "Bodyweight Step-back Lunge": {
+  "type": "new",
+  "names": [
+   "Fast Step-back Lunge (alternating)",
+   "Step-back Lunge (alternating)"
+  ],
+  "labels": []
+ },
+ "Bodyweight Walking Lunge": {
+  "type": "new",
+  "names": [
+   "Squats - walking lunges",
+   "Walking lunges, bodyweight"
+  ],
+  "labels": [
+   "Squats - Walking Lunges",
+   "Walking Lunge",
+   "Walking Lunges, Bodyweight"
+  ]
+ },
+ "Bow and Arrow Rotation (standing)": {
+  "type": "new",
+  "names": [
+   "Bow and Arrow Rotation"
+  ],
+  "labels": []
+ },
+ "Box Pistol Squat": {
+  "type": "new",
+  "names": [
+   "Box Pistol (sit to bench)"
+  ],
+  "labels": [
+   "Box Pistol"
+  ]
+ },
+ "Burpee Side Shuffle": {
+  "type": "new",
+  "names": [
+   "Burpee side shuffle"
+  ],
+  "labels": []
+ },
+ "Cable Fly (low to high)": {
+  "type": "new",
+  "names": [
+   "Cable Fly (low to high)"
+  ],
+  "labels": []
+ },
+ "Cable Rope Hammer Curl": {
+  "type": "new",
+  "names": [
+   "Cable Hammer Curl"
+  ],
+  "labels": [
+   "Cable Hammer Curl"
+  ]
+ },
+ "Calf Raise Holding Support (bodyweight)": {
+  "type": "new",
+  "names": [
+   "Calf Raise holding chair back",
+   "Calf raise (hold bench)",
+   "Heel Raise (hold bench)",
+   "Heel Raises (hold chair)",
+   "Standing Calf Raise (aisle or galley)",
+   "Standing Calf Raise (hold support)",
+   "Stop 1: Heel Raises holding rail",
+   "Toe Stand",
+   "Wall calf raise"
+  ],
+  "labels": [
+   "Calf Raise",
+   "Calf Raise Holding Chair Back",
+   "Heel Raise",
+   "Standing Calf Raise",
+   "Toe Stand",
+   "Wall Calf Raise"
+  ]
+ },
+ "Chin-up (underhand grip)": {
+  "type": "new",
+  "names": [
+   "Chin-up",
+   "Chin-up (assisted if needed)",
+   "Chin-up (slow 3s lowering)",
+   "Chin-up or band-assisted chin-up",
+   "Chin-ups",
+   "Weighted or Bodyweight Chin-up"
+  ],
+  "labels": [
+   "Chin-up",
+   "Weighted or Bodyweight Chin-up"
+  ]
+ },
+ "Close-grip Lat Pulldown": {
+  "type": "new",
+  "names": [
+   "Close-grip Pulldown"
+  ],
+  "labels": [
+   "Close-grip Pulldown"
+  ]
+ },
+ "Cobra / Double Leg Lift Combo": {
+  "type": "redraw #224",
+  "names": [
+   "Cobra / Double Leg Lift Combo"
+  ],
+  "labels": []
+ },
+ "Control Balance (Pilates)": {
+  "type": "redraw #181",
+  "names": [
+   "Control Balance"
+  ],
+  "labels": []
+ },
+ "Crab Walk": {
+  "type": "new",
+  "names": [
+   "Spiderman - the crab (on all fours, feet first)"
+  ],
+  "labels": [
+   "Spiderman - the Crab"
+  ]
+ },
+ "Cross Jumps": {
+  "type": "new",
+  "names": [
+   "Jumping - box jumps (across an imaginary cross)"
+  ],
+  "labels": [
+   "Jumping - Box Jumps"
+  ]
+ },
+ "Crunch with Finger Slide and Pulse": {
+  "type": "new",
+  "names": [
+   "Crunches with finger slide and 1-inch pulse"
+  ],
+  "labels": [
+   "Crunches with Finger Slide and 1-inch Pulse"
+  ]
+ },
+ "Deep Squat Hold": {
+  "type": "new",
+  "names": [
+   "Deep Squat Hold (hold door frame)",
+   "Deep Squat Hold (hold support)",
+   "Deep squat hold",
+   "Deep squat hold with heels down"
+  ],
+  "labels": [
+   "Deep Squat Hold with Heels Down"
+  ]
+ },
+ "Dolphin Pose with Walk-ins": {
+  "type": "new",
+  "names": [
+   "Dolphin Pose with walk-ins"
+  ],
+  "labels": []
+ },
+ "Dot the i (jump forward then up)": {
+  "type": "new",
+  "names": [
+   "Dot the i (jump forward then straight up)"
+  ],
+  "labels": []
+ },
+ "Double Toe Taps (Pilates)": {
+  "type": "new",
+  "names": [
+   "Double Toe Taps"
+  ],
+  "labels": []
+ },
+ "Dumbbell Arnold Press": {
+  "type": "new",
+  "names": [
+   "Arnold Press"
+  ],
+  "labels": []
+ },
+ "Dumbbell Box Step-over": {
+  "type": "new",
+  "names": [
+   "Dumbbell box step-over"
+  ],
+  "labels": [
+   "Dumbbell Box Step-over"
+  ]
+ },
+ "Dumbbell Concentration Curl": {
+  "type": "new",
+  "names": [
+   "Dumbbell Concentration Curl"
+  ],
+  "labels": []
+ },
+ "Dumbbell Floor Press": {
+  "type": "new",
+  "names": [
+   "Dumbbell Floor Press",
+   "Station 6: Supine Chest Press"
+  ],
+  "labels": [
+   "Supine Chest Press"
+  ]
+ },
+ "Dumbbell Hammer Curl": {
+  "type": "new",
+  "names": [
+   "Hammer Curl"
+  ],
+  "labels": []
+ },
+ "Dumbbell Reverse Lunge": {
+  "type": "new",
+  "names": [
+   "Dumbbell Reverse Lunge",
+   "Dumbbell Reverse Lunge (alternating)",
+   "Dumbbell Step-back Lunge (alternating)",
+   "Dumbbell Step-back Lunge (hold chair if needed)",
+   "Reverse Dumbbell Lunge"
+  ],
+  "labels": [
+   "Dumbbell Step-back Lunge"
+  ]
+ },
+ "Dumbbell Step-up": {
+  "type": "new",
+  "names": [
+   "Dumbbell Step-up",
+   "Dumbbell Step-up onto Bench"
+  ],
+  "labels": [
+   "Dumbbell Step-up onto Bench"
+  ]
+ },
+ "Fast Feet (quick steps in place)": {
+  "type": "new",
+  "names": [
+   "Fast Feet (quiet)",
+   "Fast feet on plate"
+  ],
+  "labels": [
+   "Fast Feet on Plate",
+   "Fast Feet"
+  ]
+ },
+ "Floor Get-up (with chair)": {
+  "type": "new",
+  "names": [
+   "Floor Get-up Practice (with chair)"
+  ],
+  "labels": []
+ },
+ "Four-way Neck Stretch": {
+  "type": "new",
+  "names": [
+   "Four-way Neck Stretch"
+  ],
+  "labels": []
+ },
+ "Front Split (blocks)": {
+  "type": "new",
+  "names": [
+   "Front Split (blocks) with contract-relax"
+  ],
+  "labels": [
+   "Front Split with Contract-relax"
+  ]
+ },
+ "Gentle Standing Forward Reach": {
+  "type": "new",
+  "names": [
+   "Gentle Standing Forward Reach"
+  ],
+  "labels": []
+ },
+ "Glute Bridge Dumbbell Press": {
+  "type": "new",
+  "names": [
+   "Glute bridge bench press"
+  ],
+  "labels": [
+   "Glute Bridge Bench Press"
+  ]
+ },
+ "Glute Bridge March": {
+  "type": "new",
+  "names": [
+   "Bridge with march",
+   "Glute Bridge March"
+  ],
+  "labels": [
+   "Bridge with March"
+  ]
+ },
+ "Glute Bridge with Arm Raise": {
+  "type": "new",
+  "names": [
+   "Bridge with arm raise"
+  ],
+  "labels": [
+   "Bridge with Arm Raise"
+  ]
+ },
+ "Glute Bridge with Ball Squeeze": {
+  "type": "new",
+  "names": [
+   "Bridge with ball squeeze"
+  ],
+  "labels": [
+   "Bridge with Ball Squeeze"
+  ]
+ },
+ "Goblet Squat with Heel Raise": {
+  "type": "new",
+  "names": [
+   "Goblet squat with heel raise (wk 3-4 3x10, wk 5-6 3x8, wk 7-8 3x6)"
+  ],
+  "labels": []
+ },
+ "Golf Finish-position Hold": {
+  "type": "new",
+  "names": [
+   "Finish-position Hold on lead leg (club)"
+  ],
+  "labels": [
+   "Finish-position Hold on Lead Leg"
+  ]
+ },
+ "Half Jacks": {
+  "type": "new",
+  "names": [
+   "CD2: Half Jacks"
+  ],
+  "labels": []
+ },
+ "Half-kneeling Adductor Rock-back": {
+  "type": "new",
+  "names": [
+   "Adductor rock-back (half kneeling)"
+  ],
+  "labels": []
+ },
+ "Half-kneeling Cable Chop": {
+  "type": "new",
+  "names": [
+   "Half-kneeling Cable Chop",
+   "Half-kneeling cable chop (high to low)"
+  ],
+  "labels": []
+ },
+ "Half-kneeling Med-ball Rotational Throw": {
+  "type": "new",
+  "names": [
+   "Half-kneeling Med-ball Rotational Throw",
+   "Kneeling med ball throw (left)",
+   "Kneeling med ball throw (right)"
+  ],
+  "labels": [
+   "Kneeling Medicine Ball Throw"
+  ]
+ },
+ "Half-kneeling Overhead Hold": {
+  "type": "new",
+  "names": [
+   "Half-kneeling Overhead Carry Hold (light)"
+  ],
+  "labels": [
+   "Half-kneeling Overhead Carry Hold"
+  ]
+ },
+ "Hamstring Switches": {
+  "type": "new",
+  "names": [
+   "Hamstring switches"
+  ],
+  "labels": []
+ },
+ "Hanging Knee Raise": {
+  "type": "new",
+  "names": [
+   "CL1: Leg Tuck",
+   "Hanging Knee Raise",
+   "Hanging knee raise",
+   "Station 10: Leg Tuck"
+  ],
+  "labels": [
+   "Leg Tuck"
+  ]
+ },
+ "Heel Digs": {
+  "type": "new",
+  "names": [
+   "Heel Digs"
+  ],
+  "labels": []
+ },
+ "Heel Touches (lying, side to side)": {
+  "type": "new",
+  "names": [
+   "Ankle grabs",
+   "Low side sways (touch sides of feet)"
+  ],
+  "labels": [
+   "Ankle Grabs",
+   "Low Side Sways"
+  ]
+ },
+ "Heel-elevated Squat": {
+  "type": "new",
+  "names": [
+   "Elevated-heel Squat (plate) for comparison"
+  ],
+  "labels": [
+   "Elevated-heel Squat",
+   "Elevated-heel Squat for Comparison"
+  ]
+ },
+ "Hollow Hold (tuck)": {
+  "type": "new",
+  "names": [
+   "Hollow Hold (tuck)"
+  ],
+  "labels": []
+ },
+ "Hurdle Jumps": {
+  "type": "new",
+  "names": [
+   "Vertical Jumps over 45cm Hurdles"
+  ],
+  "labels": [
+   "Vertical Jumps over 45cm Hurdles",
+   "Vertical Jumps over Hurdles"
+  ]
+ },
+ "Incline Dumbbell Curl": {
+  "type": "new",
+  "names": [
+   "Incline Dumbbell Curl"
+  ],
+  "labels": []
+ },
+ "Incline Dumbbell Press": {
+  "type": "new",
+  "names": [
+   "Incline Dumbbell Press"
+  ],
+  "labels": []
+ },
+ "Incline Spider Curl": {
+  "type": "new",
+  "names": [
+   "Incline Spider Curl"
+  ],
+  "labels": []
+ },
+ "Jumping Chin-up": {
+  "type": "new",
+  "names": [
+   "Jumping Chin-up with Flat-foot Landing (or heel drops)"
+  ],
+  "labels": [
+   "Jumping Chin-up with Flat-foot Landing"
+  ]
+ },
+ "Knee Hug to Arabesque": {
+  "type": "new",
+  "names": [
+   "Knee hug + arabesque"
+  ],
+  "labels": []
+ },
+ "Kneeling Chest Expansion (band)": {
+  "type": "new",
+  "names": [
+   "Kneeling Chest Expansion (band anchored)"
+  ],
+  "labels": []
+ },
+ "Kneeling Incline Push-up": {
+  "type": "new",
+  "names": [
+   "Kneeling Incline Push-up"
+  ],
+  "labels": []
+ },
+ "Kneeling Plank": {
+  "type": "new",
+  "names": [
+   "Kneeling Plank",
+   "Modified Plank on Knees"
+  ],
+  "labels": [
+   "Modified Plank on Knees"
+  ]
+ },
+ "Kneeling Plank on Balance Disc": {
+  "type": "new",
+  "names": [
+   "Kneeling Plank on Balance Disc"
+  ],
+  "labels": []
+ },
+ "Kneeling Side Plank": {
+  "type": "new",
+  "names": [
+   "Oblique Crunch or Kneeling Side Plank",
+   "Side Plank from Knees"
+  ],
+  "labels": [
+   "Side Plank from Knees"
+  ]
+ },
+ "Lateral Box Jump": {
+  "type": "new",
+  "names": [
+   "Lateral box jump"
+  ],
+  "labels": []
+ },
+ "Lateral Bulgarian Split Jump": {
+  "type": "new",
+  "names": [
+   "Bulgarian jumps side to side"
+  ],
+  "labels": [
+   "Bulgarian Jumps Side to Side"
+  ]
+ },
+ "Lateral Hop and Stick": {
+  "type": "new",
+  "names": [
+   "Lateral hop and stick",
+   "Single-leg jumps - sideways (coach gives direction)"
+  ],
+  "labels": [
+   "Single-leg Jumps - Sideways"
+  ]
+ },
+ "Lateral Lunge to Balance": {
+  "type": "new",
+  "names": [
+   "Lateral Lunge to Balance"
+  ],
+  "labels": []
+ },
+ "Lateral Rocks": {
+  "type": "new",
+  "names": [
+   "Lateral rocks"
+  ],
+  "labels": []
+ },
+ "Leg Pull Back (Pilates)": {
+  "type": "new",
+  "names": [
+   "Leg Pull Back"
+  ],
+  "labels": []
+ },
+ "Leg Pull Front (Pilates)": {
+  "type": "new",
+  "names": [
+   "Leg Pull Front",
+   "Leg Pull Front (alternating leg lift)",
+   "Leg Pull Front Prep (plank with leg lift)"
+  ],
+  "labels": [
+   "Leg Pull Front Prep"
+  ]
+ },
+ "Leg Slides": {
+  "type": "new",
+  "names": [
+   "Leg Slides"
+  ],
+  "labels": []
+ },
+ "Loaded Bag Bent-over Row (backpack / luggage)": {
+  "type": "new",
+  "names": [
+   "Backpack Bent-over Row (loaded with books)",
+   "Luggage Row"
+  ],
+  "labels": [
+   "Backpack Bent-over Row",
+   "Luggage Row"
+  ]
+ },
+ "Low Lunge Twist": {
+  "type": "new",
+  "names": [
+   "Low Lunge Twist"
+  ],
+  "labels": []
+ },
+ "Lunge with Reach Back": {
+  "type": "new",
+  "names": [
+   "Lunge with Reach Back",
+   "Walking Lunge with Reach"
+  ],
+  "labels": [
+   "Walking Lunge with Reach"
+  ]
+ },
+ "Lunge with Rotation": {
+  "type": "new",
+  "names": [
+   "Lunge with Rotation",
+   "Lunges with Rotation"
+  ],
+  "labels": []
+ },
+ "Lying Leg Criss-cross": {
+  "type": "new",
+  "names": [
+   "Leg criss-cross 15 cm off floor"
+  ],
+  "labels": [
+   "Leg Criss-cross off Floor"
+  ]
+ },
+ "Machine Chest Fly (pec deck)": {
+  "type": "new",
+  "names": [
+   "Fly (machine)"
+  ],
+  "labels": [
+   "Fly (machine)",
+   "Machine Fly"
+  ]
+ },
+ "Med-ball Shot-put Throw": {
+  "type": "new",
+  "names": [
+   "Med-ball Shot-put Throw"
+  ],
+  "labels": []
+ },
+ "Med-ball Throw on Balance Cushion": {
+  "type": "new",
+  "names": [
+   "Medicine Ball Throws on Balance Cushion"
+  ],
+  "labels": []
+ },
+ "Mixed-grip Pull-up": {
+  "type": "new",
+  "names": [
+   "CL1: Alternating-grip Pull-up"
+  ],
+  "labels": [
+   "Alternating-grip Pull-up"
+  ]
+ },
+ "Modified Hundred (table top)": {
+  "type": "new",
+  "names": [
+   "Modified Hundred (legs table top, head down if needed)"
+  ],
+  "labels": []
+ },
+ "Neck Pull (Pilates)": {
+  "type": "new",
+  "names": [
+   "Neck Pull"
+  ],
+  "labels": []
+ },
+ "Neutral-grip Lat Pulldown": {
+  "type": "new",
+  "names": [
+   "Assisted Chin-up or Neutral-grip Pulldown",
+   "Neutral-grip Lat Pulldown"
+  ],
+  "labels": [
+   "Neutral-grip Pulldown"
+  ]
+ },
+ "One-arm Kettlebell Swing": {
+  "type": "new",
+  "names": [
+   "One-arm Kettlebell Swing (switch hands each set, every 30s)"
+  ],
+  "labels": []
+ },
+ "Overhead Reach with Club": {
+  "type": "new",
+  "names": [
+   "Arms in the Air (club overhead, arms straight)"
+  ],
+  "labels": [
+   "Arms in the Air"
+  ]
+ },
+ "Pallof Press with Overhead Raise": {
+  "type": "new",
+  "names": [
+   "Standing Pallof Press with Overhead Raise"
+  ],
+  "labels": [
+   "Standing Pallof Press with Overhead Raise"
+  ]
+ },
+ "Parallel Bar Support Hold": {
+  "type": "new",
+  "names": [
+   "Support Hold on Bars"
+  ],
+  "labels": [
+   "Support Hold on Bars"
+  ]
+ },
+ "Pelvic Tilt (lying)": {
+  "type": "new",
+  "names": [
+   "Pelvic Tilt",
+   "Pelvic Tilt (lying)",
+   "Pelvic Tilts",
+   "Pelvic Tilts (neutral to imprint)"
+  ],
+  "labels": []
+ },
+ "Pigeon Pose (floor)": {
+  "type": "new",
+  "names": [
+   "Pigeon Pose"
+  ],
+  "labels": []
+ },
+ "Pigeon with Active Lifts": {
+  "type": "new",
+  "names": [
+   "Pigeon with active lifts"
+  ],
+  "labels": []
+ },
+ "Plank Rocks": {
+  "type": "new",
+  "names": [
+   "Plank rocks"
+  ],
+  "labels": []
+ },
+ "Plank Saw": {
+  "type": "new",
+  "names": [
+   "Plank Saw"
+  ],
+  "labels": []
+ },
+ "Plank Shoulder Taps": {
+  "type": "new",
+  "names": [
+   "Plank Shoulder Taps",
+   "Plank Shoulder Taps (feet wide)",
+   "Plank shoulder taps",
+   "Single-arm plank (left)",
+   "Single-arm plank (right)"
+  ],
+  "labels": [
+   "Single-arm Plank"
+  ]
+ },
+ "Plank on Balance Disc": {
+  "type": "new",
+  "names": [
+   "Plank on Balance Disc"
+  ],
+  "labels": []
+ },
+ "Plate Around the World": {
+  "type": "new",
+  "names": [
+   "Around the world + weight"
+  ],
+  "labels": [
+   "Around the World + Weight"
+  ]
+ },
+ "Plyometric Incline Push-up (bench)": {
+  "type": "new",
+  "names": [
+   "Plyo bench push-ups"
+  ],
+  "labels": [
+   "Plyo Bench Push-ups"
+  ]
+ },
+ "Power Skip (skip for height)": {
+  "type": "new",
+  "names": [
+   "High skips",
+   "Skips for height"
+  ],
+  "labels": [
+   "High Skips",
+   "Skips for Height"
+  ]
+ },
+ "Prone Back Extension (floor, chest lift)": {
+  "type": "new",
+  "names": [
+   "Prone Back Extensions"
+  ],
+  "labels": []
+ },
+ "Prone Heel Squeeze": {
+  "type": "new",
+  "names": [
+   "Prone Heel Squeeze"
+  ],
+  "labels": []
+ },
+ "Prone Press-up (McKenzie)": {
+  "type": "new",
+  "names": [
+   "Prone Press-up (to comfort)"
+  ],
+  "labels": []
+ },
+ "Prone Swimming (Pilates)": {
+  "type": "new",
+  "names": [
+   "CD2: Swimmer",
+   "Swimming (prone arm reach)"
+  ],
+  "labels": [
+   "Swimmer",
+   "Swimming"
+  ]
+ },
+ "Prone Y-W Raise": {
+  "type": "new",
+  "names": [
+   "Prone Y-W",
+   "Y-W glides"
+  ],
+  "labels": [
+   "Prone Y-W",
+   "Y-W Glides"
+  ]
+ },
+ "Push-up on Balance Cushion": {
+  "type": "new",
+  "names": [
+   "Push-up on Balance Cushion"
+  ],
+  "labels": []
+ },
+ "Quadruped Shoulder Circles": {
+  "type": "new",
+  "names": [
+   "Quadruped shoulder circles"
+  ],
+  "labels": []
+ },
+ "Rack Chin-up (feet supported)": {
+  "type": "new",
+  "names": [
+   "Rack Chin"
+  ],
+  "labels": [
+   "Rack Chin"
+  ]
+ },
+ "Radial and Ulnar Deviation": {
+  "type": "new",
+  "names": [
+   "Radial and ulnar deviation"
+  ],
+  "labels": []
+ },
+ "Reverse Lunge to Knee Drive": {
+  "type": "new",
+  "names": [
+   "Reverse Lunge to Knee Drive",
+   "Reverse lunge knee drive"
+  ],
+  "labels": []
+ },
+ "Ring Dip": {
+  "type": "new",
+  "names": [
+   "Ring Dip (band-assisted if needed)"
+  ],
+  "labels": []
+ },
+ "Ring Row": {
+  "type": "new",
+  "names": [
+   "Ring Row",
+   "Ring Row (feet elevated)",
+   "TRX or ring row"
+  ],
+  "labels": []
+ },
+ "Scapular Pull-up": {
+  "type": "new",
+  "names": [
+   "Scapular Pull-up"
+  ],
+  "labels": []
+ },
+ "Seal (Pilates)": {
+  "type": "new",
+  "names": [
+   "Seal"
+  ],
+  "labels": []
+ },
+ "Seated Ankle Pumps": {
+  "type": "new",
+  "names": [
+   "Ankle Flexion",
+   "Calf pump",
+   "Seated Ankle Pumps"
+  ],
+  "labels": [
+   "Ankle Flexion",
+   "Calf Pump"
+  ]
+ },
+ "Seated Arm Openings (cactus)": {
+  "type": "new",
+  "names": [
+   "Seated Arm Openings (cactus)"
+  ],
+  "labels": []
+ },
+ "Seated Band Chest Press": {
+  "type": "new",
+  "names": [
+   "Seated Band Chest Press (band behind back)"
+  ],
+  "labels": []
+ },
+ "Seated Band Overhead Press": {
+  "type": "new",
+  "names": [
+   "Band or Water-bottle Overhead Press (seated)",
+   "Seated Band Overhead Press"
+  ],
+  "labels": [
+   "Band or Water-bottle Overhead Press"
+  ]
+ },
+ "Seated Band Pull-apart": {
+  "type": "new",
+  "names": [
+   "Seated Band Pull-apart"
+  ],
+  "labels": []
+ },
+ "Seated Cat-Cow": {
+  "type": "new",
+  "names": [
+   "Seated Cat-Cow"
+  ],
+  "labels": []
+ },
+ "Seated Chest Stretch": {
+  "type": "new",
+  "names": [
+   "Chest Stretch (seated)",
+   "Seated Chest Stretch"
+  ],
+  "labels": []
+ },
+ "Seated Half Roll-back (Pilates)": {
+  "type": "new",
+  "names": [
+   "Half Roll Down",
+   "Half Roll-back",
+   "Roll-back with ball behind lower back"
+  ],
+  "labels": [
+   "Half Roll Down",
+   "Roll-back with Ball Behind Lower Back"
+  ]
+ },
+ "Seated Hamstring Stretch with Thigh Contraction (chair)": {
+  "type": "new",
+  "names": [
+   "Hamstring stretch with thigh contraction (chair)"
+  ],
+  "labels": []
+ },
+ "Seated Knee Extension (chair)": {
+  "type": "new",
+  "names": [
+   "Knee Extension (seated)",
+   "Knee Extension (seated, ankle weights)",
+   "Seated Knee Extension (ankle weights)",
+   "Seated Knee Extension (hold 2s)",
+   "Supported Single Leg Extension"
+  ],
+  "labels": [
+   "Supported Single Leg Extension"
+  ]
+ },
+ "Seated Pancake Leg Lifts": {
+  "type": "new",
+  "names": [
+   "Seated Pancake Leg Lifts"
+  ],
+  "labels": []
+ },
+ "Seated Pelvic Tilt": {
+  "type": "new",
+  "names": [
+   "Seated Pelvic Tilts"
+  ],
+  "labels": []
+ },
+ "Seated Shoulder Rolls": {
+  "type": "new",
+  "names": [
+   "Seated Shoulder Rolls"
+  ],
+  "labels": []
+ },
+ "Seated Side Reach": {
+  "type": "new",
+  "names": [
+   "Seated Side Reach"
+  ],
+  "labels": []
+ },
+ "Seated Toe Raises": {
+  "type": "new",
+  "names": [
+   "Seated Toe Raises"
+  ],
+  "labels": []
+ },
+ "Shrimp Squat": {
+  "type": "new",
+  "names": [
+   "Weighted Pistol or Shrimp Squat"
+  ],
+  "labels": []
+ },
+ "Side Kick Series (Pilates)": {
+  "type": "new",
+  "names": [
+   "Side Kick Front/Back",
+   "Side Kick Front/Back (small range)",
+   "Side Kick Series",
+   "Side Kick Series (front/back, up/down, circles)"
+  ],
+  "labels": [
+   "Side Kick",
+   "Side Kick Front/Back"
+  ]
+ },
+ "Side Plank Side-to-side": {
+  "type": "new",
+  "names": [
+   "Side plank side-to-side (front-side-front-side, 1 s holds)"
+  ],
+  "labels": []
+ },
+ "Side Plank with Arm Reach": {
+  "type": "new",
+  "names": [
+   "Left side plank with arm raises",
+   "Right side plank with arm raises",
+   "Side plank with arm raise (2-2-2 tempo)",
+   "Side plank with reach-through",
+   "Side plank with top-arm reach"
+  ],
+  "labels": [
+   "Left Side Plank with Arm Raises",
+   "Right Side Plank with Arm Raises",
+   "Side Plank with Arm Raise",
+   "Side Plank with Arm Raises",
+   "Side Plank with Reach-through",
+   "Side Plank with Top-arm Reach"
+  ]
+ },
+ "Side Plank with Leg Lift": {
+  "type": "new",
+  "names": [
+   "Side Plank Leg Lift",
+   "Side Plank with Leg Lift",
+   "Side Plank with top-leg lift",
+   "Side plank leg lifts",
+   "Side plank side-to-side with leg lift (5 s holds)",
+   "Side plank with arm and top-leg lift (5 s hold, 3 s rest)",
+   "Side plank with top-leg raises (30 s each side, no rest)",
+   "Sideways bench - with leg lift"
+  ],
+  "labels": [
+   "Side Plank with Top-leg Lift",
+   "Side Plank with Arm and Top-leg Lift",
+   "Side Plank with Top-leg Raises",
+   "Sideways Bench with Leg Lift"
+  ]
+ },
+ "Side-lying Arm Opening": {
+  "type": "new",
+  "names": [
+   "Side-lying Arm Opening"
+  ],
+  "labels": []
+ },
+ "Side-lying Ball Lift (ball between ankles)": {
+  "type": "new",
+  "names": [
+   "Side-lying Ball Lift (ball between ankles)"
+  ],
+  "labels": []
+ },
+ "Side-lying Inner Thigh Lift": {
+  "type": "new",
+  "names": [
+   "Inner Thigh Lift",
+   "Side-lying leg lift, bottom leg (2-2-2 tempo)"
+  ],
+  "labels": [
+   "Side-lying Leg Lift, Bottom Leg"
+  ]
+ },
+ "Side-lying Leg Circles": {
+  "type": "new",
+  "names": [
+   "Side Leg Circles"
+  ],
+  "labels": [
+   "Side Leg Circles"
+  ]
+ },
+ "Side-lying Leg Lift (top leg)": {
+  "type": "new",
+  "names": [
+   "Side Lift and Lower",
+   "Side-lying Lift and Lower",
+   "Sideways Leg Lift"
+  ],
+  "labels": [
+   "Side Lift and Lower",
+   "Side-lying Lift and Lower",
+   "Sideways Leg Lift"
+  ]
+ },
+ "Side-lying Thigh Stretch": {
+  "type": "new",
+  "names": [
+   "Side-lying Thigh Stretch"
+  ],
+  "labels": []
+ },
+ "Single Leg Circles (bent knee)": {
+  "type": "new",
+  "names": [
+   "Single Leg Circles (bent knee)"
+  ],
+  "labels": []
+ },
+ "Single Leg Stretch (Pilates)": {
+  "type": "new",
+  "names": [
+   "Single Leg Stretch",
+   "Single Leg Stretch (ball under sacrum)",
+   "Single Leg Stretch (head down)"
+  ],
+  "labels": []
+ },
+ "Single-arm Dumbbell Bench Press": {
+  "type": "new",
+  "names": [
+   "Single-arm dumbbell bench press"
+  ],
+  "labels": []
+ },
+ "Single-arm Seated Cable Row": {
+  "type": "new",
+  "names": [
+   "Single-arm Cable Row",
+   "Single-arm cable row"
+  ],
+  "labels": []
+ },
+ "Single-leg 90/90 Hip Extension": {
+  "type": "new",
+  "names": [
+   "Single-leg 90/90 hip extension",
+   "Single-leg 90/90 hip extension from bench",
+   "Single-leg 90/90 hip extension from floor"
+  ],
+  "labels": [
+   "Single-leg 90/90 Hip Extension from Bench",
+   "Single-leg 90/90 Hip Extension from Floor"
+  ]
+ },
+ "Single-leg Balance Reach": {
+  "type": "new",
+  "names": [
+   "Clockface",
+   "Single-leg Balance Reach",
+   "Single-leg Disc Touch Support (both sides)",
+   "Single-leg balance with reach",
+   "Star excursion reach (front, side, back)"
+  ],
+  "labels": [
+   "Clockface",
+   "Single-leg Disc Touch Support",
+   "Star Excursion Reach"
+  ]
+ },
+ "Single-leg Balance with Ball": {
+  "type": "new",
+  "names": [
+   "Single-leg Stance, hold the ball",
+   "Single-leg balance (hold a ball)",
+   "Single-leg balance + handball",
+   "Single-leg balance + handball with partner",
+   "Single-leg balance passing with a partner",
+   "Single-leg balance with ball pass (or hold)",
+   "Single-leg balance, handball with partner",
+   "Single-leg balance, handball with partner 3 m apart",
+   "Single-leg balance, pass with partner",
+   "Single-leg stance - passing game (instep pass and stop)",
+   "Single-leg stance - test your partner (push off balance)",
+   "Single-leg stance - testing the partner's balance (balls pressed together)",
+   "Single-leg stance - throwing ball with partner (2-3 m apart)",
+   "Single-leg stance - throwing the ball with a partner"
+  ],
+  "labels": [
+   "Single-leg Stance, Hold the Ball",
+   "Single-leg Balance",
+   "Single-leg Stance",
+   "Single-leg Balance Passing",
+   "Single-leg Balance with Ball Pass"
+  ]
+ },
+ "Single-leg Balance with Knee Drive": {
+  "type": "new",
+  "names": [
+   "Standing Single-leg Balance with knee drive"
+  ],
+  "labels": [
+   "Standing Single-leg Balance with Knee Drive"
+  ]
+ },
+ "Single-leg Calf Raise (step)": {
+  "type": "new",
+  "names": [
+   "Single-leg Calf Raise",
+   "Single-leg Calf Raise (bent & straight knee)",
+   "Single-leg Calf Raise (hold bench)",
+   "Single-leg Calf Raise on Step",
+   "Single-leg calf raise",
+   "Single-leg calf raise (bent knee) on step",
+   "Single-leg calf raise (straight knee) on step",
+   "Single-leg calf raise off a step"
+  ],
+  "labels": [
+   "Single-leg Calf Raise off a Step",
+   "Single-leg Calf Raise"
+  ]
+ },
+ "Single-leg Deadlift Holding a Bag": {
+  "type": "new",
+  "names": [
+   "Single-leg Deadlift holding luggage"
+  ],
+  "labels": [
+   "Single-leg Deadlift Holding Luggage"
+  ]
+ },
+ "Single-leg Dumbbell Calf Raise": {
+  "type": "new",
+  "names": [
+   "Single-leg Dumbbell Calf Raise"
+  ],
+  "labels": []
+ },
+ "Single-leg Hip Thrust (shoulders on bench)": {
+  "type": "new",
+  "names": [
+   "Single-leg Bench Hip Thrust",
+   "Single-leg Hip Thrust",
+   "Single-leg Hip Thrust (shoulders on bed)",
+   "Single-leg Hip Thrust (shoulders on bench)"
+  ],
+  "labels": []
+ },
+ "Single-leg Jump Forward and Hold": {
+  "type": "new",
+  "names": [
+   "Hops forward as far as you can",
+   "Jump backward and land on one leg (alternate legs)",
+   "Jump forward and land on one leg (alternate legs)",
+   "Single-leg jump forward and back, arms up as if marking",
+   "Single-leg jumps - forwards (hold 3 s)"
+  ],
+  "labels": [
+   "Hops Forward as Far as You Can",
+   "Jump Forward and Land on One Leg",
+   "Jump Backward and Land on One Leg",
+   "Single-leg Jump Forward and Back"
+  ]
+ },
+ "Single-leg Kettlebell Deadlift": {
+  "type": "new",
+  "names": [
+   "Single-leg Kettlebell Deadlift"
+  ],
+  "labels": []
+ },
+ "Single-leg Sit-to-Stand": {
+  "type": "new",
+  "names": [
+   "Single-leg Prisoner Squat from bed or chair",
+   "Single-leg sit to stand (chair)"
+  ],
+  "labels": [
+   "Single-leg Prisoner Squat"
+  ]
+ },
+ "Skater Jump (lateral bound)": {
+  "type": "new",
+  "names": [
+   "Lateral Bound (stick)",
+   "Lateral bound (stick landing)",
+   "Lateral bound and stick",
+   "Lateral skater hop",
+   "Skater Bound (stick the landing)",
+   "Skater Jump",
+   "Skater Jump (or skater step)",
+   "Skater hops",
+   "Skating jumps - balancing with the ball in one hand",
+   "Skating jumps - dynamic balancing with ball (reach ball forward, leg back)",
+   "Skating jumps - learning how to land (hold 3 s)",
+   "Triple high-knee skater"
+  ],
+  "labels": [
+   "Lateral Bound",
+   "Lateral Bound and Stick",
+   "Lateral Skater Hop",
+   "Skater Bound",
+   "Skater Hops",
+   "Skating Jumps",
+   "Triple High-knee Skater"
+  ]
+ },
+ "Skater Med-ball Slam": {
+  "type": "new",
+  "names": [
+   "Skater ball slam"
+  ],
+  "labels": [
+   "Skater Ball Slam"
+  ]
+ },
+ "Spoto Press": {
+  "type": "new",
+  "names": [
+   "Spoto Press or Larsen Press"
+  ],
+  "labels": []
+ },
+ "Sprinter Lunge": {
+  "type": "new",
+  "names": [
+   "Sprinter lunge"
+  ],
+  "labels": []
+ },
+ "Squat Pulse to Stand": {
+  "type": "new",
+  "names": [
+   "Squat Pulse to Stand"
+  ],
+  "labels": []
+ },
+ "Squat with Arm Swing": {
+  "type": "new",
+  "names": [
+   "Squat swings"
+  ],
+  "labels": [
+   "Squat Swings"
+  ]
+ },
+ "Standing Cat-Cow (hands on thighs)": {
+  "type": "new",
+  "names": [
+   "Standing Cat-Cow (hands on thighs)"
+  ],
+  "labels": []
+ },
+ "Standing Chest Opener": {
+  "type": "new",
+  "names": [
+   "Standing Chest Openers"
+  ],
+  "labels": []
+ },
+ "Standing Hip CARs": {
+  "type": "new",
+  "names": [
+   "Standing Hip CARs"
+  ],
+  "labels": []
+ },
+ "Standing Hip Flexor Stretch (split stance)": {
+  "type": "new",
+  "names": [
+   "Standing Hip Flexor Stretch",
+   "Standing Hip Flexor Stretch (chair-supported)",
+   "Standing Hip Flexor Stretch (split stance)",
+   "Standing Hip-flexor Stretch (hold desk)"
+  ],
+  "labels": []
+ },
+ "Standing Knee Circles": {
+  "type": "new",
+  "names": [
+   "Hip rotation (knee circles)"
+  ],
+  "labels": [
+   "Hip Rotation"
+  ]
+ },
+ "Step Toe Taps": {
+  "type": "new",
+  "names": [
+   "Fast Toe Taps on the Step"
+  ],
+  "labels": []
+ },
+ "Step-back Burpee (no jump)": {
+  "type": "new",
+  "names": [
+   "Step-back burpee (no jump)"
+  ],
+  "labels": []
+ },
+ "Straight-arm Cable Pulldown": {
+  "type": "new",
+  "names": [
+   "CL1: Straight-arm Pull"
+  ],
+  "labels": [
+   "Straight-arm Pull"
+  ]
+ },
+ "Straight-arm Plank": {
+  "type": "redraw #18",
+  "names": [
+   "Plank Support"
+  ],
+  "labels": [
+   "Plank Support"
+  ]
+ },
+ "Supported Bridge (block under sacrum)": {
+  "type": "new",
+  "names": [
+   "Supported Bridge (block under sacrum)"
+  ],
+  "labels": []
+ },
+ "Swan Dive (Pilates)": {
+  "type": "new",
+  "names": [
+   "Swan Dive",
+   "Swan Dive (2s hold)"
+  ],
+  "labels": []
+ },
+ "Tall-kneeling Pallof Press": {
+  "type": "new",
+  "names": [
+   "Tall-kneeling Pallof Press"
+  ],
+  "labels": []
+ },
+ "Teaser with Band": {
+  "type": "new",
+  "names": [
+   "Teaser with band"
+  ],
+  "labels": []
+ },
+ "Turn and Lunge (Army PRT)": {
+  "type": "new",
+  "names": [
+   "CD2: Turn and Lunge"
+  ],
+  "labels": [
+   "Turn and Lunge"
+  ]
+ },
+ "Wall Angel": {
+  "type": "new",
+  "names": [
+   "Scapular Wall Slides",
+   "Shoulder Wall Slides",
+   "Wall Angels",
+   "Wall Slides",
+   "Wall Slides (ribs down)",
+   "Wall angels",
+   "Wall slide (arms overhead)"
+  ],
+  "labels": [
+   "Wall Slides",
+   "Scapular Wall Slides",
+   "Shoulder Wall Slides",
+   "Wall Slide"
+  ]
+ },
+ "Wall Soleus Stretch (bent knee)": {
+  "type": "new",
+  "names": [
+   "Wall Soleus Stretch (bent knee)"
+  ],
+  "labels": []
+ },
+ "Warrior 1": {
+  "type": "new",
+  "names": [
+   "Supported Warrior 1",
+   "Warrior 1"
+  ],
+  "labels": []
+ },
+ "Weighted Chin-up": {
+  "type": "new",
+  "names": [
+   "Weighted Chin-up",
+   "Weighted chin-up"
+  ],
+  "labels": []
+ },
+ "Weighted Dip (belt)": {
+  "type": "new",
+  "names": [
+   "Weighted Dip",
+   "Weighted Dip \u2013 back-off",
+   "Weighted Dip \u2013 top set"
+  ],
+  "labels": []
+ },
+ "Weighted Plank": {
+  "type": "new",
+  "names": [
+   "Weighted Plank"
+  ],
+  "labels": []
+ },
+ "Weighted Ring Dip": {
+  "type": "new",
+  "names": [
+   "Weighted Ring Dip"
+  ],
+  "labels": []
+ }
+}

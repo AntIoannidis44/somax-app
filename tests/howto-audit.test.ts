@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { it } from 'vitest';
-import { candidates } from '../src/lib/exerciseHowTo';
+import { candidates, findHowToIndex } from '../src/lib/exerciseHowTo';
 import { WORKOUTS } from '../src/data/workouts';
 
 // Run only on demand: AUDIT_LOOKUP=<lookup.json> npx vitest run tests/howto-audit.test.ts
@@ -12,7 +12,7 @@ const out: Record<string, { programs: string[]; idx: number | null; link: boolea
 function add(name: string, prog: string) {
   if (!name) return;
   let idx: number | null = null; let link = false;
-  for (const k of candidates(name)) { if (data.lookup[k] !== undefined) { idx = data.lookup[k]; break; } }
+  idx = findHowToIndex(data.lookup, name) ?? null;
   if (idx === null) for (const k of candidates(name)) if (data.links?.[k]) { link = true; break; }
   const o = (out[name] ??= { programs: [], idx, link });
   if (o.programs.length < 4) o.programs.push(prog);

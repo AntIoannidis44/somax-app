@@ -1,0 +1,2937 @@
+{
+ "0": {
+  "canon": "Barbell Front Squat",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "1": {
+  "canon": "Dumbbell Goblet Squat",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "2": {
+  "canon": "Bodyweight Squat",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "3": {
+  "canon": "Dumbbell Bench Press (flat)",
+  "equip": "dumbbell",
+  "pos": "flat-bench",
+  "arms": "two",
+  "ok": true
+ },
+ "4": {
+  "canon": "Push-up",
+  "equip": "bodyweight",
+  "pos": "prone-plank",
+  "ok": true
+ },
+ "5": {
+  "canon": "Barbell Incline Bench Press",
+  "equip": "barbell",
+  "pos": "incline-bench",
+  "ok": true
+ },
+ "6": {
+  "canon": "Machine Chest Press (seated)",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "7": {
+  "canon": "Bodyweight Reverse Lunge",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "8": {
+  "canon": "Bulgarian Split Squat (bodyweight)",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "9": {
+  "canon": "Dumbbell Lateral Lunge",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true,
+  "issues": "grey framed panels (style differs) - cosmetic"
+ },
+ "10": {
+  "canon": "Seated Cable Row (two-hand)",
+  "equip": "cable",
+  "pos": "seated",
+  "arms": "two",
+  "ok": true
+ },
+ "11": {
+  "canon": "Single-arm Dumbbell Row (knee on bench)",
+  "equip": "dumbbell",
+  "pos": "bent-over",
+  "arms": "one",
+  "ok": true
+ },
+ "12": {
+  "canon": "Inverted Row (bar)",
+  "equip": "bodyweight",
+  "pos": "supine-hanging",
+  "ok": true
+ },
+ "13": {
+  "canon": "Barbell Romanian Deadlift",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "14": {
+  "canon": "Trap Bar Deadlift",
+  "equip": "trap bar",
+  "pos": "standing",
+  "ok": true
+ },
+ "15": {
+  "canon": "Single-leg Romanian Deadlift (dumbbell)",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "16": {
+  "canon": "Glute Bridge (floor)",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "ok": true
+ },
+ "17": {
+  "canon": "Single-leg Glute Bridge",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "legs": "one",
+  "ok": true,
+  "issues": "male render for a bodyweight move (gender rule) - cosmetic"
+ },
+ "18": {
+  "canon": "Straight-arm Plank",
+  "equip": "bodyweight",
+  "pos": "prone-plank",
+  "ok": false,
+  "issues": "panel 1 is kneeling, not a plank; no shoulder tap shown"
+ },
+ "19": {
+  "canon": "Ab Wheel Rollout (kneeling)",
+  "equip": "ab wheel",
+  "pos": "kneeling",
+  "ok": true
+ },
+ "20": {
+  "canon": "Lat Pulldown (machine, wide grip)",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "21": {
+  "canon": "Dumbbell Shoulder Press (seated)",
+  "equip": "dumbbell",
+  "pos": "seated",
+  "arms": "two",
+  "ok": true
+ },
+ "22": {
+  "canon": "Seated Calf Raise (machine)",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": false,
+  "issues": "machine looks like a leg-extension pad over the knees; panels barely differ - verify against a real seated calf raise"
+ },
+ "23": {
+  "canon": "Cable Curl (straight bar, standing)",
+  "equip": "cable",
+  "pos": "standing",
+  "arms": "two",
+  "ok": true
+ },
+ "25": {
+  "canon": "Russian Twist (dumbbell, seated)",
+  "equip": "dumbbell",
+  "pos": "seated",
+  "ok": true,
+  "issues": "holds a dumbbell - plain/bodyweight 'Russian twist' names show a loaded version"
+ },
+ "26": {
+  "canon": "Landmine Rotation",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "27": {
+  "canon": "Bench Dip",
+  "equip": "bench",
+  "pos": "seated",
+  "ok": true
+ },
+ "28": {
+  "canon": "Cable Triceps Pushdown (rope)",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "30": {
+  "canon": "Suitcase Carry (one dumbbell)",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "arms": "one",
+  "ok": true
+ },
+ "31": {
+  "canon": "Band Pull-apart",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "32": {
+  "canon": "Dead Hang",
+  "equip": "bar",
+  "pos": "hanging",
+  "ok": true,
+  "issues": "static hold - panels nearly identical by nature"
+ },
+ "33": {
+  "canon": "Mini-band Lateral Walk",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true,
+  "issues": "random bench in the background - cosmetic"
+ },
+ "34": {
+  "canon": "Lying Figure-4 Glute Stretch",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "ok": true
+ },
+ "35": {
+  "canon": "Band External Rotation at 90/90",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "36": {
+  "canon": "Floor Back Extension (Superman)",
+  "equip": "bodyweight",
+  "pos": "prone",
+  "ok": true
+ },
+ "37": {
+  "canon": "Seated Leg Curl (machine)",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "38": {
+  "canon": "Dead Bug",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "ok": true
+ },
+ "40": {
+  "canon": "Cable Crunch (kneeling)",
+  "equip": "cable",
+  "pos": "kneeling",
+  "ok": true
+ },
+ "41": {
+  "canon": "Dumbbell Fly (incline)",
+  "equip": "dumbbell",
+  "pos": "incline-bench",
+  "ok": true
+ },
+ "42": {
+  "canon": "Bear Crawl",
+  "equip": "bodyweight",
+  "pos": "quadruped",
+  "ok": false,
+  "issues": "titled Crab Walk but shows a BEAR crawl (face down); 'crab walk' names must not use it"
+ },
+ "43": {
+  "canon": "Reverse Pec Deck (machine)",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "44": {
+  "canon": "Standing Hamstring Stretch (heel on step)",
+  "equip": "step",
+  "pos": "standing",
+  "ok": true
+ },
+ "45": {
+  "canon": "Single-arm Dumbbell Snatch",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "arms": "one",
+  "ok": true
+ },
+ "46": {
+  "canon": "Wall Ball Thruster",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "47": {
+  "canon": "Seated Forward Fold",
+  "equip": "bodyweight",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "48": {
+  "canon": "Seated Side Bend (bench)",
+  "equip": "bench",
+  "pos": "seated",
+  "ok": true
+ },
+ "49": {
+  "canon": "Standing Ankle Circles",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true,
+  "issues": "panels barely differ"
+ },
+ "50": {
+  "canon": "Seated Chest Opener",
+  "equip": "bench",
+  "pos": "seated",
+  "ok": true
+ },
+ "51": {
+  "canon": "Barbell Shrug",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": false,
+  "issues": "panels nearly identical - shoulders don't visibly rise (known defect)"
+ },
+ "52": {
+  "canon": "Reclined Twist (supine)",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "ok": true
+ },
+ "53": {
+  "canon": "Butterfly Stretch (seated, soles together)",
+  "equip": "bodyweight",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "54": {
+  "canon": "Wall Handstand (chest to wall)",
+  "equip": "wall",
+  "pos": "inverted",
+  "ok": true,
+  "issues": "panel 1 is a plank start - acceptable"
+ },
+ "55": {
+  "canon": "Seated Ankle Circles (bench)",
+  "equip": "bench",
+  "pos": "seated",
+  "ok": true
+ },
+ "56": {
+  "canon": "Arm Circles",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": false,
+  "issues": "panels don't show a circle - one arm up then both down"
+ },
+ "57": {
+  "canon": "A-Skip",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": false,
+  "issues": "panels 1 and 2 are the same pose - no skip shown"
+ },
+ "58": {
+  "canon": "45-degree Back Extension (bench)",
+  "equip": "hyperextension bench",
+  "pos": "prone",
+  "ok": true
+ },
+ "59": {
+  "canon": "Dumbbell Swing (one dumbbell, two hands)",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "60": {
+  "canon": "Bear Crawl",
+  "equip": "bodyweight",
+  "pos": "quadruped",
+  "ok": true
+ },
+ "61": {
+  "canon": "Burpee",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "62": {
+  "canon": "Butt Kicks",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "63": {
+  "canon": "Standing Calf Raise (barbell)",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": false,
+  "issues": "heels barely rise - panels near identical (known defect); 30 names use it"
+ },
+ "64": {
+  "canon": "Standing Calf Stretch (wall)",
+  "equip": "wall",
+  "pos": "standing",
+  "ok": true
+ },
+ "65": {
+  "canon": "Cat-Cow",
+  "equip": "bodyweight",
+  "pos": "quadruped",
+  "ok": true
+ },
+ "66": {
+  "canon": "Cable Chest Fly (standing, high pulleys)",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "67": {
+  "canon": "Dumbbell Rear-delt Fly (bent-over)",
+  "equip": "dumbbell",
+  "pos": "bent-over",
+  "ok": true
+ },
+ "68": {
+  "canon": "Doorway Chest Stretch",
+  "equip": "doorway",
+  "pos": "standing",
+  "ok": true
+ },
+ "69": {
+  "canon": "Pallof Press (cable)",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "70": {
+  "canon": "Cable Woodchop (high to low)",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "71": {
+  "canon": "Parallel Bar Dip",
+  "equip": "dip bars",
+  "pos": "supported",
+  "ok": true
+ },
+ "72": {
+  "canon": "Overhead Dumbbell Triceps Extension (standing, one dumbbell two hands)",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "73": {
+  "canon": "Dumbbell Biceps Curl (standing)",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "arms": "two",
+  "ok": true
+ },
+ "74": {
+  "canon": "Flutter Kicks",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "ok": false,
+  "issues": "lying on a raised board, legs barely change between panels"
+ },
+ "75": {
+  "canon": "Crunch",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "ok": true
+ },
+ "76": {
+  "canon": "Hanging Leg Raise",
+  "equip": "pull-up bar",
+  "pos": "hanging",
+  "ok": true
+ },
+ "77": {
+  "canon": "Mountain Climber",
+  "equip": "bodyweight",
+  "pos": "plank",
+  "ok": true
+ },
+ "78": {
+  "canon": "The Hundred",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": false,
+  "issues": "panels nearly identical (known defect)"
+ },
+ "79": {
+  "canon": "Sit-up",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "ok": true
+ },
+ "80": {
+  "canon": "V-up",
+  "equip": "bodyweight",
+  "pos": "supine",
+  "ok": true
+ },
+ "81": {
+  "canon": "Seated Figure-4 Glute Stretch (chair)",
+  "equip": "chair",
+  "pos": "seated",
+  "ok": true
+ },
+ "82": {
+  "canon": "Barbell Wrist Curl (seated)",
+  "equip": "barbell",
+  "pos": "seated",
+  "ok": true
+ },
+ "83": {
+  "canon": "Lying Hamstring Stretch (strap)",
+  "equip": "strap",
+  "pos": "supine",
+  "ok": true
+ },
+ "84": {
+  "canon": "High Knees",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "85": {
+  "canon": "Hip Abduction Machine (seated)",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "86": {
+  "canon": "Copenhagen Plank (bench)",
+  "equip": "bench",
+  "pos": "side-lying",
+  "ok": true
+ },
+ "87": {
+  "canon": "Standing Hip Circle",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "88": {
+  "canon": "Barbell Hip Thrust",
+  "equip": "barbell",
+  "pos": "supine-bench",
+  "legs": "two",
+  "ok": true
+ },
+ "89": {
+  "canon": "Half-kneeling Hip Flexor Stretch",
+  "equip": "bodyweight",
+  "pos": "half-kneeling",
+  "ok": false,
+  "issues": "picture title says Standing but the back knee is down - it is a half-kneeling stretch; standing names removed"
+ },
+ "90": {
+  "canon": "Barbell Deadlift",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "91": {
+  "canon": "Barbell Bent-over Row",
+  "equip": "barbell",
+  "pos": "bent-over",
+  "ok": true
+ },
+ "92": {
+  "canon": "Standing IT Band Side Stretch",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "93": {
+  "canon": "Kettlebell Halo",
+  "equip": "kettlebell",
+  "pos": "standing",
+  "ok": true
+ },
+ "94": {
+  "canon": "Kettlebell Swing (two-hand)",
+  "equip": "kettlebell",
+  "pos": "standing",
+  "arms": "two",
+  "ok": true
+ },
+ "95": {
+  "canon": "Child's Pose",
+  "equip": "mat",
+  "pos": "kneeling",
+  "ok": true
+ },
+ "96": {
+  "canon": "Lateral Shuffle",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "97": {
+  "canon": "Lying Leg Curl (machine)",
+  "equip": "machine",
+  "pos": "prone",
+  "ok": true
+ },
+ "98": {
+  "canon": "Leg Extension (machine)",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "99": {
+  "canon": "Leg Press (45-degree machine)",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "100": {
+  "canon": "Leg Swing (front to back)",
+  "equip": "support",
+  "pos": "standing",
+  "ok": true
+ },
+ "101": {
+  "canon": "Leg Swing (side to side)",
+  "equip": "support",
+  "pos": "standing",
+  "ok": true
+ },
+ "102": {
+  "canon": "Dumbbell Farmer's Carry",
+  "equip": "dumbbell",
+  "pos": "walking",
+  "ok": true
+ },
+ "103": {
+  "canon": "Dumbbell Forward Lunge",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "104": {
+  "canon": "Neck Side Stretch",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "105": {
+  "canon": "Seated Neck Rotation",
+  "equip": "bench",
+  "pos": "seated",
+  "ok": true
+ },
+ "106": {
+  "canon": "Nordic Hamstring Curl (anchored)",
+  "equip": "bench",
+  "pos": "kneeling",
+  "ok": true
+ },
+ "107": {
+  "canon": "Hang Power Clean",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "108": {
+  "canon": "Bird Dog",
+  "equip": "mat",
+  "pos": "quadruped",
+  "ok": true
+ },
+ "109": {
+  "canon": "Forearm Plank",
+  "equip": "mat",
+  "pos": "plank",
+  "ok": true
+ },
+ "110": {
+  "canon": "Side Plank (forearm)",
+  "equip": "mat",
+  "pos": "side",
+  "ok": true
+ },
+ "111": {
+  "canon": "Box Jump",
+  "equip": "box",
+  "pos": "standing",
+  "ok": true
+ },
+ "112": {
+  "canon": "Standing Quad Stretch",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": false,
+  "issues": "panels nearly identical (known)"
+ },
+ "113": {
+  "canon": "Cable Face Pull",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "114": {
+  "canon": "Band External Rotation",
+  "equip": "band",
+  "pos": "standing",
+  "ok": false,
+  "issues": "BROKEN: panel 2 shows a straight-arm forward punch with band round torso, not external rotation - all names removed"
+ },
+ "115": {
+  "canon": "Band Internal Rotation",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "116": {
+  "canon": "Build-up Strides",
+  "equip": "bodyweight",
+  "pos": "running",
+  "ok": true
+ },
+ "117": {
+  "canon": "Standing Shoulder Rolls / Scapular Circles",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "118": {
+  "canon": "Seated Marching (chair)",
+  "equip": "chair",
+  "pos": "seated",
+  "ok": true
+ },
+ "119": {
+  "canon": "Cross-body Shoulder Stretch",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": false,
+  "issues": "panels nearly identical (known)"
+ },
+ "120": {
+  "canon": "Dumbbell Lateral Raise",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "121": {
+  "canon": "Dumbbell Shrug",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": false,
+  "issues": "panels identical - shoulders don't rise"
+ },
+ "122": {
+  "canon": "Sled Pull (rope, hand over hand)",
+  "equip": "sled",
+  "pos": "standing",
+  "ok": true
+ },
+ "123": {
+  "canon": "Sled Push",
+  "equip": "sled",
+  "pos": "standing",
+  "ok": true
+ },
+ "124": {
+  "canon": "Standing Forward Bend",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "125": {
+  "canon": "Medicine Ball Chest Pass (to wall)",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "126": {
+  "canon": "Rotational Medicine Ball Scoop Toss",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "127": {
+  "canon": "Rotational Medicine Ball Throw (standing, side to wall)",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "128": {
+  "canon": "Medicine Ball Slam",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "129": {
+  "canon": "Dumbbell Thruster",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "130": {
+  "canon": "Tibialis Raise (back against wall)",
+  "equip": "wall",
+  "pos": "standing",
+  "ok": true
+ },
+ "131": {
+  "canon": "Standing Side Bend",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "132": {
+  "canon": "Standing Torso Rotation",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "133": {
+  "canon": "Overhead Triceps Stretch",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "134": {
+  "canon": "Kettlebell Turkish Get-up",
+  "equip": "kettlebell",
+  "pos": "floor-to-kneel",
+  "ok": true,
+  "issues": "shows the first half only (lying to half-kneeling)"
+ },
+ "135": {
+  "canon": "Barbell Overhead Press (standing)",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "136": {
+  "canon": "Pull-up (overhand grip)",
+  "equip": "pull-up bar",
+  "pos": "hanging",
+  "grip": "overhand",
+  "ok": true
+ },
+ "137": {
+  "canon": "Wall Ball",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "138": {
+  "canon": "Barbell Back Squat",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "139": {
+  "canon": "Barbell Bench Press (flat)",
+  "equip": "barbell",
+  "pos": "lying-flat-bench",
+  "ok": true
+ },
+ "140": {
+  "canon": "Single-leg Stand (hold support)",
+  "equip": "bench",
+  "pos": "standing",
+  "ok": true
+ },
+ "141": {
+  "canon": "Semi-tandem Stand (hold support)",
+  "equip": "bench",
+  "pos": "standing",
+  "ok": true
+ },
+ "142": {
+  "canon": "Feet-together Stand (hold support)",
+  "equip": "bench",
+  "pos": "standing",
+  "ok": true
+ },
+ "143": {
+  "canon": "Heel-to-toe Walk",
+  "equip": "bodyweight",
+  "pos": "walking",
+  "ok": true
+ },
+ "144": {
+  "canon": "Sideways Walk (along bench)",
+  "equip": "bench",
+  "pos": "walking",
+  "ok": true
+ },
+ "145": {
+  "canon": "Quadruped Hip CARs",
+  "equip": "mat",
+  "pos": "quadruped",
+  "ok": true
+ },
+ "146": {
+  "canon": "Standing Shoulder CARs",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "147": {
+  "canon": "Quadruped Reach-back (hand behind head)",
+  "equip": "mat",
+  "pos": "quadruped",
+  "ok": true,
+  "issues": "cosmetic: panel 2 label overlaps panel 1 floor"
+ },
+ "148": {
+  "canon": "Seated Arm Raise with Breath",
+  "equip": "chair",
+  "pos": "seated",
+  "ok": true
+ },
+ "149": {
+  "canon": "Band Hip Flexor Kick",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "150": {
+  "canon": "Deep Abdominal Hold (lying, knees bent)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "151": {
+  "canon": "Line Hops",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "152": {
+  "canon": "Single-leg Hop in Place",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "legs": "one",
+  "ok": false,
+  "issues": "panels nearly identical - no visible hop"
+ },
+ "153": {
+  "canon": "Sandbag Walking Lunge",
+  "equip": "sandbag",
+  "pos": "standing",
+  "ok": true
+ },
+ "154": {
+  "canon": "Medicine Ball Sit-up",
+  "equip": "medicine ball",
+  "pos": "supine",
+  "ok": true
+ },
+ "155": {
+  "canon": "Anti-rotation Hold on Balance Cushion (cable)",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "156": {
+  "canon": "Address Position Overhead Raise (golf club)",
+  "equip": "golf club",
+  "pos": "standing",
+  "ok": true
+ },
+ "157": {
+  "canon": "Arm Rotations (golf club vertical)",
+  "equip": "golf club",
+  "pos": "standing",
+  "ok": true
+ },
+ "158": {
+  "canon": "Club-assisted Trunk Rotation",
+  "equip": "golf club",
+  "pos": "standing",
+  "ok": true
+ },
+ "159": {
+  "canon": "Seated Spine Twist (club across shoulders)",
+  "equip": "golf club",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "160": {
+  "canon": "Seated Rotation (club across chest)",
+  "equip": "golf club",
+  "pos": "seated",
+  "ok": true
+ },
+ "161": {
+  "canon": "Half-kneeling Rotation (club)",
+  "equip": "golf club",
+  "pos": "half-kneeling",
+  "ok": true
+ },
+ "162": {
+  "canon": "Upper-back Rotation in Golf Stance",
+  "equip": "golf club",
+  "pos": "standing",
+  "ok": true
+ },
+ "163": {
+  "canon": "Band Speed Rotation (golf posture)",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "164": {
+  "canon": "Club Rotation (low to high)",
+  "equip": "golf club",
+  "pos": "standing",
+  "ok": true
+ },
+ "165": {
+  "canon": "Seated Back Stretch (chair)",
+  "equip": "chair",
+  "pos": "seated",
+  "ok": true
+ },
+ "166": {
+  "canon": "Bench Hamstring Stretch (seated)",
+  "equip": "bench",
+  "pos": "seated",
+  "ok": true
+ },
+ "167": {
+  "canon": "Standing Chest Stretch (arms back)",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "168": {
+  "canon": "SkiErg",
+  "equip": "skierg",
+  "pos": "standing",
+  "ok": true
+ },
+ "169": {
+  "canon": "Band Ankle Eversion",
+  "equip": "band",
+  "pos": "seated-floor",
+  "ok": false,
+  "issues": "panels nearly identical"
+ },
+ "170": {
+  "canon": "Eccentric Heel Drop (step)",
+  "equip": "step",
+  "pos": "standing",
+  "ok": true
+ },
+ "171": {
+  "canon": "Side Step-over (step)",
+  "equip": "step",
+  "pos": "standing",
+  "ok": true
+ },
+ "172": {
+  "canon": "Neck Isometrics (seated)",
+  "equip": "chair",
+  "pos": "seated",
+  "ok": true
+ },
+ "173": {
+  "canon": "Standing Cross-body Punches",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "174": {
+  "canon": "Dumbbell Punches (light)",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "175": {
+  "canon": "Band Straight Punches",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "176": {
+  "canon": "Snap-down to Athletic Stance",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "177": {
+  "canon": "Stepping to Targets (hand support)",
+  "equip": "support",
+  "pos": "standing",
+  "ok": true
+ },
+ "178": {
+  "canon": "Ankle Dribble",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": false,
+  "issues": "panels nearly identical"
+ },
+ "179": {
+  "canon": "Band Running (supine, alternating heels)",
+  "equip": "band",
+  "pos": "supine",
+  "ok": true
+ },
+ "180": {
+  "canon": "Golf-posture Pelvic Turns",
+  "equip": "golf club",
+  "pos": "standing",
+  "ok": true
+ },
+ "181": {
+  "canon": "(not Control Balance) straight-leg bridge to one leg up",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": false,
+  "issues": "WRONG: Pilates Control Balance starts in a plough (feet over the head); panel 1 is a straight-leg bridge, panel 2 a bridge with one leg held. Name removed"
+ },
+ "182": {
+  "canon": "Heel Hook (hanging)",
+  "equip": "pull-up bar",
+  "pos": "hanging",
+  "ok": true
+ },
+ "183": {
+  "canon": "Band Speed Skiers",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "184": {
+  "canon": "Single-leg Stand on Balance Disc",
+  "equip": "balance disc",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "185": {
+  "canon": "Two-foot Stand on Balance Disc",
+  "equip": "balance disc",
+  "pos": "standing",
+  "ok": true
+ },
+ "186": {
+  "canon": "Battle Ropes",
+  "equip": "battle ropes",
+  "pos": "standing",
+  "ok": true
+ },
+ "187": {
+  "canon": "Spine Stretch Forward (seated)",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "188": {
+  "canon": "Seated Spine Twist",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "189": {
+  "canon": "Countermovement Jump",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "190": {
+  "canon": "Depth Jump",
+  "equip": "box",
+  "pos": "standing",
+  "ok": true
+ },
+ "191": {
+  "canon": "Drop Landing (low box)",
+  "equip": "box",
+  "pos": "standing",
+  "ok": true
+ },
+ "192": {
+  "canon": "Pogo Hops",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "193": {
+  "canon": "Split Pogo",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": false,
+  "issues": "looks like walking strides, no visible jump"
+ },
+ "194": {
+  "canon": "Star Jump",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "195": {
+  "canon": "Single-leg Hop and Stick",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "196": {
+  "canon": "Bounding",
+  "equip": "bodyweight",
+  "pos": "running",
+  "ok": true
+ },
+ "197": {
+  "canon": "B-skip",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "198": {
+  "canon": "Carioca (grapevine)",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "199": {
+  "canon": "Duck Walk",
+  "equip": "bodyweight",
+  "pos": "squat",
+  "ok": true
+ },
+ "200": {
+  "canon": "90/90 Hip Stretch",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true,
+  "issues": "single panel; dynamic switch names get the position only"
+ },
+ "201": {
+  "canon": "Couch Stretch",
+  "equip": "wall",
+  "pos": "half-kneeling",
+  "ok": true
+ },
+ "202": {
+  "canon": "World's Greatest Stretch",
+  "equip": "mat",
+  "pos": "lunge",
+  "ok": true
+ },
+ "203": {
+  "canon": "Brettzel",
+  "equip": "mat",
+  "pos": "side-lying",
+  "ok": true
+ },
+ "204": {
+  "canon": "Open Book (side-lying thoracic rotation)",
+  "equip": "mat",
+  "pos": "side-lying",
+  "ok": true
+ },
+ "205": {
+  "canon": "Thoracic Extension over Foam Roller",
+  "equip": "foam roller",
+  "pos": "supine",
+  "ok": true
+ },
+ "206": {
+  "canon": "Spiderman Lunge with Rotation",
+  "equip": "bodyweight",
+  "pos": "lunge",
+  "ok": true
+ },
+ "207": {
+  "canon": "Toy Soldier (straight-leg kick)",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "208": {
+  "canon": "Prone Floor Angel",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": true
+ },
+ "209": {
+  "canon": "Wall Walk",
+  "equip": "wall",
+  "pos": "plank-to-inverted",
+  "ok": true
+ },
+ "210": {
+  "canon": "Open Leg Rocker",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "211": {
+  "canon": "Rolling Like a Ball",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "212": {
+  "canon": "Knee Folds (table top)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "213": {
+  "canon": "Pancake Stretch",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "214": {
+  "canon": "Boomerang Prep",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "215": {
+  "canon": "Standing Roll Down",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true,
+  "issues": "Pilates Half Roll Down / Roll-back are seated - names removed; picture unused"
+ },
+ "216": {
+  "canon": "Single Leg Bend (knee to hip height)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "217": {
+  "canon": "Single Leg Circles (straight leg)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "218": {
+  "canon": "Trap-bar Jump",
+  "equip": "trap bar",
+  "pos": "standing",
+  "ok": true
+ },
+ "219": {
+  "canon": "Lizard Lunge",
+  "equip": "mat",
+  "pos": "lunge",
+  "ok": true
+ },
+ "220": {
+  "canon": "Boat Pose",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "221": {
+  "canon": "Chair Pose",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "222": {
+  "canon": "Revolved Chair Pose",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "223": {
+  "canon": "Cobra Pose",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": true
+ },
+ "224": {
+  "canon": "Cobra / Double Leg Lift Combo",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": false,
+  "issues": "panel 2 lifts ONE leg - name says double leg lift"
+ },
+ "225": {
+  "canon": "Sphinx Pose",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": true
+ },
+ "226": {
+  "canon": "Downward Dog",
+  "equip": "mat",
+  "pos": "inverted-v",
+  "ok": true
+ },
+ "227": {
+  "canon": "Dolphin Pose",
+  "equip": "mat",
+  "pos": "inverted-v",
+  "ok": false,
+  "issues": "cosmetic: panel 1 is cut off with label 2 drawn over it; panels nearly identical"
+ },
+ "228": {
+  "canon": "Eagle Arms",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "229": {
+  "canon": "Eight-limbed Pose",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": true
+ },
+ "230": {
+  "canon": "Mountain Pose",
+  "equip": "mat",
+  "pos": "standing",
+  "ok": true
+ },
+ "231": {
+  "canon": "Prayer Pose",
+  "equip": "mat",
+  "pos": "standing",
+  "ok": true
+ },
+ "232": {
+  "canon": "Raised Arms Pose",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "233": {
+  "canon": "Elevated Pigeon (bench)",
+  "equip": "bench",
+  "pos": "lunge",
+  "ok": true
+ },
+ "234": {
+  "canon": "Half Moon Pose",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "235": {
+  "canon": "Happy Baby",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "236": {
+  "canon": "Crow Pose",
+  "equip": "mat",
+  "pos": "squat",
+  "ok": true
+ },
+ "237": {
+  "canon": "Tree Pose",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "238": {
+  "canon": "Triangle Pose",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "239": {
+  "canon": "Revolved Triangle",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "240": {
+  "canon": "Pyramid Pose (blocks)",
+  "equip": "blocks",
+  "pos": "standing",
+  "ok": true
+ },
+ "241": {
+  "canon": "Crescent Lunge (high lunge, back heel up)",
+  "equip": "mat",
+  "pos": "lunge",
+  "ok": true
+ },
+ "242": {
+  "canon": "Warrior 2",
+  "equip": "chair",
+  "pos": "standing",
+  "ok": true
+ },
+ "243": {
+  "canon": "Warrior 2 to Reverse Warrior",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "244": {
+  "canon": "Warrior 3",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "245": {
+  "canon": "Thread the Needle",
+  "equip": "mat",
+  "pos": "quadruped",
+  "ok": true
+ },
+ "246": {
+  "canon": "Supine Twist",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "247": {
+  "canon": "Savasana",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "248": {
+  "canon": "Legs up the Wall",
+  "equip": "wall",
+  "pos": "supine",
+  "ok": true
+ },
+ "249": {
+  "canon": "Puppy Pose",
+  "equip": "mat",
+  "pos": "kneeling",
+  "ok": true
+ },
+ "250": {
+  "canon": "Band Chest Press (standing, anchored behind)",
+  "equip": "band",
+  "pos": "standing",
+  "arms": "two",
+  "ok": true
+ },
+ "251": {
+  "canon": "Band Face Pull",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "252": {
+  "canon": "Band Good Morning",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "253": {
+  "canon": "Seated Band Leg Press",
+  "equip": "band",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "254": {
+  "canon": "Side-lying Band Leg Press",
+  "equip": "band",
+  "pos": "side-lying",
+  "ok": true
+ },
+ "255": {
+  "canon": "Band Shoulder Dislocates",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "256": {
+  "canon": "Barbell Reverse Lunge",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "257": {
+  "canon": "Bird-dog Row (band)",
+  "equip": "band",
+  "pos": "quadruped",
+  "ok": true
+ },
+ "258": {
+  "canon": "Broad Jump",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "259": {
+  "canon": "Burpee Broad Jump",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "260": {
+  "canon": "Cable Glute Kickback",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "261": {
+  "canon": "Cable Pullover (standing)",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "262": {
+  "canon": "Rowing Machine (erg)",
+  "equip": "rower",
+  "pos": "seated",
+  "ok": true
+ },
+ "263": {
+  "canon": "Chest-supported Dumbbell Row (incline bench)",
+  "equip": "dumbbell",
+  "pos": "prone-incline",
+  "ok": true
+ },
+ "264": {
+  "canon": "Chest-supported Machine Row",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "265": {
+  "canon": "Side-lying Clam",
+  "equip": "mat",
+  "pos": "side-lying",
+  "ok": true
+ },
+ "266": {
+  "canon": "Cossack Squat",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "267": {
+  "canon": "Criss Cross",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "268": {
+  "canon": "Dumbbell Side Bend",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "arms": "one",
+  "ok": true
+ },
+ "269": {
+  "canon": "Deep Squat with Thoracic Reach",
+  "equip": "bodyweight",
+  "pos": "squat",
+  "ok": true
+ },
+ "270": {
+  "canon": "Deep Squat and Rotate Walk",
+  "equip": "bodyweight",
+  "pos": "squat",
+  "ok": true
+ },
+ "271": {
+  "canon": "Double Leg Kicks",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": true
+ },
+ "272": {
+  "canon": "Dragon Flag Negative",
+  "equip": "bench",
+  "pos": "supine",
+  "ok": true
+ },
+ "273": {
+  "canon": "Dumbbell Man-maker",
+  "equip": "dumbbell",
+  "pos": "plank-to-standing",
+  "ok": true
+ },
+ "274": {
+  "canon": "Dumbbell Split Squat",
+  "equip": "dumbbell",
+  "pos": "split",
+  "ok": true
+ },
+ "275": {
+  "canon": "Forearm Pronation/Supination (hammer)",
+  "equip": "hammer",
+  "pos": "seated",
+  "ok": true
+ },
+ "276": {
+  "canon": "Tuck Front Lever Hold",
+  "equip": "pull-up bar",
+  "pos": "hanging",
+  "ok": true
+ },
+ "277": {
+  "canon": "Dumbbell Front-rack Reverse Lunge",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "278": {
+  "canon": "Wheel (full bridge)",
+  "equip": "mat",
+  "pos": "supine-inverted",
+  "ok": true
+ },
+ "279": {
+  "canon": "Garland Squat (Malasana)",
+  "equip": "mat",
+  "pos": "squat",
+  "ok": true
+ },
+ "280": {
+  "canon": "Grip Squeeze (gripper)",
+  "equip": "gripper",
+  "pos": "seated",
+  "ok": true
+ },
+ "281": {
+  "canon": "Hack Squat (machine)",
+  "equip": "machine",
+  "pos": "standing",
+  "ok": true
+ },
+ "282": {
+  "canon": "Half-kneeling Single-arm Dumbbell Press",
+  "equip": "dumbbell",
+  "pos": "half-kneeling",
+  "arms": "one",
+  "ok": true
+ },
+ "283": {
+  "canon": "Half-kneeling Landmine Press",
+  "equip": "landmine",
+  "pos": "half-kneeling",
+  "arms": "one",
+  "ok": true
+ },
+ "284": {
+  "canon": "Seated Leg Tuck and Twist",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "285": {
+  "canon": "Hollow Body Hold",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "286": {
+  "canon": "Incline Cable Fly",
+  "equip": "cable",
+  "pos": "incline-bench",
+  "ok": true
+ },
+ "287": {
+  "canon": "Jackknife (Pilates)",
+  "equip": "mat",
+  "pos": "supine-inverted",
+  "ok": true
+ },
+ "288": {
+  "canon": "Jefferson Curl (barbell, on box)",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "289": {
+  "canon": "Jump Squat",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "290": {
+  "canon": "Kettlebell Gorilla Row",
+  "equip": "kettlebell",
+  "pos": "bent-over",
+  "ok": true
+ },
+ "291": {
+  "canon": "Knee Hugs (lying)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "292": {
+  "canon": "Landmine Rotational Press",
+  "equip": "landmine",
+  "pos": "standing",
+  "ok": true
+ },
+ "293": {
+  "canon": "Lateral Squat and Reach Walk",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "294": {
+  "canon": "Low Lunge (arms up)",
+  "equip": "mat",
+  "pos": "low-lunge",
+  "ok": true
+ },
+ "295": {
+  "canon": "L-sit (parallettes)",
+  "equip": "parallettes",
+  "pos": "supported",
+  "ok": true
+ },
+ "296": {
+  "canon": "Barbell Skull Crusher",
+  "equip": "barbell",
+  "pos": "lying-flat-bench",
+  "ok": true
+ },
+ "297": {
+  "canon": "Dumbbell Skull Crusher",
+  "equip": "dumbbell",
+  "pos": "lying-flat-bench",
+  "ok": true
+ },
+ "298": {
+  "canon": "Lying Leg Raise",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "299": {
+  "canon": "Machine Shoulder Press",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "300": {
+  "canon": "Medicine Ball Backward Overhead Throw",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "301": {
+  "canon": "Medicine Ball Overhead Throw (forward)",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "302": {
+  "canon": "Mini Squat",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "303": {
+  "canon": "Oblique Curl (ball squeeze)",
+  "equip": "ball",
+  "pos": "supine",
+  "ok": true
+ },
+ "304": {
+  "canon": "Overhead Reverse Lunge (single dumbbell)",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "arms": "one",
+  "ok": true
+ },
+ "305": {
+  "canon": "Overhead Squat (dowel / club)",
+  "equip": "dowel",
+  "pos": "standing",
+  "ok": true
+ },
+ "306": {
+  "canon": "Assisted Pistol Squat (hold pole)",
+  "equip": "pole",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "307": {
+  "canon": "Planche Lean",
+  "equip": "mat",
+  "pos": "plank",
+  "ok": false,
+  "issues": "panel 2 looks like a crouch with feet down, not a tuck planche"
+ },
+ "308": {
+  "canon": "Plank to Chaturanga",
+  "equip": "mat",
+  "pos": "plank",
+  "ok": true
+ },
+ "309": {
+  "canon": "Plank Up-downs",
+  "equip": "mat",
+  "pos": "plank",
+  "ok": true
+ },
+ "310": {
+  "canon": "Prone Band Hamstring Curl",
+  "equip": "band",
+  "pos": "prone",
+  "ok": true
+ },
+ "311": {
+  "canon": "Prone Opposite Arm and Leg Raise",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": true
+ },
+ "312": {
+  "canon": "Prone Y Raise (incline bench, dumbbells)",
+  "equip": "dumbbell",
+  "pos": "prone-incline",
+  "ok": true
+ },
+ "313": {
+  "canon": "Renegade Row (dumbbells)",
+  "equip": "dumbbell",
+  "pos": "plank",
+  "ok": true
+ },
+ "314": {
+  "canon": "Reverse Hyper (bench)",
+  "equip": "bench",
+  "pos": "prone",
+  "ok": true
+ },
+ "315": {
+  "canon": "Reverse Nordic",
+  "equip": "mat",
+  "pos": "kneeling",
+  "ok": true
+ },
+ "316": {
+  "canon": "Dumbbell Reverse Wrist Curl (seated)",
+  "equip": "dumbbell",
+  "pos": "seated",
+  "ok": true
+ },
+ "317": {
+  "canon": "Ring Fallout (kneeling)",
+  "equip": "rings",
+  "pos": "kneeling",
+  "ok": true
+ },
+ "318": {
+  "canon": "Ring Support Hold",
+  "equip": "rings",
+  "pos": "supported",
+  "ok": true
+ },
+ "319": {
+  "canon": "Roll Over (Pilates)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "320": {
+  "canon": "Roll Over Prep (stability ball)",
+  "equip": "stability ball",
+  "pos": "supine",
+  "ok": true
+ },
+ "321": {
+  "canon": "Roll Up (Pilates)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "322": {
+  "canon": "Running Man Single-leg Squat",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "323": {
+  "canon": "Saw (Pilates)",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "324": {
+  "canon": "Scissors (Pilates)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "325": {
+  "canon": "Seated Hamstring Stretch",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "326": {
+  "canon": "Seated Spine Curl",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true,
+  "issues": "cosmetic: panel 2 mat floats/cropped"
+ },
+ "327": {
+  "canon": "Side Lunge",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "328": {
+  "canon": "Sideways Roll (from squat)",
+  "equip": "mat",
+  "pos": "squat-to-side",
+  "ok": true
+ },
+ "329": {
+  "canon": "Kneeling Single-leg Kickback",
+  "equip": "mat",
+  "pos": "quadruped",
+  "ok": true
+ },
+ "330": {
+  "canon": "Single-leg Shallow Squat",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "331": {
+  "canon": "Single Straight Leg Lower",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "332": {
+  "canon": "Sit-to-Stand (chair)",
+  "equip": "chair",
+  "pos": "seated-to-standing",
+  "ok": true
+ },
+ "333": {
+  "canon": "Sliding Leg Curl",
+  "equip": "sliders",
+  "pos": "supine",
+  "ok": true
+ },
+ "334": {
+  "canon": "Band Squat to Overhead Press",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "335": {
+  "canon": "Squat Sky Reach",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "336": {
+  "canon": "Squat Thrust",
+  "equip": "bodyweight",
+  "pos": "squat-to-plank",
+  "ok": true
+ },
+ "337": {
+  "canon": "Squat to Calf Raise",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "338": {
+  "canon": "Stability Ball Leg Curl",
+  "equip": "stability ball",
+  "pos": "supine",
+  "ok": true
+ },
+ "339": {
+  "canon": "Standing Figure-4 Glute Stretch (hold support)",
+  "equip": "support",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "340": {
+  "canon": "Standing Knee Curl (hold chair)",
+  "equip": "chair",
+  "pos": "standing",
+  "ok": true
+ },
+ "341": {
+  "canon": "Standing Side Leg Raise (hold chair)",
+  "equip": "chair",
+  "pos": "standing",
+  "ok": true
+ },
+ "342": {
+  "canon": "Split Squat (bodyweight)",
+  "equip": "bodyweight",
+  "pos": "split",
+  "ok": true
+ },
+ "343": {
+  "canon": "Step-up (bodyweight, bench)",
+  "equip": "bench",
+  "pos": "standing",
+  "ok": true
+ },
+ "344": {
+  "canon": "Step-up Jump (box)",
+  "equip": "box",
+  "pos": "standing",
+  "ok": true
+ },
+ "345": {
+  "canon": "Sumo Squat (bodyweight)",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "346": {
+  "canon": "T-bar Row (landmine)",
+  "equip": "landmine",
+  "pos": "bent-over",
+  "ok": true
+ },
+ "347": {
+  "canon": "Teaser (Pilates)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "348": {
+  "canon": "Teaser Prep (one leg)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "349": {
+  "canon": "Toes-to-bar",
+  "equip": "pull-up bar",
+  "pos": "hanging",
+  "ok": true
+ },
+ "350": {
+  "canon": "Tuck Jump",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "351": {
+  "canon": "Rotating Sit-up (hands outside alternate legs)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "352": {
+  "canon": "Barbell Upright Row",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "353": {
+  "canon": "Dumbbell Waiter Carry",
+  "equip": "dumbbell",
+  "pos": "walking",
+  "arms": "one",
+  "ok": true
+ },
+ "354": {
+  "canon": "Wall Sit",
+  "equip": "wall",
+  "pos": "squat",
+  "ok": true
+ },
+ "355": {
+  "canon": "Prone Y-T-W Raise (floor)",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": true,
+  "issues": "figure is small in frame"
+ },
+ "356": {
+  "canon": "Jump Rope",
+  "equip": "jump rope",
+  "pos": "standing",
+  "ok": true
+ },
+ "357": {
+  "canon": "Jumping Jacks",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "358": {
+  "canon": "Seated Chin Tuck",
+  "equip": "stool",
+  "pos": "seated",
+  "ok": true
+ },
+ "359": {
+  "canon": "Extended Side Angle",
+  "equip": "mat",
+  "pos": "standing",
+  "ok": true
+ },
+ "360": {
+  "canon": "Reclined Butterfly",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "361": {
+  "canon": "Foam Roll Quads",
+  "equip": "foam roller",
+  "pos": "prone",
+  "ok": true
+ },
+ "362": {
+  "canon": "Foam Roll Calves",
+  "equip": "foam roller",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "363": {
+  "canon": "Single Knee to Chest Stretch",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "364": {
+  "canon": "Wrist Flexor and Extensor Stretch",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "365": {
+  "canon": "Adductor Ball Squeeze (lying, knees bent)",
+  "equip": "ball",
+  "pos": "supine",
+  "ok": true
+ },
+ "366": {
+  "canon": "Adductor Rock-back",
+  "equip": "mat",
+  "pos": "quadruped",
+  "ok": true,
+  "issues": "cosmetic: panel 2 figure tiny"
+ },
+ "367": {
+  "canon": "Knee-to-wall Ankle Mobilisation",
+  "equip": "wall",
+  "pos": "split",
+  "ok": true
+ },
+ "368": {
+  "canon": "Archer Pull-up",
+  "equip": "pull-up bar",
+  "pos": "hanging",
+  "ok": true
+ },
+ "369": {
+  "canon": "Archer Push-up",
+  "equip": "mat",
+  "pos": "plank",
+  "ok": false,
+  "issues": "panel 2 looks like a normal push-up, weight not shifted to one arm"
+ },
+ "370": {
+  "canon": "Band Row (standing, two arms)",
+  "equip": "band",
+  "pos": "standing",
+  "arms": "two",
+  "ok": true
+ },
+ "371": {
+  "canon": "Band-assisted Pull-up",
+  "equip": "band",
+  "pos": "hanging",
+  "ok": true
+ },
+ "372": {
+  "canon": "Band Bent-over Row",
+  "equip": "band",
+  "pos": "bent-over",
+  "ok": true
+ },
+ "373": {
+  "canon": "Band Bulgarian Split Squat",
+  "equip": "band",
+  "pos": "split",
+  "ok": true
+ },
+ "374": {
+  "canon": "Band Biceps Curl",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "375": {
+  "canon": "Band Finger Extension",
+  "equip": "band",
+  "pos": "seated",
+  "ok": true
+ },
+ "376": {
+  "canon": "Band Flutter Kick",
+  "equip": "band",
+  "pos": "supine",
+  "ok": true
+ },
+ "377": {
+  "canon": "Band I-raise",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "378": {
+  "canon": "Band Lateral Raise",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "379": {
+  "canon": "Band Diagonal Lift (low to high)",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "380": {
+  "canon": "Band Overhead Triceps Extension",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "381": {
+  "canon": "Band Overhead Press (standing)",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "382": {
+  "canon": "Band Pallof Press",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "383": {
+  "canon": "Band Plank Reach",
+  "equip": "band",
+  "pos": "plank",
+  "ok": true
+ },
+ "384": {
+  "canon": "Band Romanian Deadlift",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "385": {
+  "canon": "Seated Band Row",
+  "equip": "band",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "386": {
+  "canon": "Band Single-leg Hip Hinge",
+  "equip": "band",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "387": {
+  "canon": "Band Squat",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "388": {
+  "canon": "Band Staggered-stance RDL",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "389": {
+  "canon": "Band Standing Hip Flexor March",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "390": {
+  "canon": "Band Half-kneeling T-spine Rotation",
+  "equip": "band",
+  "pos": "half-kneeling",
+  "ok": true
+ },
+ "391": {
+  "canon": "Band Woodchop (high to low)",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "392": {
+  "canon": "Band-resisted Push-up",
+  "equip": "band",
+  "pos": "plank",
+  "ok": true
+ },
+ "393": {
+  "canon": "EZ-bar Curl",
+  "equip": "ez bar",
+  "pos": "standing",
+  "ok": true,
+  "issues": "bar drawn is an EZ/cambered bar; straight-barbell curl names accepted"
+ },
+ "394": {
+  "canon": "Barbell Forward Lunge",
+  "equip": "barbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "395": {
+  "canon": "Glute Bridge Pullover (band)",
+  "equip": "band",
+  "pos": "supine",
+  "ok": true
+ },
+ "396": {
+  "canon": "Bulgarian Split Squat Jump",
+  "equip": "bench",
+  "pos": "split",
+  "ok": true
+ },
+ "397": {
+  "canon": "Single-leg Romanian Deadlift (bodyweight)",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "legs": "one",
+  "ok": true
+ },
+ "398": {
+  "canon": "Cable Lateral Raise (one arm)",
+  "equip": "cable",
+  "pos": "standing",
+  "arms": "one",
+  "ok": true
+ },
+ "399": {
+  "canon": "Cable Overhead Triceps Extension (rope)",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "400": {
+  "canon": "Cable Romanian Deadlift",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "401": {
+  "canon": "Cable Rotation",
+  "equip": "cable",
+  "pos": "standing",
+  "ok": true
+ },
+ "402": {
+  "canon": "Child's Pose with Side Reach",
+  "equip": "mat",
+  "pos": "kneeling",
+  "ok": false,
+  "issues": "no side reach shown; panel 2 figure tiny"
+ },
+ "403": {
+  "canon": "Close-grip Push-up",
+  "equip": "bodyweight",
+  "pos": "plank",
+  "ok": true
+ },
+ "404": {
+  "canon": "Dumbbell Bent-over Row (two arms)",
+  "equip": "dumbbell",
+  "pos": "bent-over",
+  "arms": "two",
+  "ok": true
+ },
+ "405": {
+  "canon": "Dumbbell Bulgarian Split Squat",
+  "equip": "dumbbell",
+  "pos": "split",
+  "ok": true
+ },
+ "406": {
+  "canon": "Dumbbell Deadlift",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "407": {
+  "canon": "Dumbbell Front Squat",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "408": {
+  "canon": "Dumbbell Glute Bridge",
+  "equip": "dumbbell",
+  "pos": "supine",
+  "ok": true
+ },
+ "409": {
+  "canon": "Dumbbell Hang Clean",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "410": {
+  "canon": "Dumbbell Push Press",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "411": {
+  "canon": "Dumbbell Romanian Deadlift",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "412": {
+  "canon": "Standing Dumbbell Overhead Press",
+  "equip": "dumbbell",
+  "pos": "standing",
+  "ok": true
+ },
+ "413": {
+  "canon": "Dumbbell Z-press",
+  "equip": "dumbbell",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "414": {
+  "canon": "Decline (feet-elevated) Push-up",
+  "equip": "bench",
+  "pos": "plank",
+  "ok": true
+ },
+ "415": {
+  "canon": "Diamond Push-up",
+  "equip": "bodyweight",
+  "pos": "plank",
+  "ok": true
+ },
+ "416": {
+  "canon": "8-count Push-up",
+  "equip": "bodyweight",
+  "pos": "squat-to-plank",
+  "ok": true
+ },
+ "417": {
+  "canon": "False-grip Hang (rings)",
+  "equip": "rings",
+  "pos": "hanging",
+  "ok": true,
+  "issues": "cosmetic: panel seam across body"
+ },
+ "418": {
+  "canon": "Finger Marching (seated)",
+  "equip": "chair",
+  "pos": "seated",
+  "ok": true
+ },
+ "419": {
+  "canon": "Half-kneeling Band Chop",
+  "equip": "band",
+  "pos": "half-kneeling",
+  "ok": true
+ },
+ "420": {
+  "canon": "Half-kneeling Cable Lift (low to high)",
+  "equip": "cable",
+  "pos": "half-kneeling",
+  "ok": true
+ },
+ "421": {
+  "canon": "Long-lever Glute Bridge Hold",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "422": {
+  "canon": "Hamstring Pump",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "423": {
+  "canon": "Hamstring Walkout (bridge)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "424": {
+  "canon": "High Step with Trunk Rotation",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "425": {
+  "canon": "The Hundred with Band",
+  "equip": "band",
+  "pos": "supine",
+  "ok": true
+ },
+ "426": {
+  "canon": "Modified Hundred (knees bent, feet down)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "427": {
+  "canon": "Inchworm",
+  "equip": "mat",
+  "pos": "standing-to-plank",
+  "ok": true
+ },
+ "428": {
+  "canon": "Incline Push-up (hands on bench)",
+  "equip": "bench",
+  "pos": "plank",
+  "ok": true
+ },
+ "429": {
+  "canon": "Kettlebell Deadlift",
+  "equip": "kettlebell",
+  "pos": "standing",
+  "ok": true
+ },
+ "430": {
+  "canon": "Kettlebell Farmer's Carry",
+  "equip": "kettlebell",
+  "pos": "walking",
+  "ok": true
+ },
+ "431": {
+  "canon": "Kettlebell Floor Press",
+  "equip": "kettlebell",
+  "pos": "supine",
+  "ok": true
+ },
+ "432": {
+  "canon": "Kettlebell Goblet Squat",
+  "equip": "kettlebell",
+  "pos": "standing",
+  "ok": true
+ },
+ "433": {
+  "canon": "Single-arm Kettlebell Press",
+  "equip": "kettlebell",
+  "pos": "standing",
+  "arms": "one",
+  "ok": true
+ },
+ "434": {
+  "canon": "Half-kneeling Cable External Rotation + Press",
+  "equip": "cable",
+  "pos": "half-kneeling",
+  "ok": true
+ },
+ "435": {
+  "canon": "Kneeling Lat Stretch (elbows on bench)",
+  "equip": "bench",
+  "pos": "kneeling",
+  "ok": true
+ },
+ "436": {
+  "canon": "Lateral Jumps (two-foot)",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "437": {
+  "canon": "Lunge Kettlebell Pass-under",
+  "equip": "kettlebell",
+  "pos": "lunge",
+  "ok": true
+ },
+ "438": {
+  "canon": "Machine Crunch",
+  "equip": "machine",
+  "pos": "seated",
+  "ok": true
+ },
+ "439": {
+  "canon": "Neck Half-circles",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "440": {
+  "canon": "Seated Pike Compression Lift",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "441": {
+  "canon": "Pike Push-up",
+  "equip": "mat",
+  "pos": "inverted-v",
+  "ok": true
+ },
+ "442": {
+  "canon": "Band Footwork (lying, both legs)",
+  "equip": "band",
+  "pos": "supine",
+  "legs": "two",
+  "ok": true
+ },
+ "443": {
+  "canon": "Band Frog",
+  "equip": "band",
+  "pos": "supine",
+  "ok": true
+ },
+ "444": {
+  "canon": "Band Single Leg Circles",
+  "equip": "band",
+  "pos": "supine",
+  "ok": true
+ },
+ "445": {
+  "canon": "Band Semi-circle (bridge)",
+  "equip": "band",
+  "pos": "supine",
+  "ok": true,
+  "issues": "cosmetic: figure small inside grey box"
+ },
+ "446": {
+  "canon": "Band Standing Side Splits",
+  "equip": "band",
+  "pos": "standing",
+  "ok": true
+ },
+ "447": {
+  "canon": "Double Leg Stretch (Pilates)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "448": {
+  "canon": "Hip Twist with Stretched Arms",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "449": {
+  "canon": "Band Mermaid Stretch",
+  "equip": "band",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "450": {
+  "canon": "Band Long Box Pulling Straps (prone on bench)",
+  "equip": "band",
+  "pos": "prone",
+  "ok": true
+ },
+ "451": {
+  "canon": "Single Leg Kicks (Pilates)",
+  "equip": "mat",
+  "pos": "prone",
+  "ok": true
+ },
+ "452": {
+  "canon": "Forearm Plank with Leg Lift",
+  "equip": "mat",
+  "pos": "plank",
+  "ok": true
+ },
+ "453": {
+  "canon": "Plyometric Push-up",
+  "equip": "bodyweight",
+  "pos": "plank",
+  "ok": true
+ },
+ "454": {
+  "canon": "EZ-bar Preacher Curl",
+  "equip": "ez bar",
+  "pos": "seated",
+  "ok": true
+ },
+ "455": {
+  "canon": "Prone Ball Roll (swan prep)",
+  "equip": "stability ball",
+  "pos": "prone",
+  "ok": true
+ },
+ "456": {
+  "canon": "Push-up Plus",
+  "equip": "bodyweight",
+  "pos": "plank",
+  "ok": true
+ },
+ "457": {
+  "canon": "Push-up with Rotation",
+  "equip": "bodyweight",
+  "pos": "plank",
+  "ok": true
+ },
+ "458": {
+  "canon": "Seated Quad Set (thigh contraction)",
+  "equip": "towel",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "459": {
+  "canon": "Side-lying Supported Twist (bolster)",
+  "equip": "bolster",
+  "pos": "side-lying",
+  "ok": true
+ },
+ "460": {
+  "canon": "Ring Push-up",
+  "equip": "rings",
+  "pos": "plank",
+  "ok": true
+ },
+ "461": {
+  "canon": "Rotational Medicine Ball Slam",
+  "equip": "medicine ball",
+  "pos": "standing",
+  "ok": true
+ },
+ "462": {
+  "canon": "Seated EZ-bar Overhead Triceps Extension",
+  "equip": "ez bar",
+  "pos": "seated",
+  "ok": true
+ },
+ "463": {
+  "canon": "Seated Hip Internal Rotation Lift",
+  "equip": "mat",
+  "pos": "seated-floor",
+  "ok": true
+ },
+ "464": {
+  "canon": "Seated Knee Hug (chair)",
+  "equip": "chair",
+  "pos": "seated",
+  "ok": true
+ },
+ "465": {
+  "canon": "Side-lying Glute Stretch",
+  "equip": "mat",
+  "pos": "side-lying",
+  "ok": true
+ },
+ "466": {
+  "canon": "Single-leg Push-up",
+  "equip": "bodyweight",
+  "pos": "plank",
+  "legs": "one",
+  "ok": true
+ },
+ "467": {
+  "canon": "Skater Step (no jump)",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "468": {
+  "canon": "Single-leg Hamstring Bridge (foot on bench)",
+  "equip": "bench",
+  "pos": "supine",
+  "legs": "one",
+  "ok": true
+ },
+ "469": {
+  "canon": "Spiderman Ball Bearing (reverse tabletop, ball under feet)",
+  "equip": "football",
+  "pos": "reverse-tabletop",
+  "ok": true
+ },
+ "470": {
+  "canon": "Squat-to-stand",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "471": {
+  "canon": "High-knee March",
+  "equip": "bodyweight",
+  "pos": "standing",
+  "ok": true
+ },
+ "472": {
+  "canon": "Supine Bent-leg Raise",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "473": {
+  "canon": "Supine Leg Open-Close (legs off floor)",
+  "equip": "mat",
+  "pos": "supine",
+  "ok": true
+ },
+ "474": {
+  "canon": "Tandem Stance (hold support)",
+  "equip": "bench",
+  "pos": "standing",
+  "ok": true
+ },
+ "475": {
+  "canon": "Wall Push-up",
+  "equip": "wall",
+  "pos": "standing",
+  "ok": true
+ },
+ "476": {
+  "canon": "Wall Slide with Serratus Press",
+  "equip": "wall",
+  "pos": "standing",
+  "ok": true
+ },
+ "477": {
+  "canon": "Weighted Pull-up (dip belt, overhand)",
+  "equip": "dip belt",
+  "pos": "hanging",
+  "grip": "overhand",
+  "ok": true
+ },
+ "478": {
+  "canon": "Weighted Push-up (vest)",
+  "equip": "weight vest",
+  "pos": "plank",
+  "ok": true
+ }
+}

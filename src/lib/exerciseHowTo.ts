@@ -72,11 +72,19 @@ export function candidates(name: string): string[] {
   return out;
 }
 
-function find(data: HowToData, name: string): number | undefined {
+// lookup value -1 = a name we checked and know has no correct picture (e.g. "Cable Fly (low to
+// high)"): stop there rather than fall back to a shorter name that opens the wrong movement.
+export function findHowToIndex(lookup: Record<string, number>, name: string): number | undefined {
   for (const k of candidates(name)) {
-    if (data.lookup[k] !== undefined) return data.lookup[k];
+    const v = lookup[k];
+    if (v === -1) return undefined;
+    if (v !== undefined) return v;
   }
   return undefined;
+}
+
+function find(data: HowToData, name: string): number | undefined {
+  return findHowToIndex(data.lookup, name);
 }
 
 export interface ExerciseHowTo {

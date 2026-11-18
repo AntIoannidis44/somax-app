@@ -1,0 +1,941 @@
+{
+ "rename": {
+  "Leg Extension (machine)": "Leg Extension (machine, seated)",
+  "Band Pallof Press": "Band Pallof Press (standing)"
+ },
+ "aka": {
+  "45-degree Back Extension (bench)": [
+   "Back Extension",
+   "45 Back Extension"
+  ],
+  "90/90 Hip Stretch": [
+   "90/90 Hip Hold",
+   "90/90 Hip Lift-offs",
+   "90/90 Hip Switches",
+   "90/90 Hold",
+   "90/90 Hold with Forward Lean",
+   "90/90 Hold with Lean",
+   "Hip Switches"
+  ],
+  "Ab Wheel Rollout (kneeling)": [
+   "Ab Wheel Rollout"
+  ],
+  "Adductor Ball Squeeze (lying, knees bent)": [
+   "Ball Squeeze",
+   "Ball Squeeze Between Knees"
+  ],
+  "Ankle Dribble": [
+   "Ankle-calf Dribble",
+   "Ankle-calf-knee Dribble"
+  ],
+  "Assisted Pistol Squat (hold pole)": [
+   "Assisted Pistol",
+   "Pistol Negative"
+  ],
+  "Band Bent-over Row": [
+   "Hinge and Elbow Pull",
+   "Hinge Elbow Pull"
+  ],
+  "Band Biceps Curl": [
+   "Band Curl"
+  ],
+  "Band Diagonal Lift (low to high)": [
+   "Band Diagonal Pattern"
+  ],
+  "Band Mermaid Stretch": [
+   "Band Mermaid"
+  ],
+  "Band Pull-apart": [
+   "Shoulder Pull-apart"
+  ],
+  "Band Row (standing, two arms)": [
+   "Step-back Band Row",
+   "Band Rowing Series"
+  ],
+  "Band Single Leg Circles": [
+   "Band Leg Circles"
+  ],
+  "Band Squat": [
+   "Band Front Squat"
+  ],
+  "Band Squat to Overhead Press": [
+   "Band Squat to Press"
+  ],
+  "Band Staggered-stance RDL": [
+   "Staggered RDL"
+  ],
+  "Band Woodchop (high to low)": [
+   "Band Chop"
+  ],
+  "Band-resisted Push-up": [
+   "Push-up with Band Across Back"
+  ],
+  "Barbell Back Squat": [
+   "Squat",
+   "Half Squat",
+   "Competition Squat",
+   "Squat Attempts",
+   "Squat Opener",
+   "Pin Squat"
+  ],
+  "Barbell Bench Press (flat)": [
+   "Bench Press",
+   "Bench",
+   "Competition Bench",
+   "Horizontal Bench Press",
+   "Bench Attempts",
+   "Bench Opener"
+  ],
+  "Barbell Bent-over Row": [
+   "Barbell Row",
+   "Pendlay Row"
+  ],
+  "Barbell Deadlift": [
+   "Deadlift",
+   "Deadlift Attempts",
+   "Deadlift Opener"
+  ],
+  "Barbell Forward Lunge": [
+   "Barbell Lunge"
+  ],
+  "Barbell Incline Bench Press": [
+   "Incline Barbell Press"
+  ],
+  "Barbell Romanian Deadlift": [
+   "Stiff-legged Deadlift",
+   "Straight-leg Deadlift"
+  ],
+  "Barbell Skull Crusher": [
+   "Barbell Lying Triceps Extension"
+  ],
+  "Barbell Wrist Curl (seated)": [
+   "Wrist Flexion Curl"
+  ],
+  "Bench Dip": [
+   "Chair Dip",
+   "Triceps Dip"
+  ],
+  "Bench Hamstring Stretch (seated)": [
+   "Bench Back-of-leg Stretch"
+  ],
+  "Bird Dog": [
+   "Swimming Prep",
+   "Quadraplex",
+   "Arm and Leg Lift on All Fours",
+   "Bird Dog on Hands and Knees"
+  ],
+  "Bodyweight Reverse Lunge": [
+   "Reverse Lunge"
+  ],
+  "Bodyweight Squat": [
+   "Squat",
+   "Air Squat",
+   "Half Air Squat",
+   "Squat with Hold at the Bottom"
+  ],
+  "Build-up Strides": [
+   "Build-up",
+   "Build-up Court Sprints",
+   "Build-up Runs",
+   "Build-up Sprints",
+   "Build-ups",
+   "Relaxed Stride",
+   "Stride",
+   "Strides",
+   "Tempo Stride"
+  ],
+  "Bulgarian Split Squat (bodyweight)": [
+   "Bulgarian Split Squat on Bench",
+   "Rear-foot Elevated Split Squat"
+  ],
+  "Bulgarian Split Squat Jump": [
+   "Bulgarian Jumps"
+  ],
+  "Butterfly Stretch (seated, soles together)": [
+   "Butterfly",
+   "Inner Thigh Stretch",
+   "Butterfly Inner-thigh Stretch"
+  ],
+  "Cable Chest Fly (standing, high pulleys)": [
+   "Cable Fly"
+  ],
+  "Cable Glute Kickback": [
+   "Cable Kickback"
+  ],
+  "Cable Triceps Pushdown (rope)": [
+   "Rope Pushdown",
+   "Triceps Cable Pushdown"
+  ],
+  "Cable Woodchop (high to low)": [
+   "Cable Chop"
+  ],
+  "Carioca (grapevine)": [
+   "Grapevine"
+  ],
+  "Cat-Cow": [
+   "Cat-camel",
+   "Cat and Camel",
+   "Spine CARs"
+  ],
+  "Chest-supported Dumbbell Row (incline bench)": [
+   "Incline-braced Dumbbell Row"
+  ],
+  "Chest-supported Machine Row": [
+   "Seated Row Machine",
+   "Seated Machine Row"
+  ],
+  "Child's Pose": [
+   "Rest Position"
+  ],
+  "Club Rotation (low to high)": [
+   "Powerful Rotation"
+  ],
+  "Cobra Pose": [
+   "Cobra",
+   "Swan Prep",
+   "Swan"
+  ],
+  "Copenhagen Plank (bench)": [
+   "Body Lift",
+   "Copenhagen",
+   "Copenhagen Groin",
+   "Copenhagen Side Plank",
+   "Long-lever Copenhagen",
+   "Long-lever Static Copenhagen",
+   "Short-lever Static Copenhagen"
+  ],
+  "Cossack Squat": [
+   "Non-supported Cossack Squat"
+  ],
+  "Countermovement Jump": [
+   "Vertical Jump"
+  ],
+  "Criss Cross": [
+   "Criss-cross with Leg Rise"
+  ],
+  "Cross-body Shoulder Stretch": [
+   "Cross-body Stretch",
+   "Shoulder Stretch"
+  ],
+  "Crunch": [
+   "Curl-up",
+   "Bent-knee Curl-up",
+   "Bent-leg Crunch",
+   "Curl-up with Ball Between Knees"
+  ],
+  "Dead Bug": [
+   "Dead Bug with Reach"
+  ],
+  "Dead Hang": [
+   "Active Hang"
+  ],
+  "Deep Abdominal Hold (lying, knees bent)": [
+   "Deep Tummy Hold"
+  ],
+  "Doorway Chest Stretch": [
+   "Doorway Pec Stretch",
+   "Chest Stretch"
+  ],
+  "Downward Dog": [
+   "Downward Dog with Pedalling",
+   "Downward Dog with Calf Pedal"
+  ],
+  "Drop Landing (low box)": [
+   "Drop Landing to Stick"
+  ],
+  "Duck Walk": [
+   "Reverse Duck Walk"
+  ],
+  "Dumbbell Bench Press (flat)": [
+   "Dumbbell Chest Press",
+   "Flat Dumbbell Press"
+  ],
+  "Dumbbell Biceps Curl (standing)": [
+   "Dumbbell Curl",
+   "Curl"
+  ],
+  "Dumbbell Forward Lunge": [
+   "Lunge",
+   "Walking Lunge",
+   "Dumbbell Lunge",
+   "Dumbbell Walking Lunge",
+   "Shallow Lunge",
+   "Isometric Lunge"
+  ],
+  "Dumbbell Goblet Squat": [
+   "Goblet Squat Pry"
+  ],
+  "Dumbbell Lateral Lunge": [
+   "Isometric Lateral Lunge"
+  ],
+  "Dumbbell Lateral Raise": [
+   "Side Lateral Raise"
+  ],
+  "Dumbbell Push Press": [
+   "Overhead Push Press"
+  ],
+  "Dumbbell Rear-delt Fly (bent-over)": [
+   "Dumbbell Reverse Fly"
+  ],
+  "Dumbbell Reverse Wrist Curl (seated)": [
+   "Wrist Extension"
+  ],
+  "Dumbbell Shoulder Press (seated)": [
+   "Seated Dumbbell Overhead Press",
+   "Seated Dumbbell Press",
+   "Dumbbell Overhead Press"
+  ],
+  "Dumbbell Waiter Carry": [
+   "Waiter Farmer Carry"
+  ],
+  "EZ-bar Curl": [
+   "Barbell Curl",
+   "Barbell Biceps Curl"
+  ],
+  "EZ-bar Preacher Curl": [
+   "Barbell Preacher Curl",
+   "Preacher Curl"
+  ],
+  "Eccentric Heel Drop (step)": [
+   "Heel Drop off Step"
+  ],
+  "Floor Back Extension (Superman)": [
+   "Superman"
+  ],
+  "Forearm Plank": [
+   "Plank",
+   "Front Plank",
+   "Forward Plank",
+   "The Bench"
+  ],
+  "Forearm Plank with Leg Lift": [
+   "Front Plank with Alternate Leg Raise",
+   "The Bench"
+  ],
+  "Forearm Pronation and Supination (hammer)": [
+   "Forearm Pronation/Supination",
+   "Forearm Pronation/Supination with a Hammer or Light Dumbbell",
+   "Forearm Rotation",
+   "Forearm Rotation with Hammer or Dumbbell"
+  ],
+  "Glute Bridge (floor)": [
+   "Bridge",
+   "Shoulder Bridge",
+   "Bridge Pose",
+   "Back Bridge",
+   "Bridge with Spinal Roll"
+  ],
+  "Glute Bridge Pullover (band)": [
+   "Bridge Pullover"
+  ],
+  "Grip Squeeze (gripper)": [
+   "Grip Squeeze with a Ball"
+  ],
+  "Half Moon Pose": [
+   "Half Moon"
+  ],
+  "Half-kneeling Cable External Rotation + Press": [
+   "Kneeling External Rotation + Press"
+  ],
+  "Half-kneeling Hip Flexor Stretch": [
+   "Hip Flexor Pulses",
+   "Hip Flexor Half-kneel Stretch",
+   "Low Lunge Hip Flexor Stretch",
+   "Hip Flexor Lunge Stretch"
+  ],
+  "Hamstring Walkout (bridge)": [
+   "Hamstring Walkouts with End Switches",
+   "Hamstring Walk-outs"
+  ],
+  "Hanging Leg Raise": [
+   "Strict Hanging Leg Raise",
+   "Ab Work"
+  ],
+  "High Knees": [
+   "Standing Knee Drive"
+  ],
+  "High-knee March": [
+   "Easy March",
+   "Easy March between Efforts",
+   "Fast Feet March",
+   "High-knee Power March",
+   "Knee Lifts",
+   "March on the Spot",
+   "Marching on the Spot"
+  ],
+  "Hollow Body Hold": [
+   "Hollow Hold"
+  ],
+  "Inchworm": [
+   "Inchworm",
+   "Inchworm to Down Dog",
+   "Inchworm to Push-up"
+  ],
+  "Inverted Row (bar)": [
+   "Feet-elevated Inverted Row",
+   "Row Progression"
+  ],
+  "Jump Rope": [
+   "Skipping",
+   "Single Unders",
+   "Skipping Games",
+   "Skipping Ladder",
+   "Skipping Round"
+  ],
+  "Jump Squat": [
+   "Power Jump",
+   "Squat Jump to Freeze Landing",
+   "Squat Jump to Stick"
+  ],
+  "Jumping Jacks": [
+   "Three-way Jumping Jacks"
+  ],
+  "Knee Folds (table top)": [
+   "Single Leg Bend",
+   "Table Top",
+   "Heel Taps"
+  ],
+  "Knee Hugs (lying)": [
+   "Knees to Chest",
+   "Knee-to-chest Tuck"
+  ],
+  "Knee-to-wall Ankle Mobilisation": [
+   "Ankle Driver",
+   "Ankle Rockers",
+   "Ankle Rocks",
+   "Knee-to-wall Ankle Mobility",
+   "Knee-to-wall Ankle Rockers"
+  ],
+  "L-sit (parallettes)": [
+   "L-sit Progression on Bars"
+  ],
+  "Landmine Rotational Press": [
+   "Landmine Punch Press"
+  ],
+  "Lat Pulldown (machine, wide grip)": [
+   "Pulldown"
+  ],
+  "Lateral Jumps (two-foot)": [
+   "Jumping Lateral Jumps"
+  ],
+  "Lateral Shuffle": [
+   "Side Shuffle",
+   "Defensive Slide",
+   "Defensive Slide Intervals",
+   "Side-shuffle Intervals",
+   "Side-to-side Shuffle",
+   "Set Position to Explosive Shuffle",
+   "Lateral Shuffle and Recover"
+  ],
+  "Leg Swing (front to back)": [
+   "Leg Swings Forward",
+   "Leg Pendulum Swing"
+  ],
+  "Leg Swing (side to side)": [
+   "Leg Swings Across Body"
+  ],
+  "Line Hops": [
+   "Line Hops Forward-back and Side-side"
+  ],
+  "Long-lever Glute Bridge Hold": [
+   "Hamstring Holds"
+  ],
+  "Low Lunge (arms up)": [
+   "Low Lunge with Reach",
+   "Dragon",
+   "Equestrian Lunge"
+  ],
+  "Lunge Kettlebell Pass-under": [
+   "Lunge Kettlebell Under-swings"
+  ],
+  "Lying Figure-4 Glute Stretch": [
+   "Buttock Stretch",
+   "Figure-4 Stretch",
+   "Figure-4",
+   "Lying Hip Stretch"
+  ],
+  "Lying Hamstring Stretch (strap)": [
+   "Hamstring Contract-relax",
+   "Hamstring Stretch",
+   "Lying Hamstring Stretch with Band",
+   "Supine Hamstring Floss",
+   "Supine Hamstring Floss with Strap or Towel"
+  ],
+  "Medicine Ball Chest Pass (to wall)": [
+   "Medicine Ball Chest Pass against Wall"
+  ],
+  "Medicine Ball Overhead Throw (forward)": [
+   "Overarm Throw for Distance",
+   "Overarm Ball Throw"
+  ],
+  "Medicine Ball Slam": [
+   "Medicine Ball Overhead Slam"
+  ],
+  "Mini Squat": [
+   "Knee Bends",
+   "Knee Bends with Arm Raise",
+   "Knee Bends with Arms Forward"
+  ],
+  "Mini-band Lateral Walk": [
+   "Band Lateral Walk",
+   "Lateral Step with Band"
+  ],
+  "Mountain Pose": [
+   "Mountain Pose with Breathing"
+  ],
+  "Neck Side Stretch": [
+   "Neck Side Tilt",
+   "Neck Stretch"
+  ],
+  "Nordic Hamstring Curl (anchored)": [
+   "Nordic Hamstring Lower",
+   "Hamstring Lower",
+   "Nordic Curl",
+   "Nordic Hamstrings",
+   "Solo Nordic",
+   "Nordic Curl Negative"
+  ],
+  "Open Book (side-lying thoracic rotation)": [
+   "Thoracic Rotation in Side-lying"
+  ],
+  "Open Leg Rocker": [
+   "Open Leg Rocker Prep"
+  ],
+  "Overhead Dumbbell Triceps Extension (standing, one dumbbell)": [
+   "Dumbbell Triceps Extension",
+   "Triceps Extension"
+  ],
+  "Overhead Squat (dowel)": [
+   "Overhead Squat with Golf Club"
+  ],
+  "Overhead Triceps Stretch": [
+   "Triceps Stretch",
+   "Overhead Triceps/Lat Stretch",
+   "Towel Shoulder and Upper-arm Stretch"
+  ],
+  "Pallof Press (cable)": [
+   "Split-stance Pallof Press"
+  ],
+  "Pancake Stretch": [
+   "Pancake with PNF Contract-relax"
+  ],
+  "Parallel Bar Dip": [
+   "Dip",
+   "Dip Progression"
+  ],
+  "Plyometric Push-up": [
+   "Plyo Push-up"
+  ],
+  "Pogo Hops": [
+   "Ankle Pogos",
+   "Low Pogo Hops",
+   "Pogo Backwards",
+   "Pogo Forwards",
+   "Pogo Jumps",
+   "Two-foot Bounce"
+  ],
+  "Prone Opposite Arm and Leg Raise": [
+   "Contralateral Limb Raise",
+   "Floor Back Extension"
+  ],
+  "Prone Y-T-W Raise (floor)": [
+   "Prone Y-T-W",
+   "Prone Y-T Raise"
+  ],
+  "Pull-up (overhand grip)": [
+   "Negative Pull-up"
+  ],
+  "Push-up": [
+   "Dropdown Push-up",
+   "Push-up Test",
+   "Push-up at Your Level",
+   "Slow Lowering Push-up",
+   "Eccentric Floor Push-up"
+  ],
+  "Quadruped Hip CARs": [
+   "Hip CARs"
+  ],
+  "Raised Arms Pose": [
+   "Raised Arms"
+  ],
+  "Reclined Twist (supine)": [
+   "Supine Body Twist",
+   "Knee Rolls",
+   "Knees Side to Side",
+   "Knee Roll Stretch",
+   "Lying Lower-back Rotation"
+  ],
+  "Revolved Chair Pose": [
+   "Chair Pose Twist"
+  ],
+  "Rotational Medicine Ball Scoop Toss": [
+   "Medicine Ball Scoop Toss",
+   "Split-stance Scoop Toss"
+  ],
+  "Rotational Medicine Ball Throw (standing, side to wall)": [
+   "Step-behind Rotational Throw",
+   "Medicine Ball Step-behind Throw"
+  ],
+  "Rowing Machine (erg)": [
+   "Row",
+   "Rowing",
+   "Row Sprint",
+   "Rowing Intervals"
+  ],
+  "Russian Twist (dumbbell, seated)": [
+   "Core Twist"
+  ],
+  "Sandbag Walking Lunge": [
+   "Sandbag Lunge"
+  ],
+  "Savasana": [
+   "Final Relaxation"
+  ],
+  "Scapular Circles (standing shoulder rolls)": [
+   "Shoulder Circles",
+   "Shoulder Rolls"
+  ],
+  "Scissors (Pilates)": [
+   "Single Straight Leg Stretch"
+  ],
+  "Seated Band Row": [
+   "Seated Band Rowing"
+  ],
+  "Seated Calf Raise (machine)": [
+   "Seated Calf Extension"
+  ],
+  "Seated EZ-bar Overhead Triceps Extension": [
+   "Seated Cambered Bar Triceps Extension"
+  ],
+  "Seated Figure-4 Glute Stretch (chair)": [
+   "Seated Figure-4 Hip Stretch",
+   "Seated Hip Stretch",
+   "Piriformis Stretch"
+  ],
+  "Seated Forward Fold": [
+   "Pike Stretch",
+   "Caterpillar",
+   "Seated Calf and Hamstring Stretch"
+  ],
+  "Seated Hamstring Stretch": [
+   "Seated Hamstring Reach"
+  ],
+  "Seated Marching (chair)": [
+   "Seated Knee Lift"
+  ],
+  "Seated Neck Rotation": [
+   "Neck Turn Stretch"
+  ],
+  "Seated Pike Compression Lift": [
+   "Seated Pike Leg Lift"
+  ],
+  "Seated Quad Set (thigh contraction)": [
+   "Seated Thigh Contraction"
+  ],
+  "Seated Side Bend (bench)": [
+   "Mermaid Side Bend",
+   "Sideways Bend"
+  ],
+  "Seated Spine Twist": [
+   "Seated Torso Twist",
+   "Seated Twist",
+   "Seated Upper-body Twist",
+   "Upper-body Twist"
+  ],
+  "Semi-tandem Stand (hold support)": [
+   "Semi-tandem Stance"
+  ],
+  "Side Plank (forearm)": [
+   "Side Bridge",
+   "Sideways Bench",
+   "Side Plank Hip Lifts",
+   "Side Plank with Hip Dips",
+   "Side Plank Lift and Lower Hips",
+   "Sideways Bench Raise and Lower Hip"
+  ],
+  "Side-lying Clam": [
+   "Clamshell",
+   "Clam with Mini Band"
+  ],
+  "Side-lying Glute Stretch": [
+   "Side-lying Gluteal Stretch"
+  ],
+  "Sideways Walk (along bench)": [
+   "Sideways Walking"
+  ],
+  "Single Knee to Chest Stretch": [
+   "Single Knee Hug"
+  ],
+  "Single-leg Glute Bridge": [
+   "Single-leg Bridge"
+  ],
+  "Single-leg Hop and Stick": [
+   "Jump Forward, Land on One Leg and Stick"
+  ],
+  "Single-leg Romanian Deadlift (bodyweight)": [
+   "Inverted Hamstring"
+  ],
+  "Single-leg Romanian Deadlift (dumbbell)": [
+   "Single-leg Deadlift",
+   "Single-leg Dumbbell Deadlift",
+   "Single-leg RDL Reach"
+  ],
+  "Single-leg Shallow Squat": [
+   "One-leg Squat",
+   "Single-leg Shallow Squat after Receiving a Handball"
+  ],
+  "Single-leg Stand (hold support)": [
+   "One-leg Stand",
+   "One-leg Stand with Head Turns",
+   "Single-leg Balance"
+  ],
+  "Single-leg Stand on Balance Disc": [
+   "Single-leg Standing on Balance Disc",
+   "Single-leg Standing on Disc",
+   "Single-leg Standing on Disc holding Ball"
+  ],
+  "Sit-to-Stand (chair)": [
+   "Chair Squat",
+   "Chair Stand",
+   "Sit-to-Stand from Office Chair",
+   "Squat to Bed Edge",
+   "Squat to Chair"
+  ],
+  "SkiErg": [
+   "Ski"
+  ],
+  "Sled Pull (rope, hand over hand)": [
+   "Sled Pull Walk-back"
+  ],
+  "Snap-down to Athletic Stance": [
+   "Snap-down to Stick"
+  ],
+  "Spiderman Lunge with Rotation": [
+   "Spiderman Lunge",
+   "Spiderman",
+   "Walking Spiderman with Rotation"
+  ],
+  "Split Squat (bodyweight)": [
+   "Static Split Squat"
+  ],
+  "Squat to Calf Raise": [
+   "Squat with Toe Raise"
+  ],
+  "Standing Calf Raise (barbell)": [
+   "Calf Raise",
+   "Heel Raise",
+   "Two-leg Calf Raise",
+   "Isometric Calf Raise"
+  ],
+  "Standing Calf Stretch (wall)": [
+   "Calf Stretch",
+   "Calf and Achilles Stretch",
+   "Calf and Ankle Stretch",
+   "Calf Stretch against Wall"
+  ],
+  "Standing Forward Bend": [
+   "Forward Fold",
+   "Ragdoll Forward Hang",
+   "Hands to Feet"
+  ],
+  "Standing Hip Circle": [
+   "Small Hip Circles"
+  ],
+  "Standing Quad Stretch": [
+   "Quadriceps Stretch",
+   "Thigh Stretch"
+  ],
+  "Standing Side Bend": [
+   "Club-overhead Side Bend",
+   "Side Stretch",
+   "Sidewards Bending",
+   "Sideways Bend"
+  ],
+  "Standing Side Leg Raise (hold chair)": [
+   "Side Leg Lift",
+   "Side Hip Raise"
+  ],
+  "Standing Torso Rotation": [
+   "Body Rotation",
+   "Club-across-shoulders Trunk Turns",
+   "Kickstance Rotations",
+   "Standing Body Rotation with Rope",
+   "Trunk Rotation",
+   "Trunk Rotation with Club",
+   "Trunk Turns"
+  ],
+  "Step-up (bodyweight, bench)": [
+   "8-count Step-up",
+   "Climb Stairs",
+   "Step Drive",
+   "Step-up",
+   "Step-up on a Stair",
+   "Step-up onto Low Step",
+   "Step-up to Low Step",
+   "Step-up with Knee Drive"
+  ],
+  "Supine Leg Open-Close (legs off floor)": [
+   "Leg Hold off Floor, Open and Close"
+  ],
+  "Supine Twist": [
+   "Twisted Roots"
+  ],
+  "Tandem Stance (hold support)": [
+   "Tandem Stand",
+   "Heel-to-toe Stand"
+  ],
+  "Thoracic Extension over Foam Roller": [
+   "Thoracic Extension over Foam Roller"
+  ],
+  "Tibialis Raise (back against wall)": [
+   "Toe Raise"
+  ],
+  "Toy Soldier (straight-leg kick)": [
+   "Straight-leg Kicks"
+  ],
+  "Trap-bar Jump": [
+   "Trap-bar Jump Squat"
+  ],
+  "Tuck Front Lever Hold": [
+   "Front Lever Progression Hold"
+  ],
+  "Two-foot Stand on Balance Disc": [
+   "Two-foot Standing on Balance Disc",
+   "Two-foot Standing on Disc",
+   "Two-foot Standing on Disc holding Medicine Ball"
+  ],
+  "Wall Ball": [
+   "Wall Balls for Time"
+  ],
+  "Wall Sit": [
+   "Wall Squat"
+  ],
+  "Wheel (full bridge)": [
+   "Bridge"
+  ],
+  "Wrist Flexor and Extensor Stretch": [
+   "Wrist and Forearm Stretch",
+   "Wrist Prep",
+   "Wrist Circles and Flexor/Extensor Stretch"
+  ],
+  "Heel-to-toe Walk": [
+   "Heel-to-toe Walk along the Bench"
+  ],
+  "Squat Sky Reach": [
+   "Squat Sky Reaches"
+  ],
+  "Stability Ball Leg Curl": [
+   "Stability Ball Leg Curl"
+  ],
+  "Lizard Lunge": [
+   "Lizard"
+  ],
+  "Plank Up-downs": [
+   "Front Plank Rising to Full Arms",
+   "Plank to Push-up"
+  ],
+  "Squat-to-stand": [
+   "Bodyweight Squat to Stand"
+  ],
+  "Single-arm Kettlebell Press": [
+   "Single-arm Press"
+  ],
+  "Single-leg Hamstring Bridge (foot on bench)": [
+   "Single-leg Hamstring Holds"
+  ]
+ },
+ "remove": [
+  "Continuous skip, any style",
+  "Skips for height",
+  "High skips",
+  "Core (ab wheel or hanging leg raise)",
+  "Upper-back Accessory (row or pulldown)",
+  "Bench Glute Bridge",
+  "Wrist flexion and extension curls",
+  "Wrist flexion and extension curl",
+  "Bear crawl rotations",
+  "Bear crawl then crab walk",
+  "Bear crawl and crab walk",
+  "Bear Crawl Hold with Knee Taps",
+  "Reverse lunge knee drive",
+  "Reverse Lunge to Knee Drive",
+  "Backpack reverse lunge",
+  "Squat swings",
+  "Squat Pulse to Stand",
+  "Deep squat hold",
+  "Deep squat hold with heels down",
+  "Deep Squat Hold (hold door frame)",
+  "Deep Squat Hold (hold support)",
+  "Bodyweight Squat to Stand",
+  "Step-back burpee (no jump)",
+  "Cable Hammer Curl",
+  "Child's Pose and Hamstring Stretch",
+  "Cobra / Double Leg Lift Combo",
+  "Body lift (partner holds top ankle; Copenhagen-style, 2 s phases)",
+  "Leg criss-cross 15 cm off floor",
+  "Crunches with finger slide and 1-inch pulse",
+  "Scapular Pull-up",
+  "Dolphin Pose with walk-ins",
+  "Dumbbell Floor Press",
+  "Goblet squat with heel raise (wk 3-4 3x10, wk 5-6 3x8, wk 7-8 3x6)",
+  "Lateral Lunge to Balance",
+  "Band or Water-bottle Overhead Press (seated)",
+  "Pigeon with active lifts",
+  "Foam roll or massage-ball forearms, calves",
+  "Top-down foam rolling",
+  "Foam roll calves, quads, glutes, upper back",
+  "Foam Roll Calves and Quads",
+  "Foam Roll: calves, quads, glutes, upper back",
+  "Anti-extension progression",
+  "Glute Bridge March",
+  "Bridge with march",
+  "Bridge with arm raise",
+  "Bridge with ball squeeze",
+  "Pelvic Tilts and Bridge",
+  "Half-kneeling Overhead Carry Hold (light)",
+  "Hanging knee raise",
+  "Hanging Knee Raise",
+  "Hanging Knee Raise or Dead Bug",
+  "Crunch or Hanging Knee Raise",
+  "CL1: Leg Tuck",
+  "Station 10: Leg Tuck",
+  "TRX or ring row",
+  "CD2: Half Jacks",
+  "Assisted Chin-up or Neutral-grip Pulldown",
+  "Neutral-grip Lat Pulldown",
+  "Close-grip Pulldown",
+  "Four-way Neck Stretch",
+  "Standing Pallof Press with Overhead Raise",
+  "Anti-rotation progression",
+  "Weighted Dip \u2013 top set",
+  "Weighted Dip \u2013 back-off",
+  "Weighted Dip",
+  "Pull assistance (e.g. chin-ups or rows)",
+  "Lat work (chin-ups or rows)",
+  "Push-up on Balance Cushion",
+  "Hops forward as far as you can",
+  "Single-leg Deadlift holding luggage",
+  "Single-leg shallow squat after receiving a handball",
+  "Wall Soleus Stretch (bent knee)",
+  "Gentle Standing Forward Reach",
+  "Plank shoulder taps",
+  "Plank Shoulder Taps",
+  "Plank Shoulder Taps (feet wide)",
+  "Leg Pull Front (alternating leg lift)",
+  "Leg Pull Front",
+  "Wrist & shoulder prep",
+  "Wrist, shoulder & scapular prep",
+  "Prone Back Extensions",
+  "Extension progression"
+ ],
+ "move": {
+  "Back Squat (or Goblet Squat)": "L138",
+  "Standing Roll Down": "gap-n031",
+  "B-skips": "gap-n008",
+  "Plank to Push-up": "new-072",
+  "Plank to push-up": "new-072",
+  "Front plank with alternate leg raise": "nv-plank-leg-lift",
+  "Ankle Rockers": "nv-ankle-driver-hold",
+  "Ankle pogos": "gap-n004"
+ }
+}

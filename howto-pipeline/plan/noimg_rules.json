@@ -1,0 +1,22 @@
+[
+ [
+  "cardio / swim / ride / row interval",
+  "\\b(run|runs|running|jog|jogging|swim|swimming|freestyle|free|backstroke|breaststroke|breast|IM|fins|paddles|buoy|kick(?! (series|front))|drill|bike|cycl\\w*|spin|pedal\\w*|rower|row\\b|erg|sprint|sprints|stride|tempo|interval|intervals|km|mile|miles|metres?|meters?|yards?|\\d+ ?m\\b|fartlek|threshold|pace|race|effort|cadence|zone|ride|riding|climb|hike|ruck|walk|walking|wade|float|sighting|scull|lengths?|treadmill)\\b"
+ ],
+ [
+  "session instruction / timing",
+  "^(fast|hard|easy|steady|moderate|max|rep|over|under|change|break|pick-up|surge|transition|effort|harder stage|fast rep|maintain form|return to start)\\b|recover|\\brest\\b|fuel|drink|on :|on \\d|\\(on|warm-?up|cool-?down|ramp|stage|vo2|sweet[- ]?spot|negative split|supramaximal|heart-rate|comfortably|conversational|skill:|standardised|max rev|descend|u-shaped|a-b-a|straight 400"
+ ],
+ [
+  "several moves in one line (each move has its own picture)",
+  "amrap|emom|circuit|complex|station rotating|rotating station|ladder:|\\bthen\\b| / |, .*, |\\+ .*\\+|matrix|series|routine|flow|sun salutation|accessory|assistance|variation|progression|mobility|stretches|stretching|^stretch|drills"
+ ],
+ [
+  "sport-specific skill drill",
+  "dribbl|layup|shoot|shooting|free throws|tackl|partner|handball|cone|baseline|golf|club|stick swings|swings? \\(|drives|shadow|jab|ghosting|boxer step|step-drag|guard|cruyff|game|tag\\b|rob the nest|marking|kick on the run|plant|cut\\b|cuts|side-step|agility|turn|falling|rolling|in-and-out|stutter|fast feet|decelerat|acceleration|takeaway|motor-off|net\\b|pivot|shuffle"
+ ],
+ [
+  "pelvic floor / breathing (no visible movement)",
+  "pelvic floor|functional brace|breath"
+ ]
+]

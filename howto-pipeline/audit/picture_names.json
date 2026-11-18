@@ -1,0 +1,3015 @@
+{
+ "front-squat": {
+  "idx": 0,
+  "name": "Barbell Front Squat",
+  "aka": []
+ },
+ "dumbbell-goblet-squat": {
+  "idx": 1,
+  "name": "Dumbbell Goblet Squat",
+  "aka": [
+   "Goblet Squat Pry"
+  ]
+ },
+ "existing-002": {
+  "idx": 2,
+  "name": "Bodyweight Squat",
+  "aka": [
+   "Air Squat",
+   "Half Air Squat",
+   "Squat",
+   "Squat with Hold at the Bottom"
+  ]
+ },
+ "dumbbell-bench-press": {
+  "idx": 3,
+  "name": "Dumbbell Bench Press (flat)",
+  "aka": [
+   "Dumbbell Chest Press",
+   "Flat Dumbbell Press"
+  ]
+ },
+ "existing-004": {
+  "idx": 4,
+  "name": "Push-up",
+  "aka": [
+   "Dropdown Push-up",
+   "Eccentric Floor Push-up",
+   "Push-up Test",
+   "Push-up at Your Level",
+   "Slow Lowering Push-up"
+  ]
+ },
+ "incline-barbell-bench-press": {
+  "idx": 5,
+  "name": "Barbell Incline Bench Press",
+  "aka": [
+   "Incline Barbell Press"
+  ]
+ },
+ "machine-chest-press": {
+  "idx": 6,
+  "name": "Machine Chest Press (seated)",
+  "aka": []
+ },
+ "existing-007": {
+  "idx": 7,
+  "name": "Bodyweight Reverse Lunge",
+  "aka": [
+   "Reverse Lunge"
+  ]
+ },
+ "existing-008": {
+  "idx": 8,
+  "name": "Bulgarian Split Squat (bodyweight)",
+  "aka": [
+   "Bulgarian Split Squat on Bench",
+   "Rear-foot Elevated Split Squat"
+  ]
+ },
+ "dumbbell-lateral-lunge": {
+  "idx": 9,
+  "name": "Dumbbell Lateral Lunge",
+  "aka": [
+   "Isometric Lateral Lunge"
+  ]
+ },
+ "seated-cable-row": {
+  "idx": 10,
+  "name": "Seated Cable Row (two-hand)",
+  "aka": []
+ },
+ "single-arm-dumbbell-row": {
+  "idx": 11,
+  "name": "Single-arm Dumbbell Row (knee on bench)",
+  "aka": []
+ },
+ "existing-012": {
+  "idx": 12,
+  "name": "Inverted Row (bar)",
+  "aka": [
+   "Feet-elevated Inverted Row",
+   "Row Progression"
+  ]
+ },
+ "barbell-romanian-deadlift": {
+  "idx": 13,
+  "name": "Barbell Romanian Deadlift",
+  "aka": [
+   "Stiff-legged Deadlift",
+   "Straight-leg Deadlift"
+  ]
+ },
+ "trap-bar-deadlift": {
+  "idx": 14,
+  "name": "Trap Bar Deadlift",
+  "aka": []
+ },
+ "single-leg-romanian-deadlift": {
+  "idx": 15,
+  "name": "Single-leg Romanian Deadlift (dumbbell)",
+  "aka": [
+   "Single-leg Deadlift",
+   "Single-leg Dumbbell Deadlift",
+   "Single-leg RDL Reach"
+  ]
+ },
+ "existing-016": {
+  "idx": 16,
+  "name": "Glute Bridge (floor)",
+  "aka": [
+   "Back Bridge",
+   "Bridge",
+   "Bridge Pose",
+   "Bridge with Spinal Roll",
+   "Shoulder Bridge"
+  ]
+ },
+ "single-leg-glute-bridge": {
+  "idx": 17,
+  "name": "Single-leg Glute Bridge",
+  "aka": [
+   "Single-leg Bridge"
+  ]
+ },
+ "existing-018": {
+  "idx": 18,
+  "name": "Straight-arm Plank",
+  "aka": []
+ },
+ "ab-wheel-rollout": {
+  "idx": 19,
+  "name": "Ab Wheel Rollout (kneeling)",
+  "aka": [
+   "Ab Wheel Rollout"
+  ]
+ },
+ "lat-pulldown-machine": {
+  "idx": 20,
+  "name": "Lat Pulldown (machine, wide grip)",
+  "aka": [
+   "Pulldown"
+  ]
+ },
+ "seated-dumbbell-shoulder-press": {
+  "idx": 21,
+  "name": "Dumbbell Shoulder Press (seated)",
+  "aka": [
+   "Dumbbell Overhead Press",
+   "Seated Dumbbell Overhead Press",
+   "Seated Dumbbell Press"
+  ]
+ },
+ "seated-calf-raise-machine": {
+  "idx": 22,
+  "name": "Seated Calf Raise (machine)",
+  "aka": [
+   "Seated Calf Extension"
+  ]
+ },
+ "cable-curl": {
+  "idx": 23,
+  "name": "Cable Curl (straight bar, standing)",
+  "aka": []
+ },
+ "seated-russian-twist": {
+  "idx": 25,
+  "name": "Russian Twist (dumbbell, seated)",
+  "aka": [
+   "Core Twist"
+  ]
+ },
+ "landmine-rotation": {
+  "idx": 26,
+  "name": "Landmine Rotation",
+  "aka": []
+ },
+ "existing-027": {
+  "idx": 27,
+  "name": "Bench Dip",
+  "aka": [
+   "Chair Dip",
+   "Triceps Dip"
+  ]
+ },
+ "cable-triceps-pushdown": {
+  "idx": 28,
+  "name": "Cable Triceps Pushdown (rope)",
+  "aka": [
+   "Rope Pushdown",
+   "Triceps Cable Pushdown"
+  ]
+ },
+ "suitcase-carry": {
+  "idx": 30,
+  "name": "Suitcase Carry (one dumbbell)",
+  "aka": []
+ },
+ "band-pull-apart": {
+  "idx": 31,
+  "name": "Band Pull-apart",
+  "aka": [
+   "Shoulder Pull-apart"
+  ]
+ },
+ "dead-hang": {
+  "idx": 32,
+  "name": "Dead Hang",
+  "aka": [
+   "Active Hang"
+  ]
+ },
+ "standing-band-lateral-walk": {
+  "idx": 33,
+  "name": "Mini-band Lateral Walk",
+  "aka": [
+   "Band Lateral Walk",
+   "Lateral Step with Band"
+  ]
+ },
+ "lying-figure-4-glute-stretch": {
+  "idx": 34,
+  "name": "Lying Figure-4 Glute Stretch",
+  "aka": [
+   "Buttock Stretch",
+   "Figure-4",
+   "Figure-4 Stretch",
+   "Lying Hip Stretch"
+  ]
+ },
+ "band-external-rotation-at-9090": {
+  "idx": 35,
+  "name": "Band External Rotation at 90/90",
+  "aka": []
+ },
+ "existing-036": {
+  "idx": 36,
+  "name": "Floor Back Extension (Superman)",
+  "aka": [
+   "Superman"
+  ]
+ },
+ "seated-leg-curl-machine": {
+  "idx": 37,
+  "name": "Seated Leg Curl (machine)",
+  "aka": []
+ },
+ "dead-bug": {
+  "idx": 38,
+  "name": "Dead Bug",
+  "aka": [
+   "Dead Bug with Reach"
+  ]
+ },
+ "cable-crunch": {
+  "idx": 40,
+  "name": "Cable Crunch (kneeling)",
+  "aka": []
+ },
+ "incline-dumbbell-fly": {
+  "idx": 41,
+  "name": "Dumbbell Fly (incline)",
+  "aka": []
+ },
+ "existing-042": {
+  "idx": 42,
+  "name": "Bear Crawl",
+  "aka": []
+ },
+ "reverse-pec-deck-machine": {
+  "idx": 43,
+  "name": "Reverse Pec Deck (machine)",
+  "aka": []
+ },
+ "standing-hamstring-reach": {
+  "idx": 44,
+  "name": "Standing Hamstring Stretch (heel on step)",
+  "aka": []
+ },
+ "single-arm-dumbbell-snatch": {
+  "idx": 45,
+  "name": "Single-arm Dumbbell Snatch",
+  "aka": []
+ },
+ "wall-ball-thruster": {
+  "idx": 46,
+  "name": "Wall Ball Thruster",
+  "aka": []
+ },
+ "seated-forward-fold": {
+  "idx": 47,
+  "name": "Seated Forward Fold",
+  "aka": [
+   "Caterpillar",
+   "Pike Stretch",
+   "Seated Calf and Hamstring Stretch"
+  ]
+ },
+ "seated-side-bend": {
+  "idx": 48,
+  "name": "Seated Side Bend (bench)",
+  "aka": [
+   "Mermaid Side Bend",
+   "Sideways Bend"
+  ]
+ },
+ "standing-ankle-circles": {
+  "idx": 49,
+  "name": "Standing Ankle Circles",
+  "aka": []
+ },
+ "seated-chest-opener": {
+  "idx": 50,
+  "name": "Seated Chest Opener",
+  "aka": []
+ },
+ "barbell-shrug": {
+  "idx": 51,
+  "name": "Barbell Shrug",
+  "aka": []
+ },
+ "reclined-twist": {
+  "idx": 52,
+  "name": "Reclined Twist (supine)",
+  "aka": [
+   "Knee Roll Stretch",
+   "Knee Rolls",
+   "Knees Side to Side",
+   "Lying Lower-back Rotation",
+   "Supine Body Twist"
+  ]
+ },
+ "butterfly-inner-thigh-stretch": {
+  "idx": 53,
+  "name": "Butterfly Stretch (seated, soles together)",
+  "aka": [
+   "Butterfly",
+   "Butterfly Inner-thigh Stretch",
+   "Inner Thigh Stretch"
+  ]
+ },
+ "wall-handstand-hold": {
+  "idx": 54,
+  "name": "Wall Handstand (chest to wall)",
+  "aka": []
+ },
+ "seated-ankle-circles": {
+  "idx": 55,
+  "name": "Seated Ankle Circles (bench)",
+  "aka": []
+ },
+ "arm-circles": {
+  "idx": 56,
+  "name": "Arm Circles",
+  "aka": []
+ },
+ "a-skips": {
+  "idx": 57,
+  "name": "A-Skip",
+  "aka": []
+ },
+ "existing-058": {
+  "idx": 58,
+  "name": "45-degree Back Extension (bench)",
+  "aka": [
+   "45 Back Extension",
+   "Back Extension"
+  ]
+ },
+ "dumbbell-swing": {
+  "idx": 59,
+  "name": "Dumbbell Swing (one dumbbell, two hands)",
+  "aka": []
+ },
+ "existing-060": {
+  "idx": 60,
+  "name": "Bear Crawl",
+  "aka": []
+ },
+ "existing-061": {
+  "idx": 61,
+  "name": "Burpee",
+  "aka": []
+ },
+ "butt-kicks": {
+  "idx": 62,
+  "name": "Butt Kicks",
+  "aka": []
+ },
+ "standing-barbell-calf-raise": {
+  "idx": 63,
+  "name": "Standing Calf Raise (barbell)",
+  "aka": [
+   "Calf Raise",
+   "Heel Raise",
+   "Isometric Calf Raise",
+   "Two-leg Calf Raise"
+  ]
+ },
+ "standing-calf-stretch": {
+  "idx": 64,
+  "name": "Standing Calf Stretch (wall)",
+  "aka": [
+   "Calf Stretch",
+   "Calf Stretch against Wall",
+   "Calf and Achilles Stretch",
+   "Calf and Ankle Stretch"
+  ]
+ },
+ "cat-cow": {
+  "idx": 65,
+  "name": "Cat-Cow",
+  "aka": [
+   "Cat and Camel",
+   "Cat-camel",
+   "Spine CARs"
+  ]
+ },
+ "standing-cable-chest-fly": {
+  "idx": 66,
+  "name": "Cable Chest Fly (standing, high pulleys)",
+  "aka": [
+   "Cable Fly"
+  ]
+ },
+ "dumbbell-rear-delt-fly": {
+  "idx": 67,
+  "name": "Dumbbell Rear-delt Fly (bent-over)",
+  "aka": [
+   "Dumbbell Reverse Fly"
+  ]
+ },
+ "chest-doorway-stretch": {
+  "idx": 68,
+  "name": "Doorway Chest Stretch",
+  "aka": [
+   "Chest Stretch",
+   "Doorway Pec Stretch"
+  ]
+ },
+ "cable-pallof-press": {
+  "idx": 69,
+  "name": "Pallof Press (cable)",
+  "aka": [
+   "Split-stance Pallof Press"
+  ]
+ },
+ "cable-woodchop": {
+  "idx": 70,
+  "name": "Cable Woodchop (high to low)",
+  "aka": [
+   "Cable Chop"
+  ]
+ },
+ "parallel-bar-dip": {
+  "idx": 71,
+  "name": "Parallel Bar Dip",
+  "aka": [
+   "Dip",
+   "Dip Progression"
+  ]
+ },
+ "overhead-dumbbell-triceps-extension": {
+  "idx": 72,
+  "name": "Overhead Dumbbell Triceps Extension (standing, one dumbbell)",
+  "aka": [
+   "Dumbbell Triceps Extension",
+   "Triceps Extension"
+  ]
+ },
+ "dumbbell-biceps-curl": {
+  "idx": 73,
+  "name": "Dumbbell Biceps Curl (standing)",
+  "aka": [
+   "Curl",
+   "Dumbbell Curl"
+  ]
+ },
+ "flutter-kicks": {
+  "idx": 74,
+  "name": "Flutter Kicks",
+  "aka": []
+ },
+ "existing-075": {
+  "idx": 75,
+  "name": "Crunch",
+  "aka": [
+   "Bent-knee Curl-up",
+   "Bent-leg Crunch",
+   "Curl-up",
+   "Curl-up with Ball Between Knees"
+  ]
+ },
+ "existing-076": {
+  "idx": 76,
+  "name": "Hanging Leg Raise",
+  "aka": [
+   "Ab Work",
+   "Strict Hanging Leg Raise"
+  ]
+ },
+ "existing-077": {
+  "idx": 77,
+  "name": "Mountain Climber",
+  "aka": []
+ },
+ "the-hundred": {
+  "idx": 78,
+  "name": "The Hundred",
+  "aka": []
+ },
+ "sit-up": {
+  "idx": 79,
+  "name": "Sit-up",
+  "aka": []
+ },
+ "existing-080": {
+  "idx": 80,
+  "name": "V-up",
+  "aka": []
+ },
+ "seated-figure-4-glute-stretch": {
+  "idx": 81,
+  "name": "Seated Figure-4 Glute Stretch (chair)",
+  "aka": [
+   "Piriformis Stretch",
+   "Seated Figure-4 Hip Stretch",
+   "Seated Hip Stretch"
+  ]
+ },
+ "wrist-curl": {
+  "idx": 82,
+  "name": "Barbell Wrist Curl (seated)",
+  "aka": [
+   "Wrist Flexion Curl"
+  ]
+ },
+ "hamstring-stretch-strap-assisted": {
+  "idx": 83,
+  "name": "Lying Hamstring Stretch (strap)",
+  "aka": [
+   "Hamstring Contract-relax",
+   "Hamstring Stretch",
+   "Lying Hamstring Stretch with Band",
+   "Supine Hamstring Floss",
+   "Supine Hamstring Floss with Strap or Towel"
+  ]
+ },
+ "high-knees": {
+  "idx": 84,
+  "name": "High Knees",
+  "aka": [
+   "Standing Knee Drive"
+  ]
+ },
+ "seated-hip-abduction-machine": {
+  "idx": 85,
+  "name": "Hip Abduction Machine (seated)",
+  "aka": []
+ },
+ "existing-086": {
+  "idx": 86,
+  "name": "Copenhagen Plank (bench)",
+  "aka": [
+   "Body Lift",
+   "Copenhagen",
+   "Copenhagen Groin",
+   "Copenhagen Side Plank",
+   "Long-lever Copenhagen",
+   "Long-lever Static Copenhagen",
+   "Short-lever Static Copenhagen"
+  ]
+ },
+ "hip-circles": {
+  "idx": 87,
+  "name": "Standing Hip Circle",
+  "aka": [
+   "Small Hip Circles"
+  ]
+ },
+ "barbell-hip-thrust": {
+  "idx": 88,
+  "name": "Barbell Hip Thrust",
+  "aka": []
+ },
+ "standing-hip-flexor-lunge-stretch": {
+  "idx": 89,
+  "name": "Half-kneeling Hip Flexor Stretch",
+  "aka": [
+   "Hip Flexor Half-kneel Stretch",
+   "Hip Flexor Lunge Stretch",
+   "Hip Flexor Pulses",
+   "Low Lunge Hip Flexor Stretch"
+  ]
+ },
+ "barbell-deadlift": {
+  "idx": 90,
+  "name": "Barbell Deadlift",
+  "aka": [
+   "Deadlift",
+   "Deadlift Attempts",
+   "Deadlift Opener"
+  ]
+ },
+ "barbell-bent-over-row": {
+  "idx": 91,
+  "name": "Barbell Bent-over Row",
+  "aka": [
+   "Barbell Row",
+   "Pendlay Row"
+  ]
+ },
+ "standing-it-band-side-stretch": {
+  "idx": 92,
+  "name": "Standing IT Band Side Stretch",
+  "aka": []
+ },
+ "kettlebell-halo": {
+  "idx": 93,
+  "name": "Kettlebell Halo",
+  "aka": []
+ },
+ "two-hand-kettlebell-swing": {
+  "idx": 94,
+  "name": "Kettlebell Swing (two-hand)",
+  "aka": []
+ },
+ "childs-pose": {
+  "idx": 95,
+  "name": "Child's Pose",
+  "aka": [
+   "Rest Position"
+  ]
+ },
+ "lateral-shuffle": {
+  "idx": 96,
+  "name": "Lateral Shuffle",
+  "aka": [
+   "Defensive Slide",
+   "Defensive Slide Intervals",
+   "Lateral Shuffle and Recover",
+   "Set Position to Explosive Shuffle",
+   "Side Shuffle",
+   "Side-shuffle Intervals",
+   "Side-to-side Shuffle"
+  ]
+ },
+ "lying-leg-curl-machine": {
+  "idx": 97,
+  "name": "Lying Leg Curl (machine)",
+  "aka": []
+ },
+ "leg-extension-machine": {
+  "idx": 98,
+  "name": "Leg Extension (machine, seated)",
+  "aka": []
+ },
+ "leg-press": {
+  "idx": 99,
+  "name": "Leg Press (45-degree machine)",
+  "aka": []
+ },
+ "leg-swings-front-to-back": {
+  "idx": 100,
+  "name": "Leg Swing (front to back)",
+  "aka": [
+   "Leg Pendulum Swing",
+   "Leg Swings Forward"
+  ]
+ },
+ "leg-swings-side-to-side": {
+  "idx": 101,
+  "name": "Leg Swing (side to side)",
+  "aka": [
+   "Leg Swings Across Body"
+  ]
+ },
+ "farmers-carry": {
+  "idx": 102,
+  "name": "Dumbbell Farmer's Carry",
+  "aka": []
+ },
+ "dumbbell-forward-lunge": {
+  "idx": 103,
+  "name": "Dumbbell Forward Lunge",
+  "aka": [
+   "Dumbbell Lunge",
+   "Dumbbell Walking Lunge",
+   "Isometric Lunge",
+   "Lunge",
+   "Shallow Lunge",
+   "Walking Lunge"
+  ]
+ },
+ "neck-side-stretch": {
+  "idx": 104,
+  "name": "Neck Side Stretch",
+  "aka": [
+   "Neck Side Tilt",
+   "Neck Stretch"
+  ]
+ },
+ "seated-neck-rotation": {
+  "idx": 105,
+  "name": "Seated Neck Rotation",
+  "aka": [
+   "Neck Turn Stretch"
+  ]
+ },
+ "existing-106": {
+  "idx": 106,
+  "name": "Nordic Hamstring Curl (anchored)",
+  "aka": [
+   "Hamstring Lower",
+   "Nordic Curl",
+   "Nordic Curl Negative",
+   "Nordic Hamstring Lower",
+   "Nordic Hamstrings",
+   "Solo Nordic"
+  ]
+ },
+ "hang-power-clean": {
+  "idx": 107,
+  "name": "Hang Power Clean",
+  "aka": []
+ },
+ "existing-108": {
+  "idx": 108,
+  "name": "Bird Dog",
+  "aka": [
+   "Arm and Leg Lift on All Fours",
+   "Bird Dog on Hands and Knees",
+   "Quadraplex",
+   "Swimming Prep"
+  ]
+ },
+ "existing-109": {
+  "idx": 109,
+  "name": "Forearm Plank",
+  "aka": [
+   "Forward Plank",
+   "Front Plank",
+   "Plank",
+   "The Bench"
+  ]
+ },
+ "existing-110": {
+  "idx": 110,
+  "name": "Side Plank (forearm)",
+  "aka": [
+   "Side Bridge",
+   "Side Plank Hip Lifts",
+   "Side Plank Lift and Lower Hips",
+   "Side Plank with Hip Dips",
+   "Sideways Bench",
+   "Sideways Bench Raise and Lower Hip"
+  ]
+ },
+ "existing-111": {
+  "idx": 111,
+  "name": "Box Jump",
+  "aka": []
+ },
+ "standing-quad-stretch": {
+  "idx": 112,
+  "name": "Standing Quad Stretch",
+  "aka": [
+   "Quadriceps Stretch",
+   "Thigh Stretch"
+  ]
+ },
+ "cable-face-pull": {
+  "idx": 113,
+  "name": "Cable Face Pull",
+  "aka": []
+ },
+ "band-external-rotation": {
+  "idx": 114,
+  "name": "Band External Rotation",
+  "aka": []
+ },
+ "band-internal-rotation": {
+  "idx": 115,
+  "name": "Band Internal Rotation",
+  "aka": []
+ },
+ "existing-116": {
+  "idx": 116,
+  "name": "Build-up Strides",
+  "aka": [
+   "Build-up",
+   "Build-up Court Sprints",
+   "Build-up Runs",
+   "Build-up Sprints",
+   "Build-ups",
+   "Relaxed Stride",
+   "Stride",
+   "Strides",
+   "Tempo Stride"
+  ]
+ },
+ "scapular-circles": {
+  "idx": 117,
+  "name": "Scapular Circles (standing shoulder rolls)",
+  "aka": [
+   "Shoulder Circles",
+   "Shoulder Rolls"
+  ]
+ },
+ "seated-marching": {
+  "idx": 118,
+  "name": "Seated Marching (chair)",
+  "aka": [
+   "Seated Knee Lift"
+  ]
+ },
+ "shoulder-cross-body-stretch": {
+  "idx": 119,
+  "name": "Cross-body Shoulder Stretch",
+  "aka": [
+   "Cross-body Stretch",
+   "Shoulder Stretch"
+  ]
+ },
+ "dumbbell-lateral-raise": {
+  "idx": 120,
+  "name": "Dumbbell Lateral Raise",
+  "aka": [
+   "Side Lateral Raise"
+  ]
+ },
+ "dumbbell-shrug": {
+  "idx": 121,
+  "name": "Dumbbell Shrug",
+  "aka": []
+ },
+ "sled-pull-hand-over-hand": {
+  "idx": 122,
+  "name": "Sled Pull (rope, hand over hand)",
+  "aka": [
+   "Sled Pull Walk-back"
+  ]
+ },
+ "sled-push": {
+  "idx": 123,
+  "name": "Sled Push",
+  "aka": []
+ },
+ "standing-forward-bend": {
+  "idx": 124,
+  "name": "Standing Forward Bend",
+  "aka": [
+   "Forward Fold",
+   "Hands to Feet",
+   "Ragdoll Forward Hang"
+  ]
+ },
+ "med-ball-chest-pass": {
+  "idx": 125,
+  "name": "Medicine Ball Chest Pass (to wall)",
+  "aka": [
+   "Medicine Ball Chest Pass against Wall"
+  ]
+ },
+ "rotational-med-ball-scoop-toss": {
+  "idx": 126,
+  "name": "Rotational Medicine Ball Scoop Toss",
+  "aka": [
+   "Medicine Ball Scoop Toss",
+   "Split-stance Scoop Toss"
+  ]
+ },
+ "med-ball-rotational-throw": {
+  "idx": 127,
+  "name": "Rotational Medicine Ball Throw (standing, side to wall)",
+  "aka": [
+   "Medicine Ball Step-behind Throw",
+   "Step-behind Rotational Throw"
+  ]
+ },
+ "medicine-ball-slam": {
+  "idx": 128,
+  "name": "Medicine Ball Slam",
+  "aka": [
+   "Medicine Ball Overhead Slam"
+  ]
+ },
+ "dumbbell-thruster": {
+  "idx": 129,
+  "name": "Dumbbell Thruster",
+  "aka": []
+ },
+ "existing-130": {
+  "idx": 130,
+  "name": "Tibialis Raise (back against wall)",
+  "aka": [
+   "Toe Raise"
+  ]
+ },
+ "standing-side-bend": {
+  "idx": 131,
+  "name": "Standing Side Bend",
+  "aka": [
+   "Club-overhead Side Bend",
+   "Side Stretch",
+   "Sidewards Bending",
+   "Sideways Bend"
+  ]
+ },
+ "standing-torso-rotations": {
+  "idx": 132,
+  "name": "Standing Torso Rotation",
+  "aka": [
+   "Body Rotation",
+   "Club-across-shoulders Trunk Turns",
+   "Kickstance Rotations",
+   "Standing Body Rotation with Rope",
+   "Trunk Rotation",
+   "Trunk Rotation with Club",
+   "Trunk Turns"
+  ]
+ },
+ "existing-133": {
+  "idx": 133,
+  "name": "Overhead Triceps Stretch",
+  "aka": [
+   "Overhead Triceps/Lat Stretch",
+   "Towel Shoulder and Upper-arm Stretch",
+   "Triceps Stretch"
+  ]
+ },
+ "turkish-get-up": {
+  "idx": 134,
+  "name": "Kettlebell Turkish Get-up",
+  "aka": []
+ },
+ "standing-barbell-overhead-press": {
+  "idx": 135,
+  "name": "Barbell Overhead Press (standing)",
+  "aka": []
+ },
+ "existing-136": {
+  "idx": 136,
+  "name": "Pull-up (overhand grip)",
+  "aka": [
+   "Negative Pull-up"
+  ]
+ },
+ "wall-ball-shot": {
+  "idx": 137,
+  "name": "Wall Ball",
+  "aka": [
+   "Wall Balls for Time"
+  ]
+ },
+ "barbell-back-squat": {
+  "idx": 138,
+  "name": "Barbell Back Squat",
+  "aka": [
+   "Competition Squat",
+   "Half Squat",
+   "Pin Squat",
+   "Squat",
+   "Squat Attempts",
+   "Squat Opener"
+  ]
+ },
+ "barbell-bench-press": {
+  "idx": 139,
+  "name": "Barbell Bench Press (flat)",
+  "aka": [
+   "Bench",
+   "Bench Attempts",
+   "Bench Opener",
+   "Bench Press",
+   "Competition Bench",
+   "Horizontal Bench Press"
+  ]
+ },
+ "NV01": {
+  "idx": 140,
+  "name": "Single-leg Stand (hold support)",
+  "aka": [
+   "One-leg Stand",
+   "One-leg Stand with Head Turns",
+   "Single-leg Balance"
+  ]
+ },
+ "NV02": {
+  "idx": 141,
+  "name": "Semi-tandem Stand (hold support)",
+  "aka": [
+   "Semi-tandem Stance"
+  ]
+ },
+ "NV03": {
+  "idx": 142,
+  "name": "Feet-together Stand (hold support)",
+  "aka": []
+ },
+ "NV05": {
+  "idx": 143,
+  "name": "Heel-to-toe Walk",
+  "aka": [
+   "Heel-to-toe Walk along the Bench"
+  ]
+ },
+ "NV06": {
+  "idx": 144,
+  "name": "Sideways Walk (along bench)",
+  "aka": [
+   "Sideways Walking"
+  ]
+ },
+ "NV07": {
+  "idx": 145,
+  "name": "Quadruped Hip CARs",
+  "aka": [
+   "Hip CARs"
+  ]
+ },
+ "NV08": {
+  "idx": 146,
+  "name": "Standing Shoulder CARs",
+  "aka": []
+ },
+ "NV10": {
+  "idx": 147,
+  "name": "Quadruped Reach-back (hand behind head)",
+  "aka": []
+ },
+ "NV11": {
+  "idx": 148,
+  "name": "Seated Arm Raise with Breath",
+  "aka": []
+ },
+ "NV12": {
+  "idx": 149,
+  "name": "Band Hip Flexor Kick",
+  "aka": []
+ },
+ "NV13": {
+  "idx": 150,
+  "name": "Deep Abdominal Hold (lying, knees bent)",
+  "aka": [
+   "Deep Tummy Hold"
+  ]
+ },
+ "NV14": {
+  "idx": 151,
+  "name": "Line Hops",
+  "aka": [
+   "Line Hops Forward-back and Side-side"
+  ]
+ },
+ "NV15": {
+  "idx": 152,
+  "name": "Single-leg Hop in Place",
+  "aka": []
+ },
+ "NV16": {
+  "idx": 153,
+  "name": "Sandbag Walking Lunge",
+  "aka": [
+   "Sandbag Lunge"
+  ]
+ },
+ "NV17": {
+  "idx": 154,
+  "name": "Medicine Ball Sit-up",
+  "aka": []
+ },
+ "NV18": {
+  "idx": 155,
+  "name": "Anti-rotation Hold on Balance Cushion (cable)",
+  "aka": []
+ },
+ "NV19": {
+  "idx": 156,
+  "name": "Address Position Overhead Raise (golf club)",
+  "aka": []
+ },
+ "NV20": {
+  "idx": 157,
+  "name": "Arm Rotations (golf club vertical)",
+  "aka": []
+ },
+ "NV21": {
+  "idx": 158,
+  "name": "Club-assisted Trunk Rotation",
+  "aka": []
+ },
+ "NV22": {
+  "idx": 159,
+  "name": "Seated Spine Twist (club across shoulders)",
+  "aka": []
+ },
+ "NV23": {
+  "idx": 160,
+  "name": "Seated Rotation (club across chest)",
+  "aka": []
+ },
+ "NV24": {
+  "idx": 161,
+  "name": "Half-kneeling Rotation (club)",
+  "aka": []
+ },
+ "NV25": {
+  "idx": 162,
+  "name": "Upper-back Rotation in Golf Stance",
+  "aka": []
+ },
+ "NV26": {
+  "idx": 163,
+  "name": "Band Speed Rotation (golf posture)",
+  "aka": []
+ },
+ "NV27": {
+  "idx": 164,
+  "name": "Club Rotation (low to high)",
+  "aka": [
+   "Powerful Rotation"
+  ]
+ },
+ "NV28": {
+  "idx": 165,
+  "name": "Seated Back Stretch (chair)",
+  "aka": []
+ },
+ "NV29": {
+  "idx": 166,
+  "name": "Bench Hamstring Stretch (seated)",
+  "aka": [
+   "Bench Back-of-leg Stretch"
+  ]
+ },
+ "NV30": {
+  "idx": 167,
+  "name": "Standing Chest Stretch (arms back)",
+  "aka": []
+ },
+ "NV31": {
+  "idx": 168,
+  "name": "SkiErg",
+  "aka": [
+   "Ski"
+  ]
+ },
+ "NV32": {
+  "idx": 169,
+  "name": "Band Ankle Eversion",
+  "aka": []
+ },
+ "NV33": {
+  "idx": 170,
+  "name": "Eccentric Heel Drop (step)",
+  "aka": [
+   "Heel Drop off Step"
+  ]
+ },
+ "NV35": {
+  "idx": 171,
+  "name": "Side Step-over (step)",
+  "aka": []
+ },
+ "NV36": {
+  "idx": 172,
+  "name": "Neck Isometrics (seated)",
+  "aka": []
+ },
+ "NV37": {
+  "idx": 173,
+  "name": "Standing Cross-body Punches",
+  "aka": []
+ },
+ "NV38": {
+  "idx": 174,
+  "name": "Dumbbell Punches (light)",
+  "aka": []
+ },
+ "NV39": {
+  "idx": 175,
+  "name": "Band Straight Punches",
+  "aka": []
+ },
+ "NV40": {
+  "idx": 176,
+  "name": "Snap-down to Athletic Stance",
+  "aka": [
+   "Snap-down to Stick"
+  ]
+ },
+ "NV41": {
+  "idx": 177,
+  "name": "Stepping to Targets (hand support)",
+  "aka": []
+ },
+ "NV42": {
+  "idx": 178,
+  "name": "Ankle Dribble",
+  "aka": [
+   "Ankle-calf Dribble",
+   "Ankle-calf-knee Dribble"
+  ]
+ },
+ "NV43": {
+  "idx": 179,
+  "name": "Band Running (supine, alternating heels)",
+  "aka": []
+ },
+ "NV44": {
+  "idx": 180,
+  "name": "Golf-posture Pelvic Turns",
+  "aka": []
+ },
+ "NV45": {
+  "idx": 181,
+  "name": "Straight-leg Bridge with Single Leg Hold",
+  "aka": []
+ },
+ "NV46": {
+  "idx": 182,
+  "name": "Heel Hook (hanging)",
+  "aka": []
+ },
+ "NV47": {
+  "idx": 183,
+  "name": "Band Speed Skiers",
+  "aka": []
+ },
+ "NV48": {
+  "idx": 184,
+  "name": "Single-leg Stand on Balance Disc",
+  "aka": [
+   "Single-leg Standing on Balance Disc",
+   "Single-leg Standing on Disc",
+   "Single-leg Standing on Disc holding Ball"
+  ]
+ },
+ "NV49": {
+  "idx": 185,
+  "name": "Two-foot Stand on Balance Disc",
+  "aka": [
+   "Two-foot Standing on Balance Disc",
+   "Two-foot Standing on Disc",
+   "Two-foot Standing on Disc holding Medicine Ball"
+  ]
+ },
+ "extra-battle-ropes": {
+  "idx": 186,
+  "name": "Battle Ropes",
+  "aka": []
+ },
+ "gap-n-exist-003": {
+  "idx": 187,
+  "name": "Spine Stretch Forward (seated)",
+  "aka": []
+ },
+ "gap-n-exist-004": {
+  "idx": 188,
+  "name": "Seated Spine Twist",
+  "aka": [
+   "Seated Torso Twist",
+   "Seated Twist",
+   "Seated Upper-body Twist",
+   "Upper-body Twist"
+  ]
+ },
+ "gap-n001": {
+  "idx": 189,
+  "name": "Countermovement Jump",
+  "aka": [
+   "Vertical Jump"
+  ]
+ },
+ "gap-n002": {
+  "idx": 190,
+  "name": "Depth Jump",
+  "aka": []
+ },
+ "gap-n003": {
+  "idx": 191,
+  "name": "Drop Landing (low box)",
+  "aka": [
+   "Drop Landing to Stick"
+  ]
+ },
+ "gap-n004": {
+  "idx": 192,
+  "name": "Pogo Hops",
+  "aka": [
+   "Ankle Pogos",
+   "Low Pogo Hops",
+   "Pogo Backwards",
+   "Pogo Forwards",
+   "Pogo Jumps",
+   "Two-foot Bounce"
+  ]
+ },
+ "gap-n004b": {
+  "idx": 193,
+  "name": "Split Pogo",
+  "aka": []
+ },
+ "gap-n005": {
+  "idx": 194,
+  "name": "Star Jump",
+  "aka": []
+ },
+ "gap-n006": {
+  "idx": 195,
+  "name": "Single-leg Hop and Stick",
+  "aka": [
+   "Jump Forward, Land on One Leg and Stick"
+  ]
+ },
+ "gap-n007": {
+  "idx": 196,
+  "name": "Bounding",
+  "aka": []
+ },
+ "gap-n008": {
+  "idx": 197,
+  "name": "B-skip",
+  "aka": []
+ },
+ "gap-n009": {
+  "idx": 198,
+  "name": "Carioca (grapevine)",
+  "aka": [
+   "Grapevine"
+  ]
+ },
+ "gap-n010": {
+  "idx": 199,
+  "name": "Duck Walk",
+  "aka": [
+   "Reverse Duck Walk"
+  ]
+ },
+ "gap-n011": {
+  "idx": 200,
+  "name": "90/90 Hip Stretch",
+  "aka": [
+   "90/90 Hip Hold",
+   "90/90 Hip Lift-offs",
+   "90/90 Hip Switches",
+   "90/90 Hold",
+   "90/90 Hold with Forward Lean",
+   "90/90 Hold with Lean",
+   "Hip Switches"
+  ]
+ },
+ "gap-n012": {
+  "idx": 201,
+  "name": "Couch Stretch",
+  "aka": []
+ },
+ "gap-n013": {
+  "idx": 202,
+  "name": "World's Greatest Stretch",
+  "aka": []
+ },
+ "gap-n014": {
+  "idx": 203,
+  "name": "Brettzel",
+  "aka": []
+ },
+ "gap-n015": {
+  "idx": 204,
+  "name": "Open Book (side-lying thoracic rotation)",
+  "aka": [
+   "Thoracic Rotation in Side-lying"
+  ]
+ },
+ "gap-n018": {
+  "idx": 205,
+  "name": "Thoracic Extension over Foam Roller",
+  "aka": [
+   "Thoracic Extension over Foam Roller"
+  ]
+ },
+ "gap-n019": {
+  "idx": 206,
+  "name": "Spiderman Lunge with Rotation",
+  "aka": [
+   "Spiderman",
+   "Spiderman Lunge",
+   "Walking Spiderman with Rotation"
+  ]
+ },
+ "gap-n020": {
+  "idx": 207,
+  "name": "Toy Soldier (straight-leg kick)",
+  "aka": [
+   "Straight-leg Kicks"
+  ]
+ },
+ "gap-n021": {
+  "idx": 208,
+  "name": "Prone Floor Angel",
+  "aka": []
+ },
+ "gap-n022": {
+  "idx": 209,
+  "name": "Wall Walk",
+  "aka": []
+ },
+ "gap-n024": {
+  "idx": 210,
+  "name": "Open Leg Rocker",
+  "aka": [
+   "Open Leg Rocker Prep"
+  ]
+ },
+ "gap-n026": {
+  "idx": 211,
+  "name": "Rolling Like a Ball",
+  "aka": []
+ },
+ "gap-n027": {
+  "idx": 212,
+  "name": "Knee Folds (table top)",
+  "aka": [
+   "Heel Taps",
+   "Single Leg Bend",
+   "Table Top"
+  ]
+ },
+ "gap-n028": {
+  "idx": 213,
+  "name": "Pancake Stretch",
+  "aka": [
+   "Pancake with PNF Contract-relax"
+  ]
+ },
+ "gap-n029": {
+  "idx": 214,
+  "name": "Boomerang Prep",
+  "aka": []
+ },
+ "gap-n031": {
+  "idx": 215,
+  "name": "Standing Roll Down",
+  "aka": []
+ },
+ "gap-n032": {
+  "idx": 216,
+  "name": "Single Leg Bend (knee to hip height)",
+  "aka": []
+ },
+ "gap-n033": {
+  "idx": 217,
+  "name": "Single Leg Circles (straight leg)",
+  "aka": []
+ },
+ "gap-n034": {
+  "idx": 218,
+  "name": "Trap-bar Jump",
+  "aka": [
+   "Trap-bar Jump Squat"
+  ]
+ },
+ "gap-y-exist-002": {
+  "idx": 219,
+  "name": "Lizard Lunge",
+  "aka": [
+   "Lizard"
+  ]
+ },
+ "gap-y001": {
+  "idx": 220,
+  "name": "Boat Pose",
+  "aka": []
+ },
+ "gap-y002": {
+  "idx": 221,
+  "name": "Chair Pose",
+  "aka": []
+ },
+ "gap-y003": {
+  "idx": 222,
+  "name": "Revolved Chair Pose",
+  "aka": [
+   "Chair Pose Twist"
+  ]
+ },
+ "gap-y004": {
+  "idx": 223,
+  "name": "Cobra Pose",
+  "aka": [
+   "Cobra",
+   "Swan",
+   "Swan Prep"
+  ]
+ },
+ "gap-y005": {
+  "idx": 224,
+  "name": "Cobra with Single Leg Lift",
+  "aka": []
+ },
+ "gap-y006": {
+  "idx": 225,
+  "name": "Sphinx Pose",
+  "aka": []
+ },
+ "gap-y007": {
+  "idx": 226,
+  "name": "Downward Dog",
+  "aka": [
+   "Downward Dog with Calf Pedal",
+   "Downward Dog with Pedalling"
+  ]
+ },
+ "gap-y008": {
+  "idx": 227,
+  "name": "Dolphin Pose",
+  "aka": []
+ },
+ "gap-y009": {
+  "idx": 228,
+  "name": "Eagle Arms",
+  "aka": []
+ },
+ "gap-y010": {
+  "idx": 229,
+  "name": "Eight-limbed Pose",
+  "aka": []
+ },
+ "gap-y011": {
+  "idx": 230,
+  "name": "Mountain Pose",
+  "aka": [
+   "Mountain Pose with Breathing"
+  ]
+ },
+ "gap-y012": {
+  "idx": 231,
+  "name": "Prayer Pose",
+  "aka": []
+ },
+ "gap-y013": {
+  "idx": 232,
+  "name": "Raised Arms Pose",
+  "aka": [
+   "Raised Arms"
+  ]
+ },
+ "gap-y014": {
+  "idx": 233,
+  "name": "Elevated Pigeon (bench)",
+  "aka": []
+ },
+ "gap-y016": {
+  "idx": 234,
+  "name": "Half Moon Pose",
+  "aka": [
+   "Half Moon"
+  ]
+ },
+ "gap-y017": {
+  "idx": 235,
+  "name": "Happy Baby",
+  "aka": []
+ },
+ "gap-y018": {
+  "idx": 236,
+  "name": "Crow Pose",
+  "aka": []
+ },
+ "gap-y019": {
+  "idx": 237,
+  "name": "Tree Pose",
+  "aka": []
+ },
+ "gap-y020": {
+  "idx": 238,
+  "name": "Triangle Pose",
+  "aka": []
+ },
+ "gap-y021": {
+  "idx": 239,
+  "name": "Revolved Triangle",
+  "aka": []
+ },
+ "gap-y022": {
+  "idx": 240,
+  "name": "Pyramid Pose (blocks)",
+  "aka": []
+ },
+ "gap-y023": {
+  "idx": 241,
+  "name": "Crescent Lunge (high lunge, back heel up)",
+  "aka": []
+ },
+ "gap-y024": {
+  "idx": 242,
+  "name": "Warrior 2",
+  "aka": []
+ },
+ "gap-y025": {
+  "idx": 243,
+  "name": "Warrior 2 to Reverse Warrior",
+  "aka": []
+ },
+ "gap-y026": {
+  "idx": 244,
+  "name": "Warrior 3",
+  "aka": []
+ },
+ "gap-y027": {
+  "idx": 245,
+  "name": "Thread the Needle",
+  "aka": []
+ },
+ "gap-y028": {
+  "idx": 246,
+  "name": "Supine Twist",
+  "aka": [
+   "Twisted Roots"
+  ]
+ },
+ "gap-y029": {
+  "idx": 247,
+  "name": "Savasana",
+  "aka": [
+   "Final Relaxation"
+  ]
+ },
+ "gap-y030": {
+  "idx": 248,
+  "name": "Legs up the Wall",
+  "aka": []
+ },
+ "gap-y031": {
+  "idx": 249,
+  "name": "Puppy Pose",
+  "aka": []
+ },
+ "new-001": {
+  "idx": 250,
+  "name": "Band Chest Press (standing, anchored behind)",
+  "aka": []
+ },
+ "new-002": {
+  "idx": 251,
+  "name": "Band Face Pull",
+  "aka": []
+ },
+ "new-003": {
+  "idx": 252,
+  "name": "Band Good Morning",
+  "aka": []
+ },
+ "new-004": {
+  "idx": 253,
+  "name": "Seated Band Leg Press",
+  "aka": []
+ },
+ "new-005": {
+  "idx": 254,
+  "name": "Side-lying Band Leg Press",
+  "aka": []
+ },
+ "new-006": {
+  "idx": 255,
+  "name": "Band Shoulder Dislocates",
+  "aka": []
+ },
+ "new-007": {
+  "idx": 256,
+  "name": "Barbell Reverse Lunge",
+  "aka": []
+ },
+ "new-010": {
+  "idx": 257,
+  "name": "Bird-dog Row (band)",
+  "aka": []
+ },
+ "new-011": {
+  "idx": 258,
+  "name": "Broad Jump",
+  "aka": []
+ },
+ "new-012": {
+  "idx": 259,
+  "name": "Burpee Broad Jump",
+  "aka": []
+ },
+ "new-013": {
+  "idx": 260,
+  "name": "Cable Glute Kickback",
+  "aka": [
+   "Cable Kickback"
+  ]
+ },
+ "new-014": {
+  "idx": 261,
+  "name": "Cable Pullover (standing)",
+  "aka": []
+ },
+ "new-015": {
+  "idx": 262,
+  "name": "Rowing Machine (erg)",
+  "aka": [
+   "Row",
+   "Row Sprint",
+   "Rowing",
+   "Rowing Intervals"
+  ]
+ },
+ "new-016": {
+  "idx": 263,
+  "name": "Chest-supported Dumbbell Row (incline bench)",
+  "aka": [
+   "Incline-braced Dumbbell Row"
+  ]
+ },
+ "new-017": {
+  "idx": 264,
+  "name": "Chest-supported Machine Row",
+  "aka": [
+   "Seated Machine Row",
+   "Seated Row Machine"
+  ]
+ },
+ "new-018": {
+  "idx": 265,
+  "name": "Side-lying Clam",
+  "aka": [
+   "Clam with Mini Band",
+   "Clamshell"
+  ]
+ },
+ "new-021": {
+  "idx": 266,
+  "name": "Cossack Squat",
+  "aka": [
+   "Non-supported Cossack Squat"
+  ]
+ },
+ "new-023": {
+  "idx": 267,
+  "name": "Criss Cross",
+  "aka": [
+   "Criss-cross with Leg Rise"
+  ]
+ },
+ "new-024": {
+  "idx": 268,
+  "name": "Dumbbell Side Bend",
+  "aka": []
+ },
+ "new-026": {
+  "idx": 269,
+  "name": "Deep Squat with Thoracic Reach",
+  "aka": []
+ },
+ "new-027": {
+  "idx": 270,
+  "name": "Deep Squat and Rotate Walk",
+  "aka": []
+ },
+ "new-028": {
+  "idx": 271,
+  "name": "Double Leg Kicks",
+  "aka": []
+ },
+ "new-029": {
+  "idx": 272,
+  "name": "Dragon Flag Negative",
+  "aka": []
+ },
+ "new-031": {
+  "idx": 273,
+  "name": "Dumbbell Man-maker",
+  "aka": []
+ },
+ "new-032": {
+  "idx": 274,
+  "name": "Dumbbell Split Squat",
+  "aka": []
+ },
+ "new-035": {
+  "idx": 275,
+  "name": "Forearm Pronation and Supination (hammer)",
+  "aka": [
+   "Forearm Pronation/Supination",
+   "Forearm Pronation/Supination with a Hammer or Light Dumbbell",
+   "Forearm Rotation",
+   "Forearm Rotation with Hammer or Dumbbell"
+  ]
+ },
+ "new-036": {
+  "idx": 276,
+  "name": "Tuck Front Lever Hold",
+  "aka": [
+   "Front Lever Progression Hold"
+  ]
+ },
+ "new-037": {
+  "idx": 277,
+  "name": "Dumbbell Front-rack Reverse Lunge",
+  "aka": []
+ },
+ "new-038": {
+  "idx": 278,
+  "name": "Wheel (full bridge)",
+  "aka": [
+   "Bridge"
+  ]
+ },
+ "new-039": {
+  "idx": 279,
+  "name": "Garland Squat (Malasana)",
+  "aka": []
+ },
+ "new-041": {
+  "idx": 280,
+  "name": "Grip Squeeze (gripper)",
+  "aka": [
+   "Grip Squeeze with a Ball"
+  ]
+ },
+ "new-042": {
+  "idx": 281,
+  "name": "Hack Squat (machine)",
+  "aka": []
+ },
+ "new-043": {
+  "idx": 282,
+  "name": "Half-kneeling Single-arm Dumbbell Press",
+  "aka": []
+ },
+ "new-044": {
+  "idx": 283,
+  "name": "Half-kneeling Landmine Press",
+  "aka": []
+ },
+ "new-046": {
+  "idx": 284,
+  "name": "Seated Leg Tuck and Twist",
+  "aka": []
+ },
+ "new-047": {
+  "idx": 285,
+  "name": "Hollow Body Hold",
+  "aka": [
+   "Hollow Hold"
+  ]
+ },
+ "new-048": {
+  "idx": 286,
+  "name": "Incline Cable Fly",
+  "aka": []
+ },
+ "new-049": {
+  "idx": 287,
+  "name": "Jackknife (Pilates)",
+  "aka": []
+ },
+ "new-050": {
+  "idx": 288,
+  "name": "Jefferson Curl (barbell, on box)",
+  "aka": []
+ },
+ "new-051": {
+  "idx": 289,
+  "name": "Jump Squat",
+  "aka": [
+   "Power Jump",
+   "Squat Jump to Freeze Landing",
+   "Squat Jump to Stick"
+  ]
+ },
+ "new-052": {
+  "idx": 290,
+  "name": "Kettlebell Gorilla Row",
+  "aka": []
+ },
+ "new-053": {
+  "idx": 291,
+  "name": "Knee Hugs (lying)",
+  "aka": [
+   "Knee-to-chest Tuck",
+   "Knees to Chest"
+  ]
+ },
+ "new-055": {
+  "idx": 292,
+  "name": "Landmine Rotational Press",
+  "aka": [
+   "Landmine Punch Press"
+  ]
+ },
+ "new-056": {
+  "idx": 293,
+  "name": "Lateral Squat and Reach Walk",
+  "aka": []
+ },
+ "new-057": {
+  "idx": 294,
+  "name": "Low Lunge (arms up)",
+  "aka": [
+   "Dragon",
+   "Equestrian Lunge",
+   "Low Lunge with Reach"
+  ]
+ },
+ "new-058": {
+  "idx": 295,
+  "name": "L-sit (parallettes)",
+  "aka": [
+   "L-sit Progression on Bars"
+  ]
+ },
+ "new-059": {
+  "idx": 296,
+  "name": "Barbell Skull Crusher",
+  "aka": [
+   "Barbell Lying Triceps Extension"
+  ]
+ },
+ "new-060": {
+  "idx": 297,
+  "name": "Dumbbell Skull Crusher",
+  "aka": []
+ },
+ "new-061": {
+  "idx": 298,
+  "name": "Lying Leg Raise",
+  "aka": []
+ },
+ "new-062": {
+  "idx": 299,
+  "name": "Machine Shoulder Press",
+  "aka": []
+ },
+ "new-063": {
+  "idx": 300,
+  "name": "Medicine Ball Backward Overhead Throw",
+  "aka": []
+ },
+ "new-064": {
+  "idx": 301,
+  "name": "Medicine Ball Overhead Throw (forward)",
+  "aka": [
+   "Overarm Ball Throw",
+   "Overarm Throw for Distance"
+  ]
+ },
+ "new-065": {
+  "idx": 302,
+  "name": "Mini Squat",
+  "aka": [
+   "Knee Bends",
+   "Knee Bends with Arm Raise",
+   "Knee Bends with Arms Forward"
+  ]
+ },
+ "new-066": {
+  "idx": 303,
+  "name": "Oblique Curl (ball squeeze)",
+  "aka": []
+ },
+ "new-067": {
+  "idx": 304,
+  "name": "Overhead Reverse Lunge (single dumbbell)",
+  "aka": []
+ },
+ "new-068": {
+  "idx": 305,
+  "name": "Overhead Squat (dowel)",
+  "aka": [
+   "Overhead Squat with Golf Club"
+  ]
+ },
+ "new-069": {
+  "idx": 306,
+  "name": "Assisted Pistol Squat (hold pole)",
+  "aka": [
+   "Assisted Pistol",
+   "Pistol Negative"
+  ]
+ },
+ "new-070": {
+  "idx": 307,
+  "name": "Planche Lean",
+  "aka": []
+ },
+ "new-071": {
+  "idx": 308,
+  "name": "Plank to Chaturanga",
+  "aka": []
+ },
+ "new-072": {
+  "idx": 309,
+  "name": "Plank Up-downs",
+  "aka": [
+   "Front Plank Rising to Full Arms",
+   "Plank to Push-up"
+  ]
+ },
+ "new-073": {
+  "idx": 310,
+  "name": "Prone Band Hamstring Curl",
+  "aka": []
+ },
+ "new-074": {
+  "idx": 311,
+  "name": "Prone Opposite Arm and Leg Raise",
+  "aka": [
+   "Contralateral Limb Raise",
+   "Floor Back Extension"
+  ]
+ },
+ "new-075": {
+  "idx": 312,
+  "name": "Prone Y Raise (incline bench, dumbbells)",
+  "aka": []
+ },
+ "new-077": {
+  "idx": 313,
+  "name": "Renegade Row (dumbbells)",
+  "aka": []
+ },
+ "new-078": {
+  "idx": 314,
+  "name": "Reverse Hyper (bench)",
+  "aka": []
+ },
+ "new-079": {
+  "idx": 315,
+  "name": "Reverse Nordic",
+  "aka": []
+ },
+ "new-080": {
+  "idx": 316,
+  "name": "Dumbbell Reverse Wrist Curl (seated)",
+  "aka": [
+   "Wrist Extension"
+  ]
+ },
+ "new-081": {
+  "idx": 317,
+  "name": "Ring Fallout (kneeling)",
+  "aka": []
+ },
+ "new-082": {
+  "idx": 318,
+  "name": "Ring Support Hold",
+  "aka": []
+ },
+ "new-083": {
+  "idx": 319,
+  "name": "Roll Over (Pilates)",
+  "aka": []
+ },
+ "new-084": {
+  "idx": 320,
+  "name": "Roll Over Prep (stability ball)",
+  "aka": []
+ },
+ "new-085": {
+  "idx": 321,
+  "name": "Roll Up (Pilates)",
+  "aka": []
+ },
+ "new-086": {
+  "idx": 322,
+  "name": "Running Man Single-leg Squat",
+  "aka": []
+ },
+ "new-087": {
+  "idx": 323,
+  "name": "Saw (Pilates)",
+  "aka": []
+ },
+ "new-089": {
+  "idx": 324,
+  "name": "Scissors (Pilates)",
+  "aka": [
+   "Single Straight Leg Stretch"
+  ]
+ },
+ "new-090": {
+  "idx": 325,
+  "name": "Seated Hamstring Stretch",
+  "aka": [
+   "Seated Hamstring Reach"
+  ]
+ },
+ "new-091": {
+  "idx": 326,
+  "name": "Seated Spine Curl",
+  "aka": []
+ },
+ "new-093": {
+  "idx": 327,
+  "name": "Side Lunge",
+  "aka": []
+ },
+ "new-094": {
+  "idx": 328,
+  "name": "Sideways Roll (from squat)",
+  "aka": []
+ },
+ "new-095": {
+  "idx": 329,
+  "name": "Kneeling Single-leg Kickback",
+  "aka": []
+ },
+ "new-097": {
+  "idx": 330,
+  "name": "Single-leg Shallow Squat",
+  "aka": [
+   "One-leg Squat",
+   "Single-leg Shallow Squat after Receiving a Handball"
+  ]
+ },
+ "new-099": {
+  "idx": 331,
+  "name": "Single Straight Leg Lower",
+  "aka": []
+ },
+ "new-100": {
+  "idx": 332,
+  "name": "Sit-to-Stand (chair)",
+  "aka": [
+   "Chair Squat",
+   "Chair Stand",
+   "Sit-to-Stand from Office Chair",
+   "Squat to Bed Edge",
+   "Squat to Chair"
+  ]
+ },
+ "new-101": {
+  "idx": 333,
+  "name": "Sliding Leg Curl",
+  "aka": []
+ },
+ "new-104": {
+  "idx": 334,
+  "name": "Band Squat to Overhead Press",
+  "aka": [
+   "Band Squat to Press"
+  ]
+ },
+ "new-105": {
+  "idx": 335,
+  "name": "Squat Sky Reach",
+  "aka": [
+   "Squat Sky Reaches"
+  ]
+ },
+ "new-106": {
+  "idx": 336,
+  "name": "Squat Thrust",
+  "aka": []
+ },
+ "new-107": {
+  "idx": 337,
+  "name": "Squat to Calf Raise",
+  "aka": [
+   "Squat with Toe Raise"
+  ]
+ },
+ "new-108": {
+  "idx": 338,
+  "name": "Stability Ball Leg Curl",
+  "aka": [
+   "Stability Ball Leg Curl"
+  ]
+ },
+ "new-110": {
+  "idx": 339,
+  "name": "Standing Figure-4 Glute Stretch (hold support)",
+  "aka": []
+ },
+ "new-111": {
+  "idx": 340,
+  "name": "Standing Knee Curl (hold chair)",
+  "aka": []
+ },
+ "new-112": {
+  "idx": 341,
+  "name": "Standing Side Leg Raise (hold chair)",
+  "aka": [
+   "Side Hip Raise",
+   "Side Leg Lift"
+  ]
+ },
+ "new-113": {
+  "idx": 342,
+  "name": "Split Squat (bodyweight)",
+  "aka": [
+   "Static Split Squat"
+  ]
+ },
+ "new-115": {
+  "idx": 343,
+  "name": "Step-up (bodyweight, bench)",
+  "aka": [
+   "8-count Step-up",
+   "Climb Stairs",
+   "Step Drive",
+   "Step-up",
+   "Step-up on a Stair",
+   "Step-up onto Low Step",
+   "Step-up to Low Step",
+   "Step-up with Knee Drive"
+  ]
+ },
+ "new-116": {
+  "idx": 344,
+  "name": "Step-up Jump (box)",
+  "aka": []
+ },
+ "new-117": {
+  "idx": 345,
+  "name": "Sumo Squat (bodyweight)",
+  "aka": []
+ },
+ "new-119": {
+  "idx": 346,
+  "name": "T-bar Row (landmine)",
+  "aka": []
+ },
+ "new-120": {
+  "idx": 347,
+  "name": "Teaser (Pilates)",
+  "aka": []
+ },
+ "new-121": {
+  "idx": 348,
+  "name": "Teaser Prep (one leg)",
+  "aka": []
+ },
+ "new-122": {
+  "idx": 349,
+  "name": "Toes-to-bar",
+  "aka": []
+ },
+ "new-123": {
+  "idx": 350,
+  "name": "Tuck Jump",
+  "aka": []
+ },
+ "new-124": {
+  "idx": 351,
+  "name": "Rotating Sit-up (hands outside alternate legs)",
+  "aka": []
+ },
+ "new-125": {
+  "idx": 352,
+  "name": "Barbell Upright Row",
+  "aka": []
+ },
+ "new-126": {
+  "idx": 353,
+  "name": "Dumbbell Waiter Carry",
+  "aka": [
+   "Waiter Farmer Carry"
+  ]
+ },
+ "new-127": {
+  "idx": 354,
+  "name": "Wall Sit",
+  "aka": [
+   "Wall Squat"
+  ]
+ },
+ "new-128": {
+  "idx": 355,
+  "name": "Prone Y-T-W Raise (floor)",
+  "aka": [
+   "Prone Y-T Raise",
+   "Prone Y-T-W"
+  ]
+ },
+ "new-p3-001": {
+  "idx": 356,
+  "name": "Jump Rope",
+  "aka": [
+   "Single Unders",
+   "Skipping",
+   "Skipping Games",
+   "Skipping Ladder",
+   "Skipping Round"
+  ]
+ },
+ "new-p3-002": {
+  "idx": 357,
+  "name": "Jumping Jacks",
+  "aka": [
+   "Three-way Jumping Jacks"
+  ]
+ },
+ "new-p3-003": {
+  "idx": 358,
+  "name": "Seated Chin Tuck",
+  "aka": []
+ },
+ "new-p3-004": {
+  "idx": 359,
+  "name": "Extended Side Angle",
+  "aka": []
+ },
+ "new-p3-005": {
+  "idx": 360,
+  "name": "Reclined Butterfly",
+  "aka": []
+ },
+ "new-p3-006": {
+  "idx": 361,
+  "name": "Foam Roll Quads",
+  "aka": []
+ },
+ "new-p3-006b": {
+  "idx": 362,
+  "name": "Foam Roll Calves",
+  "aka": []
+ },
+ "new-p3-007": {
+  "idx": 363,
+  "name": "Single Knee to Chest Stretch",
+  "aka": [
+   "Single Knee Hug"
+  ]
+ },
+ "new-p3-008": {
+  "idx": 364,
+  "name": "Wrist Flexor and Extensor Stretch",
+  "aka": [
+   "Wrist Circles and Flexor/Extensor Stretch",
+   "Wrist Prep",
+   "Wrist and Forearm Stretch"
+  ]
+ },
+ "nv-adductor-ball-squeeze": {
+  "idx": 365,
+  "name": "Adductor Ball Squeeze (lying, knees bent)",
+  "aka": [
+   "Ball Squeeze",
+   "Ball Squeeze Between Knees"
+  ]
+ },
+ "nv-adductor-rockback": {
+  "idx": 366,
+  "name": "Adductor Rock-back",
+  "aka": []
+ },
+ "nv-ankle-driver-hold": {
+  "idx": 367,
+  "name": "Knee-to-wall Ankle Mobilisation",
+  "aka": [
+   "Ankle Driver",
+   "Ankle Rockers",
+   "Ankle Rocks",
+   "Knee-to-wall Ankle Mobility",
+   "Knee-to-wall Ankle Rockers"
+  ]
+ },
+ "nv-archer-pullup": {
+  "idx": 368,
+  "name": "Archer Pull-up",
+  "aka": []
+ },
+ "nv-archer-pushup": {
+  "idx": 369,
+  "name": "Archer Push-up",
+  "aka": []
+ },
+ "nv-band-anchored-row": {
+  "idx": 370,
+  "name": "Band Row (standing, two arms)",
+  "aka": [
+   "Band Rowing Series",
+   "Step-back Band Row"
+  ]
+ },
+ "nv-band-assisted-pullup": {
+  "idx": 371,
+  "name": "Band-assisted Pull-up",
+  "aka": []
+ },
+ "nv-band-bentover-row": {
+  "idx": 372,
+  "name": "Band Bent-over Row",
+  "aka": [
+   "Hinge Elbow Pull",
+   "Hinge and Elbow Pull"
+  ]
+ },
+ "nv-band-bss": {
+  "idx": 373,
+  "name": "Band Bulgarian Split Squat",
+  "aka": []
+ },
+ "nv-band-curl": {
+  "idx": 374,
+  "name": "Band Biceps Curl",
+  "aka": [
+   "Band Curl"
+  ]
+ },
+ "nv-band-finger-extension": {
+  "idx": 375,
+  "name": "Band Finger Extension",
+  "aka": []
+ },
+ "nv-band-flutter-kick": {
+  "idx": 376,
+  "name": "Band Flutter Kick",
+  "aka": []
+ },
+ "nv-band-i-raise": {
+  "idx": 377,
+  "name": "Band I-raise",
+  "aka": []
+ },
+ "nv-band-lateral-raise": {
+  "idx": 378,
+  "name": "Band Lateral Raise",
+  "aka": []
+ },
+ "nv-band-lift-low-high": {
+  "idx": 379,
+  "name": "Band Diagonal Lift (low to high)",
+  "aka": [
+   "Band Diagonal Pattern"
+  ]
+ },
+ "nv-band-oh-triceps": {
+  "idx": 380,
+  "name": "Band Overhead Triceps Extension",
+  "aka": []
+ },
+ "nv-band-ohp": {
+  "idx": 381,
+  "name": "Band Overhead Press (standing)",
+  "aka": []
+ },
+ "nv-band-pallof": {
+  "idx": 382,
+  "name": "Band Pallof Press (standing)",
+  "aka": []
+ },
+ "nv-band-plank-reach": {
+  "idx": 383,
+  "name": "Band Plank Reach",
+  "aka": []
+ },
+ "nv-band-rdl": {
+  "idx": 384,
+  "name": "Band Romanian Deadlift",
+  "aka": []
+ },
+ "nv-band-seated-row": {
+  "idx": 385,
+  "name": "Seated Band Row",
+  "aka": [
+   "Seated Band Rowing"
+  ]
+ },
+ "nv-band-sl-hinge": {
+  "idx": 386,
+  "name": "Band Single-leg Hip Hinge",
+  "aka": []
+ },
+ "nv-band-squat": {
+  "idx": 387,
+  "name": "Band Squat",
+  "aka": [
+   "Band Front Squat"
+  ]
+ },
+ "nv-band-staggered-rdl": {
+  "idx": 388,
+  "name": "Band Staggered-stance RDL",
+  "aka": [
+   "Staggered RDL"
+  ]
+ },
+ "nv-band-standing-march": {
+  "idx": 389,
+  "name": "Band Standing Hip Flexor March",
+  "aka": []
+ },
+ "nv-band-tspine-rotation": {
+  "idx": 390,
+  "name": "Band Half-kneeling T-spine Rotation",
+  "aka": []
+ },
+ "nv-band-woodchop-high-low": {
+  "idx": 391,
+  "name": "Band Woodchop (high to low)",
+  "aka": [
+   "Band Chop"
+  ]
+ },
+ "nv-banded-pushup": {
+  "idx": 392,
+  "name": "Band-resisted Push-up",
+  "aka": [
+   "Push-up with Band Across Back"
+  ]
+ },
+ "nv-barbell-curl": {
+  "idx": 393,
+  "name": "EZ-bar Curl",
+  "aka": [
+   "Barbell Biceps Curl",
+   "Barbell Curl"
+  ]
+ },
+ "nv-barbell-forward-lunge": {
+  "idx": 394,
+  "name": "Barbell Forward Lunge",
+  "aka": [
+   "Barbell Lunge"
+  ]
+ },
+ "nv-bridge-band-pullover": {
+  "idx": 395,
+  "name": "Glute Bridge Pullover (band)",
+  "aka": [
+   "Bridge Pullover"
+  ]
+ },
+ "nv-bulgarian-split-jump": {
+  "idx": 396,
+  "name": "Bulgarian Split Squat Jump",
+  "aka": [
+   "Bulgarian Jumps"
+  ]
+ },
+ "nv-bw-single-leg-hinge": {
+  "idx": 397,
+  "name": "Single-leg Romanian Deadlift (bodyweight)",
+  "aka": [
+   "Inverted Hamstring"
+  ]
+ },
+ "nv-cable-lateral-raise": {
+  "idx": 398,
+  "name": "Cable Lateral Raise (one arm)",
+  "aka": []
+ },
+ "nv-cable-oh-triceps": {
+  "idx": 399,
+  "name": "Cable Overhead Triceps Extension (rope)",
+  "aka": []
+ },
+ "nv-cable-rdl": {
+  "idx": 400,
+  "name": "Cable Romanian Deadlift",
+  "aka": []
+ },
+ "nv-cable-rotation": {
+  "idx": 401,
+  "name": "Cable Rotation",
+  "aka": []
+ },
+ "nv-childs-pose-side-reach": {
+  "idx": 402,
+  "name": "Child's Pose with Side Reach",
+  "aka": []
+ },
+ "nv-close-grip-pushup": {
+  "idx": 403,
+  "name": "Close-grip Push-up",
+  "aka": []
+ },
+ "nv-db-bentover-row": {
+  "idx": 404,
+  "name": "Dumbbell Bent-over Row (two arms)",
+  "aka": []
+ },
+ "nv-db-bss": {
+  "idx": 405,
+  "name": "Dumbbell Bulgarian Split Squat",
+  "aka": []
+ },
+ "nv-db-deadlift": {
+  "idx": 406,
+  "name": "Dumbbell Deadlift",
+  "aka": []
+ },
+ "nv-db-front-squat": {
+  "idx": 407,
+  "name": "Dumbbell Front Squat",
+  "aka": []
+ },
+ "nv-db-glute-bridge": {
+  "idx": 408,
+  "name": "Dumbbell Glute Bridge",
+  "aka": []
+ },
+ "nv-db-hang-clean": {
+  "idx": 409,
+  "name": "Dumbbell Hang Clean",
+  "aka": []
+ },
+ "nv-db-push-press": {
+  "idx": 410,
+  "name": "Dumbbell Push Press",
+  "aka": [
+   "Overhead Push Press"
+  ]
+ },
+ "nv-db-rdl": {
+  "idx": 411,
+  "name": "Dumbbell Romanian Deadlift",
+  "aka": []
+ },
+ "nv-db-standing-ohp": {
+  "idx": 412,
+  "name": "Standing Dumbbell Overhead Press",
+  "aka": []
+ },
+ "nv-db-z-press": {
+  "idx": 413,
+  "name": "Dumbbell Z-press",
+  "aka": []
+ },
+ "nv-decline-pushup": {
+  "idx": 414,
+  "name": "Decline (feet-elevated) Push-up",
+  "aka": []
+ },
+ "nv-diamond-pushup": {
+  "idx": 415,
+  "name": "Diamond Push-up",
+  "aka": []
+ },
+ "nv-eight-count-pushup": {
+  "idx": 416,
+  "name": "8-count Push-up",
+  "aka": []
+ },
+ "nv-false-grip-hang": {
+  "idx": 417,
+  "name": "False-grip Hang (rings)",
+  "aka": []
+ },
+ "nv-finger-marching": {
+  "idx": 418,
+  "name": "Finger Marching (seated)",
+  "aka": []
+ },
+ "nv-half-kneeling-chop": {
+  "idx": 419,
+  "name": "Half-kneeling Band Chop",
+  "aka": []
+ },
+ "nv-half-kneeling-lift": {
+  "idx": 420,
+  "name": "Half-kneeling Cable Lift (low to high)",
+  "aka": []
+ },
+ "nv-hamstring-bridge-hold": {
+  "idx": 421,
+  "name": "Long-lever Glute Bridge Hold",
+  "aka": [
+   "Hamstring Holds"
+  ]
+ },
+ "nv-hamstring-pump": {
+  "idx": 422,
+  "name": "Hamstring Pump",
+  "aka": []
+ },
+ "nv-hamstring-walkout": {
+  "idx": 423,
+  "name": "Hamstring Walkout (bridge)",
+  "aka": [
+   "Hamstring Walk-outs",
+   "Hamstring Walkouts with End Switches"
+  ]
+ },
+ "nv-high-step-rotation": {
+  "idx": 424,
+  "name": "High Step with Trunk Rotation",
+  "aka": []
+ },
+ "nv-hundred-band": {
+  "idx": 425,
+  "name": "The Hundred with Band",
+  "aka": []
+ },
+ "nv-hundred-modified": {
+  "idx": 426,
+  "name": "Modified Hundred (knees bent, feet down)",
+  "aka": []
+ },
+ "nv-inchworm-pushup": {
+  "idx": 427,
+  "name": "Inchworm",
+  "aka": [
+   "Inchworm",
+   "Inchworm to Down Dog",
+   "Inchworm to Push-up"
+  ]
+ },
+ "nv-incline-pushup": {
+  "idx": 428,
+  "name": "Incline Push-up (hands on bench)",
+  "aka": []
+ },
+ "nv-kb-deadlift": {
+  "idx": 429,
+  "name": "Kettlebell Deadlift",
+  "aka": []
+ },
+ "nv-kb-farmers-carry": {
+  "idx": 430,
+  "name": "Kettlebell Farmer's Carry",
+  "aka": []
+ },
+ "nv-kb-floor-press": {
+  "idx": 431,
+  "name": "Kettlebell Floor Press",
+  "aka": []
+ },
+ "nv-kb-goblet-squat": {
+  "idx": 432,
+  "name": "Kettlebell Goblet Squat",
+  "aka": []
+ },
+ "nv-kb-single-arm-press": {
+  "idx": 433,
+  "name": "Single-arm Kettlebell Press",
+  "aka": [
+   "Single-arm Press"
+  ]
+ },
+ "nv-kneeling-er-press": {
+  "idx": 434,
+  "name": "Half-kneeling Cable External Rotation + Press",
+  "aka": [
+   "Kneeling External Rotation + Press"
+  ]
+ },
+ "nv-kneeling-lat-stretch-bench": {
+  "idx": 435,
+  "name": "Kneeling Lat Stretch (elbows on bench)",
+  "aka": []
+ },
+ "nv-lateral-jumps-two-foot": {
+  "idx": 436,
+  "name": "Lateral Jumps (two-foot)",
+  "aka": [
+   "Jumping Lateral Jumps"
+  ]
+ },
+ "nv-lunge-kb-pass-under": {
+  "idx": 437,
+  "name": "Lunge Kettlebell Pass-under",
+  "aka": [
+   "Lunge Kettlebell Under-swings"
+  ]
+ },
+ "nv-machine-crunch": {
+  "idx": 438,
+  "name": "Machine Crunch",
+  "aka": []
+ },
+ "nv-neck-half-circles": {
+  "idx": 439,
+  "name": "Neck Half-circles",
+  "aka": []
+ },
+ "nv-pike-compression-lift": {
+  "idx": 440,
+  "name": "Seated Pike Compression Lift",
+  "aka": [
+   "Seated Pike Leg Lift"
+  ]
+ },
+ "nv-pike-pushup": {
+  "idx": 441,
+  "name": "Pike Push-up",
+  "aka": []
+ },
+ "nv-pilates-band-footwork": {
+  "idx": 442,
+  "name": "Band Footwork (lying, both legs)",
+  "aka": []
+ },
+ "nv-pilates-band-frog": {
+  "idx": 443,
+  "name": "Band Frog",
+  "aka": []
+ },
+ "nv-pilates-band-leg-circles": {
+  "idx": 444,
+  "name": "Band Single Leg Circles",
+  "aka": [
+   "Band Leg Circles"
+  ]
+ },
+ "nv-pilates-band-semicircle": {
+  "idx": 445,
+  "name": "Band Semi-circle (bridge)",
+  "aka": []
+ },
+ "nv-pilates-band-side-splits": {
+  "idx": 446,
+  "name": "Band Standing Side Splits",
+  "aka": []
+ },
+ "nv-pilates-double-leg-stretch": {
+  "idx": 447,
+  "name": "Double Leg Stretch (Pilates)",
+  "aka": []
+ },
+ "nv-pilates-hip-twist": {
+  "idx": 448,
+  "name": "Hip Twist with Stretched Arms",
+  "aka": []
+ },
+ "nv-pilates-mermaid": {
+  "idx": 449,
+  "name": "Band Mermaid Stretch",
+  "aka": [
+   "Band Mermaid"
+  ]
+ },
+ "nv-pilates-prone-pulling-straps": {
+  "idx": 450,
+  "name": "Band Long Box Pulling Straps (prone on bench)",
+  "aka": []
+ },
+ "nv-pilates-single-leg-kick": {
+  "idx": 451,
+  "name": "Single Leg Kicks (Pilates)",
+  "aka": []
+ },
+ "nv-plank-leg-lift": {
+  "idx": 452,
+  "name": "Forearm Plank with Leg Lift",
+  "aka": [
+   "Front Plank with Alternate Leg Raise",
+   "The Bench"
+  ]
+ },
+ "nv-plyo-pushup": {
+  "idx": 453,
+  "name": "Plyometric Push-up",
+  "aka": [
+   "Plyo Push-up"
+  ]
+ },
+ "nv-preacher-curl": {
+  "idx": 454,
+  "name": "EZ-bar Preacher Curl",
+  "aka": [
+   "Barbell Preacher Curl",
+   "Preacher Curl"
+  ]
+ },
+ "nv-prone-ball-roll": {
+  "idx": 455,
+  "name": "Prone Ball Roll (swan prep)",
+  "aka": []
+ },
+ "nv-pushup-plus": {
+  "idx": 456,
+  "name": "Push-up Plus",
+  "aka": []
+ },
+ "nv-pushup-rotation": {
+  "idx": 457,
+  "name": "Push-up with Rotation",
+  "aka": []
+ },
+ "nv-quad-set": {
+  "idx": 458,
+  "name": "Seated Quad Set (thigh contraction)",
+  "aka": [
+   "Seated Thigh Contraction"
+  ]
+ },
+ "nv-restorative-side-twist": {
+  "idx": 459,
+  "name": "Side-lying Supported Twist (bolster)",
+  "aka": []
+ },
+ "nv-ring-pushup": {
+  "idx": 460,
+  "name": "Ring Push-up",
+  "aka": []
+ },
+ "nv-rotational-medball-slam": {
+  "idx": 461,
+  "name": "Rotational Medicine Ball Slam",
+  "aka": []
+ },
+ "nv-seated-ezbar-oh-triceps": {
+  "idx": 462,
+  "name": "Seated EZ-bar Overhead Triceps Extension",
+  "aka": [
+   "Seated Cambered Bar Triceps Extension"
+  ]
+ },
+ "nv-seated-hip-ir-lifts": {
+  "idx": 463,
+  "name": "Seated Hip Internal Rotation Lift",
+  "aka": []
+ },
+ "nv-seated-knee-hug": {
+  "idx": 464,
+  "name": "Seated Knee Hug (chair)",
+  "aka": []
+ },
+ "nv-side-lying-glute-stretch": {
+  "idx": 465,
+  "name": "Side-lying Glute Stretch",
+  "aka": [
+   "Side-lying Gluteal Stretch"
+  ]
+ },
+ "nv-single-leg-pushup": {
+  "idx": 466,
+  "name": "Single-leg Push-up",
+  "aka": []
+ },
+ "nv-skater-step": {
+  "idx": 467,
+  "name": "Skater Step (no jump)",
+  "aka": []
+ },
+ "nv-sl-hamstring-bridge-elevated": {
+  "idx": 468,
+  "name": "Single-leg Hamstring Bridge (foot on bench)",
+  "aka": [
+   "Single-leg Hamstring Holds"
+  ]
+ },
+ "nv-spiderman-ball-bearing": {
+  "idx": 469,
+  "name": "Spiderman Ball Bearing (reverse tabletop)",
+  "aka": []
+ },
+ "nv-squat-to-stand-mobility": {
+  "idx": 470,
+  "name": "Squat-to-stand",
+  "aka": [
+   "Bodyweight Squat to Stand"
+  ]
+ },
+ "nv-standing-high-knee-march": {
+  "idx": 471,
+  "name": "High-knee March",
+  "aka": [
+   "Easy March",
+   "Easy March between Efforts",
+   "Fast Feet March",
+   "High-knee Power March",
+   "Knee Lifts",
+   "March on the Spot",
+   "Marching on the Spot"
+  ]
+ },
+ "nv-supine-bent-leg-raise": {
+  "idx": 472,
+  "name": "Supine Bent-leg Raise",
+  "aka": []
+ },
+ "nv-supine-leg-open-close": {
+  "idx": 473,
+  "name": "Supine Leg Open-Close (legs off floor)",
+  "aka": [
+   "Leg Hold off Floor, Open and Close"
+  ]
+ },
+ "nv-tandem-stance": {
+  "idx": 474,
+  "name": "Tandem Stance (hold support)",
+  "aka": [
+   "Heel-to-toe Stand",
+   "Tandem Stand"
+  ]
+ },
+ "nv-wall-pushup": {
+  "idx": 475,
+  "name": "Wall Push-up",
+  "aka": []
+ },
+ "nv-wall-slide-serratus": {
+  "idx": 476,
+  "name": "Wall Slide with Serratus Press",
+  "aka": []
+ },
+ "nv-weighted-pullup": {
+  "idx": 477,
+  "name": "Weighted Pull-up (dip belt, overhand)",
+  "aka": []
+ },
+ "nv-weighted-pushup": {
+  "idx": 478,
+  "name": "Weighted Push-up (vest)",
+  "aka": []
+ }
+}

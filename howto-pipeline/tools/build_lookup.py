@@ -169,7 +169,9 @@ for name, tgt in {"Split pogo (carioca return)": "gap-n004b", "Foam roll or mass
 for name, act in json.load(open(os.path.join(EH, "build", "audit_fixes.json"))).items():
     k = norm(name)
     if act == "-":
-        lookup.pop(k, None)
+        # -1 = "known name, no picture": the app's matcher stops here instead of falling back to a
+        # shorter name ("Cable Fly (low to high)" must not open the high-pulley fly via "cable fly").
+        lookup[k] = -1
     else:
         tgt = act
         if tgt in vid_idx:
@@ -177,6 +179,15 @@ for name, act in json.load(open(os.path.join(EH, "build", "audit_fixes.json"))).
         else:
             lookup.pop(k, None)
             print("AUDIT target missing, removed:", name, "->", tgt)
+
+# ---- STANDARD NAMES (audit 2026-11-19): one canonical name per picture, pattern
+# "Equipment Position/Angle Movement (variation)". Added only where the name is not already mapped or blocked.
+canon_path = os.path.join(EH, "audit", "canonical_names.json")
+if os.path.exists(canon_path):
+    for name, tgt in json.load(open(canon_path)).items():
+        for k in {norm(name), norm(re.sub(r"\([^)]*\)", " ", name))}:
+            if k and k not in lookup and tgt in vid_idx:
+                lookup[k] = vid_idx[tgt]
 
 # ---- common gym wording for movements we already show (each checked against its picture, 2026-11-18)
 for name, tgt in {"flat dumbbell bench press": "L003", "dumbbell bench press flat": "L003", "flat bench dumbbell press": "L003",
@@ -193,8 +204,19 @@ SOURCE_LINKS = {
 }
 extra = json.load(open(os.path.join(EH, "concepts", "source_links.json"))) if os.path.exists(os.path.join(EH, "concepts", "source_links.json")) else {}
 for n, (url, label) in {**SOURCE_LINKS, **{k: tuple(v) for k, v in extra.items()}}.items():
-    if norm(n) not in lookup:
+    if lookup.get(norm(n), -1) == -1:
         links[norm(n)] = {"link": url, "linkLabel": label}
+
+# ---- PICTURE NAMES (audit 2026-11-19): every picture carries its exercise name + reviewed alternative names.
+# tests/howto-name-gate.test.ts fails if any exercise name opens a picture whose name it does not match.
+names_path = os.path.join(EH, "audit", "picture_names.json")
+if os.path.exists(names_path):
+    for vid, rec in json.load(open(names_path)).items():
+        for e in entries:
+            if e["url"].split("/")[-1][:-4] == vid:
+                e["name"] = rec["name"]
+                if rec.get("aka"):
+                    e["aka"] = rec["aka"]
 
 out = {"entries": entries, "lookup": lookup, "links": links}
 os.makedirs(os.path.join(EH, "build"), exist_ok=True)
@@ -202,7 +224,7 @@ json.dump(out, open(os.path.join(EH, "build", "lookup_preview.json"), "w"))
 uploads = sorted((vid, "_pending_v2" if vid in v2 else "_pending") for vid in (v1 | v2))
 json.dump(uploads, open(os.path.join(EH, "build", "uploads.json"), "w"), indent=0)
 print(f"entries {len(entries)} (live 140, new {len(entries) - 140}, live replaced by redraws {replaced_live}); "
-      f"names with an image {len(lookup)} (was {len(cur['lookup'])}); source links {len(links)}; images to upload {len(uploads)}")
+      f"names with an image {sum(1 for v in lookup.values() if v >= 0)}, blocked {sum(1 for v in lookup.values() if v < 0)} (was {len(cur['lookup'])}); source links {len(links)}; images to upload {len(uploads)}")
 if "--write" in sys.argv:
     json.dump(out, open(PUBLIC, "w"))
     print("wrote", PUBLIC)
