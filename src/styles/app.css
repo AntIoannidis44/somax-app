@@ -1584,6 +1584,11 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .program-msg-sub{ font-size:12px; color:var(--text-dim); margin-top:2px; }
 .program-msg-body{ margin-top:10px; padding-top:10px; border-top:1px solid var(--line); }
 .program-msg-body .overview-ex + .overview-ex{ margin-top:10px; }
+/* Shared program in a message, opened: each set on its own row - "Set 1" left, reps/time + weight right.
+   These classes had no styles, so the spans ran together ("Set 112 · 24 kg") - fixed 2026-11-20. Only used here. */
+.program-msg-body .overview-sets{ display:flex; flex-direction:column; gap:3px; margin-top:4px; }
+.program-msg-body .overview-set{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; font-size:13px; }
+.program-msg-body .overview-set-no{ opacity:.65; white-space:nowrap; }
 .program-msg-actions{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
 .activity-msg-map{ margin:-12px -13px 10px; border-radius:16px 16px 0 0; overflow:hidden; cursor:pointer; }
 
