@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { MealFilterChips, favoriteMatches, recipeMatches, type MealFilterValue } from './MealFilter';
 import type { FavoriteMeal, MealId } from './macros';
 import type { UserRecipe } from '../../lib/recipes';
 import { FavoriteMealCard, FavoriteRecipeCard } from './FavoriteCard';
@@ -28,7 +30,20 @@ interface FavoritesOverlayProps {
 // FoodSearchOverlay); recipes aren't meal-scoped, so they get their own
 // section below.
 export function FavoritesOverlay({ open, favorites, recipes, onClose, onSelect, onDelete, onSelectRecipe }: FavoritesOverlayProps) {
+  const [filter, setFilter] = useState<MealFilterValue>('all');
+  useEffect(() => {
+    if (open) setFilter('all');
+  }, [open]);
   if (!open) return null;
+
+  const favs = favorites.filter((f) => favoriteMatches(f, filter));
+  const recs = recipes.filter((r) => recipeMatches(r, filter));
+  const counts = Object.fromEntries(
+    (['all', 'breakfast', 'lunch', 'dinner', 'snacks'] as MealFilterValue[]).map((m) => [
+      m,
+      favorites.filter((f) => favoriteMatches(f, m)).length + recipes.filter((r) => recipeMatches(r, m)).length,
+    ]),
+  );
 
   return createPortal(
     <div className="macro-search-overlay">
@@ -38,7 +53,14 @@ export function FavoritesOverlay({ open, favorites, recipes, onClose, onSelect, 
         </button>
         <div style={{ fontWeight: 700, fontSize: 15 }}>Favourites &amp; saved recipes</div>
       </div>
+      {(favorites.length > 0 || recipes.length > 0) && <MealFilterChips value={filter} onChange={setFilter} counts={counts} />}
       <div className="macro-search-results">
+        {favorites.length > 0 || recipes.length > 0 ? (favs.length === 0 && recs.length === 0 ? (
+          <div className="macro-search-hint">
+            Nothing saved for {filter} yet. Favourites are saved under a meal; recipes are tagged with a meal when you log them,
+            or from the recipe page in My recipes.
+          </div>
+        ) : null) : null}
         {favorites.length === 0 && recipes.length === 0 ? (
           <div className="macro-search-hint">
             Nothing saved yet - add something manually and tap "Save as favourite", or save a recipe from My Recipes.
@@ -46,7 +68,7 @@ export function FavoritesOverlay({ open, favorites, recipes, onClose, onSelect, 
         ) : (
           <>
             {MEAL_ORDER.map(({ id, label }) => {
-              const group = favorites.filter((f) => f.meal === id);
+              const group = favs.filter((f) => f.meal === id);
               if (group.length === 0) return null;
               return (
                 <div key={id}>
@@ -59,11 +81,11 @@ export function FavoritesOverlay({ open, favorites, recipes, onClose, onSelect, 
                 </div>
               );
             })}
-            {recipes.length > 0 && (
+            {recs.length > 0 && (
               <div>
                 <div className="section-label" style={{ margin: '16px 4px 4px' }}>My recipes</div>
                 <div className="fav-card-list">
-                  {recipes.map((r) => (
+                  {recs.map((r) => (
                     <FavoriteRecipeCard key={r.id} recipe={r} onAdd={() => onSelectRecipe(r)} />
                   ))}
                 </div>

@@ -17,16 +17,54 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
   // scroll it into view. Track the real visible height via the Visual
   // Viewport API and size the overlay to that instead, so it only ever
   // centers within the space that's actually visible above the keyboard.
+  //
+  // BUG THIS GUARDS AGAINST (the intermittent "half-screen Log food sheet", 2026-11-19):
+  // this used to copy vv.height on every 'resize' event. When a full-screen panel on top
+  // (food search) opened the keyboard, the sheet underneath shrank to keyboard height -
+  // and in the iOS app's web view the 'resize' for the keyboard CLOSING is sometimes never
+  // delivered, so the sheet stayed half-height until some later event. Rule now: only
+  // shrink while one of THIS sheet's own fields is focused, otherwise fill the screen;
+  // and re-check on focus changes and a few times during the keyboard animation instead
+  // of trusting one event. Covered by tests/e2e/foodlog.mjs - don't revert to
+  // "height = last resize event".
   const [vvHeight, setVvHeight] = useState<number | null>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const vv = window.visualViewport;
     if (!vv) return;
-    const update = () => setVvHeight(vv.height);
+    const typingInThisSheet = () => {
+      const el = document.activeElement as HTMLElement | null;
+      if (!el || !overlayRef.current?.contains(el)) return false;
+      if (el.isContentEditable || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') return true;
+      if (el.tagName !== 'INPUT') return false;
+      return !['button', 'checkbox', 'radio', 'range', 'file', 'submit', 'reset', 'color'].includes((el as HTMLInputElement).type);
+    };
+    const update = () => {
+      const shrink = open && typingInThisSheet() && vv.height < window.innerHeight - 1;
+      setVvHeight(shrink ? vv.height : null);
+    };
+    let timers: number[] = [];
+    const settle = () => {
+      update();
+      timers.forEach(clearTimeout);
+      timers = [120, 350, 700].map((ms) => window.setTimeout(update, ms)); // keyboard animation
+    };
     update();
     vv.addEventListener('resize', update);
-    return () => vv.removeEventListener('resize', update);
-  }, []);
+    vv.addEventListener('scroll', update);
+    window.addEventListener('resize', update);
+    document.addEventListener('focusin', settle);
+    document.addEventListener('focusout', settle);
+    return () => {
+      timers.forEach(clearTimeout);
+      vv.removeEventListener('resize', update);
+      vv.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+      document.removeEventListener('focusin', settle);
+      document.removeEventListener('focusout', settle);
+    };
+  }, [open]);
 
   // Bottom-sheet drag: pull the handle (or title row) up to expand to
   // near full height, down to shrink back or close.
@@ -68,6 +106,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
   // paint over the sheet and clipped its last rows.
   return createPortal(
     <div
+      ref={overlayRef}
       className={`modal-overlay${open ? ' show' : ''}`}
       style={vvHeight ? { height: vvHeight } : undefined}
       onClick={(e) => {

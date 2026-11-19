@@ -19,14 +19,23 @@ interface RecipeDetailScreenProps {
   // Undefined hides the favourite star entirely (e.g. a synthesized
   // favourite-meal view that's already always "favourited").
   onToggleFavorite?: (recipe: UserRecipe) => void;
+  // Undefined hides the meal tags (favourite meals are already saved under one meal).
+  onSetMeals?: (recipe: UserRecipe, meals: string[]) => void;
 }
+
+const MEAL_TAGS = [
+  { id: 'breakfast', label: 'Breakfast' },
+  { id: 'lunch', label: 'Lunch' },
+  { id: 'dinner', label: 'Dinner' },
+  { id: 'snacks', label: 'Snacks' },
+];
 
 // Full recipe view - hero photo, macro stats, ingredients, method - same
 // layout as the approved artifact's recipe-detail screen. This is what
 // tapping a row in MyRecipesScreen opens, and the one place both the
 // ingredients AND the steps are shown together (the list row itself only
 // has room for a macro summary).
-export function RecipeDetailScreen({ recipe, onClose, onShare, editable = true, onPhotoAdded, onToggleFavorite }: RecipeDetailScreenProps) {
+export function RecipeDetailScreen({ recipe, onClose, onShare, editable = true, onPhotoAdded, onToggleFavorite, onSetMeals }: RecipeDetailScreenProps) {
   const userId = useUserId();
   const showToast = useAppStore((s) => s.showToast);
   const [uploading, setUploading] = useState(false);
@@ -109,6 +118,29 @@ export function RecipeDetailScreen({ recipe, onClose, onShare, editable = true, 
             <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
             {recipe.source_label}
           </span>
+        )}
+
+        {onSetMeals && (
+          <div className="macro-meal-picker recipe-meal-tags" aria-label="Meals this recipe is for">
+            <span className="lbl">Good for</span>
+            {MEAL_TAGS.map((m) => {
+              const on = (recipe.meals ?? []).includes(m.id);
+              return (
+                <button
+                  key={m.id}
+                  type="button"
+                  className={on ? 'on' : ''}
+                  aria-pressed={on}
+                  onClick={() => {
+                    const cur = recipe.meals ?? [];
+                    onSetMeals(recipe, on ? cur.filter((x) => x !== m.id) : [...cur, m.id]);
+                  }}
+                >
+                  {m.label}
+                </button>
+              );
+            })}
+          </div>
         )}
 
         <div className="recipe-stat-row">

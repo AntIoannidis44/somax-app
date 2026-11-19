@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Icon } from '../Icon';
 import { useUserId } from '../../lib/useSession';
-import { deleteUserRecipe, fetchUserRecipes, setRecipeFavorite, updateUserRecipeImage, type UserRecipe } from '../../lib/recipes';
+import { deleteUserRecipe, fetchUserRecipes, setRecipeFavorite, setRecipeMeals, updateUserRecipeImage, type UserRecipe } from '../../lib/recipes';
 import { deleteFavoriteMeal, fetchFavoriteMeals, kcalForMacros, updateFavoriteMealImage, type FavoriteMeal } from '../macros/macros';
 import { ShareRecipeSheet } from './ShareRecipeSheet';
 import { ImportRecipeScreen } from './ImportRecipeScreen';
 import { NewRecipeScreen } from './NewRecipeScreen';
 import { RecipeDetailScreen } from './RecipeDetailScreen';
+import { MealFilterChips, favoriteMatches, recipeMatches, type MealFilterValue } from '../macros/MealFilter';
 import type { RecipeToShare } from '../../lib/recipePosts';
 
 interface MyRecipesScreenProps {
@@ -86,6 +87,7 @@ export function MyRecipesScreen({ open, onClose }: MyRecipesScreenProps) {
   const [detailIsFavorite, setDetailIsFavorite] = useState(false);
   const [importing, setImporting] = useState(false);
   const [creating, setCreating] = useState(false);
+  const [filter, setFilter] = useState<MealFilterValue>('all');
 
   function load() {
     if (!userId) return;
@@ -121,7 +123,22 @@ export function MyRecipesScreen({ open, onClose }: MyRecipesScreenProps) {
     await setRecipeFavorite(r.id, next);
   }
 
+  async function handleSetMeals(r: UserRecipe, meals: string[]) {
+    setRecipes((prev) => prev.map((x) => (x.id === r.id ? { ...x, meals } : x)));
+    setDetailTarget((prev) => (prev && prev.id === r.id ? { ...prev, meals } : prev));
+    await setRecipeMeals(r.id, meals);
+  }
+
   if (!open) return null;
+
+  const shownRecipes = recipes.filter((r) => recipeMatches(r, filter));
+  const shownFavorites = favorites.filter((f) => favoriteMatches(f, filter));
+  const counts = Object.fromEntries(
+    (['all', 'breakfast', 'lunch', 'dinner', 'snacks'] as MealFilterValue[]).map((m) => [
+      m,
+      recipes.filter((r) => recipeMatches(r, m)).length + favorites.filter((f) => favoriteMatches(f, m)).length,
+    ]),
+  );
 
   return createPortal(
     <div className="macro-search-overlay">
@@ -139,16 +156,22 @@ export function MyRecipesScreen({ open, onClose }: MyRecipesScreenProps) {
           </button>
         </div>
       </div>
+      {!loading && (recipes.length > 0 || favorites.length > 0) && <MealFilterChips value={filter} onChange={setFilter} counts={counts} />}
       <div className="macro-search-results">
         {loading && <div className="macro-search-hint">Loading…</div>}
+        {!loading && (recipes.length > 0 || favorites.length > 0) && shownRecipes.length === 0 && shownFavorites.length === 0 && (
+          <div className="macro-search-hint">
+            Nothing for {filter} yet. Open a recipe to tag the meals it's for - recipes also get tagged when you log them to a meal.
+          </div>
+        )}
         {!loading && recipes.length === 0 && favorites.length === 0 && (
           <div className="macro-search-hint">
             No recipes saved yet - take a photo with New, paste a URL with Import, or save a favourite meal from the macro tracker.
           </div>
         )}
 
-        {recipes.length > 0 && <div className="section-label">Recipes</div>}
-        {recipes.map((r) => (
+        {shownRecipes.length > 0 && <div className="section-label">Recipes</div>}
+        {shownRecipes.map((r) => (
           <div className="recipe-list-row" key={r.id}>
             {r.image_url ? (
               <img className="recipe-list-thumb" src={r.image_url} alt="" />
@@ -200,8 +223,8 @@ export function MyRecipesScreen({ open, onClose }: MyRecipesScreenProps) {
           </div>
         ))}
 
-        {favorites.length > 0 && <div className="section-label" style={{ marginTop: recipes.length > 0 ? 18 : 4 }}>Favourite meals</div>}
-        {favorites.map((f) => {
+        {shownFavorites.length > 0 && <div className="section-label" style={{ marginTop: shownRecipes.length > 0 ? 18 : 4 }}>Favourite meals</div>}
+        {shownFavorites.map((f) => {
           const share = favoriteToShareTarget(f);
           return (
             <div className="recipe-list-row" key={f.id}>
@@ -253,6 +276,7 @@ export function MyRecipesScreen({ open, onClose }: MyRecipesScreenProps) {
       <RecipeDetailScreen
         recipe={detailTarget}
         onToggleFavorite={detailIsFavorite ? undefined : handleToggleFavorite}
+        onSetMeals={detailIsFavorite ? undefined : handleSetMeals}
         onClose={() => setDetailTarget(null)}
         onShare={(r) => {
           setDetailTarget(null);

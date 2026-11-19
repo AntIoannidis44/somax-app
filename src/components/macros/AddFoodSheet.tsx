@@ -14,7 +14,7 @@ import { FavoritesOverlay } from './FavoritesOverlay';
 import { FavoriteMealCard, FavoriteRecipeCard } from './FavoriteCard';
 import { LibraryScreenLazy } from '../library/LazyLibrary';
 import type { LibraryMeal } from '../../lib/library';
-import { fetchUserRecipes, type UserRecipe } from '../../lib/recipes';
+import { fetchUserRecipes, setRecipeMeals, type UserRecipe } from '../../lib/recipes';
 import {
   deleteFavoriteMeal,
   fetchFavoriteMeals,
@@ -110,10 +110,9 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
   const perUnitKcalPreview = Math.round((parseFloat(protein) || 0) * 4 + (parseFloat(carbs) || 0) * 4 + (parseFloat(fat) || 0) * 9);
   const kcalPreview = Math.round(perUnitKcalPreview * quantity);
   const mealFavorites = favorites.filter((f) => f.meal === meal);
-  // Recipes aren't meal-scoped, so every favourited one shows regardless
-  // of which meal tab is selected - same one-tap chip row favourite meals
-  // already get.
-  const favoriteRecipes = recipes.filter((r) => r.is_favorite);
+  // Favourited recipes tagged for this meal, plus untagged ones (so a recipe never vanishes
+  // from the quick list just because it hasn't been tagged yet).
+  const favoriteRecipes = recipes.filter((r) => r.is_favorite && (!(r.meals ?? []).length || (r.meals ?? []).includes(meal)));
 
   function reset() {
     setName('');
@@ -195,6 +194,13 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
   // ingredients - unlike a favourite meal, which already stores its items
   // as separate per-item macros.
   function handleAddRecipe(recipe: UserRecipe) {
+    // Logging a recipe to a meal tags it with that meal, which feeds the meal filters.
+    const tags = recipe.meals ?? [];
+    if (!tags.includes(meal)) {
+      const next = [...tags, meal];
+      setRecipes((prev) => prev.map((r) => (r.id === recipe.id ? { ...r, meals: next } : r)));
+      void setRecipeMeals(recipe.id, next);
+    }
     onSave([{
       meal,
       name: recipe.name,

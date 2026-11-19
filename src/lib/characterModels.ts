@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader, type GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { clone as skeletonClone } from 'three/examples/jsm/utils/SkeletonUtils.js';
 import type { BodyBuild, CharacterBase, CharacterConfig } from '../types';
-import { GYM_COLORS, HAIR_COLORS, fitWearToBase } from '../data/catalog';
+import { GYM_COLORS, HAIR_COLORS, OUTFIT_COLOR_PREFIX, fitWearToBase } from '../data/catalog';
 import { buildOutfitFit, type OutfitFit } from './outfitFit';
 import { buildInWorker, isHeavyGarment } from './gymWorkerClient';
 import { ACCESSORIES, GARMENTS, buildGarment, fabricMaterial, joints, openFrontZ, openGap, paintedMaterial, underwear, waistOf } from './gymWear';
@@ -54,13 +54,7 @@ function skinTextureName(build: BodyBuild, base: CharacterBase, skin: number): s
 // swap in for it (see OUTFIT_COLOR_FILES below).
 const OUTFIT_TEXTURE_VERSION = 3;
 const OUTFIT_COLOR_FILES = ['default', 'Charcoal', 'Crimson', 'Forest', 'Slate', 'Gold'];
-const OUTFIT_FILE_PREFIX: Record<string, string> = {
-  trainer: 'Peasant',
-  ranger: 'Ranger',
-  noble: 'Noble',
-  wizard: 'Wizard',
-  knight: 'Knight',
-};
+const OUTFIT_FILE_PREFIX = OUTFIT_COLOR_PREFIX;
 
 function outfitColorTextureName(outfit: string, colorIdx: number): string | null {
   const name = OUTFIT_COLOR_FILES[Math.max(0, Math.min(OUTFIT_COLOR_FILES.length - 1, colorIdx))];

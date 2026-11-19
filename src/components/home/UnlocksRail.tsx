@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { whenArenaReady } from '../../lib/arenaReady';
 import { CharacterThumbnail } from '../character/CharacterThumbnail';
 import { useAppStore } from '../../store/useAppStore';
-import { allWardrobe, isUnlocked, unlockItemName } from '../../lib/character';
+import { allWardrobe, isUnlocked, unlockAppliesTo, unlockItemName } from '../../lib/character';
 import { GYM_COLORS, HAIR_COLORS, OUTFIT_COLORS, SKIN_TONES } from '../../data/catalog';
 import type { CatalogItem, CatalogKey, CharacterConfig } from '../../types';
 import type { ThumbnailMode } from '../../lib/characterThumbnail';
@@ -141,12 +141,16 @@ export function UnlocksRail() {
       <div className="timeline-track" />
       {upcoming.map((w) => {
         const { cfg, mode } = previewFor(w.key, w.item, character);
+        // Greyed out when it can't change the character as currently dressed (e.g. an outfit
+        // colour with no outfit on, a top colour with no top) - see unlockAppliesTo.
+        const fit = unlockAppliesTo(w.key, character);
         return (
-          <div className="tl-node tl-unlock" key={`${w.key}-${w.item.id}`}>
+          <div className={`tl-node tl-unlock${fit.applies ? '' : ' tl-unlock-off'}`} key={`${w.key}-${w.item.id}`} title={fit.reason}>
             <div className="tl-unlock-art">{ready ? <CharacterThumbnail cfg={cfg} mode={mode} /> : <div className="char-thumb-skel" />}</div>
             <div className="tl-dot" />
             <div className="tl-lvl">Lv {w.item.unlock!.level}</div>
             <div className="tl-unlock-name">{unlockItemName(w.key, w.item)}</div>
+            {!fit.applies && <div className="tl-unlock-why">{fit.reason}</div>}
           </div>
         );
       })}

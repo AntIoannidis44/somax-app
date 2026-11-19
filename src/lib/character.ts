@@ -1,4 +1,4 @@
-import { CATALOG, CHAR_TIERS } from '../data/catalog';
+import { CATALOG, CHAR_TIERS, OUTFIT_COLOR_PREFIX } from '../data/catalog';
 import type { CatalogItem, CatalogKey, CharacterBase, CharacterConfig, CharTier } from '../types';
 
 export function tierFor(level: number): CharTier {
@@ -127,4 +127,24 @@ export function countUnlocked(ctx: UnlockContext, base?: CharacterBase): { done:
   const all = allWardrobe(base);
   const done = all.filter((w) => isUnlocked(w.item, ctx)).length;
   return { done, total: all.length };
+}
+
+// Does an unlock change anything on the character as currently dressed? Colour unlocks only
+// show on the piece they colour, so the Home unlock rail greys out the ones that can't apply:
+//  - outfit colours only recolour a fantasy outfit (nothing with the Default outfit on);
+//  - gym-wear colours only show with the Default outfit (an outfit replaces gym wear) and,
+//    per the owner's rule, only when a top is actually being worn.
+export function unlockAppliesTo(key: CatalogKey, character: CharacterConfig): { applies: boolean; reason?: string } {
+  const outfit = character.outfit && character.outfit !== 'none' ? character.outfit : null;
+  if (key === 'outfitColor') {
+    if (!outfit) return { applies: false, reason: 'Wear an outfit to use' };
+    if (!OUTFIT_COLOR_PREFIX[outfit]) return { applies: false, reason: "Your outfit doesn't change colour" };
+    return { applies: true };
+  }
+  if (key === 'gymColor') {
+    if (outfit) return { applies: false, reason: 'Not shown with an outfit on' };
+    if (!character.top || character.top === 'none') return { applies: false, reason: 'Put on a top to use' };
+    return { applies: true };
+  }
+  return { applies: true };
 }

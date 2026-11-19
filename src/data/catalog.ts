@@ -187,3 +187,14 @@ export function fitWearToBase<T extends { base: CharacterBase; top?: string; bot
   }
   return out;
 }
+
+// Fantasy outfits that have colour variants (texture files per colour). The renderer
+// (characterModels.ts) and the unlock rail's "does this unlock apply to me?" check both use
+// this, so they can't disagree. Outfit -> texture file prefix.
+export const OUTFIT_COLOR_PREFIX: Record<string, string> = {
+  trainer: 'Peasant',
+  ranger: 'Ranger',
+  noble: 'Noble',
+  wizard: 'Wizard',
+  knight: 'Knight',
+};

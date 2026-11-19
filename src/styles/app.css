@@ -1986,3 +1986,16 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .fav-card-wrap:has(.fav-card-del) .fav-card-add{ right:48px; }
 .fav-card-del{ position:absolute; right:12px; top:50%; translate:0 -50%; width:28px; height:28px; border-radius:50%; border:none; display:grid; place-items:center; background:var(--surface-3); color:var(--text-dim); cursor:pointer; }
 .fav-card-del svg{ width:12px; height:12px; }
+
+/* ---------- saved-food meal filter (Favourites, My recipes) ---------- */
+.meal-filter{ flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin:0; padding:10px 16px; border-bottom:1px solid var(--line-soft); flex-shrink:0; }
+.meal-filter::-webkit-scrollbar{ display:none; }
+.meal-filter button{ flex:0 0 auto; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
+.meal-filter-count{ font-size:10.5px; font-weight:800; opacity:.7; }
+.recipe-meal-tags{ display:flex; gap:6px; flex-wrap:wrap; margin:4px 0 16px; }
+.recipe-meal-tags .lbl{ width:100%; font-size:10.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--text-faint); }
+
+/* Home unlock rail: an unlock that can't apply to how the character is dressed right now */
+.tl-unlock-off .tl-unlock-art{ filter:grayscale(1); opacity:.42; }
+.tl-unlock-off .tl-lvl, .tl-unlock-off .tl-unlock-name{ opacity:.5; }
+.tl-unlock-why{ font-size:9.5px; font-weight:700; line-height:1.25; color:var(--text-faint); text-align:center; }

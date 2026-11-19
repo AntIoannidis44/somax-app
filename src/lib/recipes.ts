@@ -25,6 +25,8 @@ export interface UserRecipe {
   source_url: string | null;
   created_at: string;
   is_favorite: boolean;
+  // Meals this recipe is for ('breakfast' | 'lunch' | 'dinner' | 'snacks'); drives the meal filters.
+  meals?: string[];
 }
 
 export async function fetchUserRecipes(userId: string): Promise<UserRecipe[]> {
@@ -102,6 +104,13 @@ export async function updateUserRecipeImage(id: string, imageUrl: string): Promi
 export async function setRecipeFavorite(id: string, isFavorite: boolean): Promise<void> {
   const { error } = await supabase.from('user_recipes').update({ is_favorite: isFavorite }).eq('id', id);
   if (error) console.error('[recipes] setRecipeFavorite:', error.message);
+}
+
+// Meal tags for the Breakfast/Lunch/Dinner/Snacks filters - edited on the recipe itself, and
+// added automatically when the recipe is logged to a meal (see AddFoodSheet).
+export async function setRecipeMeals(id: string, meals: string[]): Promise<void> {
+  const { error } = await supabase.from('user_recipes').update({ meals }).eq('id', id);
+  if (error) console.error('[recipes] setRecipeMeals:', error.message);
 }
 
 // Recipe photos reuse the same public feed-images bucket and resize helper
