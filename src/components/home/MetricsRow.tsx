@@ -4,6 +4,13 @@ import { useAppStore } from '../../store/useAppStore';
 import { isWorkoutDone, todayMetrics, todayPlan } from '../../lib/schedule';
 import { healthAvailableOnPlatform } from '../../lib/health';
 
+// Heart-rate tile = today's AVERAGE heart rate from Apple Health (owner, 2026-11-20). It used to show the
+// single latest reading, which sat on one number (e.g. 137) for hours. No reading today = blank, says so.
+export function heartRateTile(health: { hr: number | null }) {
+  if (!health.hr) return { val: '—', unit: undefined, label: 'No heart rate', pct: 0 };
+  return { val: Math.round(health.hr), unit: 'bpm', label: 'Avg heart rate', pct: 0.62 };
+}
+
 function RingTile({
   iconName,
   color,
@@ -78,14 +85,7 @@ export function MetricsRow() {
         <RingTile iconName="steps" color="var(--stat-agility)" val={health.steps.toLocaleString()} label="Steps" pct={health.steps / STEPS_GOAL} />
         <RingTile iconName="flame" color="var(--stat-vitality)" val={Math.round(health.kcal).toLocaleString()} label="Calories" pct={health.kcal / KCAL_GOAL} />
         <RingTile iconName="clock" color="var(--stat-endurance)" val={Math.round(health.activeMinutes)} unit="min" label="Active" pct={health.activeMinutes / MINS_GOAL} />
-        <RingTile
-          iconName="heart"
-          color="var(--stat-strength)"
-          val={health.hr ? Math.round(health.hr) : 'Pair watch'}
-          unit={health.hr ? 'bpm' : undefined}
-          label="Heart rate"
-          pct={health.hr ? 0.62 : 0}
-        />
+        <RingTile iconName="heart" color="var(--stat-strength)" {...heartRateTile(health)} />
       </div>
     );
   }

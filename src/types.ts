@@ -171,6 +171,7 @@ export interface HealthMetrics {
   verifiedSteps?: number;
   kcal: number;
   activeMinutes: number;
+  // today's AVERAGE heart rate (all readings since midnight); null = no reading today
   hr: number | null;
 }
 

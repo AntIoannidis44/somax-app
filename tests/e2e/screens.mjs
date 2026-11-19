@@ -42,6 +42,7 @@ const FAKE_HEALTH = `
     getMonthlyStepsSummary: async () => ({ steps: 120000 }),
     getMonthlyCardioDistance: async () => ({ meters: 0 }),
     getLatestHeartRate: async () => ({ bpm: 62, recordedAt: t + 'T08:00:00' }),
+    getTodayAverageHeartRate: async () => ({ bpm: 71.6 }),
     getTodayWorkouts: async () => ({ workouts }),
     getDailyVerifiedSteps: async () => ({ days: [{ date: t, steps: 9200 }] }),
     getWorkoutRoute: async () => ({ points: [] }),
@@ -89,6 +90,11 @@ try {
   await page.screenshot({ path: path.join(SHOTS, '01-home.png'), fullPage: true });
   const home = await page.textContent('body');
   check('Home says "Challenge", not "Quest"', /All challenges/.test(home) && !/\bQuests?\b/.test(home));
+  // Heart rate = today's AVERAGE from Apple Health (71.6 -> 72), never the single latest reading (62)
+  const hrTile = page.locator('.metric', { hasText: /heart rate/i });
+  const hrText = (await hrTile.textContent()) || '';
+  check("Heart-rate tile shows today's average (72 bpm), not the latest reading", /72/.test(hrText) && /Avg heart rate/.test(hrText) && !/62/.test(hrText), hrText);
+  await page.locator('.metrics').screenshot({ path: path.join(SHOTS, '01b-metrics-avg-hr.png') });
   const coinsAfterSteps = await page.evaluate(() => window.__store.getState().coins);
   // steps (5) + today's real Apple Watch strength workout auto-synced (10); the couch and hand-entered ones pay nothing
   check('Verified sources paid coins: 8k device steps (5) + real watch workout (10), nothing for couch/typed-in', coinsAfterSteps === 15, `coins=${coinsAfterSteps}`);
@@ -135,6 +141,14 @@ try {
   await page.waitForTimeout(400);
   check('Home card now shows "Verified with Apple Fitness"', /Verified with Apple Fitness/.test(await page.textContent('body')));
   await page.screenshot({ path: path.join(SHOTS, '07-home-verified.png'), fullPage: true });
+
+  // No heart-rate reading today: blank tile that says so (no stand-in number)
+  await page.evaluate(() => { const st = window.__store.getState(); window.__store.setState({ today: { ...st.today, health: { ...st.today.health, hr: null } } }); });
+  await page.click('nav >> text=Home').catch(() => {});
+  await page.waitForTimeout(400);
+  const noHr = (await page.locator('.metric', { hasText: /heart rate/i }).textContent()) || '';
+  check('No heart rate today: tile is blank and says "No heart rate"', /No heart rate/.test(noHr) && !/\d/.test(noHr), noHr);
+  await page.locator('.metrics').screenshot({ path: path.join(SHOTS, '08-metrics-no-hr.png') });
 
   check('No JavaScript errors on any screen', consoleErrors.length === 0, consoleErrors.slice(0, 2).join(' | '));
 } finally {

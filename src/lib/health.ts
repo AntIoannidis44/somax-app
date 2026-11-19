@@ -38,6 +38,7 @@ interface HealthPlugin {
   getDailyVerifiedSteps(options: { startDate: string; endDate: string }): Promise<{ days: { date: string; steps: number }[] }>;
   getMonthlyCardioDistance(): Promise<{ meters: number }>;
   getLatestHeartRate(): Promise<LatestHeartRate>;
+  getTodayAverageHeartRate(): Promise<{ bpm: number | null }>;
   getTodayWorkouts(options?: { startDate?: string; endDate?: string }): Promise<{ workouts: HealthWorkout[] }>;
   getWorkoutRoute(options: { uuid: string }): Promise<{ points: RoutePoint[] }>;
   openAppSettings(): Promise<{ opened: boolean }>;
@@ -79,6 +80,14 @@ export async function getMonthlyCardioKm(): Promise<number | null> {
   if (!healthAvailableOnPlatform()) return null;
   const { meters } = await Health.getMonthlyCardioDistance();
   return meters / 1000;
+}
+
+// Today's average heart rate (bpm, rounded) from every Apple Health reading since midnight, or null when
+// there is none today. This is what Home and Profile show (owner, 2026-11-20).
+export async function getTodayAverageHeartRate(): Promise<number | null> {
+  if (!healthAvailableOnPlatform()) return null;
+  const { bpm } = await Health.getTodayAverageHeartRate();
+  return typeof bpm === 'number' && bpm > 0 ? Math.round(bpm) : null;
 }
 
 export async function getLatestHeartRate(): Promise<LatestHeartRate | null> {

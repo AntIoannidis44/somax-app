@@ -38,7 +38,7 @@ import { CHALLENGE_DEFS } from './data/challenges';
 import { getWorkout } from './lib/customWorkouts';
 import { challengeWindow, computeChallengeProgress, verifySpecFor, type InAppDay } from './lib/verifiedChallenges';
 import { useSession, useUserId } from './lib/useSession';
-import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getMonthlyCardioKm, getLatestHeartRate, getTodayWorkouts, getWorkoutsInRange, getDailyVerifiedSteps } from './lib/health';
+import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getMonthlyCardioKm, getTodayAverageHeartRate, getTodayWorkouts, getWorkoutsInRange, getDailyVerifiedSteps } from './lib/health';
 import { syncLocalReminders } from './lib/notifications';
 import { registerForPush, registerPushTapHandler } from './lib/push';
 import { fetchUnreadDMCounts, subscribeDMs } from './lib/social';
@@ -196,11 +196,11 @@ function App() {
           getTodayHealthSummary(),
           getMonthlySteps(),
           getMonthlyCardioKm(),
-          getLatestHeartRate(),
+          getTodayAverageHeartRate(),
           getTodayWorkouts(),
         ]);
         if (summary) {
-          syncHealthMetrics({ steps: summary.steps, verifiedSteps: summary.verifiedSteps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr: hr?.bpm ?? null });
+          syncHealthMetrics({ steps: summary.steps, verifiedSteps: summary.verifiedSteps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr });
         }
         if (monthlySteps !== null) setMonthlySteps(monthlySteps);
         if (cardioKm !== null) syncCardioKm(cardioKm);

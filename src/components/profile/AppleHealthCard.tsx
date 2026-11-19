@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
-import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getLatestHeartRate } from '../../lib/health';
+import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getTodayAverageHeartRate } from '../../lib/health';
 
 type Status = 'idle' | 'loading' | 'connected' | 'denied' | 'error';
 
@@ -10,7 +10,6 @@ export function AppleHealthCard() {
   const syncHealthMetrics = useAppStore((s) => s.syncHealthMetrics);
   const setMonthlySteps = useAppStore((s) => s.setMonthlySteps);
   const [status, setStatus] = useState<Status>(health ? 'connected' : 'idle');
-  const [hasHeartRateEver, setHasHeartRateEver] = useState(true);
   const [errorDetail, setErrorDetail] = useState('');
 
   if (!healthAvailableOnPlatform()) return null;
@@ -23,14 +22,13 @@ export function AppleHealthCard() {
         setStatus('denied');
         return;
       }
-      const [summary, monthlySteps, hr] = await Promise.all([getTodayHealthSummary(), getMonthlySteps(), getLatestHeartRate()]);
+      const [summary, monthlySteps, hr] = await Promise.all([getTodayHealthSummary(), getMonthlySteps(), getTodayAverageHeartRate()]);
       if (!summary) {
         setErrorDetail('No summary returned');
         setStatus('error');
         return;
       }
-      setHasHeartRateEver(!!hr?.bpm);
-      syncHealthMetrics({ steps: summary.steps, verifiedSteps: summary.verifiedSteps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr: hr?.bpm ?? null });
+      syncHealthMetrics({ steps: summary.steps, verifiedSteps: summary.verifiedSteps, kcal: summary.kcal, activeMinutes: summary.activeMinutes, hr });
       if (monthlySteps !== null) setMonthlySteps(monthlySteps);
       setStatus('connected');
     } catch (e) {
@@ -77,12 +75,12 @@ export function AppleHealthCard() {
             {health.hr ? (
               <>
                 <div style={{ fontSize: 20, fontWeight: 800 }}>{Math.round(health.hr)}</div>
-                <div style={{ fontSize: 11, color: 'var(--text-faint)' }}>Latest BPM</div>
+                <div style={{ fontSize: 11, color: 'var(--text-faint)' }}>Avg BPM today</div>
               </>
             ) : (
               <>
                 <div style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-faint)' }}>—</div>
-                <div style={{ fontSize: 11, color: 'var(--text-faint)' }}>{hasHeartRateEver ? 'Latest BPM' : 'Pair a smart watch'}</div>
+                <div style={{ fontSize: 11, color: 'var(--text-faint)' }}>No heart rate detected</div>
               </>
             )}
           </div>

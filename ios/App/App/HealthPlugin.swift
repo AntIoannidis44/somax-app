@@ -16,6 +16,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "getMonthlyStepsSummary", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getMonthlyCardioDistance", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getLatestHeartRate", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getTodayAverageHeartRate", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getTodayWorkouts", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getWorkoutRoute", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getDailyVerifiedSteps", returnType: CAPPluginReturnPromise),
@@ -146,7 +147,9 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
 
     @objc func getLatestHeartRate(_ call: CAPPluginCall) {
         let sort = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-        let query = HKSampleQuery(sampleType: heartRateType, predicate: nil, limit: 1, sortDescriptors: [sort]) { _, samples, error in
+        // Never later than now: a sample written with a future date would otherwise sort first forever.
+        let predicate = HKQuery.predicateForSamples(withStart: nil, end: Date(), options: [.strictEndDate])
+        let query = HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: 1, sortDescriptors: [sort]) { _, samples, error in
             if let error = error {
                 call.reject(error.localizedDescription)
                 return
@@ -158,6 +161,30 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             let bpm = sample.quantity.doubleValue(for: HKUnit.count().unitDivided(by: .minute()))
             let iso = ISO8601DateFormatter().string(from: sample.endDate)
             call.resolve(["bpm": bpm, "recordedAt": iso])
+        }
+        store.execute(query)
+    }
+
+    // Today's AVERAGE heart rate (owner 2026-11-20): every heart-rate reading Apple Health has since local
+    // midnight - all-day watch readings plus those recorded during logged walks/workouts - averaged by
+    // HealthKit itself. bpm is null when there is no reading today (the app then says none was detected).
+    @objc func getTodayAverageHeartRate(_ call: CAPPluginCall) {
+        let now = Date()
+        let predicate = HKQuery.predicateForSamples(withStart: Calendar.current.startOfDay(for: now), end: now, options: [.strictEndDate])
+        let query = HKStatisticsQuery(quantityType: heartRateType, quantitySamplePredicate: predicate, options: .discreteAverage) { _, result, error in
+            if let error = error as? HKError, error.code == .errorNoData {
+                call.resolve(["bpm": NSNull()])
+                return
+            }
+            if let error = error {
+                call.reject(error.localizedDescription)
+                return
+            }
+            guard let avg = result?.averageQuantity() else {
+                call.resolve(["bpm": NSNull()])
+                return
+            }
+            call.resolve(["bpm": avg.doubleValue(for: HKUnit.count().unitDivided(by: .minute()))])
         }
         store.execute(query)
     }
