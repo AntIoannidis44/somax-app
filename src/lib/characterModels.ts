@@ -299,10 +299,106 @@ function gymGarment(srcSkin: THREE.SkinnedMesh, U: any, key: string, base: Chara
   }
   return job;
 }
-// A headband is the same size on every head and folds under the hair: these styles are drawn in front of anything
-// within 2cm, so hair lying over the band always wins and no chips poke through. The band itself isn't changed.
-// Cropped styles aren't listed: their hair is flat to the skull and the band sits over it.
-const HAIR_OVER_BAND = new Set(['bob', 'buns', 'long', 'longDreads', 'ponytail2', 'ponytail']);
+// Headband vs hair (2026-11-20). The band is built on the bald head, so on most styles it would sit inside
+// the hair. fitBandOverHair() pushes each part of the ring out to sit on top of THIS hairstyle (as a real
+// headband sits over pulled-back hair). Only styles too voluminous for that keep the old approach of drawing
+// the hair in front of the band (anything within 2cm), where the band shows only at the hairline.
+// Checked from 5 angles for every style by tests/render/headband.mjs.
+// Long loose hair falls over the band at the sides (only the forehead part shows), as in real life;
+// long dreads are too voluminous to wrap. Every other style gets the band fitted over the hair.
+const HAIR_OVER_BAND = new Set(['long', 'longDreads']);
+
+// The hair model as it sits on THIS character's head, in the body mesh's own space (the hair keeps its own
+// bind data; other builds move it onto their own head bones), so the band can be fitted against it.
+const hairBodySpaceCache = new Map<string, THREE.BufferGeometry[]>();
+function hairInBodySpace(hairMeshes: THREE.SkinnedMesh[], srcSkin: THREE.SkinnedMesh, key: string): THREE.BufferGeometry[] {
+  const hit = hairBodySpaceCache.get(key);
+  if (hit) return hit;
+  const srcBind = new Map<string, THREE.Matrix4>();
+  srcSkin.skeleton.bones.forEach((b, i) => srcBind.set(b.name, srcSkin.skeleton.boneInverses[i].clone().invert()));
+  const toBody = srcSkin.bindMatrixInverse.clone();
+  const out = hairMeshes.map((m) => {
+    const g = m.geometry, pos = g.attributes.position, si = g.attributes.skinIndex, sw = g.attributes.skinWeight;
+    const mats = m.skeleton.bones.map((b, j) => (srcBind.get(b.name) ?? new THREE.Matrix4()).clone().multiply(m.skeleton.boneInverses[j]));
+    const P = new Float32Array(pos.count * 3), v = new THREE.Vector3(), acc = new THREE.Vector3(), t = new THREE.Vector3();
+    for (let i = 0; i < pos.count; i++) {
+      v.fromBufferAttribute(pos as THREE.BufferAttribute, i).applyMatrix4(m.bindMatrix);
+      acc.set(0, 0, 0);
+      for (let k = 0; k < 4; k++) {
+        const w = sw.getComponent(i, k);
+        if (w) acc.addScaledVector(t.copy(v).applyMatrix4(mats[si.getComponent(i, k)]), w);
+      }
+      acc.applyMatrix4(toBody);
+      P[i * 3] = acc.x; P[i * 3 + 1] = acc.y; P[i * 3 + 2] = acc.z;
+    }
+    const h = new THREE.BufferGeometry();
+    h.setAttribute('position', new THREE.BufferAttribute(P, 3));
+    if (g.index) h.setIndex(g.index);
+    return h;
+  });
+  hairBodySpaceCache.set(key, out);
+  return out;
+}
+
+// Push each part of the headband ring outward just enough that hair can't poke through its outer surface
+// (hair under the padded band is hidden anyway, so short styles barely move): around the head's centre line
+// at the band's height, the outermost hair found within reach sets how far that part of the ring must move, and the result is smoothed into an even ring (no kinks). Parts with no
+// hair under them (the forehead skin) don't move. Capped so a hanging tail or bun can't balloon the band.
+const bandFitCache = new Map<string, THREE.BufferGeometry>();
+function fitBandOverHair(band: THREE.BufferGeometry, hair: THREE.BufferGeometry[], key: string): THREE.BufferGeometry {
+  const hit = bandFitCache.get(key);
+  if (hit) return hit;
+  const pos = band.attributes.position as THREE.BufferAttribute, n = pos.count;
+  let cx = 0, cz = 0, ymin = Infinity, ymax = -Infinity;
+  for (let i = 0; i < n; i++) { cx += pos.getX(i); cz += pos.getZ(i); ymin = Math.min(ymin, pos.getY(i)); ymax = Math.max(ymax, pos.getY(i)); }
+  cx /= n; cz /= n;
+  const BINS = 96, GAP = 0.0035, CAP = 0.03;
+  const ang = (x: number, z: number) => ((Math.atan2(x - cx, z - cz) / (2 * Math.PI)) * BINS + BINS) % BINS;
+  // outermost band radius (the surface hair must not poke through) and band height per bin
+  const outer = new Array(BINS).fill(0), inner = new Array(BINS).fill(Infinity), ySum = new Array(BINS).fill(0), yN = new Array(BINS).fill(0);
+  for (let i = 0; i < n; i++) {
+    const b = Math.floor(ang(pos.getX(i), pos.getZ(i))) % BINS, r = Math.hypot(pos.getX(i) - cx, pos.getZ(i) - cz);
+    inner[b] = Math.min(inner[b], r); outer[b] = Math.max(outer[b], r); ySum[b] += pos.getY(i); yN[b]++;
+  }
+  // Outermost hair surface per bin at band height, read straight from the hair's own points (each triangle's
+  // corners + centre) - one pass over the data instead of ray-casting the whole model (that was ~300ms at
+  // phone speed). Only hair within the band's height (plus a margin for its tilt) and within reach counts.
+  const hairR = new Array(BINS).fill(0), PAD = (ymax - ymin) * 0.15;
+  const V = [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()];
+  const take = (v: THREE.Vector3) => {
+    if (v.y < ymin - PAD || v.y > ymax + PAD) return;
+    const b = Math.floor(ang(v.x, v.z)) % BINS;
+    if (!yN[b]) return;
+    const r = Math.hypot(v.x - cx, v.z - cz);
+    if (r <= outer[b] + CAP + GAP && r > hairR[b]) hairR[b] = r;
+  };
+  for (const g of hair) {
+    const hp = g.attributes.position as THREE.BufferAttribute, ix = g.index ? g.index.array : null, tri = ix ? ix.length : hp.count;
+    for (let t = 0; t + 2 < tri; t += 3) {
+      for (let k = 0; k < 3; k++) V[k].fromBufferAttribute(hp, ix ? ix[t + k] : t + k);
+      if (Math.max(V[0].y, V[1].y, V[2].y) < ymin - PAD || Math.min(V[0].y, V[1].y, V[2].y) > ymax + PAD) continue;
+      V[3].copy(V[0]).add(V[1]).add(V[2]).multiplyScalar(1 / 3);
+      for (const v of V) take(v);
+    }
+  }
+  const need = hairR.map((h, b) => (yN[b] && h ? Math.min(CAP, Math.max(0, h + GAP - outer[b])) : 0));
+  // even ring: spread each need over its neighbours (max, radius 3), then soften (mean, radius 3). The max
+  // radius must be >= the mean radius so the softened ring never dips below what any part needs.
+  const mx = need.map((_, b) => Math.max(...[-3, -2, -1, 0, 1, 2, 3].map((d) => need[(b + d + BINS) % BINS])));
+  const push = mx.map((_, b) => [-3, -2, -1, 0, 1, 2, 3].reduce((s2, d) => s2 + mx[(b + d + BINS) % BINS], 0) / 7);
+  const out = band.clone(), op = out.attributes.position as THREE.BufferAttribute;
+  for (let i = 0; i < n; i++) {
+    const x = op.getX(i) - cx, z = op.getZ(i) - cz, r = Math.hypot(x, z);
+    if (r < 1e-6) continue;
+    const f = ang(op.getX(i), op.getZ(i)), b0 = Math.floor(f) % BINS, t = f - Math.floor(f);
+    const d = push[b0] * (1 - t) + push[(b0 + 1) % BINS] * t;
+    op.setXYZ(i, cx + (x / r) * (r + d), op.getY(i), cz + (z / r) * (r + d));
+  }
+  op.needsUpdate = true;
+  out.computeBoundingSphere();
+  bandFitCache.set(key, out);
+  return out;
+}
 function drawHairOverBand(mat: THREE.Material) {
   mat.onBeforeCompile = (sh) => {
     sh.vertexShader = sh.vertexShader.replace('#include <project_vertex>', `#include <project_vertex>
@@ -397,12 +493,13 @@ export async function composeCharacter(rawCfg: CharacterConfig): Promise<Compose
       const J = joints(srcSkin), U = underwear(srcSkin, J);
       const hides: { key: string; hide: any }[] = [];
       let topHem: number | null = null, topGeo: THREE.BufferGeometry | undefined;
-      const wear = async (key: string | undefined, slot: string, color: string | undefined, over?: any, overKey?: string, patch?: object) => {
+      const wear = async (key: string | undefined, slot: string, color: string | undefined, over?: any, overKey?: string, patch?: object, post?: (g: THREE.BufferGeometry) => THREE.BufferGeometry) => {
 
         if (!key || key === 'none' || !GARMENTS[key]) return null;
         const spec = { ...(over || GARMENTS[key]), ...(patch || {}) }, tint = color || spec.color;
-        const geo = await gymGarment(srcSkin, U, key, cfg.base, cfg.build, over, overKey, patch);
-        if (!geo) return null;
+        const built = await gymGarment(srcSkin, U, key, cfg.base, cfg.build, over, overKey, patch);
+        if (!built) return null;
+        const geo = post ? post(built) : built;
         let mat: THREE.Material;
         if (geo.userData.rigid) mat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.62, metalness: 0.05 });
         else if (geo.userData.maps) {
@@ -434,9 +531,16 @@ export async function composeCharacter(rawCfg: CharacterConfig): Promise<Compose
       if (tuckAt === null) await wear(cfg.bottom, 'bottom', hex(cfg.bottomColor));
       else await wear(cfg.bottom, 'bottom', hex(cfg.bottomColor), undefined, `over${tuckAt.toFixed(3)}`, { flatTop: true, overTop: { y: tuckAt, d: 0.016 } });
       await wear(cfg.legwear, 'legwear', undefined);
+      // the hair the headband has to sit on (same cached file the hair step loads below)
+      const bandHair = cfg.acc?.includes('headband') && cfg.hair !== 'none' && HAIR_URLS[cfg.hair] && !HAIR_OVER_BAND.has(cfg.hair)
+        ? hairInBodySpace(findSkinnedMeshes((await loadGLTF(HAIR_URLS[cfg.hair])).scene), srcSkin, `${cfg.hair}|${cfg.base}|${cfg.build}`)
+        : null;
       for (const name of cfg.acc ?? []) {
         if ((name === 'wristbands' || name === 'watch') && topSpec?.jacket) continue; // long sleeves cover the wrists
-        for (const k of ACCESSORIES[name] ?? []) await wear(k, 'acc', undefined, name === 'bag' ? { ...GARMENTS[k], clothesGeo: topGeo } : undefined, name === 'bag' ? `over:${cfg.top ?? ''}` : undefined);
+        for (const k of ACCESSORIES[name] ?? []) {
+          const fit = k === 'headband' && bandHair ? (g: THREE.BufferGeometry) => fitBandOverHair(g, bandHair, `${cfg.hair}|${cfg.base}|${cfg.build}`) : undefined;
+          await wear(k, 'acc', undefined, name === 'bag' ? { ...GARMENTS[k], clothesGeo: topGeo } : undefined, name === 'bag' ? `over:${cfg.top ?? ''}` : undefined, undefined, fit);
+        }
       }
       await wear(cfg.shoes, 'shoes', hex(cfg.shoesColor));
       const shoesOn = !!cfg.shoes && cfg.shoes !== 'none';

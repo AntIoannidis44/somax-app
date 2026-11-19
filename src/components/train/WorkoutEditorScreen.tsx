@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ExercisePicker } from './ExercisePicker';
 import { Icon } from '../Icon';
 import { useAppStore } from '../../store/useAppStore';
 import { useUserId } from '../../lib/useSession';
@@ -117,8 +118,16 @@ export function WorkoutEditorScreen() {
   function removeExercise(i: number) {
     setExercises((prev) => prev.filter((_, idx) => idx !== i));
   }
+  // Exercises are chosen from the app's own movement list (so they get their how-to picture), or typed in
+  // as the member's own name when it isn't there. picker: null = closed, -1 = adding, i = renaming exercise i.
+  const [picker, setPicker] = useState<number | null>(null);
   function addExercise() {
-    setExercises((prev) => [...prev, toDraft({ name: '', sets: 3, reps: '10' })]);
+    setPicker(-1);
+  }
+  function handlePick(pickedName: string) {
+    if (picker === -1) setExercises((prev) => [...prev, toDraft({ name: pickedName, sets: 3, reps: '10' })]);
+    else if (picker !== null) updateExercise(picker, { name: pickedName });
+    setPicker(null);
   }
 
   // Superset with the exercise above: joins its group (or starts a new one
@@ -230,12 +239,9 @@ export function WorkoutEditorScreen() {
           <div className={`card ex-edit-block${ex.group ? ' in-superset' : ''}`} key={i} style={{ marginBottom: 12 }}>
             {ex.group && <div className="superset-label">Superset {ex.group}{prevGroup === ex.group ? '' : ' · starts here'}</div>}
             <div className="ex-edit-card-top">
-              <input
-                className="ex-edit-name"
-                value={ex.name}
-                onChange={(e) => updateExercise(i, { name: e.target.value })}
-                placeholder="Exercise name"
-              />
+              <button type="button" className="ex-edit-name ex-edit-name-btn" onClick={() => setPicker(i)} aria-label={`Change exercise: ${ex.name || 'none chosen'}`}>
+                {ex.name || <span className="ex-edit-name-ph">Choose exercise</span>}
+              </button>
               <button className="ex-edit-remove" onClick={() => removeExercise(i)}>
                 <Icon name="trash" />
               </button>
@@ -348,6 +354,12 @@ export function WorkoutEditorScreen() {
           </button>
         </>
       )}
+      <ExercisePicker
+        open={picker !== null}
+        initialQuery={picker !== null && picker >= 0 ? exercises[picker]?.name ?? '' : ''}
+        onClose={() => setPicker(null)}
+        onPick={(n) => handlePick(n)}
+      />
     </>
   );
 }

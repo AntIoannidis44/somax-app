@@ -45,7 +45,7 @@ const FAKE_HEALTH = `
     isAvailable: async () => ({ available: true }), requestAuthorization: async () => ({ granted: true }),
     getTodaySummary: async () => ({ steps: 0, verifiedSteps: 0, activeMinutes: 0, kcal: 0 }),
     getMonthlyStepsSummary: async () => ({ steps: 0 }), getMonthlyCardioDistance: async () => ({ meters: 0 }),
-    getLatestHeartRate: async () => ({ bpm: 0, recordedAt: null }), getTodayWorkouts: async () => ({ workouts: [] }),
+    getLatestHeartRate: async () => ({ bpm: 0, recordedAt: null }), getTodayAverageHeartRate: async () => ({ bpm: null }), getTodayWorkouts: async () => ({ workouts: [] }),
     getDailyVerifiedSteps: async () => ({ days: [] }), getWorkoutRoute: async () => ({ points: [] }), openAppSettings: async () => ({ opened: false }),
   };
 `;
@@ -93,7 +93,7 @@ try {
     s.getState().finishOnboarding();
     s.setState({ viewingMacros: true });
   });
-  await page.locator('.macro-meal-add').first().click();
+  await page.locator('.day-log-add').first().click();
   const overlay = page.locator('.modal-overlay.show');
   await overlay.waitFor();
   await page.waitForTimeout(400);

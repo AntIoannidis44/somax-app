@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:e2e": "node tests/e2e/screens.mjs && node tests/e2e/foodlog.mjs"
+    "test:e2e": "node tests/e2e/screens.mjs && node tests/e2e/foodlog.mjs && node tests/e2e/programbuilder.mjs && node tests/e2e/nutrition-shots.mjs ci",
+    "test:render": "node tests/render/headband.mjs regular \"\" regular && node tests/render/headband.mjs teen \"\" teen && node tests/render/headband.mjs superhero \"\" superhero"
   },
   "dependencies": {
     "@capacitor/app": "^8.1.2",

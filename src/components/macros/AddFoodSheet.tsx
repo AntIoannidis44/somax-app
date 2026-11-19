@@ -96,9 +96,14 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
 
   const [reviewItems, setReviewItems] = useState<ReviewItem[] | null>(null);
 
-  useEffect(() => {
-    if (open) setMeal(initialMeal);
-  }, [open, initialMeal]);
+  // Opening for a meal selects it BEFORE the first frame (adjusting state during render, not in an effect):
+  // the effect version showed the previous meal (e.g. Breakfast) for a frame when opened from Lunch's +Add.
+  const [openedFor, setOpenedFor] = useState<string | null>(open ? initialMeal : null);
+  const openKey = open ? initialMeal : null;
+  if (openKey !== openedFor) {
+    setOpenedFor(openKey);
+    if (openKey) setMeal(openKey);
+  }
 
   useEffect(() => {
     if (open && userId) {

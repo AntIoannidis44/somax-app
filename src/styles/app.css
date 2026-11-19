@@ -1999,3 +1999,56 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .tl-unlock-off .tl-unlock-art{ filter:grayscale(1); opacity:.42; }
 .tl-unlock-off .tl-lvl, .tl-unlock-off .tl-unlock-name{ opacity:.5; }
 .tl-unlock-why{ font-size:9.5px; font-weight:700; line-height:1.25; color:var(--text-faint); text-align:center; }
+
+/* ---------- program builder: exercise picker (full-screen) ---------- */
+.ex-picker-filters{ flex-shrink:0; border-bottom:1px solid var(--line-soft); }
+.ex-picker-tabs{ display:flex; align-items:center; gap:4px; padding:10px 16px 0; }
+.ex-picker-tabs button{ border:none; background:none; padding:6px 10px; border-radius:999px; font:inherit; font-size:12.5px; font-weight:700; color:var(--text-dim); cursor:pointer; white-space:nowrap; }
+.ex-picker-tabs button.on{ background:var(--surface-2); color:var(--text); }
+.ex-picker-tab-val{ color:var(--accent); font-weight:800; }
+.ex-picker-tabs .ex-picker-clear{ margin-left:auto; color:var(--accent); }
+.ex-picker-chips{ border-bottom:none; padding-top:8px; }
+.ex-picker-main{ display:flex; flex-direction:column; gap:3px; min-width:0; }
+.ex-picker-sub{ font-size:11.5px; color:var(--text-faint); font-weight:600; }
+.ex-picker-custom .macro-search-name{ color:var(--accent); }
+.ex-edit-name-btn{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:11px 14px; border-radius:12px; border:1px solid var(--line); background:var(--surface-2); color:var(--text); font:inherit; font-size:15px; font-weight:600; text-align:left; cursor:pointer; overflow:hidden; text-overflow:ellipsis; }
+.ex-edit-name-btn::after{ content:""; flex-shrink:0; width:7px; height:7px; border-right:2px solid var(--text-faint); border-bottom:2px solid var(--text-faint); transform:rotate(-45deg); }
+.ex-edit-name-ph{ color:var(--text-faint); font-weight:500; }
+
+/* ---------- Nutrition: Today's log (2026-11-20 refresh, matches Home checklist / Train cards) ---------- */
+.day-log{ display:flex; flex-direction:column; gap:12px; margin-bottom:18px; }
+.day-log-meal{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg, 20px); box-shadow:var(--sh-2); overflow:hidden; }
+.day-log-head{ display:flex; align-items:center; gap:12px; padding:14px 14px 12px; }
+/* each color-mix() line has a plain fallback first, for iOS before 16.2 */
+.day-log-ic{ width:40px; height:40px; border-radius:50%; display:grid; place-items:center; flex-shrink:0;
+  background:var(--surface-2); box-shadow:inset 0 0 0 2px var(--line);
+  background:color-mix(in srgb, var(--meal) 16%, var(--surface)); box-shadow:inset 0 0 0 2px color-mix(in srgb, var(--meal) 45%, transparent); }
+.day-log-ic svg{ width:19px; height:19px; fill:none; stroke:var(--meal); stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+.day-log-title{ flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; }
+.day-log-title b{ font-family:var(--font-display); font-size:16px; font-weight:700; }
+.day-log-title span{ font-size:12px; color:var(--text-faint); font-weight:600; }
+.day-log-add{ display:inline-flex; align-items:center; gap:4px; padding:7px 12px 7px 9px; border-radius:999px; border:none; flex-shrink:0;
+  background:var(--accent-soft); color:var(--accent); font:inherit; font-size:12.5px; font-weight:800; cursor:pointer; }
+.day-log-add svg{ width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.6; }
+.day-log-add:active{ transform:scale(.96); }
+.day-log-row{ display:flex; align-items:center; gap:12px; width:100%; padding:12px 14px; border:none; border-top:1px solid var(--line-soft);
+  background:none; text-align:left; font:inherit; color:inherit; cursor:pointer; }
+.day-log-row.skipped{ cursor:default; }
+.day-log-row.skipped .day-log-name{ color:var(--text-faint); font-style:italic; }
+.day-log-thumb{ width:44px; height:44px; border-radius:12px; object-fit:cover; flex-shrink:0; background:var(--surface-2); }
+.day-log-main{ flex:1; min-width:0; }
+.day-log-name{ font-size:14.5px; font-weight:700; overflow-wrap:anywhere; }
+.day-log-meta{ font-size:12px; color:var(--text-faint); margin-top:1px; }
+.day-log-chips{ display:flex; flex-wrap:wrap; gap:5px; margin-top:7px; }
+.day-log-chips span{ font-size:11px; font-weight:800; padding:3px 8px; border-radius:999px; font-variant-numeric:tabular-nums; }
+.day-log-chips .p{ color:var(--macro-protein); background:var(--surface-2); background:color-mix(in srgb, var(--macro-protein) 12%, transparent); }
+.day-log-chips .c{ color:var(--macro-carbs); background:var(--surface-2); background:color-mix(in srgb, var(--macro-carbs) 13%, transparent); }
+.day-log-chips .f{ color:var(--macro-fat); background:var(--surface-2); background:color-mix(in srgb, var(--macro-fat) 12%, transparent); }
+.day-log-kcal{ display:flex; flex-direction:column; align-items:flex-end; flex-shrink:0; line-height:1.1; }
+.day-log-kcal b{ font-family:var(--font-display); font-size:17px; font-weight:800; font-variant-numeric:tabular-nums; }
+.day-log-kcal small{ font-size:10.5px; font-weight:700; color:var(--text-faint); text-transform:uppercase; letter-spacing:.06em; }
+.day-log-del{ width:28px; height:28px; border-radius:50%; display:grid; place-items:center; color:var(--text-faint); flex-shrink:0; margin-right:-4px; }
+.day-log-del svg{ width:12px; height:12px; stroke:currentColor; fill:none; stroke-width:2.2; }
+.day-log-empty{ padding:2px 14px 14px 66px; font-size:12.5px; }
+
+.section-label .note.day-log-total{ font-family:var(--font-body); font-size:12px; font-weight:700; color:var(--text-faint); }

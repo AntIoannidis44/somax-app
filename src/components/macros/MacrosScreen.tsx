@@ -367,88 +367,99 @@ export function MacrosScreen() {
         )}
       </div>
 
+      {/* Today's log - restyled 2026-11-20 to match Home/Train (coloured icon tiles, bold title + quiet
+          subtitle, pill action, bold kcal, colour-coded macro chips). Own day-log-* classes so the old
+          macro-meal / macro-food-row styles (and anything that might share them) are untouched. */}
       <div className="section-label">
         Today's log
-        <span className="note mono">{entries.length} item{entries.length === 1 ? '' : 's'}</span>
+        <span className="note day-log-total">
+          {entries.filter((e) => !isSkippedEntry(e)).length} item{entries.filter((e) => !isSkippedEntry(e)).length === 1 ? '' : 's'} · {fmt(entries.reduce((sum, e) => sum + entryTotal(e).kcal, 0))} kcal
+        </span>
       </div>
-      {MEALS.map((m) => {
-        const items = entries.filter((e) => e.meal === m.id);
-        const kcal = items.reduce((sum, e) => sum + entryTotal(e).kcal, 0);
-        return (
-          <div className="macro-meal" key={m.id}>
-            <div className="macro-meal-head">
-              <div className="t">
-                <span className="ic" style={{ background: `${m.color}26` }}>
-                  <svg viewBox="0 0 24 24" style={{ stroke: m.color }} dangerouslySetInnerHTML={{ __html: m.icon }} />
+      <div className="day-log">
+        {MEALS.map((m) => {
+          const items = entries.filter((e) => e.meal === m.id);
+          const foods = items.filter((e) => !isSkippedEntry(e));
+          const kcal = items.reduce((sum, e) => sum + entryTotal(e).kcal, 0);
+          const skipped = items.length > 0 && foods.length === 0;
+          return (
+            <div className="day-log-meal" key={m.id} style={{ '--meal': m.color } as React.CSSProperties}>
+              <div className="day-log-head">
+                <span className="day-log-ic">
+                  <svg viewBox="0 0 24 24" dangerouslySetInnerHTML={{ __html: m.icon }} />
                 </span>
-                {m.label}
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span className="kcal">{kcal} kcal</span>
-                <button className="macro-meal-add" aria-label={`Add food to ${m.label}`} onClick={() => setAddSheetMeal(m.id)}>
+                <div className="day-log-title">
+                  <b>{m.label}</b>
+                  <span>
+                    {foods.length > 0
+                      ? `${foods.length} item${foods.length === 1 ? '' : 's'} · ${fmt(kcal)} kcal`
+                      : skipped
+                        ? 'Skipped'
+                        : 'Nothing logged yet'}
+                  </span>
+                </div>
+                <button className="day-log-add" aria-label={`Add food to ${m.label}`} onClick={() => setAddSheetMeal(m.id)}>
                   <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                  Add
                 </button>
               </div>
-            </div>
-            {items.length === 0 ? (
-              <div className="macro-meal-empty">
-                Nothing logged yet
-                <button className="link-btn" style={{ marginLeft: 8 }} onClick={() => handleSkipMeal(m.id)}>
-                  Skip meal
-                </button>
-              </div>
-            ) : (
-              items.map((e) => {
-                if (isSkippedEntry(e)) {
+              {items.length === 0 ? (
+                <div className="day-log-empty">
+                  <button className="link-btn" onClick={() => handleSkipMeal(m.id)}>
+                    Skip {m.label.toLowerCase()}
+                  </button>
+                </div>
+              ) : (
+                items.map((e) => {
+                  if (isSkippedEntry(e)) {
+                    return (
+                      <div className="day-log-row skipped" key={e.id}>
+                        <div className="day-log-main">
+                          <div className="day-log-name">Skipped</div>
+                          <div className="day-log-meta">Counted as logged - no food recorded</div>
+                        </div>
+                        <span className="day-log-del" role="button" aria-label="Undo skip" onClick={() => handleDelete(e)}>
+                          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></svg>
+                        </span>
+                      </div>
+                    );
+                  }
+                  const total = entryTotal(e);
                   return (
-                    <div className="macro-food-row skipped" key={e.id}>
-                      <div className="main">
-                        <div className="n">Skipped</div>
-                        <div className="s">Counted as logged - no food recorded</div>
+                    <button className="day-log-row" key={e.id} onClick={() => setEditingEntry(e)}>
+                      {e.image_url && <img className="day-log-thumb" src={e.image_url} alt="" />}
+                      <div className="day-log-main">
+                        <div className="day-log-name">{e.name}{e.quantity !== 1 ? ` ×${e.quantity}` : ''}</div>
+                        {e.serving && <div className="day-log-meta">{e.serving}</div>}
+                        <div className="day-log-chips">
+                          <span className="p">P {Math.round(total.protein)}g</span>
+                          <span className="c">C {Math.round(total.carbs)}g</span>
+                          <span className="f">F {Math.round(total.fat)}g</span>
+                        </div>
+                      </div>
+                      <div className="day-log-kcal">
+                        <b>{fmt(total.kcal)}</b>
+                        <small>kcal</small>
                       </div>
                       <span
-                        className="del"
+                        className="day-log-del"
                         role="button"
-                        aria-label="Undo skip"
-                        onClick={() => handleDelete(e)}
+                        aria-label={`Remove ${e.name}`}
+                        onClick={(ev) => {
+                          ev.stopPropagation();
+                          handleDelete(e);
+                        }}
                       >
                         <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></svg>
                       </span>
-                    </div>
+                    </button>
                   );
-                }
-                const total = entryTotal(e);
-                return (
-                <button className="macro-food-row" key={e.id} onClick={() => setEditingEntry(e)}>
-                  {e.image_url && <img className="macro-food-thumb" src={e.image_url} alt="" />}
-                  <div className="main">
-                    <div className="n">{e.name}{e.quantity !== 1 ? ` ×${e.quantity}` : ''}</div>
-                    {e.serving && <div className="s">{e.serving}</div>}
-                    <div className="macros">
-                      <span><b>{total.kcal}</b> kcal</span>
-                      <span>P <b>{Math.round(total.protein)}g</b></span>
-                      <span>C <b>{Math.round(total.carbs)}g</b></span>
-                      <span>F <b>{Math.round(total.fat)}g</b></span>
-                    </div>
-                  </div>
-                  <span
-                    className="del"
-                    role="button"
-                    aria-label="Remove"
-                    onClick={(ev) => {
-                      ev.stopPropagation();
-                      handleDelete(e);
-                    }}
-                  >
-                    <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></svg>
-                  </span>
-                </button>
-                );
-              })
-            )}
-          </div>
-        );
-      })}
+                })
+              )}
+            </div>
+          );
+        })}
+      </div>
 
       <button className="lib-entry lib-entry-bottom" onClick={() => setLibraryOpen(true)}>
         <span className="ic">

@@ -45,3 +45,7 @@ scripts/program-library/tools/ais_recipes_parsed.json
 scripts/program-library/tools/parse_ais_recipes.py
 scripts/program-library/tools/gen_sports_nutrition_meals.py
 scripts/program-library/tools/validate_sports_nutrition_meals.py
+
+# test render/screenshot output
+tests/render/out/
+tests/e2e/shots/
