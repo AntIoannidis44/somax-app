@@ -53,3 +53,28 @@ describe("the owner's real log, recalculated", () => {
   it('Sol 355 ml at 4.5%: ~140 kcal, not the 60 stored', () => expect(drink(355, 4.5, 13)).toBeGreaterThanOrEqual(130));
   it('Strongbow Lower Carb 375 ml at 4.5%: ~133 kcal, not the 40 stored', () => expect(drink(375, 4.5, 10)).toBeGreaterThanOrEqual(125));
 });
+
+describe('barcode labels scale to the serving or the whole pack (2026-11-21)', () => {
+  it('reads label portions', async () => {
+    const { parsePortion } = await import('../src/components/macros/macros');
+    expect(parsePortion('375 ml')).toEqual({ amount: 375, unit: 'ml' });
+    expect(parsePortion('1 can (375 ml)')).toEqual({ amount: 375, unit: 'ml' });
+    expect(parsePortion('33 cl')).toEqual({ amount: 330, unit: 'ml' });
+    expect(parsePortion('1 serving (100 g)')).toEqual({ amount: 100, unit: 'g' });
+    expect(parsePortion('30g')).toEqual({ amount: 30, unit: 'g' });
+    expect(parsePortion('1 piece')).toBeNull();
+  });
+  it('a 375 ml beer can logs the whole can: label 40 kcal/100 ml -> 150 kcal, alcohol 3.55 g/100 ml -> 13.3 g', async () => {
+    const { labelForPortion } = await import('../src/components/macros/macros');
+    const l = labelForPortion({ kcal: 40, proteinG: 0.3, carbsG: 3, fatG: 0, alcoholG: 3.55 }, null, '375 ml');
+    expect(l.serving).toBe('375 ml');
+    expect(l.kcal).toBe(150);
+    expect(l.alcoholG).toBe(13.3);
+    expect(l.carbsG).toBe(11.3);
+  });
+  it('the serving size wins over the pack; no portion at all stays per 100 g', async () => {
+    const { labelForPortion } = await import('../src/components/macros/macros');
+    expect(labelForPortion({ kcal: 400, proteinG: 10, carbsG: 60, fatG: 12 }, '30 g', '500 g')).toMatchObject({ serving: '30 g', kcal: 120, carbsG: 18 });
+    expect(labelForPortion({ kcal: 400, proteinG: 10, carbsG: 60, fatG: 12 }, null, null)).toMatchObject({ serving: '100g', kcal: 400 });
+  });
+});

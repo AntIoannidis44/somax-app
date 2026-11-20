@@ -19,6 +19,7 @@ import {
   deleteFavoriteMeal,
   fetchFavoriteMeals,
   resolveKcal,
+  labelForPortion,
   type KcalSource,
   saveFavoriteMeal,
   type FavoriteMeal,
@@ -306,21 +307,25 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
       }
       setName(product.name);
       barcodeRef.current = result.code;
-      // nutrients below are PER 100 g, so the serving is 100g (the pack's serving size used to be shown
-      // next to per-100 g numbers, logging the wrong amount)
-      setServing('100g');
       if (product.kcal100g === null) {
+        setServing('100g');
         setError(`Found "${product.name}" but it has no nutrition data on Open Food Facts yet - fill in the macros below.`);
         return;
       }
-      // Product data is per-100g - without a real serving size we show the
-      // 100g figures as-is rather than guessing a portion.
-      setProtein(String(product.protein100g ?? 0));
-      setCarbs(String(product.carbs100g ?? 0));
-      setFat(String(product.fat100g ?? 0));
-      // the label's own energy is the truth - stored as printed (resolveKcal guards impossible values)
-      setKcalIn(String(Math.round(product.kcal100g)));
-      setExtra({ fiberG: product.fiber100g ?? null, sugarG: product.sugars100g ?? null, kcalSource: 'label' });
+      // Label values are per 100 g/ml: scale them to the product's serving, else its whole pack (a 375 ml
+      // can logs as 375 ml). Energy is the label's own figure, so alcohol is already in it.
+      const l = labelForPortion(
+        { kcal: product.kcal100g, proteinG: product.protein100g, carbsG: product.carbs100g, fatG: product.fat100g,
+          fiberG: product.fiber100g, sugarG: product.sugars100g, alcoholG: product.alcohol100g ?? null },
+        product.servingSize, product.packSize,
+      );
+      setServing(l.serving);
+      setProtein(String(l.proteinG));
+      setCarbs(String(l.carbsG));
+      setFat(String(l.fatG));
+      setKcalIn(String(l.kcal));
+      setAlcoholIn(l.alcoholG ? String(l.alcoholG) : '');
+      setExtra({ fiberG: l.fiberG, sugarG: l.sugarG, kcalSource: 'label' });
     } finally {
       setBusy(null);
     }

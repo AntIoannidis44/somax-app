@@ -141,6 +141,39 @@ export function resolveKcal(
   return { kcal: kcalFromNutrients(n), source: 'formula' };
 }
 
+// A label's portion: "375 ml", "1 can (375 ml)", "30 g", "33 cl" -> { amount, unit }. A number in brackets wins
+// ("1 serving (100 g)"). Returns null when there is no usable weight/volume.
+export function parsePortion(text: string | null | undefined): { amount: number; unit: 'g' | 'ml' } | null {
+  if (!text) return null;
+  const t = String(text);
+  const re = /(\d+(?:[.,]\d+)?)\s*(kg|g|gr|grams?|ml|cl|dl|l|litres?|liters?)\b/i;
+  const m = t.match(/\(([^)]*)\)/)?.[1].match(re) ?? t.match(re);
+  if (!m) return null;
+  let n = parseFloat(m[1].replace(',', '.'));
+  const u = m[2].toLowerCase();
+  if (u === 'kg') n *= 1000; else if (u === 'cl') n *= 10; else if (u === 'dl') n *= 100; else if (/^(l|litres?|liters?)$/.test(u)) n *= 1000;
+  if (!(n > 0 && n <= 5000)) return null;
+  return { amount: Math.round(n * 10) / 10, unit: /^(ml|cl|dl|l|litres?|liters?)$/.test(u) ? 'ml' : 'g' };
+}
+
+// Scale per-100 g/ml label values to one portion (the serving, else the whole pack). Energy is the label's
+// own figure scaled - never rebuilt - so a 375 ml beer can logs its full label energy including alcohol.
+export function labelForPortion(
+  per100: { kcal: number | null; proteinG: number | null; carbsG: number | null; fatG: number | null; fiberG?: number | null; sugarG?: number | null; alcoholG?: number | null },
+  servingSize: string | null | undefined,
+  packSize?: string | null,
+) {
+  const portion = parsePortion(servingSize) ?? parsePortion(packSize);
+  const f = portion ? portion.amount / 100 : 1;
+  const sc = (v: number | null | undefined) => (v == null ? null : Math.round(v * f * 10) / 10);
+  return {
+    serving: portion ? `${portion.amount} ${portion.unit}` : '100g',
+    kcal: per100.kcal == null ? null : Math.round(per100.kcal * f),
+    proteinG: sc(per100.proteinG) ?? 0, carbsG: sc(per100.carbsG) ?? 0, fatG: sc(per100.fatG) ?? 0,
+    fiberG: sc(per100.fiberG), sugarG: sc(per100.sugarG), alcoholG: sc(per100.alcoholG),
+  };
+}
+
 // Kept for older callers: now the full formula (no alcohol/fibre known -> same as before). Prefer resolveKcal.
 export function kcalForMacros(proteinG: number, carbsG: number, fatG: number): number {
   return kcalFromNutrients({ proteinG, carbsG, fatG });

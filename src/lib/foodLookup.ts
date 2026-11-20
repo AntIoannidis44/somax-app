@@ -5,6 +5,10 @@ export interface FoodProduct {
   name: string;
   brands: string | null;
   servingSize: string | null;
+  // whole pack size, e.g. "375 ml" (Open Food Facts 'quantity'); used when there's no serving size
+  packSize?: string | null;
+  // grams of alcohol per 100 g/ml (label ABV x 0.789), when the label lists alcohol
+  alcohol100g?: number | null;
   kcal100g: number | null;
   protein100g: number | null;
   carbs100g: number | null;
@@ -51,7 +55,7 @@ export async function lookupBarcode(code: string): Promise<FoodProduct | null> {
 async function fetchFromOpenFoodFacts(code: string): Promise<FoodProduct | null> {
   try {
     const res = await fetch(
-      `https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(code)}.json?fields=product_name,brands,serving_size,nutriments`
+      `https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(code)}.json?fields=product_name,brands,serving_size,quantity,nutriments`
     );
     if (!res.ok) return null;
     const json = await res.json();
@@ -66,6 +70,8 @@ async function fetchFromOpenFoodFacts(code: string): Promise<FoodProduct | null>
       name: p.product_name,
       brands: p.brands ?? null,
       servingSize: p.serving_size ?? null,
+      packSize: p.quantity ?? null,
+      alcohol100g: n['alcohol_100g'] != null ? Number(n['alcohol_100g']) * 0.789 : null,
       kcal100g: n['energy-kcal_100g'] ?? null,
       protein100g: n['proteins_100g'] ?? null,
       carbs100g: n['carbohydrates_100g'] ?? null,
