@@ -33,7 +33,9 @@ export interface RoutePoint {
 interface HealthPlugin {
   isAvailable(): Promise<{ available: boolean }>;
   requestAuthorization(): Promise<{ granted: boolean }>;
-  getTodaySummary(): Promise<TodaySummary>;
+  getTodaySummary(options?: { age?: number }): Promise<TodaySummary>;
+  getHealthSources(): Promise<{ sources: { bundleId: string; name: string }[]; garmin: boolean }>;
+  openURL(options: { url: string }): Promise<{ opened: boolean }>;
   getMonthlyStepsSummary(): Promise<{ steps: number }>;
   getDailyVerifiedSteps(options: { startDate: string; endDate: string }): Promise<{ days: { date: string; steps: number }[] }>;
   getMonthlyCardioDistance(): Promise<{ meters: number }>;
@@ -61,9 +63,24 @@ export async function requestHealthAuthorization(): Promise<boolean> {
   return granted;
 }
 
-export async function getTodayHealthSummary(): Promise<TodaySummary | null> {
+// age (from the Somax profile) sets the heart-rate threshold for active minutes on watches that don't
+// write Apple's Exercise Minutes (Garmin etc.) - see HealthPlugin.activeMinutesFallback.
+export async function getTodayHealthSummary(age?: number): Promise<TodaySummary | null> {
   if (!healthAvailableOnPlatform()) return null;
-  return Health.getTodaySummary();
+  return Health.getTodaySummary(age && age > 0 ? { age } : undefined);
+}
+
+// Is a Garmin feeding Apple Health? (Garmin Connect wrote steps or heart rate in the last 7 days.)
+export async function getGarminStatus(): Promise<{ garmin: boolean } | null> {
+  if (!healthAvailableOnPlatform()) return null;
+  try { const r = await Health.getHealthSources(); return { garmin: !!r.garmin }; } catch { return null; }
+}
+
+// Garmin Connect on the App Store: opens the store page, which shows "Open" when the app is installed.
+export const GARMIN_CONNECT_URL = 'https://apps.apple.com/app/garmin-connect/id583446403';
+export async function openGarminConnect(): Promise<void> {
+  if (!healthAvailableOnPlatform()) { window.open(GARMIN_CONNECT_URL, '_blank'); return; }
+  await Health.openURL({ url: GARMIN_CONNECT_URL });
 }
 
 export async function getMonthlySteps(): Promise<number | null> {

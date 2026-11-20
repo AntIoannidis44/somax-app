@@ -42,7 +42,7 @@ const FAKE_HEALTH = `
     getMonthlyStepsSummary: async () => ({ steps: 120000 }),
     getMonthlyCardioDistance: async () => ({ meters: 0 }),
     getLatestHeartRate: async () => ({ bpm: 62, recordedAt: t + 'T08:00:00' }),
-    getTodayAverageHeartRate: async () => ({ bpm: 71.6 }),
+    getTodayAverageHeartRate: async () => ({ bpm: 71.6 }), getHealthSources: async () => ({ sources: [], garmin: false }), openURL: async () => ({ opened: true }),
     getTodayWorkouts: async () => ({ workouts }),
     getDailyVerifiedSteps: async () => ({ days: [{ date: t, steps: 9200 }] }),
     getWorkoutRoute: async () => ({ points: [] }),
@@ -157,7 +157,29 @@ try {
   await garmin.scrollIntoViewIfNeeded().catch(() => {});
   const gText = (await garmin.textContent().catch(() => '')) || '';
   check('Profile settings show how to connect a Garmin through Apple Health', /Garmin watch/.test(gText) && /Connected Apps → Apple Health/.test(gText), gText.slice(0, 90));
+  check('Not connected yet: an "Open Garmin Connect" button is shown', (await page.locator('.health-devices .garmin-open').count()) === 1);
   await garmin.screenshot({ path: path.join(SHOTS, '09-health-watches.png') }).catch(() => {});
+  // once Garmin data arrives in Apple Health the row says Connected (re-checked when the app comes back)
+  await page.evaluate(() => { window.__E2E_HEALTH__.getHealthSources = async () => ({ sources: [{ bundleId: 'com.garmin.connect.mobile', name: 'Connect' }], garmin: true }); document.dispatchEvent(new Event('visibilitychange')); });
+  await page.waitForTimeout(400);
+  const g2 = (await garmin.textContent().catch(() => '')) || '';
+  check('Garmin data arriving: row shows "Connected ✓" and the button goes away', /Connected ✓/.test(g2) && (await page.locator('.health-devices .garmin-open').count()) === 0, g2.slice(0, 80));
+  await garmin.screenshot({ path: path.join(SHOTS, '09b-garmin-connected.png') }).catch(() => {});
+
+  // Onboarding "About you": Which watch? Garmin shows the one Garmin Connect step (owner 2026-11-21)
+  await page.evaluate(() => window.__store.setState({ onboarded: false }));
+  await page.waitForTimeout(800);
+  await page.locator('.onb2-welcome button').last().click().catch(() => {});
+  await page.waitForTimeout(300);
+  await page.locator('.onb2-path').first().click().catch(() => {});
+  await page.locator('.onb2-cta').click().catch(() => {});
+  await page.waitForTimeout(400);
+  const hasQ = await page.getByText('Which watch do you use?').count();
+  await page.locator('.onb2-watch button', { hasText: 'Garmin' }).click().catch(() => {});
+  const hint = (await page.locator('.onb2-watch-hint').textContent().catch(() => '')) || '';
+  check('Onboarding asks which watch; Garmin shows the Garmin Connect -> Apple Health step', hasQ === 1 && /Connected Apps → Apple Health/.test(hint), hint.slice(0, 80));
+  await page.screenshot({ path: path.join(SHOTS, '10-onboarding-watch.png') }).catch(() => {});
+  await page.evaluate(() => window.__store.setState({ onboarded: true }));
 
   check('No JavaScript errors on any screen', consoleErrors.length === 0, consoleErrors.slice(0, 2).join(' | '));
 } finally {

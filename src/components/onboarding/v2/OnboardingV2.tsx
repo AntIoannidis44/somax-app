@@ -59,6 +59,8 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
   const prev = profile?.setup;
   const [step, setStep] = useState<Step>(mode === 'update' ? 'sport' : 'welcome');
   const [quick, setQuick] = useState<boolean | null>(mode === 'update' ? false : null);
+  // Which watch: only changes the hint shown (Garmin needs one switch in Garmin Connect) - owner 2026-11-21
+  const [watch, setWatch] = useState<'apple' | 'garmin' | 'none' | null>(null);
   const [sport, setSport] = useState<string | null>(prev?.sport ?? null);
   const [extras, setExtras] = useState<string[]>(prev?.extraSports ?? []);
   const [goals, setGoals] = useState<string[]>(prev?.goals ?? []);
@@ -252,6 +254,23 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
                 <input value={draft.weight} onChange={(e) => setOnbField('weight', e.target.value)} inputMode="decimal" placeholder="78" />
               </label>
             </div>
+            <div className="onb2-sub onb2-watch-q">Which watch do you use?</div>
+            <div className="onb2-seg onb2-watch">
+              {([['apple', 'Apple Watch'], ['garmin', 'Garmin'], ['none', 'None']] as const).map(([id, label]) => (
+                <button key={id} type="button" className={watch === id ? 'on' : ''} aria-pressed={watch === id} onClick={() => setWatch(id)}>
+                  {label}
+                </button>
+              ))}
+            </div>
+            {watch && (
+              <p className="onb2-lead onb2-watch-hint">
+                {watch === 'apple'
+                  ? 'Great - your Apple Watch syncs through Apple Health automatically. Allow Health access when Somax asks.'
+                  : watch === 'garmin'
+                    ? 'In the Garmin Connect app go to Settings → Connected Apps → Apple Health and turn everything on, then allow Health access when Somax asks. You can also do this later from Profile.'
+                    : 'No problem - your iPhone still counts your steps through Apple Health. Allow Health access when Somax asks.'}
+              </p>
+            )}
           </>
         )}
 

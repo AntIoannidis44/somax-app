@@ -193,7 +193,7 @@ function App() {
         const granted = await requestHealthAuthorization();
         if (!granted) return;
         const [summary, monthlySteps, cardioKm, hr, workouts] = await Promise.all([
-          getTodayHealthSummary(),
+          getTodayHealthSummary(Number(useAppStore.getState().profile?.age) || undefined),
           getMonthlySteps(),
           getMonthlyCardioKm(),
           getTodayAverageHeartRate(),

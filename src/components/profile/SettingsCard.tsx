@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
+import { getGarminStatus, openGarminConnect } from '../../lib/health';
 import { useUserId } from '../../lib/useSession';
 import { requestLocalNotifPermission } from '../../lib/notifications';
 import { registerForPush, unregisterPushToken } from '../../lib/push';
@@ -25,6 +27,16 @@ export function SettingsCard() {
   const toggleSetting = useAppStore((s) => s.toggleSetting);
   const setTheme = useAppStore((s) => s.setTheme);
   const showToast = useAppStore((s) => s.showToast);
+  // Garmin: connected once Garmin Connect has written steps/heart rate to Apple Health (checked again
+  // whenever the user comes back to Somax, e.g. after flipping the switch in Garmin Connect).
+  const [garmin, setGarmin] = useState<boolean | null>(null);
+  useEffect(() => {
+    const check = () => { getGarminStatus().then((r) => setGarmin(r ? r.garmin : null)); };
+    check();
+    const onVis = () => { if (document.visibilityState === 'visible') check(); };
+    document.addEventListener('visibilitychange', onVis);
+    return () => document.removeEventListener('visibilitychange', onVis);
+  }, []);
   const userId = useUserId();
 
   async function handleToggle(key: keyof Settings, kind: 'local' | 'push') {
@@ -87,11 +99,17 @@ export function SettingsCard() {
             <Icon name="watch" />
           </span>
           <div>
-            <div className="setting-title">Garmin watch</div>
+            <div className="setting-title">Garmin watch{garmin ? <span className="garmin-ok"> · Connected ✓</span> : null}</div>
             <div className="setting-sub">
-              In the Garmin Connect app go to Settings → Connected Apps → Apple Health and turn everything on. Your steps,
-              heart rate and workouts then show up in Somax.
+              {garmin
+                ? 'Your steps, heart rate, calories, active minutes and workouts are coming through Apple Health.'
+                : 'In the Garmin Connect app go to Settings → Connected Apps → Apple Health and turn everything on. Your steps, heart rate, calories, active minutes and workouts then show up in Somax.'}
             </div>
+            {!garmin && (
+              <button type="button" className="btn btn-soft btn-sm garmin-open" onClick={() => openGarminConnect()}>
+                Open Garmin Connect
+              </button>
+            )}
           </div>
         </div>
       </div>

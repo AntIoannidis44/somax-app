@@ -2057,3 +2057,9 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .day-log-empty{ padding:2px 14px 14px 66px; font-size:12.5px; }
 
 .section-label .note.day-log-total{ font-family:var(--font-body); font-size:12px; font-weight:700; color:var(--text-faint); }
+
+/* Profile settings: Health & watches (Garmin status + button) */
+.health-devices .garmin-ok{ color: var(--stat-agility, #2e9d6a); font-weight:700; }
+.health-devices .garmin-open{ margin-top:8px; }
+.onb2-watch-q{ margin-top:16px; }
+.onb2-watch-hint{ margin-top:8px; }

@@ -21,6 +21,8 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "getWorkoutRoute", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getDailyVerifiedSteps", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "openAppSettings", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getHealthSources", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "openURL", returnType: CAPPluginReturnPromise),
     ]
 
     private let store = HKHealthStore()
@@ -110,8 +112,15 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         let verifiedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, Self.notUserEntered])
         sumQuantity(type: stepsType, unit: .count(), predicate: predicate) { steps in
           self.sumQuantity(type: self.stepsType, unit: .count(), predicate: verifiedPredicate) { verifiedSteps in
-            self.sumQuantity(type: self.exerciseType, unit: .minute(), predicate: predicate) { minutes in
+            self.sumQuantity(type: self.exerciseType, unit: .minute(), predicate: predicate) { exerciseMinutes in
+              // "Exercise Minutes" is only ever written by an Apple Watch. Garmin (and other watches) never
+              // write that type, so their Active ring sat at 0 (2026-11-21). When there are no Exercise Minutes
+              // today, count active minutes the way Apple does - any minute at brisk-walk effort or harder
+              // (see activeMinutesFallback).
+              let age = call.getInt("age") ?? 0
+              self.activeMinutesFallback(since: startOfDay, age: age) { workoutMinutes in
                 self.sumQuantity(type: self.energyType, unit: .kilocalorie(), predicate: predicate) { kcal in
+                    let useWorkouts = exerciseMinutes <= 0 && workoutMinutes > 0
                     call.resolve([
                         // Steps are inherently a whole-number count - HealthKit's sum
                         // is a Double and can come back fractional (e.g. 8432.3) from
@@ -119,10 +128,12 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
                         // reach the UI/leaderboards as a decimal.
                         "steps": Int(steps.rounded()),
                         "verifiedSteps": Int(verifiedSteps.rounded()),
-                        "activeMinutes": minutes,
+                        "activeMinutes": useWorkouts ? workoutMinutes : exerciseMinutes,
+                        "activeMinutesSource": useWorkouts ? "computed" : "exercise",
                         "kcal": kcal,
                     ])
                 }
+              }
             }
           }
         }
@@ -218,7 +229,8 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
                 call.resolve(["workouts": []])
                 return
             }
-            let workouts = (samples as? [HKWorkout] ?? []).map { w -> [String: Any] in
+            let raw = samples as? [HKWorkout] ?? []
+            var workouts = raw.map { w -> [String: Any] in
                 let kcal = w.totalEnergyBurned?.doubleValue(for: .kilocalorie())
                 let distance = self.distanceMeters(for: w)
                 return [
@@ -238,7 +250,19 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
                     "distanceMeters": distance ?? NSNull(),
                 ]
             }
-            call.resolve(["workouts": workouts])
+            // Some watches (Garmin) send a workout without its calories. Fill those from the active
+            // calories Apple Health recorded during the workout's own time window, so the effort
+            // check and calorie totals work the same as for an Apple Watch (2026-11-21).
+            let group = DispatchGroup()
+            for (i, w) in raw.enumerated() where (w.totalEnergyBurned?.doubleValue(for: .kilocalorie()) ?? 0) <= 0 {
+                group.enter()
+                let win = NSCompoundPredicate(andPredicateWithSubpredicates: [
+                    HKQuery.predicateForSamples(withStart: w.startDate, end: w.endDate, options: []), Self.notUserEntered])
+                self.sumQuantity(type: self.energyType, unit: .kilocalorie(), predicate: win) { k in
+                    DispatchQueue.main.async { workouts[i]["kcal"] = k; group.leave() }
+                }
+            }
+            group.notify(queue: .main) { call.resolve(["workouts": workouts]) }
         }
         store.execute(query)
     }
@@ -397,6 +421,86 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     // instead of just an empty/zero result - that's not a real failure,
     // it just means this metric has nothing to report, so it resolves to
     // 0 either way rather than blocking the rest of the summary.
+    // Active minutes for watches that don't write Apple's "Exercise Minutes" (Garmin etc.). A minute since
+    // `start` counts if ANY of these holds (each minute counted once):
+    //  - it is inside a device-recorded workout;
+    //  - heart rate is >= 64% of age-predicted max (220 - age): ACSM's lower bound for moderate intensity;
+    //  - step rate is >= 100 steps/min: the walking cadence for moderate intensity (Tudor-Locke et al. 2018).
+    // Typed-in Health entries never count. Age 0/unknown -> 35 is assumed for the heart-rate threshold.
+    private func activeMinutesFallback(since start: Date, age: Int, completion: @escaping (Double) -> Void) {
+        let now = Date()
+        let pred = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            HKQuery.predicateForSamples(withStart: start, end: now, options: []), Self.notUserEntered])
+        let lock = NSLock()
+        var minutes = Set<Int>()
+        func mark(_ a: Date, _ b: Date) {
+            let s0 = max(0, Int(a.timeIntervalSince(start) / 60)), s1 = Int(min(b, now).timeIntervalSince(start) / 60)
+            guard s1 >= s0 else { return }
+            lock.lock(); for m in s0...s1 { minutes.insert(m) }; lock.unlock()
+        }
+        let hrThreshold = 0.64 * Double(220 - (age > 0 ? age : 35))
+        let group = DispatchGroup()
+        group.enter()
+        store.execute(HKSampleQuery(sampleType: HKObjectType.workoutType(), predicate: pred, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { _, samples, _ in
+            for w in samples as? [HKWorkout] ?? [] { mark(w.startDate, w.endDate) }
+            group.leave()
+        })
+        group.enter()
+        let byTime = [NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)]
+        store.execute(HKSampleQuery(sampleType: heartRateType, predicate: pred, limit: HKObjectQueryNoLimit, sortDescriptors: byTime) { _, samples, _ in
+            let bpmUnit = HKUnit.count().unitDivided(by: .minute())
+            var prevHigh: Date? = nil
+            for case let q as HKQuantitySample in samples ?? [] {
+                let high = q.quantity.doubleValue(for: bpmUnit) >= hrThreshold
+                if high {
+                    // two elevated readings up to 5 min apart: the time between them was active too
+                    if let p = prevHigh, q.startDate.timeIntervalSince(p) <= 300 { mark(p, q.endDate) } else { mark(q.startDate, q.endDate) }
+                    prevHigh = q.startDate
+                } else { prevHigh = nil }
+            }
+            group.leave()
+        })
+        group.enter()
+        store.execute(HKSampleQuery(sampleType: stepsType, predicate: pred, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { _, samples, _ in
+            for case let q as HKQuantitySample in samples ?? [] {
+                let mins = q.endDate.timeIntervalSince(q.startDate) / 60
+                if mins >= 1, q.quantity.doubleValue(for: .count()) / mins >= 100 { mark(q.startDate, q.endDate) }
+            }
+            group.leave()
+        })
+        group.notify(queue: .global()) { completion(Double(minutes.count)) }
+    }
+
+    // Which apps/devices have written steps or heart rate to Apple Health in the last 7 days - lets the
+    // app show "Garmin connected" once Garmin Connect's own Apple Health sharing is switched on.
+    @objc func getHealthSources(_ call: CAPPluginCall) {
+        let since = Date().addingTimeInterval(-7 * 24 * 3600)
+        let pred = HKQuery.predicateForSamples(withStart: since, end: Date(), options: [])
+        var found: [String: String] = [:]
+        let group = DispatchGroup()
+        for type in [stepsType, heartRateType] {
+            group.enter()
+            let q = HKSourceQuery(sampleType: type, samplePredicate: pred) { _, sources, _ in
+                for src in sources ?? [] { found[src.bundleIdentifier] = src.name }
+                group.leave()
+            }
+            store.execute(q)
+        }
+        group.notify(queue: .main) {
+            let list = found.map { ["bundleId": $0.key, "name": $0.value] }
+            let garmin = found.keys.contains { $0.lowercased().contains("garmin") } || found.values.contains { $0.lowercased().contains("garmin") }
+            call.resolve(["sources": list, "garmin": garmin])
+        }
+    }
+
+    // Opens a web/App Store link or another app (used for "Connect Garmin").
+    @objc func openURL(_ call: CAPPluginCall) {
+        guard let str = call.getString("url"), let url = URL(string: str) else { call.reject("bad url"); return }
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url, options: [:]) { ok in call.resolve(["opened": ok]) }
+        }
+    }
+
     private func sumQuantity(type: HKQuantityType, unit: HKUnit, predicate: NSPredicate, completion: @escaping (Double) -> Void) {
         let query = HKStatisticsQuery(quantityType: type, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, error in
             if error != nil {
