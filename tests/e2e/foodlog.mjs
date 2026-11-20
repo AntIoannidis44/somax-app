@@ -74,10 +74,15 @@ try {
     { id: 'r3', user_id: 'e2e-test-user', name: 'Untagged smoothie', image_url: null, servings: 1, kcal: 300, protein_g: 25, carbs_g: 35, fat_g: 5, ingredients: [], steps: [], source_label: null, source_url: null, created_at: now, is_favorite: true, meals: [] },
   ];
   const patched = [];
+  const inserted = [];
   await ctx.route('http://127.0.0.1:9/rest/v1/**', async (route) => {
     const u = route.request().url();
     const json = (b) => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(b) });
     if (route.request().method() === 'PATCH') { patched.push({ url: u, body: route.request().postData() }); return json([]); }
+    if (route.request().method() === 'POST' && u.includes('/food_log_entries')) {
+      const row = JSON.parse(route.request().postData() || '{}'); inserted.push(row);
+      return json({ id: 'x' + inserted.length, created_at: now, image_url: null, ...row });
+    }
     if (u.includes('/favorite_meals')) return json(FAVS);
     if (u.includes('/user_recipes')) return json(RECS);
     return json([]);
@@ -151,6 +156,35 @@ try {
   await fo.locator('button.fav-card', { hasText: 'Untagged smoothie' }).click();
   await page.waitForTimeout(400);
   check('Logging an untagged recipe to Breakfast saves the Breakfast tag', patched.some((p) => p.url.includes('user_recipes') && /breakfast/.test(p.body || '')), JSON.stringify(patched).slice(0, 160));
+  // ---- Full energy (2026-11-21): the saved kcal is the real figure, never 4P+4C+9F
+  const smoothie = inserted.find((r) => r.name === 'Untagged smoothie');
+  check("A logged recipe saves the recipe's own calories (300), not the 4/4/9 rebuild (285)", smoothie && Number(smoothie.kcal) === 300, JSON.stringify(smoothie || {}).slice(0, 120));
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.evaluate(() => window.__store.setState({ viewingMacros: true }));
+  await ensureSheet();
+  async function ensureSheet() {
+    if (!(await page.locator('.modal-overlay.show').count())) { await page.locator('.day-log-add').first().click(); await page.locator('.modal-overlay.show').waitFor(); await page.waitForTimeout(400); }
+  }
+  await ensureSheet();
+  const addFood = async (name, p, c, f, alc, kcal) => {
+    await page.locator('#macroFoodName').fill(name);
+    if (await page.locator('.macro-search-back').count()) await page.locator('.macro-search-back').click();
+    await page.locator('#macroP').fill(String(p)); await page.locator('#macroC').fill(String(c)); await page.locator('#macroF').fill(String(f));
+    await page.locator('#macroAlc').fill(alc ? String(alc) : ''); await page.locator('#macroKcal').fill(kcal ? String(kcal) : '');
+    const hint = await page.locator('.modal-overlay.show .macro-kcal-hint').last().textContent();
+    if (alc) await page.locator('.modal-overlay.show .modal-sheet').screenshot({ path: path.join(SHOTS, 'full-energy-form.png') }).catch(() => {});
+    await page.locator('button', { hasText: 'Add to log' }).click();
+    await page.waitForTimeout(400);
+    await ensureSheet();
+    return hint;
+  };
+  const hint1 = await addFood('Red wine 150ml', 0, 4, 0, 16, null);
+  const wine = inserted.find((r) => r.name === 'Red wine 150ml');
+  check('Wine with 16 g alcohol saves 128 kcal (4x4 carbs + 16x7 alcohol), not 16', wine && Number(wine.kcal) === 128 && Number(wine.alcohol_g) === 16 && wine.kcal_source === 'formula', JSON.stringify(wine || {}).slice(0, 140));
+  check('The form shows the full total before saving', /128 kcal/.test(hint1 || ''), (hint1 || '').trim());
+  await addFood('Sol beer 355ml', 2, 13, 0, null, 145);
+  const beer = inserted.find((r) => r.name === 'Sol beer 355ml');
+  check('A label calorie figure (145) is saved exactly, not rebuilt (60)', beer && Number(beer.kcal) === 145 && beer.kcal_source === 'label', JSON.stringify(beer || {}).slice(0, 140));
   check('No JavaScript errors', errors.length === 0, errors.slice(0, 2).join(' | '));
 } finally {
   await browser.close();

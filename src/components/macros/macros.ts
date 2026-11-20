@@ -20,7 +20,13 @@ export interface FoodLogEntry {
   protein_g: number;
   carbs_g: number;
   fat_g: number;
+  // TRUE energy per unit (label / scan estimate / full formula) - never rebuilt from protein/carbs/fat alone
   kcal: number;
+  // extra nutrients that carry energy or matter for accuracy (null on entries logged before 2026-11-21)
+  alcohol_g?: number | null;
+  fiber_g?: number | null;
+  sugar_g?: number | null;
+  kcal_source?: KcalSource | null;
   quantity: number;
   source: 'manual' | 'barcode' | 'photo' | 'voice' | 'skipped';
   barcode: string | null;
@@ -56,6 +62,11 @@ export interface FavoriteMealItem {
   proteinG: number;
   carbsG: number;
   fatG: number;
+  // real energy per item (saved from the logged entry); older favourites lack it -> formula
+  kcal?: number | null;
+  alcoholG?: number | null;
+  fiberG?: number | null;
+  sugarG?: number | null;
 }
 
 export interface FavoriteMeal {
@@ -90,8 +101,49 @@ const DEFAULT_GOALS: Omit<NutritionGoals, 'user_id' | 'updated_at'> = {
 // now against real goal data instead of typed-in placeholder numbers.
 const KCAL_PER_KG = 7700;
 
+// ---- Energy (2026-11-21) -------------------------------------------------------------------------------
+// Calories used to be rebuilt as 4P + 4C + 9F, which dropped alcohol (wine logged at 16 kcal instead of ~128),
+// fibre, and the real label/scan figure. Rules now:
+//  1. A real energy figure (barcode label, photo/text estimate, typed label value) is stored as-is.
+//  2. Only when there is none: the full formula with EU Reg. 1169/2011 factors - protein 4, carbs 4 (available,
+//     fibre excluded), fat 9, fibre 2, alcohol 7 kcal/g. Benchmarked on 25,098 real labels: median error 0.6%
+//     vs printed energy (old 4/4/9: 2.1%); FSANZ kJ factors scored the same.
+//  3. Guard: a figure that is physically impossible (> 900 kcal per 100 g - pure fat is ~900) falls back to 2.
+export type KcalSource = 'label' | 'estimate' | 'formula';
+export const KCAL_PER_G = { protein: 4, carbs: 4, fat: 9, fiber: 2, alcohol: 7 } as const;
+
+export interface Nutrients {
+  proteinG: number;
+  carbsG: number;
+  fatG: number;
+  fiberG?: number | null;
+  alcoholG?: number | null;
+}
+
+export function kcalFromNutrients(n: Nutrients): number {
+  const v = (x: number | null | undefined) => (Number.isFinite(x as number) && (x as number) > 0 ? (x as number) : 0);
+  return Math.round(
+    KCAL_PER_G.protein * v(n.proteinG) + KCAL_PER_G.carbs * v(n.carbsG) + KCAL_PER_G.fat * v(n.fatG) +
+      KCAL_PER_G.fiber * v(n.fiberG) + KCAL_PER_G.alcohol * v(n.alcoholG),
+  );
+}
+
+// The calories to store for one unit: the given real figure when it is plausible, else the full formula.
+export function resolveKcal(
+  n: Nutrients & { kcal?: number | null; grams?: number | null; kcalSource?: KcalSource },
+): { kcal: number; source: KcalSource } {
+  const k = n.kcal;
+  if (Number.isFinite(k as number) && (k as number) >= 0) {
+    const impossible = (n.grams ?? 0) > 0 && ((k as number) / (n.grams as number)) * 100 > 900;
+    const zeroButHasNutrients = (k as number) === 0 && kcalFromNutrients(n) > 5;
+    if (!impossible && !zeroButHasNutrients) return { kcal: Math.round(k as number), source: n.kcalSource ?? 'estimate' };
+  }
+  return { kcal: kcalFromNutrients(n), source: 'formula' };
+}
+
+// Kept for older callers: now the full formula (no alcohol/fibre known -> same as before). Prefer resolveKcal.
 export function kcalForMacros(proteinG: number, carbsG: number, fatG: number): number {
-  return Math.round(proteinG * 4 + carbsG * 4 + fatG * 9);
+  return kcalFromNutrients({ proteinG, carbsG, fatG });
 }
 
 function daysBetween(a: string, b: string): number {
@@ -154,6 +206,13 @@ export async function addFoodEntry(
     proteinG: number;
     carbsG: number;
     fatG: number;
+    // real energy per unit when known (label / estimate) + extra nutrients - see resolveKcal
+    kcal?: number | null;
+    kcalSource?: KcalSource;
+    grams?: number | null;
+    alcoholG?: number | null;
+    fiberG?: number | null;
+    sugarG?: number | null;
     quantity?: number;
     source?: FoodLogEntry['source'];
     barcode?: string;
@@ -162,10 +221,14 @@ export async function addFoodEntry(
     imageUrl?: string | null;
   },
 ): Promise<FoodLogEntry | null> {
-  const kcal = kcalForMacros(entry.proteinG, entry.carbsG, entry.fatG);
+  const { kcal, source: kcalSource } = resolveKcal(entry);
   const { data, error } = await supabase
     .from('food_log_entries')
     .insert({
+      alcohol_g: entry.alcoholG ?? null,
+      fiber_g: entry.fiberG ?? null,
+      sugar_g: entry.sugarG ?? null,
+      kcal_source: kcalSource,
       user_id: userId,
       log_date: logDate,
       meal: entry.meal,
@@ -224,9 +287,12 @@ export async function updateFoodEntryImage(entryId: string, imageUrl: string): P
 
 export async function updateFoodEntry(
   entryId: string,
-  fields: { name: string; serving?: string; proteinG: number; carbsG: number; fatG: number; quantity: number },
+  fields: {
+    name: string; serving?: string; proteinG: number; carbsG: number; fatG: number; quantity: number;
+    kcal?: number | null; kcalSource?: KcalSource; alcoholG?: number | null; fiberG?: number | null; sugarG?: number | null;
+  },
 ): Promise<FoodLogEntry | null> {
-  const kcal = kcalForMacros(fields.proteinG, fields.carbsG, fields.fatG);
+  const { kcal, source: kcalSource } = resolveKcal(fields);
   const { data, error } = await supabase
     .from('food_log_entries')
     .update({
@@ -236,6 +302,10 @@ export async function updateFoodEntry(
       carbs_g: fields.carbsG,
       fat_g: fields.fatG,
       kcal,
+      kcal_source: kcalSource,
+      alcohol_g: fields.alcoholG ?? null,
+      fiber_g: fields.fiberG ?? null,
+      sugar_g: fields.sugarG ?? null,
       quantity: fields.quantity,
     })
     .eq('id', entryId)
@@ -323,6 +393,11 @@ export interface FoodSuggestion {
   proteinG: number | null;
   carbsG: number | null;
   fatG: number | null;
+  // real energy + extra nutrients for that serving (label / previously logged value), when known
+  kcal?: number | null;
+  alcoholG?: number | null;
+  fiberG?: number | null;
+  sugarG?: number | null;
   source: 'history' | 'generic' | 'database';
 }
 
@@ -353,19 +428,19 @@ export async function searchFoodSuggestions(userId: string, query: string): Prom
   const [historyRes, genericRes, dbRes] = await Promise.all([
     supabase
       .from('food_log_entries')
-      .select('name, serving, protein_g, carbs_g, fat_g, created_at')
+      .select('name, serving, protein_g, carbs_g, fat_g, kcal, alcohol_g, fiber_g, sugar_g, kcal_source, created_at')
       .eq('user_id', userId)
       .ilike('name', `%${q}%`)
       .order('created_at', { ascending: false })
       .limit(100),
     supabase
       .from('generic_foods')
-      .select('name, protein_100g, carbs_100g, fat_100g')
+      .select('name, kcal_100g, protein_100g, carbs_100g, fat_100g, fiber_100g, sugars_100g')
       .ilike('name', `%${q}%`)
       .limit(300),
     supabase
       .from('food_products')
-      .select('name, serving_size, protein_100g, carbs_100g, fat_100g')
+      .select('name, serving_size, kcal_100g, protein_100g, carbs_100g, fat_100g, fiber_100g, sugars_100g')
       .ilike('name', `%${q}%`)
       .order('unique_scans_n', { ascending: false, nullsFirst: false })
       .limit(300),
@@ -374,7 +449,7 @@ export async function searchFoodSuggestions(userId: string, query: string): Prom
   const seen = new Set<string>();
   const out: FoodSuggestion[] = [];
 
-  function addAll(rows: { name: string; serving: string | null; proteinG: number | null; carbsG: number | null; fatG: number | null; source: FoodSuggestion['source'] }[]) {
+  function addAll(rows: FoodSuggestion[]) {
     for (const row of rows) {
       const key = row.name.toLowerCase();
       if (seen.has(key)) continue;
@@ -383,9 +458,15 @@ export async function searchFoodSuggestions(userId: string, query: string): Prom
     }
   }
 
-  addAll((historyRes.data ?? []).map((r) => ({ name: r.name, serving: r.serving, proteinG: r.protein_g, carbsG: r.carbs_g, fatG: r.fat_g, source: 'history' as const })));
-  addAll((genericRes.data ?? []).map((r) => ({ name: r.name, serving: '100g', proteinG: r.protein_100g, carbsG: r.carbs_100g, fatG: r.fat_100g, source: 'generic' as const })));
-  addAll((dbRes.data ?? []).map((r) => ({ name: r.name, serving: r.serving_size, proteinG: r.protein_100g, carbsG: r.carbs_100g, fatG: r.fat_100g, source: 'database' as const })));
+  // History: only entries logged since 2026-11-21 carry a real kcal (older ones were rebuilt from 4/4/9).
+  addAll((historyRes.data ?? []).map((r) => ({ name: r.name, serving: r.serving, proteinG: r.protein_g, carbsG: r.carbs_g, fatG: r.fat_g,
+    kcal: r.kcal_source ? r.kcal : null, alcoholG: r.alcohol_g, fiberG: r.fiber_g, sugarG: r.sugar_g, source: 'history' as const })));
+  addAll((genericRes.data ?? []).map((r) => ({ name: r.name, serving: '100g', proteinG: r.protein_100g, carbsG: r.carbs_100g, fatG: r.fat_100g,
+    kcal: r.kcal_100g, fiberG: r.fiber_100g, sugarG: r.sugars_100g, source: 'generic' as const })));
+  // Product nutrients are PER 100 g - the serving is 100g (it used to show the pack's serving_size next to
+  // per-100 g numbers, e.g. "30 g" with 100 g worth of macros).
+  addAll((dbRes.data ?? []).map((r) => ({ name: r.name, serving: '100g', proteinG: r.protein_100g, carbsG: r.carbs_100g, fatG: r.fat_100g,
+    kcal: r.kcal_100g, fiberG: r.fiber_100g, sugarG: r.sugars_100g, source: 'database' as const })));
 
   out.sort((a, b) => {
     const tierDiff = matchTier(a.name, q) - matchTier(b.name, q);

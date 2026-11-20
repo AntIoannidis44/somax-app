@@ -31,10 +31,13 @@ const RESPONSE_SCHEMA = {
           proteinG: { type: 'number' },
           carbsG: { type: 'number' },
           fatG: { type: 'number' },
+          alcoholG: { type: 'number' },
+          fiberG: { type: 'number' },
+          sugarG: { type: 'number' },
           itemConfidence: { type: 'string', enum: ['low', 'medium', 'high'] },
           alternatives: { type: 'array', items: { type: 'string' } },
         },
-        required: ['name', 'estimatedGrams', 'kcal', 'proteinG', 'carbsG', 'fatG', 'itemConfidence', 'alternatives'],
+        required: ['name', 'estimatedGrams', 'kcal', 'proteinG', 'carbsG', 'fatG', 'alcoholG', 'fiberG', 'sugarG', 'itemConfidence', 'alternatives'],
         additionalProperties: false,
       },
     },
@@ -49,6 +52,10 @@ const RESPONSE_SCHEMA = {
   additionalProperties: false,
 };
 
+// Full energy accounting (2026-11-21): the app used to rebuild kcal as 4P+4C+9F, dropping alcohol and fibre.
+const ENERGY_RULES =
+  " ENERGY RULES (critical for accuracy): kcal must be the item's TOTAL energy as it would appear on a nutrition label - including alcohol at 7 kcal per gram (beer, wine, spirits, cider, cocktails, food cooked with alcohol), dietary fibre at 2 kcal per gram, sugar alcohols and everything else - never just protein*4 + carbs*4 + fat*9. Report alcoholG (grams of ethanol: volume ml x ABV x 0.789; 0 if none), fiberG (dietary fibre) and sugarG (total sugars) for the same portion. carbsG is available carbohydrate EXCLUDING fibre. For a known branded product use its label values.";
+
 function promptFor(mode: string): string {
   const base =
     "You are estimating nutrition from a photo for a fitness tracking app. Identify each DISTINCT food item visible as its " +
@@ -60,7 +67,7 @@ function promptFor(mode: string): string {
     'things); when itemConfidence is "low", put 2-3 plausible alternative names in that item\'s alternatives array (e.g. ' +
     '["grilled chicken breast", "grilled chicken thigh", "turkey breast"]) - otherwise leave alternatives as an empty array. ' +
     'Sum the items into totals. Set the overall confidence to "low" if the image itself is unclear or oddly angled, "high" ' +
-    'only for a clear, well-lit, easily identifiable photo. Put any caveats (e.g. "sauce/dressing amount is a guess") in notes.';
+    'only for a clear, well-lit, easily identifiable photo. Put any caveats (e.g. "sauce/dressing amount is a guess") in notes.' + ENERGY_RULES;
   if (mode === 'recipe') {
     return (
       base +

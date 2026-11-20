@@ -7,6 +7,10 @@ export interface FoodTextEstimate {
   proteinG: number;
   carbsG: number;
   fatG: number;
+  // energy-carrying extras (asked for since 2026-11-21; absent in older responses)
+  alcoholG?: number;
+  fiberG?: number;
+  sugarG?: number;
   confidence: 'low' | 'medium' | 'high';
   notes: string;
   recognized: boolean;

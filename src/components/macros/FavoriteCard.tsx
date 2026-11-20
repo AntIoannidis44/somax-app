@@ -1,16 +1,17 @@
 import { Icon } from '../Icon';
-import type { FavoriteMeal } from './macros';
+import { resolveKcal, type FavoriteMeal } from './macros';
 import type { UserRecipe } from '../../lib/recipes';
 
 // One favourite meal or saved recipe, in the same card style as the Meal
 // Library (.lib-card) - full width, the name wraps instead of running off
 // screen, with its calories and protein underneath.
 
+
 function favTotals(fav: FavoriteMeal) {
   const p = fav.items.reduce((n, i) => n + (i.proteinG || 0), 0);
-  const c = fav.items.reduce((n, i) => n + (i.carbsG || 0), 0);
-  const f = fav.items.reduce((n, i) => n + (i.fatG || 0), 0);
-  return { kcal: Math.round(p * 4 + c * 4 + f * 9), protein: Math.round(p) };
+  // each item's real energy when saved with it (since 2026-11-21), else the full formula
+  const kcal = fav.items.reduce((n, i) => n + resolveKcal({ ...i, kcal: i.kcal ?? null }).kcal, 0);
+  return { kcal: Math.round(kcal), protein: Math.round(p) };
 }
 
 function Thumb({ url, recipe }: { url: string | null; recipe?: boolean }) {

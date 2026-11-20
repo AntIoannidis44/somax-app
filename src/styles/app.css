@@ -2063,3 +2063,5 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .health-devices .garmin-open{ margin-top:8px; }
 .onb2-watch-q{ margin-top:16px; }
 .onb2-watch-hint{ margin-top:8px; }
+.macro-energy-row{ grid-template-columns: 1fr 1fr; margin-top:4px; }
+.macro-kcal-src{ opacity:.7; }

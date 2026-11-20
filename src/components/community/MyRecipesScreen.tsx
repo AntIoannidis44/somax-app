@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { Icon } from '../Icon';
 import { useUserId } from '../../lib/useSession';
 import { deleteUserRecipe, fetchUserRecipes, setRecipeFavorite, setRecipeMeals, updateUserRecipeImage, type UserRecipe } from '../../lib/recipes';
-import { deleteFavoriteMeal, fetchFavoriteMeals, kcalForMacros, updateFavoriteMealImage, type FavoriteMeal } from '../macros/macros';
+import { deleteFavoriteMeal, fetchFavoriteMeals, resolveKcal, updateFavoriteMealImage, type FavoriteMeal } from '../macros/macros';
 import { ShareRecipeSheet } from './ShareRecipeSheet';
 import { ImportRecipeScreen } from './ImportRecipeScreen';
 import { NewRecipeScreen } from './NewRecipeScreen';
@@ -42,7 +42,8 @@ function favoriteToShareTarget(f: FavoriteMeal): RecipeToShare {
     name: f.name,
     imageUrl: f.image_url,
     servings: 1,
-    kcal: kcalForMacros(proteinG, carbsG, fatG),
+    // each item's real energy when known (since 2026-11-21), else the full formula
+    kcal: Math.round(f.items.reduce((n, i) => n + resolveKcal({ ...i, kcal: i.kcal ?? null }).kcal, 0)),
     proteinG,
     carbsG,
     fatG,

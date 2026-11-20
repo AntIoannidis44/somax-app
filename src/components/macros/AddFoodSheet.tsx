@@ -18,7 +18,8 @@ import { fetchUserRecipes, setRecipeMeals, type UserRecipe } from '../../lib/rec
 import {
   deleteFavoriteMeal,
   fetchFavoriteMeals,
-  kcalForMacros,
+  resolveKcal,
+  type KcalSource,
   saveFavoriteMeal,
   type FavoriteMeal,
   type FoodSuggestion,
@@ -39,6 +40,12 @@ type SavedEntry = {
   proteinG: number;
   carbsG: number;
   fatG: number;
+  // real energy per unit + nutrients (see resolveKcal in macros.ts)
+  kcal?: number | null;
+  kcalSource?: KcalSource;
+  alcoholG?: number | null;
+  fiberG?: number | null;
+  sugarG?: number | null;
   quantity: number;
   source: 'manual' | 'barcode' | 'photo' | 'voice';
   barcode?: string;
@@ -57,6 +64,10 @@ interface ReviewItem {
   proteinG: number;
   carbsG: number;
   fatG: number;
+  kcal: number | null;
+  alcoholG: number | null;
+  fiberG: number | null;
+  sugarG: number | null;
   alternatives: string[];
   recalculating: boolean;
 }
@@ -78,12 +89,27 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
   const [protein, setProtein] = useState('');
   const [carbs, setCarbs] = useState('');
   const [fat, setFat] = useState('');
+  // Real energy for what's in the form (label / scan / estimate) + nutrients that carry energy - the cards
+  // only show protein/carbs/fat, but calories must count everything (owner 2026-11-21).
+  const [kcalIn, setKcalIn] = useState('');
+  const [alcoholIn, setAlcoholIn] = useState('');
+  const [extra, setExtra] = useState<{ fiberG?: number | null; sugarG?: number | null; kcalSource?: KcalSource }>({});
+  const formKcal = () => {
+    const k = parseFloat(kcalIn);
+    return resolveKcal({
+      proteinG: parseFloat(protein) || 0, carbsG: parseFloat(carbs) || 0, fatG: parseFloat(fat) || 0,
+      alcoholG: parseFloat(alcoholIn) || 0, fiberG: extra.fiberG ?? 0,
+      kcal: Number.isFinite(k) ? k : null, kcalSource: extra.kcalSource ?? 'label',
+    });
+  };
   const [busy, setBusy] = useState<'barcode' | 'photo' | null>(null);
   const [linkOpen, setLinkOpen] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const [voiceState, setVoiceState] = useState<'idle' | 'listening' | 'processing'>('idle');
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  // barcode of the product currently in the form (set by a scan, cleared on reset)
+  const barcodeRef = useRef<string | null>(null);
 
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -112,7 +138,7 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
     }
   }, [open, userId]);
 
-  const perUnitKcalPreview = Math.round((parseFloat(protein) || 0) * 4 + (parseFloat(carbs) || 0) * 4 + (parseFloat(fat) || 0) * 9);
+  const perUnitKcalPreview = formKcal().kcal;
   const kcalPreview = Math.round(perUnitKcalPreview * quantity);
   const mealFavorites = favorites.filter((f) => f.meal === meal);
   // Favourited recipes tagged for this meal, plus untagged ones (so a recipe never vanishes
@@ -126,6 +152,10 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
     setProtein('');
     setCarbs('');
     setFat('');
+    setKcalIn('');
+    setAlcoholIn('');
+    setExtra({});
+    barcodeRef.current = null;
     setError(null);
     setNotice(null);
     setLinkOpen(false);
@@ -147,12 +177,20 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
       proteinG: parseFloat(protein) || 0,
       carbsG: parseFloat(carbs) || 0,
       fatG: parseFloat(fat) || 0,
+      ...formEnergy(),
       quantity: quantity > 0 ? quantity : 1,
-      source: 'manual',
+      source: extra.kcalSource === 'label' && barcodeRef.current ? 'barcode' : 'manual',
+      ...(barcodeRef.current ? { barcode: barcodeRef.current } : {}),
     }]);
     reset();
   }
 
+
+  // energy fields for a save: the real per-unit kcal + nutrients behind it
+  function formEnergy() {
+    const r = formKcal();
+    return { kcal: r.kcal, kcalSource: r.source, alcoholG: parseFloat(alcoholIn) || null, fiberG: extra.fiberG ?? null, sugarG: extra.sugarG ?? null };
+  }
 
   function applySuggestion(s: FoodSuggestion) {
     setName(s.name);
@@ -160,6 +198,9 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
     setProtein(s.proteinG !== null ? String(Math.round(s.proteinG)) : '');
     setCarbs(s.carbsG !== null ? String(Math.round(s.carbsG)) : '');
     setFat(s.fatG !== null ? String(Math.round(s.fatG)) : '');
+    setKcalIn(s.kcal != null ? String(Math.round(s.kcal)) : '');
+    setAlcoholIn(s.alcoholG ? String(Math.round(s.alcoholG * 10) / 10) : '');
+    setExtra({ fiberG: s.fiberG ?? null, sugarG: s.sugarG ?? null, kcalSource: s.source === 'history' ? 'estimate' : 'label' });
   }
 
   async function handleSaveAsFavorite() {
@@ -167,7 +208,8 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
     setSavingFavorite(true);
     try {
       const fav = await saveFavoriteMeal(userId, name.trim(), meal, [
-        { name: name.trim(), serving: serving.trim() || '1 serving', proteinG: parseFloat(protein) || 0, carbsG: parseFloat(carbs) || 0, fatG: parseFloat(fat) || 0 },
+        { name: name.trim(), serving: serving.trim() || '1 serving', proteinG: parseFloat(protein) || 0, carbsG: parseFloat(carbs) || 0, fatG: parseFloat(fat) || 0,
+          kcal: formEnergy().kcal, alcoholG: formEnergy().alcoholG, fiberG: formEnergy().fiberG, sugarG: formEnergy().sugarG },
       ]);
       if (fav) {
         setFavorites((prev) => [fav, ...prev]);
@@ -187,6 +229,11 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
         proteinG: item.proteinG,
         carbsG: item.carbsG,
         fatG: item.fatG,
+        kcal: item.kcal ?? null,
+        kcalSource: 'estimate' as const,
+        alcoholG: item.alcoholG ?? null,
+        fiberG: item.fiberG ?? null,
+        sugarG: item.sugarG ?? null,
         quantity: 1,
         source: 'manual' as const,
         imageUrl: fav.image_url,
@@ -213,6 +260,8 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
       proteinG: recipe.protein_g ?? 0,
       carbsG: recipe.carbs_g ?? 0,
       fatG: recipe.fat_g ?? 0,
+      kcal: recipe.kcal ?? null,
+      kcalSource: 'estimate',
       quantity: 1,
       source: 'manual',
       imageUrl: recipe.image_url,
@@ -229,6 +278,8 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
       proteinG: m.content.proteinG,
       carbsG: m.content.carbsG,
       fatG: m.content.fatG,
+      kcal: (m.content as { kcal?: number }).kcal ?? null,
+      kcalSource: 'estimate',
       quantity: 1,
       source: 'manual',
       imageUrl: m.content.imageUrl ?? null,
@@ -254,7 +305,10 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
         return;
       }
       setName(product.name);
-      setServing(product.servingSize ?? '100g');
+      barcodeRef.current = result.code;
+      // nutrients below are PER 100 g, so the serving is 100g (the pack's serving size used to be shown
+      // next to per-100 g numbers, logging the wrong amount)
+      setServing('100g');
       if (product.kcal100g === null) {
         setError(`Found "${product.name}" but it has no nutrition data on Open Food Facts yet - fill in the macros below.`);
         return;
@@ -264,6 +318,9 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
       setProtein(String(product.protein100g ?? 0));
       setCarbs(String(product.carbs100g ?? 0));
       setFat(String(product.fat100g ?? 0));
+      // the label's own energy is the truth - stored as printed (resolveKcal guards impossible values)
+      setKcalIn(String(Math.round(product.kcal100g)));
+      setExtra({ fiberG: product.fiber100g ?? null, sugarG: product.sugars100g ?? null, kcalSource: 'label' });
     } finally {
       setBusy(null);
     }
@@ -278,6 +335,8 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
     setProtein(String(Math.round(f.proteinG)));
     setCarbs(String(Math.round(f.carbsG)));
     setFat(String(Math.round(f.fatG)));
+    setKcalIn(f.kcal ? String(Math.round(f.kcal)) : '');
+    setExtra({ kcalSource: f.fromPage ? 'label' : 'estimate' });
     setNotice(
       f.fromPage
         ? `From ${f.sourceLabel}: nutrition taken from the page. Check it and tap Add.`
@@ -302,6 +361,9 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
         setProtein(String(Math.round(i.proteinG)));
         setCarbs(String(Math.round(i.carbsG)));
         setFat(String(Math.round(i.fatG)));
+        setKcalIn(String(Math.round(i.kcal)));
+        setAlcoholIn(i.alcoholG ? String(Math.round(i.alcoholG * 10) / 10) : '');
+        setExtra({ fiberG: i.fiberG ?? null, sugarG: i.sugarG ?? null, kcalSource: 'estimate' });
         if (analysis.confidence === 'low') setError(`Low-confidence estimate: ${analysis.notes}`);
         return;
       }
@@ -318,6 +380,10 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
           proteinG: Math.round(i.proteinG),
           carbsG: Math.round(i.carbsG),
           fatG: Math.round(i.fatG),
+          kcal: Math.round(i.kcal),
+          alcoholG: i.alcoholG ?? null,
+          fiberG: i.fiberG ?? null,
+          sugarG: i.sugarG ?? null,
           alternatives: i.alternatives,
           recalculating: false,
         })),
@@ -350,6 +416,11 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
             proteinG: Math.round(est.proteinG),
             carbsG: Math.round(est.carbsG),
             fatG: Math.round(est.fatG),
+            kcal: Math.round(est.kcal),
+            kcalSource: 'estimate',
+            alcoholG: est.alcoholG ?? null,
+            fiberG: est.fiberG ?? null,
+            sugarG: est.sugarG ?? null,
             quantity: 1,
             source: 'voice',
           }]);
@@ -395,6 +466,10 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
         proteinG: Math.round(est.proteinG),
         carbsG: Math.round(est.carbsG),
         fatG: Math.round(est.fatG),
+        kcal: Math.round(est.kcal),
+        alcoholG: est.alcoholG ?? null,
+        fiberG: est.fiberG ?? null,
+        sugarG: est.sugarG ?? null,
         recalculating: false,
       });
     } catch {
@@ -414,6 +489,11 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
         proteinG: it.proteinG,
         carbsG: it.carbsG,
         fatG: it.fatG,
+        kcal: it.kcal,
+        kcalSource: 'estimate' as const,
+        alcoholG: it.alcoholG,
+        fiberG: it.fiberG,
+        sugarG: it.sugarG,
         quantity: it.quantity,
         source: 'photo' as const,
       })),
@@ -478,7 +558,7 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
                   </button>
                 </div>
                 <div className="macros" style={{ marginTop: 6 }}>
-                  <span><b>{Math.round(kcalForMacros(item.proteinG, item.carbsG, item.fatG) * item.quantity)}</b> kcal</span>
+                  <span><b>{Math.round(resolveKcal({ ...item, kcal: item.kcal }).kcal * item.quantity)}</b> kcal</span>
                   <span>P <b>{Math.round(item.proteinG * item.quantity)}g</b></span>
                   <span>C <b>{Math.round(item.carbsG * item.quantity)}g</b></span>
                   <span>F <b>{Math.round(item.fatG * item.quantity)}g</b></span>
@@ -661,9 +741,26 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
           <input id="macroF" type="number" min="0" inputMode="decimal" placeholder="0" value={fat} onChange={(e) => setFat(e.target.value)} />
         </div>
       </div>
+      <div className="macro-grid3 macro-energy-row">
+        <div className="field">
+          <label htmlFor="macroKcal">Calories (label)</label>
+          <input id="macroKcal" type="number" min="0" inputMode="decimal" placeholder="auto" value={kcalIn}
+            onChange={(e) => { setKcalIn(e.target.value); setExtra((x) => ({ ...x, kcalSource: 'label' })); }} />
+        </div>
+        <div className="field">
+          <label htmlFor="macroAlc">Alcohol (g)</label>
+          <input id="macroAlc" type="number" min="0" inputMode="decimal" placeholder="0" value={alcoholIn} onChange={(e) => setAlcoholIn(e.target.value)} />
+        </div>
+      </div>
       <div className="macro-kcal-hint">
-        {quantity !== 1 ? <>{perUnitKcalPreview.toLocaleString()} kcal per unit &times; {quantity} &rarr; </> : '4 kcal/g protein + carbs, 9 kcal/g fat → '}
+        {quantity !== 1 ? <>{perUnitKcalPreview.toLocaleString()} kcal per unit &times; {quantity} &rarr; </> : null}
         <b>{kcalPreview.toLocaleString()} kcal</b> total
+        <span className="macro-kcal-src">
+          {' '}·{' '}
+          {formKcal().source === 'formula'
+            ? 'calculated from protein, carbs, fat, fibre and alcohol'
+            : extra.kcalSource === 'estimate' ? 'from the estimate' : 'from the label'}
+        </span>
       </div>
       <button className="btn btn-primary" disabled={!name.trim()} onClick={handleSave}>Add to log</button>
       <button className="btn btn-ghost" style={{ marginTop: 8 }} disabled={!name.trim() || savingFavorite} onClick={handleSaveAsFavorite}>

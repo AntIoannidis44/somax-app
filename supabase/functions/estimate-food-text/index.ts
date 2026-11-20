@@ -21,13 +21,20 @@ const RESPONSE_SCHEMA = {
     proteinG: { type: 'number' },
     carbsG: { type: 'number' },
     fatG: { type: 'number' },
+    alcoholG: { type: 'number' },
+    fiberG: { type: 'number' },
+    sugarG: { type: 'number' },
     confidence: { type: 'string', enum: ['low', 'medium', 'high'] },
     notes: { type: 'string' },
     recognized: { type: 'boolean' },
   },
-  required: ['name', 'estimatedGrams', 'kcal', 'proteinG', 'carbsG', 'fatG', 'confidence', 'notes', 'recognized'],
+  required: ['name', 'estimatedGrams', 'kcal', 'proteinG', 'carbsG', 'fatG', 'alcoholG', 'fiberG', 'sugarG', 'confidence', 'notes', 'recognized'],
   additionalProperties: false,
 };
+
+// Full energy accounting (2026-11-21): the app used to rebuild kcal as 4P+4C+9F, dropping alcohol and fibre.
+const ENERGY_RULES =
+  " ENERGY RULES (critical for accuracy): kcal must be the item's TOTAL energy as it would appear on a nutrition label - including alcohol at 7 kcal per gram (beer, wine, spirits, cider, cocktails, food cooked with alcohol), dietary fibre at 2 kcal per gram, sugar alcohols and everything else - never just protein*4 + carbs*4 + fat*9. Report alcoholG (grams of ethanol: volume ml x ABV x 0.789; 0 if none), fiberG (dietary fibre) and sugarG (total sugars) for the same portion. carbsG is available carbohydrate EXCLUDING fibre. For a known branded product use its label values.";
 
 const PROMPT =
   'You are estimating nutrition from a short text description for a fitness tracking app (e.g. "pint of Carlton Draught", ' +
@@ -36,7 +43,7 @@ const PROMPT =
   'is 568mL, "a can" of a given drink is its standard size). Estimate calories and macros for that portion using standard ' +
   'nutrition knowledge. Set recognized to false only if the text genuinely does not describe an identifiable food or drink ' +
   '(gibberish, unrelated text) - in that case still fill every field with your best guess at 0/low confidence. Set ' +
-  'confidence low if the description is vague or the portion is a rough guess, high only if it is specific and standard.';
+  'confidence low if the description is vague or the portion is a rough guess, high only if it is specific and standard.' + ENERGY_RULES;
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
