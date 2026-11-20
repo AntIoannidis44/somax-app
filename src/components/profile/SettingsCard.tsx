@@ -69,6 +69,32 @@ export function SettingsCard() {
           </div>
         </div>
       </div>
+      {/* How each watch gets its data into Somax: everything comes through Apple Health, so a Garmin
+          only needs Garmin Connect's own Apple Health switch turned on (owner, 2026-11-21). */}
+      <div className="section-label">Health &amp; watches</div>
+      <div className="card health-devices">
+        <div className="setting-row">
+          <span className="set-ic">
+            <Icon name="watch" />
+          </span>
+          <div>
+            <div className="setting-title">Apple Watch</div>
+            <div className="setting-sub">Works automatically through Apple Health.</div>
+          </div>
+        </div>
+        <div className="setting-row">
+          <span className="set-ic">
+            <Icon name="watch" />
+          </span>
+          <div>
+            <div className="setting-title">Garmin watch</div>
+            <div className="setting-sub">
+              In the Garmin Connect app go to Settings → Connected Apps → Apple Health and turn everything on. Your steps,
+              heart rate and workouts then show up in Somax.
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="section-label">Notifications</div>
       <div className="card">
         {SWITCHES.map((s) => (

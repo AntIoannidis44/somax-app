@@ -150,6 +150,15 @@ try {
   check('No heart rate today: tile is blank and says "No heart rate"', /No heart rate/.test(noHr) && !/\d/.test(noHr), noHr);
   await page.locator('.metrics').screenshot({ path: path.join(SHOTS, '08-metrics-no-hr.png') });
 
+  // Profile settings: Health & watches card explains how a Garmin connects (owner 2026-11-21)
+  await page.click('nav >> text=Profile').catch(() => {});
+  await page.waitForTimeout(800);
+  const garmin = page.locator('.health-devices');
+  await garmin.scrollIntoViewIfNeeded().catch(() => {});
+  const gText = (await garmin.textContent().catch(() => '')) || '';
+  check('Profile settings show how to connect a Garmin through Apple Health', /Garmin watch/.test(gText) && /Connected Apps → Apple Health/.test(gText), gText.slice(0, 90));
+  await garmin.screenshot({ path: path.join(SHOTS, '09-health-watches.png') }).catch(() => {});
+
   check('No JavaScript errors on any screen', consoleErrors.length === 0, consoleErrors.slice(0, 2).join(' | '));
 } finally {
   await browser.close();
