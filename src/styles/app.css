@@ -2072,3 +2072,4 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .macro-review-main .macros{ display:flex; flex-wrap:wrap; gap:4px 12px; font-size:13px; }
 .health-devices .health-source{ flex-wrap:wrap; }
 .health-devices .health-source .mini-seg{ margin-left:auto; }
+.health-devices .garmin-use{ display:flex; align-items:center; gap:10px; justify-content:space-between; margin:6px 0; font-size:13px; padding:8px 10px; border-radius:10px; background:rgba(66,133,244,.10); }

@@ -468,7 +468,7 @@ export function WorkoutScreen() {
                 >
                   {syncLoading && <div className="day-picker-group-label">Loading…</div>}
                   {!syncLoading && syncOptions?.length === 0 && (
-                    <div className="day-picker-group-label">No Apple Fitness workouts found for this day</div>
+                    <div className="day-picker-group-label">No {useAppStore.getState().settings.healthSource === 'garmin' ? 'Garmin' : 'Apple Fitness'} workouts found for this day</div>
                   )}
                   {!syncLoading && !!syncOptions?.length && (
                     <div className="day-picker-group-label">Pick the workout you recorded for this session (min {syncMin} min)</div>

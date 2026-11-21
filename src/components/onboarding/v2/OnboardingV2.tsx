@@ -257,7 +257,7 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
             <div className="onb2-sub onb2-watch-q">Which watch do you use?</div>
             <div className="onb2-seg onb2-watch">
               {([['apple', 'Apple Watch'], ['garmin', 'Garmin'], ['none', 'None']] as const).map(([id, label]) => (
-                <button key={id} type="button" className={watch === id ? 'on' : ''} aria-pressed={watch === id} onClick={() => setWatch(id)}>
+                <button key={id} type="button" className={watch === id ? 'on' : ''} aria-pressed={watch === id} onClick={() => { setWatch(id); useAppStore.getState().setHealthSource(id === 'garmin' ? 'garmin' : 'health'); }}>
                   {label}
                 </button>
               ))}
@@ -267,7 +267,7 @@ export function OnboardingV2({ mode = 'new' }: { mode?: 'new' | 'update' }) {
                 {watch === 'apple'
                   ? 'Great - your Apple Watch syncs through Apple Health automatically. Allow Health access when Somax asks.'
                   : watch === 'garmin'
-                    ? 'In the Garmin Connect app go to Settings → Connected Apps → Apple Health and turn everything on, then allow Health access when Somax asks. You can also do this later from Profile.'
+                    ? 'Somax will use your Garmin for steps, heart rate and workouts. In the Garmin Connect app go to Settings → Connected Apps → Apple Health and turn everything on, then allow Health access when Somax asks.'
                     : 'No problem - your iPhone still counts your steps through Apple Health. Allow Health access when Somax asks.'}
               </p>
             )}

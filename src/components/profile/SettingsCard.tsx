@@ -123,6 +123,12 @@ export function SettingsCard() {
           </span>
           <div>
             <div className="setting-title">Garmin watch{garmin ? <span className="garmin-ok"> · Connected ✓</span> : null}</div>
+            {garmin && healthSource !== 'garmin' && (
+              <div className="garmin-use">
+                <span>Garmin found - use it for your steps, heart rate and workouts?</span>
+                <button type="button" className="btn btn-primary btn-sm" onClick={() => setHealthSource('garmin')}>Use Garmin</button>
+              </div>
+            )}
             <div className="setting-sub">
               {garmin
                 ? 'Your steps, heart rate, calories, active minutes and workouts are coming through Apple Health.'

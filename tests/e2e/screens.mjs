@@ -167,6 +167,7 @@ try {
   await page.waitForTimeout(400);
   const g2 = (await garmin.textContent().catch(() => '')) || '';
   check('Garmin data arriving: row shows "Connected ✓" and the button goes away', /Connected ✓/.test(g2) && (await page.locator('.health-devices .garmin-open').count()) === 0, g2.slice(0, 80));
+  check('Garmin found while on Apple Health: "Use Garmin" prompt shown', (await page.locator('.health-devices .garmin-use button', { hasText: 'Use Garmin' }).count()) === 1);
   await garmin.screenshot({ path: path.join(SHOTS, '09b-garmin-connected.png') }).catch(() => {});
 
   // Sync data from: Garmin -> Home shows Garmin's numbers only; back to Apple Health restores them (2026-11-21)
@@ -185,6 +186,22 @@ try {
   await page.click('nav >> text=Profile').catch(() => {});
   await page.waitForTimeout(600);
 
+  // Train > change today's workout: "Sync from Garmin" sits next to "Sync from Apple Fitness" (2026-11-21)
+  await page.click('nav >> text=Train').catch(() => {});
+  await page.waitForTimeout(800);
+  await page.locator('.tbig-edit').first().click().catch(() => {});
+  await page.waitForTimeout(500);
+  const hasBoth = (await page.locator('.sheet-opt', { hasText: 'Sync from Garmin' }).count()) === 1 && (await page.locator('.sheet-opt', { hasText: 'Sync from Apple Fitness' }).count()) === 1;
+  await page.locator('.sheet-opt', { hasText: 'Sync from Garmin' }).click().catch(() => {});
+  await page.waitForTimeout(600);
+  const src = await page.evaluate(() => window.__store.getState().settings.healthSource);
+  const todayK = (await page.locator('.tbig .k').first().textContent().catch(() => '')) || '';
+  check('Change workout sheet offers Sync from Garmin; picking it makes today a Garmin sync and Garmin the data source', hasBoth && src === 'garmin' && /Today · Garmin/.test(todayK), `${src} | ${todayK}`);
+  await page.screenshot({ path: path.join(SHOTS, '11-train-garmin-sync.png') }).catch(() => {});
+  await page.evaluate(() => window.__store.getState().setHealthSource('health'));
+  await page.click('nav >> text=Profile').catch(() => {});
+  await page.waitForTimeout(500);
+
   // Onboarding "About you": Which watch? Garmin shows the one Garmin Connect step (owner 2026-11-21)
   await page.evaluate(() => window.__store.setState({ onboarded: false }));
   await page.waitForTimeout(800);
@@ -197,6 +214,8 @@ try {
   await page.locator('.onb2-watch button', { hasText: 'Garmin' }).click().catch(() => {});
   const hint = (await page.locator('.onb2-watch-hint').textContent().catch(() => '')) || '';
   check('Onboarding asks which watch; Garmin shows the Garmin Connect -> Apple Health step', hasQ === 1 && /Connected Apps → Apple Health/.test(hint), hint.slice(0, 80));
+  check('Choosing Garmin in onboarding makes Garmin the data source', (await page.evaluate(() => window.__store.getState().settings.healthSource)) === 'garmin');
+  await page.evaluate(() => window.__store.getState().setHealthSource('health'));
   await page.screenshot({ path: path.join(SHOTS, '10-onboarding-watch.png') }).catch(() => {});
   await page.evaluate(() => window.__store.setState({ onboarded: true }));
 

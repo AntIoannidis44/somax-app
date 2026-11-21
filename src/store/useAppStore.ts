@@ -900,7 +900,7 @@ export const useAppStore = create<Store>()(
             updateStreakOnActivity();
             bumpChallengeProgress('consistency', 1);
             checkAchievements();
-            get().showToast(`Synced "${listed[0].activityName}" from Apple Fitness`);
+            get().showToast(`Synced "${listed[0].activityName}" from ${listed[0].fromGarmin ? 'Garmin' : 'Apple Fitness'}`);
           }
           return;
         }
@@ -939,7 +939,7 @@ export const useAppStore = create<Store>()(
         updateStreakOnActivity();
         bumpChallengeProgress('consistency', 1);
         checkAchievements();
-        get().showToast(`Synced "${workouts[0].activityName}" from Apple Fitness`);
+        get().showToast(`Synced "${workouts[0].activityName}" from ${workouts[0].fromGarmin ? 'Garmin' : 'Apple Fitness'}`);
       },
 
       // Called from MacrosScreen whenever today's food log changes - marks
@@ -1011,7 +1011,7 @@ export const useAppStore = create<Store>()(
           updateStreakOnActivity();
           bumpChallengeProgress('consistency', 1);
           checkAchievements();
-          get().showToast(`Synced "${workout.activityName}" from Apple Fitness`);
+          get().showToast(`Synced "${workout.activityName}" from ${workout.fromGarmin ? 'Garmin' : 'Apple Fitness'}`);
         }
       },
 

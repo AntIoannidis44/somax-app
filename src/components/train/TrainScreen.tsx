@@ -70,7 +70,7 @@ function DayRecap({ sim, dayName, onNavigate }: { sim: number; dayName: string; 
       <div className="recap-empty">
         <Icon name="moon" />
         <b>Nothing logged on {dayName}</b>
-        <span>Workouts, Apple Watch syncs and checklist items you complete show up here.</span>
+        <span>Workouts, watch syncs and checklist items you complete show up here.</span>
       </div>
     );
   }
@@ -198,6 +198,11 @@ export function TrainScreen() {
   }, [openLibraryTab]);
 
   const plan = todayPlan(weekPlan);
+  // Garmin users sync Garmin workouts (Settings > Health & watches > Sync data from) - labels follow the source
+  const healthSource = useAppStore((s) => s.settings.healthSource ?? 'health');
+  const setHealthSource = useAppStore((s) => s.setHealthSource);
+  const brand = healthSource === 'garmin' ? 'Garmin' : 'Apple Fitness';
+  const device = healthSource === 'garmin' ? 'Garmin' : 'Apple Watch';
   const todayIdx = todayPlanIndex();
   const todayWorkout = plan.type === 'train' && plan.key ? getWorkout(plan.key) : undefined;
 
@@ -256,7 +261,7 @@ export function TrainScreen() {
   function dayName(i: number): string {
     const p = weekPlan[i];
     if (p.type === 'train' && p.key) return getWorkout(p.key)?.name ?? 'Workout';
-    return p.type === 'watch' ? 'Apple Fitness sync' : 'Recovery day';
+    return p.type === 'watch' ? `${brand} sync` : 'Recovery day';
   }
   const sessionCount = weekPlan.filter((p) => p.type !== 'rest').length;
   const doneCount = weekPlan.filter((_, i) => i < todayIdx && dayDone(i)).length + (dayDone(todayIdx) ? 1 : 0);
@@ -314,18 +319,23 @@ export function TrainScreen() {
           </div>
           {p.type === 'rest' && <Icon name="check" className="tick" />}
         </button>
-        {healthAvailableOnPlatform() && (
-          <button className={`sheet-opt${p.type === 'watch' ? ' on' : ''}`} onClick={() => chooseForDay(() => pickDayWatchSync(i))}>
-            <div className="type-icon-badge" style={{ width: 34, height: 34, background: 'linear-gradient(140deg,#1f2937,#0a0f1a)' }}>
-              <Icon name="watch" />
-            </div>
-            <div>
-              <div className="t">Sync from Apple Fitness</div>
-              <div className="s">Any Watch workout counts</div>
-            </div>
-            {p.type === 'watch' && <Icon name="check" className="tick" />}
-          </button>
-        )}
+        {healthAvailableOnPlatform() &&
+          (['health', 'garmin'] as const).map((src) => (
+            <button
+              key={src}
+              className={`sheet-opt${p.type === 'watch' && healthSource === src ? ' on' : ''}`}
+              onClick={() => chooseForDay(() => { if (src !== healthSource) setHealthSource(src); pickDayWatchSync(i); })}
+            >
+              <div className="type-icon-badge" style={{ width: 34, height: 34, background: src === 'garmin' ? 'linear-gradient(140deg,#0b4f8a,#06213b)' : 'linear-gradient(140deg,#1f2937,#0a0f1a)' }}>
+                <Icon name="watch" />
+              </div>
+              <div>
+                <div className="t">{src === 'garmin' ? 'Sync from Garmin' : 'Sync from Apple Fitness'}</div>
+                <div className="s">{src === 'garmin' ? 'Any Garmin workout counts - steps and heart rate from Garmin too' : 'Any Apple Watch workout counts'}</div>
+              </div>
+              {p.type === 'watch' && healthSource === src && <Icon name="check" className="tick" />}
+            </button>
+          ))}
         {(
           [
             { id: 'mine', label: 'My workouts', options: myOptions },
@@ -442,7 +452,7 @@ export function TrainScreen() {
                     </div>
                     <div className="t">{dayName(i)}</div>
                     <div className="s">
-                      {w ? `${w.duration} · ${w.exercises.length} exercises` : p.type === 'watch' ? 'Any Apple Fitness workout counts' : 'Mobility and hydration only'}
+                      {w ? `${w.duration} · ${w.exercises.length} exercises` : p.type === 'watch' ? `Any ${brand} workout counts` : 'Mobility and hydration only'}
                     </div>
                   </div>
                   {isPast && (p.type === 'rest' || dayDone(i)) ? (
@@ -478,7 +488,7 @@ export function TrainScreen() {
       {plan.type === 'watch' ? (
         <div className="tbig">
           <div className="tbig-top">
-            <div className="k">Today · Apple Fitness</div>
+            <div className="k">Today · {brand}</div>
             <button className="tbig-edit" onClick={() => setSheetDay(todayIdx)} aria-label="Change today's workout">
               <Icon name="edit" />
             </button>
@@ -486,7 +496,7 @@ export function TrainScreen() {
           <h2>
             {selectedWatchWorkouts && selectedWatchWorkouts.length > 0
               ? `${selectedWatchWorkouts.length} ${selectedWatchWorkouts.length === 1 ? 'activity' : 'activities'} synced`
-              : 'Sync from Apple Watch'}
+              : `Sync from ${device}`}
           </h2>
           <div className="m">
             <div>
@@ -524,7 +534,7 @@ export function TrainScreen() {
           ) : (
             <div className="watch-empty">
               <Icon name="watch" />
-              <span>Log any workout on your Apple Watch today and it counts automatically. No need to pick one in advance.</span>
+              <span>Log any workout on your {device} today and it counts automatically. No need to pick one in advance.</span>
             </div>
           )}
           {watchSynced && selectedWatchWorkouts && selectedWatchWorkouts.length > 0 ? (
