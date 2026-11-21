@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { checkReason, scaleToGrams, type PortionBase } from './photoReview';
 import { Modal } from '../layout/Modal';
 import { useUserId } from '../../lib/useSession';
 import { barcodeScanAvailableOnPlatform, scanBarcode } from '../../lib/barcodeScanner';
@@ -69,6 +70,11 @@ interface ReviewItem {
   alcoholG: number | null;
   fiberG: number | null;
   sugarG: number | null;
+  // what the scan said for its own estimated portion - grams changes rescale from this (no AI call)
+  base: PortionBase;
+  confidence: 'low' | 'medium' | 'high';
+  // a packaged product (can, bar, packet): offer the barcode for the exact label
+  packaged: boolean;
   alternatives: string[];
   recalculating: boolean;
 }
@@ -359,22 +365,7 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
         setError('Could not identify any food in that photo');
         return;
       }
-      if (analysis.items.length === 1) {
-        const i = analysis.items[0];
-        setName(i.name);
-        setServing(`${Math.round(i.estimatedGrams)}g`);
-        setProtein(String(Math.round(i.proteinG)));
-        setCarbs(String(Math.round(i.carbsG)));
-        setFat(String(Math.round(i.fatG)));
-        setKcalIn(String(Math.round(i.kcal)));
-        setAlcoholIn(i.alcoholG ? String(Math.round(i.alcoholG * 10) / 10) : '');
-        setExtra({ fiberG: i.fiberG ?? null, sugarG: i.sugarG ?? null, kcalSource: 'estimate' });
-        if (analysis.confidence === 'low') setError(`Low-confidence estimate: ${analysis.notes}`);
-        return;
-      }
-      // Multiple distinct items - show each as its own line to tick off,
-      // edit or swap for a suggested alternative, rather than silently
-      // collapsing them into one combined entry.
+      // Every scan goes through review (one item or many): confirm the portion, see anything to check.
       setReviewItems(
         analysis.items.map((i, idx) => ({
           tempId: `${Date.now()}-${idx}`,
@@ -389,6 +380,10 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
           alcoholG: i.alcoholG ?? null,
           fiberG: i.fiberG ?? null,
           sugarG: i.sugarG ?? null,
+          base: { grams: Math.round(i.estimatedGrams), proteinG: i.proteinG, carbsG: i.carbsG, fatG: i.fatG, kcal: i.kcal,
+            alcoholG: i.alcoholG ?? 0, fiberG: i.fiberG ?? 0, sugarG: i.sugarG ?? 0 },
+          confidence: i.itemConfidence,
+          packaged: !!i.packaged,
           alternatives: i.alternatives,
           recalculating: false,
         })),
@@ -455,6 +450,12 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
     }
   }
 
+  // Change an item's portion: everything rescales from what the scan said (instant, no AI call).
+  function setReviewGrams(it: ReviewItem, grams: number) {
+    const g = Math.max(0, Math.round(grams));
+    updateReviewItem(it.tempId, { grams: g, ...scaleToGrams(it.base, g) });
+  }
+
   function updateReviewItem(tempId: string, patch: Partial<ReviewItem>) {
     setReviewItems((prev) => prev && prev.map((it) => (it.tempId === tempId ? { ...it, ...patch } : it)));
   }
@@ -475,6 +476,9 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
         alcoholG: est.alcoholG ?? null,
         fiberG: est.fiberG ?? null,
         sugarG: est.sugarG ?? null,
+        base: { grams: Math.round(est.estimatedGrams), proteinG: est.proteinG, carbsG: est.carbsG, fatG: est.fatG, kcal: est.kcal,
+          alcoholG: est.alcoholG ?? 0, fiberG: est.fiberG ?? 0, sugarG: est.sugarG ?? 0 },
+        confidence: est.confidence,
         recalculating: false,
       });
     } catch {
@@ -517,6 +521,14 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
             </button>
           ))}
         </div>
+        {reviewItems.some((it) => it.included && it.packaged) && (
+          <div className="macro-review-packaged">
+            <span>Looks like a packaged product - the barcode gives the exact label.</span>
+            <button type="button" className="btn btn-soft btn-sm" onClick={() => { setReviewItems(null); void handleScanBarcode(); }}>
+              Scan barcode
+            </button>
+          </div>
+        )}
         <div className="macro-review-list">
           {reviewItems.map((item) => (
             <div className="macro-review-item" key={item.tempId}>
@@ -533,6 +545,13 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
                   value={item.name}
                   onChange={(e) => updateReviewItem(item.tempId, { name: e.target.value })}
                 />
+                {(() => {
+                  const why = checkReason(
+                    { proteinG: item.proteinG, carbsG: item.carbsG, fatG: item.fatG, kcal: item.kcal ?? 0, alcoholG: item.alcoholG ?? 0, fiberG: item.fiberG ?? 0, sugarG: item.sugarG ?? 0 },
+                    item.confidence, item.alternatives,
+                  );
+                  return why ? <div className="macro-review-check-flag"><b>Check</b> {why}</div> : null;
+                })()}
                 {item.alternatives.length > 0 && (
                   <div className="macro-review-alts">
                     {item.alternatives.map((alt) => (
@@ -543,13 +562,16 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
                   </div>
                 )}
                 <div className="macro-review-row2">
+                  <button type="button" className="macro-review-step" aria-label="Less" onClick={() => setReviewGrams(item, item.grams - 10)}>−</button>
                   <input
                     className="macro-review-grams"
                     type="number"
                     value={item.grams}
-                    onChange={(e) => updateReviewItem(item.tempId, { grams: parseInt(e.target.value, 10) || 0 })}
+                    aria-label={`${item.name} grams`}
+                    onChange={(e) => setReviewGrams(item, parseInt(e.target.value, 10) || 0)}
                   />
                   <span>g</span>
+                  <button type="button" className="macro-review-step" aria-label="More" onClick={() => setReviewGrams(item, item.grams + 10)}>+</button>
                   <span style={{ marginLeft: 4 }}>&times;</span>
                   <input
                     className="macro-review-grams"
@@ -563,7 +585,7 @@ export function AddFoodSheet({ open, onClose, onSave, initialMeal }: AddFoodShee
                   </button>
                 </div>
                 <div className="macros" style={{ marginTop: 6 }}>
-                  <span><b>{Math.round(resolveKcal({ ...item, kcal: item.kcal }).kcal * item.quantity)}</b> kcal</span>
+                  <span><b>{Math.round((item.kcal ?? resolveKcal(item).kcal) * item.quantity)}</b> kcal</span>
                   <span>P <b>{Math.round(item.proteinG * item.quantity)}g</b></span>
                   <span>C <b>{Math.round(item.carbsG * item.quantity)}g</b></span>
                   <span>F <b>{Math.round(item.fatG * item.quantity)}g</b></span>

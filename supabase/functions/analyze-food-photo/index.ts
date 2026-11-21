@@ -35,9 +35,10 @@ const RESPONSE_SCHEMA = {
           fiberG: { type: 'number' },
           sugarG: { type: 'number' },
           itemConfidence: { type: 'string', enum: ['low', 'medium', 'high'] },
+          packaged: { type: 'boolean' },
           alternatives: { type: 'array', items: { type: 'string' } },
         },
-        required: ['name', 'estimatedGrams', 'kcal', 'proteinG', 'carbsG', 'fatG', 'alcoholG', 'fiberG', 'sugarG', 'itemConfidence', 'alternatives'],
+        required: ['name', 'estimatedGrams', 'kcal', 'proteinG', 'carbsG', 'fatG', 'alcoholG', 'fiberG', 'sugarG', 'itemConfidence', 'packaged', 'alternatives'],
         additionalProperties: false,
       },
     },
@@ -67,7 +68,7 @@ function promptFor(mode: string): string {
     'things); when itemConfidence is "low", put 2-3 plausible alternative names in that item\'s alternatives array (e.g. ' +
     '["grilled chicken breast", "grilled chicken thigh", "turkey breast"]) - otherwise leave alternatives as an empty array. ' +
     'Sum the items into totals. Set the overall confidence to "low" if the image itself is unclear or oddly angled, "high" ' +
-    'only for a clear, well-lit, easily identifiable photo. Put any caveats (e.g. "sauce/dressing amount is a guess") in notes.' + ENERGY_RULES;
+    'only for a clear, well-lit, easily identifiable photo. Put any caveats (e.g. "sauce/dressing amount is a guess") in notes. Set packaged to true when an item is a packaged or branded product that carries a barcode (a can, bottle, bar, packet, tub or box) - false for plated or loose food.' + ENERGY_RULES;
   if (mode === 'recipe') {
     return (
       base +

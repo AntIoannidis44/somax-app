@@ -75,6 +75,14 @@ try {
   ];
   const patched = [];
   const inserted = [];
+  // photo scan (2026-11-21): chicken (fine), an unsure sauce (low confidence + alternatives), a beer can
+  // (packaged) whose calories contradict its own breakdown
+  await ctx.route('http://127.0.0.1:9/functions/v1/analyze-food-photo', (route) => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({
+    items: [
+      { name: 'Grilled chicken breast', estimatedGrams: 180, kcal: 297, proteinG: 56, carbsG: 0, fatG: 6.5, alcoholG: 0, fiberG: 0, sugarG: 0, itemConfidence: 'high', packaged: false, alternatives: [] },
+      { name: 'Creamy sauce', estimatedGrams: 40, kcal: 120, proteinG: 1, carbsG: 3, fatG: 12, alcoholG: 0, fiberG: 0, sugarG: 2, itemConfidence: 'low', packaged: false, alternatives: ['aioli', 'hollandaise'] },
+      { name: 'Carlton Draught can', estimatedGrams: 375, kcal: 300, proteinG: 1, carbsG: 11, fatG: 0, alcoholG: 14.5, fiberG: 0, sugarG: 0, itemConfidence: 'high', packaged: true, alternatives: [] },
+    ], totalKcal: 717, totalProteinG: 58, totalCarbsG: 14, totalFatG: 18.5, confidence: 'medium', notes: '' }) }));
   await ctx.route('http://127.0.0.1:9/rest/v1/**', async (route) => {
     const u = route.request().url();
     const json = (b) => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(b) });
@@ -185,6 +193,32 @@ try {
   await addFood('Sol beer 355ml', 2, 13, 0, null, 145);
   const beer = inserted.find((r) => r.name === 'Sol beer 355ml');
   check('A label calorie figure (145) is saved exactly, not rebuilt (60)', beer && Number(beer.kcal) === 145 && beer.kcal_source === 'label', JSON.stringify(beer || {}).slice(0, 140));
+  // ---- Photo scan review (2026-11-21): portion rescale, check flags, barcode prompt
+  await ensureSheet();
+  await page.locator('input[type=file]').first().setInputFiles(path.join(ROOT, 'tests/fixtures/food-photo.jpg'));
+  await page.locator('.macro-review-list').waitFor({ timeout: 15000 });
+  const rows = page.locator('.macro-review-item');
+  const chickenRow = rows.filter({ has: page.locator('input[value="Grilled chicken breast"]') });
+  const kcalOf = async (row) => parseInt(((await row.locator('.macros b').first().textContent()) || '0'), 10);
+  const kBefore = await kcalOf(chickenRow);
+  await chickenRow.locator('.macro-review-grams').first().fill('90');
+  await page.waitForTimeout(150);
+  const kAfter = await kcalOf(chickenRow);
+  check('Photo review: changing chicken 180 g -> 90 g halves the calories instantly (297 -> 149)', kBefore === 297 && kAfter === 149, `${kBefore} -> ${kAfter}`);
+  await chickenRow.locator('[aria-label=More]').click();
+  check('Photo review: + adds 10 g and rescales (100 g -> 165 kcal)', (await kcalOf(chickenRow)) === 165, String(await kcalOf(chickenRow)));
+  const flags = await page.locator('.macro-review-check-flag').allTextContents();
+  check('Unsure item is flagged with alternatives to tap', flags.some((f) => /Not sure what this is - tap the right one/.test(f)) && (await page.locator('.macro-review-alts button', { hasText: 'aioli' }).count()) === 1, flags.join(' | ').slice(0, 120));
+  check('Beer can whose calories contradict its breakdown is flagged (300 vs 150)', flags.some((f) => /Calories \(300\) don't match its breakdown \(150\)/.test(f)), flags.join(' | ').slice(0, 160));
+  check('Chicken (consistent, sure) has no flag', !(await chickenRow.locator('.macro-review-check-flag').count()));
+  check('Packaged product shows "Scan barcode" for the exact label', (await page.locator('.macro-review-packaged button', { hasText: 'Scan barcode' }).count()) === 1);
+  const gaps = await chickenRow.locator('.macros span').evaluateAll((sp) => sp.slice(1).map((el, i) => el.getBoundingClientRect().left - sp[i].getBoundingClientRect().right));
+  check('Review totals are spaced apart (kcal, P, C, F)', gaps.length === 3 && gaps.every((g) => g >= 8), gaps.map((g) => Math.round(g)).join(','));
+  await page.locator('.modal-overlay.show .modal-sheet').screenshot({ path: path.join(SHOTS, 'photo-review.png') }).catch(() => {});
+  await page.locator('button', { hasText: /^Add 3 items$/ }).click();
+  await page.waitForTimeout(400);
+  const ch = inserted.find((r) => r.name === 'Grilled chicken breast');
+  check('Saved chicken uses the corrected portion: 100 g, 165 kcal, 31.1 g protein', ch && ch.serving === '100g' && Number(ch.kcal) === 165 && Number(ch.protein_g) === 31.1, JSON.stringify(ch || {}).slice(0, 140));
   check('No JavaScript errors', errors.length === 0, errors.slice(0, 2).join(' | '));
 } finally {
   await browser.close();

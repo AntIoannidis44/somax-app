@@ -14,6 +14,8 @@ export interface FoodPhotoItem {
   sugarG?: number;
   itemConfidence: 'low' | 'medium' | 'high';
   alternatives: string[];
+  // packaged/branded product (can, bottle, bar, packet) - since 2026-11-21
+  packaged?: boolean;
 }
 
 export interface FoodPhotoAnalysis {
