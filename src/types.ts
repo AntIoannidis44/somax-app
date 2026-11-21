@@ -133,6 +133,10 @@ export interface Stats {
 
 export interface Progress {
   totalXP: number;
+  // Goes up by one on EVERY XP change - earned, taken back (swapping
+  // today's session), or reset (evolving). Cloud sync compares this, not
+  // totalXP, to spot a stale snapshot: totalXP can legitimately go down.
+  xpRev?: number;
   level: number;
   currentStreak: number;
   longestStreak: number;

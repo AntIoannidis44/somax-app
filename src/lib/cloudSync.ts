@@ -25,24 +25,31 @@ function stateForCloud() {
 async function pushToCloud(userId: string) {
   const state = stateForCloud();
 
-  // XP only ever goes up during normal play (see awardXP - there is no
-  // code path that decrements progress.totalXP). A push that would lower
-  // it server-side is a strong signal this client's local state is stale
-  // - a race on cold start, a rehydrate that silently failed and left an
-  // old cached snapshot in place, etc - not real progress loss. Refuse
-  // it rather than let it clobber the canonical copy; the next
-  // successful hydrate pulls the still-correct cloud value back down
-  // locally instead. This was added after a real incident where local
-  // state repeatedly overwrote more-advanced cloud progress with an old
-  // snapshot - root cause not fully confirmed, so this guard is the
-  // actual fix regardless of the exact mechanism.
+  // Stale-snapshot guard. This used to refuse any push where local totalXP
+  // was lower than the cloud's, on the belief that XP only ever goes up.
+  // It stopped being true on 2026-11-18: swapping today's session (incl.
+  // switching to Apple Watch / Garmin sync) takes that session's XP back,
+  // and evolving resets XP to 0. After either, EVERY later save was refused
+  // - nothing earned afterwards (e.g. "Log how you felt") reached the cloud,
+  // and the next app open pulled the older cloud copy back over it.
+  // progress.xpRev goes up on every XP change, up or down, so a lower
+  // revision is what actually means "this copy is older".
   const { data: existing } = await supabase.from('app_state').select('state, updated_at').eq('user_id', userId).maybeSingle();
-  const cloudXP = (existing?.state as { progress?: { totalXP?: number } } | null)?.progress?.totalXP ?? 0;
+  const cloudProgress = (existing?.state as { progress?: { totalXP?: number; xpRev?: number } } | null)?.progress;
+  const cloudRev = cloudProgress?.xpRev;
+  const localRev = state.progress.xpRev ?? 0;
+  const cloudXP = cloudProgress?.totalXP ?? 0;
   const localXP = state.progress.totalXP;
-  if (existing && localXP < cloudXP) {
+  // Cloud rows saved before xpRev existed: keep the old XP comparison, unless
+  // this device has already recorded XP changes under the new counter.
+  const stale = typeof cloudRev === 'number' ? localRev < cloudRev : localRev === 0 && localXP < cloudXP;
+  if (existing && stale) {
     console.error(
-      `[cloudSync] refused to push: local totalXP (${localXP}) is lower than cloud's (${cloudXP}) for user ${userId} - this would have overwritten real progress`,
+      `[cloudSync] refused to push: local copy is older than the cloud's (xpRev ${localRev} < ${cloudRev ?? 'n/a'}, XP ${localXP} vs ${cloudXP}) for user ${userId} - re-loading the cloud copy`,
     );
+    // Show the real saved state now, rather than leave XP on screen that
+    // will never be saved and silently vanishes on the next app open.
+    await hydrateFromCloud(userId);
     return;
   }
 

@@ -1061,6 +1061,7 @@ export const useAppStore = create<Store>()(
           produce((st) => {
             st.progress.prestige = next;
             st.progress.totalXP = 0;
+            st.progress.xpRev = (st.progress.xpRev || 0) + 1;
             st.progress.level = 1;
           }),
         );
@@ -1366,6 +1367,7 @@ function revokeTodaySessionXp(st: any, newPlan: { type: string; key?: string }):
   }
   if (amount > 0) {
     st.progress.totalXP = Math.max(0, st.progress.totalXP - amount);
+    st.progress.xpRev = (st.progress.xpRev || 0) + 1;
     st.progress.monthlyXP = Math.max(0, (st.progress.monthlyXP || 0) - amount);
     st.today.xpEarnedToday = Math.max(0, st.today.xpEarnedToday - amount);
     st.progress.level = levelFromXP(st.progress.totalXP);
@@ -1421,6 +1423,7 @@ function awardXP(amount: number, label: string, opts: { ignoreCap?: boolean } = 
   useAppStore.setState(
     produce((st) => {
       st.progress.totalXP += awarded;
+      st.progress.xpRev = (st.progress.xpRev || 0) + 1;
       // Cloud-synced saves skip the local persist migration, so tolerate a
       // missing monthly total here as well.
       st.progress.monthlyXP = (st.progress.monthlyXP || 0) + awarded;
