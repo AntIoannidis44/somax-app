@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
-import { getGarminStatus, openGarminConnect } from '../../lib/health';
+import { getGarminStatus, getStepsBySource, openGarminConnect, type StepSource } from '../../lib/health';
 import { useUserId } from '../../lib/useSession';
 import { requestLocalNotifPermission } from '../../lib/notifications';
 import { registerForPush, unregisterPushToken } from '../../lib/push';
@@ -32,8 +32,13 @@ export function SettingsCard() {
   // Garmin: connected once Garmin Connect has written steps/heart rate to Apple Health (checked again
   // whenever the user comes back to Somax, e.g. after flipping the switch in Garmin Connect).
   const [garmin, setGarmin] = useState<boolean | null>(null);
+  // Today's steps per source (Garmin Connect, iPhone, Apple Watch...) so anyone can see what Somax reads.
+  const [stepSources, setStepSources] = useState<StepSource[] | null>(null);
   useEffect(() => {
-    const check = () => { getGarminStatus().then((r) => setGarmin(r ? r.garmin : null)); };
+    const check = () => {
+      getGarminStatus().then((r) => setGarmin(r ? r.garmin : null));
+      getStepsBySource().then(setStepSources);
+    };
     check();
     const onVis = () => { if (document.visibilityState === 'visible') check(); };
     document.addEventListener('visibilitychange', onVis);
@@ -108,6 +113,7 @@ export function SettingsCard() {
             ))}
           </div>
         </div>
+        {stepSources && <StepSources sources={stepSources} garminMode={healthSource === 'garmin'} />}
         <div className="setting-row">
           <span className="set-ic">
             <Icon name="watch" />
@@ -158,5 +164,51 @@ export function SettingsCard() {
         ))}
       </div>
     </>
+  );
+}
+
+function ago(iso: string | null): string {
+  if (!iso) return '';
+  const min = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
+  if (min < 2) return 'just now';
+  if (min < 60) return `${min} min ago`;
+  const h = Math.floor(min / 60);
+  return `${h} h ${min % 60} min ago`;
+}
+
+// "Steps today in Apple Health": one row per app/device, marking the one(s) Somax counts.
+export function StepSources({ sources, garminMode }: { sources: StepSource[]; garminMode: boolean }) {
+  const g = sources.filter((x) => x.garmin);
+  const lastGarmin = g.map((x) => x.lastAt).filter(Boolean).sort().pop() ?? null;
+  const stale = lastGarmin ? Date.now() - new Date(lastGarmin).getTime() > 60 * 60000 : false;
+  return (
+    <div className="step-sources">
+      <div className="step-sources-h">Steps today in Apple Health</div>
+      {sources.length === 0 && <div className="step-src-note">No steps recorded yet today.</div>}
+      {sources.map((x) => {
+        const used = garminMode ? x.garmin : true;
+        return (
+          <div key={x.bundleId} className={`step-src${used ? ' used' : ''}`}>
+            <span className="n">{x.garmin ? 'Garmin' : x.name}</span>
+            <span className="v">{x.steps.toLocaleString()}</span>
+            <span className="t">{x.lastAt ? `last sent ${ago(x.lastAt)}` : ''}</span>
+            {garminMode && x.garmin && <span className="u">Used ✓</span>}
+          </div>
+        );
+      })}
+      {garminMode && g.length === 0 && (
+        <div className="step-src-note warn">
+          No Garmin steps in Apple Health today. Open Garmin Connect so it syncs, and check Garmin Connect → Settings → Connected Apps → Apple Health has Steps turned on.
+        </div>
+      )}
+      {garminMode && g.length > 0 && stale && (
+        <div className="step-src-note warn">
+          Garmin last sent steps {ago(lastGarmin)}. Open Garmin Connect to sync your latest steps - Garmin only sends them to Apple Health when it syncs.
+        </div>
+      )}
+      {!garminMode && sources.length > 1 && (
+        <div className="step-src-note">Apple Health merges these so steps aren't counted twice.</div>
+      )}
+    </div>
   );
 }

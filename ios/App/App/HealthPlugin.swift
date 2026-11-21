@@ -24,6 +24,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "openAppSettings", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getHealthSources", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "openURL", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getStepsBySource", returnType: CAPPluginReturnPromise),
     ]
 
     private let store = HKHealthStore()
@@ -544,6 +545,37 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         }
         // no Garmin source yet -> an empty set matches nothing (shows 0 rather than someone else's steps)
         group.notify(queue: .global()) { body(HKQuery.predicateForObjects(from: found)) }
+    }
+
+    // Today's steps from EACH app/device that wrote steps to Apple Health, plus when each last wrote (2026-11-21).
+    // Settings shows this so a Garmin user can see Garmin's own count next to the iPhone's, and how long ago
+    // Garmin Connect last synced - Garmin only sends data to Apple Health when Garmin Connect syncs.
+    @objc func getStepsBySource(_ call: CAPPluginCall) {
+        let now = Date()
+        let today = HKQuery.predicateForSamples(withStart: Calendar.current.startOfDay(for: now), end: now, options: .strictStartDate)
+        store.execute(HKSourceQuery(sampleType: stepsType, samplePredicate: today) { [self] _, sources, _ in
+            let list = Array(sources ?? [])
+            var rows = [[String: Any]](repeating: [:], count: list.count)
+            let lock = NSLock()
+            let group = DispatchGroup()
+            let byEnd = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]
+            for (i, src) in list.enumerated() {
+                let pred = Self.only(today, HKQuery.predicateForObjects(from: [src]))
+                group.enter()
+                sumQuantity(type: stepsType, unit: .count(), predicate: pred) { steps in
+                    self.store.execute(HKSampleQuery(sampleType: self.stepsType, predicate: pred, limit: 1, sortDescriptors: byEnd) { _, samples, _ in
+                        let last = samples?.first.map { ISO8601DateFormatter().string(from: $0.endDate) }
+                        let garmin = src.bundleIdentifier.lowercased().contains("garmin") || src.name.lowercased().contains("garmin")
+                        lock.lock()
+                        rows[i] = ["name": src.name, "bundleId": src.bundleIdentifier, "garmin": garmin,
+                                   "steps": Int(steps.rounded()), "lastAt": last ?? NSNull()]
+                        lock.unlock()
+                        group.leave()
+                    })
+                }
+            }
+            group.notify(queue: .main) { call.resolve(["sources": rows]) }
+        })
     }
 
     // Resting heart rate (what Home shows, 2026-11-21): the most recent daily value in the last 7 days.

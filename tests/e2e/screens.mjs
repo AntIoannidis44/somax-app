@@ -44,7 +44,7 @@ const FAKE_HEALTH = `
     getMonthlyStepsSummary: async () => ({ steps: 120000 }),
     getMonthlyCardioDistance: async () => ({ meters: 0 }),
     getLatestHeartRate: async () => ({ bpm: 62, recordedAt: t + 'T08:00:00' }),
-    getTodayAverageHeartRate: async () => ({ bpm: 71.6 }), getHealthSources: async () => ({ sources: [], garmin: false }), openURL: async () => ({ opened: true }),
+    getTodayAverageHeartRate: async () => ({ bpm: 71.6 }), getHealthSources: async () => ({ sources: [], garmin: false }), getStepsBySource: async () => ({ sources: [] }), openURL: async () => ({ opened: true }),
     getTodayWorkouts: async () => ({ workouts }),
     getDailyVerifiedSteps: async () => ({ days: [{ date: t, steps: 9200 }] }),
     getWorkoutRoute: async () => ({ points: [] }),
@@ -169,6 +169,35 @@ try {
   check('Garmin data arriving: row shows "Connected ✓" and the button goes away', /Connected ✓/.test(g2) && (await page.locator('.health-devices .garmin-open').count()) === 0, g2.slice(0, 80));
   check('Garmin found while on Apple Health: "Use Garmin" prompt shown', (await page.locator('.health-devices .garmin-use button', { hasText: 'Use Garmin' }).count()) === 1);
   await garmin.screenshot({ path: path.join(SHOTS, '09b-garmin-connected.png') }).catch(() => {});
+
+  // Steps today per source (2026-11-21): Garmin's own count next to the iPhone's; in Garmin mode Garmin is "Used"
+  await page.evaluate(() => {
+    const ago = (m) => new Date(Date.now() - m * 60000).toISOString();
+    window.__E2E_HEALTH__.getStepsBySource = async () => ({ sources: [
+      { name: 'iPhone', bundleId: 'com.apple.health.X', garmin: false, steps: 9200, lastAt: ago(3) },
+      { name: 'Connect', bundleId: 'com.garmin.connect.mobile', garmin: true, steps: 6400, lastAt: ago(150) },
+    ] });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await page.waitForTimeout(400);
+  const ss = (await page.locator('.step-sources').textContent().catch(() => '')) || '';
+  check('Settings lists today\'s steps per source (Garmin 6,400 and iPhone 9,200)', /Garmin\s*6,400/.test(ss) && /iPhone\s*9,200/.test(ss), ss.replace(/\s+/g, ' ').slice(0, 120));
+  check('Garmin listed first', /^Steps today in Apple Health\s*Garmin/.test(ss));
+  await page.locator('.health-source button', { hasText: 'Garmin' }).click();
+  await page.waitForTimeout(300);
+  const ss2 = (await page.locator('.step-sources').textContent().catch(() => '')) || '';
+  check('Garmin mode: Garmin row marked "Used ✓", iPhone not', (await page.locator('.step-src.used', { hasText: 'Garmin' }).count()) === 1 && (await page.locator('.step-src.used', { hasText: 'iPhone' }).count()) === 0);
+  check('Garmin last sent 2.5 h ago: tells them to open Garmin Connect to sync', /last sent steps 2 h 30 min ago/.test(ss2) && /Open Garmin Connect to sync/.test(ss2), ss2.replace(/\s+/g, ' ').slice(-140));
+  await page.locator('.health-devices').screenshot({ path: path.join(SHOTS, '09c-steps-by-source.png') }).catch(() => {});
+  await page.evaluate(() => {
+    window.__E2E_HEALTH__.getStepsBySource = async () => ({ sources: [{ name: 'iPhone', bundleId: 'com.apple.health.X', garmin: false, steps: 9200, lastAt: new Date().toISOString() }] });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await page.waitForTimeout(400);
+  const ss3 = (await page.locator('.step-sources').textContent().catch(() => '')) || '';
+  check('Garmin mode but no Garmin steps today: says so and how to turn Steps on in Garmin Connect', /No Garmin steps in Apple Health today/.test(ss3) && /Steps turned on/.test(ss3));
+  await page.locator('.health-source button', { hasText: 'Apple Health' }).click();
+  await page.waitForTimeout(300);
 
   // Sync data from: Garmin -> Home shows Garmin's numbers only; back to Apple Health restores them (2026-11-21)
   await page.locator('.health-source button', { hasText: 'Garmin' }).click();

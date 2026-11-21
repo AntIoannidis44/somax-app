@@ -2073,3 +2073,14 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .health-devices .health-source{ flex-wrap:wrap; }
 .health-devices .health-source .mini-seg{ margin-left:auto; }
 .health-devices .garmin-use{ display:flex; align-items:center; gap:10px; justify-content:space-between; margin:6px 0; font-size:13px; padding:8px 10px; border-radius:10px; background:rgba(66,133,244,.10); }
+
+/* Settings > Health & watches: today's steps per source (2026-11-21) */
+.step-sources{padding:10px 14px 12px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.step-sources-h{font-size:12px;font-weight:700;color:var(--text-faint);text-transform:uppercase;letter-spacing:.04em}
+.step-src{display:grid;grid-template-columns:1fr auto;column-gap:10px;align-items:baseline;font-size:14px;padding:6px 10px;border-radius:10px;background:var(--bg-soft,rgba(127,127,127,.08))}
+.step-src .n{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.step-src .v{font-weight:800;text-align:right}
+.step-src .t{font-size:11px;color:var(--text-faint)}
+.step-src .u{font-size:11px;font-weight:700;color:var(--accent,#6d5dfc);text-align:right}
+.step-src-note{font-size:12px;color:var(--text-faint);line-height:1.4}
+.step-src-note.warn{color:#d97706}

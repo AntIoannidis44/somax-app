@@ -37,6 +37,7 @@ interface HealthPlugin {
   isAvailable(): Promise<{ available: boolean }>;
   requestAuthorization(): Promise<{ granted: boolean }>;
   getTodaySummary(options?: { age?: number; source?: string }): Promise<TodaySummary>;
+  getStepsBySource(): Promise<{ sources: StepSource[] }>;
   getHealthSources(): Promise<{ sources: { bundleId: string; name: string }[]; garmin: boolean }>;
   openURL(options: { url: string }): Promise<{ opened: boolean }>;
   getMonthlyStepsSummary(options?: { source?: string }): Promise<{ steps: number }>;
@@ -91,6 +92,16 @@ export async function getRestingHeartRate(): Promise<number | null> {
 export async function getGarminStatus(): Promise<{ garmin: boolean } | null> {
   if (!healthAvailableOnPlatform()) return null;
   try { const r = await Health.getHealthSources(); return { garmin: !!r.garmin }; } catch { return null; }
+}
+
+// Today's steps per app/device in Apple Health (Settings > Health & watches shows it), Garmin first.
+export interface StepSource { name: string; bundleId: string; garmin: boolean; steps: number; lastAt: string | null }
+export async function getStepsBySource(): Promise<StepSource[] | null> {
+  if (!healthAvailableOnPlatform()) return null;
+  try {
+    const { sources } = await Health.getStepsBySource();
+    return [...sources].sort((a, b) => Number(b.garmin) - Number(a.garmin) || b.steps - a.steps);
+  } catch { return null; }
 }
 
 // Garmin Connect on the App Store: opens the store page, which shows "Open" when the app is installed.
