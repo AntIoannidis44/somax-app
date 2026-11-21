@@ -29,6 +29,10 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
   // "height = last resize event".
   const [vvHeight, setVvHeight] = useState<number | null>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  // Only a tap that STARTS on the dimmed background closes the popup - a
+  // tap that began on a button inside the sheet never does, even if the
+  // sheet moves before the finger lifts.
+  const downOnBackdrop = useRef(false);
 
   useEffect(() => {
     const vv = window.visualViewport;
@@ -40,29 +44,64 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
       if (el.tagName !== 'INPUT') return false;
       return !['button', 'checkbox', 'radio', 'range', 'file', 'submit', 'reset', 'color'].includes((el as HTMLInputElement).type);
     };
+    // While a finger is on the screen the sheet must not move: tapping
+    // Submit takes focus off the text box and the keyboard starts closing
+    // straight away, and growing the sheet mid-tap slid the button out from
+    // under the finger - the tap landed on the backdrop instead, the popup
+    // closed and nothing was saved ("Log how you felt", 2026-11-21). Hold
+    // every resize until the tap has finished (pointerup -> click), then settle.
+    let pointerDown = false;
     const update = () => {
+      if (pointerDown) return;
       const shrink = open && typingInThisSheet() && vv.height < window.innerHeight - 1;
       setVvHeight(shrink ? vv.height : null);
     };
     let timers: number[] = [];
-    const settle = () => {
-      update();
+    const schedule = (delays: number[]) => {
       timers.forEach(clearTimeout);
-      timers = [120, 350, 700].map((ms) => window.setTimeout(update, ms)); // keyboard animation
+      timers = delays.map((ms) => window.setTimeout(update, ms));
+    };
+    // Focus moving INTO a field: shrink straight away (keyboard is opening).
+    const onFocusIn = () => {
+      update();
+      schedule([120, 350, 700]); // keyboard animation
+    };
+    // Focus LEAVING a field happens in the middle of a tap (tapping Submit
+    // takes focus off the text box before the tap finishes). Growing the
+    // sheet right then moved the button out from under the finger, the tap
+    // landed on the dimmed background and closed the popup - "Log how you
+    // felt" never submitted (2026-11-21). So never resize on focusout
+    // itself: wait until the tap is over and the keyboard is going away.
+    const onFocusOut = () => schedule([300, 600, 900]);
+    const onPointerDown = () => {
+      pointerDown = true;
+    };
+    const onPointerUp = () => {
+      // Released after this event's click has been delivered to the button.
+      window.setTimeout(() => {
+        pointerDown = false;
+        schedule([0, 250, 600]);
+      }, 50);
     };
     update();
     vv.addEventListener('resize', update);
     vv.addEventListener('scroll', update);
     window.addEventListener('resize', update);
-    document.addEventListener('focusin', settle);
-    document.addEventListener('focusout', settle);
+    document.addEventListener('focusin', onFocusIn);
+    document.addEventListener('focusout', onFocusOut);
+    document.addEventListener('pointerdown', onPointerDown, true);
+    document.addEventListener('pointerup', onPointerUp, true);
+    document.addEventListener('pointercancel', onPointerUp, true);
     return () => {
       timers.forEach(clearTimeout);
       vv.removeEventListener('resize', update);
       vv.removeEventListener('scroll', update);
       window.removeEventListener('resize', update);
-      document.removeEventListener('focusin', settle);
-      document.removeEventListener('focusout', settle);
+      document.removeEventListener('focusin', onFocusIn);
+      document.removeEventListener('focusout', onFocusOut);
+      document.removeEventListener('pointerdown', onPointerDown, true);
+      document.removeEventListener('pointerup', onPointerUp, true);
+      document.removeEventListener('pointercancel', onPointerUp, true);
     };
   }, [open]);
 
@@ -109,8 +148,12 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
       ref={overlayRef}
       className={`modal-overlay${open ? ' show' : ''}`}
       style={vvHeight ? { height: vvHeight } : undefined}
+      onPointerDown={(e) => {
+        downOnBackdrop.current = e.target === e.currentTarget;
+      }}
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
+        if (e.target === e.currentTarget && downOnBackdrop.current) onClose();
+        downOnBackdrop.current = false;
       }}
     >
       <div ref={sheetRef} className={`modal-sheet${expanded ? ' expanded' : ''}`} style={dragStyle}>
