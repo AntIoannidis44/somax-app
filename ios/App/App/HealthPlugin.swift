@@ -17,6 +17,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "getMonthlyCardioDistance", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getLatestHeartRate", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getTodayAverageHeartRate", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getRestingHeartRate", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getTodayWorkouts", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getWorkoutRoute", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getDailyVerifiedSteps", returnType: CAPPluginReturnPromise),
@@ -31,6 +32,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     private var exerciseType: HKQuantityType { HKQuantityType(.appleExerciseTime) }
     private var energyType: HKQuantityType { HKQuantityType(.activeEnergyBurned) }
     private var heartRateType: HKQuantityType { HKQuantityType(.heartRate) }
+    private var restingHeartRateType: HKQuantityType { HKQuantityType(.restingHeartRate) }
     private var workoutType: HKWorkoutType { HKObjectType.workoutType() }
     private var routeType: HKSeriesType { HKSeriesType.workoutRoute() }
     private var distanceWalkingRunningType: HKQuantityType { HKQuantityType(.distanceWalkingRunning) }
@@ -91,7 +93,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             return
         }
         let readTypes: Set<HKObjectType> = [
-            stepsType, exerciseType, energyType, heartRateType, workoutType, routeType,
+            stepsType, exerciseType, energyType, heartRateType, restingHeartRateType, workoutType, routeType,
             distanceWalkingRunningType, distanceCyclingType, distanceSwimmingType,
         ]
         store.requestAuthorization(toShare: [], read: readTypes) { success, error in
@@ -104,8 +106,9 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     @objc func getTodaySummary(_ call: CAPPluginCall) {
+        sourceFilter(call) { [self] f in
         let startOfDay = Calendar.current.startOfDay(for: Date())
-        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: Date(), options: .strictStartDate)
+        let predicate = Self.only(HKQuery.predicateForSamples(withStart: startOfDay, end: Date(), options: .strictStartDate), f)
 
         // Coins are only paid for data a device recorded - steps someone typed
         // into the Health app ("Add Data") carry HKMetadataKeyWasUserEntered.
@@ -118,7 +121,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
               // today, count active minutes the way Apple does - any minute at brisk-walk effort or harder
               // (see activeMinutesFallback).
               let age = call.getInt("age") ?? 0
-              self.activeMinutesFallback(since: startOfDay, age: age) { workoutMinutes in
+              self.activeMinutesFallback(since: startOfDay, age: age, filter: f) { workoutMinutes in
                 self.sumQuantity(type: self.energyType, unit: .kilocalorie(), predicate: predicate) { kcal in
                     let useWorkouts = exerciseMinutes <= 0 && workoutMinutes > 0
                     call.resolve([
@@ -137,6 +140,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             }
           }
         }
+            }
     }
 
     // The real month-to-date step total, queried directly from HealthKit -
@@ -144,16 +148,18 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     // can't see steps logged on days the app never synced (or before this
     // feature existed at all).
     @objc func getMonthlyStepsSummary(_ call: CAPPluginCall) {
+        sourceFilter(call) { [self] f in
         let calendar = Calendar.current
         let now = Date()
         guard let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: now)) else {
             call.resolve(["steps": 0])
             return
         }
-        let predicate = HKQuery.predicateForSamples(withStart: startOfMonth, end: now, options: .strictStartDate)
+        let predicate = Self.only(HKQuery.predicateForSamples(withStart: startOfMonth, end: now, options: .strictStartDate), f)
         sumQuantity(type: stepsType, unit: .count(), predicate: predicate) { steps in
             call.resolve(["steps": Int(steps.rounded())])
         }
+            }
     }
 
     @objc func getLatestHeartRate(_ call: CAPPluginCall) {
@@ -180,8 +186,9 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     // midnight - all-day watch readings plus those recorded during logged walks/workouts - averaged by
     // HealthKit itself. bpm is null when there is no reading today (the app then says none was detected).
     @objc func getTodayAverageHeartRate(_ call: CAPPluginCall) {
+        sourceFilter(call) { [self] f in
         let now = Date()
-        let predicate = HKQuery.predicateForSamples(withStart: Calendar.current.startOfDay(for: now), end: now, options: [.strictEndDate])
+        let predicate = Self.only(HKQuery.predicateForSamples(withStart: Calendar.current.startOfDay(for: now), end: now, options: [.strictEndDate]), f)
         let query = HKStatisticsQuery(quantityType: heartRateType, quantitySamplePredicate: predicate, options: .discreteAverage) { _, result, error in
             if let error = error as? HKError, error.code == .errorNoData {
                 call.resolve(["bpm": NSNull()])
@@ -198,6 +205,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             call.resolve(["bpm": avg.doubleValue(for: HKUnit.count().unitDivided(by: .minute()))])
         }
         store.execute(query)
+            }
     }
 
     // Workouts logged via the Watch's own Fitness/Workout app (or any
@@ -208,6 +216,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     // explicit range instead - used to sync a Watch workout onto a PAST
     // day's logged session, not just today's.
     @objc func getTodayWorkouts(_ call: CAPPluginCall) {
+        sourceFilter(call) { [self] f in
         let formatter = ISO8601DateFormatter()
         let rangeStart: Date
         let rangeEnd: Date
@@ -222,7 +231,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             rangeStart = Calendar.current.startOfDay(for: Date())
             rangeEnd = Date()
         }
-        let predicate = HKQuery.predicateForSamples(withStart: rangeStart, end: rangeEnd, options: .strictStartDate)
+        let predicate = Self.only(HKQuery.predicateForSamples(withStart: rangeStart, end: rangeEnd, options: .strictStartDate), f)
         let sort = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [sort]) { _, samples, error in
             if error != nil {
@@ -236,6 +245,8 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
                 return [
                     "uuid": w.uuid.uuidString,
                     "activityName": Self.activityName(for: w.workoutActivityType),
+                    "sourceName": w.sourceRevision.source.name,
+                    "fromGarmin": w.sourceRevision.source.bundleIdentifier.lowercased().contains("garmin") || w.sourceRevision.source.name.lowercased().contains("garmin"),
                     "startDate": ISO8601DateFormatter().string(from: w.startDate),
                     "durationMinutes": w.duration / 60,
                     "kcal": kcal ?? 0,
@@ -257,7 +268,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             for (i, w) in raw.enumerated() where (w.totalEnergyBurned?.doubleValue(for: .kilocalorie()) ?? 0) <= 0 {
                 group.enter()
                 let win = NSCompoundPredicate(andPredicateWithSubpredicates: [
-                    HKQuery.predicateForSamples(withStart: w.startDate, end: w.endDate, options: []), Self.notUserEntered])
+                    Self.only(HKQuery.predicateForSamples(withStart: w.startDate, end: w.endDate, options: []), f), Self.notUserEntered])
                 self.sumQuantity(type: self.energyType, unit: .kilocalorie(), predicate: win) { k in
                     DispatchQueue.main.async { workouts[i]["kcal"] = k; group.leave() }
                 }
@@ -265,6 +276,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             group.notify(queue: .main) { call.resolve(["workouts": workouts]) }
         }
         store.execute(query)
+            }
     }
 
     // Real month-to-date distance for run/cycle/swim workouts only - deliberately
@@ -273,6 +285,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     // challenge's progress gets synced from (see syncCardioKm in the store) -
     // there is no manual "log km" path left, so this has to be right.
     @objc func getMonthlyCardioDistance(_ call: CAPPluginCall) {
+        sourceFilter(call) { [self] f in
         let calendar = Calendar.current
         let now = Date()
         guard let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: now)) else {
@@ -285,7 +298,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             HKQuery.predicateForWorkouts(with: .cycling),
             HKQuery.predicateForWorkouts(with: .swimming),
         ])
-        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate, activityPredicate, Self.notUserEntered])
+        let predicate = Self.only(NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate, activityPredicate, Self.notUserEntered]), f)
         let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { _, samples, error in
             if error != nil {
                 call.resolve(["meters": 0])
@@ -297,6 +310,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             call.resolve(["meters": meters])
         }
         store.execute(query)
+            }
     }
 
     // The GPS path for one specific outdoor workout (run/walk/cycle) - used
@@ -351,6 +365,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     // endDate (ISO8601) - for step challenges, so a day counts even if the app
     // was never opened that day. Hand-entered steps are excluded.
     @objc func getDailyVerifiedSteps(_ call: CAPPluginCall) {
+        sourceFilter(call) { [self] f in
         let formatter = ISO8601DateFormatter()
         guard let startStr = call.getString("startDate"), let start = formatter.date(from: startStr) else {
             call.resolve(["days": []])
@@ -360,7 +375,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         let calendar = Calendar.current
         let anchor = calendar.startOfDay(for: start)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
-            HKQuery.predicateForSamples(withStart: anchor, end: end, options: .strictStartDate), Self.notUserEntered,
+            Self.only(HKQuery.predicateForSamples(withStart: anchor, end: end, options: .strictStartDate), f), Self.notUserEntered,
         ])
         let query = HKStatisticsCollectionQuery(quantityType: stepsType, quantitySamplePredicate: predicate,
                                                 options: .cumulativeSum, anchorDate: anchor,
@@ -382,6 +397,7 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
             call.resolve(["days": days])
         }
         store.execute(query)
+            }
     }
 
     // Samples a device recorded, excluding anything typed into the Health app.
@@ -427,10 +443,10 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
     //  - heart rate is >= 64% of age-predicted max (220 - age): ACSM's lower bound for moderate intensity;
     //  - step rate is >= 100 steps/min: the walking cadence for moderate intensity (Tudor-Locke et al. 2018).
     // Typed-in Health entries never count. Age 0/unknown -> 35 is assumed for the heart-rate threshold.
-    private func activeMinutesFallback(since start: Date, age: Int, completion: @escaping (Double) -> Void) {
+    private func activeMinutesFallback(since start: Date, age: Int, filter f: NSPredicate?, completion: @escaping (Double) -> Void) {
         let now = Date()
         let pred = NSCompoundPredicate(andPredicateWithSubpredicates: [
-            HKQuery.predicateForSamples(withStart: start, end: now, options: []), Self.notUserEntered])
+            Self.only(HKQuery.predicateForSamples(withStart: start, end: now, options: []), f), Self.notUserEntered])
         let lock = NSLock()
         var minutes = Set<Int>()
         func mark(_ a: Date, _ b: Date) {
@@ -498,6 +514,49 @@ public class HealthPlugin: CAPPlugin, CAPBridgedPlugin {
         guard let str = call.getString("url"), let url = URL(string: str) else { call.reject("bad url"); return }
         DispatchQueue.main.async {
             UIApplication.shared.open(url, options: [:]) { ok in call.resolve(["opened": ok]) }
+        }
+    }
+
+
+    // ---- "Sync data from Garmin" (2026-11-21) -------------------------------------------------------------
+    // With source "garmin" every query only reads samples Garmin Connect wrote to Apple Health, so the iPhone's
+    // own steps (or an Apple Watch) never mix in. Default ("health"): all sources, as Apple Health merges them.
+    static func only(_ base: NSPredicate, _ f: NSPredicate?) -> NSPredicate {
+        guard let f = f else { return base }
+        return NSCompoundPredicate(andPredicateWithSubpredicates: [base, f])
+    }
+
+    private func sourceFilter(_ call: CAPPluginCall, _ body: @escaping (NSPredicate?) -> Void) {
+        guard call.getString("source") == "garmin" else { body(nil); return }
+        var found = Set<HKSource>()
+        let lock = NSLock()
+        let group = DispatchGroup()
+        for type in [stepsType, workoutType, heartRateType, restingHeartRateType, energyType] as [HKSampleType] {
+            group.enter()
+            store.execute(HKSourceQuery(sampleType: type, samplePredicate: nil) { _, sources, _ in
+                lock.lock()
+                for src in sources ?? [] where src.bundleIdentifier.lowercased().contains("garmin") || src.name.lowercased().contains("garmin") {
+                    found.insert(src)
+                }
+                lock.unlock()
+                group.leave()
+            })
+        }
+        // no Garmin source yet -> an empty set matches nothing (shows 0 rather than someone else's steps)
+        group.notify(queue: .global()) { body(HKQuery.predicateForObjects(from: found)) }
+    }
+
+    // Resting heart rate (what Home shows, 2026-11-21): the most recent daily value in the last 7 days.
+    @objc func getRestingHeartRate(_ call: CAPPluginCall) {
+        sourceFilter(call) { [self] f in
+            let now = Date()
+            let pred = Self.only(HKQuery.predicateForSamples(withStart: now.addingTimeInterval(-7 * 24 * 3600), end: now, options: [.strictEndDate]), f)
+            let sort = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+            self.store.execute(HKSampleQuery(sampleType: self.restingHeartRateType, predicate: pred, limit: 1, sortDescriptors: [sort]) { _, samples, _ in
+                guard let q = samples?.first as? HKQuantitySample else { call.resolve(["bpm": NSNull(), "recordedAt": NSNull()]); return }
+                call.resolve(["bpm": q.quantity.doubleValue(for: HKUnit.count().unitDivided(by: .minute())),
+                              "recordedAt": ISO8601DateFormatter().string(from: q.endDate)])
+            })
         }
     }
 

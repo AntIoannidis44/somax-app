@@ -27,6 +27,8 @@ export function SettingsCard() {
   const toggleSetting = useAppStore((s) => s.toggleSetting);
   const setTheme = useAppStore((s) => s.setTheme);
   const showToast = useAppStore((s) => s.showToast);
+  const healthSource = useAppStore((s) => s.settings.healthSource ?? 'health');
+  const setHealthSource = useAppStore((s) => s.setHealthSource);
   // Garmin: connected once Garmin Connect has written steps/heart rate to Apple Health (checked again
   // whenever the user comes back to Somax, e.g. after flipping the switch in Garmin Connect).
   const [garmin, setGarmin] = useState<boolean | null>(null);
@@ -85,6 +87,27 @@ export function SettingsCard() {
           only needs Garmin Connect's own Apple Health switch turned on (owner, 2026-11-21). */}
       <div className="section-label">Health &amp; watches</div>
       <div className="card health-devices">
+        <div className="setting-row health-source">
+          <span className="set-ic">
+            <Icon name="heart" />
+          </span>
+          <div>
+            <div className="setting-title">Sync data from</div>
+            <div className="setting-sub">
+              {healthSource === 'garmin'
+                ? 'Steps, calories, heart rate and workouts come only from your Garmin.'
+                : 'Apple Health - your iPhone and Apple Watch, merged by Apple Health.'}
+            </div>
+          </div>
+          <div className="mini-seg">
+            {(['health', 'garmin'] as const).map((src) => (
+              <button key={src} type="button" className={healthSource === src ? 'on' : ''} aria-pressed={healthSource === src}
+                onClick={() => setHealthSource(src)}>
+                {src === 'health' ? 'Apple Health' : 'Garmin'}
+              </button>
+            ))}
+          </div>
+        </div>
         <div className="setting-row">
           <span className="set-ic">
             <Icon name="watch" />

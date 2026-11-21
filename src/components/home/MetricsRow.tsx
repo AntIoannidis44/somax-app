@@ -8,7 +8,7 @@ import { healthAvailableOnPlatform } from '../../lib/health';
 // single latest reading, which sat on one number (e.g. 137) for hours. No reading today = blank, says so.
 export function heartRateTile(health: { hr: number | null }) {
   if (!health.hr) return { val: '—', unit: undefined, label: 'No heart rate', pct: 0 };
-  return { val: Math.round(health.hr), unit: 'bpm', label: 'Avg heart rate', pct: 0.62 };
+  return { val: Math.round(health.hr), unit: 'bpm', label: 'Resting HR', pct: 0.62 };
 }
 
 function RingTile({

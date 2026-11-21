@@ -48,7 +48,7 @@ export function WatchSyncGoalRow() {
                 onClick={() => toggleWatchWorkoutSelection(w)}
               >
                 {selectedSet.has(w.startDate) ? '✓ ' : ''}
-                {w.activityName} · {formatTime(w.startDate)} · {Math.round(w.durationMinutes)} min
+                {w.activityName} · {formatTime(w.startDate)} · {Math.round(w.durationMinutes)} min{w.fromGarmin ? ' · Garmin' : ''}
               </div>
             ))}
           </div>

@@ -171,7 +171,7 @@ export interface HealthMetrics {
   verifiedSteps?: number;
   kcal: number;
   activeMinutes: number;
-  // today's AVERAGE heart rate (all readings since midnight); null = no reading today
+  // RESTING heart rate (latest daily value, last 7 days) from the chosen source; null = none
   hr: number | null;
 }
 
@@ -188,6 +188,8 @@ export interface HealthWorkoutSummary {
   // Added by hand in the Health app, not recorded by a device - can't verify
   // a session or earn coins.
   userEntered?: boolean;
+  // recorded by a Garmin (shown as "· Garmin" in the sync picker)
+  fromGarmin?: boolean;
 }
 
 export interface TodayState {
@@ -302,6 +304,8 @@ export interface WorkoutSessionState {
     kcal: number;
     durationMinutes: number;
     distanceMeters: number | null;
+    // verified with a Garmin workout (shown as "Verified with Garmin")
+    fromGarmin?: boolean;
   };
   // Guards the +10 verified-completion top-up the same way xpAwarded guards
   // the base 30 - re-syncing to a different real workout (or re-picking the
@@ -401,6 +405,9 @@ export interface Settings {
   // has a prefers-color-scheme block for this); 'light'/'dark' pins it via
   // the data-theme attribute regardless of the device setting.
   theme: 'system' | 'light' | 'dark';
+  // Where Home's steps/calories/heart rate/workouts come from: Apple Health (all devices, merged) or only what
+  // Garmin Connect wrote to Apple Health (2026-11-21). Optional so saved settings from before still load.
+  healthSource?: 'health' | 'garmin';
 }
 
 export type Route = 'home' | 'train' | 'play' | 'community' | 'profile';

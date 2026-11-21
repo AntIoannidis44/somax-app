@@ -226,7 +226,7 @@ export function WorkoutScreen() {
     setSyncOpen(false);
     showToast(
       res.awarded
-        ? `Verified with Apple Fitness · +${WATCH_SYNC_XP} XP`
+        ? `Verified with ${workout.fromGarmin ? 'Garmin' : 'Apple Fitness'} · +${WATCH_SYNC_XP} XP`
         : `Synced "${workout.activityName}" to this workout`,
     );
   }
@@ -434,7 +434,7 @@ export function WorkoutScreen() {
                   <div style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 13, fontWeight: 600 }}>
                     <Icon name="watch" style={{ width: 15, height: 15, color: 'var(--accent)', flexShrink: 0 }} />
                     <span style={{ flex: 1 }}>
-                      Verified with Apple Fitness: {ws.watchSync.activityName} · {Math.round(ws.watchSync.kcal)} kcal · {Math.round(ws.watchSync.durationMinutes)} min
+                      Verified with {ws.watchSync.fromGarmin ? 'Garmin' : 'Apple Fitness'}: {ws.watchSync.activityName} · {Math.round(ws.watchSync.kcal)} kcal · {Math.round(ws.watchSync.durationMinutes)} min
                     </span>
                     {ws.watchSyncXpAwarded && <span style={{ color: 'var(--accent)', fontWeight: 700 }}>+{WATCH_SYNC_XP} XP</span>}
                   </div>
@@ -445,7 +445,7 @@ export function WorkoutScreen() {
               ) : (
                 <>
                   <button className="btn btn-ghost" onClick={handleOpenSync}>
-                    <Icon name="watch" style={{ width: 15, height: 15 }} /> Verify with Apple Fitness · +{WATCH_SYNC_XP} XP
+                    <Icon name="watch" style={{ width: 15, height: 15 }} /> Verify with {useAppStore.getState().settings.healthSource === 'garmin' ? 'Garmin' : 'Apple Fitness'} · +{WATCH_SYNC_XP} XP
                   </button>
                   <div style={{ fontSize: 12, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.4 }}>
                     Log the Apple Watch workout you recorded for this session to earn an extra +{WATCH_SYNC_XP} XP. It must be a
@@ -487,7 +487,7 @@ export function WorkoutScreen() {
                           style={check.ok ? undefined : { opacity: 0.5 }}
                           onClick={() => handleSelectSyncWorkout(workout)}
                         >
-                          {workout.activityName} · {Math.round(workout.kcal)} kcal · {Math.round(workout.durationMinutes)} min
+                          {workout.activityName} · {Math.round(workout.kcal)} kcal · {Math.round(workout.durationMinutes)} min{workout.fromGarmin ? ' · Garmin' : ''}
                           {!check.ok && <div style={{ fontSize: 11, marginTop: 2 }}>{check.reason}</div>}
                         </div>
                       );

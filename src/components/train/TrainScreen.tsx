@@ -510,7 +510,7 @@ export function TrainScreen() {
                       <Icon name={wt?.icon ?? 'watch'} />
                     </span>
                     <span className="wa-main">
-                      <span className="wa-t">{w.activityName}</span>
+                      <span className="wa-t">{w.activityName}{w.fromGarmin ? <span className="wa-src"> · Garmin</span> : null}</span>
                       <span className="wa-s">
                         {formatTime(w.startDate)} · {Math.round(w.durationMinutes)} min
                         {w.distanceMeters ? ` · ${(w.distanceMeters / 1000).toFixed(2)} km` : ''} · {Math.round(w.kcal)} kcal

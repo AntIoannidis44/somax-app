@@ -139,7 +139,7 @@ function defaultAppState(): AppState {
     // message push could ever work, with nothing telling them that was
     // the reason - confirmed as the real cause behind a tester's push
     // silently never working at all.
-    settings: { notifWorkout: true, notifStreak: true, notifLeague: false, notifChallenge: true, notifMessages: true, privateProfile: false, theme: 'system' },
+    settings: { notifWorkout: true, notifStreak: true, notifLeague: false, notifChallenge: true, notifMessages: true, privateProfile: false, theme: 'system', healthSource: 'health' },
     viewingWorkout: null,
     viewingWorkoutDay: null,
     viewingCharacter: false,
@@ -266,6 +266,7 @@ interface Actions {
 
   toggleSetting: (key: keyof Settings) => void;
   setTheme: (theme: Settings['theme']) => void;
+  setHealthSource: (src: 'health' | 'garmin') => void;
 
   advanceDay: () => void;
   checkForNewDay: () => void;
@@ -365,6 +366,7 @@ export const useAppStore = create<Store>()(
               kcal: workout.kcal,
               durationMinutes: workout.durationMinutes,
               distanceMeters: workout.distanceMeters,
+              fromGarmin: (workout as { fromGarmin?: boolean }).fromGarmin,
             };
           }),
         );
@@ -861,6 +863,7 @@ export const useAppStore = create<Store>()(
             distanceMeters: w.distanceMeters,
             // Must survive this copy - drops it and a hand-entered workout earns coins.
             userEntered: w.userEntered,
+            fromGarmin: w.fromGarmin,
           }));
           // First time we see a logged Watch workout today, it counts on its
           // own (the goal says so) - once. Anything logged later still shows
@@ -1183,6 +1186,7 @@ export const useAppStore = create<Store>()(
           }),
         ),
       setTheme: (theme) => set(produce((s) => { s.settings.theme = theme; })),
+      setHealthSource: (src) => set(produce((s) => { s.settings.healthSource = src; })),
 
       advanceDay: () => {
         const s = get();

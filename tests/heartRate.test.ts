@@ -5,8 +5,8 @@ import { heartRateTile } from '../src/components/home/MetricsRow';
 // however old. It must be TODAY'S AVERAGE heart rate, and blank ("no heart rate detected") when there is none.
 
 describe('Home heart-rate tile', () => {
-  it("shows today's average, rounded, labelled as an average", () => {
-    expect(heartRateTile({ hr: 71.6 })).toEqual({ val: 72, unit: 'bpm', label: 'Avg heart rate', pct: 0.62 });
+  it("shows resting heart rate, rounded, labelled Resting HR", () => {
+    expect(heartRateTile({ hr: 71.6 })).toEqual({ val: 72, unit: 'bpm', label: 'Resting HR', pct: 0.62 });
   });
 
   it('no reading today = blank and says no heart rate detected (never a stand-in number)', () => {

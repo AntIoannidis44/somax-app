@@ -45,7 +45,7 @@ const FAKE_HEALTH = `
     isAvailable: async () => ({ available: true }), requestAuthorization: async () => ({ granted: true }),
     getTodaySummary: async () => ({ steps: 0, verifiedSteps: 0, activeMinutes: 0, kcal: 0 }),
     getMonthlyStepsSummary: async () => ({ steps: 0 }), getMonthlyCardioDistance: async () => ({ meters: 0 }),
-    getLatestHeartRate: async () => ({ bpm: 0, recordedAt: null }), getTodayAverageHeartRate: async () => ({ bpm: null }), getHealthSources: async () => ({ sources: [], garmin: false }), openURL: async () => ({ opened: true }), getTodayWorkouts: async () => ({ workouts: [] }),
+    getLatestHeartRate: async () => ({ bpm: 0, recordedAt: null }), getTodayAverageHeartRate: async () => ({ bpm: null }), getHealthSources: async () => ({ sources: [], garmin: false }), getRestingHeartRate: async () => ({ bpm: null, recordedAt: null }), openURL: async () => ({ opened: true }), getTodayWorkouts: async () => ({ workouts: [] }),
     getDailyVerifiedSteps: async () => ({ days: [] }), getWorkoutRoute: async () => ({ points: [] }), openAppSettings: async () => ({ opened: false }),
   };
 `;

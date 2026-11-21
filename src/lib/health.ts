@@ -21,6 +21,9 @@ export interface HealthWorkout {
   kcal: number;
   distanceMeters: number | null;
   userEntered?: boolean;
+  // which app wrote it (e.g. "Connect" for Garmin) - shown in the workout sync picker
+  sourceName?: string;
+  fromGarmin?: boolean;
   lapLengthMeters?: number | null;
 }
 
@@ -33,18 +36,25 @@ export interface RoutePoint {
 interface HealthPlugin {
   isAvailable(): Promise<{ available: boolean }>;
   requestAuthorization(): Promise<{ granted: boolean }>;
-  getTodaySummary(options?: { age?: number }): Promise<TodaySummary>;
+  getTodaySummary(options?: { age?: number; source?: string }): Promise<TodaySummary>;
   getHealthSources(): Promise<{ sources: { bundleId: string; name: string }[]; garmin: boolean }>;
   openURL(options: { url: string }): Promise<{ opened: boolean }>;
-  getMonthlyStepsSummary(): Promise<{ steps: number }>;
-  getDailyVerifiedSteps(options: { startDate: string; endDate: string }): Promise<{ days: { date: string; steps: number }[] }>;
-  getMonthlyCardioDistance(): Promise<{ meters: number }>;
+  getMonthlyStepsSummary(options?: { source?: string }): Promise<{ steps: number }>;
+  getDailyVerifiedSteps(options: { startDate: string; endDate: string; source?: string }): Promise<{ days: { date: string; steps: number }[] }>;
+  getMonthlyCardioDistance(options?: { source?: string }): Promise<{ meters: number }>;
   getLatestHeartRate(): Promise<LatestHeartRate>;
-  getTodayAverageHeartRate(): Promise<{ bpm: number | null }>;
-  getTodayWorkouts(options?: { startDate?: string; endDate?: string }): Promise<{ workouts: HealthWorkout[] }>;
+  getTodayAverageHeartRate(options?: { source?: string }): Promise<{ bpm: number | null }>;
+  getRestingHeartRate(options?: { source?: string }): Promise<{ bpm: number | null; recordedAt: string | null }>;
+  getTodayWorkouts(options?: { startDate?: string; endDate?: string; source?: string }): Promise<{ workouts: HealthWorkout[] }>;
   getWorkoutRoute(options: { uuid: string }): Promise<{ points: RoutePoint[] }>;
   openAppSettings(): Promise<{ opened: boolean }>;
 }
+
+// Chosen data source (Settings > Health & watches). Set by App from the store; every request carries it so the
+// native side can read only Garmin Connect's data when 'garmin' is chosen.
+let SOURCE: 'health' | 'garmin' = 'health';
+export function setHealthDataSource(src: 'health' | 'garmin' | undefined) { SOURCE = src === 'garmin' ? 'garmin' : 'health'; }
+export function getHealthDataSource() { return SOURCE; }
 
 // Screen-test mode uses the fake the test script installs (lib/e2e.ts).
 const Health: HealthPlugin = E2E ? (window as unknown as { __E2E_HEALTH__: HealthPlugin }).__E2E_HEALTH__ : registerPlugin<HealthPlugin>('Health');
@@ -67,7 +77,14 @@ export async function requestHealthAuthorization(): Promise<boolean> {
 // write Apple's Exercise Minutes (Garmin etc.) - see HealthPlugin.activeMinutesFallback.
 export async function getTodayHealthSummary(age?: number): Promise<TodaySummary | null> {
   if (!healthAvailableOnPlatform()) return null;
-  return Health.getTodaySummary(age && age > 0 ? { age } : undefined);
+  return Health.getTodaySummary({ ...(age && age > 0 ? { age } : {}), source: SOURCE });
+}
+
+// Resting heart rate (Home's heart-rate tile, 2026-11-21): the latest daily value in the last 7 days, from the
+// chosen source. null when there is none.
+export async function getRestingHeartRate(): Promise<number | null> {
+  if (!healthAvailableOnPlatform()) return null;
+  try { const { bpm } = await Health.getRestingHeartRate({ source: SOURCE }); return typeof bpm === 'number' && bpm > 0 ? Math.round(bpm) : null; } catch { return null; }
 }
 
 // Is a Garmin feeding Apple Health? (Garmin Connect wrote steps or heart rate in the last 7 days.)
@@ -85,7 +102,7 @@ export async function openGarminConnect(): Promise<void> {
 
 export async function getMonthlySteps(): Promise<number | null> {
   if (!healthAvailableOnPlatform()) return null;
-  const { steps } = await Health.getMonthlyStepsSummary();
+  const { steps } = await Health.getMonthlyStepsSummary({ source: SOURCE });
   return steps;
 }
 
@@ -95,7 +112,7 @@ export async function getMonthlySteps(): Promise<number | null> {
 // path anymore - it has to come from here or it doesn't count.
 export async function getMonthlyCardioKm(): Promise<number | null> {
   if (!healthAvailableOnPlatform()) return null;
-  const { meters } = await Health.getMonthlyCardioDistance();
+  const { meters } = await Health.getMonthlyCardioDistance({ source: SOURCE });
   return meters / 1000;
 }
 
@@ -103,7 +120,7 @@ export async function getMonthlyCardioKm(): Promise<number | null> {
 // there is none today. This is what Home and Profile show (owner, 2026-11-20).
 export async function getTodayAverageHeartRate(): Promise<number | null> {
   if (!healthAvailableOnPlatform()) return null;
-  const { bpm } = await Health.getTodayAverageHeartRate();
+  const { bpm } = await Health.getTodayAverageHeartRate({ source: SOURCE });
   return typeof bpm === 'number' && bpm > 0 ? Math.round(bpm) : null;
 }
 
@@ -114,7 +131,7 @@ export async function getLatestHeartRate(): Promise<LatestHeartRate | null> {
 
 export async function getTodayWorkouts(): Promise<HealthWorkout[]> {
   if (!healthAvailableOnPlatform()) return [];
-  const { workouts } = await Health.getTodayWorkouts();
+  const { workouts } = await Health.getTodayWorkouts({ source: SOURCE });
   return workouts;
 }
 
@@ -125,7 +142,7 @@ export async function getWorkoutsForDate(isoDate: string): Promise<HealthWorkout
   if (!healthAvailableOnPlatform()) return [];
   const start = new Date(`${isoDate}T00:00:00`);
   const end = new Date(start.getTime() + 24 * 60 * 60 * 1000);
-  const { workouts } = await Health.getTodayWorkouts({ startDate: start.toISOString(), endDate: end.toISOString() });
+  const { workouts } = await Health.getTodayWorkouts({ startDate: start.toISOString(), endDate: end.toISOString(), source: SOURCE });
   return workouts;
 }
 
@@ -135,7 +152,7 @@ export async function getWorkoutsInRange(startIso: string, endIso: string): Prom
   if (!healthAvailableOnPlatform()) return [];
   const start = new Date(`${startIso}T00:00:00`);
   const end = new Date(new Date(`${endIso}T00:00:00`).getTime() + 24 * 60 * 60 * 1000);
-  const { workouts } = await Health.getTodayWorkouts({ startDate: start.toISOString(), endDate: end.toISOString() });
+  const { workouts } = await Health.getTodayWorkouts({ startDate: start.toISOString(), endDate: end.toISOString(), source: SOURCE });
   return workouts;
 }
 
@@ -145,7 +162,7 @@ export async function getDailyVerifiedSteps(startIso: string, endIso: string): P
   const start = new Date(`${startIso}T00:00:00`);
   const end = new Date(new Date(`${endIso}T00:00:00`).getTime() + 24 * 60 * 60 * 1000);
   try {
-    const { days } = await Health.getDailyVerifiedSteps({ startDate: start.toISOString(), endDate: end.toISOString() });
+    const { days } = await Health.getDailyVerifiedSteps({ startDate: start.toISOString(), endDate: end.toISOString(), source: SOURCE });
     return days ?? [];
   } catch {
     return []; // older native build without the method

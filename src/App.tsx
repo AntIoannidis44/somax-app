@@ -38,7 +38,7 @@ import { CHALLENGE_DEFS } from './data/challenges';
 import { getWorkout } from './lib/customWorkouts';
 import { challengeWindow, computeChallengeProgress, verifySpecFor, type InAppDay } from './lib/verifiedChallenges';
 import { useSession, useUserId } from './lib/useSession';
-import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getMonthlyCardioKm, getTodayAverageHeartRate, getTodayWorkouts, getWorkoutsInRange, getDailyVerifiedSteps } from './lib/health';
+import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getMonthlyCardioKm, getRestingHeartRate, setHealthDataSource, getTodayWorkouts, getWorkoutsInRange, getDailyVerifiedSteps } from './lib/health';
 import { syncLocalReminders } from './lib/notifications';
 import { registerForPush, registerPushTapHandler } from './lib/push';
 import { fetchUnreadDMCounts, subscribeDMs } from './lib/social';
@@ -107,6 +107,8 @@ function CurrentScreen() {
 function App() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const onboarded = useAppStore((s) => s.onboarded);
+  // re-sync Health when the data source changes (Apple Health <-> Garmin)
+  const healthSource = useAppStore((s) => s.settings.healthSource ?? 'health');
   const viewingWorkout = useAppStore((s) => s.viewingWorkout);
   const viewingCharacter = useAppStore((s) => s.viewingCharacter);
   const viewingDM = useAppStore((s) => s.viewingDM);
@@ -190,13 +192,15 @@ function App() {
     // that choice - safe to call every time to keep Home fresh.
     async function syncHealth() {
       try {
+        // Garmin or Apple Health, per Settings > Health & watches - every request below reads only that source
+        setHealthDataSource(useAppStore.getState().settings.healthSource);
         const granted = await requestHealthAuthorization();
         if (!granted) return;
         const [summary, monthlySteps, cardioKm, hr, workouts] = await Promise.all([
           getTodayHealthSummary(Number(useAppStore.getState().profile?.age) || undefined),
           getMonthlySteps(),
           getMonthlyCardioKm(),
-          getTodayAverageHeartRate(),
+          getRestingHeartRate(),
           getTodayWorkouts(),
         ]);
         if (summary) {
@@ -297,7 +301,7 @@ function App() {
     document.addEventListener('visibilitychange', onVisible);
     return () => document.removeEventListener('visibilitychange', onVisible);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, onboarded]);
+  }, [session, onboarded, healthSource]);
 
   useEffect(() => {
     // Recomputes on every relevant state change (not just foreground) so

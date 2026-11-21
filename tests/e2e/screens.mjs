@@ -31,14 +31,16 @@ const today = (() => { const d = new Date(); return `${d.getFullYear()}-${String
 const FAKE_HEALTH = `
   const t = ${JSON.stringify(today)};
   const workouts = [
-    { uuid: 'real-1', activityName: 'Strength Training', startDate: t + 'T07:00:00', durationMinutes: 45, kcal: 220, distanceMeters: null, userEntered: false },
+    { uuid: 'real-1', activityName: 'Strength Training', startDate: t + 'T07:00:00', durationMinutes: 45, kcal: 220, distanceMeters: null, userEntered: false, fromGarmin: true },
     { uuid: 'couch-1', activityName: 'Strength Training', startDate: t + 'T12:00:00', durationMinutes: 45, kcal: 20, distanceMeters: null, userEntered: false },
     { uuid: 'typed-1', activityName: 'Strength Training', startDate: t + 'T18:00:00', durationMinutes: 50, kcal: 300, distanceMeters: null, userEntered: true },
   ];
   window.__E2E_HEALTH__ = {
     isAvailable: async () => ({ available: true }),
     requestAuthorization: async () => ({ granted: true }),
-    getTodaySummary: async () => ({ steps: 9200, verifiedSteps: 9200, activeMinutes: 40, kcal: 420 }),
+    // Apple Health (merged) vs Garmin-only answers differ, so the Sync-data-from switch is visible on Home
+    getTodaySummary: async (o) => { window.__lastSource = o && o.source; return o && o.source === 'garmin' ? { steps: 6400, verifiedSteps: 6400, activeMinutes: 25, kcal: 310 } : { steps: 9200, verifiedSteps: 9200, activeMinutes: 40, kcal: 420 }; },
+    getRestingHeartRate: async (o) => ({ bpm: o && o.source === 'garmin' ? 54 : 58, recordedAt: t + 'T06:00:00' }),
     getMonthlyStepsSummary: async () => ({ steps: 120000 }),
     getMonthlyCardioDistance: async () => ({ meters: 0 }),
     getLatestHeartRate: async () => ({ bpm: 62, recordedAt: t + 'T08:00:00' }),
@@ -91,9 +93,9 @@ try {
   const home = await page.textContent('body');
   check('Home says "Challenge", not "Quest"', /All challenges/.test(home) && !/\bQuests?\b/.test(home));
   // Heart rate = today's AVERAGE from Apple Health (71.6 -> 72), never the single latest reading (62)
-  const hrTile = page.locator('.metric', { hasText: /heart rate/i });
+  const hrTile = page.locator('.metric', { hasText: /Resting HR|heart rate/i });
   const hrText = (await hrTile.textContent()) || '';
-  check("Heart-rate tile shows today's average (72 bpm), not the latest reading", /72/.test(hrText) && /Avg heart rate/.test(hrText) && !/62/.test(hrText), hrText);
+  check('Heart-rate tile shows RESTING heart rate (58), not average (72) or latest (62)', /58/.test(hrText) && /Resting HR/.test(hrText) && !/72|62/.test(hrText), hrText);
   await page.locator('.metrics').screenshot({ path: path.join(SHOTS, '01b-metrics-avg-hr.png') });
   const coinsAfterSteps = await page.evaluate(() => window.__store.getState().coins);
   // steps (5) + today's real Apple Watch strength workout auto-synced (10); the couch and hand-entered ones pay nothing
@@ -129,6 +131,7 @@ try {
   await picker.screenshot({ path: path.join(SHOTS, '05-picker.png') });
   const pickerText = await picker.textContent();
   check('Picker greys out the couch workout with a reason', /Too little effort/.test(pickerText));
+  check('Picker labels the Garmin workout "Garmin"', /Strength Training[^·]*· 220 kcal · 45 min · Garmin/.test(pickerText), pickerText.replace(/\s+/g, ' ').slice(0, 120));
   check('Picker greys out the hand-entered workout with a reason', /by hand/.test(pickerText));
   await picker.locator('.day-picker-opt', { hasText: '220 kcal' }).click();
   await page.waitForTimeout(500);
@@ -139,14 +142,14 @@ try {
   // 5. Home now shows the verified line
   await page.evaluate(() => { const s = window.__store.getState(); s.closeWorkout(); s.go('home'); });
   await page.waitForTimeout(400);
-  check('Home card now shows "Verified with Apple Fitness"', /Verified with Apple Fitness/.test(await page.textContent('body')));
+  check('A Garmin workout verifies the session: Home card shows "Verified with Garmin"', /Verified with Garmin/.test(await page.textContent('body')));
   await page.screenshot({ path: path.join(SHOTS, '07-home-verified.png'), fullPage: true });
 
   // No heart-rate reading today: blank tile that says so (no stand-in number)
   await page.evaluate(() => { const st = window.__store.getState(); window.__store.setState({ today: { ...st.today, health: { ...st.today.health, hr: null } } }); });
   await page.click('nav >> text=Home').catch(() => {});
   await page.waitForTimeout(400);
-  const noHr = (await page.locator('.metric', { hasText: /heart rate/i }).textContent()) || '';
+  const noHr = (await page.locator('.metric', { hasText: /Resting HR|heart rate/i }).textContent()) || '';
   check('No heart rate today: tile is blank and says "No heart rate"', /No heart rate/.test(noHr) && !/\d/.test(noHr), noHr);
   await page.locator('.metrics').screenshot({ path: path.join(SHOTS, '08-metrics-no-hr.png') });
 
@@ -165,6 +168,22 @@ try {
   const g2 = (await garmin.textContent().catch(() => '')) || '';
   check('Garmin data arriving: row shows "Connected ✓" and the button goes away', /Connected ✓/.test(g2) && (await page.locator('.health-devices .garmin-open').count()) === 0, g2.slice(0, 80));
   await garmin.screenshot({ path: path.join(SHOTS, '09b-garmin-connected.png') }).catch(() => {});
+
+  // Sync data from: Garmin -> Home shows Garmin's numbers only; back to Apple Health restores them (2026-11-21)
+  await page.locator('.health-source button', { hasText: 'Garmin' }).click();
+  await page.click('nav >> text=Home').catch(() => {});
+  await page.waitForTimeout(2500);
+  const homeG = (await page.locator('.metrics').textContent()) || '';
+  check('Sync data from Garmin: requests ask for Garmin only and Home shows its steps (6,400) and resting HR (54)', (await page.evaluate(() => window.__lastSource)) === 'garmin' && /6,400/.test(homeG) && /54/.test(homeG), homeG.replace(/\s+/g, ' ').slice(0, 90));
+  await page.click('nav >> text=Profile').catch(() => {});
+  await page.waitForTimeout(600);
+  await page.locator('.health-source button', { hasText: 'Apple Health' }).click();
+  await page.click('nav >> text=Home').catch(() => {});
+  await page.waitForTimeout(2500);
+  const homeA = (await page.locator('.metrics').textContent()) || '';
+  check('Toggle back to Apple Health: Home shows Apple Health numbers again (9,200 steps, 58)', /9,200/.test(homeA) && /58/.test(homeA), homeA.replace(/\s+/g, ' ').slice(0, 90));
+  await page.click('nav >> text=Profile').catch(() => {});
+  await page.waitForTimeout(600);
 
   // Onboarding "About you": Which watch? Garmin shows the one Garmin Connect step (owner 2026-11-21)
   await page.evaluate(() => window.__store.setState({ onboarded: false }));

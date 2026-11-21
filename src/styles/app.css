@@ -2070,3 +2070,5 @@ h1,h2,h3,h4{ font-family: var(--font-display); text-wrap: balance; margin:0; let
 .macro-review-check-flag b{ margin-right:4px; }
 .macro-review-packaged{ display:flex; align-items:center; gap:10px; justify-content:space-between; font-size:13px; padding:10px 12px; margin-bottom:10px; border-radius:12px; background:rgba(66,133,244,.10); }
 .macro-review-main .macros{ display:flex; flex-wrap:wrap; gap:4px 12px; font-size:13px; }
+.health-devices .health-source{ flex-wrap:wrap; }
+.health-devices .health-source .mini-seg{ margin-left:auto; }
