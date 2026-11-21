@@ -38,7 +38,7 @@ import { CHALLENGE_DEFS } from './data/challenges';
 import { getWorkout } from './lib/customWorkouts';
 import { challengeWindow, computeChallengeProgress, verifySpecFor, type InAppDay } from './lib/verifiedChallenges';
 import { useSession, useUserId } from './lib/useSession';
-import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getMonthlyCardioKm, getRestingHeartRate, setHealthDataSource, getTodayWorkouts, getWorkoutsInRange, getDailyVerifiedSteps } from './lib/health';
+import { healthAvailableOnPlatform, requestHealthAuthorization, getTodayHealthSummary, getMonthlySteps, getMonthlyCardioKm, getRestingHeartRate, setHealthDataSource, getTodayWorkouts, getWorkoutsInRange, getDailyVerifiedSteps, HEALTH_SYNC_EVENT } from './lib/health';
 import { syncLocalReminders } from './lib/notifications';
 import { registerForPush, registerPushTapHandler } from './lib/push';
 import { fetchUnreadDMCounts, subscribeDMs } from './lib/social';
@@ -299,7 +299,12 @@ function App() {
       if (document.visibilityState === 'visible') syncHealth();
     }
     document.addEventListener('visibilitychange', onVisible);
-    return () => document.removeEventListener('visibilitychange', onVisible);
+    // e.g. today just became a watch-sync day (lib/health.ts requestHealthSync)
+    window.addEventListener(HEALTH_SYNC_EVENT, syncHealth);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisible);
+      window.removeEventListener(HEALTH_SYNC_EVENT, syncHealth);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session, onboarded, healthSource]);
 

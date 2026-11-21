@@ -1,3 +1,4 @@
+import { requestHealthSync } from '../lib/health';
 import { fitWearToBase } from '../data/catalog';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
@@ -610,6 +611,8 @@ export const useAppStore = create<Store>()(
       // wrong activity got picked or the list needs refetching.
       setDayToWatchSync: (dayIndex) => {
         let removed = 0;
+        // today's list is emptied below - fetch it again straight away (setTimeout: after this state lands)
+        if (todayPlanIndex() === dayIndex) setTimeout(requestHealthSync, 0);
         set(
           produce((st) => {
             if (todayPlanIndex() === dayIndex) removed = revokeTodaySessionXp(st, { type: 'watch' });

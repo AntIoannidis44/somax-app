@@ -227,6 +227,33 @@ try {
   const todayK = (await page.locator('.tbig .k').first().textContent().catch(() => '')) || '';
   check('Change workout sheet offers Sync from Garmin; picking it makes today a Garmin sync and Garmin the data source', hasBoth && src === 'garmin' && /Today · Garmin/.test(todayK), `${src} | ${todayK}`);
   await page.screenshot({ path: path.join(SHOTS, '11-train-garmin-sync.png') }).catch(() => {});
+
+  // Owner 2026-11-21 (friend's Garmin): ALREADY on Garmin, picking "Sync from Garmin" emptied today's list and
+  // nothing re-read Apple Health - the Garmin workout only appeared after switching to Apple Fitness (a source
+  // change forced a re-read). Picking a sync day must fetch today's workouts itself: no source change, no reopen.
+  await page.evaluate(() => {
+    const st = window.__store.getState();
+    const i = new Date().getDay();
+    const key = st.weekPlan.find((p) => p.type === 'train' && p.key)?.key;
+    st.setDayWorkout(i, key);
+    const real = window.__E2E_HEALTH__.getTodayWorkouts;
+    window.__wkFetches = 0;
+    window.__E2E_HEALTH__.getTodayWorkouts = async (o) => { window.__wkFetches++; return real(o); };
+  });
+  await page.waitForTimeout(400);
+  const before = await page.evaluate(() => ({ src: window.__store.getState().settings.healthSource, type: window.__store.getState().weekPlan[new Date().getDay()].type }));
+  await page.locator('.tbig-edit').first().click().catch(() => {});
+  await page.waitForTimeout(500);
+  await page.locator('.sheet-opt', { hasText: 'Sync from Garmin' }).click().catch(() => {});
+  await page.waitForTimeout(1500);
+  const after = await page.evaluate(() => ({ n: window.__wkFetches, list: (window.__store.getState().today.availableWatchWorkouts || []).length, src: window.__store.getState().settings.healthSource }));
+  check('Already on Garmin: picking "Sync from Garmin" re-reads Apple Health at once and lists the Garmin workout', before.src === 'garmin' && before.type === 'train' && after.src === 'garmin' && after.n >= 1 && after.list > 0, JSON.stringify({ before, after }));
+  await page.click('nav >> text=Home').catch(() => {});
+  await page.waitForTimeout(600);
+  const homeCard = (await page.locator('.today-card').first().textContent().catch(() => '')) || '';
+  check('Home card names Garmin, never Apple Fitness, on a Garmin sync day', /Garmin/.test(homeCard) && !/Apple Fitness/.test(homeCard), homeCard.replace(/\s+/g, ' ').slice(0, 110));
+  await page.click('nav >> text=Train').catch(() => {});
+  await page.waitForTimeout(400);
   await page.evaluate(() => window.__store.getState().setHealthSource('health'));
   await page.click('nav >> text=Profile').catch(() => {});
   await page.waitForTimeout(500);

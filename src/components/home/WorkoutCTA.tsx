@@ -16,6 +16,7 @@ export function WorkoutCTA() {
   const go = useAppStore((s) => s.go);
   const selectedWatchWorkouts = useAppStore((s) => s.today.selectedWatchWorkouts);
   const availableWatchWorkouts = useAppStore((s) => s.today.availableWatchWorkouts);
+  const garmin = useAppStore((s) => s.settings.healthSource === 'garmin');
 
   const plan = todayPlan(weekPlan);
   const eyebrow = [FULL_DAYS[todayPlanIndex()] ?? WEEKDAY_LABELS[todayPlanIndex()], programName].filter(Boolean).join(' · ');
@@ -29,10 +30,10 @@ export function WorkoutCTA() {
     return (
       <div className="today-card">
         <div className="today-k">{eyebrow}</div>
-        <div className="today-t">{selectedCount > 0 ? `${selectedCount} ${selectedCount === 1 ? 'activity' : 'activities'} synced` : (useAppStore.getState().settings.healthSource === 'garmin' ? 'Sync from Garmin' : 'Sync from Apple Fitness')}</div>
+        <div className="today-t">{selectedCount > 0 ? `${selectedCount} ${selectedCount === 1 ? 'activity' : 'activities'} synced` : (garmin ? 'Sync from Garmin' : 'Sync from Apple Fitness')}</div>
         <div className="today-m">
           <span>
-            <Icon name="watch" /> Any {useAppStore.getState().settings.healthSource === 'garmin' ? 'Garmin' : 'Watch'} workout counts
+            <Icon name="watch" /> Any {garmin ? 'Garmin' : 'Watch'} workout counts
           </span>
           {selectedCount > 0 && (
             <span>
@@ -44,7 +45,7 @@ export function WorkoutCTA() {
           {(availableWatchWorkouts ?? []).slice(0, 3).map((w, i) => (
             <span key={i}>{w.activityName}</span>
           ))}
-          {(availableWatchWorkouts?.length ?? 0) === 0 && <span>Log a workout on your Watch and it counts automatically</span>}
+          {(availableWatchWorkouts?.length ?? 0) === 0 && <span>Log a workout on your {garmin ? 'Garmin' : 'Watch'} and it counts automatically</span>}
         </div>
         {(unselectedCount > 0 || selectedCount > 0) && (
           <button className="btn btn-primary" onClick={() => go('train')}>

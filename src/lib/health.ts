@@ -94,6 +94,11 @@ export async function getGarminStatus(): Promise<{ garmin: boolean } | null> {
   try { const r = await Health.getHealthSources(); return { garmin: !!r.garmin }; } catch { return null; }
 }
 
+// Ask App to re-read Apple Health right now (e.g. today was just made a watch-sync day, which empties the
+// workout list - without this nothing refetched it until the app was reopened or the source changed: 2026-11-21).
+export const HEALTH_SYNC_EVENT = 'somax:health-sync';
+export function requestHealthSync() { if (typeof window !== 'undefined') window.dispatchEvent(new Event(HEALTH_SYNC_EVENT)); }
+
 // Today's steps per app/device in Apple Health (Settings > Health & watches shows it), Garmin first.
 export interface StepSource { name: string; bundleId: string; garmin: boolean; steps: number; lastAt: string | null }
 export async function getStepsBySource(): Promise<StepSource[] | null> {
